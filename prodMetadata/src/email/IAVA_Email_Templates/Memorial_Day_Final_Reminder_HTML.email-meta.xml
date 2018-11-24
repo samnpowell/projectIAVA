@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Memorial Day Final Reminder HTML</name>
+    <style>none</style>
+    <subject>National Memorial Day Parade (Final Reminder)</subject>
+    <textOnly>{!Contact.FirstName},
+
+I wanted to send everyone one last email and reminder for tomorrow&apos;s parade. I&apos;ve included the basic details below and some additional details to address some frequent questions we&apos;ve received:
+
+What: National Memorial Day Parade
+When: IAVA is meeting at 1pm in our assembly area
+Parade runs from 2pm to 4pm
+Where: Madison Drive NW between 7th and 4th Streets (Look for the IAVA flag or Element #94F)
+Parade will be marching down Constitution from the National Gallery of Art to the WWII Memorial.
+Uniform: Comfortable clothing for walking and standing - you will be provided with an IAVA shirt to wear. You are welcome to wear your uniform (ACU or your branch&apos;s equivilent) , to standard, if you feel comfortable.
+
+If you are not an Iraq and Afghanistan veteran you are welcome to come out and watch the parade on the steps of the National Gallery of Art, which is close to our assembly area, with other IAVA supporters.
+
+Currently, Memorial Day is expected to be in the mid 80s and cloudy. We will be standing outside for a relatively long period of time so plan accordingly - bring water, snacks and positive energy.
+
+If you have any questions please don&apos;t hesitate to reach out to us, membership@iava.org.
+
+Look forward to seeing you on the ground!
+
+Best,
+
+Jason
+--
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

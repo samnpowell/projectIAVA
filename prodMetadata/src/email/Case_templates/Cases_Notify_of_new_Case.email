@@ -1,0 +1,18 @@
+Subject: {!Case.Subject}
+Case #: {!Case.CaseNumber}
+
+Case Requestor: {!Case.Requestor__c}
+Priority: {!Case.Priority}
+{!if (isblank(Case.Audience_Product__c), 
+"" , "Audience/Product: " + Case.Audience_Product__c)}
+Worth how much time: {!Case.Worth_How_Much_Time__c}
+
+Case Owner: {!Case.OwnerFullName}
+Status: {!Case.Status}
+
+Click on the link to access the case: {!Case.Link}
+
+Description
+---------------
+
+{!Case.Description}

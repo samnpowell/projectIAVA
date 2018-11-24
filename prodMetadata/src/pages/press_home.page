@@ -1,0 +1,12 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" 
+	standardController="Press_Hit__c">
+ <!-- apex:composition template="{!$Site.Template}" -->
+ <apex:composition template="dc_Template_Subpages">
+   
+
+		<apex:define name="body">
+			<apex:include pageName="press_presshits"/>
+		</apex:define>
+
+  </apex:composition>
+</apex:page>

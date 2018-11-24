@@ -1,0 +1,18 @@
+Dear {!Contact.Name},
+
+Unfortunately there was an issue with the paperwork you uploaded to confirm IAVA membership.
+
+DETAILS:
+{!if(ispickval(Contact.Paperwork_Issue__c,"Orders"),"We do not accept orders deploying you or recalling you as they do not definitively document that you served in Iraq or Afghanistan.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"Upload Problem"),"It looks like your paperwork failed to transmit properly. The most likely reason is that your document size exceeds 5 MB. Please resize and try again.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"Illegible"),"We are unable to read the documentation due to the document being illegible or too small to read. Please rescan or resize your document and send again.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"Unable to open"),"Unfortunately we are unable to open your document. Please save it as a .jpeg or .pdf document and resend.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"Email not found"),"Unfortunately we are unable to find this email address in our system. Please resend with the email address you used to apply for membership.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"No ICM, ACM, GWOTEM, or service dates"),"Unfortunately we are unable to see a qualifying award or service location and dates listed on your document.","")}
+
+{!if (not(isblank(Contact.Approval_Related_Comments__c)), "COMMENTS: " + Contact.Approval_Related_Comments__c,"")}
+
+In order to join Community of Veterans we require specific documentation that verifies your status as a veteran of the most recent conflict in Iraq or Afghanistan – specifically Operations Iraqi and Enduring Freedom.
+
+You can review the list of required documents and submit new documents using this link:
+https://secure.iava.org/veteran-paperwork?tfa_ContactID={!Contact.Id}
+
+If you have any questions please feel free to contact us at membership@iava.org.
+
+Laura Slusarczyk
+Field Director

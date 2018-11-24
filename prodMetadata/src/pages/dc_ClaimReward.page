@@ -1,0 +1,40 @@
+<apex:page name="theClaimRewardPage" id="theClaimRewardPage" controller="dc_ctrl_requestreward" showHeader="false" sidebar="false" action="{!ClaimRewardAuthCheck}">
+
+<apex:composition template="dc_Template_Subpages">  
+        
+        <apex:define name="header">
+            <c:dc_Header />
+        </apex:define>
+         
+         <apex:define name="findreward">
+            
+        </apex:define>
+         
+        <apex:define name="body">
+            <apex:pageMessages />
+             <apex:include id="requestRewardInclude" pageName="dc_RequestReward" /> 
+        </apex:define>  
+        
+        <apex:define name="inthissection">
+            <apex:include pageName="dc_InThisSection"/>
+        </apex:define>
+        
+        <apex:define name="rewardsearch">
+            <c:dc_getareward />
+        </apex:define> 
+        
+        <apex:define name="featuredpartner">
+            <c:dc_featuredPartner />
+        </apex:define> 
+        
+        <apex:define name="PartnerLogo">
+            <c:dc_PartnerLogo /> 
+        </apex:define> 
+        
+        <apex:define name="Footer">
+            <c:dc_Footer />  
+        </apex:define> 
+
+</apex:composition> 
+ 
+</apex:page>

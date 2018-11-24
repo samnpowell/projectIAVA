@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Follow up from phone calls where we talked to the actual veteran.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>23JUN10 Phone Followup (Talked to Vet)</name>
+    <style>none</style>
+    <subject>Don&apos;t miss out</subject>
+    <type>text</type>
+</EmailTemplate>

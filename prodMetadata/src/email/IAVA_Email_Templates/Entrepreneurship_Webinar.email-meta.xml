@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Entrepreneurship Webinar</name>
+    <style>none</style>
+    <subject>Have an Idea? Want to Start Your Own Business? Join IAVA for a Live Chat About Veteran Entrepreneurship!</subject>
+    <type>text</type>
+</EmailTemplate>

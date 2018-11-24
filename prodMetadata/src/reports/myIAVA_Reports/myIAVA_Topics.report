@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Topic$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Topic$TalkingAbout</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Topic$TalkingAbout</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>myIAVA Topics</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ca_collab_2_0__Chatter_Topics_1_0__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Topic$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

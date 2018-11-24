@@ -1,0 +1,36 @@
+<messaging:emailTemplate subject="You're on the List!" recipientType="Contact" relatedToType="IAVAEvent_Attendee__c">
+  <!-- don't set a plain text body for now -->
+  <!-- <messaging:plainTextEmailBody >
+    Congratulations!
+    This is your new Visualforce Email Template.
+  </messaging:plainTextEmailBody> -->
+  <messaging:htmlEmailBody >
+   <div style="max-width:563px; margin:0 auto;">
+    <header><center><apex:image id="headerImage" value="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmBE&oid=00D4B0000008x9W&lastMod=1464037248000" width="173" height="70"/></center></header>
+    <apex:outputPanel rendered="true" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p>Hi&nbsp;<apex:outputText value="{!relatedTo.Event_Attendee_s_First_Name__c}"/>,</p>
+      <p>Thanks for signing up for&nbsp;<apex:outputText value="{!relatedTo.Event_Name__c}"/>! You&apos;re on the list!</p>
+      <apex:outputPanel >
+        <ul style="list-style-type:none">
+          <li style="margin-bottom: 10px;"><b>Event Name:</b>&nbsp;<apex:outputText value="{!relatedTo.Event_Name__c}"/></li>
+          <li style="margin-bottom: 10px;"><b>Event Details:</b>&nbsp;<apex:outputText value="{!relatedTo.Event__r.Event_Public_Details__c}" escape="false"/></li>
+          <li style="margin-bottom: 10px;"><b>Event Date:</b>&nbsp;<apex:outputText value="{0, date, EEEE',' MMMM d',' yyyy}"><apex:param value="{!relatedTo.Event_Date__c}"/></apex:outputText></li>
+          <li style="margin-bottom: 10px;"><b>Event Time:</b>&nbsp;<apex:outputText value="{!relatedTo.Event_Times__c}"/></li>
+        </ul>
+      </apex:outputPanel>
+      <p>We&apos;ll look forward to seeing you there, but in the meantime, here are some other ways to get involved:</p>
+      <apex:outputPanel >
+        <ul>
+          <li style="margin-bottom: 10px;">If you&apos;re in need of resources or support, reach out to IAVA&apos;s&nbsp;<apex:outputLink value="http://iava.org/rrrp" id="rrrpLink">Rapid Response Referral Program</apex:outputLink>. For more information please reference our&nbsp;<apex:outputLink value="https://iava.org/rrrp-faqs/" id="rrrpFAQ">FAQ page</apex:outputLink>.</li>
+          <!--<li style="margin-bottom: 10px;"><apex:outputLink value="https://iava.org/press/" id="dnbLink">Sign up</apex:outputLink> for our Daily News Brief for the latest on what&apos;s happening and how it impacts our community.</li>-->
+          <li style="margin-bottom: 10px;">Learn more about IAVA&apos;s&nbsp;<apex:outputLink value="https://iava.org/big6/" id="big6">Big 6 Priorities</apex:outputLink> and IAVA&nbsp;<apex:outputLink value="https://iava.org/iava-supported-legislation-2/" id="leg">supported legislation</apex:outputLink>. Support our efforts by&nbsp;<apex:outputLink value="https://iava.org/take-action/" id="takeActionLink">taking action</apex:outputLink>!</li>
+          <li style="margin-bottom: 10px;"><apex:outputLink value="https://www.oscarmike.org/collections/iava" id="storeLink">Snag some gear!</apex:outputLink> Rep IAVA in style with some awesome gear from Oscar Mike.</li>
+        </ul>
+      </apex:outputPanel>
+      <p>Thanks again for being a part of the community. We&apos;ll see you soon!</p>
+      <p>Best,</p>
+      <p>The IAVA Team</p>
+    </apex:outputPanel>
+   </div>
+  </messaging:htmlEmailBody>
+</messaging:emailTemplate>

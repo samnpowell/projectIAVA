@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;center&gt;&lt;h2&gt;Your access to the CRM has been Terminated!&lt;/h2&gt;&lt;img src=&quot;http://thumbs.dreamstime.com/thumb_4/1098209712hdFlkJ.jpg&quot;&gt;&lt;h3&gt;Your position has been replaced by the zombie you failed to kill during your interview!&lt;/h3&gt;&lt;/center&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>wide</width>
+</HomePageComponent>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Bill_Title__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Active__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Position__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Latest_Major_Action__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Congressional_Session__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Introduced_Date__c</field>
+    </columns>
+    <columns>
+        <field>FK_CUSTENT_OWNER_NAME</field>
+    </columns>
+    <description>List of legislation for active Policy Priorities</description>
+    <filter>
+        <criteriaItems>
+            <column>Policy_Rec__c.Active__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Legislation by Policy Priority - Active</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Policy_Rec__c$PRec_Leg_junction__c@PRec_Leg_junction__c.Legislation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Policy_Rec__c.Retire_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

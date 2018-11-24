@@ -1,0 +1,20 @@
+<apex:page controller="dc_ctrl_template" sidebar="false" showHeader="false" standardStylesheets="false">
+
+<head>
+    <title>{!title}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name = "viewport" content = "width = device-width">  
+    <link rel="shortcut icon" href="{!$Resource.IAVA_Favicon}" />
+</head>           
+
+<body style="background-color:#D3C3A5; font-family:TrebuchetMS,Tahoma,Verdana,Arial,Helvetica,sans-serif;">
+    <div id="bodywrap">
+    </div>  
+    <div id="page">
+       <apex:insert name="body" />
+    </div>
+ 
+<site:googleAnalyticsTracking />
+</body>
+<!--  </html>  -->
+</apex:page>

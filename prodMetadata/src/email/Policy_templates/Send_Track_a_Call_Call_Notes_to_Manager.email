@@ -1,0 +1,5 @@
+Link to Track-a-Call:
+https://na8.salesforce.com/{!Activity_Junction__c.Id}
+
+Call Notes:
+{!Activity_Junction__c.Call_Notes__c}

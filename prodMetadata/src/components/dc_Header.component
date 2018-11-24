@@ -1,0 +1,65 @@
+<apex:component >
+
+<style type="text/css">
+	.pathfinder-button a {
+	  display:block;
+	  height:37px;
+	  width:111px;
+	  background:url("{!URLFOR($Resource.iavaplus,'images/vetcareers.png')}") no-repeat top left;
+	  position: relative;
+	  top: -3px;
+}
+	/* .pathfinder-button a:hover { background-position:bottom left; } */
+	.pathfinder-button {
+	  float:right;
+	  margin:0 2px;
+	}
+	.donate-button a {
+	  display:block;
+	  height:37px;
+	  width:104px;
+	  background:url("{!URLFOR($Resource.iavaplus,'images/donate-now.png')}") no-repeat top left;
+	}
+	.donate-button {
+	  float:right;
+	  margin:0 31px 0 2px;
+	}
+	.rewards-button {
+		margin-right: 2px;
+	}
+	.rewards-button a {
+	  position: relative;
+	  top: -4px;
+	}
+</style>
+
+<div id="header">
+        <div id="header-inner">
+            <div id="logo-title">
+                <div id="logo"><a href="http://iava.org" title="Home" rel="home"><img src="{!URLFOR($Resource.dc_css,'images/logo180.png')}" alt="Home" id="logo-image" width="180" height="77" alt="IAVA - Iraq and Afghanistan Veterans of America" id="logo-image" /></a></div>
+            </div> <!-- /#logo-title -->
+            <div class="donate-button">
+            	<a href="http://iava.org/donate"></a>
+           	</div>
+           	<div class="pathfinder-button">
+            	<a href="https://iava.secure.force.com/iavaplus?startUrl=/apex/Pipeline"></a>
+           	</div>
+             <div class="rewards-button">
+                <a href="http://rucksack.iava.org"></a>
+            </div>
+            
+                        <!-- begin header links -->
+            <div id="block-block-actionlinks" class="block block-views" style="display:none">
+                <div class="block-inner">
+                    <div class="content">
+                        <ul class="links">
+                            <li class="menu-getupdates"><a href="http://iava.org/supporterjoin" title="Get Updates"></a></li>
+                            <li class="menu-tellafriend"><a href="http://iava.org/spread-word" title="Tell A Friend"></a></li>
+                            <li class="menu-donate"><a href="http://iava.org/donate" title="Donate"></a></li>
+                        </ul>
+                    </div>
+                </div>          <!-- end begin header links -->     
+            </div>
+        </div>
+    </div>
+</apex:component>

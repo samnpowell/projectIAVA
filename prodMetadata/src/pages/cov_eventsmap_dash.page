@@ -1,0 +1,13 @@
+<apex:page showHeader="false" sidebar="false">
+	
+		<c:cov_eventsmap_code mapHeight="200" searchBoxFontSize="12px" searchBoxPosition="TOP_RIGHT" />
+
+
+		<section class="vt-map">
+			<input id="pac-input" class="controls" type="text" placeholder="Search" />
+			<div id="vt-map-canvas" class=""></div>
+		</section><!-- vt-map -->
+
+
+
+</apex:page>

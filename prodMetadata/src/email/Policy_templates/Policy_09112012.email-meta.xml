@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Defend the New GI Bill - Support HR. 4057</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Policy - 09112012</name>
+    <style>none</style>
+    <subject>Defend the New GI Bill - Support HR. 4057</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Protecting the Post-9/11 GI Bill is one of the most important ways to help veterans get jobs. The GI Bill provides the best source of career-ready education and training for hundreds of thousands of veterans and their families. H.R. 4057 significantly improves transparency and reporting of school information and student complaints so that students can decide how best to make the Post-9/11 GI Bill work for themselves and their families.
+
+H.R. 4057 also contains important provisions that will:
+
+*Help vets find jobs by requiring states to consider military training and education for civilian job credentialing and licensing
+*Ensure the safety of homeless vets by requiring facilities to meet safety and fire codes
+*Register veterans exposed to open-air burn pits in Iraq and Afghanistan
+
+Can veterans rely on your support? Will your boss vote to pass H.R. 4057?
+
+If you have any questions, please feel free to call or email.
+
+Thanks for having our back,
+
+Ramsey
+
+--
+
+Ramsey Sulayman
+
+Legislative Associate
+
+Iraq and Afghanistan Veterans of America
+
+202-544-7692
+
+ramsey@iava.org</textOnly>
+    <type>custom</type>
+</EmailTemplate>

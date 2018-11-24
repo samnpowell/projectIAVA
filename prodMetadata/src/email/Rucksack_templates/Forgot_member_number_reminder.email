@@ -1,0 +1,9 @@
+Hi {!Contact.FirstName},
+
+You have requested that we send your IAVA Member Number to your email address on file.  
+
+Member Number: {!NullValue(Contact.Membership_ID__c, "Not Found - please contact us")}
+
+Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

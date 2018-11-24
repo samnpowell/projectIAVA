@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>API_Calls__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Salesforce limits, such as API Calls.</inlineHelpText>
+        <label>Limits &amp; Configuration</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Applications_Candidate_Reviews__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Applications, Candidate Reviews, and any other objects created to track the hiring process (as well as any related objects).</inlineHelpText>
+        <label>Applications</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Campaigns_Campaign_Members__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Campaigns and Campaign Members (as well as any related objects).</inlineHelpText>
+        <label>Campaigns</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cases__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Cases (as well as any related objects).</inlineHelpText>
+        <label>Cases</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Communities_Groups_and_Posts__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Communities, Groups, Portal Users, Posts and any other objects created to track our Salesforce Community (as well as any related objects).</inlineHelpText>
+        <label>Communities</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contacts_Donors_Members_KnowWho__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Contacts (also referred to as Donors, Members, Supporters, KnowWho Contacts, Press Contacts, among others), as well as any related objects.</inlineHelpText>
+        <label>Contacts</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DC_Events_Track_a_Calls__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on DC Events, Track a Calls, and any other objects created to track our advocacy efforts (as well as any related objects).</inlineHelpText>
+        <label>DC Events &amp; Track a Calls</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Email_Sends__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Email Sends and any other objects created to track our outreach through ExactTarget (as well as any related objects).</inlineHelpText>
+        <label>Email Sends</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Events_Attendees_and_Budgets__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on IAVA Events, Event Attendees, and Budget Requests (as well as any related objects).</inlineHelpText>
+        <label>Events</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Focus_Areas_Policy_Recs_and_Leg__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Focus Areas, Policy Recommendations, Legislation, and any other objects created to track our policy agenda (as well as any related objects).</inlineHelpText>
+        <label>Policy Agenda</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Gives_Give_Instances_and_Give_Requests__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Gives, Give Instances, Give Requests and any other objects created to track rewards (as well as any related objects).</inlineHelpText>
+        <label>Gives</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Grant_Obligations_Grant_Deadlines__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Grant Obligations, Grant Deadlines, and any other objects created to track grants (as well as any related objects).</inlineHelpText>
+        <label>Grant Tracking</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Inventory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Inventory Categories, Inventories, Line Items, and any other objects created to track inventory (as well as any related objects).</inlineHelpText>
+        <label>Inventory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Test_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Test Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Training_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Training Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Level_of_Expertise__c</fullName>
+        <externalId>false</externalId>
+        <label>Level of Expertise</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Needs training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not tested</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Needs additional training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Needs improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pass</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Super user</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Library_Documents__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Library Documents and any other objects created to track articles relating to research (as well as any related objects).</inlineHelpText>
+        <label>Library Documents</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Locations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to run a location-based report.</inlineHelpText>
+        <label>Locations</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NGIB_Queries__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on NGIB Queries (as well as any related objects).</inlineHelpText>
+        <label>NGIB Queries</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunities__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Opportunities, also known as donations or potential donations, (as well as any related objects).</inlineHelpText>
+        <label>Opportunities</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Organizations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Organizations (as well as any related objects).</inlineHelpText>
+        <label>Organizations</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Partnerships__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Partnerships and any other objects created to track existing and potential partnerships (as well as any related objects).</inlineHelpText>
+        <label>Partnerships</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Press_Hits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Press Hits and any other objects created to track anything relating to IAVA in the media (as well as any related objects).</inlineHelpText>
+        <label>Press Hits</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Process</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>This process either does not exist or is not active. You must either select a different process or re-activate the existing one.</errorMessage>
+            <filterItems>
+                <field>Process__c.IsActive__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Process__c</referenceTo>
+        <relationshipLabel>Users</relationshipLabel>
+        <relationshipName>Users</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Processes_Process_Knowledge__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Processes, Process Knowledge, and any other objects created to track the the business processes captured in and managed through Salesforce (as well as any related objects).</inlineHelpText>
+        <label>Process Tracking</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Programs_Referrals__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Programs, Referrals, and any other objects created to track the rrrp program (as well as any related objects).</inlineHelpText>
+        <label>Programs &amp; Referrals</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Stats_Stat_Measurements__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Stats, Stat Measurements, and any other objects created to track statistics the research team would like to watch (as well as any related objects).</inlineHelpText>
+        <label>Statistics</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tasks_Calls_Emails_Meetings__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Tasks (also referred to as calls, emails, or meetings), as well as any related objects.</inlineHelpText>
+        <label>Tasks</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>User</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>The user you are searching for either does not exist or is not active. A process can only be assigned to an active user.</errorMessage>
+            <filterItems>
+                <field>User.IsActive</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Process</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Users__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Users and any other objects created to track Salesforce users and licenses (as well as any related objects).</inlineHelpText>
+        <label>Users</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Wait_Times__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>The User should know how to report on Wait Times and any other objects created to track how our members interact with the VA (as well as any related objects).</inlineHelpText>
+        <label>Wait Times</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>userIsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>userIsActive</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Process Knowledge</label>
+    <nameField>
+        <displayFormat>PNK-{0}</displayFormat>
+        <label>Process Knowledge Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Process Knowledge</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

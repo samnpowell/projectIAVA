@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is the email sent to confirmed members who have submitted a 2nd set of paperwork</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>UPDATED Paperwork Resubmitted for Confirmed Member</name>
+    <style>none</style>
+    <subject>Your Service is Confirmed!</subject>
+    <textOnly>{!Contact.FirstName},
+
+Thanks for submitting paperwork to confirm your service! 
+
+Now that we know a little bit more about you, we hope you’ll join in with the community of veterans on myIAVA, our virtual veterans hall. You’ll have access to exclusive veteran-only groups, and an opportunity to connect with others that share similar interests and experiences. 
+
+We also hope that you’ll Invite your friends to join. We want to reach out to every OIF/OEF/OND vet in the country and invite them to become part of our growing community. From San Diego to New York City, Dallas to Minneapolis - in small towns and large cities - our community is growing, and we hope you’ll invite your friends to join us too!
+
+Thanks again, and we hope to chat with you soon!
+
+Best, 
+
+Team IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

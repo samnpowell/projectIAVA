@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Info for a call to talk about the Las Vegas Day of Action</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Las Vegas Day of Action CALL</name>
+    <style>none</style>
+    <subject>Join IAVA THIS FRIDAY for a Teleconference on the SAV Act</subject>
+    <type>text</type>
+</EmailTemplate>

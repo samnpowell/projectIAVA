@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+    </head>
+    <body style="margin: 0px; padding: 0px;">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#daccae">
+            <tbody>
+                <tr>
+                    <td valign="top" align="center">
+                    <table width="622" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600"><a href="http://www.iava.org/"><img width="600" height="106" border="0" alt="IAVA" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/iava_header.png" /></a></td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="top" bgcolor="#ffffff" align="center"><img width="600" height="17" alt="" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/bg.png" />
+                                <table width="600" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td height="10" colspan="3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20"></td>
+                                            <td width="660" valign="top" align="left">
+                                            <p>Dear {!Contact.FirstName},</p>
+ 
+<P>Thank you for signing up to Carry the Load with IAVA.</P> 
+
+<P>We will be meeting up at the Central Park entrance located at 7th Ave and 110th St at 7:45 am tomorrow morning rain or shine. Over the five mile course we will make our way through the park, Times Square and ultimately end up at IAVA headquarters at 292 Madison Ave. You are all invited to join us afterwards in IAVA HQ for coffee and refreshments.</P>
+
+<P><strong>When:</strong> 7:45 am tomorrow morning<br>
+<strong>Where:</strong> 7th Ave & 110th St</P>
+
+<P>I look forward to seeing you all there!</P>
+
+<P>Sincerely,<br>
+Anthony</P>
+
+<P>Anthony Pike<br>
+Membership Coordinator<br>
+Iraq and Afghanistan Veterans of America (IAVA)</P></td>
+                                            <td width="20"></td>
+                                        </tr>
+                                        <tr>
+                                            <td height="50" colspan="3"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="middle" height="38" bgcolor="#3d4722" align="center"><a href="http://www.iava.org/donate"><img width="68" height="38" border="0" alt="DONATE" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_donate.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/contact-us"><img width="66" height="38" border="0" alt="CONTACT US" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_contactus.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/spread-word"><img width="49" height="38" border="0" alt="RECRUIT" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_recruit.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/veteranjoin"><img width="61" height="38" border="0" alt="SUBSCRIBE" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_subscribe.png" /></a></td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="top">
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="431" valign="middle" align="left">
+                                            </td>
+                                            <td width="170" valign="middle" height="48" align="right"><img width="115" height="20" alt="CONNECT WITH IAVA:" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/txt_connect.png" /><a href="http://www.facebook.com/IAVA.org"><img width="28" height="20" border="0" alt="Facebook" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/share_fb.png" /></a><a href="http://twitter.com/iava"><img width="24" height="20" border="0" alt="Twitter" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/share_tw.png" /></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </td>
+                                <td width="11"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

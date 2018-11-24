@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Contact.npe01__AlternateEmail__c</field>
+    </columns>
+    <columns>
+        <field>Contact.General_Notes__c</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>PHONE3</field>
+    </columns>
+    <columns>
+        <field>Account.npe01__LastDonationDate__c</field>
+    </columns>
+    <columns>
+        <field>Account.npe01__LifetimeDonationHistory_Amount__c</field>
+    </columns>
+    <description>Report pulled off an underlying outreach campaign with more contact details pulled in</description>
+    <format>Tabular</format>
+    <name>LA Event Outreach - April</name>
+    <params>
+        <name>scopeid</name>
+        <value>701C0000000Qtji</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignContact</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

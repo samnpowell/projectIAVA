@@ -1,0 +1,12 @@
+Hello,
+
+Press Hit: {!Press_Hit__c.Name} has been created by {!Press_Hit__c.CreatedBy}
+
+Article Title: {!Press_Hit__c.Article_Title__c}
+Story Date: {!Press_Hit__c.Story_Date__c}
+Press Outlet: {!Press_Hit__c.Press_Outlet__c}
+Topic: {!Press_Hit__c.Topic__c}
+Details/ Show: {!Press_Hit__c.Details_Show__c}
+Link to the story: {!Press_Hit__c.Link__c}
+
+For more details, here is a link: https://na8.salesforce.com/{!Press_Hit__c.Id}

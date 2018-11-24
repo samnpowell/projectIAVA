@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>STHSuperbowl</name>
+    <style>none</style>
+    <subject>Thank you for signing our Superbowl petition!</subject>
+    <textOnly>Dear friend,
+Thank you for signing our Superbowl Sunday petition.
+Want to learn more about ways you can support our nation&apos;s newest generation of heroes?
+Thousands of Americans are committed to ensuring that our nation does right by the brave men and women who have served our country in Iraq and Afghanistan. Become an IAVA Member Veteran today, and get involved online at Community of Veterans and on the ground at local events in your community.
+Not an Iraq or Afghanistan veteran?  You don&apos;t need to be a veteran to support the veterans&apos; movement.  Sign up to become an IAVA Supporter and we&apos;ll send you occasional action alerts about ways to get involved to support our nation&apos;s troops and veterans.
+Thank you for standing with us, and enjoy the game!
+Sincerely,
+Paul
+Paul Rieckhoff
+Iraq Veteran
+Founder &amp; Executive Director
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

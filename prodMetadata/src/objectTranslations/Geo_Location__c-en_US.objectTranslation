@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Geo Location</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Geo Locations</value>
+    </caseValues>
+    <fields>
+        <help><!-- May contain valid XHTML markup 
+http://www.w3.org/TR/xhtml1/ --></help>
+        <label><!-- About Us --></label>
+        <name>About_Us__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the style of balloon that will appear when user clicks on the marker --></help>
+        <label><!-- Balloon Template --></label>
+        <name>Balloon_Template__c</name>
+        <picklistValues>
+            <masterLabel>Tall Photo</masterLabel>
+            <translation><!-- Tall Photo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text and Photo Banner</masterLabel>
+            <translation><!-- Text and Photo Banner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text and Tall Photo</masterLabel>
+            <translation><!-- Text and Tall Photo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Text and Weblink</masterLabel>
+            <translation><!-- Text and Weblink --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wide Photo</masterLabel>
+            <translation><!-- Wide Photo --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Footer Info --></label>
+        <name>Footer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geocode Status --></label>
+        <name>Geocode_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- The URL of an icon for this location, up to 64 x 64 px --></help>
+        <label><!-- Icon URL --></label>
+        <name>Icon_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Logo URL --></label>
+        <name>LogoURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo Caption --></label>
+        <name>PhotoCaption__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo Title --></label>
+        <name>PhotoTitle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo URL --></label>
+        <name>PhotoURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Link Name --></label>
+        <name>WebLinkName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>WebLink__c</name>
+    </fields>
+    <fields>
+        <label><!-- lat --></label>
+        <name>lat__c</name>
+    </fields>
+    <fields>
+        <label><!-- lon --></label>
+        <name>lon__c</name>
+    </fields>
+    <layouts>
+        <layout>Geo Location Layout</layout>
+        <sections>
+            <label><!-- About Us --></label>
+            <section>About Us</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Information --></label>
+            <section>Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Valid Latitudes are less than 85.0 North and greater than -85.0 South --></errorMessage>
+        <name>Valid_Lat</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Valid Longitudes are greater than -180.0 and less than 180.0 --></errorMessage>
+        <name>Valid_Lon</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Preview_Location --></label>
+        <name>Preview_Location</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reposition_Location --></label>
+        <name>Reposition_Location</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,5 @@
+Hi {!Case.OwnerFirstName},
+
+Your client has completed the intake for Case Number: {!Case.CaseNumber}, https://na8.salesforce.com/{!Case.Id}
+
+Thanks!

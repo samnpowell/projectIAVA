@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>T2T 2015</name>
+    <style>none</style>
+    <subject>Tunnel to Towers with IAVA</subject>
+    <textOnly>Hi {!IAVAEvent_Attendee__c.Event_Attendee_s_First_Name__c},
+
+Thanks so much for your interest in our Tunnel to Towers event! We’d love to get your feedback, https://iava.getfeedback.com/r/6U7cn8rc?IAVAEvent_Attendee__c={!IAVAEvent_Attendee__c.Id} on the how things went, even if you weren’t able to attend. IAVA invested in the Tunnel to Towers festivities this year to create the strongest possible experience for our members, and we need your input to help make the next event even better. Take the next three minutes to ensure your voice is heard and sound off today! https://iava.getfeedback.com/r/6U7cn8rc?IAVAEvent_Attendee__c={!IAVAEvent_Attendee__c.Id}
+
+And don’t forget, Veterans Day is around the corner! Stay tuned for more information on IAVA’s festivities for November 11th. Until then, if you’re interested in helping make this year’s event a smash, email Rebecca Forbes at rebecca.forbes@iava.org to find out more about volunteer opportunities!
+
+Thank you!
+
+Best,
+Team IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

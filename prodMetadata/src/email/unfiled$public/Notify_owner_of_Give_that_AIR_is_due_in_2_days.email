@@ -1,0 +1,9 @@
+Hello,
+
+An AIR for your give, {!Give__c.Name}, will be due in 2 days.
+
+Click here: http://na8.salesforce.com/{!Give__c.Id}  to go to your give, and click the Create AIR button to start the process. 
+
+Once you are done, check on the AIR Completed box.
+
+Thank You!

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Activity_Junction__c.Date_of_Call__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.kw__Full_Name_link__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_ACC_NAME</field>
+    </columns>
+    <columns>
+        <field>Activity_Junction__c.Assigned_To__c</field>
+    </columns>
+    <columns>
+        <field>Activity_Junction__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Activity_Junction__c.Call_Notes__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>This week&apos;s tracked DC calls</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Activity_Junction__c@Activity_Junction__c.Contact__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Activity_Junction__c.Date_of_Call__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Activity_Junction__c.Date_of_Call__c</dateColumn>
+        <interval>INTERVAL_THISWEEK</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2012 LA Heroes call set up</name>
+    <style>none</style>
+    <subject>IAVA&apos;s 4th Annual Heroes Celebration is around the corner</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For Alternate list</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>STH2012 Alternates</name>
+    <style>none</style>
+    <subject>Storm the Hill 2012 ground team alternate</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for applying to Storm the Hill 2012!
+
+Throughout our rigorous and comprehensive selection process, you have excelled and showed us you are a powerful voice for new veterans. We have been forced to make incredibly difficult decisions in order to select only a few veterans from hundreds of applications to join our team.
+
+At this time, we would like to place you on our wait-list for Storm the Hill 2012. This means that in the event that one of the current candidates is not able to join us, we may notify you and offer their place. We will inform you if you have been selected by Wednesday, March 21st.
+
+n the meantime, please head over to our Storm the Hill War Room to keep up with the latest with Storm the Hill 2012. The War Room can be found at www.facebook.com/STHWarRoom.
+
+Lastly, we thank you for your patience, dedication and leadership in this process. if you have any questions or concerns, please contact Anthony Pike at Anthony@iava.org.
+
+Sincerely,
+Jason
+
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

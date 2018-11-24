@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Save the date sent to local veterans we are asking to attend the Heroes Gala on 11/09/11.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Heroes Celebration save the date --- out of towners</name>
+    <style>none</style>
+    <subject>Save the Date for IAVA&apos;s 2011 Heroes Celebration</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I hope all is well. 
+
+I’m writing to invite you to join us  in the Iraq and Afghanistan Veterans of America’s Fifth Annual Heroes Gala on Wednesday, November 9 at Cipriani 42nd Street in New York City. We would be thrilled if you could attend the event as our guest. You can find more information at &lt;http://iava.org/iava-fifth-annual-heroes-gala&gt;.
+
+The Heroes Gala will honor Corporal Aaron Mankin –Iraq veteran, wounded warrior and spokesperson/patient of UCLA’s Operation Mend as well as Stephen Colbert, host of Comedy Central’s The Colbert Report; NBC Nightly News Anchor Brian Williams will be MC. It would be great if you could join IAVA to help share your story that will ensure that all who serve receive the honor, care, and support they deserve. 
+
+Unfortunately, IAVA will be unable to cover any travel costs to attend the Heroes Celebration. I will be happy to help you find affordable accommodations if you are able to join us.
+
+If you need more information about the event, please let me know. 
+
+Please RSVP to me at Anthony@iava.org no later than Wednesday, November 2. 
+
+Sincerely,
+Anthony
+
+P.S. We would love it if you can join us in uniform, no worries if that won&apos;t work.
+-- 
+Anthony Pike
+Membership Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue, 10th Floor
+New York, NY 10017
+(212) 982-9699
+www.iava.org 
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

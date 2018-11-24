@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Green Zone No Tickets</name>
+    <style>none</style>
+    <subject>Join IAVA at Geisha House on 3/10</subject>
+    <textOnly>Dear {!Contact.FirstName},
+ 
+Since we were unable to accommodate your ticket request for Green Zone, we would like to make up for it by inviting you to our exclusive membership event at Geisha House this Wednesday, March 10th at 10:00 PM. 
+ 
+Join us a for free drinks and food, and to hang out with other OIF/OEF vets. Sign up here: http://iava.org/geishahouse 
+ 
+When: 10:00 PM - Midnight 
+
+Where: Geisha House (6633 Hollywood Boulevard, Los Angeles, CA 90028-6207) - Map here: http://bit.ly/aFI8mg 
+ 
+We hope you’ll give us another chance and let us make it up to you. Don’t forget to sign up: http://iava.org/geishahouse 
+ 
+NOTE: You must be 21 years of age to enter Geisha House. Dress code is smart casual. 
+ 
+We’re looking forward to seeing you there. 
+ 
+Best, 
+ 
+Blake
+ 
+Blake Henderson
+
+Deputy Membership Director
+
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

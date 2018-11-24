@@ -1,0 +1,459 @@
+<apex:page id="pg" controller="IAVAPlus_SignIn" sidebar="true" showHeader="false" standardStylesheets="false" action="{!init}">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/dc_style4.css?G')}" />
+    <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/rewards.css?G')}" />
+    
+    <!--[if IE]-->
+    <apex:outputpanel rendered="{!if(oldieversion == 'false',true,false)}" >
+    <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/ie.css?G')}" />
+    </apex:outputpanel>
+    
+    <!--[if IE 7]-->
+    <apex:outputpanel rendered="{!if(oldieversion == 'true',true,false)}" >
+    <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/ie7.css?G')}" />
+    <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/ie.css?G')}" />
+    </apex:outputpanel>
+    
+    <!-- -if MAC -->
+    <apex:outputpanel rendered="{!if(Macos == 'true',true,false)}" >
+    <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/macosx.css?G')}" />
+    </apex:outputpanel>
+    
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/actions.js?G')}" />
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/jquery-ui-1.7.2.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/jquery.bind.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/ui.checkbox.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/jquery-1.3.2.min.js')}" />
+    
+    <!-- overwrite style in rewards.css -->
+    <style>
+    	#page {
+    		overflow: hidden;
+    	}
+        .rewards-popup .block {
+            height:525px;
+            background:url("{!URLFOR($Resource.iavaplus,'images/bg_iavaplus_popup_box.png')}") top left;
+            border-bottom-color: #052A22;
+        }
+        .rewards-popup a {
+            color: #E0DF4B;
+        }
+        .rewards-popup .block-inner, #main .block-inner {
+        	background: transparent;
+        }
+        .vet-of span.ui-checkbox {
+			display: inline-block;
+        	float: none;
+        }
+        .vet-of p.lbl {
+        	margin-bottom: 28px;
+        }
+        #main .block {
+        	width: 414px;
+        }
+        #main .block .content {
+        	color: #d3c3a5;
+        }
+        #sidebar-right {
+        	display: none;
+        }
+        #subcontent {
+        	width: 904px;
+        }
+        #subcontent #subcontent-area {
+        	padding-left: 12px;
+        }
+        .block h2.title img {
+        	margin-left: -32px;
+        }
+        .node-type-page .node-inner {
+        	padding-left: 0;
+        	padding-right: 0;
+        }
+        #block-block-havenumber #iavaplus-explanation {
+            margin-bottom: 2em;
+        }
+        #block-block-havenumber form {
+            margin-top: 2em;
+        }
+        #block-block-havenumber #login-prompt {
+            padding-top: 24px;
+            border-top: 1px solid #083932;
+        }
+        #block-block-neednumber .col-right {
+            border-left-color: #083932;
+        }
+        #block-block-neednumber #need-plus .col-right {
+            height: auto;
+            margin-bottom: 34px;
+        }
+        #block-block-neednumber #need-plus .col-right .submit {
+            margin-top: 2px;
+        }
+        #block-block-neednumber #need-signup .content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<div id="myPanel">
+    <div name="body" class="rewards-popup">
+        <body class="rewards-popup">
+        
+            <div id="page">
+                <div id="page-inner">
+                
+                    <div id="block-block-havenumber" class="block block-block">
+                        <div class="block-inner">
+                            <h2 class="title">
+                                <apex:image URL="{!URLFOR($Resource.iavaplus,'images/header_haveaniavapluslogin.png')}" width="414" height="60" alt="Have an IAVA Plus Login?" />
+                            </h2>
+                            
+                            <div class="content"> 
+                                <div id="iavaplus-explanation">
+                                <p>IAVA is in the process of transitioning all of our online services to use the IAVA Plus Login. Eventually that will
+                                    include the Rucksack (where you currently use your member number to log in) and Community of Veterans (COV) where
+                                    you currently have a separate login.</p>
+                                <p>We know it can be confusing to have multiple logins, and we thank you for bearing with us as we transition all
+                                    of our services to the IAVA Plus Login.</p>
+                                </div>
+                                    
+                                    
+                                    <div id="login-prompt"><p>LOG IN WITH IAVA PLUS:</p></div>
+                                
+                                <apex:form id="frm">
+                                    <apex:actionRegion > 
+                                        <div class="container">
+                                            <label form="username"><img src="{!URLFOR($Resource.iavaplus,'images/form_label_iavaplus_username.png')}" width="129" height="8" alt="Username (email address)" /></label> 
+                                            <div class="text-wrapper"><apex:inputtext id="Uname" value="{!username}" onfocus="clearField(this,'Username');" onblur="replaceField(this,'Username');" styleclass="form-text" tabindex="1" /></div> 
+                                        </div>
+                        
+                                        <div class="container email">
+                                            <label form="password"><img src="{!URLFOR($Resource.iavaplus,'images/form_label_iavaplus_password.png')}" width="122" height="8" alt="Password (for IAVA Plus)" /></label> 
+                                            <div class="text-wrapper"><apex:inputSecret id="Password" value="{!password}" onfocus="clearField(this,'Password');" onblur="replaceField(this,'Password');" styleclass="form-text"  tabindex="2" /></div> 
+                                            <p class="forgot">
+                                                <apex:commandlink value="Forgot Password?" oncomplete="forgot(); parent.$.fn.colorbox.close();" tabindex="3" />
+                                            </p>
+                                        </div>
+                                        
+                                        <p class="submit">
+                                            <apex:commandLink action="{!iavaPlusLogin}" onClick="setClicked()" oncomplete="iavalogin1();">
+                                                <input id="CLICK" type="image" src="{!URLFOR($Resource.iavaplus,'images/form_submit_iavapluscontinue.png')}" onmouseover="javascript:this.src='{!URLFOR($Resource.iavaplus,'images/form_submit_iavapluscontinue_ovr.png')}';" onmouseout="javascript:this.src='{!URLFOR($Resource.iavaplus,'images/form_submit_iavapluscontinue.png')}';" value="submit" alt="Continue" class="form-submit" tabindex="4" />
+                                            </apex:commandLink>
+                                        </p>
+                                        
+                                        <apex:outputPanel id="loginmessage" >
+                                        	<apex:outputtext value="{!loginMsg}" escape="false" style="color: #FF0000;" />
+                                		</apex:outputPanel>
+                                        
+                                        <apex:actionFunction name="iavalogin" reRender="loginmessage" oncomplete="iavalogin2();"/>
+                                    </apex:actionRegion>
+                                </apex:form>
+                            
+                            </div> <!-- class="content" -->
+                        
+                        </div> <!-- class="block-inner" -->
+                    </div> <!-- id="block-block-havenumber" -->
+                    
+                    <div id="block-block-neednumber" class="block block-block">
+                        <div class="block-inner" id="need-plus">
+                            <h2 class="title">
+                                <apex:image URL="{!URLFOR($Resource.iavaplus,'images/header_needaniavapluslogin.png')}" width="414" height="60" alt="Need an IAVA Plus login? (for Confirmed Members)" />
+                            </h2>
+                            
+                            <div class="content" >
+                                <h5><apex:outputlabel id="rm" value="{!regMsg}" style="display: none;color: #FFFFFF;" /></h5>
+                                <p>Enter the email that you used to register as an IAVA member. You will receive a link to set your IAVA Plus Login password.</p>
+                                
+                                <apex:form id="frm0">
+                                    <apex:actionRegion >
+                                        <div class="col-left">
+                                            <div class="container">
+                                                <label form="email"><img src="{!URLFOR($Resource.iavaplus,'images/form_label_iavaplus_email.png')}" width="34" height="8" alt="Email:" /></label>
+                                                <div class="text-wrapper"><apex:inputtext id="Email" value="{!email}" onfocus="clearField(this,'Email');" onblur="replaceField(this,'Email');" styleclass="form-text" /></div> 
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-right">
+                                            <p class="submit">
+                                                <apex:commandLink action="{!iavaPlusRegister}" onClick="setClick2()" oncomplete="iavareg1();">
+                                                    <input id="CLICK2" type="image" src="{!URLFOR($Resource.iavaplus,'images/form_submit_iavaplussubmit.png')}" onmouseover="javascript:this.src='{!URLFOR($Resource.iavaplus,'images/form_submit_iavaplussubmit_ovr.png')}';" onmouseout="javascript:this.src='{!URLFOR($Resource.iavaplus,'images/form_submit_iavaplussubmit.png')}';" value="submit" alt="Submit" class="form-submit" />
+                                                </apex:commandLink>
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="clearfix"></div>
+                                        
+                                        <apex:outputpanel id="regmessage">
+                                        	<apex:outputtext value="{!regMsg}" escape="false" style="color: #FF0000;" />
+                                        </apex:outputpanel>
+                                        
+                                        <apex:actionFunction name="reg" rerender="regmessage" oncomplete="iavareg2();"/>
+                                    </apex:actionRegion>
+                                </apex:form>
+                            
+                            </div> <!-- class="content" -->
+                        
+                        </div> <!-- class="block-inner" -->
+                        
+                        <div class="block-inner" id="need-signup">
+                            <h2 class="title">
+                                <apex:image URL="{!URLFOR($Resource.iavaplus,'images/header_needtosignup.png')}" width="414" height="63" alt="Need to sign up as an IAVA Member or confirm your membership?" />
+                            </h2>
+                            
+                            <div class="content" >
+                                <p>Join our community - exclusively for Iraq and Afghanistan veterans.</p>
+                                
+                                <apex:form id="frm1">
+                                    <apex:actionRegion >
+                                        <div class="col-left">
+                                            <div class="container">
+                                                <label form="email"><img src="{!URLFOR($Resource.iavaplus,'images/form_label_iavaplus_email.png')}" width="34" height="8" alt="Email:" /></label>
+                                                <div class="text-wrapper"><apex:inputtext id="Emailtoreg" value="{!emailToReg}" onfocus="clearField(this,'Email');" onblur="replaceField(this,'Email');" styleclass="form-text" /></div> 
+                                            </div>
+                                            
+                                            <div class="container vet-of">
+                                                <p class="lbl">
+                                                	<img src="{!URLFOR($Resource.iavaplus,'images/form_label_iavaplus_iamaveteranof.png')}" width="104" height="8" alt="I am a veteran of:" />
+                                                </p>
+					                            <div class="checkradio-wrapper"> 
+					                                <apex:outputpanel >
+					                                <apex:inputCheckbox id="oif" value="{!oif}" styleclass="form-radio" /> 
+					                                <apex:outputtext value="OIF"/> &nbsp;&nbsp;
+					                                <apex:inputCheckbox id="oef" value="{!oef}" styleclass="form-radio" />  
+					                                <apex:outputtext value="OEF"/> 
+					                                <apex:inputCheckbox id="ond" value="{!ond}" styleclass="form-radio" />  
+					                                <apex:outputtext value="OND"/> 
+					                                </apex:outputpanel>
+					                            </div> 
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-right">
+                                            <p class="submit">
+                                                <apex:commandLink action="{!signup}" onClick="setClick3()" oncomplete="signup1();">
+                                                    <input id="CLICK3" type="image" src="{!URLFOR($Resource.iavaplus,'images/form_submit_iavaplussubmit.png')}" onmouseover="javascript:this.src='{!URLFOR($Resource.iavaplus,'images/form_submit_iavaplussubmit_ovr.png')}';" onmouseout="javascript:this.src='{!URLFOR($Resource.iavaplus,'images/form_submit_iavaplussubmit.png')}';" value="submit" alt="Submit" class="form-submit" />
+                                                </apex:commandLink>
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="clearfix"></div>
+                                        
+                                        <apex:outputpanel id="signupmessage">
+                                        	<apex:outputtext value="{!signupMsg}" style="color: #FF0000;" />
+                                            <apex:outputtext id="pName" value="{!pName}" style="display: none;color: #C11B17;" />
+                                            <apex:outputtext id="oif_val" value="{!oif_val}" style="display: none;color: #C11B17;" />
+                                            <apex:outputtext id="ond_val" value="{!ond_val}" style="display: none;color: #C11B17;" />
+                                            <apex:outputtext id="oef_val" value="{!oef_val}" style="display: none;color: #C11B17;" />
+                                        </apex:outputpanel>
+                                        
+                                        <apex:actionFunction name="sign" rerender="signupmessage" oncomplete="signup2();"/>
+                                    </apex:actionRegion>
+                                </apex:form>
+                            
+                            </div> <!-- class="content" -->
+                        
+                        </div> <!-- class="block-inner" -->
+                    </div> <!-- id="block-block-neednumber" -->
+                    
+                </div> <!-- id="page-inner" -->
+            </div> <!-- id="page" -->
+             
+        </body> 
+    </div> <!-- name="body" -->
+</div> <!-- id="myPanel" -->
+
+<script src="/soap/ajax/14.0/connection.js"></script>
+<script src="/soap/ajax/14.0/apex.js"></script>
+<script type="text/javascript"> 
+
+    function setClicked()
+    {
+        document.getElementById('CLICK').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue_clk.png')}";
+        document.getElementById('CLICK').onmouseover="";
+        document.getElementById('CLICK').onmouseout="";
+    }
+    function resetClicked()
+    {
+        document.getElementById('CLICK').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue.png')}"
+        document.getElementById('CLICK').onmouseover="overIMG()";
+        document.getElementById('CLICK').onmouseout="outIMG()";
+    }
+    function overIMG()
+    {
+        document.getElementById('CLICK').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue_ovr.png')}";
+    }
+    function outIMG()
+    {
+        document.getElementById('CLICK').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue.png')}";
+    }
+    function setClick2()
+    {
+        document.getElementById('CLICK2').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue_clk.png')}";
+        document.getElementById('CLICK2').onmouseover="";
+        document.getElementById('CLICK2').onmouseout="";
+    }
+    function resetClick2()
+    {
+        document.getElementById('CLICK2').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}"
+        document.getElementById('CLICK2').onmouseover="overIMG2()";
+        document.getElementById('CLICK2').onmouseout="outIMG2()";
+    }
+    function overIMG2()
+    {
+        document.getElementById('CLICK2').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit_ovr.png')}";
+    }
+    function outIMG2()
+    {
+        document.getElementById('CLICK2').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}";
+    }
+    function setClick3()
+    {
+        document.getElementById('CLICK3').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue_clk.png')}";
+        document.getElementById('CLICK3').onmouseover="";
+        document.getElementById('CLICK3').onmouseout="";
+    }
+    function resetClick3()
+    {
+        document.getElementById('CLICK3').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}"
+        document.getElementById('CLICK3').onmouseover="overIMG3()";
+        document.getElementById('CLICK3').onmouseout="outIMG3()";
+    }
+    function overIMG3()
+    {
+        document.getElementById('CLICK3').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit_ovr.png')}";
+    }
+    function outIMG3()
+    {
+        document.getElementById('CLICK3').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}";
+    }
+
+    function make_blankUname()
+    {
+        document.getElementById('{!$Component.frm.Uname}').value = '';
+    }
+    function make_blankPassword()
+    {
+        document.getElementById('{!$Component.frm.Password}').value = '';
+    }
+    function make_blankEmail()
+    {
+        document.getElementById('{!$Component.frm.Email}').value = '';
+    }
+    function make_blankEmailtoReg()
+    {
+        document.getElementById('{!$Component.frm1.Emailtoreg}').value = '';
+    } 
+    function init() 
+    {
+        sforce.connection.sessionId = '{!$Api.Session_ID}';
+    }
+    
+    function forgot()
+    {
+        // redirect to forgot password page
+        var newURL = window.location.protocol + "//" + window.location.host;
+        var pageName = '{!$Page.IAVAPlus_ForgotPassword}';
+        var finalURL = newURL + pageName;
+        parent.window.location.replace(finalURL);
+    }
+    
+    function iavalogin1()
+    {
+    	try {
+    		window.setTimeout(iavalogin);
+    	} catch(err) {
+    		alert(err);
+    	}
+    }
+
+    function iavalogin2() 
+    {
+        resetClicked();
+    }
+    
+    window.onload      = new function(){onLoadActivity();};
+    function onLoadActivity(){
+        init();
+    }
+    
+    function iavareg1()
+    {
+        try
+        {
+            window.setTimeout(reg);
+        }
+        catch(err) {
+        	alert(err)
+        }
+    }
+    
+    function iavareg2()
+    {
+        resetClick2();
+    }
+    
+    function signup1()
+    {
+        try
+        {
+            window.setTimeout(sign);
+        }
+        catch(err) {
+        	alert(err)
+        }
+    }
+
+	function signup2()
+	{
+		try
+		{
+		//document.getElementById('{!$Component.frm1.signupmessage}').style.display = 'none';
+		var val = document.getElementById('{!$Component.frm1.pName}').innerHTML.replace('amp;','');
+		var oif_val = document.getElementById('{!$Component.frm1.oif_val}').innerHTML;
+		var oef_val = document.getElementById('{!$Component.frm1.oef_val}').innerHTML;
+		var ond_val = document.getElementById('{!$Component.frm1.ond_val}').innerHTML;
+		var pageName;
+		if(val == '')
+		{
+			resetClick3();
+		}
+		else
+		{
+			pageName = val ;
+			var email_val = document.getElementById('{!$Component.frm1.Emailtoreg}').value;
+			if(oif_val != '')
+			{
+			pageName = pageName + '&' + oif_val;
+			}
+			if(oef_val != '')
+			{
+			pageName = pageName + '&' + oef_val;
+			}
+			if(ond_val != '')
+			{
+			pageName = pageName + '&' + ond_val;
+			}
+			parent.window.location.replace(pageName);
+			
+		}
+		} catch(err) {
+			//alert(err)
+		}
+	}
+   
+	function clearField(field, defaultText) {
+		if (field.value == defaultText ) {
+			field.value = '';
+		}
+	}
+	function replaceField(field, defaultText) {
+		if (field.value == '' ) {
+			field.value = defaultText;
+		}
+	}
+</script> 
+</apex:page>

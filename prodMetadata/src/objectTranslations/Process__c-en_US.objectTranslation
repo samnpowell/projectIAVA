@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Process</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Processes</value>
+    </caseValues>
+    <fields>
+        <label><!-- # Adopted --></label>
+        <name>Adopted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Testing Form URL --></label>
+        <name>Testing_Form_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Training Document URL --></label>
+        <name>Training_Document_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Users --></label>
+        <name>Users__c</name>
+    </fields>
+    <layouts>
+        <layout>Process Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

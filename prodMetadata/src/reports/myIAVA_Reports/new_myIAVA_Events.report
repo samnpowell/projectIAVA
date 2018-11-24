@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User.PortalContacts__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>User*User$Date_of_first_COV_login__c</field>
+    </columns>
+    <columns>
+        <field>User*User$Date_of_COV_Terms_and_Conduct_Acceptance__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User.PortalContacts__r$Source__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Event</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User.PortalContacts__r$Source_Details__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.PortalContacts__r$Source_Details__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>new myIAVA + Events</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Portal_Users_with_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User*User$Date_of_first_COV_login__c</dateColumn>
+        <interval>INTERVAL_LAST7</interval>
+    </timeFrameFilter>
+</Report>

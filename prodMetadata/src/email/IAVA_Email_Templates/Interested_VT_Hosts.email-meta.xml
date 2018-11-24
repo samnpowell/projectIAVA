@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template for people interested in hosting VetTogethers</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Interested VT Hosts</name>
+    <style>none</style>
+    <subject>Thanks for Your Interest in Hosting a VetTogether!</subject>
+    <type>text</type>
+</EmailTemplate>

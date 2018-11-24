@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Incident</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Incidents</value>
+    </caseValues>
+    <fields>
+        <help><!-- If Member Event, which one? --></help>
+        <label><!-- Campaign --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date/Time of Incident --></label>
+        <name>Date_Time_of_Incident__c</name>
+    </fields>
+    <fields>
+        <help><!-- Describe the incident in detail. --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow-up Assignee --></label>
+        <name>Follow_up_Assignee__c</name>
+        <relationshipLabel><!-- Incidents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Follow-up Description --></label>
+        <name>Follow_up_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow-up Due Date --></label>
+        <name>Follow_up_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow-up Type --></label>
+        <name>Follow_up_Type__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monitor</masterLabel>
+            <translation><!-- Monitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Call</masterLabel>
+            <translation><!-- Phone Call --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Incident Severity --></label>
+        <name>Incident_Severity__c</name>
+        <picklistValues>
+            <masterLabel>Anxious</masterLabel>
+            <translation><!-- Anxious --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Casual</masterLabel>
+            <translation><!-- Casual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency</masterLabel>
+            <translation><!-- Emergency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Serious</masterLabel>
+            <translation><!-- Serious --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urgent</masterLabel>
+            <translation><!-- Urgent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Incident Type --></label>
+        <name>Incident_Type__c</name>
+        <picklistValues>
+            <masterLabel>Action</masterLabel>
+            <translation><!-- Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Behavior</masterLabel>
+            <translation><!-- Behavior --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ongoing</masterLabel>
+            <translation><!-- Ongoing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Location Detail --></label>
+        <name>Location_Detail__c</name>
+        <picklistValues>
+            <masterLabel>COV Chat</masterLabel>
+            <translation><!-- COV Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COV Forum</masterLabel>
+            <translation><!-- COV Forum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facebook</masterLabel>
+            <translation><!-- Facebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flickr</masterLabel>
+            <translation><!-- Flickr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MySpace</masterLabel>
+            <translation><!-- MySpace --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twitter</masterLabel>
+            <translation><!-- Twitter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vimeo</masterLabel>
+            <translation><!-- Vimeo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Youtube</masterLabel>
+            <translation><!-- Youtube --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Location/Medium --></label>
+        <name>Location_Medium__c</name>
+        <picklistValues>
+            <masterLabel>COV</masterLabel>
+            <translation><!-- COV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Event</masterLabel>
+            <translation><!-- Member Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone Call</masterLabel>
+            <translation><!-- Phone Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Network</masterLabel>
+            <translation><!-- Social Network --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Result --></label>
+        <name>Result__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In progress</masterLabel>
+            <translation><!-- In progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ongoing</masterLabel>
+            <translation><!-- Ongoing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation><!-- Resolved --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type Detail --></label>
+        <name>Type_Detail__c</name>
+        <picklistValues>
+            <masterLabel>Alcohol/Substance Abuse</masterLabel>
+            <translation><!-- Alcohol/Substance Abuse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belligerent Behavior</masterLabel>
+            <translation><!-- Belligerent Behavior --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chat</masterLabel>
+            <translation><!-- Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emotional Display</masterLabel>
+            <translation><!-- Emotional Display --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fighting</masterLabel>
+            <translation><!-- Fighting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Posting</masterLabel>
+            <translation><!-- Posting --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Incident Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

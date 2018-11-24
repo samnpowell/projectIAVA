@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>4.4.14 HBS Investment Conference Code Email</name>
+    <style>none</style>
+    <subject>IMPORTANT: Registration Code Inside</subject>
+    <type>text</type>
+</EmailTemplate>

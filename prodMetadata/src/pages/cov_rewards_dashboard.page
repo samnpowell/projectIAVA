@@ -1,0 +1,93 @@
+<apex:page controller="cov_rewards_controller">
+
+	<apex:outputPanel rendered="{!rewards.size>0}">
+		<a name="resources" />
+	    <div class="dashboard-list" id="rewards-dashboard">
+	        <div class="box-heading">
+				<div class="box-heading-content">
+
+	        		<h5>Resources</h5> 
+	        	<!-- <a href="#" id="tooltip-rucksack" data-toggle="tooltip" data-placement="right" data-html="false" title="Where IAVA Member Veterans get access to exclusive tickets, giveaways and more."><span class="glyphicon glyphicon-question-sign"></span></a> -->
+	        	</div>
+	        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+	        
+	        </div>
+
+            <div class="box-content">
+
+		        
+		        <!-- <apex:pageMessages /> -->
+		        
+		        <table class="table"><tbody>
+
+	<!-- 	       		<apex:outputPanel rendered="{!eventRewards.size>0}">
+
+			       		<tr><td colspan="2" class="lightshade">EVENTS</td></tr>
+
+			        	<apex:repeat id="eventRewards" value="{!eventRewards}" var="rw">
+
+						<tr>
+
+							<td>
+								<apex:outputLink value="{!$Site.currentSiteUrl}cov_reward?giveid={!rw.GiveId}"><apex:image rendered="{!rw.ImageURL==null}" value="{!URLFOR($Resource.cov_files,'img/star_30.jpg')}" width="30" height="30" />
+								<apex:image rendered="{!rw.ImageURL!=null}" value="{!rw.ImageURL}" height="30" width="30" /></apex:outputLink>
+							</td>
+							
+							<td>
+								<div class="dashboard-title"><apex:outputLink value="{!$Site.currentSiteUrl}cov_reward?giveid={!rw.GiveId}"><apex:outputText value="{!rw.Title}" /></apex:outputLink></div>
+								<div class="dashboard-description"><apex:outputText value="{!rw.LocationFormula}" /></div>
+							</td>
+							
+						
+						</tr>
+
+						</apex:repeat>
+					</apex:outputPanel> -->
+
+
+		       		<apex:outputPanel rendered="{!standardRewards.size>0}">
+
+			       		<!-- <tr><td colspan="2" class="lightshade">REWARDS</td></tr> -->
+
+			        	<apex:repeat id="standardRewards" value="{!standardRewards}" var="rw">
+
+						<tr>
+
+							<td width="70">
+								<apex:outputLink value="{!$Site.currentSiteUrl}cov_reward?giveid={!rw.GiveId}"><apex:image rendered="{!rw.ImageURL==null}" value="{!URLFOR($Resource.cov_files,'img/star_30.jpg')}" width="64" height="64" styleClass="list-thumbnail" />
+								<apex:image rendered="{!rw.ImageURL!=null}" value="{!$Site.currentSiteUrl}{!rw.ImageURL}" height="64" width="64" styleClass="list-thumbnail" /></apex:outputLink>
+							</td>
+							
+							<td>
+								<div class="dashboard-title"><apex:outputLink value="{!$Site.currentSiteUrl}cov_reward?giveid={!rw.GiveId}"><apex:outputText value="{!rw.Title}" /></apex:outputLink></div>
+								<div class="dashboard-description"><apex:outputText value="{!rw.LocationFormula}" /></div>
+							</td>
+							
+						
+						</tr>
+
+						</apex:repeat>
+					</apex:outputPanel>
+
+
+					<!-- <tr><td colspan="2"><span class="pull-right"><a class="dashboard-more-link" href="{!$Site.currentSiteUrl}dc_homepage">More rewards...</a></span></td></tr> -->
+					
+
+				</tbody></table>
+
+			</div>
+
+		</div>
+
+<!-- 
+		<script type="text/javascript">
+		 	var j$ = jQuery.noConflict();
+		 	j$(document).ready(function()  {
+		 		j$('#tooltip-rucksack').tooltip();
+		 	});
+		</script>
+
+ -->
+ 	</apex:outputPanel>
+
+</apex:page>

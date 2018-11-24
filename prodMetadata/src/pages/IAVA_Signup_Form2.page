@@ -1,0 +1,456 @@
+<apex:page showHeader="false">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>IAVA - IAVA-COV - Join | Iraq and Afghanistan Veterans of America</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://iava.org/sites/all/themes/iava/favicon.ico" type="image/x-icon" />
+      <link type="text/css" rel="stylesheet" media="all" href="http://iava.org/files/css/8cc350564367c6f3070218e7386b40bc.css" />
+<link type="text/css" rel="stylesheet" media="print" href="http://iava.org/files/css/bc757c758908c190bc3aab6f3bfea708.css" />
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" media="all" href="http://iava.org/sites/all/themes/iava/ie.css?N" />
+<![endif]-->
+<!--[if IE 7]>
+<link type="text/css" rel="stylesheet" media="all" href="http://iava.org/sites/all/themes/iava/ie2.css?N" />
+<![endif]-->
+      <script type="text/javascript" src="http://iava.org/misc/jquery.js?N"></script>
+<script type="text/javascript" src="http://iava.org/misc/drupal.js?N"></script>
+<script type="text/javascript" src="http://iava.org/sites/all/modules/date/date_timezone/date_timezone.js?N"></script>
+<script type="text/javascript" src="http://iava.org/sites/all/modules/filefield/filefield.js?N"></script>
+<script type="text/javascript" src="http://iava.org/sites/all/modules/fivestar/js/fivestar.js?N"></script>
+<script type="text/javascript" src="http://iava.org/sites/all/modules/thickbox/thickbox.js?N"></script>
+<script type="text/javascript" src="http://iava.org/sites/all/themes/iava/functions_dev.js?N"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "fivestar": { "titleUser": "Your rating: ", "titleAverage": "Average: ", "feedbackSavingVote": "Saving your vote...", "feedbackVoteSaved": "Your vote has been saved.", "feedbackDeletingVote": "Deleting your vote...", "feedbackVoteDeleted": "Your vote has been deleted." }, "thickbox": { "close": "Close", "next": "Next \x3e", "prev": "\x3c Prev", "esc_key": "or Esc Key", "next_close": "Next / Close on last", "image_count": "Image !current of !total" } });
+//--><!]]>
+</script>
+      <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.5.5/jquery.validate.min.js" type="text/javascript"></script>
+      <script type="text/javascript" src="http://iava.org/sites/all/themes/iava/js/form-validation.js"></script>
+
+      <script type="text/javascript"> </script>
+      <script type="text/javascript" src="http://iava.org/sites/all/themes/iava/js/thickbox-compressed.js?O"></script>
+        </head>
+    <body class="not-front not-logged-in page-node node-type-page one-sidebar sidebar-right page-form section-form no-feature one-sidebar sidebar-right section-cov page-join">
+    <div id="bodywrap"></div>
+<div id="page"><div id="page-inner">
+
+            <div id="header"><div id="header-inner">
+
+                    <div id="logo-title">
+
+                            <div id="logo"><a href="http://iava.org/" title="Home" rel="home"><img src="http://iava.org/sites/all/themes/iava/images/logo.png" alt="Home" id="logo-image" /></a></div>
+
+
+                        </div> <!-- /#logo-title -->
+                        <!-- begin header links -->
+            <div id="block-block-actionlinks" class="block block-views"><div class="block-inner">
+    <div class="content">
+        <ul class="links">
+<li class="menu-getupdates"><a href="http://www2.iava.org/o/436/t/8492/signUp.jsp?key=310" title="Get Updates"></a></li>
+<li class="menu-tellafriend"><a href="http://www2.iava.org/o/436/t/8492/tellafriend.jsp?tell_a_friend_KEY=362" title="Tell A Friend"></a></li>
+<li class="menu-donate"><a href="https://salsa.democracyinaction.org/o/436/t/8492/shop/custom.jsp?donate_page_KEY=736" title="Donate"></a></li>
+</ul>
+    </div>
+</div>          <!-- end begin header links -->
+
+            </div></div>
+            <!-- /#header-inner, /#header -->
+
+        <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+                    <div id="navbar"><div id="navbar-inner" class="region region-navbar">
+
+                                            <div id="primary">
+                          <ul class="links"><li class="menu-230 first"><a href="http://iava.org/about" title="About IAVA">About IAVA</a></li>
+<li class="menu-385"><a href="http://iava.org/take-action" title="Take Action">Take Action</a></li>
+<li class="menu-341 active-trail"><a href="http://iava.org/membership" title="Benefits of Membership">Membership and Resources</a></li>
+<li class="menu-420"><a href="http://iava.org/iava-in-washington" title="IAVA in Washington">IAVA in Washington</a></li>
+<li class="menu-234"><a href="http://iava.org/press-room" title="for Press and Bloggers">for Press and Bloggers</a></li>
+<li class="menu-472 last"><a href="http://iava.org/action-blog">IAVA Blog</a></li>
+</ul>                       </div> <!-- /#primary -->
+
+                    </div></div>
+                    <!-- /#navbar-inner, /#navbar -->
+
+                    <div class="clearfix"></div>
+
+                    <div class="intro" id="content"><div id="content-inner">
+
+                        <div id="content-area">
+                            <!-- HEADER BANNER -->
+                                                            <div id="block-block-pageheader" class="block block-block"><div class="block-inner">
+                                    <div class="content">
+                                        <img src="http://iava.org/sites/all/themes/iava/inc/pgheader_utility.jpg" width="625" height="109" alt=""/>
+                                    </div><!-- /content -->
+                                </div></div> <!-- /block-inner, /block -->
+                                                        <!-- /HEADER BANNER -->
+                            <!-- INTRO -->
+                            <!-- /INTRO -->
+                            <!--CONTENT -->
+                            <div class="view view-page-full one-node">
+                                    <div class="view-content">
+                                        <div class="views-row-1 views-row-odd views-row-first views-row-last">
+                                            <div class="node node-mine node-type-page"><div class="node-inner">
+                                                <div class="content">
+                                                                                                                                                                                          <div id="content-header">
+                                                                                                                                                                                                                                                                      </div> <!-- /#content-header -->
+                                                                                                                  <script type="text/javascript">
+                                  // thickbox functionality
+                                  $("#popup_get* .popup_close a").bind("click", function() {
+                                      tb_remove();
+                                  });
+                              </script>
+
+                                                                                            <!-- DRC2 -->
+
+
+<h2><img src="http://iava.org/sites/all/themes/iava/images/header_becomeaniavamember.png"  alt="BECOME AN IAVA MEMBER VETERAN TODAY: " /></h2>
+
+                                       <ul id="vetmember">
+    <li class="getconnected"><p class="more-link">
+                                                        <a class="thickbox" href="#TB_inline?height=550&width=552&inlineId=popup_getconnected&modal=true">
+                                                            <img width="173" height="80" alt="" src="http://iava.org/sites/all/themes/iava/inc/getconnected_new1.jpg"/>
+                                                        </a>
+                                                    </p></li>
+
+
+
+<!-- DRC3 -->
+
+    <li class="getactive"><p class="more-link">
+                                                        <a class="thickbox" href="#TB_inline?height=550&width=552&inlineId=popup_getactive&modal=true">
+                                                            <img width="173" height="80" alt="" src="http://iava.org/sites/all/themes/iava/inc/getactive.jpg"/>
+                                                        </a>
+                                                    </p></li>
+
+
+
+
+
+<!-- DRC1 -->
+
+    <li class="getlocal"><p class="more-link">
+                                                        <a class="thickbox" href="#TB_inline?height=550&width=552&inlineId=popup_getlocal&modal=true">
+                                                            <img width="173" height="80" alt="" src="http://iava.org/sites/all/themes/iava/inc/getlocal.jpg"/>
+                                                        </a>
+                                                    </p></li>
+</ul>
+
+<div id="popup_getconnected">
+    <div id="block-block-getconnected" class="block block-block"><div class="block-inner">
+        <h2 class="title"><img src="http://iava.org/sites/all/themes/iava/images/popup_h2.png" width="527" height="22" alt="Join IAVA"/></h2>
+        <p class="close_popup"><a href="http://iava.force.com/form"><img src="http://iava.org/sites/all/themes/iava/images/thickbox_close.png" width="10" height="10" alt="Close this popup" /></a></p>
+
+        <div class="content">
+
+            <h3><img src="http://iava.org/sites/all/themes/iava/images/header_getconnected.png" width="234" height="24" alt="GET CONNECTED" /></h3>
+
+            <p>Sign up now to become a member of IAVA's Community of Veterans - the first and only online social network exclusively for Iraq and Afghanistan veterans. Signing up is free and easy.</p>
+
+
+            <ul>
+              <li>Join or create a group</li>
+              <li>Reconnect with old friends</li>
+              <li>Share videos and photos</li>
+              <li>Start a discussion</li>
+            </ul>
+
+            <p class="photo-insert"><img src="http://iava.org/sites/all/themes/iava/inc/getconnected_big.jpg" width="552" height="168" alt="photo" /></p>
+
+            <p class="more-link backsignup"><a href="http://iava.force.com/form" onclick="tb_remove()"></a></p>
+
+            <div class="clearfix"></div>
+
+        </div><!-- /content -->
+            </div></div>   <!-- /block-block-getconnected --> <!-- /block-inner"> -->
+</div>
+
+<div id="popup_getlocal">
+   <div id="block-block-getconnected" class="block block-block"><div class="block-inner">
+
+        <h2 class="title"><img src="http://iava.org/sites/all/themes/iava/images/popup_h2.png" width="527" height="22" alt="Join IAVA"/></h2>
+        <p class="close_popup"><a href="http://iava.force.com/form"><img src="http://iava.org/sites/all/themes/iava/images/thickbox_close.png" width="10" height="10" alt="Close this popup" /></a></p>
+
+        <div class="content">
+
+            <h3><img src="http://iava.org/sites/all/themes/iava/images/header_getlocal.png" alt="GET LOCAL" /></h3>
+
+            <p>From the new G.I. Bill to stop-loss back payments, joining IAVA's community of veterans gives you access to all of the latest news affecting our community. </p>
+
+            <ul>
+              <li>IAVA's Daily News Brief, summarizing the day's most important stories</li>
+              <li>G.I. Bill information, including the best benefits calculator on the web</li>
+              <li>IAVA's Issue reports cover the biggest issues facing our community</li>
+
+            </ul>
+
+            <p class="photo-insert"><img src="http://iava.org/sites/all/themes/iava/images/getlocal_big.jpg" width="552" height="168" alt="photo" /></p>
+
+            <p class="more-link backsignup"><a href="http://iava.force.com/form" onclick="tb_remove()"></a></p>
+
+            <div class="clearfix"></div>
+
+        </div><!-- /content -->
+
+    </div></div>   <!-- /block-block-getconnected --> <!-- /block-inner"> -->
+</div>
+
+<div id="popup_getactive">
+    <div id="block-block-getconnected" class="block block-block"><div class="block-inner">
+
+        <h2 class="title"><img src="http://iava.org/sites/all/themes/iava/images/popup_h2.png" width="527" height="22" alt="Join IAVA"/></h2>
+        <p class="close_popup"><a href="http://iava.force.com/form"><img src="http://iava.org/sites/all/themes/iava/images/thickbox_close.png" width="10" height="10" alt="Close this popup" /></a></p>
+
+        <div class="content">
+
+            <h3><img src="http://iava.org/sites/all/themes/iava/images/header_getactive.png" width="166" height="24" alt="GET ACTIVE" /></h3>
+
+            <p>Join your fellow Iraq and Afghanistan veterans at events nationwide.</p>
+
+            <ul>
+              <li>Meet veterans in your area</li>
+              <li>Get access to local events</li>
+              <li>Get free tickets, giveaways, and more</li>
+            </ul>
+
+            <p class="photo-insert"><img src="http://iava.org/sites/all/themes/iava/images/getactive_big.jpg" width="552" height="168" alt="photo" /></p>
+
+            <p class="more-link backsignup"><a href="http://iava.force.com/form" onclick="tb_remove()"></a></p>
+
+            <div class="clearfix"></div>
+
+        </div><!-- /content -->
+
+    </div></div>   <!-- /block-block-getconnected --> <!-- /block-inner"> -->
+</div>
+
+
+
+
+
+
+<!-- FORM: HEAD SECTION -->
+    <link href="http://www.tfaforms.com/wForms/3.0/css/nicerblank/wforms.css" rel="stylesheet" type="text/css"></link>
+    <link href="http://www.tfaforms.com/wForms/3.0/css/wforms-jsonly.css" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css"></link>
+<link href="http://www.tfaforms.com/wForms/3.0/css/wforms-layout.css" rel="stylesheet" type="text/css"></link>
+<!--[if IE 7]>
+<link href="http://www.tfaforms.com/wForms/3.0/css/wforms-layout-ie7.css" rel="stylesheet" type="text/css"></link>
+<![endif]-->
+<!--[if IE 6]>
+<link href="http://www.tfaforms.com/wForms/3.0/css/wforms-layout-ie6.css" rel="stylesheet" type="text/css"></link>
+<![endif]-->
+<script type="text/javascript" src="http://www.tfaforms.com/wForms/3.0/js/wforms.js"></script>
+<script type="text/javascript" src="http://www.tfaforms.com/wForms/3.0/js/wforms_custom_validation.js"></script>
+<script type="text/javascript" src="http://www.tfaforms.com/wForms/3.0/js/localization-en_US.js"></script>
+
+<link href="http://www.tfaforms.com/css/form.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+</style>
+<!-- FORM: BODY SECTION -->
+<form method="post" action="http://www.tfaforms.com/responses/processor" id="formJoin" class="" enctype="multipart/form-data">
+                                  <h3 class="title">Step Two (of Two)</h3>
+
+                                  <div class="form-caption">
+                                      <p>Your application to join IAVA's community of veterans is almost complete.</p><p>In order to approve your application, we require proof of your deployment in support of Operation Enduring Freedom (2001 - Present) or Operation Iraqi Freedom (2003 - Present). Please send us one of the following documents to complete the registration process. If you have any questions, please send them to community[at]iava.org. Thank you.</p>
+                                  </div>
+
+                                  <div class="insert-box">
+                                      <p class="more-link"><a href="" class="becomeasupporter" title="Not an Iraq or Afghanistan vet? Become a supporter"></a></p>
+                                  </div>
+                                  <div style="clear: both;">
+                                                                      <div id="jq-errors" class="messages error" style="display: none"></div></div>
+<input type="hidden" name="MAX_FILE_SIZE" value="20971520"><fieldset class="personal"><div id="tfa_ProofofService-D" class="oneField">
+<span class="lblwrap"><label class="lbl" for="tfa_ProofofService">Proof of Service</label></span><span class="wrapper"> <input type="file" id="tfa_ProofofService" name="tfa_ProofofService" size="40" class="form-text"> </span><br>
+</div></fieldset>
+<input type="hidden" id="tfa_email" name="tfa_email" value="" class=""><div class="actions">
+<p style="text-align:center"><input type="image" src="http://iava.org/sites/all/themes/iava/images/form_submit-join-submitapplication.png" class="primaryAction" id="submit-" name="tfa_submitAction" value="Submit Application"><input type="hidden" value="145396" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="49569bac5ea5586d29bb015af7bc250f" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="3" name="tfa_dbVersionId" id="tfa_dbVersionId"></p>
+</div>
+
+ <div class="signup-form-list">
+ <ul><li>A copy of your DD214 that shows your discharge status and:
+ <ul><li>Global War on Terrorism Expeditionary Medal, Iraq Campaign Medal, Afghanistan Campaign Medal, Combat Action Badge or</li>
+ <li>Clearly stated service dates in Iraq and/or Afghanistan</li></ul></li>
+ <li>Officer Records Briefs or Enlisted Records Briefs</li>
+ <li>Redeployment or REFRAD orders</li>
+ <li>Medal, Award, or certificate of recognition from your service in Iraq and/or Afghanistan</li>
+ <li>Paperwork from the Veterans Administration or Department of Defense indicating that you served in Iraq and/or Afghanistan</li>
+ </ul>
+ </div>
+ <p>
+ Please note:  Due to the high volume of submissions, it takes 5 to 7 business days to verify your application after we receive your paperwork.  You will receive email confirmation of your verification at that time.
+ </p>
+ <p>
+ NOTE: If you cannot locate the necessary records, you can request duplicate copies here [<a href="http://www.archives.gov/veterans/evetrecs/index.html" target="_blank">http://www.archives.gov/veterans/evetrecs/index.html</a>].
+ </p>
+ <div class="hr"><hr/></div>
+
+ <p class="req"><span class="lbl">Required field</span></p>
+ <p>
+ <b>SEND BY FAX OR MAIL</b>
+
+ <p>
+ If you are unable to send an electronic version of one of the required documents you may also fax or mail it to us.  When your documents are received and verified, you will get an email that provides access to the community.
+ </p>
+ <p>
+ Fax or mail a copy of one of the required documents and include a cover letter with your display name and the email address you used to register.
+ </p>
+ <p>
+ FAX:<br/>
+ 646-607-0388<br/>
+ Attn: Community of Veterans<br/>
+ </p>
+ <p>
+ MAIL:<br/>
+ IAVA Community of Veterans<br/>
+ 292 Madison Ave, 10th Floor<br/>
+ New York, NY 10003<br/>
+ </p>
+ <p>
+ If you have any questions about the process or the documents required please email us at community[at]iava.org
+</p></div>
+
+</form>
+<script type="text/javascript" src="https://www.tfaforms.com/js/populate_form.js"></script></div>
+
+
+
+
+
+
+                                <div class="footer">
+                                    <p>(Information Privacy: We will never share any of your information with any unaffiliated groups without your explicit permission.)</p>
+                                    <p>Questions?  Send an email to <a href="mailto:web@iava.org">web@iava.org</a></p>
+                                </div>
+
+
+
+                                                                                                    </div>
+
+                                                <div class="clearfix"></div>
+                                            </div></div>
+                                            <!-- /node-inner, /node -->
+                                        </div>
+
+                                    </div>
+                            </div>
+                                                        <!--/CONTENT-->
+                        </div>
+
+
+                    <!-- /#content-inner, /#content -->
+
+                    <div id="sidebar-right"><div id="sidebar-right-inner" class="region region-right">
+
+                        <div id="block-block-joiniava" class="block block-block"><div class="block-inner">
+<h2 class="title"><img src="http://iava.org/sites/all/themes/iava/images/header_joiniava.png" width="239" height="22" alt="Join the IAVA"/></h2>
+<div class="content">
+    <p>Join our growing movement. Sign up for your free membership today.</p>
+<p class="more-link"><a href="http://iava.org/form" class="membersignup"></a></p>
+</div>
+</div></div><div id="secondary">
+    <div class="top"></div>
+    <div id="secondary-inner">
+        <h2 class="title">
+            <img src="http://iava.org/sites/all/themes/iava/images/header_inthissection.jpg" width="276" height="53" alt="In This Section">
+        </h2>
+                <div class="menu-name-primary-links parent-mlid-0 menu-level-2">
+  <ul class="links"><li class="collapsed first menu-mlid-760"><a href="http://iava.org/transition-home" title="">The Transition Home</a></li>
+<li class="leaf menu-mlid-772 active active-trail"><a href="http://iava.org/form" title="Join the Community" class="active-trail active">Join the Community</a></li>
+<li class="leaf last menu-mlid-399"><a href="http://iava.org/resources" title="Resources">Resources</a></li>
+</ul></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+                        <div id="block-block-successstories" class="block block-block"><div class="block-inner">
+            <div class="title">
+<h2>Success Stories</h2>
+<p>IAVA has helped thousands of veterans. Here are some of their stories: </p>
+</div>
+
+
+
+      <div class="content">
+        <div class="views-row-1 views-row-odd views-row-first">
+    <p class="promoimg"><img src="http://iava.org/files/imagecache/success_story_teaser/files/images/4096974009_bd36b9c8f6_o.jpg" width="276" height="162" alt="" /></p>
+        <h4><a href="http://iava.org/content/veterans-day-2009">Veterans Day 2009</a></h4>
+        <p class="desc"></p>
+        <p>On Veterans Day, IAVA Member Veterans participated in more than a dozen parades...<a href="http://iava.org/content/veterans-day-2009" class="more-link">&nbsp;</a>
+        </p>
+
+        <div class="hr"><hr/></div>
+  </div>
+  <div class="views-row-2 views-row-even">
+    <div class="personnel">
+            <img src="http://iava.org/files/imagecache/success_story_block/files/images/camo_ss_image_0.jpg" width="47" height="47" alt="" />            <h4><a href="http://iava.org/content/iava-ad-council-debut-new-psa-weve-got-your-back">IAVA, Ad Council Debut New PSA</a></h4>
+            <p>On Veterans Day, IAVA and the Ad Council launched the second phase of a national...<a href="http://iava.org/content/iava-ad-council-debut-new-psa-weve-got-your-back" class="more-link">&nbsp;</a>
+            </p>
+        </div>
+
+    <div class="hr"><hr/></div>
+  </div>
+  <div class="views-row-3 views-row-odd views-row-last">
+    <div class="personnel">
+            <img src="http://iava.org/files/imagecache/success_story_block/files/images/IMG_3841.JPG" width="47" height="47" alt="" />            <h4><a href="http://iava.org/content/huge-win-vets-va-health-care-now-free-divisive-budget-politics">IAVA Spearheads Passage of Advanced Funding for VA Healthcare</a></h4>
+            <p>On October 22nd, IAVA joined lawmakers and the nation's leading Veteran Service...<a href="http://iava.org/content/huge-win-vets-va-health-care-now-free-divisive-budget-politics" class="more-link">&nbsp;</a>
+            </p>
+        </div>
+
+  </div>
+    </div>
+
+
+
+
+        <div class="more-link"><a href="http://iava.org/about/success-stories" class="seeall-block"></a></div>
+
+  </div></div> <!-- /block-inner, /block -->                    </div></div> <!-- /#sidebar-right-inner, /#sidebar-right -->
+
+                </div>
+            </div>
+            <!-- /#main-inner, /#main -->
+
+                        <div id="footer"><div id="footer-inner" class="region region-footer">
+                <div id="block-menu-menu-footer" class="block block-menu"><div class="block-inner">
+    <div class="content">
+        <ul class="menu">
+<li class="menu-contact-us first"><a href="http://iava.org/contact-us" title="Contact Us"></a></li>
+<li class="menu-iava-store"><a href="http://www.iavastore.org/" title="IAVA Store"></a></li>
+<li class="menu-pptou"><a href="http://iava.org/content/privacy-policy-and-terms-use" title="Privacy Policy and Terms of Use"></a></li>
+<li class="menu-search last"><a href="http://iava.org/search" title="Search"></a></li>
+</ul>
+    </div>
+</div></div>
+<!-- /block-inner, /block -->           </div></div>
+            <!-- /#footer-inner, /#footer -->
+                </div></div>
+    <!-- /#page-inner, /#page -->
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-543667-3");
+      pageTracker._trackPageview();
+    }
+      catch(err) {}
+  </script>
+
+
+    </body>
+    </html>
+    </apex:page>

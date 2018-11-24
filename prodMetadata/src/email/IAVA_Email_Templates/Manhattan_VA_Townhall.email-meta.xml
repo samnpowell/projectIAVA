@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Manhattan VA Townhall</name>
+    <style>none</style>
+    <subject>Let the Manhattan VA know what you think</subject>
+    <textOnly>{!Contact.FirstName},
+
+IAVA is working with the Manhattan VA to organize a roundtable for veterans to discuss important issues effecting them.  The OIF/OEF clinic coordinator will be stopping by the IAVA offices this Wednesday evening to talk about some of the issue facing veterans in Manhattan.  This will be a critical time to have our voices heard by the leadership of the local VA.
+
+WHAT: Manhattan VA Roundtable
+WHERE: IAVA Offices (292 Madison Avenue, 10th Floor)
+WHEN: 7-8pm, Wednesday, January 30th
+
+If you are free this evening we would love for you to stop by and be part of this important conversation. Sign up here: http://iava.org/manhattan-va-townhall.
+
+Best,
+
+Jason
+--
+Jason Hansman
+Senior Program Manager - Health
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue, 10th Floor
+New York, NY 10017
+212.982.9699
+jason@iava.org
+www.iava.org
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

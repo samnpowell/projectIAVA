@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>College Factual Email</name>
+    <style>none</style>
+    <subject>Finding the Best Fit College for You</subject>
+    <textOnly>Hi {!NGIB_Query__c.Contact_First_Name__c},
+
+Get help finding your best-fit college, careers and majors based on your individual strengths, interests and experiences in the military.
+
+IAVA Members Get Started FREE, http://pages.collegefactual.com/iava/?cfRefID=newgibill&amp;utm_source=newgibill&amp;utm_medium=email&amp;utm_campaign=cf-optin-email&amp;utm_content=A&amp;myPriorObligation={!NGIB_Query__c.myPriorObligation__c}&amp;myCumulativePost911Service={!NGIB_Query__c.myCumulativePost911Service__c}&amp;myMilitaryStatus={!NGIB_Query__c.myMilitaryStatus__c}&amp;myDischargeDate={!NGIB_Query__c.myDischargeDate__c}&amp;myMontgomoryContribution={!NGIB_Query__c.myMontgomoryContribution__c}&amp;myPost911BenefitUsed={!NGIB_Query__c.myPost911BenefitUsed__c}&amp;myPost911BenefitRecipient={!NGIB_Query__c.myPost911BenefitRecipient__c}&amp;myState={!NGIB_Query__c.myState__c}&amp;myOnlineStatus={!NGIB_Query__c.myOnlineStatus__c}&amp;myAttendancePct={!NGIB_Query__c.myAttendancePct__c}&amp;collegeId1={!NGIB_Query__c.collegeId1__c}&amp;collegeId2={!NGIB_Query__c.collegeId2__c}&amp;collegeId3={!NGIB_Query__c.collegeId3__c} 
+
+Find your future in less than 10 minutes with College Factual.
+
+Sincerely,
+Josh McWilliam
+College Factual Co-Founder</textOnly>
+    <type>custom</type>
+</EmailTemplate>

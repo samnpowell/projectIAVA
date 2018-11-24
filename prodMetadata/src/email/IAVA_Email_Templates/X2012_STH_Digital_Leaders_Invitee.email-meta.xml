@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2012 STH Digital Leaders Invitee</name>
+    <style>none</style>
+    <subject>Welcome to IAVA&apos;s Storm the Hill Digital Team</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+This year IAVA received a record setting 450 applications for a handful of slots on our ground team in Washington and our digital team across the country. All of our applications were inspiring – and the increasing level of interest in Storm the Hill thrills us. Every year, this program is growing the new veterans movement in unprecedented ways.
+
+We are proud to announce that you have been selected to join us as a Digital Stormer, please fill out the form at http://iava.org/storm-hill-2012-digital-stormers?tfa_3={!Contact.Email}.
+
+As a Digital Stormer you will work to further IAVA’s mission from the comfort of your own home.  You will be part of a small group, selected from our pool of applicants because we feel you have exceptional leadership qualities and can play a significant role in Storm the Hill 2012.  If you accept, you will be involved in an exclusive training program in which you work closely with IAVA staff and fellow Digital Stormers to develop the skills necessary to help support the mission.  You will be the leaders of our Digital Brigade, a Facebook community designed to leverage the power of social media to spread authentic content from DC that advocates for vets by activating critical networks of supporters and influencers.  You will also have exclusive access to special content produced by our teams in DC.
+
+Storm the Hill 2012 is about more than simply connecting a small group of vets with government representatives in DC, it’s about getting the word out and starting a real movement.  In order to galvanize support and increase the visibility of IAVA’s mission in the eyes of the general public, we need leaders like you.
+
+The work we will ask of you will be critical to our mission.  A representative will be in contact with you within the next few days via e-mail to explain the next steps in the process. To verify your interest, please fill out the form at http://iava.org/storm-hill-2012-digital-stormers?tfa_3={!Contact.Email}. If you do not, your spot will be given to someone on the waitlist. If you experience difficulties with the form, please contact jacob@iava.org for assistance.
+
+We hope that you will accept our offer and work with us to make a difference in the lives of veterans and their families.
+
+Sincerely,
+
+Jason Hansman
+
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

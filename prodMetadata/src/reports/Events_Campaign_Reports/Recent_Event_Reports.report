@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>AIR__c.Num_Units__c</field>
+    </columns>
+    <columns>
+        <field>AIR__c.Num_Confirmed__c</field>
+    </columns>
+    <columns>
+        <field>AIR__c.Num_Attended__c</field>
+    </columns>
+    <columns>
+        <field>AIR__c.Hot_Wash_Complete__c</field>
+    </columns>
+    <columns>
+        <field>AIR__c.Success_Story_Posted__c</field>
+    </columns>
+    <columns>
+        <field>AIR__c.Give__c</field>
+    </columns>
+    <columns>
+        <field>AIR__c.Campaign__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Recent Event Reports</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$AIR__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>AIR__c.Start_Date_of_Event__c</dateColumn>
+        <interval>INTERVAL_CURPREV1</interval>
+    </timeFrameFilter>
+</Report>

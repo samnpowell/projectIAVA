@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Thank you for standing with America&apos;s veterans</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Thanks for standing with IAVA</name>
+    <style>none</style>
+    <subject>Thank you for standing with IAVA</subject>
+    <textOnly>We will not tolerate an attack on a fellow veteran&apos;s service.
+
+Thank you for standing with Iraq and Afghanistan Veterans of America. IAVA is America&apos;s leading post-9/11 veterans group. Please support our critical programs now and in the important years ahead. Make a $10 donation by going to http://iava.org/donate
+
+Learn more about our programs by going to http://iava.org/programs
+
+
+Post-9/11 Vets: become an IAVA member for free by going to http://iava.org/#join and spread the word to you family and friends. Together, we can support America&apos;s most promising leaders--and show everyone that veterans are not a charity, we&apos;re an investment.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

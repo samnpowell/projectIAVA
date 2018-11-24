@@ -1,0 +1,15 @@
+Dear {!Give_Request__c.Applicant_Name__c},
+
+Great news - you are confirmed for the IAVA {!Give_Request__c.Give_Descriptor__c} you requested:
+
+{!Give_Request__c.Give_Name__c}
+{!Give_Request__c.Give_Instance_Start_Date__c} {!Give_Request__c.Give_Instance_Start_Time__c}
+
+Details:
+{!IF(LEN(Give_Request__c.Give_Fulfillment_Instructions_rtf__c) > 0, Give_Request__c.Give_Fulfillment_Instructions_rtf__c, "(No details given)"}
+
+We hope you enjoy your experience!
+
+{!IF(Give_Request__c.Units_Requested__c > 0, "Number of tickets/units: ", "")}{!IF(Give_Request__c.Units_Requested__c > 0, Give_Request__c.Units_Requested__c, "")}
+
+Thank you for supporting IAVA.

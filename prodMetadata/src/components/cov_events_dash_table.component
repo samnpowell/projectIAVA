@@ -1,0 +1,261 @@
+<apex:component >
+
+    <apex:attribute name="cEventsList" description="Custom event list to display"
+                    type="cov_customevent[]" required="true"/>
+    <apex:attribute name="numRows" description="Number of rows to display"
+                    type="Integer" required="true"/>
+    <apex:attribute name="NUM_ROWS_DEFAULT" description="Default number of rows to display"
+                    type="Integer" required="false"/>
+
+
+
+                    <style type="text/css">
+
+/*	                    .box-content {
+	                    	padding-bottom: 0;
+	                    }
+*/
+                    	.image-block {
+/*                    		width: 200px;
+                    		height: 200px;
+*/                    		padding-left: 2px;
+                    		padding-right: 2px;
+                    	}
+
+                    	.image-block, .image-block a, .image-block a:visited, .image-block a:hover {
+                    		color: #fff;
+                    		font-weight: inherit;
+                    	}
+
+                    	.image-block .image-background {
+                    		margin: 2px;
+/*                    		width: 196px;
+                    		height: 196px;
+*/                    		position: relative;
+							width: 100%;
+							height: 100%;
+							padding-bottom: 90%;
+                    	}
+
+                    	.image-block .text-background {
+                    		position: absolute;
+                    		width: 100%;
+                    		bottom: 0px;
+                    		left: 0px;
+                    		background: rgba(0, 0, 0, 0.5);
+                    		padding: 12px;
+                    	}
+
+                    	.image-block .text-background .sub-description {
+                    		font-size: 14px;
+                    		line-height: normal;
+                    		margin-top: 2px;
+                    	}
+
+                    </style>
+
+
+                    <div class="clearfix">
+                    	<apex:variable var="count" value="{!0}" />
+                    	<apex:repeat id="cEventsList" value="{!cEventsList}" var="ev" rows="{!numRows}">
+	                    	<div class="col-xs-6 col-md-6 col-lg-4 image-block" >
+	                    		<!-- <a href="{!if(ev.eventType == 'Reward', 'cov_reward?giveid=' + ev.eId, 'cov_event?id=' + ev.eId)}"> -->
+		                    		<div data-link="{!if(ev.eventType == 'Reward', 'cov_reward?giveid=' + ev.eId, 'cov_event?id=' + ev.eId)}" class="image-background clickable-div" style="background: url('{!if(ev.hasPicFull, if(BEGINS(ev.picFull, 'http'), '', $Site.currentSiteUrl) + ev.picFull, '')}'); background-color: {!CASE(mod(count,5), 0, '#d3383e', 1, '#e6b800', 2, '#f6eac4', 3, '#4eda93', '#3eaae8')}; background-repeat: no-repeat; background-position: center center; background-size: cover;">
+			                    		<div class="text-background">
+				                        	<apex:outputPanel id="eventEdit" rendered="{!ev.organizerId == $User.Id && not(ev.past)}">
+				                    			<div class="pull-right callout-box">
+						                        	<apex:outputText value="Unpublished" rendered="{!ev.status == 'Unpublished'}" styleClass="lighter italicer" />
+						                        	<a href="cov_event_entry?id={!ev.eId}">[EDIT]</a>
+						                        </div>
+				                        	</apex:outputPanel>
+					                        <apex:outputPanel rendered="{!ev.organizerId == $User.Id}">
+				                    			<a href="{!if(ev.eventType == 'Reward', 'cov_reward?giveid=' + ev.eId, 'cov_event?id=' + ev.eId)}">
+				                    				<h4>{!ev.name}</h4>
+				                    			</a> 
+					                    	</apex:outputPanel>
+					                        <apex:outputPanel rendered="{!ev.organizerId != $User.Id}">
+				                    			<h4>{!ev.name}</h4> 
+					                    	</apex:outputPanel>
+				                    		<div class="sub-description">
+					                    		<div>
+					                    			<apex:outputText value="{0,date,MMM' 'dd}"><apex:param value="{!ev.nextDate}" /></apex:outputText>
+				                    			</div>
+					                    		<div>
+					                    			<apex:outputText rendered="{!ev.city != null}" value="{!ev.city}" />
+					                        		<apex:outputText rendered="{!ev.city != null && ev.state != null}" value=", " />
+												  	<apex:outputText rendered="{!ev.state != null}" value="{!ev.state}" />
+                                                    <!-- lines 87-89 added 2016-10-27 by SP for IAVA Endorsed Event flags -->
+                                                    <br/>
+                                                    <apex:outputText rendered="{!ev.isEndorsed}" value="Endorsed by IAVA" />
+					                    		</div>
+					                    	</div>
+											<apex:outputPanel rendered="{!ev.organizerId == $User.Id}">
+						                    	<div class="sub-description callout-box">
+													<a href="cov_event_checkin?id={!ev.eId}"><span class="glyphicon glyphicon-user"></span> Check-In Page</a>
+						                    	</div>
+											</apex:outputPanel>
+				                    	</div>
+				                    </div>
+				                <!-- </a> -->
+	                    	</div>
+	                    	<apex:variable var="count" value="{!count+1}" />
+	                    </apex:repeat>
+                    </div>
+
+                    <div class="link-bar">
+			        	<apex:form >
+							<apex:outputPanel rendered="{!and(numRows != 0, numRows < cEventsList.size)}">
+						    	<a href="javascript:void(0)" onclick="showAll();">Show more...</a>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!numRows > NUM_ROWS_DEFAULT}">
+						    	<a href="#events_dashboard" onclick="showFewer();">Show fewer...</a>
+							</apex:outputPanel>
+						</apex:form>
+					</div>
+
+
+    <script type="text/javascript">
+		var j$ = jQuery.noConflict();
+		j$(document).ready(function() {
+	    	j$(".clickable-div").click(function() {
+	    	    window.document.location = j$(this).data("link");
+		    });
+	    });
+    </script>
+
+<!-- 
+
+				<table class="table" id="events-table">  
+					 
+		             <thead>  
+		              <tr>  
+		                <th>&nbsp;</th>
+		                <th>Date</th>  
+		                <th>Event</th>  
+		                <th>Location</th>  
+		              </tr>  
+		             </thead> 
+		           -> 
+		             <tbody>  
+						 <apex:form styleclass="event-form"> ->
+		                <apex:repeat id="cEventsList" value="{!cEventsList}" var="ev" rows="{!numRows}">
+		                    <tr>
+									<td align="center">
+	 									<a href="javascript:void(0);" data-target="#popupBox" data-type="event" data-url="cov_event?id={!ev.eId}&header=false" data-name="{!ev.name}">
+	 ->									
+	 										<a href="{!if(ev.eventType == 'Reward', 'cov_reward?giveid=' + ev.eId, 'cov_event?id=' + ev.eId)}" >
+											<apex:image rendered="{!ev.hasPicThumb}" value="{!if(BEGINS(ev.picThumb, 'http'), '', $Site.currentSiteUrl)}{!ev.picThumb}" width="64" height="64" alt="{!ev.eventType}" styleClass="list-thumbnail" />
+											<apex:outputPanel rendered="{!not(ev.hasPicThumb)}">
+												<apex:image rendered="{!not(ev.eventType == 'VetTogether') && not(ev.eventType == 'Reward') && not(ev.hasPicThumb)}" value="{!URLFOR($Resource.cov_files,'img/star_30.jpg')}" width="64" height="64" styleClass="list-thumbnail" />
+												<apex:image rendered="{!OR(ev.eventType == 'VetTogether', ev.eventType == 'Reward')}" value="{!URLFOR($Resource.cov_files,'img/events/vettogether-icon2-50.png')}" width="64" height="64" alt="VetTogether" styleClass="list-thumbnail" />
+			 									<apex:image rendered="{!ev.eventType == 'Social' && not(ev.hasPicThumb)}" value="{!URLFOR($Resource.cov_files,'img/events/social-icon3-50.png')}" width="40" height="40" alt="Social" />
+			 ->
+			 	 								<apex:image rendered="{!ev.eventType == 'Support'}" 
+			 									value="{!URLFOR($Resource.cov_files,'img/events/support-icon1-50.png')}" width="40" height="40" alt="Support" />
+			 	 ->
+ 												<apex:image rendered="{!ev.eventType == 'Reward'}" value="{!URLFOR($Resource.cov_files,'img/events/Reward-icon2-50.png')}" width="40" height="40" alt="The Reward" />
+ ->
+ 											</apex:outputPanel>
+											 <apex:outputText escape="false" value="{!ev.picThumb}" rendered="{!ev.hasPicThumb}" /> ->
+											<br />
+											<span class="smaller lighter"><apex:outputText value="{!ev.eventType}" /></span>
+										</a>
+									</td>
+			                         <td></td> ->
+			                        <td>
+			                        	<div class="dashboard-title">
+				                        	 <a href="javascript:void(0);" data-target="#popupBox" data-type="event" data-url="cov_event?id={!ev.eId}&header=false" data-name="{!ev.name}"> ->
+				                        	<a href="{!if(ev.eventType == 'Reward', 'cov_reward?giveid=' + ev.eId, 'cov_event?id=' + ev.eId)}" ><apex:outputText value="{!ev.name}"/></a>
+										</div>
+			                        	<div class="lighter">
+			                        		<apex:outputText value="{0,date,MMM' 'dd}"><apex:param value="{!ev.nextDate}" /></apex:outputText>
+			                        	</div>
+										<div class="dashboard-description">
+			                        		<apex:outputText rendered="{!ev.city != null}" value="{!ev.city}" />
+			                        		<apex:outputText rendered="{!ev.city != null && ev.state != null}" value=", " />
+										  	<apex:outputText rendered="{!ev.state != null}" value="{!ev.state}" />
+										</div>
+										<apex:outputPanel rendered="{!ev.organizerId == $User.Id}">
+											<br />
+											<a href="cov_event_checkin?id={!ev.eId}"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span> Check-In Page</a>
+										</apex:outputPanel>
+									</td>
+			                        <td align="center">
+			                        	<apex:outputPanel id="hostsection" >
+				                        	<apex:outputPanel id="eventEdit" rendered="{!ev.organizerId == $User.Id && not(ev.past)}">
+					                        	<div class="stronger">HOST</div>
+					                        	<apex:outputText value="Unpublished" rendered="{!ev.status == 'Unpublished'}" styleClass="lighter italicer" />
+					                        	<br />
+					                        	<a href="cov_event_entry?id={!ev.eId}">[EDIT]</a>
+				                        	</apex:outputPanel>
+
+											<apex:outputPanel id="eventHost" rendered="{!ev.organizerId != $User.Id || ev.past}">
+				                        		<div class="smaller lighter">Host:</div>
+				                        		<apex:outputPanel rendered="{!AND(NOT(ev.organizerIsContact), ev.organizerType == 'Distributed')}">
+				                        			<apex:outputLink value="{!$Site.currentSiteUrl + ev.organizerId}"><apex:image value="{!ev.organizerPhotoUrl}" width="30" height="30" /></apex:outputLink>
+				                        		</apex:outputPanel>
+												<apex:outputPanel rendered="{!OR(ev.organizerIsContact, ev.organizerType != 'Distributed')}">
+													<apex:image value="{!URLFOR($Resource.cov_files,'img/IAVA-icon.png')}" width="30" height="30" />
+												</apex:outputPanel>
+												<br />
+												<span class="smaller lighter"><apex:outputText value="{!ev.organizerShortName}" escape="false"/></span>
+				                        	</apex:outputPanel>
+				                        </apex:outputPanel>
+	 		                        	<apex:outputPanel id="iavahost" rendered="{!ev.organizerType != 'Distributed'}">
+			                        		<apex:image value="{!URLFOR($Resource.cov_files,'img/IAVA-icon.png')}" width="30" height="30" />
+											<br />
+											<span class="smaller lighter">IAVA <br />Event</span>
+			                        	</apex:outputPanel> ->
+
+
+		  	                        	<apex:outputPanel id="eventStatus" rendered="{!conId != null}">
+				                        	<span class="eventStatus">
+												<apex:outputPanel rendered="{!not(ev.onList)}">
+							                        <apex:commandButton value="Join" action="{!eventJoin}" rerender="eventStatus">
+							   							<apex:param name="eventId" value="{!ev.eId}" assignTo="{!eventIdChosen}"/>
+													</apex:commandButton>
+												</apex:outputPanel>
+												<apex:outputPanel rendered="{!ev.onList}">
+													<span class="eventStatus-Label">Attending</span>
+													<apex:outputPanel rendered="{!not(ev.past)}">
+														<apex:commandLink value="" styleclass="glyphicon glyphicon-remove-circle" action="{!eventUnjoin}" 
+															onclick="if(!confirm('Are you sure you want to give up your spot on this event list?')){return};" 
+															rerender="eventStatus">
+								   							<apex:param name="eventId" value="{!ev.eId}" assignTo="{!eventIdChosen}"/>
+														</apex:commandLink>
+													</apex:outputPanel>
+												</apex:outputPanel>		
+												</span>												
+										</apex:outputPanel>		
+										<apex:outputPanel styleclass="conn-contact-msg" rendered="{!conId == null}">
+											No connected contact, signup unavailable
+										</apex:outputPanel>	 ->	
+			                        </td> 
+		                    </tr>
+		                </apex:repeat>
+
+						<tr><td colspan="4">
+							<apex:outputPanel rendered="{!and(numRows != 0, numRows < cEventsList.size)}">
+					        		<div class="pull-right">
+							        	<apex:form >
+									    	<!- <apex:commandLink action="{!showAll}" reRender="events-content" oncomplete="initializePage()" value="Show all" /> ->
+									    	<a href="javascript:void(0)" onclick="showAll();">Show all</a>
+										</apex:form>
+									</div>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!numRows > NUM_ROWS_DEFAULT}">
+					        		<div class="pull-right">
+							        	<apex:form >
+									    	<!- <apex:commandLink action="{!showFewer}" reRender="events-content" oncomplete="initializePage()" value="Show fewer" /> ->
+									    	<a href="#events_dashboard" onclick="showFewer();">Show fewer</a>
+										</apex:form>
+									</div>
+							</apex:outputPanel>
+						</td></tr>
+
+
+		                <!- </apex:form> ->
+		            </tbody>  
+		        </table> -->
+
+</apex:component>

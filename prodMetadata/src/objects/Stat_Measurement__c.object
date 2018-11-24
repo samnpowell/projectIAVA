@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Snapshot of a measurement of a stat at a specific point in time.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Amount_Type__c</fullName>
+        <description>Amount Type (inherited from Stat record)</description>
+        <externalId>false</externalId>
+        <formula>text(Stat__r.Amount_Type__c)</formula>
+        <inlineHelpText>Amount Type (inherited from Stat record)</inlineHelpText>
+        <label>Amount Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <description>The actual measurement amount, e.g. for 25% enter &quot;25&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The actual measurement amount, e.g. for 25% enter &quot;25&quot;. Make sure to use whole numbers as well, as in 2,400,000 rather than &quot;2.4 million&quot;</inlineHelpText>
+        <label>Measurement Amount</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comparison_1_Amount__c</fullName>
+        <description>Amount from Comparison Measurement 1</description>
+        <externalId>false</externalId>
+        <formula>value(If(isblank(Comparison_Measurement_1__r.Amount__c),&quot;&quot;,text(Comparison_Measurement_1__r.Amount__c)))</formula>
+        <inlineHelpText>Amount from Comparison Measurement 1</inlineHelpText>
+        <label>Comparison 1 Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comparison_1_Change__c</fullName>
+        <description>Difference between Amount and Comparison 1 Amount</description>
+        <externalId>false</externalId>
+        <formula>value(if(isblank(Comparison_1_Amount__c),&quot;&quot;,text(Amount__c -  Comparison_1_Amount__c)))</formula>
+        <inlineHelpText>Difference between Amount and Comparison 1 Amount</inlineHelpText>
+        <label>Change since Comparison 1</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comparison_1_Date__c</fullName>
+        <description>The Date from Comparison Measurement 1</description>
+        <externalId>false</externalId>
+        <formula>Comparison_Measurement_1__r.Measurement_Date__c</formula>
+        <inlineHelpText>The Date from Comparison Measurement 1</inlineHelpText>
+        <label>Comparison 1 Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Comparison_2_Amount__c</fullName>
+        <description>Amount from Comparison Measurement 2</description>
+        <externalId>false</externalId>
+        <formula>value(If(isblank(Comparison_Measurement_2__r.Amount__c),&quot;&quot;,text(Comparison_Measurement_2__r.Amount__c)))</formula>
+        <inlineHelpText>Amount from Comparison Measurement 2</inlineHelpText>
+        <label>Comparison 2 Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comparison_2_Change__c</fullName>
+        <description>Difference between Amount and Comparison 2 Amount</description>
+        <externalId>false</externalId>
+        <formula>value(if(isblank(Comparison_2_Amount__c),&quot;&quot;,text(Amount__c - Comparison_2_Amount__c)))</formula>
+        <inlineHelpText>Difference between Amount and Comparison 2 Amount</inlineHelpText>
+        <label>Change since Comparison 2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comparison_2_Date__c</fullName>
+        <description>The Date from Comparison Measurement 2</description>
+        <externalId>false</externalId>
+        <formula>Comparison_Measurement_2__r.Measurement_Date__c</formula>
+        <inlineHelpText>The Date from Comparison Measurement 2</inlineHelpText>
+        <label>Comparison 2 Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Comparison_Measurement_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stat Measurement to compare to current amount.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stat Measurement to compare to current amount.</inlineHelpText>
+        <label>Comparison Measurement 1</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Stat_Measurement__c.Stat__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Stat__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Stat_Measurement__c.Id</field>
+                <operation>notEqual</operation>
+                <valueField>$Source.Id</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Stat_Measurement__c</referenceTo>
+        <relationshipLabel>Comparison Measurements</relationshipLabel>
+        <relationshipName>Compared_Measurements</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comparison_Measurement_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stat Measurement to compare to current amount.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stat Measurement to compare to current amount.</inlineHelpText>
+        <label>Comparison Measurement 2</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Stat_Measurement__c.Stat__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Stat__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Stat_Measurement__c.Id</field>
+                <operation>notEqual</operation>
+                <valueField>$Source.Id</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Stat_Measurement__c</referenceTo>
+        <relationshipLabel>Comparison Measurements 2</relationshipLabel>
+        <relationshipName>Compared_Measurements_2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Last date covered by this measurement.  E.g. if it covers June 2011, enter &quot;6/30/2011&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Last date covered by this measurement.  E.g. if it covers June 2011, enter &quot;6/30/2011&quot;.</inlineHelpText>
+        <label>Measurement End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Link__c</fullName>
+        <description>Link to source of specific stat measurement</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to source of specific stat measurement</inlineHelpText>
+        <label>Stat Measurement Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Measurement_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <description>On what date was this measurement taken or reported?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>On what date was this measurement taken or reported?</inlineHelpText>
+        <label>Measurement Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Other_Measurement_Notes__c</fullName>
+        <description>E.g. analysis of the current measurement.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. analysis of the current measurement.</inlineHelpText>
+        <label>Other Measurement Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Related_Links__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Links</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Send_notification_when_saved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, the system will trigger a notification to the designated team about this measurement as soon as the record is saved.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, the system will trigger a notification to the designated team about this measurement as soon as the record is saved.  The checkbox then gets cleared so it can be used again.</inlineHelpText>
+        <label>Send notification when I click Save</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>First date covered by this measurement.  E.g. if it covers June 2011, enter &quot;6/1/2011&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>First date covered by this measurement.  E.g. if it covers June 2011, enter &quot;6/1/2011&quot;.</inlineHelpText>
+        <label>Measurement Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Stat_Good_Until__c</fullName>
+        <description>This stat measurement is considered good until this date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This stat measurement is considered good until this date.</inlineHelpText>
+        <label>Stat Good Until</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Stat__c</fullName>
+        <description>This is a measurement of which Stat?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is a measurement of which Stat?</inlineHelpText>
+        <label>Stat</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Stat__c.Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Stat__c</referenceTo>
+        <relationshipLabel>Stat Measurements</relationshipLabel>
+        <relationshipName>Stat_Measurements</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Amount Type (deprec)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Number</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Percent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Stat Measurement</label>
+    <nameField>
+        <displayFormat>StatMeas{YYYY}{MM}-{000}</displayFormat>
+        <label>Stat Measurement ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Stat Measurements</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Measurement_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Amount__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Stat__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

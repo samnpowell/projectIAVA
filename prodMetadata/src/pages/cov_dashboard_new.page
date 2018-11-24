@@ -1,0 +1,192 @@
+<apex:page name="myIAVA Dashboard" id="cov_dashboard" sidebar="false" showheader="false" applyBodyTag="false" applyHtmlTag="false">
+
+<apex:composition template="cov_template">
+
+
+    <apex:define name="page-title">
+        myIAVA - Home
+    </apex:define>
+
+    <apex:define name="meta-tags">
+        <meta property="og:title" content="myIAVA - Home" />
+<!--             <meta property="og:image" content="{!left($Site.currentSiteUrl, len($Site.currentSiteUrl) - len($Site.Prefix) - 1) + URLFOR($Action.Attachment.Download, ce.picFullId)}" />
+-->         <meta property="og:url" content="{!$Site.currentSiteUrl}" />
+        <meta property="og:description" content="A vibrant, peer-supported online community for veterans of Iraq and Afghanistan." />
+        <meta property="og:type" content="non-profit" />
+    </apex:define>
+
+
+    <apex:define name="layout">
+
+
+<style type="text/css">
+
+    #navbar-tabs, #navbar-profile { display:none;}
+    #container-overall { margin-top: 86px;}
+    .profilepanel img {
+        width: 150px;
+        height: 150px;
+    }
+    .profilepanel #logout-link a {
+        color: #999;
+    }
+    body, .dashboard-list, .dashboard-list .dashboard-description, .dashboard-panel .dashboard-description {
+        font-size: 14px;
+    }
+    .dashboard-list .dashboard-title a {
+        font-size: inherit;
+    }
+    .bootstrap a, .dashboard-list .dashboard-title a, .dashboard-link-style, .bootstrap a:hover, .bootstrap a:focus {
+        color: #284734;
+    }
+    .box-heading h5, .bootstrap h5, .bootstrap .h5 {
+        font-size: 22px;
+    }
+    .box-heading, .box-heading::after {
+        height: 60px;
+    }
+    .dashboard-header-text {
+        font-weight: normal;
+        color: #999;
+    }
+    .dashboard-list #events-table img.list-thumbnail {
+        height: 60px;
+        width: 60px;
+    }
+
+
+</style>
+
+
+
+        <div class="row-fluid">  
+
+            <div class="col-md-7 col-lg-6">
+
+                <div id="announcements-div">
+                    <apex:define name="Announcements_Dash">
+                        <apex:include pageName="cov_announcements_dash" />
+                    </apex:define> 
+                </div>
+
+                <apex:define name="Events_Dash">
+                    <apex:include pageName="cov_events_dash" />
+                </apex:define>  
+
+                <div id="recentactivity-div">
+                    <apex:define name="RecentActivity_Dash">
+                        <apex:include pageName="cov_recentactivity_dash" />
+                    </apex:define> 
+                </div>
+
+
+            </div>
+
+
+            <div class="col-md-5 col-lg-4 col-lg-offset-2">
+
+                <div id="profilephotoprompt-div">
+                    <apex:define name="ProfilePhoto_Prompt_Dash">
+                        <apex:include pageName="cov_profilephoto_prompt_dash" />
+                    </apex:define> 
+                </div>
+
+                <apex:define name="ProfilePanel_Dash">
+                    <apex:include pageName="cov_profilepanel_dash_new" />
+                </apex:define> 
+
+                <div id="resources-div">
+                    <apex:define name="Resources_Dash">
+                        <apex:include pageName="cov_resources_dash" />
+                    </apex:define> 
+                </div>
+
+                <div id="people-div">
+                    <apex:define name="People_Dash">
+                        <apex:include pageName="cov_people_dash" />
+                    </apex:define> 
+                </div>
+<!--
+                <apex:define name="ProtectedAreas_Dash">
+                    <apex:include pageName="cov_protectedareas_dash" />
+                </apex:define> 
+-->
+                <apex:define name="Rewards_Dash">
+                    <apex:include pageName="cov_rewards_dashboard" />
+                </apex:define> 
+
+                <apex:define name="Vouchees_Dash">
+                    <apex:include pageName="cov_vouchees_dash"/>
+                </apex:define>  
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="row-fluid" style="display:none;">  
+
+            <div class="col-md-2 col-lg-3">
+
+
+
+
+            </div>
+            
+             <div class="col-md-6 col-lg-5">
+                <!-- <apex:pageMessages id="messages" escape="false" /> -->
+
+                <div id="newsfeed-div">
+<!--                    <div class="dashboard-list" id="chatter_header">
+                        <div class="box-heading"><h5>Your Newsfeed</h5></div>
+                    </div>
+ -->
+
+
+
+
+                    <div class="well" id="dashboard-chatter">
+                        <chatter:newsfeed id="chatter_on_dashboard" />
+                    </div>
+                </div>
+             </div>
+             
+            <div class="col-md-4 col-lg-4">
+             
+
+
+
+         
+                <apex:define name="Groups_Dash">
+                    <apex:include pageName="cov_groups_dash" rendered="false" />
+                </apex:define> 
+             
+
+
+
+
+
+
+                            
+    <!--             <apex:define name="RewardRequests_Dash">
+                    <apex:include pageName="cov_give_requests" rendered="false" />
+                </apex:define>   -->
+                
+
+
+                
+             </div>
+
+        </div> <!--  .row-fluid -->
+            
+    </apex:define>
+</apex:composition> 
+
+</apex:page>

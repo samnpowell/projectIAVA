@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.How_monitoring__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Priority__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Recommendation__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Notes__c</field>
+    </columns>
+    <description>Who is assigned to which active policy priorities?</description>
+    <filter>
+        <criteriaItems>
+            <column>Policy_Rec__c.Active__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>Assignments - Policy Priorities (active)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Policy_Rec__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Policy_Rec__c.Retire_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

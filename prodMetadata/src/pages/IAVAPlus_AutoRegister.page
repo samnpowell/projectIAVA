@@ -1,0 +1,64 @@
+<apex:page id="pg" controller="IAVAPlus_SignIn" sidebar="true" showHeader="false" standardStylesheets="false" action="{!registerRedirect}" >
+
+    <a href="http://iava.org/#join">Please register at iava.org</a>
+
+</apex:page>
+
+
+
+<!-- <apex:page id="pg" controller="IAVAPlus_SignIn" sidebar="true" showHeader="false" standardStylesheets="false" >
+ <apex:composition template="{!$Site.Template}">
+   
+
+		<apex:define name="body">
+		    <style type="text/css">
+		    	.node-inner {
+		    		width: 800px;
+		    	}
+			</style>
+
+
+
+                <p id="temp-message">Sorry, your link seems to be incorrect. Please try going <a href="IAVAPlus_SignIn">here</a> and entering your email into the left side of the green box.</p>               
+
+                <p id="main-message" style="display: none;">Attempting to register you for an IAVA Plus account using email address <span class="emailValue" style="font-weight: bold;"></span>....  <span id="status-message">Please hang on a second....</span></p>
+
+                <apex:form id="autoregform">
+
+                	<apex:inputHidden id="hiddenEmail" value="{!emailToReg}" />
+	                <apex:actionFunction action="{!signup}" name="autosubmitSignup" rerender="signupmessage" oncomplete="hideStatusMessage();" />
+
+		            <apex:outputpanel id="signupmessage">
+	                    <apex:outputtext value="{!signupMsg}" escape="false" style="color: #052A22; font-weight: bold; font-size: 16px;" />
+	                </apex:outputpanel>
+
+
+                </apex:form>
+
+            
+
+				<c:cov_js_utils /> 
+
+				<script type="text/javascript"> 
+
+				        jQuery(document).ready(function(){
+				        	emailValue = $.getUrlVar('e');
+					        if (emailValue != '' && elementsArePresent(['.emailValue', 'input[id$="hiddenEmail"]'])) {
+					        	$('#temp-message').hide();
+					        	$('#main-message').show();
+					            $('.emailValue').text(emailValue);
+					            $('input[id$="hiddenEmail"]').val(emailValue);
+				                autosubmitSignup();
+					        }
+				        });
+
+				        function hideStatusMessage() {
+				        	$('#status-message').hide();
+				        }
+
+				</script>
+
+		</apex:define>
+
+  </apex:composition>
+</apex:page> -->

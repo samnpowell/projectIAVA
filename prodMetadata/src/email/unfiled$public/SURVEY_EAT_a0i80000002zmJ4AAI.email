@@ -1,0 +1,1 @@
+Please complete this survey at:{!IF(Contact.Id != null,'http://iava.force.com/survey/TIMBASURVEYS__Survey?id=a0i80000002zmJ4AAI&cId='+Contact.Id,'')}{!IF(Receiving_User.Id != null,'http://iava.force.com/survey/TIMBASURVEYS__Survey?id=a0i80000002zmJ4AAI&cId='+Receiving_User.Id,'')}

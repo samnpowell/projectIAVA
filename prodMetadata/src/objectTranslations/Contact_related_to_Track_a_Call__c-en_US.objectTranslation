@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contact related to Track a Call</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contacts related to Track a Calls</value>
+    </caseValues>
+    <fields>
+        <help><!-- Related Contact --></help>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Other Track a Calls for this Contact --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Notes about this Contact on this call --></help>
+        <label><!-- Notes about this Contact on this call --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Related Track-a-Call record --></help>
+        <label><!-- Track a Call record --></label>
+        <name>Track_a_Call__c</name>
+        <relationshipLabel><!-- Other Contacts related to this Track-a-Call --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

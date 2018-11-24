@@ -1,0 +1,2835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AAA_Categories__c</fullName>
+        <externalId>false</externalId>
+        <label>AAA Categories</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assistance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Awareness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Advocacy</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Appropriate_Timing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this the right time for this partnership?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this the right time for this partnership?</inlineHelpText>
+        <label>Appropriate Timing</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Background_of_Partnership__c</fullName>
+        <description>Short Summary of background of Partnership</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Short Summary of background of Partnership</inlineHelpText>
+        <label>Background of Partnership</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Background_on_Organization__c</fullName>
+        <externalId>false</externalId>
+        <label>Background on Organization</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Benefit_to_IAVA__c</fullName>
+        <externalId>false</externalId>
+        <label>Benefit to IAVA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Boot_Camp__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This partnership is a boot camp.</description>
+        <externalId>false</externalId>
+        <label>Boot Camp</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Information__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Information</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Core_Business__c</fullName>
+        <externalId>false</externalId>
+        <label>Core Business</label>
+        <length>4000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Currently_Working_with_Veterans__c</fullName>
+        <externalId>false</externalId>
+        <label>Currently Working with Veterans</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Detailed_Goal_Description__c</fullName>
+        <description>What is the goal for each metric? How much/many?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the goal for each metric? How much/many?</inlineHelpText>
+        <label>Detailed Goal Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Director__c</fullName>
+        <externalId>false</externalId>
+        <label>Director</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Distribution_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Distribution Plan</label>
+        <length>3200</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Distributor__c</fullName>
+        <description>Distributor for Film</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Distributor for Film</inlineHelpText>
+        <label>Distributor</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Partnership End Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Partnership End Date.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Stage_Goals__c</fullName>
+        <description>What needs to be accomplished by the end of the partnership?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What needs to be accomplished by the end of the partnership?</inlineHelpText>
+        <label>End Stage Goals</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Event_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Existing_Partners_Involvement__c</fullName>
+        <externalId>false</externalId>
+        <label>Existing Partners &amp; Involvement</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Expected_Results__c</fullName>
+        <description>What is the result expected of this partnership?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the result expected of this partnership?</inlineHelpText>
+        <label>Expected Results</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Featured_Partner__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Will make this partner appear on the rewards site as the featured partner (only one partnership record should have this checked).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Will make this partner appear on the rewards site as the featured partner (only one partnership record should have this checked).</inlineHelpText>
+        <label>Featured Partner</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Film_Festival_Screenings__c</fullName>
+        <externalId>false</externalId>
+        <label>Film Festival Screenings</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Film_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Film URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Support_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Financial Support Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Financial_Support_Offer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Financial Support Offer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Goal_Achievement_Plan__c</fullName>
+        <description>How can the goal be accomplished?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How can the goal be accomplished?</inlineHelpText>
+        <label>Goal Achievement Plan</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Goal_is_Reasonable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is the goal reasonable?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is the goal reasonable?</inlineHelpText>
+        <label>Goal is Reasonable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Goals_in_Working_with_IAVA__c</fullName>
+        <externalId>false</externalId>
+        <label>Goals in Working with IAVA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>HEEC_Categories__c</fullName>
+        <externalId>false</externalId>
+        <label>HEEC Categories</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Community</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>How_Do_You_Envision_Working_with_IAVA__c</fullName>
+        <externalId>false</externalId>
+        <label>How Do You Envision Working with IAVA</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>How_Will_Film_Add_Value_to_IAVA__c</fullName>
+        <externalId>false</externalId>
+        <label>How Will Film Add Value to IAVA</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IAVA_Goals_Aligned__c</fullName>
+        <description>Does this match the overall goals of IAVA?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this match the overall goals of IAVA?</inlineHelpText>
+        <label>IAVA Goals Aligned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IAVA_Mission_Aligned__c</fullName>
+        <description>Will it help improve the lives of Iraq and Afghanistan veterans and their families?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Will it help improve the lives of Iraq and Afghanistan veterans and their families?</inlineHelpText>
+        <label>IAVA Mission Aligned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IAVA_Resource_Investment__c</fullName>
+        <description>What investment of money or resources will be required of IAVA?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What investment of money or resources will be required of IAVA?</inlineHelpText>
+        <label>IAVA Resource Investment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IAVA_Values_Aligned__c</fullName>
+        <description>Does this align with IAVA values?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this align with IAVA values?</inlineHelpText>
+        <label>IAVA Values Aligned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Ideal_Staff_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Who is the best person at IAVA to be working on this?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who is the best person at IAVA to be working on this?</inlineHelpText>
+        <label>Ideal Staff POC</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Partnerships</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>In_Kind_Contribution_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>In-Kind Contribution Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>In_Kind_Contribution_Offer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>In-Kind Contribution Offer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Internal_Veterans_Affinity_Group__c</fullName>
+        <description>Is there an internal Veteran&apos;s affinity group at the Partner&apos;s Organization?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is there an internal Veteran&apos;s affinity group at the Partner&apos;s Organization?</inlineHelpText>
+        <label>Internal Veterans Affinity Group</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Iraq_Afghanistan_Veteran_Involvement__c</fullName>
+        <externalId>false</externalId>
+        <label>Iraq/Afghanistan Veteran Involvement</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Is_the_Film_Fully_Funded__c</fullName>
+        <externalId>false</externalId>
+        <label>Is the Film Fully Funded</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Key_Leadership__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Leadership</label>
+        <length>3000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Length_of_Partnership__c</fullName>
+        <description>What is the timing of the partnership?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the timing of the partnership?</inlineHelpText>
+        <label>Length of Partnership</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_Budget__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Budget</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Name_of_Film__c</fullName>
+        <externalId>false</externalId>
+        <label>Name of Film</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Step__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step (deprec)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Notable_Press_Coverage__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Include Links</inlineHelpText>
+        <label>Notable Press Coverage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes / Next Steps</label>
+        <length>3000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Total_Gives__c</fullName>
+        <description>Number of total related Gives on the partnership record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of total related Gives on the partnership record</inlineHelpText>
+        <label>Num. Total Gives</label>
+        <summaryForeignKey>Give__c.Partnership_Request__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Org_Name__c</fullName>
+        <description>This is the organization which is related to the partnership request submitted by webform.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the organization which is related to the partnership request submitted by webform.</inlineHelpText>
+        <label>Org Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Organization</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Partnerships</relationshipLabel>
+        <relationshipName>Partnership_Requests</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Organizations_Experts_Involved_with_Film__c</fullName>
+        <externalId>false</externalId>
+        <label>Organizations/Experts Involved with Film</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Origin_of_Relationship__c</fullName>
+        <externalId>false</externalId>
+        <label>Origin of Relationship</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Previous Partners</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unsolicited</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Partnerships</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Introduced by another person</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Other_Current_Partners__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Current Partners</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Partnership_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Partnership Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_Partnership_Offer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Other Partnership Offer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Other_Staff_Needed__c</fullName>
+        <description>Does anyone else at IAVA need to be brought in on this?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does anyone else at IAVA need to be brought in on this?</inlineHelpText>
+        <label>Other Staff Needed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Supported_Charities__c</fullName>
+        <description>What other charities do they currently support?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What other charities do they currently support?</inlineHelpText>
+        <label>Other Supported Charities</label>
+        <length>3000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Parties_Involved__c</fullName>
+        <description>Who is involved? (IAVA and Partners)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Who is involved? (IAVA and Partners)</inlineHelpText>
+        <label>Parties Involved</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sports</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Entertainment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Media</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Auto</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Apparel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non profit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Technology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Finance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Energy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hotel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Electronics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Defense/military</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Restaurant/bar</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Food/beverage</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Travel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Digital</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Arts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Partner_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Partner Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active Action</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Active Conversations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Stewardship</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Courting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prospective</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Partnership_Program_Metrics__c</fullName>
+        <description>What can be measured for each aspect of the partnership to track success?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What can be measured for each aspect of the partnership to track success?</inlineHelpText>
+        <label>Partnership/Program Metrics</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Partnership_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Partnership Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Film</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ticket Give</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Resources &amp; Benefits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nonprofit &amp; Government Org</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Corporation &amp; Sponsorship</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PRISM</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Partnership_Worthwhile__c</fullName>
+        <description>Does this seem worthwhile?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this seem worthwhile?</inlineHelpText>
+        <label>Partnership Worthwhile</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Philanthropic_Focus__c</fullName>
+        <externalId>false</externalId>
+        <label>Philanthropic Focus</label>
+        <length>3000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Point_in_Production_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Point in Production Process</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pre-Production</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Production</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Post-Production</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Distribution</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Potentially_Controversial__c</fullName>
+        <description>Would this partnership be considered controversial by some? Is preliminary review needed?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Would this partnership be considered controversial by some? Is preliminary review needed?</inlineHelpText>
+        <label>Potentially Controversial</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Producer__c</fullName>
+        <externalId>false</externalId>
+        <label>Producer</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Production_Budget__c</fullName>
+        <externalId>false</externalId>
+        <label>Production Budget</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Public_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For related Gives, this description will appear on the Rucksack site wherever a short description of the partner is needed.</inlineHelpText>
+        <label>Public Brief Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Public_Detail_Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the long description that will appear on the Rucksack site when someone drills into this specific partnership record.</inlineHelpText>
+        <label>Public Detail Description</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Public_Partner_Name__c</fullName>
+        <description>Name of partner to appear on Rewards site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of partner to appear on Rewards site</inlineHelpText>
+        <label>Public Partner Name</label>
+        <length>80</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Publicity_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Publicity Plan</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reasons_for_Pursuing__c</fullName>
+        <description>What are the specific reasons, purpose or benefits of accomplishing the goal?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What are the specific reasons, purpose or benefits of accomplishing the goal?</inlineHelpText>
+        <label>Reasons for Pursuing</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Related_Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Campaign used for tracking fundraising on this partnership</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Campaign used for tracking fundraising on this partnership</inlineHelpText>
+        <label>Related Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Partnerships</relationshipLabel>
+        <relationshipName>Partnerships</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If there is a specific contact related to this object, select it here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If there is a specific contact related to this object, select it here.</inlineHelpText>
+        <label>Related Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Partnerships</relationshipLabel>
+        <relationshipName>Partnerships</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Department</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Online</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Membership</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ad Council</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Partnerships</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Release_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Release Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Response_ID__c</fullName>
+        <description>FormAssembly response ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>FormAssembly response ID</inlineHelpText>
+        <label>FormAssembly Response ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response_Link__c</fullName>
+        <description>Link to original response</description>
+        <externalId>false</externalId>
+        <formula>if(isblank(Response_ID__c),&quot;&quot;,HYPERLINK(&quot;https://app.formassembly.com/responses/view/&quot; &amp; Response_ID__c , &quot;View response&quot;, &quot;_blank&quot;))</formula>
+        <inlineHelpText>Link to original response</inlineHelpText>
+        <label>FA Response Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_Last_3_Years__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Last 3 Years</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Rolling_Action_Items__c</fullName>
+        <description>What needs to be accomplished daily, weekly and monthly to stay on track?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What needs to be accomplished daily, weekly and monthly to stay on track?</inlineHelpText>
+        <label>Rolling Action Items</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Screenings__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled Screenings</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Services_Offer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Services Offer</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Partner_Logo__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether logo appears in partner section of Rucksack website</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether logo appears in partner section of Rucksack website</inlineHelpText>
+        <label>Partner logo on partners page</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_partner_logo_on_rewards_homepage__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether logo shows up in logo block on Rewards site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether logo shows up in logo block on Rewards site</inlineHelpText>
+        <label>Partner logo in logo block</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sort_Order_in_Logo_block__c</fullName>
+        <description>Determines the Sort Order in the Logo Block (Ascending Order).</description>
+        <externalId>false</externalId>
+        <label>Sort Order in Logo block</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sort_Order_on_Partners_page__c</fullName>
+        <description>Determines the Sort Order on the Partners Page (Ascending Order).</description>
+        <externalId>false</externalId>
+        <label>Sort Order on Partners page</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submitted by Partner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IAVA to Outreach</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Needs Followup</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed/Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Active Partnership</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inactive/Completed Partnership</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Partnership Start Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Partnership Start Date.</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Strategic_Action_Plan__c</fullName>
+        <description>What action steps need to be taken to achieve the goal? (Action Plan)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What action steps need to be taken to achieve the goal? (Action Plan)</inlineHelpText>
+        <label>Strategic Action Plan</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Summary_of_Film__c</fullName>
+        <externalId>false</externalId>
+        <label>Summary of Film</label>
+        <length>3000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Ticket_Give_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Ticket Give Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Partnership_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submitted by Partner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Accepted by SP &amp; Sent to Membership</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Accepted by Membership &amp; Sent to Online</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected by Membership</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Form Setup Online</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Offer Sent to Members</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ticket Winners Confirmed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Names Sent to Partner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partner Followup Completed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Submitted by Partner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Accepted by SP &amp; Sent to Membership</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Accepted by Membership &amp; Sent to Online</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Rejected by Membership</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Form Setup Online</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Offer Sent to Members</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Ticket Winners Confirmed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Names Sent to Partner</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Ticket Give</controllingFieldValue>
+                <valueName>Partner Followup Completed</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Timing_Considerations_Moving_Forward__c</fullName>
+        <externalId>false</externalId>
+        <label>Timing Considerations Moving Forward</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Timing_Considerations__c</fullName>
+        <externalId>false</externalId>
+        <label>Timing Considerations</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Trackable_Performance_Measurements__c</fullName>
+        <description>How will I know when it is accomplished? How will I track these action steps and goal?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How will I know when it is accomplished? How will I track these action steps and goal?</inlineHelpText>
+        <label>Trackable Performance Measurements</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Veteran_Service_Organization_Involvement__c</fullName>
+        <externalId>false</externalId>
+        <label>Veteran Service Organization Involvement</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Veterans_on_Sr_Leadership__c</fullName>
+        <externalId>false</externalId>
+        <label>Veterans on Sr. Leadership</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>What_Will_Be_Provided_to_IAVA__c</fullName>
+        <externalId>false</externalId>
+        <label>What Will Be Provided to IAVA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sponsorship Credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>&quot;In Association With&quot; Credit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tickets to Screenings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DVDs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Show IAVA PSAs at Screenings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Include IAVA PSAs on DVDs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Distribute IAVA Materials - Screenings</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Distribute IAVA Materials - DVDs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Percentage of Total Revenues</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Promote IAVA on Film Website</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Include IAVA in Other Promo Materials</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inclusion in Press Outreach</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Participation in Q&amp;A/Discussions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Who_Has_Ownership_of_the_Film__c</fullName>
+        <externalId>false</externalId>
+        <label>Who Has Ownership of the Film</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Who_Owns_Licensing_Rights__c</fullName>
+        <externalId>false</externalId>
+        <label>Who Owns Licensing Rights to the Film</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Writer__c</fullName>
+        <externalId>false</externalId>
+        <label>Writer</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Partnership</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Public_Partner_Name__c</columns>
+        <columns>Featured_Partner__c</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Show_partner_logo_on_rewards_homepage__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Name_of_Film__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Featured_Partner</fullName>
+        <columns>NAME</columns>
+        <columns>Public_Partner_Name__c</columns>
+        <columns>Featured_Partner__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Name_of_Film__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Featured_Partner__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <label>Featured Partner</label>
+    </listViews>
+    <listViews>
+        <fullName>Fine_Arts_Partnership_Reqeusts</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>fine arts</value>
+        </filters>
+        <label>Fine Arts Partnership Reqeusts</label>
+    </listViews>
+    <listViews>
+        <fullName>Miller_Partnerships</fullName>
+        <columns>Organization__c</columns>
+        <columns>NAME</columns>
+        <columns>Org_Name__c</columns>
+        <columns>Public_Partner_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Organization__c</field>
+            <operation>contains</operation>
+            <value>miller</value>
+        </filters>
+        <label>Miller Partnerships</label>
+    </listViews>
+    <listViews>
+        <fullName>Music_Partnership_Requests</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>Music</value>
+        </filters>
+        <label>Music Partnership Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>Partner_signup_form</fullName>
+        <columns>NAME</columns>
+        <columns>Stage__c</columns>
+        <columns>Background_on_Organization__c</columns>
+        <columns>Currently_Working_with_Veterans__c</columns>
+        <columns>Goals_in_Working_with_IAVA__c</columns>
+        <columns>Other_Current_Partners__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Related_Contact__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Partner signup form</label>
+    </listViews>
+    <listViews>
+        <fullName>Partnership_Records_created_this_month</fullName>
+        <columns>NAME</columns>
+        <columns>Org_Name__c</columns>
+        <columns>Contact_Information__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Start_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Partnership Records created this month</label>
+    </listViews>
+    <listViews>
+        <fullName>Partnerships_created_in_the_last_6_month</fullName>
+        <columns>NAME</columns>
+        <columns>Organization__c</columns>
+        <columns>Related_Contact__c</columns>
+        <columns>Partner_Category__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_MONTHS:6</value>
+        </filters>
+        <label>Partnerships created in the last 6 month</label>
+    </listViews>
+    <listViews>
+        <fullName>Partnerships_created_this_year</fullName>
+        <columns>NAME</columns>
+        <columns>Organization__c</columns>
+        <columns>Related_Contact__c</columns>
+        <columns>Partner_Category__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_YEAR</value>
+        </filters>
+        <label>Partnerships created this year</label>
+    </listViews>
+    <listViews>
+        <fullName>Sports_Partnership_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>sports</value>
+        </filters>
+        <label>Sports Partnership Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Active_Partnerships</fullName>
+        <columns>NAME</columns>
+        <columns>Stage__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Active Partnership</value>
+        </filters>
+        <label>Status: Active Partnerships</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Closed_Rejected</fullName>
+        <columns>NAME</columns>
+        <columns>Stage__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Closed/Rejected</value>
+        </filters>
+        <label>Status: Closed/Rejected</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Completed_Inactive</fullName>
+        <columns>NAME</columns>
+        <columns>Stage__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Inactive/Completed Partnership</value>
+        </filters>
+        <label>Status: Completed/Inactive</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_IAVA_to_Outreach</fullName>
+        <columns>NAME</columns>
+        <columns>Stage__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>IAVA to Outreach</value>
+        </filters>
+        <label>Status: IAVA to Outreach</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Needs_Followup</fullName>
+        <columns>NAME</columns>
+        <columns>Stage__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Needs Followup</value>
+        </filters>
+        <label>Status: Needs Followup</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Submitted_by_Partner</fullName>
+        <columns>NAME</columns>
+        <columns>Stage__c</columns>
+        <columns>Background_on_Organization__c</columns>
+        <columns>Currently_Working_with_Veterans__c</columns>
+        <columns>Goals_in_Working_with_IAVA__c</columns>
+        <columns>Other_Current_Partners__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Related_Contact__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Submitted by Partner</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <label>Status: Submitted by Partner</label>
+    </listViews>
+    <listViews>
+        <fullName>Type_is_Film</fullName>
+        <columns>Stage__c</columns>
+        <columns>Public_Partner_Name__c</columns>
+        <columns>Name_of_Film__c</columns>
+        <columns>NAME</columns>
+        <columns>Organization__c</columns>
+        <columns>Related_Contact__c</columns>
+        <columns>Director__c</columns>
+        <columns>Release_Date__c</columns>
+        <columns>Film_URL__c</columns>
+        <columns>Summary_of_Film__c</columns>
+        <columns>Next_Step__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Film</value>
+        </filters>
+        <label>Type is Film</label>
+    </listViews>
+    <listViews>
+        <fullName>Type_is_Standard</fullName>
+        <columns>Public_Partner_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>Organization__c</columns>
+        <columns>Related_Contact__c</columns>
+        <columns>Next_Step__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Featured_Partner__c</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Show_partner_logo_on_rewards_homepage__c</columns>
+        <columns>Sort_Order_in_Logo_block__c</columns>
+        <columns>Start_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <label>Type is Standard</label>
+    </listViews>
+    <listViews>
+        <fullName>Visible_Partners_in_Logo_Block</fullName>
+        <columns>NAME</columns>
+        <columns>Featured_Partner__c</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Show_partner_logo_on_rewards_homepage__c</columns>
+        <columns>Sort_Order_in_Logo_block__c</columns>
+        <columns>Public_Partner_Name__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Name_of_Film__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Show_partner_logo_on_rewards_homepage__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <label>Visible Partners in Logo Block</label>
+    </listViews>
+    <listViews>
+        <fullName>Visible_Partners_in_Rucksack_logo_block</fullName>
+        <columns>Sort_Order_in_Logo_block__c</columns>
+        <columns>Show_partner_logo_on_rewards_homepage__c</columns>
+        <columns>NAME</columns>
+        <columns>Public_Partner_Name__c</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Sort_Order_on_Partners_page__c</columns>
+        <columns>Featured_Partner__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Name_of_Film__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Show_partner_logo_on_rewards_homepage__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Active Partnership</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <label>Visible Partners in Rucksack logo block</label>
+    </listViews>
+    <listViews>
+        <fullName>Visible_Partners_on_Rewards_Site</fullName>
+        <columns>NAME</columns>
+        <columns>Featured_Partner__c</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Sort_Order_on_Partners_page__c</columns>
+        <columns>Show_partner_logo_on_rewards_homepage__c</columns>
+        <columns>Sort_Order_in_Logo_block__c</columns>
+        <columns>Public_Partner_Name__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Name_of_Film__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Show_Partner_Logo__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Active Partnership</value>
+        </filters>
+        <label>Visible Partners on Rewards Site</label>
+    </listViews>
+    <listViews>
+        <fullName>Visible_Partners_on_Rucksack_partners_pg</fullName>
+        <columns>Sort_Order_on_Partners_page__c</columns>
+        <columns>Show_Partner_Logo__c</columns>
+        <columns>Public_Partner_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>Show_partner_logo_on_rewards_homepage__c</columns>
+        <columns>Sort_Order_in_Logo_block__c</columns>
+        <columns>Featured_Partner__c</columns>
+        <columns>Organization__c</columns>
+        <columns>Number_of_Total_Gives__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Priority__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Name_of_Film__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Show_Partner_Logo__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Partnership_Request__c.Standard</value>
+        </filters>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Active Partnership</value>
+        </filters>
+        <label>Visible Partners on Rucksack partners pg</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Partnerships</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Film</fullName>
+        <active>true</active>
+        <description>Use for Film Partnerships</description>
+        <label>Film</label>
+        <picklistValues>
+            <picklist>AAA_Categories__c</picklist>
+            <values>
+                <fullName>Advocacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HEEC_Categories__c</picklist>
+            <values>
+                <fullName>Community</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_Film_Fully_Funded__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin_of_Relationship__c</picklist>
+            <values>
+                <fullName>Introduced by another person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous Partners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Partnerships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsolicited</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Category__c</picklist>
+            <values>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2Fmilitary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food%2Fbeverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Restaurant%2Fbar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Level__c</picklist>
+            <values>
+                <fullName>Active Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Active Conversations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Courting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stewardship</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partnership_Type__c</picklist>
+            <values>
+                <fullName>Film</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Point_in_Production_Process__c</picklist>
+            <values>
+                <fullName>Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post-Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Related_Department__c</picklist>
+            <values>
+                <fullName>Ad Council</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Partnerships</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Active Partnership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed%2FRejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IAVA to Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive%2FCompleted Partnership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Followup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ticket_Give_Stage__c</picklist>
+            <values>
+                <fullName>Accepted by Membership %26 Sent to Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accepted by SP %26 Sent to Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Setup Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Names Sent to Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offer Sent to Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Followup Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected by Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted by Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ticket Winners Confirmed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>What_Will_Be_Provided_to_IAVA__c</picklist>
+            <values>
+                <fullName>%22In Association With%22 Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVDs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribute IAVA Materials - DVDs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribute IAVA Materials - Screenings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Include IAVA PSAs on DVDs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Include IAVA in Other Promo Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusion in Press Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Participation in Q%26A%2FDiscussions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percentage of Total Revenues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promote IAVA on Film Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Show IAVA PSAs at Screenings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsorship Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tickets to Screenings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <description>Use for all Non-Film Partnerships</description>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>AAA_Categories__c</picklist>
+            <values>
+                <fullName>Advocacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Awareness</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>HEEC_Categories__c</picklist>
+            <values>
+                <fullName>Community</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Is_the_Film_Fully_Funded__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin_of_Relationship__c</picklist>
+            <values>
+                <fullName>Introduced by another person</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Previous Partners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Partnerships</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsolicited</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Category__c</picklist>
+            <values>
+                <fullName>Apparel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Arts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Auto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Defense%2Fmilitary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Digital</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Energy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food%2Fbeverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non profit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Restaurant%2Fbar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sports</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Level__c</picklist>
+            <values>
+                <fullName>Active Action</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Active Conversations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Courting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prospective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stewardship</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partnership_Type__c</picklist>
+            <values>
+                <fullName>Corporation %26 Sponsorship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nonprofit %26 Government Org</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PRISM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resources %26 Benefits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ticket Give</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Point_in_Production_Process__c</picklist>
+            <values>
+                <fullName>Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post-Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Production</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Production</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Related_Department__c</picklist>
+            <values>
+                <fullName>Ad Council</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Partnerships</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Active Partnership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed%2FRejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IAVA to Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive%2FCompleted Partnership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Followup</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted by Partner</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Ticket_Give_Stage__c</picklist>
+            <values>
+                <fullName>Accepted by Membership %26 Sent to Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Accepted by SP %26 Sent to Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Form Setup Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Names Sent to Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Offer Sent to Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Followup Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected by Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted by Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ticket Winners Confirmed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>What_Will_Be_Provided_to_IAVA__c</picklist>
+            <values>
+                <fullName>%22In Association With%22 Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DVDs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribute IAVA Materials - DVDs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distribute IAVA Materials - Screenings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Include IAVA PSAs on DVDs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Include IAVA in Other Promo Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inclusion in Press Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Participation in Q%26A%2FDiscussions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percentage of Total Revenues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promote IAVA on Film Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Show IAVA PSAs at Screenings</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sponsorship Credit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tickets to Screenings</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Public_Partner_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Organization__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Show_Partner_Logo__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Number_of_Total_Gives__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Stage__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Partnership_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OBJECT_ID</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Public_Partner_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Organization__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Stage__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>OBJECT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Public_Partner_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Organization__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Stage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,5 @@
+Hello,
+
+The Grant Report for {!Opportunity.Name} is due in 6 weeks.
+
+http://na8.salesforce.com/{!Opportunity.Id}

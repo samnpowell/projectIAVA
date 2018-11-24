@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Legislation DC Event relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Legislation DC Event relationships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Related DC Event --></label>
+        <name>DC_Event__c</name>
+        <relationshipLabel><!-- Legislation related to this DC Event --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Legislation --></label>
+        <name>Legislation__c</name>
+        <relationshipLabel><!-- DC Events related to this Legislation --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

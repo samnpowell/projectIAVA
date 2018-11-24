@@ -1,0 +1,11 @@
+<apex:component controller="cov_attachmentpuller" access="global">
+
+    <apex:attribute name="rewardId" description="Id of give" access="global" type="String" assignTo="{!giveId}" />
+
+    <apex:attribute name="max-width" description="max-width" access="global" type="String" assignTo="{!maxwidth}" />
+
+    <apex:attribute name="max-height" description="max-height" access="global" type="String" assignTo="{!maxheight}" />
+
+    <apex:image value="https://my.iava.org/servlet/servlet.FileDownload?file={!attId}" style="max-width:{!maxwidth}; max-height: {!maxheight};" rendered="{!not(isblank(attId))}" />
+
+</apex:component>

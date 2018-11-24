@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2014 Nationals Follow Up</name>
+    <style>none</style>
+    <subject>Thanks for making the Nats game with IAVA wonderful</subject>
+    <textOnly>{!Contact.FirstName},
+
+Thank you for joining IAVA and our amazing members at the Washington Nationals game. Year after year, this continues to be our biggest and best attended event and its because of members like you creating our Community of Veterans.
+
+IAVA can be many things to many people. For some, we offer you and your families a chance to attend a ball game on a warm summer night. For others we are a force in Washington ensuring that our veterans are being taken care of. One thing that we are and strive to be for all of our members is a Community of Veterans.
+
+I welcome you all to become more deeply involved in our Community of Veterans. Here’s what you can do next:
+
+Join IAVA in DC for our September VetTogether at our DC office in a happy hour celebration of our Community. Here you will get a chance to connect with area members and updates on campaigns and events coming up soon. Register today: http://bit.ly/Wc1J7B
+
+I hope you enjoyed yourself at our tailgate on Friday and I encourage you to become more involved. Our Community exists because of you… Take charge of it…
+
+Best,
+Anthony
+
+Anthony Pike
+Sr. Programs Associate
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

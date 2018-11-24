@@ -1,0 +1,11 @@
+The status of Case {!Case.CaseNumber} has changed to Status "{!Case.Status}"
+Changed by: {!Case.LastModifiedBy}
+
+
+Subject: {!Case.Subject}
+Priority: {!Case.Priority}
+Click on the link to access the case: {!Case.Link}
+
+
+Original description:
+{!Case.Description}

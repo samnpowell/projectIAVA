@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>When a Track a Call is Created, a notification is sent to EO</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Track a Call Creation Notify E.O.</name>
+    <style>none</style>
+    <subject>Track a Call Created: {!Activity_Junction__c.Name}</subject>
+    <type>text</type>
+</EmailTemplate>

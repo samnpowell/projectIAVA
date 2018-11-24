@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+    </head>
+    <body style="margin: 0px; padding: 0px;">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#daccae">
+            <tbody>
+                <tr>
+                    <td valign="top" align="center">
+                    <table width="622" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600"><a href="http://www.iava.org/"><img width="600" height="106" border="0" alt="IAVA" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/iava_header.png" /></a></td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="top" bgcolor="#ffffff" align="center"><img width="600" height="17" alt="" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/bg.png" />
+                                <table width="600" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td height="10" colspan="3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20"></td>
+                                            <td width="660" valign="top" align="left">
+                                            <p>Dear {!Contact.FirstName},</p>
+<p>It is that time of year again - IAVA's LA Heroes Celebration is less than one month away. </p> 
+
+<p>I'd like to invite you to join us for our Fourth Annual Heroes Celebration on Tuesday, May 1, 2012. The event will be held at The Penthouse at AT&T Center, 1150 South Olive Street in Downtown LA, from 6:30-9:30pm. You were selected to attend because of your leadership and dedication to IAVA. We would be thrilled if you could attend as a guest of IAVA, and represent IAVA's membership at this event. </p> 
+
+<p>The Heroes Celebration is our major West Coast fundraising event to honor and support all of our members, and all Iraq and Afghanistan veterans across the country. You can read more about last year's event <a href="http://iava.org/blog/hollywood-honors-new-veterans-heroes-celebration">here.</a></p> 
+
+<p>We will also present IAVA's inaugural Community Leadership Award to Floyd "Shad" Meshad, a Vietnam Veteran, who is the founder the National Veterans Foundation and has over 40 years of experience providing support and council to returning veterans and their families. It is an honor to recognize and celebrate his service and dedication to our community. </p> 
+
+<p>Attached is the save the date; you are welcome to bring one guest over 21 years old. </p> 
+<p><a href="http://iava.org/2012-los-angeles-heroes-celebration-rsvp">Please click here to RSVP,</a> no later than Monday, April 9th. If you need more information about this event, please email me at <a href="mailto:anthony@iava.org">Anthony@iava.org.</a></p>  
+<p>Hope to see you there. </p> 
+<p>Sincerely, <br>Anthony</p>
+<p>Anthony Pike<br>
+Membership Coordinator<br> Iraq and Afghanistan Veterans of America (IAVA) </p>
+</td>
+                                            <td width="20"></td>
+                                        </tr>
+                                        <tr>
+                                            <td height="50" colspan="3"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="middle" height="38" bgcolor="#3d4722" align="center"><a href="http://www.iava.org/donate"><img width="68" height="38" border="0" alt="DONATE" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_donate.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/contact-us"><img width="66" height="38" border="0" alt="CONTACT US" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_contactus.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/spread-word"><img width="49" height="38" border="0" alt="RECRUIT" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_recruit.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/veteranjoin"><img width="61" height="38" border="0" alt="SUBSCRIBE" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_subscribe.png" /></a></td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="top">
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="431" valign="middle" align="left">
+                                            </td>
+                                            <td width="170" valign="middle" height="48" align="right"><img width="115" height="20" alt="CONNECT WITH IAVA:" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/txt_connect.png" /><a href="http://www.facebook.com/IAVA.org"><img width="28" height="20" border="0" alt="Facebook" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/share_fb.png" /></a><a href="http://twitter.com/iava"><img width="24" height="20" border="0" alt="Twitter" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/share_tw.png" /></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </td>
+                                <td width="11"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

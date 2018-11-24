@@ -1,0 +1,9 @@
+<P>Hi {!IAVAEvent_Attendee__c.Event_Attendee_s_First_Name__c},</P>
+
+<P>Thank you for registering for today's VetTogether!</P>
+
+<P>We hope you were able to join us today. If you weren't able that's okay too. We hope you can join us for the next event in your community. Don't see something on the map? Host your own event! Visit us at <a href="https://iava.org/vettogether">https://iava.org/vettogether</a> to learn more.</P>
+
+<P>Thanks!</P>
+
+<P>Team IAVA</P>

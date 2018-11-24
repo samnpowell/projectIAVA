@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Information about Squad Leader Beta Info Call</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Squad Leader Beta Info Call</name>
+    <style>none</style>
+    <subject>So, You Want to Be An IAVA Squad Leader? What Now?</subject>
+    <type>text</type>
+</EmailTemplate>

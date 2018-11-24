@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>PRISM RRRP referrals</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>PRISM RRRP Veterans</name>
+    <params>
+        <name>scopeid</name>
+        <value>701C0000001CsI0</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignList</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

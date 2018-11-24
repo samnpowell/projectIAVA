@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Connects applicants to give</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Applicant_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Applicant__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Applicant Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Applicant_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Applicant__c)</formula>
+        <label>Applicant Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Applicant_Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Applicant__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Applicant Last Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Applicant_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Applicant__r.FirstName</formula>
+        <label>Applicant Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Applicant__c</fullName>
+        <description>Should be a confirmed member veteran only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Should be a confirmed member veteran only.</inlineHelpText>
+        <label>Applicant</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Give Requests</relationshipLabel>
+        <relationshipName>Give_Requests</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Attended__c</fullName>
+        <externalId>false</externalId>
+        <label>Attended</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Don&apos;t Know</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Availability__c</fullName>
+        <description>Checks Tentative Number Remaining on Give Instance to see if quantity requested is available.</description>
+        <externalId>false</externalId>
+        <formula>IF(  Give_Instance__r.Tentative_Number_Remaining__c - Units_Requested__c  &gt;= 0,&quot;Available&quot;,&quot;Unavailable&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Checks Tentative Number Remaining on Give Instance to see if quantity requested is available.</inlineHelpText>
+        <label>Availability</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Confirmed_21__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the applicant confirmed age 21+ (only relevant on 21+ gives)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if the applicant confirmed age 21+ (only relevant on 21+ gives)</inlineHelpText>
+        <label>Confirmed 21+</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact_ID_plus_Give_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>A workflow sets this value in order to prevent more than one Give Request with confirmation stage for the same Give and Applicant.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A workflow sets this value in order to prevent more than one Give Request with confirmation stage for the same Give and Applicant.</inlineHelpText>
+        <label>Contact ID plus Give ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Date_First_Emailed__c</fullName>
+        <description>This field is used to indicate the date that the first email was sent to the user for a re-confirmation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to indicate the date that the first email was sent to the user for a re-confirmation.</inlineHelpText>
+        <label>Date First Emailed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Last_Emailed__c</fullName>
+        <description>This field is used to indicate the date that the last email was sent to the user for a re-confirmation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is used to indicate the date that the last email was sent to the user for a re-confirmation.</inlineHelpText>
+        <label>Date Last Emailed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Mismatch__c</fullName>
+        <description>This field is set to &quot;TRUE&quot; when the Date Created of the give request is later than the app deadline or end date. It was created to help catch requests coming in late for closed gives.</description>
+        <externalId>false</externalId>
+        <formula>if(not(isblank(Give_Instance__r.Application_Deadline__c)), if(datevalue(CreatedDate)  &gt; Give_Instance__r.Application_Deadline__c ,&quot;TRUE&quot;,&quot;&quot;),
+
+ if(not(isblank(  Give_Instance__r.End_Date__c  )),if(datevalue(CreatedDate)  &gt;  Give_Instance__r.End_Date__c,&quot;TRUE&quot;,&quot;&quot;),&quot;&quot;)
+
+)</formula>
+        <inlineHelpText>This field is set to &quot;TRUE&quot; when the Date Created of the give request is later than the app deadline or end date. It was created to help catch requests coming in late for closed gives.</inlineHelpText>
+        <label>Date Mismatch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_of_Re_confirm__c</fullName>
+        <externalId>false</externalId>
+        <label>Date re-confirmed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Email_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Email Address</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FOR_REPORT_Attended__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Attended__c, &quot;Yes&quot;), &quot;True&quot;, &quot;False&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FOR_REPORT_Attended</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FOR_REPORT_Branch__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Applicant__r.Branch_of_Service__c, &quot;Army&quot;), &quot;Army&quot;, &quot;None&quot;) &amp; IF(ISPICKVAL(Applicant__r.Branch_of_Service__c, &quot;Air Force&quot;), &quot;Air Force&quot;, &quot;None&quot;) &amp; IF(ISPICKVAL(Applicant__r.Branch_of_Service__c, &quot;Navy&quot;), &quot;Navy&quot;, &quot;None&quot;) &amp; 
+IF(ISPICKVAL(Applicant__r.Branch_of_Service__c, &quot;Marines&quot;), &quot;Marines&quot;, &quot;None&quot;) &amp; 
+IF(ISPICKVAL(Applicant__r.Branch_of_Service__c, &quot;Coast Guard&quot;), &quot;Coast Guard&quot;, &quot;None&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FOR_REPORT_Branch</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FOR_REPORT_DateTime__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FOR_REPORT_DateTime</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>FOR_REPORT_Rank__c</fullName>
+        <externalId>false</externalId>
+        <formula>case(left(text(Applicant__r.Rank__c),1),&quot;E&quot;,&quot;Enlisted&quot;,&quot;O&quot;,&quot;Officer&quot;,&quot;none&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FOR_REPORT_Rank</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Geocode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Geocode</label>
+        <referenceTo>geopointe__Geocode__c</referenceTo>
+        <relationshipLabel>Give Requests</relationshipLabel>
+        <relationshipName>Geocode</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Give_Descriptor__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give_Instance__r.Give__r.Descriptor__c</formula>
+        <label>Give Descriptor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Give_Fulfillment_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give_Instance__r.Give__r.Fulfillment_Instructions_for_Winner__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Give Fulfillment Instructions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Give_Fulfillment_Instructions_rtf__c</fullName>
+        <description>These instructions will be sent as soon as the member is confirmed for the reward (immediately for some rewards, upon selection for others).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>These instructions will be sent as soon as the member is confirmed for the reward (immediately for some rewards, upon selection for others). Note this is now a Rich Text Field that can accept links and formatting.</inlineHelpText>
+        <label>Give Fulfillment Instructions rtf</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Give_Instance_Reconfirm_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give_Instance__r.Reconfirm_date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Give Instance Reconfirm Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Give_Instance_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give_Instance__r.Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Give Instance Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Give_Instance_Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give_Instance__r.Start_Time__c</formula>
+        <label>Give Instance Start Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Give_Instance__c</fullName>
+        <externalId>false</externalId>
+        <label>Give Instance</label>
+        <referenceTo>Give_Instance__c</referenceTo>
+        <relationshipLabel>Give Requests</relationshipLabel>
+        <relationshipName>Give_Requests</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Give_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give_Instance__r.Give__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Give Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Guest_s_21_and_Over__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be used to indicate that the member has indicated that guest(s) are 21 and over.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to indicate that the member has indicated that guest(s) are 21 and over.</inlineHelpText>
+        <label>Guest(s) 21 and Over</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Make_Address_Primary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Make Address Primary</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Make_Email_Primary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked when user requests that their email address become the primary email on the account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked when user requests that their email address become the primary email on the account</inlineHelpText>
+        <label>Make Email Primary</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Make_Phone_Primary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if user wanted Phone number on Give Request to be primary phone number on record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if user wanted Phone number on Give Request to be primary phone number on record.</inlineHelpText>
+        <label>Make Phone Primary</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Member_DL_Num__c</fullName>
+        <externalId>false</externalId>
+        <label>Member DL Num</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_DOB__c</fullName>
+        <externalId>false</externalId>
+        <label>Member DOB</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Member_Shirt_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Member Shirt Size</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Notes</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Notes</inlineHelpText>
+        <label>Notes</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Num_Confirmed_Give_Requests__c</fullName>
+        <externalId>false</externalId>
+        <formula>Applicant__r.Num_Confirmed_Give_Requests__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Conf Give Reqs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Platform_Device_Model__c</fullName>
+        <description>Model of device where the request originated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Model of device where the request originated</inlineHelpText>
+        <label>Platform Device Model</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Platform_Device_OS__c</fullName>
+        <description>Device OS where the request originated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Device OS where the request originated.</inlineHelpText>
+        <label>Platform Device OS</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Platform_Version__c</fullName>
+        <description>E.g. mobile phone app version where the request originated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. mobile phone app version where the request originated.</inlineHelpText>
+        <label>Platform Version</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Platform__c</fullName>
+        <description>On which Rucksack platform did this request originate?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>On which Rucksack platform did this request originate?</inlineHelpText>
+        <label>Platform</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Website</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>iPhone app</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PowerOfOne__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PowerOfOne</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Re_confirm_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This field will be used to indicate how many times a re-confirmation email has been sent to the user.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Count how many times re-confirm email has been sent)</inlineHelpText>
+        <label>Re-confirm Count</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Re_confirm_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Re-confirm Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Re-confirm sent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Re-confirmed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reconfirm_Info_from_Instance__c</fullName>
+        <description>The &quot;Reconfirm Info to Send&quot; field from the Give Instance.</description>
+        <externalId>false</externalId>
+        <formula>Give_Instance__r.Reconfirm_Info_to_Send__c</formula>
+        <inlineHelpText>The &quot;Reconfirm Info to Send&quot; field from the Give Instance.</inlineHelpText>
+        <label>Reconfirm Info from Instance</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Special_Response_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Response #2</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Response_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Response #3</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Response_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Response #4</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Response_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Response #5</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Response__c</fullName>
+        <description>If Give required special response it is stored here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Give required special response it is stored here.</inlineHelpText>
+        <label>Special Response #1 (at request)</label>
+        <length>32000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Give requested</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Wait-list</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tentative confirmation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Final confirmation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Information sent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Info requested of member</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ineligible</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AZ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GU</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PW</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WY</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Terms_Was_Checked__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If Terms and Conditions were displayed on the give, this box is checked if the user checked the Terms box (required) when submitting the request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Terms and Conditions were displayed on the give, this box is checked if the user checked the Terms box (required) when submitting the request.</inlineHelpText>
+        <label>Terms Was Checked</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Units_Requested__c</fullName>
+        <externalId>false</externalId>
+        <label>Units Requested</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Verify_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(TEXT( State__c ), Give_Instance__r.Give__r.City__c ), &quot;In State&quot;, &quot;Out of State&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Verify State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Give Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Give_Name__c</columns>
+        <columns>Units_Requested__c</columns>
+        <columns>Give_Instance__c</columns>
+        <columns>City__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Address__c</columns>
+        <columns>Zip_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_This_Month</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Give_Name__c</columns>
+        <columns>Units_Requested__c</columns>
+        <columns>Give_Instance__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Special_Response__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>All This Month</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Upcoming_Tentative</fullName>
+        <columns>NAME</columns>
+        <columns>Give_Instance__c</columns>
+        <columns>Applicant__c</columns>
+        <columns>City__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Address__c</columns>
+        <columns>Units_Requested__c</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Tentative confirmation</value>
+        </filters>
+        <label>All Upcoming Tentative</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Upcoming_Waitlisted</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>City__c</columns>
+        <columns>Stage__c</columns>
+        <columns>Address__c</columns>
+        <columns>Units_Requested__c</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Stage__c</field>
+            <operation>equals</operation>
+            <value>Wait-list</value>
+        </filters>
+        <label>All Upcoming Waitlisted</label>
+    </listViews>
+    <listViews>
+        <fullName>Armed_Forces_Ball_Requesters</fullName>
+        <columns>Stage__c</columns>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Applicant_Name__c</columns>
+        <columns>Applicant_Last_Name__c</columns>
+        <columns>Applicant_Email__c</columns>
+        <columns>Give_Name__c</columns>
+        <columns>State__c</columns>
+        <columns>Special_Response__c</columns>
+        <columns>Special_Response_2__c</columns>
+        <columns>Special_Response_3__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Give_Name__c</field>
+            <operation>equals</operation>
+            <value>Tickets to the Armed Forces Inauguration Ball 2017</value>
+        </filters>
+        <label>Armed Forces Ball Requesters</label>
+    </listViews>
+    <listViews>
+        <fullName>Give_Requests_Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Give_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Give Requests Created Today</label>
+    </listViews>
+    <listViews>
+        <fullName>Requests</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Give_Instance__c</columns>
+        <columns>Give_Name__c</columns>
+        <columns>Platform__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>iPhone_Requests</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Give_Instance__c</columns>
+        <columns>Give_Name__c</columns>
+        <columns>Platform__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Platform__c</field>
+            <operation>equals</operation>
+            <value>iPhone app</value>
+        </filters>
+        <label>iPhone Requests</label>
+    </listViews>
+    <nameField>
+        <displayFormat>GR-{YYYY}{MM}{DD}-{000}</displayFormat>
+        <label>Give Request ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Give Requests</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Applicant__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Units_Requested__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Give_Instance__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Give_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>State__c</customTabListAdditionalFields>
+        <listViewButtons>Mass_Update</listViewButtons>
+        <lookupDialogsAdditionalFields>Applicant__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Stage__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Units_Requested__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Give_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Give_Instance__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Special_Response__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Notes__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Applicant__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Units_Requested__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Stage__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Give_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Available_Quantity_Check</fullName>
+        <active>true</active>
+        <description>If stage is being set to Tentative or Final Conf, check whether enough units remaining before allowing.  Exception is when request was already tentatively or final conf so the spot is held, or when moving someone up from waitlist.</description>
+        <errorConditionFormula>AND(
+ or (
+    ispickval(Give_Instance__r.Give__r.Type__c, &quot;First Come First Served&quot;),
+    ispickval(Give_Instance__r.Give__r.Type__c, &quot;Screened Give&quot;)
+ ),
+ or(
+   ISPICKVAL( Stage__c ,&quot;Final confirmation&quot;),
+   ISPICKVAL( Stage__c ,&quot;Tentative confirmation&quot;)
+ ),
+ not(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Tentative confirmation&quot;)),
+ not(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Final confirmation&quot;)),
+ not(
+   and(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Wait-list&quot;),
+    Give_Instance__r.Tentative_Number_Remaining__c &gt; 0
+   )
+ ),
+ Give_Instance__r.Number_of_Units__c &gt; 0,
+ Give_Instance__r.Number_Remaining__c &lt; Units_Requested__c 
+)</errorConditionFormula>
+        <errorMessage>Sorry, the available quantity left was exceeded with this request.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_for_21_and_over</fullName>
+        <active>true</active>
+        <description>checks whether 21+ was checked if it&apos;s a 21+ give</description>
+        <errorConditionFormula>and(
+Give_Instance__r.Give__r.Must_be_21__c == true,
+Confirmed_21__c != true,
+not(ispickval(Stage__c, &quot;Denied&quot;)),
+not(ispickval(Stage__c, &quot;Info requested of member&quot;)),
+not(ispickval(Stage__c, &quot;Ineligible&quot;))
+)</errorConditionFormula>
+        <errorMessage>Sorry, this reward is for age 21 and up only.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_for_Guest_21_and_over</fullName>
+        <active>true</active>
+        <description>checks whether guests 21+ was checked if it&apos;s a 21+ give</description>
+        <errorConditionFormula>and(
+Units_Requested__c &gt; 1,
+Give_Instance__r.Give__r.Must_be_21_for_guest__c == true,
+Guest_s_21_and_Over__c != true,
+not(ispickval(Stage__c, &quot;Denied&quot;)),
+not(ispickval(Stage__c, &quot;Info requested of member&quot;)),
+not(ispickval(Stage__c, &quot;Ineligible&quot;))
+)</errorConditionFormula>
+        <errorMessage>Sorry, guests must be age 21 and up only.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Contact_Blocked_check</fullName>
+        <active>true</active>
+        <description>Checks whether the contact&apos;s Rucksack Status is blocked</description>
+        <errorConditionFormula>ISPICKVAL(Applicant__r.Rucksack_Status__c, &quot;Blocked&quot;)</errorConditionFormula>
+        <errorMessage>Sorry, your request was not accepted.  Please contact rucksack@iava.org if you have questions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_units_requested_field</fullName>
+        <active>true</active>
+        <description>Requires member to request a number of units if Give requires it.</description>
+        <errorConditionFormula>and(
+isblank(Units_Requested__c),  
+not(Give_Instance__r.Give__r.Member_Cannot_Select_Quantity__c), 
+ Give_Instance__r.Give__r.Maximum_Units_per_Member__c &gt; 1
+)</errorConditionFormula>
+        <errorDisplayField>Units_Requested__c</errorDisplayField>
+        <errorMessage>Please request a number of units/tickets.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>State_field_is_not_blank</fullName>
+        <active>true</active>
+        <description>If state field is blank, don&apos;t allow record to be saved</description>
+        <errorConditionFormula>and( Give_Instance__r.Give__r.Collect_Mailing_Address__c , ispickval(State__c, &quot;&quot;))</errorConditionFormula>
+        <errorDisplayField>State__c</errorDisplayField>
+        <errorMessage>Please select your State</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Terms_and_Conditions_not_checked</fullName>
+        <active>true</active>
+        <description>If the give requires the user check the Terms and Conditions box, then require it by jove.</description>
+        <errorConditionFormula>and( 
+  Give_Instance__r.Give__r.Show_Terms_and_Conditions__c , 
+  Give_Instance__r.Give__r.Terms_and_Conditions__c != null, 
+  not(Terms_Was_Checked__c) 
+)</errorConditionFormula>
+        <errorMessage>Please check the Terms and Conditions box at the bottom to indicate that you agree.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Mass_Update</fullName>
+        <availability>online</availability>
+        <description>Mass update Give Requests from a List View</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Mass Update</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/apex.js&quot;)} 
+
+var records = {!GETRECORDIDS($ObjectType.Give_Request__c)}; 
+var strIDs=&apos;&apos;; 
+if (records[0] == null) 
+{ 
+alert(&apos;Please select a record&apos;); 
+} 
+else 
+{ 
+for (var n=0; n&lt;records.length; n++) 
+{ 
+if(strIDs == &apos;&apos;) 
+strIDs = records[n]; 
+else 
+strIDs = strIDs + &quot;,&quot; + records[n] ; 
+} 
+window.location.href = &apos;/apex/MassManager__MassUpdate?selectedRecords=&apos;+strIDs + &apos;&amp;selectedObject=Give_Request__c&amp;retURL=&apos;+ window.location.href; 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Update_Stages</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Mass Update Stages</masterLabel>
+        <openType>sidebar</openType>
+        <page>dc_GiveInstanceMassView</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SALUTATION</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__StateOfCoverage__c</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__District__c</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>Account.kw__Primary_Address__c</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__Political_Party__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Twitter_ID_from_KW__c</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__Military__c</field>
+    </columns>
+    <columns>
+        <field>Account.kw__Committee_Membership__c</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__Biography__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>TITLE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>US Senator,US Representative</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.kw__KW_Category__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Former Fed Legislator</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>POL - STH 2014 Bio Sheets</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

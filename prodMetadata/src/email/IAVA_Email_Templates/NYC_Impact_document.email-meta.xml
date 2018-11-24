@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NYC Impact document</name>
+    <style>none</style>
+    <subject>IAVA needs your help!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I had a quick favor, our records indicate that you attended a NYC IAVA event in the last year.  We are working with a number of NYC foundations to bring more programs to the NYC area. We&apos;d love to hear some comments about what it means to you to be an IAVA members. We just need some brief quotes on why you are a member, what it means to be a member and what you have done with us and if it impacted you.
+
+It doesn&apos;t have to be perfect, just how you feel about IAVA.
+
+Please just reply to this email address if you have a story to share.
+
+Thanks for your continued support and hope to see you at the next event.
+
+Sincerely,
+Jason
+
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

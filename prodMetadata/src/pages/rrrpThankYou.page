@@ -1,0 +1,32 @@
+<apex:page controller="cov_resources_controller" sidebar="false" showHeader="false">
+    <apex:composition template="cov_template{!if(isInModal, '_noheader', '_noheader')}">
+        <apex:define name="meta-tags">
+            <meta property="og:title" content="RRRP: We're here to help - myIAVA"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </apex:define>
+        
+        <apex:define name="page-title">
+            Thank you – our RRRP Team will be in touch
+        </apex:define>
+        
+        <apex:define name="layout">
+            <div class="popup-container">
+                <div class="detail-pg">
+                    <h2>We're here to help</h2>
+                    <p>Thank you. Your response has been processed successfully. We will be back in contact with you within 1-2 business days.</p>
+                    <p>If you are currently experiencing a crisis please call the Veterans Crisis Line at 1.800.273.8255, and press 1. If you need immediate medical attention, please call 911 or go to your nearest emergency room.</p>
+                    
+                    <apex:outputPanel >
+                        <apex:form >
+                            <p>&nbsp;</p>
+                            
+                            <div class="pull-right">
+                                <button type="button" class="close smaller-close" onclick="closeIfModal();" aria-hidden="true">Close Window</button>
+                            </div>
+                        </apex:form>
+                    </apex:outputPanel>
+                </div>
+            </div>
+        </apex:define>
+    </apex:composition>
+</apex:page>

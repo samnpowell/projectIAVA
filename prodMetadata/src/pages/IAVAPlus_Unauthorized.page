@@ -1,0 +1,31 @@
+<apex:page id="forgotPassword" showHeader="false" controller="ForgotPasswordController" title="{!$Label.site.forgot_password}">
+ <apex:composition template="{!$Site.Template}">
+    <apex:define name="body">
+     
+
+						<h3>Log in with your "IAVA Plus" Login</h3>
+
+						<div class="sub-content">
+							<div class="hr">
+								<hr />
+							</div>
+
+				                  Log in with your "IAVA Plus" login and password to continue.  
+				                  If you don't have an IAVA Plus Login, <a href="/iavaplus">click here</a>.
+				
+                <c:SiteLogin rendered="{!$Site.LoginEnabled && ISPICKVAL($User.UserType,'Guest')}" id="siteLogin"/>
+              
+				
+				
+				                  <br/>
+				                  <hr />
+				             
+
+						</div>
+						<!-- sub-content -->
+       
+            
+              
+    </apex:define>
+  </apex:composition>
+</apex:page>

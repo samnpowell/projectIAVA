@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Event_Report_for_Give_is_due_tomorrow</fullName>
+        <description>Event Report for Give is due tomorrow</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Event_Report_for_Give_is_Due_Tomorrow</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_owner_of_Give_that_AIR_is_due_in_2_days</fullName>
+        <description>Notify owner of Give that AIR is due in 2 days</description>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <recipients>
+            <field>Internal_POC__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>prieckhoff@iava.org</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Notify_owner_of_Give_that_AIR_is_due_in_2_days</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Give_Start</fullName>
+        <field>Status__c</field>
+        <literalValue>Open</literalValue>
+        <name>Give Start</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Give_Status_Closed_Invisible</fullName>
+        <field>Status__c</field>
+        <literalValue>Closed Invisible</literalValue>
+        <name>Give Status Closed Invisible</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Give_Status_Closed_Visible</fullName>
+        <field>Status__c</field>
+        <literalValue>Closed Visible</literalValue>
+        <name>Give Status Closed Visible</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Give_Status_Open</fullName>
+        <field>Status__c</field>
+        <literalValue>Open</literalValue>
+        <name>Give Status Open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Give_Status_Waitlist</fullName>
+        <field>Status__c</field>
+        <literalValue>Waitlist</literalValue>
+        <name>Give Status Waitlist</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rucksack_Give_set_Active_Datestamp</fullName>
+        <description>Sets Active_Datestamp on Give to now.</description>
+        <field>Active_Datestamp__c</field>
+        <formula>NOW()</formula>
+        <name>Rucksack - Give set Active Datestamp</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Notify owner of Give that AIR is due in 2 days</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.AIR_Required__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.AIR_Completed__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <description>When an AIR hits its earliest start date, remind owner that an AIR is required and due in 2 days</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Notify_owner_of_Give_that_AIR_is_due_in_2_days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Give__c.Earliest_Start_Date__c</offsetFromField>
+            <timeLength>2</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Notify_owner_of_Give_that_AIR_is_due_in_2_days</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Give__c.Earliest_Start_Date__c</offsetFromField>
+            <timeLength>5</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>Notify when event report is due</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Give__c.AIR_Required__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>When a a Post-Event Report is required, it is Due two days after the Give Earliest Start Date. This reminder is sent one day before the Due Date</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Event_Report_for_Give_is_due_tomorrow</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Give__c.Earliest_Start_Date__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give schedule close invisible after End Date</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Ignore_Dates_and_Availability__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Latest_End_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Set Give to close invisible after latest end date (unless Ignore Dates is checked). This used to screen out highlighted gives so they closed visible but that was changed in July 2014.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Give_Status_Closed_Invisible</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Give__c.Latest_End_Date__c</offsetFromField>
+            <timeLength>27</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give schedule close invisible after Latest App Deadline if no End Date</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Latest_Application_Deadline__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Ignore_Dates_and_Availability__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Latest_End_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>Schedule Give to close invisible after latest application deadline if no End Date since it wouldnt otherwise disappear. (Do this unless Ignore Dates is checked) This used to screen out highlighted gives so they closed visible but that was changed in July.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Give_Status_Closed_Invisible</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Give__c.Latest_Application_Deadline__c</offsetFromField>
+            <timeLength>27</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give schedule close visible after End Date if featured</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Give__c.Ignore_Dates_and_Availability__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Latest_End_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Highlight_Listing__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Set Give to close invisible after latest end date if featured (unless Ignore Dates is checked)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Give_Status_Closed_Visible</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Give__c.Latest_End_Date__c</offsetFromField>
+            <timeLength>27</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give schedule close visible after Latest App Deadline if End Date exists</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Latest_Application_Deadline__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Ignore_Dates_and_Availability__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Latest_End_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Schedule Give to close visible after latest application deadline if there is an End Date which will make it close invisible later. (unless Ignore Dates is checked)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Give_Status_Closed_Visible</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Give__c.Latest_Application_Deadline__c</offsetFromField>
+            <timeLength>27</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give schedule close visible after Latest App Deadline if no End Date if featured</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Latest_Application_Deadline__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Ignore_Dates_and_Availability__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Latest_End_Date__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Highlight_Listing__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Schedule Give to close visible after latest application deadline if no End Date and featured since it wouldnt otherwise disappear. (Do this unless Ignore Dates is checked)</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Give_Status_Closed_Visible</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Give__c.Latest_Application_Deadline__c</offsetFromField>
+            <timeLength>27</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give schedule open for Planned give</fullName>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Planned</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Listing_Start_Date__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>For a planned give, schedule to open when Listing Start Date arrives.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>Give_Start</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <offsetFromField>Give__c.Listing_Start_Date__c</offsetFromField>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give set Status Open if open instances</fullName>
+        <actions>
+            <name>Give_Status_Open</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Best_Status__c</field>
+            <operation>equals</operation>
+            <value>3</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Status__c</field>
+            <operation>notEqual</operation>
+            <value>Planned</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Ignore_Dates_and_Availability__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>If there are instances in Give that are open, open Give (unless Ignore is checked).</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give set Status Waitlist for availability</fullName>
+        <actions>
+            <name>Give_Status_Waitlist</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Best_Status__c</field>
+            <operation>equals</operation>
+            <value>2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Waitlist__c</field>
+            <operation>notEqual</operation>
+            <value>No Waitlist</value>
+        </criteriaItems>
+        <description>Set Give status to Waitlist if it&apos;s a Waitlist give containing Give Instances of only waitlist or closed status.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>RuckSack - Give set Status closed for no availability</fullName>
+        <actions>
+            <name>Give_Status_Closed_Visible</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Best_Status__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Ignore_Dates_and_Availability__c</field>
+            <operation>notEqual</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>If all instances in Give are closed, close Give (unless Ignore is checked).</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rucksack - Give set Active Datestamp</fullName>
+        <actions>
+            <name>Rucksack_Give_set_Active_Datestamp</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Give__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Waitlist,Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Active_Datestamp__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Give__c.Number_of_Give_Instances__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </criteriaItems>
+        <description>Sets Active_Datestamp when Give record goes Open with at least one Give Instance</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Rucksack Geo Location Temp Fix</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Give__c.Zip_Code_s__c</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

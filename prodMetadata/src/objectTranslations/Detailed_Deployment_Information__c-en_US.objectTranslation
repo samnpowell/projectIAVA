@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Detailed Deployment Information</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Detailed Deployment Information</value>
+    </caseValues>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Detailed Deployment Information --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operation --></label>
+        <name>OEF_OIF__c</name>
+        <picklistValues>
+            <masterLabel>Gulf War</masterLabel>
+            <translation><!-- Gulf War --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korean War</masterLabel>
+            <translation><!-- Korean War --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OEF</masterLabel>
+            <translation><!-- OEF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OIF</masterLabel>
+            <translation><!-- OIF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OND</masterLabel>
+            <translation><!-- OND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Peacetime</masterLabel>
+            <translation><!-- Peacetime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vietnam War</masterLabel>
+            <translation><!-- Vietnam War --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>World War II</masterLabel>
+            <translation><!-- World War II --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stop-Loss --></label>
+        <name>Stop_Loss__c</name>
+    </fields>
+    <layouts>
+        <layout>Detailed Deployment Information Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

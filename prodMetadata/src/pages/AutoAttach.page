@@ -1,0 +1,25 @@
+<!--
+Copyright (c) 2009 Etherios LLC
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are not permitted.
+
+Author: Nick Koopman, nkoopman@etherios.com
+-->
+<!-- HTML FORMATTED PAGE - OLD
+<apex:page controller="AutoAttachCon" action="{!ProcessInsert}">
+	<apex:pageMessages />
+    <apex:form >
+        <apex:variable var="a" value="{!newAttachment}"/>
+        <apex:pageBlock title="{! "Attachment: " + a.Id}">
+            <apex:pageBlockSection columns="1">
+                <apex:outputField value="{!a.Name}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+NEW PAGE FORMATTED IN JSON -->
+<apex:page controller="AutoAttachCon" action="{!ProcessInsert}" contentType="text/html" showHeader="false" >
+{!JSON}
+</apex:page>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>Application__c.Stage__c</field>
+    </columns>
+    <columns>
+        <field>Application__c.Progress_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Application__c.Reason_for_Applying__c</field>
+    </columns>
+    <columns>
+        <field>Application__c.Veteran_Member__c</field>
+    </columns>
+    <description>&quot;In progress&quot; report, minus the resumes that have been submitted to hiring mgrs, just capturing those we are actively reaching out to</description>
+    <filter>
+        <criteriaItems>
+            <column>Application__c.Stage__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Interviews in progress</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Application__c.Position__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>volunteer,intern</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Application__c.Position__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Apps - Interviews in Progress</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Application__c@Application__c.Applicant__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Application__c.Hire_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

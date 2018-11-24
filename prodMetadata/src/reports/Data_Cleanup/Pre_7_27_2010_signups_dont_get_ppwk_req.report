@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CONTACT_ID</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Veteran_Member__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Signup_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Paperwork_Confirmation__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Vouch_tally_rollup__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Peer_Confirmation_Acceptance_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.No_Email_Blasts__c</field>
+    </columns>
+    <description>Pre-7/27/2010 signups who have been screened out of Paperwork Request emails</description>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3 OR 5) AND 4</booleanFilter>
+        <criteriaItems>
+            <column>Contact.Signup_Date__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>lessThan</operator>
+            <value>7/27/2010</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Paperwork_Confirmation__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Paperwork Not Requested Yet</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Paperwork_Confirmation__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Vouch_tally_rollup__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>lessThan</operator>
+            <value>2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Paperwork_Confirmation__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Paperwork Requested</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Contact_Primary_Mailing_List__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Pre-7/27/2010 signups dont get ppwk req</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

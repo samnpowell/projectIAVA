@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for recipients of new member numbers 1.25.2012</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Duplicate member number alert</name>
+    <style>none</style>
+    <subject>Important IAVA information for you</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I am writing today to let you know that IAVA had to reissue a series of member numbers. Your membership number is one that has been affected and I wanted to quickly inform you of your new member number:
+
+Your new member number is {!Contact.Membership_ID__c}.
+
+As a reminder, your member number allows you to access the Rucksack. If you are not familiar the Rucksack is where you can find exclusive deals and giveaways for Iraq and Afghanistan Veterans.
+
+If you have any questions please email the membership team at membership@iava.org.
+
+Thanks,
+Jason
+
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue, 10th Floor
+New York, NY 10017
+(212) 982-9699
+www.iava.org 
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

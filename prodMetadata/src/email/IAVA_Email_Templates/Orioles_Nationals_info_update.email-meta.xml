@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to Orioles/Nationals campaign members who numbers apear to be wrong.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Orioles/Nationals info update</name>
+    <style>none</style>
+    <subject>Please update your information with IAVA</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+You are receiving this email today because we have recently tried unsuccessfully to contact you about a Rucksack request for either the Baltimore Orioles August 9th game or the Washington Nationals Aug 16th game.
+
+Please log on to &lt;iava.org/update&gt; to update your information. Once we are able to contact you we can guarantee your tickest to the game you requested.
+
+If you have not signed up yet for tickets to the Baltimore Orioles August 9th home game against the Chicago White Sox, you can do so by logging on to &lt;http://rucksack.iava.org/dc_RewardDetails?giveid=a0QC0000004EFT5MAO!&gt;.
+
+Sincerely,
+
+Anthony
+-- 
+Anthony Pike
+Membership Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue, 10th Floor
+New York, NY 10017
+(212) 982-9699
+www.iava.org 
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

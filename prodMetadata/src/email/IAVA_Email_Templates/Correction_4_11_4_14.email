@@ -1,0 +1,26 @@
+Dear {!Contact.FirstName},
+
+Recently you received an email from me stating that you membership has been approved.  Unfortunately due to a glitch in our system the link that was provided to sign up for IAVA's Community of Veterans was incorrect.  Below I have included an accurate version of the entire email.  If you have any questions please feel free to contact me at membership@iava.org.
+
+--
+
+Your application to join IAVA has been approved! As a member of IAVA you have access to two premier online resources for this generation of veterans.
+
+COMMUNITY OF VETERANS
+You now have access to our online Community of Veterans, IAVA’s exclusive social network for Iraq and Afghanistan veterans. Please use the following link to get started on Community of Veterans:
+http://iava.communityofveterans.org/?xgi=5QFG7HjpNt9xD0
+
+Once you have filled out your community profile we’ll have to review it before your account becomes active. You will receive another email once your profile goes live – usually within two business days.
+
+THE RUCKSACK
+You also have access to IAVA’s Rucksack where you can find exclusive deals and giveaways for Iraq and Afghanistan Veterans. Your official IAVA member number, which you will use to access The Rucksack, is:
+
+{!NullValue(Contact.Membership_ID__c, "No member number found, please contact us.")}
+
+Please save this membership number to redeem exclusive rewards, tickets and giveaways at the IAVA Rucksack:
+http://rucksack.iava.org
+
+If you have any questions, please feel free to contact us at membership@iava.org.
+
+Jason Hansman
+Community Manager

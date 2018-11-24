@@ -1,0 +1,3 @@
+<apex:component >
+	<apex:includeScript value="{!URLFOR($Resource.bootstrap_files,'js/bootstrap.min.js')}" />
+</apex:component>

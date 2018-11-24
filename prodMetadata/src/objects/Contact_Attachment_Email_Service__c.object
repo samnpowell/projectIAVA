@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Custom settings for ContactAttachment email service</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Error_Message_Body__c</fullName>
+        <description>Body of message sent back to sender when no contact matches the incoming email address</description>
+        <externalId>false</externalId>
+        <label>Error Message Body</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Error_Message_Subject__c</fullName>
+        <description>Subject of message sent back to sender when no contact matches the incoming email address</description>
+        <externalId>false</externalId>
+        <label>Error Message Subject</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Minimum_Attachment_Size__c</fullName>
+        <description>File size in bytes. Attachments of size below this minimum would be ignored by the email service.</description>
+        <externalId>false</externalId>
+        <label>Minimum Attachment Size</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Contact Attachment Email Service</label>
+    <visibility>Protected</visibility>
+</CustomObject>

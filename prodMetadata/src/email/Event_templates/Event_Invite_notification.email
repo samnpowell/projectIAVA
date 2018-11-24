@@ -1,0 +1,14 @@
+{!IAVAEvent_Attendee__c.Inviter__c} has invited you to an IAVA event! Join us to meet other IAVA members and enjoy good food and fun!
+
+     {!IAVAEvent_Attendee__c.Event_Name__c}
+     {!IAVAEvent_Attendee__c.Event_Date__c}
+     {!IAVAEvent_Attendee__c.Event_Times__c}
+
+     {!IAVAEvent_Attendee__c.Event_Venue__c}
+     {!IAVAEvent_Attendee__c.Event_Street_Address__c}
+     {!IAVAEvent_Attendee__c.Event_CityStateZip__c}
+
+{!IAVAEvent_Attendee__c.Brief_Description__c}
+
+More details available at:
+https://cov.force.com/iava/cov_event?id={!IAVAEvent_Attendee__c.EventId__c}

@@ -1,0 +1,61 @@
+<apex:page showHeader="false" title="{!$Label.site.error2}" controller="cov_exception_controller" action="{!logVFerror}">  
+
+  <apex:composition template="{!$Site.template}">
+  
+  
+    <apex:define name="body">  
+
+                
+     <div style="background-color: #000">
+        <img src="{!URLFOR($Resource.cov_files,'img/iava_logo_white_120.png')}" width="120" height="35" alt="IAVA" />
+     </div> 
+
+      <center>
+        <apex:panelGrid bgcolor="white" columns="1" style="align: center;"> 
+          <br/>
+          <br/>
+          <apex:panelGrid width="758" cellpadding="0" cellspacing="0" bgcolor="white" columns="1" styleClass="topPanelContainer"> 
+            <br/>
+            <apex:outputPanel layout="block" styleClass="topPanel">
+              <apex:panelGrid width="758" cellpadding="0" cellspacing="0" bgcolor="white" columns="3"> 
+                <apex:panelGroup >
+        
+                            <h3>Whoops, there was an error.</h3>
+                            <br />
+                            <br />
+                    <apex:outputPanel id="userMessagePanel">
+                      <apex:outputPanel rendered="{!not(userMessageSubmitted)}">
+                      <p>Can you tell us what you were doing when you got this error? It will help us try to fix it.</p>
+                      <apex:form html-role="form" styleClass="form-horizontal">
+                        <apex:inputTextarea value="{!userMessage}" styleClass="form-control" style="max-width: 400px;" />
+                        <br />
+                        <apex:commandButton value="Submit" action="{!addUserMessage}" reRender="userMessagePanel" styleClass="btn btn-primary" />
+                      </apex:form>
+
+                      </apex:outputPanel>
+
+                      <apex:outputText value="{!responseMessage}" />
+
+                    </apex:outputPanel>
+
+                    <br/>
+                    <br/> 
+
+
+                </apex:panelGroup>
+              </apex:panelGrid> 
+             </apex:outputPanel>
+          </apex:panelGrid> 
+          <br/>
+          <apex:messages />
+          <br/>
+        </apex:panelGrid>
+      </center>
+      
+
+
+
+
+    </apex:define>
+  </apex:composition>
+</apex:page>

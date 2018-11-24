@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Deliverable is Due Alert</name>
+    <style>none</style>
+    <subject>{!Grant_Obligation__c.Activity__c} for {!Grant_Obligation__c.Grant__c} is due on {!Grant_Obligation__c.Due_Date__c}</subject>
+    <type>text</type>
+</EmailTemplate>

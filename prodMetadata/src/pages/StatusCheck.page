@@ -1,0 +1,16 @@
+<apex:page showHeader="false" sidebar="false" controller="StatusCheck_controller" action="{!init}">
+	
+
+	<style type="text/css">
+		body {background-color: black; color: #999;} 
+	</style>
+
+	<html>
+	<body>
+
+	<div>One minute, redirecting you to the right place...</div>
+
+	</body>
+	</html>
+
+</apex:page>

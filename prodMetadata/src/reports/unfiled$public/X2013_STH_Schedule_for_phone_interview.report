@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Rank__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Branch_of_Service__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Service_Type__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Current_Status__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_STATE</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>PHONE3</field>
+    </columns>
+    <columns>
+        <field>Contact.Race__c</field>
+    </columns>
+    <format>Tabular</format>
+    <name>2013 STH Schedule for phone interview</name>
+    <params>
+        <name>scopeid</name>
+        <value>701C0000000RRRj</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignContact</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

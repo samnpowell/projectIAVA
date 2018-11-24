@@ -1,0 +1,25 @@
+Dear {!Account.Name},
+
+{!IF(ISBLANK(Opportunity.Campaign_TY_Message__c), "Thank you for your donation to Iraq and Afghanistan Veterans of America (IAVA). We are so glad that you are part of our community and look forward to sharing how your gift transformed lives.", Opportunity.Campaign_TY_Message__c)}
+
+Donation Amount: {!Opportunity.Amount}
+
+Because of donors like you, IAVA’s life-changing programs have touched 850,000 veterans across the nation. The transition to civilian life is challenging for many veterans – and we provide a variety of programs to help them conquer these challenges:
+
+      •	One on one support and referrals to resources through our Rapid Response Referral Program (RRRP) 
+      •	Events that connect veterans at a time when feeling isolated is common
+      •	Serving as a voice for veterans in Washington and educating the public about veterans issues
+
+And, perhaps most importantly of all, veterans turn to IAVA when the challenges they face are overwhelming and quitting seems the only option. As one of our clients expressed:
+
+      “I would have given up in defeat if not for your encouragement. You kept me from that by talking to me on a day when there was just one  
+       problem too many for me to deal with. You will never know how much you helped by just listening.”   
+ 
+On behalf of every member veteran of IAVA, thank you for having our backs. 
+
+Sincerely,
+
+Paul Rieckhoff
+CEO and Founder
+
+IAVA is a 501(c)3 non-profit organization (Tax ID: 20-1664531). Your contribution is tax-deductible to the extent allowed by law. If you would like a record of this donation on an IAVA letterhead for tax purposes, please contact  the Development department at donate@iava.org.

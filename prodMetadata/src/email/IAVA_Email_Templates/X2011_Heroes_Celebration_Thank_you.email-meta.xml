@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2011 Heroes Celebration Thank you</name>
+    <style>none</style>
+    <subject>Thank you</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+On behalf of myself, the Membership team, and all of the IAVA staff, thank you for attending our Third Annual Heroes Celebration.
+
+The night was a tremendous success, as we attracted some of the biggest names in Hollywood to a special evening focused on our issues, and on the incredible life and legacy of Tim Hetherington. The real credit goes to you, for sharing your experiences and stories with everyone in attendance. It will make an impact that far outlasts just one evening.
+
+For those of you local to Los Angeles, we’d also like to offer you tickets to another upcoming event. The Shakespeare Center of Los Angeles has generously offered exclusive audience seats to IAVA members for their upcoming 21st Annual Simply Shakespeare Celebrity reading of The Merry Wives of Windsor. This performance will star Tom Hanks, William Shatner, Rita Wilson, Faith Hill and more. If you’re looking for a great early Mother’s Day gift or date night, look no more. Click here (http://bit.ly/llKny5) to head to The Rucksack and request your tickets!
+
+Lastly, click here (http://bit.ly/jVAgAk) to check out the photos from the evening. Once again, thank you for your continued leadership and energy in supporting IAVA. You’ve truly got our back.
+
+Sincerely,
+
+Adam
+
+
+Adam Bryant
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

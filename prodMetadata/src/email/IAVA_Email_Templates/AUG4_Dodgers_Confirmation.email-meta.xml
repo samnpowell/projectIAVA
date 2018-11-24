@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AUG4.Dodgers.Confirmation</name>
+    <style>none</style>
+    <subject>From IAVA: Instructions &amp; Additional Information for Saturday, 8/4 - Chicago Cubs vs. Los Angeles Dodgers Game</subject>
+    <type>text</type>
+</EmailTemplate>

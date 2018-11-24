@@ -1,0 +1,18 @@
+Stat: {!Stat_Measurement__c.Stat__c}
+
+Amount: {!Stat_Measurement__c.Amount__c}
+Measurement Date: {!Stat_Measurement__c.Measurement_Date__c}
+{!if(not(isblank(Stat_Measurement__c.Start_Date__c)), 
+"Start Date " + text(Stat_Measurement__c.Start_Date__c) + 
+", End Date " + text(Stat_Measurement__c.End_Date__c), "")}
+
+Comparison Measurement #1:
+Date: {!Stat_Measurement__c.Comparison_1_Date__c}
+Amount: {!Stat_Measurement__c.Comparison_1_Amount__c}
+Change since this measurement: {!Stat_Measurement__c.Comparison_1_Change__c}
+
+
+Comparison Measurement #2:
+Date: {!Stat_Measurement__c.Comparison_2_Date__c}
+Amount: {!Stat_Measurement__c.Comparison_2_Amount__c}
+Change since this measurement: {!Stat_Measurement__c.Comparison_2_Change__c}

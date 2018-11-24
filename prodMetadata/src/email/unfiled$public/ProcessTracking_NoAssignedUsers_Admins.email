@@ -1,0 +1,5 @@
+*** ALERT: NO ASSIGNED USERS ***
+
+{!Process__c.Name} has no assigned users. Please review this process with the responsible department to see if it is still needed. If the process is not being replaced, identify and train new responsible users.
+
+{!Process__c.Link}

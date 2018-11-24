@@ -1,0 +1,162 @@
+<apex:page controller="cov_resources_controller" sidebar="false" showheader="false" action="{!initStep2}" docType="html-5.0">
+
+
+<apex:composition template="cov_template_noheader">
+
+
+    <apex:define name="layout">
+        
+        <div class="popup-container">
+        
+          <div class="detail-pg">   
+                          
+          <div>
+            <apex:form html-role="form" styleClass="form-horizontal">
+
+            	<apex:outputPanel rendered="{!not(lockCaseDescription)}">
+					<div class="form-group">
+		    	      	<p>&nbsp;</p>
+						<label for="caseDescription" class="control-label">What do you need assistance with?</label>
+						<apex:inputTextarea id="caseDescription" styleClass="form-control" value="{!caseDescription}" rows="3" />
+					</div>
+				</apex:outputPanel>
+
+				<div class="form-group">
+	    	      	<p>&nbsp;</p>
+					<label class="control-label">How do you prefer to be contacted?</label>
+				</div>
+
+
+
+                <div class="pull-right" style="width: 180px;">
+                	<div id="PhoneConfirm-div" class="contactConfirm-div" style="display:none;">
+	                	<div class="form-group">
+							<label for="phoneConfirm">Confirm Your Phone Number</label>
+		                	<apex:input type="tel" id="phoneConfirm" styleclass="form-control contact-confirm-field" value="{!phoneConfirm}" />
+						</div>
+						<div id="primary-phone-wrapper" class="primary-contact-wrapper" style="display:none;">
+							<p class="check"><apex:inputCheckbox value="{!makePhonePrimary}" id="primary-phone" styleclass="form-checkbox primary-contact" /> Check this box if this is the main phone number you want on record with IAVA</p>
+						</div>
+						<div id="preferred-phone-wrapper" class="preferred-contact-wrapper" style="display: none;">
+							<label for="preferredPhone">Type of Phone</label>
+							<apex:selectList size="1" value="{!preferredPhone}" id="preferredPhone" styleClass="form-control">
+								<apex:selectOption itemValue="" itemLabel="--select--" id="prefphone-blank" />
+								<apex:selectOption itemValue="Mobile" itemLabel="Mobile" id="prefphone-mobile" />
+								<apex:selectOption itemValue="Home" itemLabel="Home" id="prefphone-home" />
+								<apex:selectOption itemValue="Work" itemLabel="Work" id="prefphone-work" />
+								<apex:selectOption itemValue="Other" itemLabel="Other" id="prefphone-other" />
+							</apex:selectList>
+						</div>
+					</div>
+					<div id="EmailConfirm-div"  class="contactConfirm-div" style="display:none;">
+	                	<div class="form-group">
+							<label for="emailConfirm">Confirm Email</label>
+		                	<apex:input type="email" id="emailConfirm" styleclass="form-control contact-confirm-field" value="{!emailConfirm}" />
+						</div>
+						<div id="primary-email-wrapper" class="primary-contact-wrapper" style="display:none;">
+							<p class="check"><apex:inputCheckbox value="{!makeEmailPrimary}" id="primary-email" styleclass="form-checkbox primary-contact" /> Check this box if this is the main email address you want on record with IAVA</p>
+						</div>
+						<div id="preferred-email-wrapper" class="preferred-contact-wrapper" style="display: none;">
+							<label for="preferredEmail">Type of Email Address</label>
+							<apex:selectList size="1" value="{!preferredEmail}" id="preferredEmail" styleClass="form-control">
+								<apex:selectOption itemValue="" itemLabel="--select--" id="prefemail-blank" />
+								<apex:selectOption itemValue="Personal" itemLabel="Personal" id="prefemail-personal" />
+								<apex:selectOption itemValue="Work" itemLabel="Work" id="prefemail-work" />
+								<apex:selectOption itemValue="Alternate" itemLabel="Other" id="prefemail-other" />
+							</apex:selectList>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+	            	<apex:selectRadio value="{!contactPreference}" layout="pageDirection" id="contactPref" styleClass="radio-large">
+
+	                	<apex:selectOption itemValue="Phone" itemLabel="Phone" id="phone-radio" />
+	                	<apex:selectOption itemValue="Email" itemLabel="Email" id="email-radio" />
+	                	<!-- <apex:selectOption itemValue="COV" itemLabel="Direct Message in myIAVA" id="directmsg-radio" /> -->
+
+	                </apex:selectRadio>
+				</div>
+
+		        <div class="text-center">
+	                <apex:commandButton value="Continue" action="{!saveContactPreference}" styleclass="btn btn-primary btn-large" />
+	            </div>
+
+				<apex:outputPanel id="commentPanel" rendered="{!lockCaseDescription}">
+					<hr />
+					<div class="form-group links-alt-style">
+						<a data-toggle="collapse" href="#comment-panel" aria-expanded="false" aria-controls="comment-panel">Add a comment to your case</a>
+	          			<div class="collapse {!if(isblank(commentMsg),'','in')} case-comment" id="comment-panel">
+		          			<apex:inputTextArea styleClass="form-control" rows="3" value="{!caseComment}" html-placeholder="Enter your comment" />
+		          			<apex:commandButton styleclass="btn btn-large" id="save-comment-button" value="Send Comment" action="{!saveCaseComment}" reRender="commentPanel" >
+		          				<apex:param name="caseId" value="{!theCase.Id}" assignTo="{!caseIdforComment}"/>
+		          			</apex:commandButton>			          			
+	          				&nbsp;<apex:outputText value="{!commentMsg}" id="comment-msg" styleClass="comment-msg color-iava-green" />
+
+		          		</div>
+			        </div>
+		          	<hr />
+	            </apex:outputPanel>
+
+
+
+	          <p>&nbsp;</p>
+
+	        <div class="text-center">
+		            <apex:outputPanel rendered="{!closeTarget != null && closeTarget != ''}">
+		                <input type="hidden" id="closetarget" value="{!closeTarget}" />
+		            </apex:outputPanel>
+	        </div>
+
+            </apex:form>
+
+         </div>
+
+        <p>&nbsp;</p>
+
+          
+         </div>
+        </div>
+    
+    <script type="text/javascript">
+		var j$ = jQuery.noConflict();
+	
+		j$(document).ready(function()    {
+
+			// if contactPref already chosen on page load show confirm box
+			j$("input[name$=contactPref]").each(function(i){
+				if (j$(this).val() != 'COV' && j$(this).is(':checked')) {
+					j$("#" + j$(this).val() + "Confirm-div").show();
+					return false;
+				}
+			});
+			console.log('3');
+
+			j$("input[name$=contactPref]").change(function () {
+				j$(".contactConfirm-div").hide()
+				j$("#" + j$(this).val() + "Confirm-div").show();
+			});
+
+			j$(".contact-confirm-field").keypress(function () {
+				var thisId = j$(this).attr('id');
+				var targetField = thisId.slice(thisId.lastIndexOf(':') + 1, -1 * 'Confirm'.length);
+	   			j$("#primary-" + targetField + "-wrapper").show();
+			});
+
+			j$('.primary-contact').change(function() {
+				var thisId = j$(this).attr('id');
+				var targetField = thisId.slice(thisId.lastIndexOf(':') + 1 + 'primary-'.length);
+				j$("#preferred-" + targetField + "-wrapper").toggle(j$(this).prop("checked"));
+		    });
+
+		});
+	</script>
+    
+    
+    </apex:define>
+
+</apex:composition>
+
+
+</apex:page>

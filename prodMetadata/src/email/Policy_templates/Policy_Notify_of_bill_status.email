@@ -1,0 +1,9 @@
+The status of bill {!Legislation__c.Name}: {!Legislation__c.AKA__c}
+
+has been changed to: {!Legislation__c.Status__c}
+
+and the Active box is: {!if(Legislation__c.Active__c, "Checked","Unchecked")}
+
+
+View the record here:
+{!Legislation__c.Link}

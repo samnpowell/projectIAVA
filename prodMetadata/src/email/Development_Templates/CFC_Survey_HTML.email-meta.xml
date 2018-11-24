@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CFC Survey - HTML</name>
+    <style>none</style>
+    <subject>IAVA CFC Survey</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you so much for your generous donation to Iraq and Afghanistan Veterans of America through the Combined Federal Campaign. Whether it’s through our premier leadership initiative, Storm the Hill (http://iava.org/sth2013-learn#schedule), or the Career Pathfinder (http://iava.org/career-pathfinder), our innovative new tool that helps match our veterans with employers, your support has improved the lives of countless veterans across the country.
+
+To better serve our New Greatest Generation of veterans, we’d love to find out a little more about the amazing people that have supported our movement. We ask that you take our short online survey so that we can better engage our supporters and help grow our movement with more amazing people like yourself. Click this link: http://www.charitysurvey.org/ to participate, enter ID number 75335 and if you have any questions, please don’t hesitate to contact me.
+
+On behalf of every member of IAVA, thank you for having our backs!
+
+Semper fi,
+
+Derek Coy
+Development Associate
+OIF Veteran, USMC
+
+
+Join IAVA in calling on President Obama to end the VA disability benefits backlog.  Sign the Petition at http://iava.org/storm-hill-2013-petition-2.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

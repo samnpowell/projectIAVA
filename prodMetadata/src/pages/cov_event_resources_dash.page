@@ -1,0 +1,101 @@
+<apex:page showHeader="false" sidebar="false">
+
+
+    <div id="event-resources-panel" class="dashboard-list">
+
+        <div class="box-heading">
+        	<div class="box-heading-content">
+	        	<h5>Hosting Resources</h5>
+        	</div>
+        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+        </div>
+
+        <div class="well box-content">
+
+        <ul class="list-group big-icon-group">
+        	<li class="list-group-item">
+        		<a href="{!URLFOR($Resource.vettogether_files,'VetTogether_Toolkit.pdf')}" target="_blank">
+        			<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+        				VetTogether Toolkit
+        		</a>
+        		<span class="item-description">
+        			(PDF, 1.6 MB)
+        		</span>
+        	</li>
+
+        	<li class="list-group-item">
+        		<a href="{!URLFOR($Resource.vettogether_files,'VetTogether_sign-in_sheet.pdf')}" target="_blank">
+        			<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        				VetTogether sign-in sheet
+        		</a>
+        		<span class="item-description">
+        			(PDF, 112 KB)
+        		</span>
+        	</li>
+
+        	<li class="list-group-item">
+        		<a href="{!URLFOR($Resource.vettogether_files,'VetTogether-logo.png')}" target="_blank">
+        			<span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+        				VetTogether logo
+        		</a>
+        		<span class="item-description">
+        			(PNG, 25 KB)
+        		</span>
+        	</li>
+
+        	<li class="list-group-item">
+        		<a href="{!URLFOR($Resource.vettogether_files,'IAVA_In-Kind_Donation_Form.docx')}" target="_blank">
+        			<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+        				IAVA In-Kind Donation Form
+        		</a>
+        		<span class="item-description">
+        			(DOCX, 32 KB)
+        		</span>
+        	</li>
+
+            <li class="list-group-item">
+                <a href="{!URLFOR($Resource.vettogether_files,'How_To_Create_Host_Event.pdf')}" target="_blank">
+                    <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        How to Create/Host an Event
+                </a>
+                <span class="item-description">
+                    (PDF, 604 KB)
+                </span>
+            </li>
+
+        	<li class="list-group-item">
+        		<a href="{!URLFOR($Resource.vettogether_files,'RRRP_One-Pager.pdf')}" target="_blank">
+        			<span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+        				RRRP One-Pager
+        		</a>
+        		<span class="item-description">
+        			(PDF, 1.6 MB)
+        		</span>
+        	</li>
+        	
+        	<li class="list-group-item">
+        		<a href="{!URLFOR($Resource.vettogether_files,'IAVA_Impact_Infographic.pdf')}" target="_blank">
+        			<span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+        				IAVA Impact Infographic
+        		</a>
+        		<span class="item-description">
+        			(PDF, 1 MB)
+        		</span>
+        	</li>
+
+        	<!-- <span class="glyphicon glyphicon-file"> -->
+        	<!-- <span class="glyphicon glyphicon-check"> -->
+        	<!-- <span class="glyphicon glyphicon-list"> -->
+        	<!-- <span class="glyphicon glyphicon-list-alt"> -->
+        	<!-- <span class="glyphicon glyphicon-picture"> -->
+        	<!-- <span class="glyphicon glyphicon-film" > -->
+        	<!-- <span class="glyphicon glyphicon-folder-open"> -->
+        </ul>
+
+        </div>
+
+    </div>
+
+
+	
+</apex:page>

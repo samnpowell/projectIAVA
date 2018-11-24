@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2/26/2013 STH 2013 GROUND ACCEPT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2/26/2013 STH 2013 GROUND ACCEPT</name>
+    <style>none</style>
+    <subject>Welcome to Storm the Hill Ground Team!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Congratulations! We are very pleased to invite you to be a part of IAVA&apos;s Storm the Hill 2013 in Washington, DC from March 16-22. It will be an exciting, demanding and historic week, and we know you will be an excellent addition. We&apos;ll show millions of our fellow veterans around the world that we&apos;ve got their back.
+
+During our week on the hill, we will be holding a rally where we’ll focus the country’s attention on the issues confronting today’s veterans. We want to extend this opportunity to veterans beyond those of you who will be joining us for the entire week. We want you to help us let local veterans know about this opportunity. When details are finalized we will ask you to help us reach out.
+
+This year IAVA received some of our best applications to date. All of our applications were inspiring - and the increasing level of interest in Storm the Hill thrills us. Every year, this program is growing the new veterans movement in unprecedented ways.
+
+IAVA is taking care of your travel and lodging, but we need a couple things from you to make that happen. First, we need you to complete a travel information form and a biographical information form. Please complete these forms no later than 5:00 pm EST on Thursday, February 28. If you experience difficulties with the form, please email me at anthony@iava.org for assistance.
+
+In the coming days, you will receive an itinerary detailing your travel to Washington, as well as an informational packet from IAVA. Inside will be all of the important details that you will need to know about Storm the Hill.
+
+In the meantime, if you have any questions or concerns, please contact me at anthony@iava.org. I will be working to ensure that your experience in Washington, DC is as seamless possible. We are excited to have you as a member of Storm the Hill 2013 and look forward to seeing you later this month. Welcome to the team!
+
+Sincerely,
+Anthony
+
+Anthony Pike
+Program Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

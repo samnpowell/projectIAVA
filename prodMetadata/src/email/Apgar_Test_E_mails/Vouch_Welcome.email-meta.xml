@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is a clone of the Peer - Invite Peer Nominee HTML email template for VOUCH</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Vouch - Welcome</name>
+    <style>none</style>
+    <subject>{!npe4__Relationship__c.npe4__RelatedContact__c} has invited you to join IAVA!</subject>
+    <textOnly>Hi {!npe4__Relationship__c.First_Name_of_Primary_Contact__c},
+
+{!npe4__Relationship__c.npe4__RelatedContact__c} is inviting you to become a member of Iraq and Afghanistan Veterans of America by verifying that you served in Iraq or Afghanistan. Membership is completely free!
+
+As part of IAVA, you’re a part something great and empowering - our movement is growing, and we are honored to have you a part of it! But the first step is for you to accept the invitation and join myIAVA!
+
+{!if(isblank(npe4__Relationship__c.Peer_Invite_Message__c),&quot;&quot;, &quot;Here is a message from &quot;+npe4__Relationship__c.npe4__RelatedContact__c+&quot;:
+&quot; + npe4__Relationship__c.Peer_Invite_Message__c)}
+
+
+As a member of IAVA of you have the opportunity to:
+
+Log in to myIAVA to host and attend VetTogethers! Be sure to check your e-mail soon for your temporary password. 
+
+What is a VetTogether you ask? They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out www.vettogethers.org.
+
+Stay connected with us on social media! Check us out on Facebook, Twitter and Instagram.
+
+Want to rock your own IAVA gear? Access the store HERE! 
+
+If you have any login issues or join questions please contact us at myiava@iava.org.
+
+Thank you for your continued support of IAVA and welcome to the family!
+
+Sincerely, 
+
+Paul Rieckhoff
+Iraq Veteran
+Executive Director &amp; Founder
+Iraq and  Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

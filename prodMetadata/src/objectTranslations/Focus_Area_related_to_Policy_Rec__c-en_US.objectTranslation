@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IAVA Program related to Policy Rec</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IAVA Programs related to Policy Recs</value>
+    </caseValues>
+    <fields>
+        <help><!-- The IAVA campaign related to the Focus Area. --></help>
+        <label><!-- Related IAVA Program --></label>
+        <name>Related_Focus_Area__c</name>
+        <relationshipLabel><!-- Policy Recommendations - IAVA Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Policy Recommendation related to this Focus Area. --></help>
+        <label><!-- Related Policy Recommendation --></label>
+        <name>Related_Policy_Rec__c</name>
+        <relationshipLabel><!-- IAVA Programs related to this Recommendation --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

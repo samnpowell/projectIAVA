@@ -1,0 +1,69 @@
+<apex:page sidebar="true" showHeader="false" standardStylesheets="false" title="{!$Label.site.in_maintenance}">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+    <title>{!$Label.site.in_maintenance}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="shortcut icon" href="{!$Resource.IAVA_Favicon}" />
+
+    <link type="text/css" rel="stylesheet" media="all" href="{!URLFOR($Resource.dc_css,'css/dc_style4.css?G')}" />
+    <link type="text/css" rel="stylesheet" media="all" href="{!URLFOR($Resource.dc_css,'css/rewards.css?G')}"/>
+    <link type="text/css" rel="stylesheet" href="{!URLFOR($Resource.dc_css,'css/fancy.css?G')}"/>
+    <link type="text/css" rel="stylesheet" href="{!URLFOR($Resource.dc_css,'css/colorbox.css?G')}"/>
+
+    <!--[if IE]-->
+        <link type="text/css" rel="stylesheet" media="all" href="css/ie.css?G" />
+  
+    <!--[if IE 7]-->
+    <link type="text/css" rel="stylesheet" media="all" href="{!URLFOR($Resource.dc_css,'css/ie7.css?G')}"/>
+    
+
+</head>           
+
+<body class="front-rewards">
+    <div id="bodywrap">
+    </div>  
+    <div id="page"><div id="page-inner">
+        
+        <!-- <apex:insert name="header"/>    -->                                <!--  Place Holder for Header  -->
+          
+    <div id="main">
+    <div id="main-inner" class="clear-block with-navbar">
+         <!-- /#navbar-inner, /#navbar -->
+        <div class="clearfix"></div>
+        <div id="content">
+            <div id="content-inner">
+                <div id="content-area">
+                    <apex:composition template="site_StdExceptionTemplate">
+                        <apex:define name="icon">
+                          <apex:image url="{!URLFOR($Resource.SiteSamples, 'img/warning.gif')}"/>
+                        </apex:define>
+                        <apex:define name="error">
+                          <apex:outputText escape="false" styleClass="title" value="{!$Label.site.down_for_maintenance}">
+                            <apex:param value="{!$Site.CurrentSiteUrl}"/>
+                          </apex:outputText>
+                          <br/>
+                          <br/>
+                          <apex:outputText value="{!$Label.site.sorry_for_inconvenience_back_shortly}"/>
+                          <apex:outputText escape="false" value=" {!$Label.site.get_in_touch}">
+                          <apex:param value="mailto:{!$Site.AdminEmailAddress}"/>
+                          <apex:param value="{!$Label.site.email_us}"/>
+                        </apex:outputText>
+                       </apex:define>
+                    </apex:composition>
+                </div>
+            </div>
+    </div>
+    </div> <!-- /#main-inner, /#main -->
+    
+            
+    </div>
+    </div><!-- /#page-inner, /#page -->         
+                
+                               <!--  Place Holder for Footer  -->
+    </div>
+    <site:googleAnalyticsTracking />
+</body>
+</html> 
+</apex:page>

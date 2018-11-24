@@ -1,0 +1,7 @@
+Hello {!Contact.FirstName},
+
+Your rank is {!Contact.Rank__c}.
+
+Thanks,
+
+Jason

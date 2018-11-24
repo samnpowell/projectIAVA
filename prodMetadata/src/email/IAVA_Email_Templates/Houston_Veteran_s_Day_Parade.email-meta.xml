@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Instructions for IAVA Veteran&apos;s Day Events</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Veteran&apos;s Day Event_Houston, TX</name>
+    <style>none</style>
+    <subject>IAVA Veteran&apos;s Day Event: Houston - Thursday, November 11th</subject>
+    <type>text</type>
+</EmailTemplate>

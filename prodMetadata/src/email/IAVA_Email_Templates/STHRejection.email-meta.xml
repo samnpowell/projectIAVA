@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>STHLetterhead</letterhead>
+    <name>STHRejection</name>
+    <style>freeForm</style>
+    <subject>Storm the Hill 2010</subject>
+    <textOnly>Dear {!Contact.FirstName},
+Thank you for applying to Storm the Hill 2010. 
+Unfortunately, we are unable to extend an invitation to you to join us in Washington this year.  We have received an overwhelming number of applicants for Storm the Hill 2010, and we wish every one of our members could come to Washington to participate. However, we have extremely limited funding and are limited to a small group. We had to make the difficult decisions of who to choose based on a number of criteria–one of the most important being the congressional district of the applicant.  Key members of Congress often insist on meeting with their constituents. Quality of the written submissions, CommunityOfVeterans (COV) activity levels, and overall IAVA involvement were also key factors.
+But do not be discouraged. We still want you involved in other ways. As IAVA grows in the coming years, we encourage you to stay active, and to apply again next year—when Storm the Hill will be even bigger. We also need your leadership in the coming year as IAVA focuses on other key events like Pat’s Run (the annual event in memory of Pat Tillman) and Veterans Day 2010. As an IAVA member, you will be the first to learn about lots of other exciting opportunities, so please stay tuned. 
+Additionally, since you have shown strong leadership skills and a genuine drive to make a difference for veterans nation-wide, we would like to invite you serve as a Storm the Hill Local Leader.  This is a chance for you to still play a key role in Storm the Hill 2010.  
+If you’d like to help us out in the field, we’ll send you special communications in the next few weeks, and throughout Storm the Hill. These emails will contain detailed instructions on how you can make an important impact in our efforts outside of Washington, in your local area. If this interests you, please let us know by completing this form as soon as possible. 
+We’ll be following your progress from IAVA headquarters, featuring best performers on our website, and the top two Local Leaders who have made the biggest impact during Storm the Hill 2010 will be invited to our 2nd Annual Heroes Celebration in Los Angeles, California at the end of April with all expenses paid.
+I hope you will stand with us next month in showing veterans everywhere that we’ve got their back. 
+If you have any questions, please feel free to contact our Membership Department at membership@iava.org.Once again, thank you for applying to Storm the Hill, and thank you for your service. 
+Sincerely,
+Paul RieckhoffExecutive Director and FounderIraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>html</type>
+</EmailTemplate>

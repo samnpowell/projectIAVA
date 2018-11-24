@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send Post-Event Draft Language to EO</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Post-Event Language for E.D.</name>
+    <style>none</style>
+    <subject>{!AIR__c.Name} Draft Language for {!AIR__c.Contact_for_Followup_Note__c}</subject>
+    <type>text</type>
+</EmailTemplate>

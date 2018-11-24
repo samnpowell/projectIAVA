@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Contacts$CnP_PaaS__Id__c</field>
+    </columns>
+    <columns>
+        <field>Account$npe01__SYSTEM_AccountType__c</field>
+    </columns>
+    <columns>
+        <field>Account$npe01__SYSTEMIsIndividual__c</field>
+    </columns>
+    <columns>
+        <field>Account$npe01__One2OneContact__c</field>
+    </columns>
+    <columns>
+        <field>Account$Type</field>
+    </columns>
+    <description>The &quot;awkward love triangle&quot; cleanup scneario where two Orgs think they&apos;re 1-to-1 with the same Contact</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$npe01__SYSTEM_AccountType__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>One-to-One Individual</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.Contacts$Exists__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Scenario G: Orgs 1-to-1 but w/o Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_or_without_contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,14 @@
+Hi {!Event__c.Assigned_Staffer__c},
+
+You've been assigned to manage DC Event #{!Event__c.Name}.  The following pertains:
+
+Event Name: {!Event__c.Event_Name__c}
+Event Type: {!Event__c.Event_Type__c}, {!Event__c.Committee__c},  {!Event__c.Other_Committee__c}
+When: {!Event__c.Date_and_Time__c}, {!Event__c.Time__c} - {!Event__c.End_Date__c}
+Where: {!Event__c.Place__c}, {!Event__c.Address__c}, {!Event__c.City__c}, {!Event__c.State__c}
+Level of Importance: {!Event__c.Level_of_Importance__c}
+Materials to Bring: {!Event__c.Materials__c}
+
+Thanks,
+
+{!Event__c.OwnerFirstName} {!Event__c.OwnerLastName}

@@ -1,0 +1,140 @@
+<apex:page controller="dc_ctrl_RewardSearch">
+ 
+<div id="subcontent-top">
+<div id="block-block-searchrewardsdetail" class="block block-block"> 
+<div class="block-inner"> 
+
+<h2 class="title">
+<img src="{!URLFOR($Resource.dc_css,'images/header_searchrewardsdetail.png')}" width="560" height="39" alt="Vets: Find Rewards Near You" />
+</h2> 
+
+<div class="content"> 
+<apex:form id="frm">
+<apex:actionregion >
+	<div class="container zip-dist"> 
+    	<label form="zip">
+    		<img src="{!URLFOR($Resource.dc_css,'images/block-searchrewards_zip.png')}" width="20" height="8" alt="Zip: " />
+    	</label> 
+    	<div class="text-wrapper">
+    		<apex:inputtext id="zip" value="{!zip_value}" styleclass="form-text" onkeypress="return noenter(event);"/>
+    	</div> 
+    	<label form="distance">
+    		<img src="{!URLFOR($Resource.dc_css,'images/block-searchrewards_dist.png')}" width="25" height="8" alt="Distance: " />
+    	</label> 
+    	<div class="select-wrapper select-width-98"> 
+        	<apex:selectList id="dist" value="{!distance_value}" size="1" styleClass="form-select" >
+				<apex:selectOptions value="{!distance}" />
+			</apex:selectList>
+        </div> 
+	</div> 
+ <div class="container from-to"> 
+ 	<label form="from"><img alt="Zip: " height="8" src="{!URLFOR($Resource.dc_css,'images/block-searchrewards_from.png')}" width="31" /></label> 
+   	<div class="text-wrapper"><input class="form-text" id="datepicker-fr" name="from" type="text" value="MM/DD/YY" /></div> 
+    <label form="to"><img alt="Zip: " height="8" src="{!URLFOR($Resource.dc_css,'images/block-searchrewards_to.png')}" width="17" /></label> 
+    <div class="text-wrapper"><input class="form-text" id="datepicker-to" name="to" type="text" value="MM/DD/YY" />
+    </div>
+ </div> 
+         
+	
+	<div class="container cat-submit"> 
+    	<label form="category">
+    		<img src="{!URLFOR($Resource.dc_css,'images/block-searchrewards_category.png')}" width="55" height="8" alt="Category: " />
+    	</label> 
+    	<div class="select-wrapper select-width-144"> 
+        	<apex:selectList id="cat" value="{!category_value}"
+     							size="1"  >
+				<apex:selectOptions value="{!category}" />
+			</apex:selectList> 
+    	</div> 
+<!--    	<a href="javascript:make();">-->
+    		<img src="{!URLFOR($Resource.dc_css,'images/form_submit-searchrewardsfull.png')}" onmouseover="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-searchrewardsfull_ovr.png')}';" onmouseout="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-searchrewardsfull.png')}';" value="submit" class="form-submit" onclick="geo();" /> 
+    </div> 
+    <div class="clearfix"></div> 
+    <apex:actionFunction name="sell" action="{!searchval}" />
+</apex:actionregion>
+</apex:form> 
+                 
+</div> 
+</div> 
+</div> 
+</div> 
+ 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ -->
+<script type="text/javascript"> 
+function geo()
+         {
+         try{
+         	var zip = document.getElementById('{!$Component.frm.zip}').value;
+         	if(zip == '')
+         	{
+         		ref(0,0,'','');
+         	}
+          	var geocoder;
+          	var lat;
+          	var lon;
+          	var state = '';
+			geocoder = new google.maps.Geocoder();
+			geocoder.geocode( { 'address': zip}, function(results, status) {
+         	if (status == google.maps.GeocoderStatus.OK && results.length) {
+      			if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+      				lat = results[0].geometry.location.lat();
+      				lng = results[0].geometry.location.lng();
+      				for (i=0;i<=10;i++)
+					{
+						state = results[0].address_components[i].short_name;
+						if(state.length == 2)
+						{
+					   	break;
+						}
+					}
+					ref(lat,lng,state,zip);
+         		}
+         	}
+         	else {
+         	}
+     	 });
+     	 }
+     	 catch(err){
+     	 alert(err);
+     	 ref(0,0,'','');
+         }
+        }
+          function noenter(e){
+          try{
+               if(window.event){
+                    key = window.event.keyCode;     //IE
+               } else{
+                    key = e.which;     //firefox
+               }
+               if(key == 13) {
+                    geo(); 
+                    return false;
+               } else{
+                    return true;
+               } 
+              }
+              catch(err)
+              {
+              	alert(err);
+              	ref(0,0,'','');
+              }
+          }
+          
+          function ref(lat,lon,state,zip)
+          {
+          	var ed = document.getElementById('datepicker-to').value;
+			var sd = document.getElementById('datepicker-fr').value;
+			var dist = document.getElementById('{!$Component.frm.dist}').value;
+			var cat = document.getElementById('{!$Component.frm.cat}').value;
+          	var newURL = window.location.protocol + "//" + window.location.host;
+          	var pageName = '{!$Page.dc_RewardList}' + "?lat=" + lat + "&lon=" + lon + "&state=" + state + "&zip=" + zip + "&dist=" + dist + "&cat=" + cat + "&sd=" + sd + "&ed=" + ed ;
+          	var finalURL = newURL + pageName;
+		  	return window.location = finalURL;
+		  	window.setTimeout(sell); 
+          	return false;
+          }
+
+    </script>
+</apex:page>

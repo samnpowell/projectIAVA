@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Baltimore Foundation</name>
+    <style>none</style>
+    <subject>Baltimore vets share your stories</subject>
+    <textOnly>{!Contact.FirstName},
+
+I had a quick favor, our records indicate that you attended the Baltimore Orioles game last summer.  We are working with a local Baltimore foundation to bring more programs to the Baltimore area.  We&apos;d love to hear some comments about what it means to you to be an IAVA members. We just need some brief quotes on why you are a member, what it means to be a member and what you have done with us and if it impacted you.
+
+It doesn&apos;t have to be perfect, we just need something kind of quick - we are looking to get comments in by 2pm today. I understand if you are not able to, because this is a last minute request.
+
+Please just reply to this email address if you have a story to share. Thanks!
+
+Thanks for your continued support.
+
+Sincerely,
+Jason
+
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

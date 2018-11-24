@@ -1,0 +1,251 @@
+<apex:component >
+
+
+    <style type="text/css">
+    
+
+		body {
+/*			background-color: #eee; */
+			background-color: #343432;
+		}
+		#navbar-overall {
+			background-color: #000;
+			font-size: 12px; /* rucksack */
+		}
+		#bodywrap {
+			margin-top: -77px; /* rucksack */
+		}
+        #navbar-overlay, #navbar-guests {
+        	/*background-color: #000;*/
+/*			background-color: #343432; */
+			border-bottom: 4px solid #d7f35a;
+        }
+/*        .navbar-inner {
+        	padding-left: 15px;
+        	padding-right: 15px;
+        }
+*//*        .bootstrap .nav-tabs>li.active>a {
+			background-color: #343432;
+			color: #d7f35a;
+        }
+*/
+        .bootstrap .nav>li>a:hover, .bootstrap .nav>li>a:focus {
+			background-color: #d7f35a;
+			color: #343432;
+        }
+/*		.bootstrap .nav-tabs>li.active>a, .bootstrap .nav-tabs>li.active>a:hover, .bootstrap .nav-tabs>li.active>a:focus {
+			color: #ddd;
+			background-color: #343432;
+		}
+*/
+
+        .bootstrap .navbar {
+        	padding-left: 0;
+        	padding-right: 0;
+        }
+/*        .bootstrap .nav-tabs {
+        	border-bottom: none;
+        }
+*/
+        .navbar-left, .navbar-left a, .navbar-left a:visited {
+        	color: #555;
+        }
+/*        #navbar-tabs {
+        	border-bottom: 1px solid #ddd;
+			background-color: #555;
+			padding-top: 4px;
+        }
+*/
+		.bootstrap legend {
+			font-size: inherit;
+		}
+        #navbar-top {
+			background: url('{!URLFOR($Resource.cov_files,'img/banners/details-gotyourback1-cropped.jpg')}') #343432 no-repeat;
+			background-position: center bottom;
+			background-size: cover;
+			padding-right: 15px;
+			padding-left: 15px;
+			margin-right: auto;
+			margin-left: auto;
+/*        	width: 96%;
+        	max-width: 96%;
+*/        	width: 100%;
+        	max-width: 100%;
+	    	/*color: #c2c3c3;*/
+	    	/*height: 82px;*/
+        }
+
+        #navbar-top {
+        	min-height: 62px;
+	    	padding-top: 10px;
+        }
+        #navbar-top .navbar-col {
+        	min-height: 52px;
+			display: flex;
+			align-items: center;
+			padding-bottom: 10px;
+        }
+
+        .navbar-left {
+			padding-top: 5px;
+		}
+		.navbar-menu {
+			/*padding-top: 20px;*/
+		}
+		.navbar-account {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: row;
+			flex-direction: row;
+			-webkit-justify-content: flex-end;
+			justify-content: flex-end;
+		}
+
+	    #profile-pic-thumbnail {
+	        /* make dropdown caret target zone full height */
+			display: block;
+		}
+		@media only screen and (max-device-width: 480px) {
+			#profile-pic-thumbnail img {
+				height: 40px;
+			}
+			#header-logo img {
+				min-height: 31px;
+				min-width: 125px;
+			}
+		}
+		#navbar-profile, #menu-section, #header-logo {
+			display: inline-block;
+		}
+
+		.bootstrap #cov-header a {
+			color: #ddd;
+		}
+		#cov-header ul li, #cov-header ol li {
+			margin-left: inherit;
+		}
+		.bootstrap #cov-header #menu-hamburger {
+			font-size: 18px;
+			margin-right: 24px;
+		}
+		#cov-header #menu-section {
+			/*position: relative;*/
+/*			margin-top: 16px;
+			vertical-align: top;
+*/		}
+/*		#cov-header #myiava-menu {
+			position: absolute;
+		}
+*/		.bootstrap #cov-header .dropdown-menu {
+			float: inherit;
+		}
+		.bootstrap #cov-header ul.dropdown-menu {
+			/*position: relative;*/
+			background-color: #333;
+		}
+		.bootstrap #cov-header .dropdown-menu .divider {
+			background-color: #666;
+		}
+		.bootstrap #cov-header .dropdown-menu>li>a, .bootstrap #cov-header .dropdown-menu>li>a:hover {
+			color: #ddd;
+			background-color: #333;
+		}
+		.bootstrap #cov-header .dropdown-menu>li>a:hover {
+			/*border-bottom: 1px dotted;*/
+			background-color: #666;
+	  		color: #eee;
+		}
+		.navbar .caret {
+			border-top-color: #ddd;
+			margin-left: 10px;
+		}
+		#navbar-profile-photo {
+			text-align: right;
+		}
+		.bootstrap #cov-header .almost-hidden, .bootstrap #cov-header .almost-hidden a {
+			color: #333;
+			font-weight: normal;
+		}
+
+
+		#nav-internal-salesforce-link {
+			margin-left: 30px;
+		}
+
+/*	    #container-overall {
+            /*background-color: white;
+	    	padding-left: 30px;
+	    	padding-right: 30px;
+			max-width: inherit;
+		}    
+*/	    #container-overall, .front-rewards #main {
+	    	padding-top: 20px;
+	    	margin-top: 86px;
+	    }
+
+
+		@media only screen and (max-device-width: 480px) {
+			.bootstrap #cov-header ul.dropdown-menu {
+				font-size: 20px;
+			}
+			.bootstrap #cov-header #menu-hamburger {
+				font-size: 24px;
+			}
+
+			.bootstrap #cov-header #header-logo {
+				/*max-width: 160px;*/
+				max-width: 50%;
+				max-height: 50px;
+			}
+			.bootstrap .navbar-stretched {
+				/*min-width: 470px;*/
+				/*width: 100%;*/
+			}
+			.bootstrap .navbar {
+				margin-bottom: 0;
+			}
+			#container-overall {
+				margin-top: 0;
+			}
+
+		}
+
+
+/*		#container-page {
+			margin-top: 50px;
+			padding-top: 15px;
+		}
+*/		#navbar-profile {
+		/*	margin-top: 13px; */
+			color: #999;
+			line-height: 34px;
+			vertical-align: middle;
+			/*padding-top: 8px;*/
+		}
+		#navbar-profile-photo .badge {
+			top: 8px;
+			right: 22px;
+			z-index: 5;
+			background-color: #d9534f;
+		}
+/*		#navbar-profile-photo {
+			border: 2px solid #fff !important;
+			margin-right: 8px;
+			padding-top: 3px;
+			padding-bottom: 4px;
+		}
+		#navbar-profile-photo img {
+			width: 20px;
+			height: 20px;
+		}
+*/		#navbar-name {
+			font-weight: bold;
+			margin-right: 20px;
+		}
+		.navbar a, .navbar a:visited {
+			color: #c2c3c3;
+		}
+</style>
+
+
+</apex:component>

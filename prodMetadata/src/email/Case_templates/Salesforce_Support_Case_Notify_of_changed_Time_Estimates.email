@@ -1,0 +1,16 @@
+One or more Time Estimates of {!Case.CaseNumber} have been changed:
+
+Hours:
+{!If(ischanged(Case.00NC000000581GB),"*New: ","")}Low Time Estimate: {!Case.00NC000000581GB}
+{!If(ischanged(Case.00NC000000581GD),"*New: ","")}High Time Estimate: {!Case.00NC000000581GD}
+{!If(ischanged(Case.Actual_Hours__c),"*New: ","")}Actual Hours: {!Case.Actual_Hours__c}
+
+Status: {!Case.Status}
+Subject: {!Case.Subject}
+Priority: {!Case.Priority}
+
+Click on the link to access the case: {!Case.Link}
+
+
+Original description:
+{!Case.Description}

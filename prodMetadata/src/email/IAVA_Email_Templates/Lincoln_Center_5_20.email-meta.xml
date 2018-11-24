@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Lincoln Center - 5/20</name>
+    <style>none</style>
+    <subject>From IAVA: Confirmation of Lincoln Center Concert Attendance</subject>
+    <type>text</type>
+</EmailTemplate>

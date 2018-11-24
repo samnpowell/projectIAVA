@@ -1,0 +1,41 @@
+<img src="https://c.na8.content.force.com/servlet/servlet.ImageServer?id=015C0000002vAlD&oid=00D80000000d0vO&lastMod=1471649492000"/>
+<br><br>
+
+{!Opportunity.CloseDate}<br><br>
+
+{!Opportunity.CnP_PaaS__Contact__c}<br>
+{!Opportunity.Primary_Street__c}<br>
+{!Opportunity.Primary_City__c}, {!Opportunity.Primary_State__c} {!Opportunity.Primary_Zip_Code__c} <br><br><br>
+ 
+Dear {!Opportunity.CnP_PaaS__Contact__c},<br><br>
+
+Thank you very much for your donation in the amount of {!Opportunity.Amount} to Iraq and Afghanistan Veterans of America (IAVA). {!IF(NOT(ISBLANK(Opportunity.Campaign_TY_Message__c)),Opportunity.Campaign_TY_Message__c&" ","")}We are so glad that you are part of our community, and we truly value your generous support of our mission.
+
+<br><br>
+Because of donors like you, IAVA’s life-changing programs have touched 850,000 veterans across the nation. The transition to civilian life is challenging for many veterans, and IAVA provides a variety of programs to help them succeed:
+<div class="indented"> <ul>• Programs and resources that help veterans overcome unique challenges with housing, health, education, finances, benefits, etc.<br>
+• Events that connect, unite and empower veterans at a time when feeling isolated is common<br>
+• A passionate and effective voice for veterans in Washington and beyond, educating both Congress and the public about veterans issues</ul> </div> 
+Perhaps most importantly of all, veterans turn to IAVA when the obstacles they face are overwhelming and quitting may seem the only option. As one of our clients expressed:
+<br>
+<div class="indented"> <ul>“I would have given up in defeat if not for your encouragement. You kept me from that by talking to me on a day when there was just one problem too many for me to deal with. You will never know how much you helped by just listening.”</ul> </div>  
+On behalf of every member veteran of IAVA, thank you for having our backs.
+<br><br>
+Sincerely,
+<br><br>
+<img src="https://c.na8.content.force.com/servlet/servlet.ImageServer?id=015C0000003d2qt&oid=00D80000000d0vO&lastMod=1490804100000"/>
+<br><br>
+Paul Rieckhoff <br>
+CEO and Founder 
+<br><br>
+
+IAVA is a 501(c)3 non-profit organization (Tax ID: 20-1664531). Your contribution is tax-deductible to the extent allowed by law. Unless otherwise specified, no goods or services were provided in exchange for this donation, and we will apply your contribution where it is most needed at the time.
+<br><br>
+<b>Double your donation!  Be sure to inquire with your employer about their charitable gift matching program.  Many employers will double your donation or more if you just ask!</b>
+<br><br>
+If you need additional documentation of your donation for tax purposes, please contact the IAVA Development Department at <a href="mailto:donate@iava.org">donate@iava.org</a>.
+<br><br>
+Iraq and Afghanistan Veterans of America<br>
+119 West 40th St. – 19th Floor<br>
+New York, NY  10018<br>
+212-982-9699

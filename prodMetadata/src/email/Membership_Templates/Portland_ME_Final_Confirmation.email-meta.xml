@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Portland, ME Final Confirmation</name>
+    <style>none</style>
+    <subject>Final confirmation: Join IAVA in Portland, ME</subject>
+    <textOnly>{!Contact.FirstName},
+
+Thank you for RSVP-ing to join IAVA and Team Rubicon for our VetTogether in Portland! Having spent some time in school in Maine and always feeling the energy around military veterans in this state, I&apos;m always grateful to be back!
+
+This is an especially important time for our community. This morning, IAVA unveiled our 2014 Membership Survey, where we laid out the most urgent and pressing issues according to our members. We encourage you to check it out and bring any questions you have -- http://iava.org/survey
+
+And we know that it&apos;s all about community. So, we hope you&apos;ll join us for a fun and casual event where you&apos;ll get the chance to meet IAVA staff, myself, and other veterans.
+
+What: A VetTogether with TR and a slice
+When: Friday, July 25 from 4:00 - 6:00 PM
+Where: Pat’s Pizza, 30 Market St, Portland, ME 04101
+
+If you have any questions tomorrow please contact Dustin Shryock at 646-841-4760 or by email at Dustin@iava.org. I look forward to seeing you all out there.
+
+Best,
+Paul
+
+
+Paul Rieckhoff
+CEO &amp; Founder
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

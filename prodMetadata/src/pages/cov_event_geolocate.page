@@ -1,0 +1,85 @@
+<apex:page controller="cov_event_geolocate_controller" showHeader="false" sidebar="false" action="{!init}">
+	
+	<apex:composition template="cov_template_noheader">
+
+
+    <apex:define name="layout">
+
+		<div class="inactive-message">
+			<a href="{!if(isblank(eventId),'cov_dashboard','cov_event?id='+eventId)}">Click here to continue</a>		
+		</div>
+
+		<div id="fetching-message" style="display:none;">
+			One moment...
+		</div>
+
+		<div id="updating-message" style="display:none;">
+			Updating event record...
+		</div>
+
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+	    
+	    <script type="text/javascript">
+			
+			var j$ = jQuery.noConflict();
+			j$(document).ready(function() {
+				j$('.active-message').show();
+
+	    		var address = j$.getUrlVar('address');
+	    		var lat = j$.getUrlVar('lat');
+	    		var lon = j$.getUrlVar('lon');
+				if (lat != '' && lat != null && lon != '' & lon != null) {
+					j$('#updating-message').show();
+					j$('.inactive-message').hide();
+				} else if (address != '' && address != null) {
+					j$('#fetching-message').show();
+					j$('.inactive-message').hide();
+					getGeo(address);
+				}
+			});
+
+		    function getGeo(address) {
+			        try {
+			            var geocoder;
+			            geocoder = new google.maps.Geocoder();
+			            geocoder.geocode( { 'address': address }, function(results, status) {
+			                if (status == google.maps.GeocoderStatus.OK && results.length) {
+			                    if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+			                        lat = results[0].geometry.location.lat();
+			                        lng = results[0].geometry.location.lng();
+			                        ref(lat,lng);
+			                    }
+			                } else {
+					            ref('x','x');
+			                }
+			            } );
+			        } catch(err) {
+			            // alert(err);
+			            ref('x','x');
+			        }
+		    }
+		    
+		    function ref(lat, lon) {
+		        var baseURL = '';
+		        var pageName = '';
+		    	// if (lat == 0 || lon == 0) {
+		    	// 	baseURL = '{!$Site.CurrentSiteUrl}';
+			    //     pageName = 'cov_event?id={!eventId}';
+		    	// } else {
+		    		baseURL = window.location.protocol + "//" + window.location.host;
+			        pageName = '{!$Page.cov_event_geolocate}' + "?id={!eventId}&lat=" + lat + "&lon=" + lon;
+			    // }
+				pageName += '{!otherParams}';
+		        var finalURL = baseURL + pageName;
+		        return window.location = finalURL;
+		    }
+
+		</script>  
+
+    </apex:define>
+    </apex:composition>
+
+
+
+</apex:page>

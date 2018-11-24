@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>STH 2014 Digital Brigade</name>
+    <style>none</style>
+    <subject>Welcome to Storm the Hill Digital Brigade!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Congratulations! I am very pleased to invite you to be a 2014 Digital Brigade member with IAVA! This is an exciting, demanding and historic opportunity to organize for the rights of veterans online and in your home communities. We know you&apos;ll bring honor to the team as a force in your hometown and on social media force during Storm the Hill in March and throughout the year. With your leadership, we&apos;ll show millions of our fellow veterans around the world that we&apos;ve got their back.
+
+This year IAVA received some of our best applications to date. All of our applications were inspiring - and the increasing level of interest in Storm the Hill thrills us. Every year, this program is growing the new veterans movement in unprecedented ways.
+
+As a Digital Brigade member, you will lead the fight from your hometown. Your voice from back home will put critical pressure on your elected leaders in DC. They need to hear from you that the issues confronting veterans and their families impact communities across the country - and in their districts. We know that elected leaders in Washington act when they see a real need in their home district, it rarely fails. Your leadership from outside the DC beltway will be the most important part of our fight this year.
+
+We need a couple of things from you. First, we need you to complete a biographical information form. Please complete this form (http://www.tfaforms.com/320905) no later than 5:00 pm EST on Friday, March 7. If you experience difficulties with the form, please email me at Anthony@iava.org for assistance.
+
+In the coming days, you will receive an informational packet from IAVA as well as a handoff to your brigade leader. Inside will be all of the important details that you will need to know about Storm the Hill and details about upcoming training.
+
+We will also be asking you to attend three different training sessions about Storm the Hill. These training sessions will be:
+
+Training 1: Monday, March 10 6-8 PM EST OR Tuesday, March 11 8-10 PM EST
+Training 2: Thursday, March 13 8-9 PM EST OR Friday, March 14 6-7 PM EST
+Training 3: Tuesday, March 18 6-7 PM EST OR Wednesday, March 19 8-9 PM EST
+
+In the coming days, Anthony will send you information on how to join IAVA’s NEW Community of Veterans web site and to set up a Fundly page to start fundraising. I’ll also send you instructions on how to do both of those.
+
+In the coming weeks you will receive an itinerary detailing your travel to Washington, as well as an informational packet from IAVA. Inside will be all of the important details that you will need to know about Storm the Hill.
+
+In the meantime, if you have any questions or concerns, please contact Anthony Pike at anthony@iava.org. He will be working to ensure that your experience in Washington, DC is as seamless as possible. We are excited to have you as a member of Storm the Hill 2014 and look forward to seeing you later this month. Welcome to the team!
+
+Sincerely,
+Paul
+
+P.S. Now you can tell your friends and family about your involvement in Storm The Hill.
+
+Paul Rieckhoff
+Founder and CEO
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifies case owner if due date is within 24 hours.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Cases - Research Due Date Notification</name>
+    <style>none</style>
+    <subject>Research Request due {!Case.Due_Date_Requested__c} for: {!Case.Subject}</subject>
+    <type>text</type>
+</EmailTemplate>

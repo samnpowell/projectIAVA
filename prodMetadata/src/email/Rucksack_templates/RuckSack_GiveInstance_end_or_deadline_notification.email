@@ -1,0 +1,27 @@
+The {!if
+ (not(isblank(Give_Instance__c.Application_Deadline__c)),
+      "App Deadline " + text(Give_Instance__c.Application_Deadline__c),
+      if(not(isblank(Give_Instance__c.End_Date__c)),
+           "End Date " + text(Give_Instance__c.End_Date__c),
+          "Start Date " + text(Give_Instance__c.Start_Date__c)
+     )
+ )} has now passed {!if(Give_Instance__c.Num_Inst__c > 1, "**FOR THE " + text(Give_Instance__c.Start_Date__c) + " INSTANCE** of Give:", "for Give:")}
+{!UPPER(Give_Instance__c.Give_Name__c)}
+
+App Deadline: {!nullvalue(Give_Instance__c.Application_Deadline__c,"none")}
+Start Date: {!nullvalue(Give_Instance__c.Start_Date__c,"none")} {!Give_Instance__c.Start_Time__c}
+End Date: {!nullvalue(Give_Instance__c.End_Date__c,"none")} {!Give_Instance__c.End_Time__c}
+
+Status: {!Give_Instance__c.Status__c}
+
+{!if(Give_Instance__c.Num_Inst__c > 1, "Total Num. Instances (i.e. dates) on this Give: " + text(Give_Instance__c.Num_Inst__c), "")}
+
+Total Units Available {!if(Give_Instance__c.Num_Inst__c > 1, "in this instance", "")}: {!Give_Instance__c.Number_of_Units__c} units
+Tentative Confirmed: _____ {!Give_Instance__c.Number_of_Tentative_Confirmed_Units__c} units / {!Give_Instance__c.Number_of_Tentative_Confirmed_Requests__c} requests
+Final Confirmed: ________ {!Give_Instance__c.Number_of_Confirmed_Units__c} units / {!Give_Instance__c.Number_of_Confirmed_Requests__c} requests
+Waitlist: _______________ {!Give_Instance__c.Number_of_Waitlist_Units__c} units / {!Give_Instance__c.Number_of_Waitlist_Requests__c} requests
+
+Total: ____________________ {!Give_Instance__c.Number_of_Applicants__c} requests
+
+Review and approve/deny Give Requests for this Give (Give Instance {!Give_Instance__c.Name}) at:
+{!Give_Instance__c.Link}

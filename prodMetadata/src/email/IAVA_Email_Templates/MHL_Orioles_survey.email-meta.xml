@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Survey sent to members who were final confirmed to attend Orioles 8/9..</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>MHL Orioles survey</name>
+    <style>none</style>
+    <subject>IAVA&apos;s July 4th Dodgers game</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+On behalf of myself, the Membership team, and all of the IAVA staff, thank you for attending the August 9th Baltimore Orioles game as part of IAVA and Miller High Life&apos;s &quot;Give a Veteran a Piece of the High Life&quot; program.
+
+The night was a home run for veterans and their guests, as we brought together nearly 1,000 veterans and their families for a memorable night of baseball! Although the Orioles couldn&apos;t beat the White Sox we sincerely hope you, your friends and your family enjoyed the event. Your feedback is critical to the success of these events, and I would appreciate if you could take a few minutes to fill out a survey about your High Life Experience by logging on to &lt;http://iava.org/baltimore-orioles-survey&gt;. By filling out the survey you will be helping IAVA improve future events.
+
+Sincerely,
+
+Anthony
+
+P.S. If you took any pictures at the game that you are willing to share, please send those to Rucksack@iava.org or be sure to tag IAVA in your photo albums on Facebook!
+
+Anthony Pike
+Membership Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue, 10th Floor
+New York, NY 10017
+(212) 982-9699
+www.iava.org
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

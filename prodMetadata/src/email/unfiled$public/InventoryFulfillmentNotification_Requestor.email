@@ -1,0 +1,7 @@
+We have fulfilled your {!Line_Item__c.Inventory_Item__c} request. You can access the request here: {!Line_Item__c.Link}.
+
+INVENTORY ITEM: {!Line_Item__c.Inventory_Item__c}
+NUMBER REQUESTED: {!Line_Item__c.Requested__c}
+REASON: {!Line_Item__c.Reason_for_Request__c}
+{!CASE(Line_Item__c.Type__c,"Small","TYPE: Small","Medium","TYPE: Medium","Large","TYPE: Large","X-Large","TYPE: X-Large","XX-Large","TYPE: XX-Large","")}
+{!CASE(Line_Item__c.Manufacturer__c,"Oscar Mike","MANUFACTURER: Oscar Mike","Undefeated","TYPE: Undefeated","")}

@@ -1,0 +1,32 @@
+<p>Hi {!npe4__Relationship__c.First_Name_of_Primary_Contact__c},</p>
+
+<p><b>{!npe4__Relationship__c.npe4__RelatedContact__c}</b> is inviting you to become a member of Iraq and Afghanistan Veterans of America by verifying that you served in Iraq or Afghanistan. Membership is completely free!
+
+As part of IAVA, you’re a part something great and empowering - our movement is growing, and we are honored to have you a part of it! But the first step is for you to accept the invitation and join myIAVA!
+{!if(isblank(npe4__Relationship__c.Peer_Invite_Message__c),"", "Here is a message from "+npe4__Relationship__c.npe4__RelatedContact__c+":    <br />" + npe4__Relationship__c.Peer_Invite_Message__c)} 
+
+<p/>
+
+<center><a href="https://iava.org/nomination-accept/?tfa_ContactID={!npe4__Relationship__c.npe4__ContactId__c}&tfa_Email={!npe4__Relationship__c.Primary_Contact_s_Email__c}&tfa_FIRSTNAME={!URLENCODE(npe4__Relationship__c.First_Name_of_Primary_Contact__c)}&tfa_LASTNAME={!URLENCODE(npe4__Relationship__c.Last_Name_of_Primary_Contact__c)}&tfa_3783473255399={!npe4__Relationship__c.npe4__RelatedContactId__c}"><img src="https://c.na8.content.force.com/servlet/servlet.ImageServer?id=015C00000020uu4&oid=00D80000000d0vO&lastMod=1380570318000"></a></center>
+</p>
+
+As a member of IAVA of you have the opportunity to:
+
+Log in to myIAVA to host and attend VetTogethers! Be sure to check your e-mail soon for your temporary password. 
+
+What is a VetTogether you ask? They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out www.vettogethers.org.
+
+Stay connected with us on social media! Check us out on Facebook, Twitter and Instagram.
+
+Want to rock your own IAVA gear? Access the store HERE! 
+
+If you have any login issues or join questions please contact us at myiava@iava.org.
+
+Thank you for your continued support of IAVA and welcome to the family!
+
+Sincerely, 
+
+Paul Rieckhoff
+Iraq Veteran
+Executive Director & Founder
+Iraq and  Afghanistan Veterans of America (IAVA)

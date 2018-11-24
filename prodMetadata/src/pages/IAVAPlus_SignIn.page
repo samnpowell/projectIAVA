@@ -1,0 +1,5 @@
+<apex:page id="pg" sidebar="false" showHeader="false" standardStylesheets="false" controller="IAVAPlus_SignIn" action="{!redirectToNewLogin}">
+
+    <a href="https://my.iava.org">Login page has moved.</a>
+
+</apex:page>

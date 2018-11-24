@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CollaborationGroup.FeedItems.Comments$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>CollaborationGroup.FeedItems.Comments$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>CollaborationGroup.FeedItems.Comments$CommentBody</field>
+    </columns>
+    <description>Comments in all other groups for the last 30 days</description>
+    <filter>
+        <criteriaItems>
+            <column>CollaborationGroup$IsArchived</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CollaborationGroup$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>[Event]</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CollaborationGroup$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Comments - Other Groups</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ca_collab_2_0__Chatter_Groups_Activity_1_0__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CollaborationGroup.FeedItems.Comments$CreatedDate</dateColumn>
+        <endDate>2016-06-16</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-06-10</startDate>
+    </timeFrameFilter>
+</Report>

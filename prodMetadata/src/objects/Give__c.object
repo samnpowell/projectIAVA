@@ -1,0 +1,2826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores details of a specific giveaway opportunity (experience or reward), like tickets to baseball game.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>Post_Event_Give_fields</fullName>
+        <description>For Post-Event Reports</description>
+        <displayedFields>
+            <field>Num_Attended__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AIR_Required__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AIR_Overdue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AIR_Completed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Number_of_Confirmed_Units__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Number_of_Units__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Post-Event Give fields</label>
+    </fieldSets>
+    <fields>
+        <fullName>AIR_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AIR Completed</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AIR_Overdue__c</fullName>
+        <description>If a Give is 2 days past its earliest start date and the post-event report is not complete, it will be marked overdue.</description>
+        <externalId>false</externalId>
+        <formula>IF ((AND (  AIR_Required__c  = True,  AIR_Completed__c  = False,  Earliest_Start_Date__c  +2 &lt; DATEVALUE(NOW()))), &quot;True&quot;, &quot;False&quot;)</formula>
+        <inlineHelpText>If a Give is 2 days past its earliest start date and the post-event report is not complete, it will be marked overdue.</inlineHelpText>
+        <label>AIR Overdue</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AIR_Required__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>AIR Required</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Active_Datestamp__c</fullName>
+        <description>This gets populated with current time when listing becomes active. Override to include as new Push notification.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This gets populated with current time when listing becomes active. Override to include as new Push notification.</inlineHelpText>
+        <label>Active Datestamp</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Available_To__c</fullName>
+        <description>Which Membership Categories on the contact are eligible for this reward?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Which Membership Categories on the contact are eligible for this reward?</inlineHelpText>
+        <label>Available To</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Everyone</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Unconfirmed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Era</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Family</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Available__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(and(ispickval(Type__c,&quot;Unlimited Give&quot;),or(ispickval(Status__c,&quot;Open&quot;),ispickval(Status__c,&quot;Waitlist&quot;))),&quot;Available&quot;,
+if(TEXT(Status__c) == &quot;Closed Invisible&quot;,&quot;Closed&quot;,
+if(TEXT(Status__c) == &quot;Closed Visible&quot;,&quot;Closed&quot;,
+if(TEXT(Status__c) == &quot;Waitlist&quot;,&quot;Waitlist&quot;,
+if(TEXT(Status__c) == &quot;Open&quot;, 
+if(Number_Remaining__c &lt;=0,&quot;Available&quot;,
+if(Number_Remaining__c &gt; 0 &amp;&amp; Number_Remaining__c &lt; 25, &apos;ONLY &apos; + TEXT(Number_Remaining__c) +  &apos; AVAILABLE&apos;,
+if(Number_Remaining__c &gt;= 25, &quot;25+ Available&quot;,&quot;&quot;
+)))
+,&quot;&quot;)
+))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Available</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Best_Status__c</fullName>
+        <description>This field contains the best status of all Give Instances.  3 if at least one Give Instance is Open, 2 if none are open but at least one is waitlisted, 1 if all at closed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field contains the best status of all Give Instances.  3 if at least one Give Instance is Open, 2 if none are open but at least one is waitlisted, 1 if all at closed.</inlineHelpText>
+        <label>Best Status</label>
+        <summarizedField>Give_Instance__c.Numerical_Status__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field will be used to indicate that Campaign Members are to receive notifications.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to indicate that Campaign Members are to receive notifications.</inlineHelpText>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Gives</relationshipLabel>
+        <relationshipName>Gives</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Events</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Giveaways</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Discounts</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>City_Formula__c</fullName>
+        <description>Tries to pull city name from the City, ST field. Fields are not separated because State functionality is based on multi-select picklist Location by State.</description>
+        <externalId>false</externalId>
+        <formula>left(City__c,find(&quot;,&quot;,City__c)-1)</formula>
+        <inlineHelpText>Tries to pull city name from the City, ST field (takes everything until the first comma).</inlineHelpText>
+        <label>City Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>E.g. &quot;New York, NY&quot;.  Should be filled out for every Give. Appears on search results to identify Give location.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. &quot;New York, NY&quot;.  Should be filled out for every Give. Appears on search results to identify Give location.</inlineHelpText>
+        <label>City, ST</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Collect_Guest_DL_Num__c</fullName>
+        <description>This field will be used to indicate if the guest Drivers License number is to be collected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate if the guest Drivers License number is to be collected.</inlineHelpText>
+        <label>Collect Guest DL Num</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Guest_DOB__c</fullName>
+        <description>This field will be used to indicate if the member DOB is to be collected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate if the member DOB is to be collected.</inlineHelpText>
+        <label>Collect Guest DOB</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Guest_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Collect Guest Name</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don&apos;t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Guest_Shirt_Size__c</fullName>
+        <description>This field will be used to indicate if the guest shirt size is to be collected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate if the guest shirt size is to be collected.</inlineHelpText>
+        <label>Collect Guest Shirt Size</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Mailing_Address__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Collect Mailing Address</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Collect_Member_DL_Num__c</fullName>
+        <description>This field will be used to indicate if the guest Drivers License number is to be collected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate if the guest Drivers License number is to be collected.</inlineHelpText>
+        <label>Collect Member DL Num</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Member_DOB__c</fullName>
+        <description>This field will be used to indicate if the member DOB is to be collected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate if the member DOB is to be collected.</inlineHelpText>
+        <label>Collect Member DOB</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Member_Shirt_Size__c</fullName>
+        <description>This field will be used to indicate if the guest shirt size is to be collected.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate if the guest shirt size is to be collected.</inlineHelpText>
+        <label>Collect Member Shirt Size</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Phone_Number__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Collect Phone Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Collect_Special_Response_2__c</fullName>
+        <description>This field will be used to indicate that a special response is to be collected for Special Instructions #2.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate that a special response is to be collected for Special Instructions #2.</inlineHelpText>
+        <label>Collect Special Response #2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Special_Response_3__c</fullName>
+        <description>This field will be used to indicate that a special response is to be collected for Special Instructions #3.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate that a special response is to be collected for Special Instructions #3.</inlineHelpText>
+        <label>Collect Special Response #3</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Special_Response_4__c</fullName>
+        <description>This field will be used to indicate that a special response is to be collected for Special Instructions #4.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate that a special response is to be collected for Special Instructions #4.</inlineHelpText>
+        <label>Collect Special Response #4</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Special_Response_5__c</fullName>
+        <description>This field will be used to indicate that a special response is to be collected for Special Instructions #5.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate that a special response is to be collected for Special Instructions #5.</inlineHelpText>
+        <label>Collect Special Response #5</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>don’t collect</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>at request</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>at re-confirm</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Days_Out_del__c</fullName>
+        <description>Calculates the number of days until the give&apos;s earliest start date. For reporting/dashboard purposes.</description>
+        <externalId>false</externalId>
+        <formula>ABS(TODAY() - Earliest_Start_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Out</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Deadline__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(isblank(Latest_Application_Deadline__c),&quot;&quot;, 
+IF(MONTH(Latest_Application_Deadline__c ) == 1,&quot;Jan&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 2,&quot;Feb&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 3,&quot;Mar&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 4,&quot;Apr&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 5,&quot;May&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 6,&quot;Jun&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 7,&quot;Jul&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 8,&quot;Aug&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 9,&quot;Sep&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 10,&quot;Oct&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 11,&quot;Nov&quot;,
+(IF(MONTH(Latest_Application_Deadline__c ) == 12,&quot;Dec&quot;,&quot;&quot;))))))))))))))))))))))) &amp; &quot; &quot; &amp; TEXT(DAY(Latest_Application_Deadline__c )) &amp; &quot;, &quot; &amp; TEXT(YEAR(Latest_Application_Deadline__c ))
+)</formula>
+        <label>Deadline</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>E.g. “Watch the Orioles take on the Cardinals in a battle of the Birds. Seats are in the lower deck along the third base line.”</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. “Watch the Orioles take on the Cardinals in a battle of the Birds. Seats are in the lower deck along the third base line.”</inlineHelpText>
+        <label>Short Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Descriptor__c</fullName>
+        <description>Generic word that describes the type of give (&quot;event&quot;, &quot;reward&quot;, or &quot;information&quot;)</description>
+        <externalId>false</externalId>
+        <formula>if( ispickval(Type__c, &quot;Information&quot;), &quot;information&quot;,
+  if ( ispickval( Category__c , &quot;Event&quot;), &quot;event&quot;, &quot;reward&quot;)
+)</formula>
+        <inlineHelpText>Generic word that describes the type of give (&quot;event&quot;, &quot;reward&quot;, or &quot;information&quot;)</inlineHelpText>
+        <label>Descriptor</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Details</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Disclaimer__c</fullName>
+        <description>Appears above the Submit Request button on the Request Reward page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Appears above the Submit Request button on the Request Reward page</inlineHelpText>
+        <label>Disclaimer</label>
+        <length>1000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Distance__c</fullName>
+        <description>The distance for pending notifications.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The distance for pending notifications.</inlineHelpText>
+        <label>Distance</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Earliest_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Earliest Start Date</label>
+        <summarizedField>Give_Instance__c.Start_Date__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>min</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Eligibility_Description__c</fullName>
+        <description>E.g. “Open to left-handed IAVA members who live in the tri-state area.”</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. “Open to left-handed IAVA members who live in the tri-state area.”</inlineHelpText>
+        <label>Eligibility Description</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the primary external interface for the Give, especially relevant for followup.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the primary external interface for the Give, especially relevant for followup.</inlineHelpText>
+        <label>External POC</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Gives</relationshipLabel>
+        <relationshipName>Gives</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Instructions_for_Staff__c</fullName>
+        <description>E.g. “Send draft of list 14 days ahead of time and final list day before event.”</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. “Send draft of list 14 days ahead of time and final list day before event.”</inlineHelpText>
+        <label>Fulfillment Instructions for Staff</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Instructions_for_Winner__c</fullName>
+        <description>E.g. &quot;Pick up your tickets at Will Call on the date of the event.&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. &quot;Pick up your tickets at Will Call on the date of the event.&quot;</inlineHelpText>
+        <label>Fulfillment Instruct for Winner (deprec)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Instructions_rtf__c</fullName>
+        <description>These instructions will be sent as soon as the member is confirmed for the reward (immediately for some rewards, upon selection for others).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>These instructions will be sent as soon as the member is confirmed for the reward (immediately for some rewards, upon selection for others). Note this is now a Rich Text Field that can accept links and formatting.</inlineHelpText>
+        <label>Fulfillment Instructions for Winner *rtf</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Fulfillment Method</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Email to target</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Call in to target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hold at IAVA Office</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Geo_Location__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to Geo Location object which stores Latitude, Longitude values</description>
+        <externalId>false</externalId>
+        <label>Geo Location</label>
+        <referenceTo>Geo_Location__c</referenceTo>
+        <relationshipLabel>Gives</relationshipLabel>
+        <relationshipName>Gives</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Geocode_Exclude__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check this checkbox to exclude the account from the Geo Force Geocode process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box to exclude from geocoding process</inlineHelpText>
+        <label>Geocode Exclude</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Geocode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Geocode</label>
+        <referenceTo>geopointe__Geocode__c</referenceTo>
+        <relationshipLabel>Gives</relationshipLabel>
+        <relationshipName>Gives</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Give_Date_Display__c</fullName>
+        <description>Formats dates for the Give Instance object in reward listings.</description>
+        <externalId>false</externalId>
+        <formula>IF( Number_of_Give_Instances__c &gt; 1, &quot;Multiple Dates&quot; &amp; if(isblank(Earliest_Start_Date__c),&quot;&quot;,&quot; from &quot; &amp;  text(month(Earliest_Start_Date__c)) &amp; &quot;/&quot; &amp; text(day(Earliest_Start_Date__c)) &amp; &quot;/&quot; &amp; text(Year(Earliest_Start_Date__c)) ),  if(isblank(Earliest_Start_Date__c),&quot;&quot;, text(month(Earliest_Start_Date__c)) &amp; &quot;/&quot; &amp; text(day(Earliest_Start_Date__c)) &amp; &quot;/&quot; &amp; text(Year(Earliest_Start_Date__c)) ) )</formula>
+        <inlineHelpText>Formats dates for the Give Instance object in reward listings.</inlineHelpText>
+        <label>Give Date Display</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Highlight_Listing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates which past and present events appear on the page of highlighted events.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates which past and present events appear on the page of highlighted events.</inlineHelpText>
+        <label>Highlight Listing on homepage</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ignore_Dates_and_Availability__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>OVERRIDE SWITCH: If this is checked, this Give will not automatically open or close itself based on Give Instance Start and End Dates or on whether any Give Instances are open.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>OVERRIDE SWITCH: If this is checked, this Give will not automatically open or close itself based on Give Instance Start and End Dates or on whether any Give Instances are open.</inlineHelpText>
+        <label>Ignore Dates and Availability</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Internal_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Internal POC</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Gives</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Application_Deadline__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest Application Deadline</label>
+        <summarizedField>Give_Instance__c.Application_Deadline__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Latest_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest End Date</label>
+        <summarizedField>Give_Instance__c.End_Date__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Latest Start Date</label>
+        <summarizedField>Give_Instance__c.Start_Date__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Latitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Latitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Listing_Start_Date__c</fullName>
+        <description>Date when Planned Give becomes available on site.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date when Planned Give becomes available on site.</inlineHelpText>
+        <label>Listing Start Date (if status = Planned)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Location_Description__c</fullName>
+        <description>E.g. “22nd &amp; Main”
+E.g. “Madison Square Garden”
+E.g. “Tres Agaves Restaurant, back patio”</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. “22nd &amp; Main”
+E.g. “Madison Square Garden”
+E.g. “Tres Agaves Restaurant, back patio”</inlineHelpText>
+        <label>Location or Venue</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Location_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(National_Give__c),IF(ISBLANK( Zip_Code_s__c ),&quot;Various Locations&quot;, City__c ),&quot;National&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Location Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Sort__c</fullName>
+        <description>Background field to help with sorting search results</description>
+        <externalId>false</externalId>
+        <formula>if(National_Give__c,3,
+  if(not(isblank(Location_by_State_s__c)),1,
+     if(not(isblank( Zip_Code_s__c)),1,
+4)))</formula>
+        <inlineHelpText>Background field to help with sorting search results</inlineHelpText>
+        <label>Location Sort</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Street_Address__c</fullName>
+        <description>Street address of the venue (so it can be mapped).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Street address of the venue (so it can be mapped).</inlineHelpText>
+        <label>Location Street Address</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_by_State_s__c</fullName>
+        <description>E.g. “NY, CT, NJ, VA, DC”.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. “NY, CT, NJ, VA, DC”.</inlineHelpText>
+        <label>Location by State(s)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AZ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WY</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Longitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Longitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Maximum_Units_per_Member__c</fullName>
+        <description>If greater than 1 and &quot;Member Cannot Select Quantity&quot; is unchecked, member can choose desired quantity of units up to this maximum,  If blank, quantity is unlimited.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If greater than 1 and &quot;Member Cannot Select Quantity&quot; is unchecked, member can choose desired quantity of units up to this maximum,  If blank, quantity is unlimited.</inlineHelpText>
+        <label>Maximum Units per Member</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_Cannot_Select_Quantity__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, all winners get same quantity of tickets/units/etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, all winners get same quantity of tickets/units/etc.</inlineHelpText>
+        <label>Member Cannot Select Quantity</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Message_Text__c</fullName>
+        <description>This field will be used to store the text of the notification message that is to be delivered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to store the text of the notification message that is to be delivered.</inlineHelpText>
+        <label>Message Text</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>More_Info_Link__c</fullName>
+        <description>E.g. website of a store, concert venue or show description.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. website of a store, concert venue or show description.</inlineHelpText>
+        <label>More Info Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Must_be_21__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Requires member verifies 21+ age during Give Request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Requires member verifies 21+ age during Give Request.</inlineHelpText>
+        <label>Must be 21+</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Must_be_21_for_guest__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Must be 21 for guest</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>National_Give__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Overides zip codes and states.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Overrides zip codes and states.</inlineHelpText>
+        <label>National Give</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>National__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be used to indicate that the notification will be sent nation-wide to all Contacts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to indicate that the notification will be sent nation-wide to all Contacts.</inlineHelpText>
+        <label>National</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Notification_Take_Defaults__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this value is selected, the notification settings (National or State) will be charged from the Give Location and not from the Notification section.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this value is selected, the notification settings (National or State) will be charged from the Give Location and not from the Notification section.</inlineHelpText>
+        <label>Notification Take Defaults</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Num_Attended__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Attended</label>
+        <summarizedField>Give_Instance__c.Num_Attended__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_Remaining__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Remaining</label>
+        <summarizedField>Give_Instance__c.Number_Remaining__c</summarizedField>
+        <summaryFilterItems>
+            <field>Give_Instance__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Confirmed_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Confirmed Units</label>
+        <summarizedField>Give_Instance__c.Number_of_Confirmed_Units__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Give_Instances__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Give Instances</label>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Tentative_Confirmed_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Tentative Confirmed Units</label>
+        <summarizedField>Give_Instance__c.Number_of_Tentative_Confirmed_Units__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Units</label>
+        <summarizedField>Give_Instance__c.Number_of_Units__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Waitlist_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Waitlist Units</label>
+        <summarizedField>Give_Instance__c.Number_of_Waitlist_Units__c</summarizedField>
+        <summaryForeignKey>Give_Instance__c.Give__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Partnership_Request__c</fullName>
+        <externalId>false</externalId>
+        <label>Partnership</label>
+        <referenceTo>Partnership_Request__c</referenceTo>
+        <relationshipLabel>Gives</relationshipLabel>
+        <relationshipName>Gives</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Percent_Requested__c</fullName>
+        <externalId>false</externalId>
+        <formula>((Number_of_Units__c - Number_Remaining__c) / Number_of_Units__c) * 100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Percent Requested</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PowerOfOne__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PowerOfOne</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requires_Special_Response__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, gives member instructions and field to fill in special response.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, gives member instructions and field to fill in special response.</inlineHelpText>
+        <label>Collect Special Response #1 (at request)</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Send_Notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox will be used to indicate that the user wishes to send Notifications for this Give.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This checkbox will be used to indicate that the user wishes to send Notifications for this Give.</inlineHelpText>
+        <label>Send Notifications</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Terms_and_Conditions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, a Terms and Conditions checkbox will be shown above the submit button, and it will be required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, a Terms and Conditions checkbox will be shown above the submit button, and it will be required.</inlineHelpText>
+        <label>Show Terms and Conditions</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Instructions #2</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Instructions #3</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Instructions #4</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Instructions #5</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions__c</fullName>
+        <description>E.g. &quot;Tell us why you should be chosen to be on the Wheaties box.&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>E.g. &quot;Tell us why you should be chosen to be on the Wheaties box.&quot;</inlineHelpText>
+        <label>Special Instructions #1</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>State_Formula__c</fullName>
+        <description>Tries to pull State from the City, ST field. Fields are not separated because State functionality is based on multi-select picklist Location by State.</description>
+        <externalId>false</externalId>
+        <formula>right(City__c,len(City__c)-find(&quot;,&quot;,City__c))</formula>
+        <inlineHelpText>Tries to pull State from the City, ST field (takes everything after the first comma).</inlineHelpText>
+        <label>State Formula</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <description>This field will be used to indicate the states in which a Contact resides that this notification will be sent to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to indicate the states in which a Contact resides that this notification will be sent to.</inlineHelpText>
+        <label>State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AZ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WY</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Planned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waitlist</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed Visible</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed Invisible</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subcategory__c</fullName>
+        <externalId>false</externalId>
+        <label>Subcategory</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MLB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NBA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NFL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NHL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NASCAR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PGA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Sports</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Movie</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Arts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Excursions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>MLB</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>NBA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>NFL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>NHL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>NASCAR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>PGA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>Other Sports</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>Movie</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>Arts</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>Excursions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Events</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Terms_and_Conditions__c</fullName>
+        <description>The text that is displayed and required if &quot;Show Terms and Conditions&quot; is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The text that is displayed and required if &quot;Show Terms and Conditions&quot; is checked. There is no additional text added, so phrase it like &quot;I agree that...&quot;</inlineHelpText>
+        <label>Terms and Conditions</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>First Come First Served</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Screened Give</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unlimited Give</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Information</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Value_of_Give__c</fullName>
+        <description>Total value of whole give</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total value of whole give</inlineHelpText>
+        <label>Value of Give</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Value_of_Unit__c</fullName>
+        <description>Value of each ticket or unit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value of each ticket or unit</inlineHelpText>
+        <label>Value of Unit</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Waitlist__c</fullName>
+        <description>Dependent on “First Come First Served” type. This determines whether event should allow waitlist signups.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Dependent on “First Come First Served” type. This determines whether event should allow waitlist signups.</inlineHelpText>
+        <label>Waitlist?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Waitlist</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No Waitlist</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>First Come First Served</controllingFieldValue>
+                <valueName>Waitlist</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>First Come First Served</controllingFieldValue>
+                <valueName>No Waitlist</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <description>This field will be used to indicate the states in which a Contact resides that this notification will be sent to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to indicate the states in which a Contact resides that this notification will be sent to.</inlineHelpText>
+        <label>Zip Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_Code_s__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Multiple Zip Codes should be Separate Gives</inlineHelpText>
+        <label>Location by Zip Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Give</label>
+    <listViews>
+        <fullName>All_with_Geo_Locations</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Geo_Location__c</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Geo_Location__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Zip - Will come up in Zip search</label>
+    </listViews>
+    <listViews>
+        <fullName>All_with_Locations</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All with Locations</label>
+    </listViews>
+    <listViews>
+        <fullName>All_with_Tallies</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>Deadline__c</columns>
+        <columns>NAME</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>City__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Give_Date_Display__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Maximum_Units_per_Member__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All with Tallies</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_LAST_WEEK</fullName>
+        <columns>NAME</columns>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>Available_To__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>City__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_WEEK</value>
+        </filters>
+        <label>Created LAST WEEK</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>City__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Created Today</label>
+    </listViews>
+    <listViews>
+        <fullName>Featured_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Highlight_Listing__c</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <columns>Must_be_21__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Highlight_Listing__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Featured Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Location_National_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Highlight_Listing__c</columns>
+        <columns>City__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>National_Give__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Location - National Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Location_State_based_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Highlight_Listing__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>City__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Location_by_State_s__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Location - State-based Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Location_Zip_based_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Highlight_Listing__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>City__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Zip_Code_s__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Location - Zip-based Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Multiple_Date_Gives_All</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Number_of_Give_Instances__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Maximum_Units_per_Member__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_of_Confirmed_Units__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Number_of_Give_Instances__c</field>
+            <operation>greaterThan</operation>
+            <value>1</value>
+        </filters>
+        <label>Multiple Date Gives - All</label>
+    </listViews>
+    <listViews>
+        <fullName>Multiple_Date_Gives_Open</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Number_of_Give_Instances__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Maximum_Units_per_Member__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_of_Confirmed_Units__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Number_of_Give_Instances__c</field>
+            <operation>greaterThan</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Planned,Waitlist</value>
+        </filters>
+        <label>Multiple Date Gives - Open Planned Waitl</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_without_Geo_Locations</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Geo_Location__c</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Geo_Location__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Zip - Will not come up in Zip search</label>
+    </listViews>
+    <listViews>
+        <fullName>Partner_Miller_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Partnership_Request__c</field>
+            <operation>equals</operation>
+            <value>MHL 2010 Partnership</value>
+        </filters>
+        <label>Partner - Miller Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Partner_Non_Miller_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Partnership_Request__c</field>
+            <operation>notEqual</operation>
+            <value>MHL 2010 Partnership</value>
+        </filters>
+        <label>Partner - Non-Miller Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Closed_Invisible_Gives</fullName>
+        <columns>Status__c</columns>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Number_of_Give_Instances__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Type__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Maximum_Units_per_Member__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_of_Confirmed_Units__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Closed Invisible</value>
+        </filters>
+        <label>Status - Closed Invisible Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Closed_Visible_Gives</fullName>
+        <columns>Status__c</columns>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Number_of_Give_Instances__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Type__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Maximum_Units_per_Member__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_of_Confirmed_Units__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <columns>Geo_Location__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Closed Visible</value>
+        </filters>
+        <label>Status - Closed Visible Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Open_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Highlight_Listing__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Type__c</columns>
+        <columns>Status__c</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </filters>
+        <label>Status - Open Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Open_Planned_Waitlist_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Highlight_Listing__c</columns>
+        <columns>Available_To__c</columns>
+        <columns>Type__c</columns>
+        <columns>Location_Description__c</columns>
+        <columns>Location_Street_Address__c</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <columns>Available__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open,Waitlist,Planned</value>
+        </filters>
+        <label>Status - Open Planned Waitlist Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Planned_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Highlight_Listing__c</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Planned</value>
+        </filters>
+        <label>Status - Planned Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Status_Waitlist_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Highlight_Listing__c</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Location_by_State_s__c</columns>
+        <columns>National_Give__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Waitlist</value>
+        </filters>
+        <label>Status - Waitlist Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Type_First_Come_gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Number_of_Give_Instances__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Maximum_Units_per_Member__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_of_Confirmed_Units__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>First Come First Served</value>
+        </filters>
+        <label>Type - First Come gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Type_Screened_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Number_of_Give_Instances__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Maximum_Units_per_Member__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_of_Confirmed_Units__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>Screened Give</value>
+        </filters>
+        <label>Type - Screened Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Type_Unlimited_Gives</fullName>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Number_of_Give_Instances__c</columns>
+        <columns>Zip_Code_s__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Listing_Start_Date__c</columns>
+        <columns>Latest_End_Date__c</columns>
+        <columns>Latest_Application_Deadline__c</columns>
+        <columns>Maximum_Units_per_Member__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_of_Confirmed_Units__c</columns>
+        <columns>Partnership_Request__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Type__c</field>
+            <operation>equals</operation>
+            <value>Unlimited Give</value>
+        </filters>
+        <label>Type - Unlimited Gives</label>
+    </listViews>
+    <listViews>
+        <fullName>Upcoming</fullName>
+        <columns>NAME</columns>
+        <columns>City__c</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>Earliest_Start_Date__c</columns>
+        <columns>External_POC__c</columns>
+        <columns>Available_To__c</columns>
+        <columns>Days_Out_del__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Earliest_Start_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Upcoming</label>
+    </listViews>
+    <nameField>
+        <label>Title</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Gives</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>City__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Number_of_Units__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Number_Remaining__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Earliest_Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Must_be_21__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Partnership_Request__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Geo_Location__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Earliest_Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Number_of_Units__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Number_Remaining__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Partnership_Request__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Number_of_Units__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Number_Remaining__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Earliest_Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Latest_End_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Partnership_Request__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Geo_Location__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Check_for_special_instructions</fullName>
+        <active>true</active>
+        <description>If the collect special responses boxes are checked, make sure that the corresponding special instructions have been entered.</description>
+        <errorConditionFormula>if(
+   or( 
+     and(Requires_Special_Response__c , isblank( Special_Instructions__c )),
+     and(isblank( Special_Instructions_2__c),
+               or(ispickval(Collect_Special_Response_2__c, &quot;at request&quot;),
+               ispickval(Collect_Special_Response_2__c, &quot;at re-confirm&quot;)
+                   )
+             ),
+     and(isblank( Special_Instructions_3__c),
+               or(ispickval(Collect_Special_Response_3__c, &quot;at request&quot;),
+               ispickval(Collect_Special_Response_3__c, &quot;at re-confirm&quot;)
+                   )
+             ),
+     and(isblank( Special_Instructions_4__c),
+               or(ispickval(Collect_Special_Response_4__c, &quot;at request&quot;),
+               ispickval(Collect_Special_Response_4__c, &quot;at re-confirm&quot;)
+                   )
+             ),
+     and(isblank( Special_Instructions_5__c),
+               or(ispickval(Collect_Special_Response_5__c, &quot;at request&quot;),
+               ispickval(Collect_Special_Response_5__c, &quot;at re-confirm&quot;)
+                   )
+             )
+   ),
+true,false)</errorConditionFormula>
+        <errorDisplayField>Requires_Special_Response__c</errorDisplayField>
+        <errorMessage>If you collect a Special Response field, you must enter Special Instructions for that field. (FYI this validation rule can be turned off).</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Location_Must_Be_Filled</fullName>
+        <active>true</active>
+        <description>This rule ensures at least one of the following 3 location fields is used: National Give Checkbox, Zip Field or State Picklist.</description>
+        <errorConditionFormula>AND(ISBLANK( Location_by_State_s__c ), ISBLANK( Zip_Code_s__c ),NOT( National_Give__c ))</errorConditionFormula>
+        <errorDisplayField>Zip_Code_s__c</errorDisplayField>
+        <errorMessage>At least ONE of these location fields must be used:  Zip -OR- State -OR- National</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Location_Validation</fullName>
+        <active>true</active>
+        <description>This rule ensures only one of the following 3 location fields is used: National Give Checkbox, Zip Field or State Picklist.</description>
+        <errorConditionFormula>IF(OR(AND(ISBLANK( Location_by_State_s__c ),NOT( National_Give__c )),AND(ISBLANK( Location_by_State_s__c ),ISBLANK( Zip_Code_s__c )),AND(ISBLANK( Zip_Code_s__c ),NOT( National_Give__c ))),FALSE,TRUE)</errorConditionFormula>
+        <errorDisplayField>Zip_Code_s__c</errorDisplayField>
+        <errorMessage>Only ONE of these location fields can be used:  Zip -OR- State -OR- National</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_open_info_give_if_no_winner_instructs</fullName>
+        <active>true</active>
+        <description>Prevents an Informational Give from being opened without fulfillment instructions for winner. Since the Fulfillment Instructions for Winner field is a rich text field, we had to use the LEN function for this formula.</description>
+        <errorConditionFormula>and(
+
+ispickval( Type__c, &quot;Information&quot; ), 
+LEN(Fulfillment_Instructions_rtf__c)=0,
+
+or (ispickval(Status__c, &quot;Open&quot;), ispickval(Status__c, &quot;Planned&quot;) )
+
+)</errorConditionFormula>
+        <errorDisplayField>Fulfillment_Instructions_rtf__c</errorDisplayField>
+        <errorMessage>For an Information Give the Fulfillment Instructions for Winner must be filled in. That&apos;s because the instructions will be sent as soon as the member requests the reward.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Notification_Location_Must_Be_Filled</fullName>
+        <active>false</active>
+        <description>This rule ensures at least one of the following 2 location fields is used in the Notification section: National Checkbox,  or State Picklist.</description>
+        <errorConditionFormula>NOT( AND (Send_Notifications__c ,	NOT( OR( AND( National__c , NOT( ISBLANK(  State__c ) ) ) , 
+AND( NOT( National__c ) , ISBLANK( State__c ) ) ) ) ) )</errorConditionFormula>
+        <errorDisplayField>State__c</errorDisplayField>
+        <errorMessage>At least ONE of these location fields must be used:  State -OR- National</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Notification_Message_Must_Be_Filled</fullName>
+        <active>false</active>
+        <description>This rule ensures that the Message Text  is used in the Notification section.</description>
+        <errorConditionFormula>NOT( AND( Send_Notifications__c, NOT( ISBLANK(  Message_Text__c  ) ) ) )</errorConditionFormula>
+        <errorDisplayField>Message_Text__c</errorDisplayField>
+        <errorMessage>The Message Text  is required if the Send Notification is enabled.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Planned_Give_needs_Listing_Start_Date</fullName>
+        <active>true</active>
+        <description>A Give with Status=Planned needs a Listing Start Date to determine when listing goes live.</description>
+        <errorConditionFormula>and(ispickval(Status__c,&quot;Planned&quot;), isblank(Listing_Start_Date__c))</errorConditionFormula>
+        <errorDisplayField>Listing_Start_Date__c</errorDisplayField>
+        <errorMessage>A &quot;Planned&quot; give needs a Listing Start Date to determine when listing goes live.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_AIR</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create AIR</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a33/e?retURL=%2F{!Give__c.Id}&amp;CF00NC0000005ULm0={!Give__c.Name}&amp;CF00NC0000005ULm0_lkid={!Give__c.Id}&amp;Name=Impact: {!Give__c.Name}&amp;CF00NC0000005UM1J={!Give__c.External_POC__c}&amp;CF00NC0000005UM1J_lkid={!Give__c.External_POCId__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Map_It</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Map It!</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/sma__mapanything?recordId={!Give__c.Id}&amp;baseObjectId=a2uC00000003dJyIAI&amp;tooltipField=Name&amp;color=%2366FF00</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Geo_Location</fullName>
+        <availability>online</availability>
+        <description>Create a Geo Location record for this Account</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>New Geo Location</masterLabel>
+        <openType>sidebar</openType>
+        <page>newGeoLocation</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Test</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Test</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>&lt;script src=&quot;/soap/ajax/15.0/connection.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/soap/ajax/15.0/apex.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script&gt; 
+function val() 
+{ 
+alert(&quot;Hello&quot;);
+var Membership_Number = &apos;MN&apos;;
+alert(Membership_Number);
+var Email = &apos;EM&apos;;
+alert(Email);
+var validate = sforce.apex.execute(&apos;dc_validate&apos; , &apos;dc_validate&apos;, {Membership_Number:Membership_Number, Email:Email});
+alert(validate);
+if(validate == true)
+{
+alert(&quot;Hi&quot;);
+}
+} 
+&lt;/script&gt;</url>
+    </webLinks>
+</CustomObject>

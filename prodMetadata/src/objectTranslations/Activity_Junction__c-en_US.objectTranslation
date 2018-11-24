@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Track a Call</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Track a Calls</value>
+    </caseValues>
+    <fields>
+        <label><!-- AIR Completed --></label>
+        <name>AIR_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- AIR Overdue --></label>
+        <name>AIR_Overdue__c</name>
+    </fields>
+    <fields>
+        <label><!-- AIR Required --></label>
+        <name>AIR_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- Track a Calls --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Call Notes --></label>
+        <name>Call_Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Overview field for use in dashboard. --></help>
+        <label><!-- Call Overview --></label>
+        <name>Call_Overview__c</name>
+    </fields>
+    <fields>
+        <label><!-- Main Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Track a Calls --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Just a blank box so the dashboard has a value. --></help>
+        <label><!-- Dashboard --></label>
+        <name>Dashboard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Call --></label>
+        <name>Date_of_Call__c</name>
+    </fields>
+    <fields>
+        <help><!-- When this is checked, a copy of the Call Notes will be sent to owner&apos;s manager. --></help>
+        <label><!-- Send Call Notes to Manager --></label>
+        <name>Send_Call_Notes_to_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed - no email</masterLabel>
+            <translation><!-- Completed - no email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on someone else</masterLabel>
+            <translation><!-- Waiting on someone else --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-Mail Exchange</masterLabel>
+            <translation><!-- E-Mail Exchange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting</masterLabel>
+            <translation><!-- Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testimony</masterLabel>
+            <translation><!-- Testimony --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Track a Call Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description Information --></label>
+            <section>Description Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You must enter a Subject for this Track a Call. The Subject cannot be &quot;Track a Call&quot;, you must enter something more specific. --></errorMessage>
+        <name>mustAddSubject</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_AIR --></label>
+        <name>Create_AIR</name>
+    </webLinks>
+</CustomObjectTranslation>

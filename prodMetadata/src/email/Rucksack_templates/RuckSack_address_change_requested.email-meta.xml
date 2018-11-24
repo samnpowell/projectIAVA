@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifies IAVA staff when a member wants to update their address with new info</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RuckSack - address change requested</name>
+    <style>none</style>
+    <subject>Rucksack - member address update for {!Give_Request__c.Applicant__c} - {!Give_Request__c.Email_Address__c}</subject>
+    <type>text</type>
+</EmailTemplate>

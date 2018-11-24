@@ -1,0 +1,19 @@
+{!Program__c.Name}
+{!Program__c.Program_Street_Address__c}
+{!Program__c.Program_City__c}, {!Program__c.Program_State__c} {!Program__c.Program_Zip__c}
+
+Brief description:{!Program__c.Public_Description__c}
+
+Focus Area: {!Program__c.Focus_Area__c}
+
+Number of referrals to this program: {!Program__c.Count_of_Total_Referrals__c}
+Number of benefits received from this program: {!Program__c.Number_of_Referrals_Created__c}
+
+Here is a breakdown on their ratings based off of {!Program__c.Count_of_Rated_Referrals__c} survey response(s).
+
+AVG overall rating: {!Program__c.Average_Overall_Rating__c}
+AVG quality rating: {!Program__c.Average_Quality_Rating__c}
+AVG effectiveness rating: {!Program__c.Average_Effectiveness_Rating__c}
+AVG customer service rating: {!Program__c.Average_Customer_Service_Rating__c}
+
+##EOR##

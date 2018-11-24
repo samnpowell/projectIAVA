@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>gala sponsorship or ticket selections</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CampaignMemberId__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Member Id</label>
+        <length>18</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Platinum Hero</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hero Sponsor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Valor Sponsor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Champion Sponsor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ally Sponsor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Supporter Individual</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Friend Individual</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Sponsorship/Ticket</label>
+    <nameField>
+        <displayFormat>TN-{0}</displayFormat>
+        <label>Sponsorship/Ticket Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sponsorships/Tickets</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>FourOrFewerSupporterIndividualTickets</fullName>
+        <active>true</active>
+        <description>no more than 4 $2500 tickets (supporter individual) can be purchased at one time</description>
+        <errorConditionFormula>ISPICKVAL(Type__c, &apos;Supporter Individual&apos;) &amp;&amp;
+Quantity__c &gt; 4</errorConditionFormula>
+        <errorMessage>We have limited purchase of Supporter Individual ($2500) to four tickets per purchaser. Please contact heroesgala@iava.org with any questions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TwoOrFewerFriendIndividualTickets</fullName>
+        <active>true</active>
+        <description>no more than 2 $1250 tickets (friend individual) can be purchased at one time</description>
+        <errorConditionFormula>ISPICKVAL(Type__c, &apos;Friend Individual&apos;) &amp;&amp;
+Quantity__c &gt; 2</errorConditionFormula>
+        <errorMessage>We have limited purchase of Friend Individual ($1250) to two tickets per purchaser. Please contact heroesgala@iava.org with any questions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>cannotChangeCampaignMemberId</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED(CampaignMemberId__c)</errorConditionFormula>
+        <errorDisplayField>CampaignMemberId__c</errorDisplayField>
+        <errorMessage>You cannot change the campaign member id.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>cannotChangeTicketType</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED(Type__c)</errorConditionFormula>
+        <errorDisplayField>Type__c</errorDisplayField>
+        <errorMessage>You cannot change the ticket type.</errorMessage>
+    </validationRules>
+</CustomObject>

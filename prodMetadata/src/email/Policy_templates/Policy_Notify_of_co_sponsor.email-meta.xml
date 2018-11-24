@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify about a new co-sponsor record</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Policy_Notify of co_sponsor</name>
+    <style>none</style>
+    <subject>{!Legislation__c.Full_Bill_Number__c}: {!Contact_Leg_junction__c.Contact__c} added as Co-sponsor</subject>
+    <type>text</type>
+</EmailTemplate>

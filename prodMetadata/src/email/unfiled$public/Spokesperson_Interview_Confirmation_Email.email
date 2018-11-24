@@ -1,0 +1,26 @@
+Dear {!Media_Request__c.Proposed_Spokesperson__c}, 
+
+As a reminder, you have been scheduled to be interviewed at {!Media_Request__c.Proposed_Date_and_Time__c} on {!Media_Request__c.Press_Outlet__c} {!if(ISBLANK(Media_Request__c.Location__c),".", "at "+ Media_Request__c.Location__c)}. The interview will be about {!Media_Request__c.Name} and will be conducted {!if(Media_Request__c.Live__c , "live ","")} on {!Media_Request__c.Medium__c}. 
+
+Your primary contact at the media outlet is {!Media_Request__c.Reporter_Producer__c}, who can be reached at:
+Email: {!Media_Request__c.Contact_Email__c}
+Phone: {!Media_Request__c.Contact_Phone__c}
+
+If you have any questions about your scheduled interview, feel free to contact me. 
+
+Thank you. 
+
+Best, 
+Zack Baddorf 
+
+Press Secretary 
+Iraq and Afghanistan Veterans of America (IAVA) 
+
+292 Madison Avenue, 10th Floor 
+New York, NY 10017 
+Office: 212.982.9699 
+Cell: 202.630.4310 
+Fax: 212.982.8645 
+http://www.IAVA.org 
+http://www.facebook.com/IAVA.org 
+http://www.twitter.com/IAVA

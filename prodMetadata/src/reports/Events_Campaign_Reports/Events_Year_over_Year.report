@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>IAVAEvent__c.PowerOfOne__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>IAVAEvent__c.Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Published</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Year</dateGranularity>
+        <field>IAVAEvent__c.Event_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <name>Events Year over Year</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$IAVAEvent__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>IAVAEvent__c.Event_Date__c</dateColumn>
+        <interval>INTERVAL_PREV2Y</interval>
+    </timeFrameFilter>
+</Report>

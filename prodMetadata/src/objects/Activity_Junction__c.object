@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>TrackACall</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AIR_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AIR Completed</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AIR_Overdue__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ((AND ( AIR_Required__c = True, AIR_Completed__c = False,  Date_of_Call__c  +2 &lt; DATEVALUE(NOW()))), &quot;True&quot;, &quot;False&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AIR Overdue</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AIR_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AIR Required</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_To__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Track_a_Calls</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Notes</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Call_Overview__c</fullName>
+        <description>Overview field for use in dashboard.</description>
+        <externalId>false</externalId>
+        <formula>text(Date_of_Call__c) +&quot; [&quot; +  Assigned_To__r.LastName   + &quot;] &quot; +  text(Type__c)  + &quot;: &quot; +  Contact__r.FirstName + &quot; &quot; +  Contact__r.LastName + &quot; [&quot; +  
+
+if( ispickval(Contact__r.Account.kw__KW_Category__c, &quot;Fed Legislator Office&quot;), &quot;Office: &quot; +
+    substitute(
+     substitute(
+      substitute(
+       substitute(
+        left(Contact__r.Account.Name, find(&quot; (&quot;, Contact__r.Account.Name) -1)
+       , &quot;Capitol Office of &quot;, &quot;&quot;)
+      , &quot;District Office of &quot;, &quot;&quot;)
+     , &quot;Sen. &quot;, &quot;&quot;)
+    , &quot;Rep. &quot;, &quot;&quot;)
+,  Contact__r.Account.kw__Office_Code__c )
+
++ &quot;] - Subject: &quot; + Name</formula>
+        <inlineHelpText>Overview field for use in dashboard.</inlineHelpText>
+        <label>Call Overview</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Main Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Track a Calls</relationshipLabel>
+        <relationshipName>Track_a_Calls</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Dashboard__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Just a blank box so the dashboard has a value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Just a blank box so the dashboard has a value.</inlineHelpText>
+        <label>Dashboard</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Call__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Call</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Send_Call_Notes_to_Manager__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When this is checked, a copy of the Call Notes will be sent to owner&apos;s manager by workflow &quot;Send Track a Call Call Notes to Manager&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When this is checked, a copy of the Call Notes will be sent to owner&apos;s manager.</inlineHelpText>
+        <label>Send Call Notes to Manager</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waiting on someone else</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed - no email</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>E-Mail Exchange</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Testimony</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Track a Call</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Date_of_Call__c</columns>
+        <columns>Status__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Contact__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Christina_Roof_s_Track_a_Calls</fullName>
+        <columns>NAME</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Call_Notes__c</columns>
+        <columns>Date_of_Call__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Assigned_To__c</field>
+            <operation>equals</operation>
+            <value>Christina Roof</value>
+        </filters>
+        <label>Christina Roof&apos;s Track a Calls</label>
+    </listViews>
+    <listViews>
+        <fullName>Completed_Track_A_Calls</fullName>
+        <columns>NAME</columns>
+        <columns>Date_of_Call__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Call_Overview__c</columns>
+        <columns>AIR_Required__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <label>Completed Track A Calls</label>
+    </listViews>
+    <listViews>
+        <fullName>Incomplete_track_a_calls</fullName>
+        <columns>NAME</columns>
+        <columns>Date_of_Call__c</columns>
+        <columns>Assigned_To__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>AIR_Required__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </filters>
+        <label>Incomplete track a calls</label>
+    </listViews>
+    <nameField>
+        <label>Subject</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Track a Calls</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>mustAddSubject</fullName>
+        <active>true</active>
+        <description>the end user must add a subject for a track a call, they cannot leave the field blank or keep the default subject of Track A Call</description>
+        <errorConditionFormula>ISBLANK(Name) ||
+Name = &apos;Track a Call&apos; &amp;&amp;
+$Profile.Name != &apos;System Administrator&apos;</errorConditionFormula>
+        <errorMessage>You must enter a Subject for this Track a Call. The Subject cannot be &quot;Track a Call&quot;, you must enter something more specific.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_AIR</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create AIR</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a33/e?retURL=%2F{!Activity_Junction__c.Id}&amp;Name=Impact: {!Activity_Junction__c.Name}&amp;CF00NC0000005URIK={!Activity_Junction__c.Name}&amp;CF00NC0000005URIK_lkid={!Activity_Junction__c.Id}&amp;CF00NC0000005UM1J={!Activity_Junction__c.Contact__c}&amp;CF00NC0000005UM1J_lkid={!Activity_Junction__c.ContactId__c}</url>
+    </webLinks>
+</CustomObject>

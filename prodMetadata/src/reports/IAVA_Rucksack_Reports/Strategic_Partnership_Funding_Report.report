@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign.Partnerships__r$Organization__c</field>
+    </columns>
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign$ExpectedRevenue</field>
+    </columns>
+    <columns>
+        <field>Campaign$HierarchyAmountWonOpportunities</field>
+    </columns>
+    <columns>
+        <field>Campaign.Partnerships__r$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.Partnerships__r$Related_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Campaign.Partnerships__r$Owner</field>
+    </columns>
+    <format>Tabular</format>
+    <name>Strategic Partnership Funding Report</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Partnerships_with_Campaigns__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Campaign$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

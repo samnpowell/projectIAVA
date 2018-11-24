@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Agreed_to_Terms_of_Use__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Contact has acknowledged and accepted terms of story use.</inlineHelpText>
+        <label>Agreed to Terms of Use</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Stories</relationshipLabel>
+        <relationshipName>Stories</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Shared__c</fullName>
+        <description>Date that a story is shared</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date that a story is shared</inlineHelpText>
+        <label>Date Shared</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Final_Story__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Story as it has been approved (possibly after editing) by IAVA Communications staff.</inlineHelpText>
+        <label>Final Story</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Link_to_Story__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If the story is posted online elsewhere, attach the link here</inlineHelpText>
+        <label>Link to Story</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Shared_Story__c</fullName>
+        <description>Checked if story was shared</description>
+        <externalId>false</externalId>
+        <formula>NOT(ISBLANK(Date_Shared__c))</formula>
+        <inlineHelpText>Checked if story was shared</inlineHelpText>
+        <label>Shared Story</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reviewed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Story_Mini_Summary__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Limited to 255 characters</inlineHelpText>
+        <label>Story Mini-Summary</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_Story__c</fullName>
+        <externalId>false</externalId>
+        <label>Submitted Story</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Success_Story__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Success Story?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Topics__c</fullName>
+        <externalId>false</externalId>
+        <label>Topics</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Afghanistan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Alternative Therapy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Clay Hunt SAV Act</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>COV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Discrimination</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DOD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gala</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GI Bill</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Healthcare</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Homelessness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Iraq</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Iraqi Interpreters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Local Events</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Love</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Member Survey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mental Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military COLA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military Recruitment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military Sexual Trauma</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NGIB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NYC Veterans</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online Campaigns</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Op-Ed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Overextended Military</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partnerships</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Politics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PTSD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rally</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Red Tape Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RRRP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shutdown</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Starting a new venture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>STH2014</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Suicide</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Summer Storm</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>The Wait We Carry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TBI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA Backlog</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vets Day</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vets Prevail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VetsRising</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wait for Care &amp; Benefits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Walter Reed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Women</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Written_by__c</fullName>
+        <externalId>false</externalId>
+        <label>Written by</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contact</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IAVA Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3rd Party</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Written_by_other_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If written by someone other than the contact, name of author</inlineHelpText>
+        <label>Written by (other) Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Story</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Story Title</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Stories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

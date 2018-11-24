@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object establishes many-to-many relationship between Policy Recommendations and Focus Areas.  By design it should be used for IAVA Programs (e.g. Combat to Career) instead of Policy Issues, which would be designated in the Meta Policy Issue field.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Related_Focus_Area__c</fullName>
+        <description>The IAVA campaign related to the Focus Area.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The IAVA campaign related to the Focus Area.</inlineHelpText>
+        <label>Related IAVA Program</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Focus_Area__c.Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Focus_Area__c.Type__c</field>
+                <operation>equals</operation>
+                <value>IAVA Program</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Focus_Area__c</referenceTo>
+        <relationshipLabel>Policy Recommendations - IAVA Programs</relationshipLabel>
+        <relationshipName>Focus_Areas_related_to_Policy_Recs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Related_Policy_Rec__c</fullName>
+        <description>The Policy Recommendation related to this Focus Area.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Policy Recommendation related to this Focus Area.</inlineHelpText>
+        <label>Related Policy Recommendation</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Policy_Rec__c.Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Policy_Rec__c</referenceTo>
+        <relationshipLabel>IAVA Programs related to this Recommendation</relationshipLabel>
+        <relationshipName>Focus_Areas_related_to_Policy_Recs</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>IAVA Program related to Policy Rec</label>
+    <nameField>
+        <displayFormat>PR-FA-{00000}</displayFormat>
+        <label>PRec-Focus ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>IAVA Programs related to Policy Recs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

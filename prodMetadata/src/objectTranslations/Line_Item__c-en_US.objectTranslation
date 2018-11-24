@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- # Added --></label>
+        <name>Added__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <relationshipLabel><!-- Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Assigned --></label>
+        <name>Assigned__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department Requesting --></label>
+        <name>Department_Requesting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department --></label>
+        <name>Department__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fulfilled --></label>
+        <name>Fulfilled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fulfilled with Alternative Item --></label>
+        <name>Fulfilled_with_Alternative_Item__c</name>
+        <relationshipLabel><!-- Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Inventory Item --></label>
+        <name>Inventory_Item__c</name>
+        <relationshipLabel><!-- Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Joined to Server --></label>
+        <name>IsJoinedToServer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer --></label>
+        <name>Manufacturer__c</name>
+        <picklistValues>
+            <masterLabel>Apple</masterLabel>
+            <translation><!-- Apple --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dell</masterLabel>
+            <translation><!-- Dell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP</masterLabel>
+            <translation><!-- HP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lenovo</masterLabel>
+            <translation><!-- Lenovo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Livestream</masterLabel>
+            <translation><!-- Livestream --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oscar Mike</masterLabel>
+            <translation><!-- Oscar Mike --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pure Digital</masterLabel>
+            <translation><!-- Pure Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Toshiba</masterLabel>
+            <translation><!-- Toshiba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undefeated</masterLabel>
+            <translation><!-- Undefeated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verizon</masterLabel>
+            <translation><!-- Verizon --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Model --></label>
+        <name>Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office --></label>
+        <name>Office__c</name>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC</masterLabel>
+            <translation><!-- DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>remote</masterLabel>
+            <translation><!-- remote --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Operating System --></label>
+        <name>Operating_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+        <picklistValues>
+            <masterLabel>Broadcaster</masterLabel>
+            <translation><!-- Broadcaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flipcam</masterLabel>
+            <translation><!-- Flipcam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mac</masterLabel>
+            <translation><!-- Mac --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verizon</masterLabel>
+            <translation><!-- Verizon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows</masterLabel>
+            <translation><!-- Windows --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason for Request --></label>
+        <name>Reason_for_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Requested --></label>
+        <name>Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial Number --></label>
+        <name>Serial_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you cannot pick these items up at NYC HQ, enter a shipping address. --></help>
+        <label><!-- Ship To --></label>
+        <name>Ship_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Size (inches) --></label>
+        <name>Size_inches__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tag --></label>
+        <name>Tag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type/Size --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>American flag</masterLabel>
+            <translation><!-- American flag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banner for hanging</masterLabel>
+            <translation><!-- Banner for hanging --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banner with poles</masterLabel>
+            <translation><!-- Banner with poles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Camo tote</masterLabel>
+            <translation><!-- Camo tote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Desktop</masterLabel>
+            <translation><!-- Desktop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gala give-away tote</masterLabel>
+            <translation><!-- Gala give-away tote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold coin</masterLabel>
+            <translation><!-- Gold coin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IAVA flag</masterLabel>
+            <translation><!-- IAVA flag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Keyboard</masterLabel>
+            <translation><!-- Keyboard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lapel pin</masterLabel>
+            <translation><!-- Lapel pin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laptop</masterLabel>
+            <translation><!-- Laptop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Large</masterLabel>
+            <translation><!-- Large --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magnet lapel pin</masterLabel>
+            <translation><!-- Magnet lapel pin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media Broadcaster</masterLabel>
+            <translation><!-- Media Broadcaster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MiFi</masterLabel>
+            <translation><!-- MiFi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mouse</masterLabel>
+            <translation><!-- Mouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other flag</masterLabel>
+            <translation><!-- Other flag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Printer</masterLabel>
+            <translation><!-- Printer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retractable banner</masterLabel>
+            <translation><!-- Retractable banner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Screen</masterLabel>
+            <translation><!-- Screen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silver coin</masterLabel>
+            <translation><!-- Silver coin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small</masterLabel>
+            <translation><!-- Small --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tablet</masterLabel>
+            <translation><!-- Tablet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Camera</masterLabel>
+            <translation><!-- Video Camera --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>X-Large</masterLabel>
+            <translation><!-- X-Large --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>X-Small</masterLabel>
+            <translation><!-- X-Small --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XX-Large</masterLabel>
+            <translation><!-- XX-Large --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XXX-Large</masterLabel>
+            <translation><!-- XXX-Large --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>2007</masterLabel>
+            <translation><!-- 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2008</masterLabel>
+            <translation><!-- 2008 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2009</masterLabel>
+            <translation><!-- 2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017</masterLabel>
+            <translation><!-- 2017 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018</masterLabel>
+            <translation><!-- 2018 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019</masterLabel>
+            <translation><!-- 2019 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2020</masterLabel>
+            <translation><!-- 2020 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2021</masterLabel>
+            <translation><!-- 2021 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2022</masterLabel>
+            <translation><!-- 2022 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2023</masterLabel>
+            <translation><!-- 2023 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2024</masterLabel>
+            <translation><!-- 2024 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2025</masterLabel>
+            <translation><!-- 2025 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2026</masterLabel>
+            <translation><!-- 2026 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2027</masterLabel>
+            <translation><!-- 2027 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2028</masterLabel>
+            <translation><!-- 2028 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2029</masterLabel>
+            <translation><!-- 2029 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2030</masterLabel>
+            <translation><!-- 2030 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2031</masterLabel>
+            <translation><!-- 2031 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2032</masterLabel>
+            <translation><!-- 2032 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2033</masterLabel>
+            <translation><!-- 2033 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2034</masterLabel>
+            <translation><!-- 2034 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2035</masterLabel>
+            <translation><!-- 2035 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2036</masterLabel>
+            <translation><!-- 2036 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2037</masterLabel>
+            <translation><!-- 2037 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2038</masterLabel>
+            <translation><!-- 2038 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2039</masterLabel>
+            <translation><!-- 2039 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2040</masterLabel>
+            <translation><!-- 2040 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2041</masterLabel>
+            <translation><!-- 2041 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2042</masterLabel>
+            <translation><!-- 2042 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2043</masterLabel>
+            <translation><!-- 2043 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2044</masterLabel>
+            <translation><!-- 2044 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2045</masterLabel>
+            <translation><!-- 2045 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2046</masterLabel>
+            <translation><!-- 2046 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2047</masterLabel>
+            <translation><!-- 2047 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2048</masterLabel>
+            <translation><!-- 2048 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2049</masterLabel>
+            <translation><!-- 2049 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2050</masterLabel>
+            <translation><!-- 2050 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Apparel Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Apparel Stocking Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Hardware Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Merchandise Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Merchandise Stocking Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Hardware --></label>
+        <name>Hardware</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Request Apparel --></label>
+        <name>Request_Apparel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Request Other Merch --></label>
+        <name>Request_Other_Merch</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Stock Apparel --></label>
+        <name>Stock_Apparel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Stock Other Merch --></label>
+        <name>Stock_Other_Merch</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- This item is no longer available. Please cancel this request or request a different item. --></errorMessage>
+        <name>ItemNoLongerInStock</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You have requested more items than are currently available. Please decrease the number of items in your request. --></errorMessage>
+        <name>RequestedGreaterThanAvailable</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Apparel_Request --></label>
+        <name>New_Apparel_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Hardware --></label>
+        <name>New_Hardware</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- New_Merch_Request --></label>
+        <name>New_Merch_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Stock_Apparel --></label>
+        <name>Stock_Apparel</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Stock_Merch --></label>
+        <name>Stock_Merch</name>
+    </webLinks>
+</CustomObjectTranslation>

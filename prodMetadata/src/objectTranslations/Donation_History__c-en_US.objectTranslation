@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Donation History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Donation History</value>
+    </caseValues>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Donation History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amount Posted --></label>
+        <name>Amount_Posted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Donor Year Key --></label>
+        <name>Donor_Year_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <layouts>
+        <layout>Donation History Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

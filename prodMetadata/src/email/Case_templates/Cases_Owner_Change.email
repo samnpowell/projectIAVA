@@ -1,0 +1,13 @@
+Your {!Case.RecordType} case has been assigned to {!Case.OwnerFullName}.
+
+//
+
+Case Details:
+
+Subject: {!Case.Subject}
+Status: {!Case.Status}
+Now Assigned to: {!Case.OwnerFullName}
+
+Estimated Resolution Date: {!Case.Estimated_Resolution_Date__c}
+
+Click here to be taken to this request: {!Case.Link}

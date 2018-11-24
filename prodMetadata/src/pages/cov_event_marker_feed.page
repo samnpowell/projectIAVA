@@ -1,0 +1,13 @@
+<apex:page controller="cov_event_marker_feed_controller" contentType="application/xml" showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+	
+	<markers>
+	  
+		<!-- line 5 added and line 7 modified 2016-10-27 by SP for IAVA Endorsed Event flags -->
+        <apex:repeat value="{!markers}" var="m" >
+            <marker name="{!m.Name}" date="{!m.theDate}" link="{!m.link}" type="{!m.type}" endorsed="{!m.isEndorsed}" markerimage="{!m.imageURL}" address1="{!m.venue}" address2="{!m.street}" city="{!m.city}" postcode="{!m.postalcode}" lat="{!m.lat}" lng="{!m.lon}" ></marker>
+		</apex:repeat>
+	  
+	</markers>
+
+
+</apex:page>

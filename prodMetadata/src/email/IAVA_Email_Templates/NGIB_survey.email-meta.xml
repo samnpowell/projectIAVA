@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NGIB survey</name>
+    <style>none</style>
+    <subject>New GI Bill Ninja</subject>
+    <textOnly>Hey,
+
+Allow me to introduce myself: my name is Ryan and I&apos;m the Education Case Manager here at IAVA. It looks like you&apos;ve visited our site and chatted with either me or another staffer about education benefits for vets. I want to make sure that we are providing the best information and continue to deliver excellent customer service to our veterans, family members, and supporters.
+
+That&apos;s where you come in. Help us make sure everybody&apos;s experience with NewGIBill.org is great by telling us what we could be doing better. Take just a couple minutes (no, really, it&apos;s only three short questions!) and fill out this brief survey: http://iava.org/new-gi-bill-faq-survey
+
+I&apos;m grateful that you reached out to NewGIBill.org; hopefully you received the information you needed and had a great experience with our team. Two minutes of your time will help us ensure that we are doing everything we can for vets like you.
+
+If you ever need more help, or have any new questions, please feel free to reach out to me directly or visit our FAQ page at NewGIBill.org.
+
+Best,
+
+Ryan Weemer
+OIF Veteran, USMC 2001-2005
+Education Case Manager
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

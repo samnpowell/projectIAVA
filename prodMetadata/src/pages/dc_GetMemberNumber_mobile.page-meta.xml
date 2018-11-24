@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>16.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Mobile-optimized version of the forgot member number page for use in iphone app and elsewhere.</description>
+    <label>dc_GetMemberNumber_mobile</label>
+</ApexPage>

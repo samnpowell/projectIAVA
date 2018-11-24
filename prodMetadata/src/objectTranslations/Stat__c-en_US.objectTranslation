@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stat</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stats</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description to help explain what the amount refers to. --></help>
+        <label><!-- Amount Description --></label>
+        <name>Amount_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- What type of measurement will you make for this stat? --></help>
+        <label><!-- Amount Type --></label>
+        <name>Amount_Type__c</name>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Times the Rate</masterLabel>
+            <translation><!-- Times the Rate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Brief description of what this Stat covers --></help>
+        <label><!-- Brief Description --></label>
+        <name>Brief_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Since Last Measurement --></label>
+        <name>Days_Since_Measured__c</name>
+    </fields>
+    <fields>
+        <help><!-- How often does this stat come out? --></help>
+        <label><!-- Frequency --></label>
+        <name>Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Irregular</masterLabel>
+            <translation><!-- Irregular --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yearly</masterLabel>
+            <translation><!-- Yearly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Link to more information about the stat in general, not to the individual measurement. --></help>
+        <label><!-- General Stat link --></label>
+        <name>General_Stat_link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Latest date pulled from all Stat Measurements --></help>
+        <label><!-- Latest Measurement Expiration Date --></label>
+        <name>Latest_Measurement_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date corresponding with the Measurement Amount. --></help>
+        <label><!-- Most Recent Measurement Date --></label>
+        <name>Measurement_Amount_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Measurement Count --></label>
+        <name>Measurement_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Measurement Sum --></label>
+        <name>Measurement_Sum__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is set by a trigger which takes the most recent Stat Measurement record based on date. --></help>
+        <label><!-- Most Recent Amount --></label>
+        <name>Most_Recent_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Most Recent Amount (text) --></label>
+        <name>Most_Recent_Amount_text__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many times has this stat been measured --></help>
+        <label><!-- Number of Measurements --></label>
+        <name>Num_Measurements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Policy Issue records connected to this Stat --></help>
+        <label><!-- Num Policy Issue records --></label>
+        <name>Num_Policy_Issue_records__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that this Stat should be included in list of &quot;Numbers to Know&quot;. --></help>
+        <label><!-- Number to Know --></label>
+        <name>Number_to_Know__c</name>
+    </fields>
+    <fields>
+        <help><!-- General info related to the Stat in general, not the individual measurement. --></help>
+        <label><!-- Other Citation Info --></label>
+        <name>Other_Citation_Info__c</name>
+    </fields>
+    <fields>
+        <help><!-- This stat is not for publication --></help>
+        <label><!-- Private --></label>
+        <name>Private__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Links --></label>
+        <name>Related_Links__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to allow decimal point to show in dashboard. --></help>
+        <label><!-- Stat Name and Value --></label>
+        <name>Stat_Name_and_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Combines Stat Name and Amount Type for dashboard report. --></help>
+        <label><!-- Stat Name (and amount type) --></label>
+        <name>Stat_Name_and_amount_type__c</name>
+    </fields>
+    <layouts>
+        <layout>Stat Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Measurement --></label>
+            <section>Measurement</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Private --></label>
+        <name>Private</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Track_a_Call --></label>
+        <name>Track_a_Call</name>
+    </webLinks>
+</CustomObjectTranslation>

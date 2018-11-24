@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to member who has forgotten member number</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Forgot member number reminder</name>
+    <style>none</style>
+    <subject>IAVA Member Number reminder</subject>
+    <type>text</type>
+</EmailTemplate>

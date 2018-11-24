@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>When Draft Language is created in an Event Report and &quot;Send draft language&quot; is checked, it is sent to EO</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AIR Draft Language to EO</name>
+    <style>none</style>
+    <subject>ACTION: {!AIR__c.Name} ED Draft Language for {!AIR__c.Contact_for_Followup_Note__c}</subject>
+    <type>text</type>
+</EmailTemplate>

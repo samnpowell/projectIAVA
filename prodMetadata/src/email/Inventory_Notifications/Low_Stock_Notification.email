@@ -1,0 +1,3 @@
+Stock for {!Inventory__c.Name} is low. It's time to order more.
+
+Link to inventory in Salesforce: {!Inventory__c.Link}

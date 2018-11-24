@@ -1,0 +1,162 @@
+<apex:component controller="cov_header_controller" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">
+
+  <!-- <c:cov_include_js_jquery /> -->
+  <c:cov_header_stylesheet /> 
+  <!-- <c:cov_include_js_dropdown />  -->
+
+
+  <!-- <div id="cov-header" class="bootstrap"> -->
+  <div id="cov-header">
+
+    <div class="navbar{!if(isMobile, ' navbar-static-top', ' navbar-fixed-top')}" id="navbar-overall">  
+      <div class="container-fluid navbar-inner" id="navbar-overlay">
+      <!-- <div class="navbar-inner" id="navbar-overlay">   -->
+        <!-- <div class="container" id="navbar-top">   -->
+        <!-- <div id="navbar-top">  -->
+
+            <div class="row" id="navbar-top">
+
+              <div class="col-xs-2 col-md-1 navbar-menu navbar-col">
+                <!-- <span class="pull-left" id="navbar-left"> -->
+
+                    <!-- <apex:outputPanel rendered="{!NOT(isPickVal($User.UserType, 'Guest'))}" > -->
+
+                      <span id="menu-section" class="relative">
+                        <a id="menu-hamburger" data-toggle="collapse" href="#myiava-menu" aria-expanded="false" aria-controls="myiava-menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                        <ul id="myiava-menu" class="dropdown-menu absolute" role="menu" aria-labelledby="menu">
+                              <apex:outputPanel rendered="{!isMobile}" layout="none" >
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{!if(contains($Currentpage.Name, 'dashboard'), '', $Site.currentSiteUrl + 'cov_dashboard')}#events_dashboard">Events</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{!if(contains($Currentpage.Name, 'dashboard'), '', $Site.currentSiteUrl + 'cov_dashboard')}#newsfeed">Newsfeed</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{!if(contains($Currentpage.Name, 'dashboard'), '', $Site.currentSiteUrl + 'cov_dashboard')}#recentactivity">Activity</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}cov_rrrp">RRRP Transition Help</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{!if(contains($Currentpage.Name, 'dashboard'), '', $Site.currentSiteUrl + 'cov_dashboard')}#resources">Resources</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}cov_vouchees">Vouch</a></li>
+
+                                <li role="presentation" class="divider"></li>
+
+                              </apex:outputPanel>
+
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}">Home</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}">Profile</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}_ui/core/chatter/people/PeopleListPage">People</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}_ui/core/chatter/groups/GroupListPage?filter=all">Groups</a></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}ideas/ideaList.apexp">Ideas</a></li>
+  <!--                             <li role="presentation" class="divider"></li>
+                              <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.Prefix}/secur/logout.jsp">Log Out</a></li>
+   -->                      </ul>
+                      </span>
+
+              </div>
+                    <!-- </apex:outputPanel> -->
+              <div class="col-xs-6 col-md-7 navbar-left navbar-col">
+
+                  <div id="header-logo">
+                    <div>
+                      <a href="{!$Site.currentSiteUrl}"><apex:image value="{!URLFOR($Resource.cov_files,'img/myIAVA-logo-beta.png')}" styleClass="img-responsive" alt="myIAVA" /></a>
+                    </div>
+
+                  </div>
+              </div>
+
+  <!--               <span class="pull-right" id="navbar-profile">
+                    <span id="navbar-profile-photo">
+                    <apex:image value="{!u.SmallPhotoUrl}" />
+                  </span> &nbsp;
+                  <span id="navbar-name">
+                    {!$User.FirstName} {!$User.LastName}
+                  </span>
+                        <apex:outputPanel rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">
+                                <span id="navbar-logout">
+                                    [&nbsp; <apex:outputLink value="{!$Site.Prefix}/secur/logout.jsp">Log out</apex:outputLink>&nbsp; ]
+                      </span>
+                  </apex:outputPanel>
+                </span>  -->
+
+              <div class="col-xs-4 navbar-col navbar-account">
+
+                <span id="navbar-profile" class="pull-right">
+                  <div id="navbar-profile-photo">
+                    <apex:outputPanel rendered="{!hasUnreadMessages}" layout="none">
+                      <a href="{!$Site.currentSiteUrl}_ui/core/chatter/ui/ChatterPage?deepLinkType=directMessage"><span class="badge absolute">{!unreadMessageCount}</span></a>
+                    </apex:outputPanel>
+
+                    <a id="profile-pic-thumbnail" href="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false" >
+                      <div class="relative">
+                        <apex:image value="{!u.SmallPhotoUrl}" alt="Account actions" />
+                        <span class="caret"></span>
+                      </div>
+                    </a>
+                    <ul id="menu1" class="dropdown-menu absolute pull-right" role="menu" aria-labelledby="profile-pic-thumbnail">
+                      <apex:outputPanel layout="none" rendered="{!isPickVal($User.UserType, 'Standard')}">
+                        <li role="presentation">
+                            <apex:outputLink html-role="menuitem" tabindex="-1" value="{!$Site.Prefix}/servlet/networks/switch?orgId={!$Organization.Id}" >Back to Salesforce</apex:outputLink>
+                        </li>
+                      </apex:outputPanel>
+                      <apex:outputPanel rendered="{!hasAdminPrivileges}" layout="none">
+                        <li role="presentation">
+                         <apex:outputLink html-role="menuitem" tabindex="-1" value="cov_monitor">Activity Monitor</apex:outputLink>
+                        </li>
+                      </apex:outputPanel>                    
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}">View Profile</a></li>
+                      <li role="presentation"><a href="{!$Site.currentSiteUrl}_ui/core/chatter/ui/ChatterPage?deepLinkType=directMessage">Messages</a></li>
+                      <apex:outputPanel rendered="{!showFacebookLogin}" layout="none">
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?tab=cov_Contact_Info">Set Up Facebook Login</a></li>
+                      </apex:outputPanel>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="{!$Site.Prefix}/secur/logout.jsp">Log Out</a></li>
+                    </ul>
+                  </div>
+                </span> 
+
+              </div>
+
+            </div>
+
+<!--           </div>
+        </div>  
+ -->
+       </div>  
+      
+<!--       <apex:outputPanel rendered="{!AND($CurrentPage.Name != 'cov_gateway', $Site.Name != 'IAVA_Plus')}">
+          <div class="row-fluid navbar-inner" id="navbar-tabs">  
+            <div class="span8">
+                <apex:define name="nav">
+                    <ul class="nav nav-tabs">  
+                    <li class="{!if($CurrentPage.Name == 'cov_dashboard', 'active', '')}">  
+                    <a href="{!$Site.currentSiteUrl}cov_dashboard">Home</a> </li>   
+                    <li><a href="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}">Profile</a></li>
+                    <li><a href="{!$Site.currentSiteUrl}_ui/core/chatter/people/PeopleListPage">People</a></li>   
+                    <li><a href="{!$Site.currentSiteUrl}_ui/core/chatter/groups/GroupListPage?filter=all">Groups</a></li>   
+                    <li><a href="{!$Site.currentSiteUrl}ideas/ideaList.apexp">Ideas</a></li>   
+                    </ul>  
+                </apex:define>
+            </div>
+        </div> <!-  .row-fluid -> 
+
+
+    </apex:outputPanel> -->
+      
+    </div> <!--  #navbar-overall -->
+
+
+    <script type="text/javascript">
+      j$ = jQuery.noConflict();
+      j$(document).ready(function() {
+
+        j$('a[role=menuitem]').click(function() {
+            if (j$(this).attr('href').substring(0,1) == '#') {
+              j$('#myiava-menu').collapse('hide');
+            }
+        });
+
+      });
+
+
+    </script>
+
+
+
+  </div> <!--  cov-header -->
+  
+
+  
+  </apex:component>

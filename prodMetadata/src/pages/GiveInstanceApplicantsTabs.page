@@ -1,0 +1,2 @@
+<apex:page standardController="Give_Instance__c" extensions="skuid.Redirects" 
+   action="{!redirect}&page=GiveInstanceApplicantsTabs" />

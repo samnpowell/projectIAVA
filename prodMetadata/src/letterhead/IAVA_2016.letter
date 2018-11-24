@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#AAAAFF</color>
+        <height>5</height>
+    </bottomLine>
+    <description>Available for welcome/join e-mails and any other generic IAVA e-mails.</description>
+    <footer>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <logo>IAVA_Logos/Three_Happy_IAVA_Members_and_Join_Message4.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FFFFFF</backgroundColor>
+        <height>70</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <logo>IAVA_Logos/IAVA_Logo_smaller_2016.jpg</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#000000</color>
+        <height>5</height>
+    </middleLine>
+    <name>IAVA 2016</name>
+    <topLine>
+        <color>#000000</color>
+        <height>3</height>
+    </topLine>
+</Letterhead>

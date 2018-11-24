@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used to control who is able to be automatically switched to the profile that confers COV access</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Allow_members_of_Campaign__c</fullName>
+        <description>Enter the name or ID of the campaign that contains contacts who are allowed to be automatically switched to the profile that gives them access to COV.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name or ID of the campaign that contains contacts who are allowed to be automatically switched to the profile that gives them access to COV.</inlineHelpText>
+        <label>Allow members of Campaign(Name or ID)</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Allowed_relationship_types_to_COVuser__c</fullName>
+        <description>Semicolon-separated list of relationship-types to an existing member which would enable member to be given permission set for access to COV.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Semicolon-separated list of relationship-types to an existing member which would enable member to be given permission set for access to COV.</inlineHelpText>
+        <label>Allowed relationship types to COVuser</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Authorized_member_categories__c</fullName>
+        <description>Semicolon-separated list of member categories who are allowed to be automatically switched to the profile that gives them access to COV (spelling must match Member Categories formula values on Contact object)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Semicolon-separated list of member categories who are allowed to be automatically switched to the profile that gives them access to COV (spelling must match Member Categories formula values on Contact object)</inlineHelpText>
+        <label>Authorized member categories</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prefix_for_COV_Access_Permission_Sets__c</fullName>
+        <defaultValue>&quot;COV Access&quot;</defaultValue>
+        <description>Permission sets that grant COV access should all start with the same prefix, e.g. &quot;COV Access - Internal&quot; and &quot;COV Access - Overage High Volume Customer Portal&quot;. In those cases the prefix is &quot;COV Access&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Permission sets that grant COV access should all start with the same prefix, e.g. &quot;COV Access - Internal&quot; and &quot;COV Access - Overage High Volume Customer Portal&quot;. In those cases the prefix is &quot;COV Access&quot;.</inlineHelpText>
+        <label>Prefix for COV Access Permission Sets</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>COV Access Profile Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

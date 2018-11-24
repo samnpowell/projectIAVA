@@ -1,0 +1,3 @@
+We are out of {!Inventory__c.Name}. It's time to order more.
+
+Link to inventory in Salesforce: {!Inventory__c.Link}

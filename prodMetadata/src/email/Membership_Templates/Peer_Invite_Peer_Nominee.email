@@ -1,0 +1,17 @@
+Dear {!npe4__Relationship__c.npe4__Contact__c},
+ 
+Good news! 
+
+Your fellow service member, {!npe4__Relationship__c.npe4__RelatedContact__c}, has identified YOU as an OIF, OEF or OND veteran. That means you can join Iraq and Afghanistan Veterans of America (IAVA) – the country’s first and largest group for new vets and their families. Click here to join now! https://secure.iava.org/nomination-accept?tfa_ContactID={!npe4__Relationship__c.npe4__ContactId__c}&tfa_Email={!npe4__Relationship__c.Primary_Contact_s_Email__c}&tfa_FIRSTNAME={!URLENCODE(npe4__Relationship__c.First_Name_of_Primary_Contact__c)}&tfa_LASTNAME={!URLENCODE(npe4__Relationship__c.Last_Name_of_Primary_Contact__c)}&tfa_3783473255399={!npe4__Relationship__c.npe4__RelatedContactId__c}
+
+Why join? Because your fellow vets need you. Whether it’s through supporting nationwide events, advocating for vets, sharing war stories or just lending a supportive ear, there are so many ways YOU can help.
+
+You’ll also get access to The Rucksack, where you can get everything from concert tickets to resume workshops – all for FREE.
+
+What are you waiting for? Your brothers and sisters need you. What are you waiting for? Your brothers and sisters need you. Taking care of our own doesn’t stop when we come home. Click here to join the movement TODAY. 
+https://secure.iava.org/nomination-accept?tfa_ContactID={!npe4__Relationship__c.npe4__ContactId__c}&tfa_Email={!npe4__Relationship__c.Primary_Contact_s_Email__c}&tfa_FIRSTNAME={!URLENCODE(npe4__Relationship__c.First_Name_of_Primary_Contact__c)}&tfa_LASTNAME={!URLENCODE(npe4__Relationship__c.Last_Name_of_Primary_Contact__c)}&tfa_3783473255399={!npe4__Relationship__c.npe4__RelatedContactId__c}
+
+Best, 
+
+Anthony Pike, Acting Membership Director 
+OIF Veteran, USMC

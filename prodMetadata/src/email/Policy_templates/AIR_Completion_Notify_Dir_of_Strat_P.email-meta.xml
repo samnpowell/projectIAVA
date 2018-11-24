@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>When a Strat P AIR is marked Complete, a notification is sent to Director</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AIR Completion Notify Dir of Strat P</name>
+    <style>none</style>
+    <subject>AIR Completed: {!AIR__c.Name}</subject>
+    <type>text</type>
+</EmailTemplate>

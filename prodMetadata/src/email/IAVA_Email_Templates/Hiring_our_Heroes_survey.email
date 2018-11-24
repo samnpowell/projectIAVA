@@ -1,0 +1,15 @@
+<p>Dear {!Contact.FirstName},</p> 
+
+<p>Thank you for your interest in Hiring our Heroes job fair. Even if you decided not to attend, we’d like to get your feedback.</p> 
+
+<p>Please complete our brief survey and you’ll be entered into a drawing for 3 copies of the HBO acclaimed mini-series "The Pacific." <a href="http://iava.org/hiring-our-heroes-job-fair-survey">Please click here to fill out the survey.</a></p>
+
+<p>Your member number will be required in the survey, it is {!Contact.Membership_ID__c}.</p>
+
+<p>Thank you for your helping us make our events even better.</p>
+
+<p>Sincerely,</p> 
+
+<p>Jason Hansman<br> 
+Online Community Manager<br> 
+Iraq and Afghanistan Veterans of America</p>

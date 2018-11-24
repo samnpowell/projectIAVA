@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Survey link is sent when a Case is created</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RRRP Program - Survey Email</name>
+    <style>none</style>
+    <subject>IAVA Rapid Response Referral Program Survey</subject>
+    <type>text</type>
+</EmailTemplate>

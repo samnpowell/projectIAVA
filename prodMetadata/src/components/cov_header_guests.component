@@ -1,0 +1,44 @@
+<apex:component controller="cov_header_guests_controller" >
+
+
+	<c:cov_header_stylesheet /> 
+	<style type="text/css">
+		#navbar-guests {
+			background-color: black;
+			padding: 14px;
+			color: white;
+			margin-bottom: 0;
+			border-top: 0;
+			border-left: 0;
+			border-right: 0;
+		}
+		#navbar-guests a, #navbar-guests {
+			color: white;
+		}
+		#container-overall.container-guests {
+			margin-top: 66px;
+		}
+	</style>
+
+	<apex:outputPanel rendered="{!ISPICKVAL($User.UserType,'Guest')}" >
+	    <div class="navbarnavbar{!if(isMobile, ' navbar-static-top', ' navbar-fixed-top')}{!if(or(isMobile, contains($CurrentPage.Name, 'dashboard'), contains($CurrentPage.Name, 'events_central')), ' navbar-stretched', '')} navbar-default" id="navbar-guests">  
+
+	    	<apex:outputPanel >
+	    		<a href="{!if(AND($Site.Name != 'Rucksack', $Site.Name != 'IAVA_Plus'), $Site.BaseRequestUrl, 'http://iava.org')}"><img src="{!URLFOR($Resource.cov_files,'img/myIAVA-logo-gray-150.png')}" width="150" height="35" alt="IAVA" /></a>
+	    	</apex:outputPanel>
+
+	    	<div class="pull-right">
+	    		<apex:outputPanel rendered="{!AND($Site.Name != 'Rucksack', $Site.Name != 'IAVA_Plus')}">
+		    		[&nbsp;<a href="cov_login?startURL={!currentEncodedUrlWithoutBase}">Log In</a>&nbsp;]&nbsp;&nbsp; &#8226; &nbsp;&nbsp;
+		    	</apex:outputPanel>
+<!-- 	    		<apex:outputPanel rendered="{!OR($Site.Name == 'Rucksack', $Site.Name == 'IAVA_Plus')}">
+		    		[&nbsp;<a href="{!portalLoginBaseUrl}/IAVAPlus_Login?startURL={!substitute(currentEncodedUrlWithoutBase, '%2Frucksack%2F', '%2Fiavaplus%2F')}">Log In</a>&nbsp;]&nbsp;&nbsp; &#8226; &nbsp;&nbsp;
+		    	</apex:outputPanel>
+ -->	    		<!-- [&nbsp;<a href="{!portalLoginBaseUrl}/?startURL={!currentEncodedUrlWithBase}">Get an Account</a>&nbsp;] -->
+	    		[&nbsp;<a href="http://iava.org/?startURL={!currentEncodedUrlWithBase}#join">Get an Account</a>&nbsp;]
+	    	</div>
+
+	    </div>
+	</apex:outputPanel>
+
+</apex:component>

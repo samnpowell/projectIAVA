@@ -1,0 +1,259 @@
+<apex:page id="cov_vouchees" controller="cov_vouching_controller" sidebar="false" showHeader="false" standardStylesheets="false" docType="html-5.0">
+
+<apex:composition template="{!if(isMobile, 'cov_template_noheader', 'cov_template')}">
+
+<apex:define name="page-title">
+	Vouch for a Veteran - myIAVA
+</apex:define>
+
+<apex:define name="layout">
+
+	<apex:outputPanel rendered="{!not(isMobile)}">
+		<div class="returnLink-wrapper clearfix">
+			<div class="returnLink pull-right">
+				<apex:outputLink value="{!$Page.cov_dashboard}" target="_parent">Back to Home >></apex:outputLink>
+			</div>
+		</div>
+	</apex:outputPanel>
+    
+    <div class="detail-page" id="container-page">
+
+		<apex:outputPanel styleclass="conn-contact-msg" rendered="{!theConId == null}">
+			No connected contact, vouching unavailable
+		</apex:outputPanel>		       
+
+		<apex:outputPanel id="VouchingPanel" layout="block" rendered="{!NOT(ISBLANK(theConId))}" >
+
+
+        	<apex:outputPanel rendered="{!isUnconfirmed}">
+		        <div id="vouch-form" class="well">
+		        	<h3>Confirm Your Service To Vouch </h3>
+		        	<div class="well-inner">
+
+        				<p>Confirmed members can nominate other veterans for free IAVA membership.</p>
+
+        				<div class="well">
+	    					<apex:include pageName="cov_uplevel_widget" />
+	    				</div>
+
+    				</div>
+    			</div>
+        	</apex:outputPanel>
+
+
+	       	<apex:outputPanel rendered="{!isConfirmed}">
+
+
+		        <div id="vouch-form" class="well">
+		        	<div class="well-inner">
+			        	<h3>Vouch for a Veteran</h3>
+
+
+
+			        	<p>Nominate another veteran for free IAVA membership, without them needing to verify paperwork.</p>
+			        	<p>&nbsp;</p>
+				        <h5>I, {!$User.FirstName} {!$User.LastName}, verify that this person deployed to Iraq or Afghanistan post-9/11:</h5>
+				        <p><br />By vouching I confirm that the "vouchee", to the best of my knowledge, is a Post 9/11 combat veteran. I realize that IAVA reserves the right to remove from the community both vouchees who are proven not to fit membership criteria and the people who vouch for them. In other words, I am vouching honestly.</p>
+				        <apex:form styleclass="form">
+				        <div class="form-group form-inline">
+				        	<div class="form-group">
+								<label class="sr-only" for="vouchee-first">First Name</label>
+						    	<apex:inputText styleclass="form-control" value="{!vcfirst}" id="vouchee-first" html-placeholder="First Name" onFocus="j$('#vouch-form-collapser').addClass('in');" />
+							</div>
+				        	<div class="form-group">
+								<label class="sr-only" for="vouchee-last">Last Name</label>
+						    	<apex:inputText styleclass="form-control" value="{!vclast}" id="vouchee-last" html-placeholder="Last Name"  onFocus="j$('#vouch-form-collapser').addClass('in');" />
+							</div>
+				        	<div class="form-group">
+								<label class="sr-only" for="vouchee-email">Email</label>
+						    	<apex:input type="email" styleclass="form-control input-longer" value="{!vcemail}" id="vouchee-email"  html-placeholder="Email" onFocus="j$('#vouch-form-collapser').addClass('in');" />
+							</div>
+				        </div>
+				        <div class="panel-collapse collapse" id="vouch-form-collapser">
+				        	<div class="pull-right">
+				        		<a href="javascript:void(0)" onClick="j$('#vouch-form-collapser').removeClass('in');"><span class="glyphicon glyphicon-arrow-up"></span></a>
+							</div>
+					        <div class="form-group form-inline">
+					        		<div class="checkbox">
+										<label>
+											<apex:inputCheckbox value="{!vcOEF}" id="OEF" /> OEF
+										</label>
+									</div>
+					        		<div class="checkbox">
+										<label>
+											<apex:inputCheckbox value="{!vcOIF}" id="OIF" /> OIF
+										</label>
+									</div>
+					        		<div class="checkbox">
+										<label>
+											<apex:inputCheckbox value="{!vcOND}" id="OND" /> OND
+										</label>
+									</div>
+					        		<div class="checkbox">
+										<label>
+											<apex:inputCheckbox value="{!vcserved}" id="ServedTogether" /> We served together in Iraq or Afghanistan
+										</label>
+									</div>
+							</div>
+					        <div class="form-group">
+								<p>If you'd like, include a short message to invite this person:</p>
+								<apex:inputTextArea styleclass="form-control" rows="2" value="{!vcmsg}" id="invite-message" html-maxlength="255" />
+								<div class="pull-right" id="counter"></div>
+							</div>
+					        <div class="form-group">
+						    	<apex:commandButton action="{!newvouchee}" value="Vouch" id="vouchButton" styleclass="btn btn-primary" />
+					        </div>
+						</div>
+				        
+				        </apex:form>
+
+
+					</div>
+				</div>
+
+
+		 		<div class="box-heading">
+                    <div class="box-heading-content">
+                        <h5>Veterans You've Nominated</h5>
+                    </div>
+                    <div class="relative pull-left"><div class="box-heading-edge"></div></div>
+                </div>
+				
+				<apex:outputPanel id="voucheelist">                    
+			  		<apex:form styleclass="form-horizontal" >       
+
+			       		<table class="table table-striped profile-table" id="vouchees-table">  
+			          
+			             	         <thead>  
+						              <tr> 
+						                <th>Name</th>  
+						                <th>Status</th>  
+						                <th>Date Vouched</th> 
+						              </tr>  
+						             </thead> 
+
+								    <tbody> 
+					                    <apex:repeat value="{!vouchees}" var="cv">
+					                    		<apex:outputPanel id="VoucheesPanelInner2" layout="block" >
+					                    
+					                    	<tr>
+					                    		<apex:outputPanel >
+					                    		
+													<td>
+														<div>
+															<apex:outputLink rendered="{!cv.cvId != null && cv.inNetwork}" value="{!cv.cvId}"><apex:image value="{!cv.SmallPhotoUrl}" width="45" height="45" /></apex:outputLink>
+														</div>
+													    <apex:outputLink rendered="{!cv.cvId != null && cv.inNetwork}" value="{!cv.cvId}">{!cv.first} {!cv.last}</apex:outputLink><apex:outputText rendered="{!cv.cvId == null || not(cv.inNetwork)}" value="{!cv.first} {!cv.last}"/>
+													</td>
+							                        <td>
+							                        	<apex:outputText value="{!cv.status}" />
+							                        	<apex:outputPanel rendered="{!cv.cvId != null && cv.inNetwork && cv.displayFollowTag}">
+															<br /><br />
+															<chatter:follow entityId="{!cv.cvId}" />
+														</apex:outputPanel>
+							                        </td>
+							                        <td><apex:outputText value="{0,date,M'/'d'/'yyyy}">
+													    	<apex:param value="{!cv.createdate}" /> 
+														</apex:outputText>
+													</td>
+													
+								
+												</apex:outputPanel>
+
+
+					                        </tr>
+				                          </apex:outputPanel>
+					       	             </apex:repeat>
+									</tbody>
+						</table>
+						
+			 	    </apex:form>
+		 	    </apex:outputPanel>
+
+		
+		   </apex:outputPanel>
+
+	   </apex:outputPanel>
+
+
+    
+    </div>
+    
+    <div class="vertical-spacer" style="height: 260px;">
+    	&nbsp;
+    </div>
+ 
+ 
+
+<apex:form rendered="{!false && isPickVal($User.UserType, 'Standard')}">
+			<apex:commandButton action="{!followAllVoucheesOneWay}" value=" Test: Follow Everyone I Vouched For - One Way" />
+			<apex:commandButton action="{!followAllVoucheesBothWays}" value=" Test: Follow Everyone I Vouched For - Both Ways" />
+</apex:form>
+
+  
+
+	<script type="text/javascript">
+
+		var j$ = jQuery.noConflict();
+
+		j$(document).ready(function()  {
+			countCharsRemaining('textarea[id$=invite-message]', '#counter', 255, 50);
+
+			hideElementIfTextFound('span[id$=messages] .message.errorM3 .messageText', 'OP_WITH_INVALID_USER_TYPE_EXCEPTION', '.message.errorM3');
+		});
+
+	</script>
+
+	<c:cov_js_utils /> 
+
+	
+</apex:define>
+	
+</apex:composition>
+
+
+				        
+<!-- 		                    <div class="box-heading"><h5>Veterans You've Nominated</h5></div> -->
+		                    
+<!--   		<apex:form styleclass="form-horizontal">        -->
+	 			                                
+<!--        		<table class="table table-striped profile-table">   -->
+          
+<!--              	         <thead>   -->
+<!-- 			              <tr>  -->
+<!-- 			              	<th>&nbsp;</th>  -->
+<!-- 			                <th>Name</th>   -->
+<!-- 			                <th>Status</th>   -->
+<!-- 			                <th>Date Vouched</th>  -->
+<!-- 			                <th>&nbsp;</th>  -->
+<!-- 			              </tr>   -->
+<!-- 			             </thead>  -->
+
+<!-- 					    <tbody>  -->
+<!-- 		                    <apex:repeat value="{!vouchees1}" var="ve"> -->
+<!-- 		                    		<apex:outputPanel id="VoucheesPanelInner" layout="block" > -->
+		                    
+<!-- 		                    	<tr> -->
+		                    	
+<!-- 		                    		<apex:outputPanel > -->
+		                    		
+<!-- 				                        <td><apex:outputLink rendered="{!not(ve[0]=='_none')}" value="{!ve[0]}"><apex:image value="{!ve[5]}" width="30" height="30" /></apex:outputLink></td> -->
+<!-- 				                        <td><apex:outputLink rendered="{!not(ve[0]=='_none')}" value="{!ve[0]}">{!ve[1]} {!ve[2]}</apex:outputLink><apex:outputText rendered="{!ve[0]=='_none'}" value="{!ve[1]} {!ve[2]}"/></td> -->
+<!-- 				                        <td>{!ve[3]}</td> -->
+<!-- 				                        <td>{!ve[4]}</td>    -->
+<!-- 				                        <td><chatter:follow entityId="{!ve[0]}" /></td> -->
+					
+<!-- 									</apex:outputPanel> -->
+
+
+<!-- 		                        </tr> -->
+<!-- 	                          </apex:outputPanel> -->
+<!-- 		       	             </apex:repeat> -->
+<!-- 						</tbody> -->
+<!-- 			</table> -->
+<!--  	    </apex:form> -->
+
+
+
+
+</apex:page>

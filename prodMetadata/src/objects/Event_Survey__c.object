@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will store the results of post-membership event web surveys.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Answer1__c</fullName>
+        <description>Answer to Custom Question 1</description>
+        <externalId>false</externalId>
+        <label>Answer1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Answer2__c</fullName>
+        <description>Answer to Custom Additional Question 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Answer to Custom Additional Question 2</inlineHelpText>
+        <label>Answer2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Attended__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Did you attend the event?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Did you attend the event?</inlineHelpText>
+        <label>Attended</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>COV__c</fullName>
+        <description>Are you familiar with IAVA&apos;s Community of Veterans?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Are you familiar with IAVA&apos;s Community of Veterans?</inlineHelpText>
+        <label>COV</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes, I have an account.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I&apos;ve heard of it, but haven&apos;t signed up yet.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I&apos;ve heard of it, but am not interested.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I don&apos;t know what that is.</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign/Event</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Event Surveys</relationshipLabel>
+        <relationshipName>Event_Surveys</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Event Surveys</relationshipLabel>
+        <relationshipName>Event_Surveys</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Feedback__c</fullName>
+        <description>Do you have any additional feedback for us?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Do you have any additional feedback for us?</inlineHelpText>
+        <label>Feedback</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>IAVAEvents__c</fullName>
+        <description>Do you thing you&apos;d attend future IAVA events?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Do you thing you&apos;d attend future IAVA events?</inlineHelpText>
+        <label>Future events</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NewGIBill__c</fullName>
+        <description>Are you or someone you know using, or plan on using, the Post-9/11 GI Bill?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Are you or someone you know using, or plan on using, the Post-9/11 GI Bill?</inlineHelpText>
+        <label>NewGIBill</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Question1__c</fullName>
+        <description>Custom Additional Question 1</description>
+        <externalId>false</externalId>
+        <label>Question1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Question2__c</fullName>
+        <description>Custom Additional Question 2</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom Additional Question 2</inlineHelpText>
+        <label>Question2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>RSVP_Process__c</fullName>
+        <description>How would you describe the website/RSVP process?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How would you describe the website/RSVP process?</inlineHelpText>
+        <label>RSVP Process</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>It&apos;s easy enough to do.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>It&apos;s a bit cumbersome.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I really don&apos;t like submitting my information on a web form.</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Email from IAVA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Saw a Flyer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Facebook</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Twitter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Word of Mouth</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Event Survey</label>
+    <nameField>
+        <displayFormat>S-{YYYY}{MM}{DD}-{000}</displayFormat>
+        <label>Event Survey ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event Surveys</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

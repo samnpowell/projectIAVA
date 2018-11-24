@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PR WASH DC Take 2</name>
+    <style>none</style>
+    <subject>Pat&apos;s Run tomorrow</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+I just received an update yesterday for Pat&apos;s Run from the ASU organizer, I am sure you have already received it but I wanted to make sure.
+
+Also, we are planning some things for Memorial Day and will be sending an email out Monday. I do have a volunteer opportunity to assist our friends at TAPS for Saturday and Sunday before Memorial Day. Please click here for more information or to sign up! &lt;http://iava.org/taps-good-grief-volunteer-form&gt;
+
+Thanks again,
+Anthony
+-- 
+Anthony Pike
+
+Membership Coordinator
+
+Iraq and Afghanistan Veterans of America (IAVA)
+
+292 Madison Avenue, 10th Floor
+
+New York, NY 10017
+
+(212) 982-9699
+
+www.iava.org 
+ 
+Follow us on Twitter: @IAVA 
+
+--
+
+Hello!
+
+Thank you all for your patience, but we finally confirmed our &quot;Take 2&quot; for our Shadow Run today with Haines Point in DC (same location). We will be having a group run this Saturday, 5/14 at 9AM.There is a chance of rain (again) but we now have the main route and and alternate planned in case the park is flooded and closed again. Unfortunately, we will not be having sandwiches but we will have water, Gatorade and snacks for after the run at the finish. Our planned route is attached with the address (Note: it is the same route and has the original date and refers to the picnic/BBQ which we will not have). 
+
+You are more than welcome to come take this casual run with us, if you did not register through the Pat&apos;s Run website, you are still welcome to join. Though, I would then encourage you to consider making a donation &lt;http://www.pattillmanfoundation.org/donate/&gt; to the Pat Tillman Foundation. I do not have any, but if you are interested in getting a shirt, please see this link &lt;http://www.pattillmanfoundation.org/wp-content/uploads/2011/04/2011-Pats-Run-Race-Shirt-Order-Form.pdf&gt; which has the order form to be sent directly to the foundation. I have no control or visibility into availability, price, when you can get it, etc. 
+
+I will send a reminder note at the end of the week, but I hope you can join us!
+
+-Matt Cicinelli
+ASU Alumni</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CAMPAIGN_ID</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>701C0000000Q2HX,701C0000000Q2Hc,701C0000000Q2Hm,701C0000000Q2Hw,701C0000000Q2I1,701C0000000Q2I6,701C0000000Q2Hs,701C0000000Q2IB,701C0000000Q2IG,701C0000000Q2IV,701C0000000Q2Ia,701C0000000Q2If,701C0000000Q2Ik,701C0000000Q2K2,701C0000000Q2IQ</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Memorial Day 2011 Events</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignContact</reportType>
+    <scope>orgAll</scope>
+    <showDetails>true</showDetails>
+</Report>

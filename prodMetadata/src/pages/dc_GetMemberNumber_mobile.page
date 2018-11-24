@@ -1,0 +1,53 @@
+<apex:page controller="dc_ctrl_RewardSearch" showHeader="false" sidebar="false" action="{!defaultEmail}">
+
+<apex:composition template="dc_Template_Mobile">  
+        
+            
+<!-- ----------------------------------------BODY STARTS----------------------------------------------->         
+        <apex:define name="body">
+
+<div class="img"><img src="{!URLFOR($Resource.dc_css,'images/logo.png')}" width="272" height="51" alt="IAVA" />
+                                </div>
+
+
+                <div id="forgot-number">  <!-- NEW --> 
+
+                    <h2 class="title">Forgot your Member Number?</h2> 
+                    <div class="content"> 
+                        <apex:form id="frm">
+                        <p><apex:outputlabel style="background:yellow;" value="{!$Label.dc_MemberId_sent_mesg}" escape="false" rendered="{!if(Email_MemberConf == true,true,false)}" /></p>
+                        <p><apex:outputlabel value="If you already have an IAVA Member Number, enter your email below to have it sent to you." /></p> 
+                        <apex:inputtext style="font-size:14px;" value="{!Email_Member}" required="true" onfocus="clearField(this,'Email Address');" onblur="replaceField(this,'Email Address');" /> 
+                        <apex:commandButton value="Go" action="{!mail_memberid}"></apex:commandButton> <p></p>
+                        <p style="font-size:10px;color:gray;"><apex:outputlabel value="If you no longer have access to the email address on file, contact us at " /> <a href="mailto:rucksack@iava.org?subject=Forgot%20member%20number%20and%20no%20access%20to%20email&body=First%20Name:%20%0ALast%20Name:%20%0APhone:%20%0APrevious%20email%20address:%20%0A%0AComments:%20">rucksack@iava.org</a> <apex:outputlabel value=" or 212-982-9699." /></p> 
+                        </apex:form>
+                    <div class="content">
+                        <p><apex:outputlabel value="If you do not have an IAVA Member Number yet" /> <a href="http://iava.org/rucksacksignup">sign up for one now</a>.</p>
+                    </div>
+                    </div> 
+                </div>
+
+
+        </apex:define>  
+<!-- ------------------------------------------BODY ENDS------------------------------------------------------------- -->       
+
+
+</apex:composition> 
+
+<script type="text/javascript">
+ 
+function clearField(field, defaultText) {
+ if (field.value == defaultText ) {
+    field.value = '';
+ }
+}
+ 
+function replaceField(field, defaultText) {
+ if (field.value == '' ) {
+    field.value = defaultText;
+ }
+}
+</script> 
+
+
+</apex:page>

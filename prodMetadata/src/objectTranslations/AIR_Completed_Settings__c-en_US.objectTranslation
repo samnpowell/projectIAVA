@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AIR Completed Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AIR Completed Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- If empty, trigger will assume that the field on the related record is named AIR_Completed__c. If not, specify name here. --></help>
+        <label><!-- AIR Completed field (if non-standard) --></label>
+        <name>AIR_Completed_field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether or not this field is checked in the trigger that checks the Completed box on the related record. --></help>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of field on AIR record containing a related record ID --></help>
+        <label><!-- Field API Name on AIR containing an ID --></label>
+        <name>Field_API_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

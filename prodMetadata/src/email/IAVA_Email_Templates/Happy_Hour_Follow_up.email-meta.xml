@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>E-mail to Happy Hour Participants</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DC Happy Hour Follow up</name>
+    <style>none</style>
+    <subject>Thanks for coming!</subject>
+    <type>text</type>
+</EmailTemplate>

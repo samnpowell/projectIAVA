@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>email sent to STH campaign members with a status of deferred</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Storm the Hill Deferred</name>
+    <style>none</style>
+    <subject>Thank you for applying to Storm the Hill with IAVA</subject>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+Hi Team Commo,
+
+Please post the following social media language for this event: {!IAVAEvent__c.Name}, {!IAVAEvent__c.Link}.
+
+Facebook link: {!IAVAEvent__c.Social_Promotion_Link_1__c}
+Facebook language: {!IAVAEvent__c.Facebook_Promotion_Language__c}
+
+Twitter link: {!IAVAEvent__c.Social_Promotion_Link_2__c}
+Twitter language: {!IAVAEvent__c.Twitter_Promotion_Language__c}
+
+Thank you!

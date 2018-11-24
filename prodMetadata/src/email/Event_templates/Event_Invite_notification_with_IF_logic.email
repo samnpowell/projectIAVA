@@ -1,0 +1,24 @@
+Hi,
+
+{!IAVAEvent_Attendee__c.Inviter__c}{!IF
+(IAVAEvent_Attendee__c.Event_Type__c = "VetTogether", 
+" has invited you to an IAVA VetTogether! VetTogethers are informal social gatherings hosted by our members that bring together veterans and civilian supporters. We hope you’ll join us!", 
+" has invited you to an IAVA event! Join us to meet our members, learn more about our work and find out how you can get involved!"
+)}
+
+{!IAVAEvent_Attendee__c.Event_Name__c} 
+{!IAVAEvent_Attendee__c.Event_Date__c} 
+{!IAVAEvent_Attendee__c.Event_Times__c} 
+
+{!IAVAEvent_Attendee__c.Event_Venue__c} 
+{!IAVAEvent_Attendee__c.Event_Street_Address__c} 
+{!IAVAEvent_Attendee__c.Event_CityStateZip__c}
+
+{!IAVAEvent_Attendee__c.Brief_Description__c}
+
+More details available at: 
+https://cov.force.com/iava/cov_event?id={!IAVAEvent_Attendee__c.EventId__c}{!IF(ISBLANK(IAVAEvent_Attendee__c.InviterId__c),"","&inviter=" + IAVAEvent_Attendee__c.InviterId__c)}
+
+Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

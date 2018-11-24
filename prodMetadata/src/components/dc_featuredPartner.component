@@ -1,0 +1,27 @@
+<apex:component controller="dc_ctrl_homepage">
+
+     <div id="block-block-featuredpartner" class="block block-block block-blank"><div class="block-inner">
+
+        <div class="content">
+            <apex:outputpanel rendered="{!if(FeaturedPartnerLogo != ' ',true,false)}">
+            <div class="featured-partner">
+                <p class="aligncenter"><a href=""><apex:image URL="{!FeaturedPartnerLogo}" width="73" height="56" alt="" rendered="{!if(FeaturedPartnerLogo != '',true,false)}" /></a></p>
+                <p><strong>Featured partner</strong>: <apex:outputlabel value="{!strFPdesc}" />
+                    <a href="{!$Page.dc_PartnerDetails}?id={!featuredPartnerId}" class="more-link">&nbsp;</a>
+                </p>
+                
+            </div>
+            </apex:outputpanel>
+            <div class="partner-with">
+                <h4><img src="{!URLFOR($Resource.dc_css,'images/header_partnerwithiava.png')}" width="121" height="17" alt="Parter with IAVA" /></h4>
+                <p><apex:outputlabel value="{!$Label.Partners_with_IAVA}" />
+                    <a href="{!$Label.dc_BecomeAPartner}" class="more-link">&nbsp;</a>
+                </p>
+            </div>
+
+
+        </div><!-- /content -->
+
+    </div></div> <!-- /block-inner, /block -->
+
+</apex:component>

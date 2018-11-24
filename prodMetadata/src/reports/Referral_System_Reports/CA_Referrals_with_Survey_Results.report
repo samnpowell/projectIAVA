@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case.Referrals__r$Name</field>
+    </columns>
+    <columns>
+        <field>Case.Referrals__r$Client_Notes_on_Case_Manager__c</field>
+    </columns>
+    <columns>
+        <field>Case.Referrals__r$Client_Notes_on_Program__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Case.Referrals__r$Client_Notes_on_Case_Manager__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$Locality__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>CA,&quot;Los Angeles, CA&quot;</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>CA Referrals with Survey Results</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Cases_with_Referrals__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Case$ClosedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-07-01</startDate>
+    </timeFrameFilter>
+</Report>

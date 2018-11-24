@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LA VetTogether 6/18</name>
+    <style>none</style>
+    <subject>LA VetTogether tomorrow!</subject>
+    <textOnly>{!Contact.FirstName},
+
+In the mood for some good food and good company?
+
+We’re having a VetTogether. Come meet other veterans from the LA area. Grab some food with other veterans and IAVA’s founder and CEO Paul Rieckoff.
+
+We’ll be at El Compadre in downtown LA this Thursday, June 19th at 7:30 PM!
+
+Click here to RSVP and more details: http://iava.org/join-iava-city-angels-vettogether
+
+Hope to see you in LA tomorrow.
+
+Best,
+
+Jason
+--
+Jason Hansman
+Senior Program Manager - Health
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue
+New York, NY 10017
+212.982.9699</textOnly>
+    <type>custom</type>
+</EmailTemplate>

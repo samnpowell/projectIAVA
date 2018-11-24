@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>When Give application deadline or end date arrives (or start date if no end date) notify staff.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RuckSack - GiveInstance end or deadline notification</name>
+    <style>none</style>
+    <subject>Closed: {!Give_Instance__c.Start_Date__c} {!if(Give_Instance__c.Num_Inst__c&gt;1,&quot;instance of&quot;,&quot;-&quot;)} {!Give_Instance__c.Give_Name__c}</subject>
+    <type>text</type>
+</EmailTemplate>

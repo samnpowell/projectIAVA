@@ -1,0 +1,57 @@
+<apex:page showHeader="false" sidebar="false" controller="cov_events_central_mobile_controller">
+	
+
+	<apex:outputPanel rendered="{!OR(not(isMobile), selectedTab == 'Social')}">
+		<style type="text/css">
+
+
+								/* 2 columns */
+								#social-stream-frame {
+									height: 13500px;
+									width: 100%;
+									border: 0;
+								}
+								/* quick workarounds for resizing iframe height */
+	/*							@media screen and (max-width: 1270px) {
+									#social-stream-frame {
+										height: 15000px;
+									}
+								}
+	*/
+								/* 1 column */
+								@media screen and (max-width: 1280px) {
+									#social-stream-frame {
+										height: 34000px;
+									}
+								}
+								/* 3 columns */
+								@media screen and (max-width: 980px) {
+									#social-stream-frame {
+										height: 11000px;
+									}
+								}
+								/* 2 columns */
+								@media screen and (max-width: 810px) {
+									#social-stream-frame {
+										height: 13500px;
+									}
+								}
+								/* 1 column */
+								@media screen and (max-width: 576px) {
+									#social-stream-frame {
+										height: 34000px;
+									}
+								}
+
+		</style>
+
+							<div>
+								<div id="social-stream-frame-wrapper">
+									<iframe id="social-stream-frame" src="https://iava.org/vetsrising-social-stream/" scrolling="no" />
+								</div>
+							</div>
+
+	</apex:outputPanel>
+
+
+</apex:page>

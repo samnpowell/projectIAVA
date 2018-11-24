@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2/26/2013 STH 2013 REJECTION</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2/26/2013 STH 2013 REJECTION</name>
+    <style>none</style>
+    <subject>Storm the Hill 2013: Stay Involved</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for applying to be a part of Storm the Hill 2013.
+
+This year IAVA received an astounding number of applications for a limited amount of positions available for the Storm and Swarm brigades. The applications once again showed the passion and determination of our members. All of our applications were inspiring - and the increasing level of interest in Storm the Hill thrills us. Every year, this program is growing the new veterans movement in unprecedented ways.
+
+We wish we could make all of our valued members Stormers but, unfortunately, we&apos;re a small staff with a limited budget, and we&apos;ve had to make some tough choices. Though your application and initiative were impressive, we regret to inform you that you were not chosen for Storm the Hill. However,  as we expand our organizing and advocacy activities across the country we would like to recruit you to build community at home and join in our virtual campaign activities throughout the year, especially by participating in our Facebook community designed to leverage the power of social media as we Storm The Hill this year.
+
+You offered to join the Storm the Hill 2013 because you want to make a difference for our community, and you can still help us fulfill that mission - in fact, our success depends on it. If we want to change the landscape of support for new vets, we need the whole IAVA community to make some noise. We need voices from all over the country to spread the word about Storm the Hill and get people fired up about veterans issues - this week and every other week of the year.
+
+Joining our online community will raise those voices. Over the course of the next three weeks, you can be a driving force in recruiting new vets and supporters across the country to rally around our ground team as they Storm The Hill. Our members across the country will use Facebook as its War Room, and everyone will be asked to help spread our message by activating critical networks of supporters and influencers.
+
+Your continued leadership at home and online is critical to achieving our mission - to change policy across the country to better support our vets and their families. We need your voice, your ideas, and your leadership. Here are two ways you can stay involved. If you will be in the DC area during the week of Storm the Hill please stay tuned for an IAVA rally. It will be our chance to show Congress the power of the veteran voice.
+
+Thank you for supporting Storm the Hill 2013. We hope to see you in the War Room.
+
+Sincerely,
+Anthony
+
+Anthony Pike
+Programs Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

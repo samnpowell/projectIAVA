@@ -1,0 +1,11 @@
+Hi {!Contact.FirstName},
+
+We need some additional information to complete your request for the following reward: {!Give_Request__c.Give_Name__c}
+
+Please click on the following link to complete your request: http://iava.dev.cs1.force.com/rucksack/dc_ReConfirm?GiveRequestID={!Give_Request__c.Id}&ContactID={!Contact.Id}&PageAction=information
+
+For your records, here is your IAVA Membership # {!Contact.Membership_ID__c}.
+
+Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

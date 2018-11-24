@@ -1,0 +1,21 @@
+Hi {!Contact.FirstName},
+
+Great news – you are confirmed for the IAVA reward you requested:
+
+{!NullValue(Give_Request__c.Give_Name__c, "Reward not found - contact IAVA for assistance")}
+{!Give_Instance__c.Start_Date__c} {!Give_Instance__c.Start_Time__c}
+
+Number of tickets/units you are receiving: {!Give_Request__c.Units_Requested__c}
+
+Here are the instructions to claim your reward:
+
+{!NullValue(Give_Request__c.Give_Fulfillment_Instructions__c, "(No instructions given)")}
+
+Here is the address we have on file. If this is not correct, please use this link to correct your information.
+
+{!Contact.MailingStreet}
+{!Contact.MailingCity}, {!Contact.MailingState}, {!Contact.MailingPostalCode}
+
+Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

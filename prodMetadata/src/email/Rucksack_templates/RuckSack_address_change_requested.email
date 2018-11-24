@@ -1,0 +1,28 @@
+A member has indicated that they want to change their address info on file.  This will not happen automatically, the new info must be changed manually on the member's contact record at {!Contact.Link}.
+
+
+Applicant: {!Give_Request__c.Applicant__c}
+Contact record: {!Contact.Link}
+Give Name: {!Give_Request__c.Give_Name__c}
+Give Request record: {!Give_Request__c.Link}
+
+
+{!If(Give_Request__c.Make_Email_Primary__c,"*** EMAIL CHANGE REQUESTED ***","---- no email change requested ----")}
+NEW: {!Give_Request__c.Email_Address__c}
+OLD: {!Contact.Email}
+
+
+{!If(Give_Request__c.Make_Phone_Primary__c,"*** PHONE CHANGE REQUESTED ***","---- no phone change requested ----")}
+NEW: {!Give_Request__c.Primary_Phone__c}
+OLD: {!Contact.Phone}
+
+
+{!If(Give_Request__c.Make_Address_Primary__c,"*** ADDRESS CHANGE REQUESTED ***","---- no address change requested ----")}
+
+NEW:
+{!Give_Request__c.Address__c}
+{!Give_Request__c.City__c}, {!Give_Request__c.State__c} {!Give_Request__c.Zip_Code__c}
+
+OLD:
+{!Contact.MailingStreet}
+{!Contact.MailingCity}, {!Contact.MailingState} {!Contact.MailingPostalCode}

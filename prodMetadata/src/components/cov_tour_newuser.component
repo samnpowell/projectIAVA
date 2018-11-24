@@ -1,0 +1,67 @@
+<apex:component >
+
+	<apex:styleSheet value="{!URLFOR($Resource.cov_files,'css/bootstrap-tour.min.css?G')}" />
+
+
+	<script type="text/javascript">
+
+		var j$ = jQuery.noConflict();	
+		j$(document).ready(function(){
+
+
+			var tour = new Tour({
+				steps: [
+					{
+						orphan: true,
+						title: "Welcome to myIAVA!",
+						backdrop: true,
+						content: "Let’s get started right by taking a look around. Click next to start the tour."
+					},
+					{
+						element: "#newsfeed-div",
+						placement: "top",
+						title: "This is your newsfeed",
+						backdrop: true,
+						content: "Content from people you follow and groups you’re in will appear here. The more people you follow, the more interesting it is!"
+					},
+					{
+						element: "#recent-activity",
+						placement: "left",
+						title: "Find cool content!",
+						backdrop: true,
+						content: "Here are some groups that are buzzing right now. This is great place to get connected with people."
+					},
+					{
+						element: "#profilephoto-prompt",
+						placement: "left",
+						title: "This guy doesn’t look like you...",
+						backdrop: true,
+						content: "Make sure to add a profile photo. People are ten times more likely to follow a person with a photo."
+					},
+					{
+						element: "#feedback-widget:first a",
+						placement: "left",
+						title: "We need your feedback!",
+						backdrop: true,
+						content: "We need feedback and ideas about how to make myIAVA better! Use the green tab in this area to let us know. We want to hear it!"
+					},
+					{
+						orphan: true,
+						element: "#profile-panel",
+						title: "Ready to get started?",
+						backdrop: true,
+						content: "Fill out your profile and go to the &quot;Introduce Yourself&quot; group to say hi to everyone!  See you around the community."
+					}
+				]});
+
+
+
+			tour.restart();
+
+			tour.start(true);
+
+		});
+	</script>
+
+
+</apex:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to all Sen. LD&apos;s on our supported amendments for NDAA</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>POL - 11.28.12 - NDAA</name>
+    <style>none</style>
+    <subject>ALERT: Critical NDAA amendments for service members and vets</subject>
+    <type>text</type>
+</EmailTemplate>

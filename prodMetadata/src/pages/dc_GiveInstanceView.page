@@ -1,0 +1,87 @@
+<apex:page standardController="Give_Instance__c" extensions="dc_ctrl_ext_GiveInstance">
+    <style>
+    .gridCol1 {
+        margin-left: 0px;
+        margin-right: auto; 
+    }
+    .gridCol2 {
+        margin-left:auto;
+        margin-right: 0px;  
+    }
+    </style>
+    
+    <apex:detail subject="{!instance.Id}" relatedList="false" id="theDetail"/> 
+    <apex:form id="theform">
+    <apex:pageMessages />
+        <apex:pageBlock id="thePageBlock">
+            <apex:pageBlockSection columns="1">
+                <apex:facet name="header">
+                    <apex:panelGrid columns="2" style="width: 100%;" columnClasses="gridCol1,gridCol2">
+                        <apex:panelGroup >
+                            <apex:selectList value="{!selectedStage}" size="1">
+                                <apex:selectOptions value="{!stageOptions}"/> 
+                            </apex:selectList>
+                            <apex:commandButton value="Update Selected" action="{!updateSelectedStage}" rerender="theDetail,theform,thePageBlock" />
+                        </apex:panelGroup>
+                        <apex:panelGroup >
+                            <apex:outputLabel value="Mass Update All Requests From "/>
+                            <apex:selectList value="{!selectedStartStage}" size="1">
+                                <apex:selectOptions value="{!stageOptions}"/> 
+                            </apex:selectList>
+                            <apex:outputLabel value=" To "/>
+                            <apex:selectList value="{!selectedEndStage}" size="1">
+                                <apex:selectOptions value="{!stageOptions}"/> 
+                            </apex:selectList>
+                            <apex:commandButton value="Mass Update" action="{!massUpdateStage}" rerender="theDetail,theform,thePageBlock" />
+                        </apex:panelGroup>
+                    </apex:panelGrid>
+                </apex:facet>
+                
+				<apex:outputPanel rendered="{!totalPageNum!=0}">
+					<center>
+						Page {!thisPageNum} of {!totalPageNum} Pages &nbsp; &nbsp;
+						<apex:commandButton action="{!toFirst}" value="First" disabled="{!isFirstPage}" />
+						<apex:commandButton action="{!toPrevious}" value="Previous" disabled="{!NOT(hasPrevRequests)}" />
+						<apex:commandButton action="{!toNext}" value="Next" disabled="{!NOT(hasNextRequests)}" />
+						<apex:commandButton action="{!toLast}" value="Last" disabled="{!isLastPage}" />
+					</center>
+				</apex:outputPanel>
+				
+				<apex:pageMessage rendered="{!Not(ISNULL(updateMessage))}" 
+					summary="{!updateMessage}" severity="info" strength="3" >
+				</apex:pageMessage>
+            
+                <apex:pageBlockTable value="{!requestSelects}" var="req">
+                    <apex:column headerValue="Select">
+                        <apex:inputCheckbox value="{!req.checked}"/>
+                    </apex:column>
+                    <apex:column headerValue="Action" >
+                        <apex:outputPanel >
+                            <apex:outputLink value="{!URLFOR($Action.Give_Request__c.Edit,req.record.id)}">
+                                Edit
+                            </apex:outputLink>
+                            <apex:outputLabel value=" | "/>
+                            <apex:outputLink value="{!URLFOR($Action.Give_Request__c.Delete,req.record.id)}">
+                                Del
+                            </apex:outputLink>
+                        </apex:outputPanel>
+                    </apex:column>
+                    <apex:column headerValue="Request Name">
+                        <apex:outputLink value="{!URLFOR($Action.Give_Request__c.View,req.record.id)}">
+                            {!req.record.name}
+                        </apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!req.record.Stage__c}"/>
+                    <apex:column value="{!req.record.Units_Requested__c}"/>         
+                    <apex:column value="{!req.record.createddate}"/>
+                    <apex:column value="{!req.record.Confirmed_21__c}"/>
+                    <apex:column value="{!req.record.Re_confirm_Status__c}"/>
+                    <apex:column value="{!req.record.Special_Response__c}"/>                
+                    <apex:column value="{!req.record.Applicant__c}"/>
+                    <apex:column value="{!req.record.State__c}"/>
+                    <apex:column value="{!req.record.Num_Confirmed_Give_Requests__c}"/>                    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

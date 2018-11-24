@@ -1,0 +1,42 @@
+<apex:page sidebar="false" showheader="false" >
+
+
+<apex:composition template="cov_template_noheader">
+
+
+    <apex:define name="layout">
+        
+        <div class="popup-container">
+        
+          <div class="detail-pg">   
+        
+          
+        
+          <h2>Thanks</h2>
+
+          <p>&nbsp;</p>
+
+          <p>Thank you! A transition manager will contact you within one business day.  If you are not contacted, please email us to check the status of your case.</p>
+
+          
+
+
+        <p>&nbsp;</p>
+
+        <div class="pull-right">
+            <button type="button" class="close smaller-close" onclick="window.parent.closeModal();" aria-hidden="true">Close</button>
+        </div>
+
+          
+         </div>
+        </div>
+    
+    
+    
+    
+    </apex:define>
+
+</apex:composition>
+
+
+</apex:page>

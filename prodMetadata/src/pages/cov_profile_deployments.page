@@ -1,0 +1,290 @@
+<!-- <apex:page id="cov_profile_deployments" sidebar="false" showHeader="false" standardStylesheets="false" controller="cov_profile_controller" action="{!deploymentsInit}" > -->
+<apex:page id="cov_profile_deployments" sidebar="false" showHeader="false" standardStylesheets="false" controller="cov_profile_controller">
+
+<apex:composition template="cov_template_noheader">
+
+<apex:define name="layout">
+
+	<c:cov_include_js_datepicker />
+	<c:cov_include_css_datepicker />
+
+  		<apex:form styleclass="form-horizontal">       
+
+	<div class="returnLink-wrapper clearfix">
+		<div class="returnLink pull-right">
+			<apex:outputLink value="{!$Page.cov_dashboard}" target="_parent">Back to Home >></apex:outputLink>
+		</div>
+	</div>
+    	<!-- <apex:form > -->
+    <div class="container profile-frame" id="container-overall">
+    	<apex:outputPanel rendered="{!isOwnProfile}">
+	    	<apex:actionRegion >
+
+		  		<!-- <apex:form styleclass="form-horizontal">        -->
+
+				<apex:outputPanel styleclass="conn-contact-msg" rendered="{!theC == null}">
+					No connected contact, deployments unavailable
+				</apex:outputPanel>		       
+
+				<apex:outputPanel id="DeploymentsPanel" layout="block" rendered="{!AND(theC != null, not(isNonVeteran), not(didNotDeploy))}">
+						        
+				                    <div class="box-heading">
+										<div class="box-heading-content">
+
+				                    		<h5>Deployment Details</h5>
+				                    		
+							        	</div>
+							        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+				                    </div>
+					<apex:outputPanel rendered="{!not(hasDeployments)}">
+					
+						<p>
+							<strong>Add details about your deployments here so people you served with can connect with you.</strong>
+						</p>
+
+						<div class="links-alt-style">
+				    		<apex:outputPanel rendered="{!askIfNonVeteran}" >
+								(or: <apex:commandLink action="{!setAsNonVeteran}" >I'm not a veteran</apex:commandLink>)
+							</apex:outputPanel>
+			 				<apex:outputPanel rendered="{!AND(not(didNotDeploy), OR(numDeployments == null, numDeployments == 0))}">
+					    		(or:&nbsp;<apex:commandLink action="{!didntDeploy}" >I am a veteran but I didn't/haven't deployed</apex:commandLink>)
+					    	</apex:outputPanel>
+					    </div>
+					
+					</apex:outputPanel>
+
+				 			                                
+			        <table class="table table-striped profile-table">  
+	          
+	         	         <thead>  
+			              <tr>  
+	<!-- 							<apex:outputPanel rendered="{!ineditmode}" > -->
+	<!-- 				                <th>&nbsp;</th>  -->
+	<!-- 				            </apex:outputPanel> -->
+			                <th>Operation</th>  
+			                <th>Dates</th>  
+			                <th>Country</th>  
+			                <th>City / Region</th>  
+			                <th>&nbsp;</th>  
+			                <th>Notes</th> 
+			                <th>
+						         <apex:commandLink id="newButton" action="{!toCreateMode}" rendered="{!not(ineditmode)}" Title="New" >
+	                             	<span class="glyphicon glyphicon-plus"></span>
+						        	<apex:param name="dpIndexNew" value="new" assignTo="{!dpIdChosen}"/>
+						        </apex:commandLink>
+							</th>
+							<apex:outputPanel rendered="{!ineditmode}" >
+				                <th>&nbsp;</th> 
+				                <th>&nbsp;</th> 
+				            </apex:outputPanel>
+			              </tr>  
+			             </thead> 
+
+					    <tbody> 
+		                    <apex:repeat value="{!deployments}" var="dp">
+		                    		<apex:outputPanel id="DeploymentsPanelInner" layout="block" >
+		                    
+		                    	<tr>
+		                    	
+		                    		<apex:outputPanel rendered="{!not(editmodes[dp.dpId])}">
+	<!-- 										<apex:outputPanel rendered="{!ineditmode}"> -->
+	<!-- 											<td>&nbsp;</td> -->
+	<!-- 										</apex:outputPanel> -->
+										<td>
+	 				                            <apex:outputText value="{!dp.operation}" />
+										</td>
+										<td>
+											<apex:outputText value="{0,date,M'/'d'/'yyyy}" >
+											    <apex:param value="{!dp.startdate}" /> 
+											</apex:outputText>
+											&nbsp; - &nbsp;
+											<apex:outputText value="{0,date,M'/'d'/'yyyy}" >
+											    <apex:param value="{!dp.enddate}" /> 
+											</apex:outputText>
+										</td>					
+										<td>
+					                            <apex:outputText value="{!dp.country}" />
+										</td>
+										<td>
+					                            <apex:outputText value="{!dp.city}"  />
+										</td>
+										<td>
+					                            <apex:outputText value="Stop Loss" rendered="{!dp.stoploss}" />
+										</td>		
+										<td>
+					                            <apex:outputText value="{!dp.notes}" />
+										</td>
+										<td>
+				                                <apex:commandLink id="editButton2" action="{!toEditMode}" rendered="{!not(ineditmode)}" Title="Edit" >
+				                                 	<span class="glyphicon glyphicon-pencil"></span>
+	 			                                	<apex:param name="dpIndexedit" value="{!dp.dpId}" assignTo="{!dpIdChosen}"/>
+	 			                                </apex:commandLink>
+										</td>									
+									</apex:outputPanel>
+
+
+
+
+		                    		<apex:outputPanel rendered="{!editmodes[dp.dpId]}">
+
+										<td>
+					                            <apex:selectList value="{!dpoperation}" size="1" styleClass="form-select" id="operation-dropdown" >
+					                            	<apex:selectOption itemValue="" itemLabel="" rendered="{!dp.dpId == null}"/>
+					                            	<apex:selectOption itemValue="OEF" itemLabel="OEF"/>
+										            <apex:selectOption itemValue="OIF" itemLabel="OIF"/>
+										            <apex:selectOption itemValue="OND" itemLabel="OND"/>
+					                            </apex:selectList>
+										</td>                 
+										<td>
+											<input type="text" id="startdate-entry" value="{!dpstartdate}" placeholder="Start Date" data-provide="datepicker" data-date-autoclose="true" data-date-start-view="2" />
+											<apex:inputHidden id="startdate-input" value="{!dpstartdate}" />
+											&nbsp; - &nbsp;
+											<input type="text" id="enddate-entry" value="{!dpenddate}" placeholder="End Date" data-provide="datepicker" data-date-autoclose="true" data-date-start-view="2" />
+											<apex:inputHidden id="enddate-input" value="{!dpenddate}" />
+										</td>
+				
+										<td>
+					                            <apex:selectList value="{!dpcountry}" size="1" styleClass="form-select" id="country-dropdown" >
+					                            	<apex:selectOption itemValue="" itemLabel="" rendered="{!dp.dpId == null}"/>
+					                            	<apex:selectOption itemValue="Afghanistan" itemLabel="Afghanistan"/>
+										            <apex:selectOption itemValue="Iraq" itemLabel="Iraq"/>
+										            <apex:selectOption itemValue="Other" itemLabel="Other:"/>
+					                            </apex:selectList>				                            
+												<apex:inputText value="{!dpothercountry}" id="othercountry-input" maxlength="40" />
+										</td>
+		
+										<td>
+					                            <apex:inputText value="{!dpcity}" maxlength="50" />
+										</td>
+		
+										<td>
+												<apex:outputPanel rendered="{!editmodes[dp.dpId]}">
+									  			 <div class="checkbox">
+								    				<label>
+							                            <apex:inputCheckbox value="{!dpstoploss}" />
+														Stop Loss?
+													</label>
+												 </div>
+												</apex:outputPanel>
+										</td>
+		
+										<td>
+					                            <apex:inputTextArea value="{!dpnotes}" />
+										</td>
+										<td>
+											<apex:outputPanel rendered="{!dp.dpId != null}">
+				                                <apex:commandLink id="deleteButton" action="{!deleteRow}" Title="Delete"
+				                                	onclick="if(!confirm('Are you sure you want to permanently delete this deployment record?')){return};" >
+				                                 	<span class="glyphicon glyphicon-trash"></span>
+	 			                                	<apex:param name="dpIndexDelete" value="{!dp.dpId}" assignTo="{!dpIdChosen}"/>
+	 			                                </apex:commandLink>
+	 			                            </apex:outputPanel>
+										</td>
+																			
+										<td>
+			                                <apex:commandLink id="cancelButton" action="{!cancelRow}" Title="Cancel" >
+			                                 	<span class="glyphicon glyphicon-share-alt icon-flipped"></span>
+				                                </apex:commandLink>
+										</td>
+										<td>
+				                                <apex:commandLink id="saveButton2" action="{!saveEdit}" Title="Save" >
+				                                 	<span class="glyphicon glyphicon-ok-sign"></span>
+	 			                                	<apex:param name="dpIndexsave" value="{!dp.dpId}" assignTo="{!dpIdChosen}"/>
+	 			                                </apex:commandLink>
+										</td>
+									</apex:outputPanel>
+		                        </tr>
+	                          </apex:outputPanel>
+		       	             </apex:repeat>
+		       	    
+						</tbody>
+					</table>
+			
+			   </apex:outputPanel>
+
+	 	    <!-- </apex:form> -->
+	 	    </apex:actionRegion>
+
+	        <apex:outputPanel rendered="{!didNotDeploy}">
+	        		I did not deploy or have not yet deployed (post 9/11).  
+	        			<!-- <apex:form > -->
+	        			<apex:actionRegion >
+	        			[
+	        			<apex:commandLink id="didDeployButton" action="{!unsetDidNotDeploy}" >
+				        	change
+				        	<!-- <apex:param name="dpIndexNew" value="new" assignTo="{!dpIdChosen}"/> -->
+				        </apex:commandLink>
+				        ]
+				        <!-- </apex:form> -->
+				        </apex:actionRegion>
+	        </apex:outputPanel>
+
+	        <apex:outputPanel rendered="{!isNonVeteran}">
+	        		You have indicated you are not a veteran.  
+	        			<apex:actionRegion >
+	        			[
+	        			<apex:commandLink action="{!unsetNonVeteranSetVeteran}" >
+				        	Actually I am a veteran
+				        </apex:commandLink>
+				        ]
+				        </apex:actionRegion>
+	        </apex:outputPanel>
+
+	    </apex:outputPanel>
+    
+    </div>
+    
+    <div class="vertical-spacer" style="height: 260px;">
+    	&nbsp;
+    </div>
+ 
+ 
+ 	<script type="text/javascript">
+ 	
+ 		j$ = jQuery.noConflict();
+ 		
+ 		j$(document).ready(function() {
+
+ 			var setOtherCountry = function(){
+	 			if(j$('[id$=country-dropdown]').val() == 'Other') {
+	 				j$('[id$=othercountry-input]').show();
+	 			} else {
+	 				j$('[id$=othercountry-input]').hide();
+	 			}
+			}; 	
+			 		
+	   console.log('f');
+ 			setOtherCountry();
+	   console.log('g');
+ 		
+ 			j$('#startdate-entry').change(function() {
+ 				j$('[id$=startdate-input]').val(j$(this).val());
+ 			});
+ 			j$('#enddate-entry').change(function() {
+ 				j$('[id$=enddate-input]').val(j$(this).val());
+ 			});
+ 			
+			j$('[id$=operation-dropdown]').change(function() {
+			   if (j$(this).val()=='OEF' && j$('[id$=country-dropdown]').val() == '') {
+			   		j$('[id$=country-dropdown]').val('Afghanistan');
+			   } else if ((j$(this).val()=='OIF' || j$(this).val()=='OND') && j$('[id$=country-dropdown]').val() == '') {
+			   		j$('[id$=country-dropdown]').val('Iraq');
+			   }
+
+ 			});
+ 			
+ 			j$('[id$=country-dropdown]').change(function() {
+ 				setOtherCountry();
+ 			});
+ 					
+ 			
+ 		});
+ 	
+ 	</script>
+ </apex:form>
+	
+</apex:define>
+	
+</apex:composition>
+
+</apex:page>

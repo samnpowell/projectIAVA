@@ -1,0 +1,69 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false"
+           standardController="Press_Hit__c" extensions="press_hits_controller_extn" >
+ 
+ 
+  <p>&nbsp;</p>
+  <h1>Press Hits (quick proof of concept)</h1>
+  <p>Everything about this can be customized, and it can have a nice-looking visual design.</p>
+  <p>&nbsp;</p>
+  
+ 
+  <apex:dataTable value="{!presshits}" var="phitem" rowClasses="odd,even" style="display: none;">
+    <apex:column headerValue="Date">
+      <apex:outputText value="{!phitem.Story_Date__c}"/>
+      <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+         <apex:param value="{!phitem.Story_Date__c}" /> 
+      </apex:outputText>
+      
+    </apex:column>
+    <apex:column headerValue="Article Title">
+      <apex:outputText value="{!phitem.Article_Title__c}"/>
+    </apex:column>
+    <apex:column headerValue="Article Teaser">
+      <apex:outputText value="{!phitem.Article_Teaser__c}"/>
+    </apex:column>
+    <apex:column headerValue="Press Outlet">
+      <apex:outputField value="{!phitem.Press_Outlet__r.Name}"/>
+    </apex:column>  
+    <apex:column headerValue="Link">
+      <apex:outputField value="{!phitem.Link__c}"/>
+    </apex:column>                            
+  </apex:dataTable>
+       
+
+<style type="text/css">
+
+  a, a:visited {
+    color: #284734;
+    text-decoration: underline;
+  }
+
+</style>
+
+       
+ <apex:repeat value="{!presshits}" var="phitem">      
+        <div class="views-row" >
+        <div id="main_teaser">
+    <small>
+      <apex:outputText value="{0,date,MMM' 'dd', 'yyyy}">
+         <apex:param value="{!phitem.Story_Date__c}" /> 
+      </apex:outputText>
+    </small>
+    <h2 class="title"><a href="#id={!phitem.Id}">{!phitem.Press_Outlet__r.Name}: {!phitem.Article_Title__c}</a></h2>
+        <div class="content">
+        <p>
+            <apex:outputText value="{!phitem.Article_Teaser__c}" escape="false" />      
+        </p>
+        <a href="#id={!phitem.Id}" class="more-link">&nbsp;</a> &nbsp;&nbsp;
+        <apex:outputLink value="{!phitem.Link__c}" target="_blank" rendered="{!phitem.Link__c != null}">View on Source Website</apex:outputLink>
+
+        <div style="font-size: 9px; margin-top: 12px;"><i>Topics:</i>&nbsp;<a href="#"><apex:outputText value="{!phitem.Topic__c}"/></a></div>
+
+    </div>
+    <div class="hr"><hr/></div>
+    </div>
+  </div>
+ </apex:repeat>
+       
+       
+</apex:page>

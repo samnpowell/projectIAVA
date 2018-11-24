@@ -1,0 +1,7 @@
+The following information pertains:
+
+Submitted by: {!Email_iWant__c.OwnerFirstName} {!Email_iWant__c.OwnerLastName}
+Event: {!Email_iWant__c.Campaign__c}
+Date of 1st Email Desired: {!Email_iWant__c.Date_1st_Email__c}
+
+Link: https://na6.salesforce.com/{!Email_iWant__c.Id}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.WE_FW8_NP__SearchResult__r$WE_FW8_NP__P2G_COMBO__c</field>
+    </columns>
+    <columns>
+        <field>Contact.WE_FW8_NP__SearchResult__r$WE_FW8_NP__P2G_Description__c</field>
+    </columns>
+    <columns>
+        <field>Contact.WE_FW8_NP__SearchResult__r$WE_FW8_NP__GiftCapacityRange__c</field>
+    </columns>
+    <columns>
+        <field>Contact.WE_FW8_NP__SearchResult__r$WE_FW8_NP__GivingCapacityRating__c</field>
+    </columns>
+    <columns>
+        <field>Contact.WE_FW8_NP__SearchResult__r$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contact.WE_FW8_NP__SearchResult__r$WE_FW8_NP__Most_Recent_Flag__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Y</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Name</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Owner</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Sean Ullman</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Sean&apos;s Contacts with Wealth Ratings</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>WE_Ratings__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

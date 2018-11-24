@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Invite to 11.7.13 Foundation Luncheon</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Foundation Luncheon Invite November 2013</name>
+    <style>none</style>
+    <subject>IAVA Invites You to a Roundtable Discussion</subject>
+    <type>text</type>
+</EmailTemplate>

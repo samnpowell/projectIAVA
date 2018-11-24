@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends notice to contact when merged</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Account Merge</name>
+    <style>none</style>
+    <subject>Duplicate Accounts Merged</subject>
+    <type>text</type>
+</EmailTemplate>

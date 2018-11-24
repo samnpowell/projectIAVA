@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Giselle Reconfirm</name>
+    <style>none</style>
+    <subject>From IAVA: Please Note Ticket Pick-up Location Change</subject>
+    <type>text</type>
+</EmailTemplate>

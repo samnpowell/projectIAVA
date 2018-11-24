@@ -1,0 +1,23 @@
+NVLSP Representative:
+
+The following IAVA member has filled out the CRSC form and their responses met the basic requirements.  Information on member below:
+
+First Name: {!Contact.FirstName}
+Last Name: {!Contact.LastName}
+Email Address: {!Contact.Email}
+Phone Number: {!Contact.HomePhone}
+Branch of Service: {!Contact.Branch_of_Service__c}
+
+Medically Retired? {!Contact.Medical_Retirement__c}
+VA Disability? {!Contact.VA_Disability__c}
+Combat Related? {!Contact.Combat_Related_Disability__c}
+
+If you should have any questions about this member or the information in this email please feel free to contact Jason Hansman, IAVA's Membership Director, at jason@iava.org or 212-982-9699.
+
+Best,
+
+Jason
+--
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America

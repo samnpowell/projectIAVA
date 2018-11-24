@@ -1,0 +1,615 @@
+<apex:page controller="cov_events_controller" action="{!initAttendeePage}" name="Event Checkin" id="cov_event_checkin" sidebar="false" showheader="false" standardStylesheets="true" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+
+
+<apex:composition template="{!templateName}">
+
+	<apex:define name="page-title">
+		Event Checkin: {!ce.Name} - myIAVA
+	</apex:define>
+
+	<apex:define name="meta-tags">
+		<apex:outputPanel rendered="{!ce != null}">
+			<meta property="og:title" content="Event Checkin: {!ce.Name} - myIAVA" />
+			<meta property="og:image" content="{!if(ce.hasPicFull, left($Site.currentSiteUrl, len($Site.currentSiteUrl) - len($Site.Prefix) - 1) + URLFOR($Action.Attachment.Download, ce.picFullId), '')}" />
+			<meta property="og:url" content="{!$Site.currentSiteUrl + 'cov_event?id=' + ce.eId}" />
+		    <meta property="og:description" content="{!ce.eventType} Event - myIAVA" />
+			<meta property="og:type" content="activity" />
+		</apex:outputPanel>
+	</apex:define>
+
+	<apex:define name="layout"> 
+
+      	<c:cov_include_js_jquery /> 	
+      	<c:cov_include_js_validationengine /> 
+      	<c:cov_include_css_validationengine />
+
+      	<apex:outputPanel rendered="{!ISNULL(ce)}">
+	      	<p>Event not found.</p>
+	    </apex:outputPanel>
+		<!-- <apex:outputPanel rendered="{!ce.organizerId == $User.Id}"> -->
+		<apex:outputPanel rendered="{!NOT(ISNULL(ce))}">
+
+			<br />
+			<div>Reply List and Check-In Page</div>
+			<h2><a href="cov_event?id={!ce.eId}"><apex:outputText value="{!ce.name}" /></a></h2>
+			<div><h2><apex:outputText value="{0,date,MMM' 'dd', 'yyyy}"><apex:param value="{!ce.startDate}" /></apex:outputText></h2></div>
+
+
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<apex:outputPanel id="theModal">
+							<apex:outputPanel rendered="{!not(isnull(attendeeForMoreInfo))}">
+							  <div class="modal-dialog" role="document">
+							    <div class="modal-content">
+							    	<apex:form >
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal();"><span aria-hidden="true">&times;</span></button>
+								        <h4 class="modal-title" id="myModalLabel">Info to collect for {!attendeeForMoreInfo.displayName}</h4>
+								      </div>
+								      <div class="modal-body">
+								        <apex:outputPanel rendered="{!attendeeForMoreInfo.collectFirstName}">
+								        	<div class="form-group">
+	    										<label for="firstNameCollected" class="sr-only">First Name</label>
+								        		<apex:inputText id="firstNameCollected" value="{!firstNameCollected}" html-placeholder="First Name" />
+								        	</div>
+									    </apex:outputPanel>
+								        <apex:outputPanel rendered="{!attendeeForMoreInfo.collectLastName}">
+								        	<div class="form-group">
+	    										<label for="lastNameCollected" class="sr-only">Last Name</label>
+								        		<apex:inputText id="lastNameCollected" value="{!lastNameCollected}" html-placeholder="Last Name" />
+								        	</div>
+									    </apex:outputPanel>
+								        <apex:outputPanel rendered="{!attendeeForMoreInfo.collectEmail}">
+								        	<div class="form-group">
+	    										<label for="emailCollected" class="sr-only">Email</label>
+								        		<apex:input type="email" id="emailCollected" value="{!emailCollected}" html-placeholder="Email" />
+								        	</div>
+									    </apex:outputPanel>
+								        <apex:outputPanel rendered="{!attendeeForMoreInfo.collectZip}">
+								        	<div class="form-group">
+	    										<label for="zipCollected" class="sr-only">Zip/Postal Code</label>
+								        		<apex:inputText id="zipCollected" value="{!zipCollected}" html-placeholder="Zip/Postal Code" />
+								        	</div>
+									    </apex:outputPanel>
+								        <apex:outputPanel rendered="{!attendeeForMoreInfo.collectVeteranStatus}">
+											<div class="form-inline bottom-space">
+												<label class="checkbox-inline">
+												  <apex:inputCheckbox styleClass="chk-vet" id="Post911Collect" value="{!post911Collected}" /> Post 9/11
+												</label>
+												<label class="checkbox-inline">
+												  <apex:inputCheckbox styleClass="chk-vet" id="Pre911Collect" value="{!otherEraCollected}" /> Pre 9/11
+												</label>
+												<label class="checkbox-inline">
+												  <apex:inputCheckbox styleClass="chk-vet" id="oefCollect" value="{!oefCollected}" /> OEF
+												</label>
+												<label class="checkbox-inline">
+												  <apex:inputCheckbox styleClass="chk-vet" id="oifCollect" value="{!oifCollected}" /> OIF
+												</label>
+												<label class="checkbox-inline">
+												  <apex:inputCheckbox styleClass="chk-vet" id="ondCollect" value="{!ondCollected}" /> OND
+												</label>
+											</div>
+											<div class="form-inline">
+												<label class="checkbox-inline">
+												  <apex:inputCheckbox styleClass="chk-nonvet" id="NotVeteranCollect" value="{!notVeteranCollected}" /> Not a Veteran
+												</label>
+											</div>
+									    </apex:outputPanel>
+								      </div>
+								      <div class="modal-footer">
+							      		<apex:commandButton value="Skip" styleClass="btn btn-default" html-data-dismiss="modal" action="{!closeCollectionModal}" />
+							      		<apex:commandButton value="Save" styleClass="btn btn-primary" action="{!saveCollectionModal}" onclick="j$(this).prop('value', 'Saving...');j$(this).prop('disabled','disabled');" reRender="theModal,attendeeNameYes,attendeeNameInvited,attendeeNameNotOnList,attendeeNameNo" />
+								      </div>
+								   </apex:form>
+							    </div>
+							  </div>
+							  <script type="text/javascript">
+								  	j$ = jQuery.noConflict();
+								  	j$('#myModal').modal();
+						
+									j$(document).ready(function() {
+										j$('.chk-nonvet').click(function() {
+											j$('.chk-vet').prop('checked', false);
+										});
+										j$('.chk-vet').click(function() {
+											j$('.chk-nonvet').prop('checked', false);
+										});
+									});
+							  </script>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!isnull(attendeeForMoreInfo)}">
+								<script type="text/javascript">
+									  	j$ = jQuery.noConflict();
+									  	j$('#myModal').modal('hide');
+								</script>
+							</apex:outputPanel>
+						</apex:outputPanel>
+					<apex:form >
+						<apex:actionFunction name="closeModal" action="{!closeCollectionModal}" />
+					</apex:form>
+				</div>
+
+
+				<p>&nbsp;</p>
+
+				<div class="btn-group" data-toggle="buttons">
+				  <label class="btn btn-default active" id="CheckInMode-label" title="Check people in as they arrive">
+				    <input type="radio" name="PageMode" value="CheckInMode" id="CheckInMode" autocomplete="off" checked="checked" /> Check-In Mode
+				    <sup>
+					    <span id="tooltip-aboutme" data-toggle="tooltip" data-placement="top" data-html="false" title="Check people in as they arrive">
+		    				<span class="glyphicon glyphicon-question-sign lighter"></span>
+		    			</span>
+		    		</sup>
+				  </label>
+				  <label class="btn btn-default" id="BatchSaveMode-label" title="Mark all of your changes before saving">
+				    <input type="radio" name="PageMode" value="BatchSaveMode" id="BatchSaveMode" autocomplete="off" /> Batch Save Mode
+				    <sup>
+					    <span id="tooltip-aboutme" data-toggle="tooltip" data-placement="top" data-html="false" title="Mark all changes before saving">
+		    				<span class="glyphicon glyphicon-question-sign lighter"></span>
+		    			</span>
+		    		</sup>
+				  </label>
+				</div>
+
+
+				<apex:form >
+					<center>
+						<div class="save-changes-button" style="visibility: hidden;">
+							<apex:commandButton styleClass="btn btn-warning" value="Save Changes" action="{!saveAttendanceChanges}"/>
+							<p>Changes must be saved to be recorded. <a href="javascript:void(0);" onclick="cancelAttendanceChanges();return false;" class="lighter-link">[Cancel changes]</a></p>
+						</div>
+						<apex:inputHidden id="attendanceArray" value="{!attendanceArray}" />
+					</center>
+				</apex:form>
+
+				<apex:outputPanel rendered="{!atLeastOneAttendeeNeedsMoreInfo}">
+					<div class="text-right italicer lighter bottom-space">
+						<span class="glyphicon glyphicon-flag text-warning" aria-label="Flag icon"></span>&nbsp; = Will ask for missing contact info on checkin
+					</div>
+				</apex:outputPanel>
+
+				<p class="italicer">Type a name below to search. For a new person, use the <a href="#newAttendee" onclick="setTimeout(function() { j$('input[id$=newAttendee-first]').focus(); }, 30);">form at the bottom of this page.</a></p>
+
+				<c:Typeahead object="IAVAEvent_Attendee__c" 
+					destinationForSelectedId="attendeeSearchId" destinationForSelectedValue="attendeeSearchName"
+					searchBoxId="attendee-typeahead"
+					primaryField="Attendee_Name__c" 
+					secondaryField="Contact__r.Email"
+					placeHolder="Start typing name..."
+					filterClause="Event__c = \'{!ce.eId}\'"
+					styleClass="form-control"
+					style="form-control"
+					 />   
+				<apex:form >
+					<apex:inputHidden id="attendeeSearchId" /> 
+					<apex:inputHidden id="attendeeSearchName" />	
+				</apex:form>	
+				<script type="text/javascript">
+					j$('#attendee-typeahead').addClass('form-control bottom-space');
+					j$('input[id$=attendee-typeahead]').on( "typeahead:selected", function() {
+						setTimeout(function() {
+							if (j$('input[id$=attendeeSearchId]').val()) {
+								j$('html, body').animate({
+							    	scrollTop: (j$('.btn-for-' + j$('input[id$=attendeeSearchId]').val()).offset().top)
+								}, 100);
+							}
+						}, 100);
+					});
+				</script>
+
+			<table class="table">
+
+				<apex:outputPanel rendered="{!AND(yesAttendeesList != null, yesAttendeesList.size > 0)}">
+					<tr>
+						<td colspan="3" class="lightshade">
+							<h4>People who replied 'Yes' ({!yesAttendeesList.size})</h4>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-header">
+							Name
+						</td>
+						<td class="table-header">
+							Reply
+						</td>
+						<td class="table-header">
+							Attended?
+						</td>
+					</tr>
+					<!-- <apex:variable value="{!0}" var="attendeeListIndex"/> -->
+					<apex:repeat value="{!yesAttendeesList}" var="attnd">
+						<tr>
+							<td>
+								<apex:outputPanel id="attendeeNameYes">
+									<!-- {!attnd.att.Attendee_Name__c} -->
+									<apex:outputText value="{!attnd.displayName}" />
+									<apex:outputPanel rendered="{!attnd.collectInfo}">
+										<a href="javascript:void(0);" onclick="collectInfoOnly('Yes','{!attnd.listIndex}');">
+											<span class="glyphicon glyphicon-flag text-warning" title="Will ask for missing contact info on checkin" aria-label="Will ask for missing contact info on checkin"></span>
+										</a>
+									</apex:outputPanel>
+								</apex:outputPanel>
+							</td>
+							<td>
+								{!attnd.att.Reply_Status__c}
+							</td>
+							<td>
+								<apex:outputPanel id="attendeeButtonsYes">
+									<button type="button" class="btn btn-default btn-checkin btn-option-set{!if(attnd.att.Attended__c == 'Yes',' btn-lightgreen','')} btn-for-{!attnd.att.Id}" onclick="changeAttendance(this, '{!attnd.att.Id}', 'Yes','Yes','{!attnd.listIndex}');" data-was-selected="{!if(attnd.att.Attended__c == 'Yes','true','false')}">{!if(attnd.att.Attended__c == 'Yes','Checked In','Check In')}</button>
+									<button type="button" class="btn btn-default btn-option-set{!if(attnd.att.Attended__c == 'No',' btn-lightred','')} btn-for-{!attnd.att.Id}"   onclick="changeAttendance(this, '{!attnd.att.Id}', 'No');" data-was-selected="{!if(attnd.att.Attended__c == 'No','true','false')}">Did not attend</button>
+								</apex:outputPanel>
+ 							</td>
+						</tr>
+						<!-- <apex:variable var="attendeeListIndex" value="{!attendeeListIndex + 1}"/> -->
+					</apex:repeat>
+					<tr><td colspan="3">&nbsp;</td></tr>
+				</apex:outputPanel>
+
+				<apex:outputPanel rendered="{!AND(invitedAttendeesList != null, invitedAttendeesList.size > 0)}">
+					<tr>
+						<td colspan="3" class="lightshade">
+							<h4>Invited but not yet responded ({!invitedAttendeesList.size})</h4>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-header">
+							Name
+						</td>
+						<td class="table-header">
+							Reply
+						</td>
+						<td class="table-header">
+							Attended?
+						</td>
+					</tr>
+					<apex:repeat value="{!invitedAttendeesList}" var="attnd">
+						<tr>
+							<td>
+								<apex:outputPanel id="attendeeNameInvited">
+									<!-- {!attnd.att.Attendee_Name__c} -->
+									<apex:outputText value="{!attnd.displayName}" />
+									<apex:outputPanel rendered="{!attnd.collectInfo}">
+										<a href="javascript:void(0);" onclick="collectInfoOnly('Invited','{!attnd.listIndex}');">
+											<span class="glyphicon glyphicon-flag text-warning" title="Will ask for missing contact info on checkin" aria-label="Will ask for missing contact info on checkin"></span>
+										</a>
+									</apex:outputPanel>
+								</apex:outputPanel>
+							</td>
+							<td>
+								{!attnd.att.Reply_Status__c}
+							</td>
+							<td>
+								<apex:outputPanel id="attendeeButtonsInvited">
+									<button type="button" class="btn btn-default btn-checkin btn-option-set{!if(attnd.att.Attended__c == 'Yes',' btn-lightgreen','')} btn-for-{!attnd.att.Id}" onclick="changeAttendance(this, '{!attnd.att.Id}', 'Yes','Invited','{!attnd.listIndex}');" data-was-selected="{!if(attnd.att.Attended__c == 'Yes','true','false')}">{!if(attnd.att.Attended__c == 'Yes','Checked In','Check In')}</button>
+									<button type="button" class="btn btn-default btn-option-set{!if(attnd.att.Attended__c == 'No',' btn-lightred','')} btn-for-{!attnd.att.Id}"   onclick="changeAttendance(this, '{!attnd.att.Id}', 'No');" data-was-selected="{!if(attnd.att.Attended__c == 'No','true','false')}">Did not attend</button>
+								</apex:outputPanel>
+							</td>
+						</tr>
+					</apex:repeat>
+					<tr><td colspan="3">&nbsp;</td></tr>
+				</apex:outputPanel>
+
+				<apex:outputPanel rendered="{!AND(notOnListAttendeesList != null, notOnListAttendeesList.size > 0)}">
+					<tr>
+						<td colspan="3" class="lightshade">
+							<h4>Showed Up ({!notOnListAttendeesList.size})</h4>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-header">
+							Name
+						</td>
+						<td class="table-header">
+							Reply
+						</td>
+						<td class="table-header">
+							Attended?
+						</td>
+					</tr>
+					<apex:repeat value="{!notOnListAttendeesList}" var="attnd">
+						<tr>
+							<td>
+								<apex:outputPanel id="attendeeNameNotOnList">
+									<!-- {!attnd.att.Attendee_Name__c} -->
+									<apex:outputText value="{!attnd.displayName}" />
+									<apex:outputPanel rendered="{!attnd.collectInfo}">
+										<a href="javascript:void(0);" onclick="collectInfoOnly('Not on List','{!attnd.listIndex}');">
+											<span class="glyphicon glyphicon-flag text-warning" title="Will ask for missing contact info on checkin" aria-label="Will ask for missing contact info on checkin"></span>
+										</a>
+									</apex:outputPanel>
+								</apex:outputPanel>
+							</td>
+							<td>
+								{!attnd.att.Reply_Status__c}
+							</td>
+							<td>
+								<apex:outputPanel id="attendeeButtonsNotOnList">
+									<button type="button" class="btn btn-default btn-checkin btn-option-set{!if(attnd.att.Attended__c == 'Yes',' btn-lightgreen','')} btn-for-{!attnd.att.Id}" onclick="changeAttendance(this, '{!attnd.att.Id}', 'Yes','Not on List','{!attnd.listIndex}');" data-was-selected="{!if(attnd.att.Attended__c == 'Yes','true','false')}">{!if(attnd.att.Attended__c == 'Yes','Checked In','Check In')}</button>
+									<button type="button" class="btn btn-default btn-option-set{!if(attnd.att.Attended__c == 'No',' btn-lightred','')} btn-for-{!attnd.att.Id}"   onclick="changeAttendance(this, '{!attnd.att.Id}', 'No');" data-was-selected="{!if(attnd.att.Attended__c == 'No','true','false')}">Did not attend</button>
+								</apex:outputPanel>
+							</td>
+						</tr>
+					</apex:repeat>
+					<tr><td colspan="3">&nbsp;</td></tr>
+				</apex:outputPanel>
+
+
+				<apex:outputPanel rendered="{!AND(noAttendeesList != null, noAttendeesList.size > 0)}">
+					<tr>
+						<td colspan="3" class="lightshade">
+							<h4>People who replied 'No' ({!noAttendeesList.size})</h4>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-header">
+							Name
+						</td>
+						<td class="table-header">
+							Reply
+						</td>
+						<td class="table-header">
+							Attended?
+						</td>
+					</tr>
+					<apex:repeat value="{!noAttendeesList}" var="attnd">
+						<tr>
+							<td>
+								<apex:outputPanel id="attendeeNameNo">
+									<!-- {!attnd.att.Attendee_Name__c} -->
+									<apex:outputText value="{!attnd.displayName}" />
+									<apex:outputPanel rendered="{!attnd.collectInfo}">
+										<a href="javascript:void(0);" onclick="collectInfoOnly('No','{!attnd.listIndex}');">
+											<span class="glyphicon glyphicon-flag text-warning" title="Will ask for missing contact info on checkin" aria-label="Will ask for missing contact info on checkin"></span>
+										</a>
+									</apex:outputPanel>
+								</apex:outputPanel>
+							</td>
+							<td>
+								{!attnd.att.Reply_Status__c}
+							</td>
+							<td>
+								<apex:outputPanel id="attendeeButtonsNo">
+									<button type="button" class="btn btn-default btn-checkin btn-option-set{!if(attnd.att.Attended__c == 'Yes',' btn-lightgreen','')} btn-for-{!attnd.att.Id}" onclick="changeAttendance(this, '{!attnd.att.Id}', 'Yes','No','{!attnd.listIndex}');" data-was-selected="{!if(attnd.att.Attended__c == 'Yes','true','false')}">{!if(attnd.att.Attended__c == 'Yes','Checked In','Check In')}</button>
+								</apex:outputPanel>
+							</td>
+						</tr>
+					</apex:repeat>
+					<tr><td colspan="3">&nbsp;</td></tr>
+				</apex:outputPanel>
+
+				<tr class="save-changes-button" style="visibility: hidden;">
+					<td colspan="3" align="center">
+						<apex:form >
+							<div class="pre-save-button" >
+								<apex:commandButton styleClass="btn btn-warning" value="Save Changes" action="{!saveAttendanceChanges}" />
+								<p>Changes must be saved to be recorded</p>
+							</div>
+							<div>
+								<input type="button" class="btn btn-default" value="Cancel changes" onClick="cancelAttendanceChanges();return false;" />
+							</div>
+							<apex:inputHidden id="attendanceArray" value="{!attendanceArray}" />
+						</apex:form>
+					</td>
+				</tr>
+
+
+					<tr>
+						<td colspan="3" class="lightshade">
+							<a name="newAttendee"></a>
+							<h4>Add someone else who showed up</h4>
+					        <div class="pre-save" id="disableIfChangesPrompt" style="display:none;" styleClass="btn-overridden">First save attendance changes above to avoid losing them!</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">						
+					        <apex:form styleclass="form validated-form" id="newAttendeeForm">
+					        <div class="form-group form-inline">
+					        	<div class="form-group vertical-top">
+									<label class="sr-only" for="newAttendee-first">First Name</label>
+							    	<apex:inputText styleclass="form-control validate[required] disableIfChanges" value="{!newAttendeeFirstName}" id="newAttendee-first" html-placeholder="First Name" />
+								</div>
+					        	<div class="form-group vertical-top">
+									<label class="sr-only" for="newAttendee-last">Last Name</label>
+							    	<apex:inputText styleclass="form-control validate[required] disableIfChanges" value="{!newAttendeeLastName}" id="newAttendee-last" html-placeholder="Last Name"  />
+								</div>
+					        	<div class="form-group vertical-top">
+									<label class="sr-only" for="newAttendee-email">Email</label>
+							    	<apex:input type="email" styleclass="form-control validate[required,custom[email]] input-longer disableIfChanges" value="{!newAttendeeEmail}" id="newAttendee-email"  html-placeholder="Email" />
+									<div class="checkbox smaller" style="display: block;">
+										<label>
+											<apex:inputCheckbox id="noEmailCheckbox" value="{!newAttendeeNoEmailAvailable}" /> Email unavailable
+										</label>
+									</div>
+								</div>
+					        	<div class="form-group vertical-top">
+									<label class="sr-only" for="newAttendee-zip">Zip/Postal Code</label>
+							    	<apex:inputText styleclass="form-control disableIfChanges" value="{!newAttendeeZip}" id="newAttendee-zip"  html-placeholder="Zip/Postal Code" />
+								</div>
+								 <div class="form-group vertical-top">
+						        		<div class="checkbox spaced-horiz">
+											<label>
+												<apex:inputCheckbox value="{!newAttendeeVeteran}" id="Veteran" styleClass="disableIfChanges" /> Post 9/11 Veteran
+											</label>
+										</div>
+								</div>
+								<div class="form-group spaced-horiz">
+							    	<apex:commandButton action="{!addNewAttendee}" value="Add" id="newAttendeeButton" styleclass="btn btn-primary disableIfChanges" />
+						        </div>
+					        </div>
+
+					        </apex:form>
+
+						</td>
+					</tr>
+
+
+
+			</table>
+
+
+
+		</apex:outputPanel>
+
+	  	<apex:form >
+			<apex:actionFunction name="markAttendedFunction" action="{!markAttended}" reRender="theModal,attendeeButtonsYes,attendeeButtonsInvited,attendeeButtonsNotOnList,attendeeButtonsNo" >
+				<apex:param name="attendeeListChosen" assignTo="{!attendeeListChosen}" value="" />
+				<apex:param name="attendeeListIndex" assignTo="{!attendeeChosenIndex}" value="" />		
+			</apex:actionFunction>
+
+			<apex:actionFunction name="collectInfoOnly" action="{!setAttendeeForCollection}" reRender="theModal" >
+				<apex:param name="attendeeListChosen" assignTo="{!attendeeListChosen}" value="" />
+				<apex:param name="attendeeListIndex" assignTo="{!attendeeChosenIndex}" value="" />		
+			</apex:actionFunction>
+
+	  	</apex:form>
+
+	
+	  	<c:cov_include_js_validationengine_init />
+
+		<script type="text/javascript">
+
+			var changeAttendance = function changeAttendance(clickedSelector, key, value, listChosen, listIndex) {
+				// console.log('changeAttendance(' + clickedSelector +', ' + key + ', ' + value +')');
+				if (value == 'Yes' && j$('input[name=PageMode]:checked').val() != 'BatchSaveMode' && j$('.btn-for-' + key).data('newSelection') != true && j$('.btn-for-' + key).data('overridden') != true && j$('.btn-for-' + key).data('wasSelected') != true) {
+					if (j$.trim(j$('input[id$=attendanceArray]').val()) != '' && !confirm('Checking someone in will erase your other unsaved changes. Press Cancel to save changes first, or OK to continue.')) {
+						return false;
+					} 
+					cancelAttendanceChanges();
+					j$(clickedSelector).html('Saving...');
+					j$(clickedSelector).prop('disabled', 'disabled');
+					markAttendedFunction(listChosen, listIndex);
+				} else {
+					batchChangeAttendance(clickedSelector, key, value);
+				}
+			}
+
+
+			var batchChangeAttendance = function batchChangeAttendance(clickedSelector, key, value) {
+				// console.log('batchChangeAttendance(' + clickedSelector +', ' + key + ', ' + value +')');
+
+				var revertingAChange = false;
+				j$('.btn-for-' + key).each(function(){
+					if (j$(this).is(clickedSelector)) {
+						// console.log('for the clicked button...');
+						if (j$(this).data('newSelection') == true || j$(this).data('overridden') == true) {
+							/* had been selected to be changed in this session so cancel and revert to stored value */
+							// console.log('was already being changed or overridden and now reverting.');
+							revertingAChange = true;
+							j$('input[id$=attendanceArray]').val(removeFromArray(j$('input[id$=attendanceArray]').val(), key));
+							j$('.btn-for-' + key).removeClass('btn-overridden');
+							j$(this).removeClass('btn-pre-save');
+							j$(this).data('newSelection', false);
+							j$(this).data('overridden', false);
+						} else {
+							/* hasnt yet been selected in this session */
+							// console.log('wasnt already being changed or overridden');
+							j$(this).data('newSelection', true);
+							j$(this).addClass('btn-pre-save');
+							if (j$(this).data('wasSelected') == true) {
+								/* the user wants to null out the stored value */
+								// console.log('was selected on page load so need to null out');
+								j$('input[id$=attendanceArray]').val(addToArray(j$('input[id$=attendanceArray]').val(), key, ''));
+								j$(this).addClass('btn-overridden');
+							} else {
+								/* the user is adding a new selection */
+								// console.log('adding a plain old new selection');
+								j$('input[id$=attendanceArray]').val(addToArray(j$('input[id$=attendanceArray]').val(), key, value));
+								j$(this).removeClass('btn-overridden');
+							}
+						}
+					} else {
+						/* this button wasnt the one clicked */
+						// console.log('for the non-clicked button... hide orange lines and remove newSelection data');
+						j$(this).removeClass('btn-pre-save');
+						j$(this).data('newSelection', false);
+						if (j$(this).data('wasSelected') == true && revertingAChange == false) {
+							// console.log('was selected on page load and the other button is not being reverted so add overridden');
+							j$(this).addClass('btn-overridden');
+							j$(this).data('overridden', true);
+						} else {
+							// console.log('was either not selected on page load or other button is being reverted so just remove overridden if present');
+							j$(this).removeClass('btn-overridden');
+							j$(this).data('overridden', false);
+						}
+					}
+				});
+				// console.log('----------');
+
+				var saveButtonVisibility = 'visible';
+				if (j$.trim(j$('input[id$=attendanceArray]').val()) == '') {
+					saveButtonVisibility = 'hidden';
+				} 
+				j$('.save-changes-button').css('visibility', saveButtonVisibility);
+
+				toggleNewAttendeeForm();
+
+			}
+
+			j$('input[name=PageMode]').change(function() {
+				var newValue;
+				if (j$('input[name=PageMode]:checked').val() != 'BatchSaveMode') {
+					newValue = 'Check In';
+				} else {
+					newValue = 'Attended';
+				}
+				j$('.btn-checkin').each(function(){
+					if (j$(this).data('newSelection') != true && j$(this).data('overridden') != true && j$(this).data('wasSelected') != true) {
+						j$(this).html(newValue);
+					}
+				});
+			});
+
+			// j$('#CheckInMode-label').click(function(e) {
+			// 	if (j$.trim(j$('input[id$=attendanceArray]').val()) != '') {
+			// 		if(confirm('This will erase your unsaved changes. Press Cancel to save changes first before switching to Check-In Mode.')) {
+			// 			cancelAttendanceChanges();
+			// 		} else {
+			// 			setTimeout(function() { j$('#BatchSaveMode-label').button('toggle'); }, 500);						
+			// 		}
+			// 	} 
+			// });
+
+			var cancelAttendanceChanges = function cancelAttendanceChanges() {
+				j$('input[id$=attendanceArray]').val('');
+				j$('.btn').each(function(){
+					j$(this).data('newSelection', false);
+					j$(this).data('overridden', false);
+					j$(this).removeClass('btn-overridden');
+					j$(this).removeClass('btn-pre-save');
+				});
+				j$('.save-changes-button').css('visibility', 'hidden');
+				toggleNewAttendeeForm();
+			}
+
+			var toggleNewAttendeeForm = function toggleNewAttendeeForm() {
+				if (j$('.save-changes-button').css('visibility') == 'visible') {
+					j$('.disableIfChanges').attr('disabled','disabled');
+					j$('#disableIfChangesPrompt').show();
+				} else {
+					j$('.disableIfChanges').removeAttr('disabled');	
+					j$('#disableIfChangesPrompt').hide();		
+				}
+			}
+	
+			j$(document).ready(function() {
+				var fieldSelector = 'input[id$=newAttendee-email';
+				j$('input[id$=noEmailCheckbox').click(function() {
+					j$(fieldSelector).val(null);
+					j$(fieldSelector).attr('disabled', this.checked);
+					j$(fieldSelector).attr('placeholder', this.checked ? 'Email unavailable' : 'Email');
+				});
+
+				hideElementIfTextFound('span[id$=messages] .message.errorM3 .messageText', 'OP_WITH_INVALID_USER_TYPE_EXCEPTION', '.message.errorM3');
+			});
+
+		</script>
+
+	
+	
+	</apex:define>
+
+</apex:composition>
+
+
+</apex:page>

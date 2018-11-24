@@ -1,0 +1,9 @@
+The following details pertain:
+
+Name: {!CampaignMember.FirstName} {!CampaignMember.LastName}
+Address: {!CampaignMember.Street}, {!CampaignMember.City}, {!CampaignMember.State}, {!CampaignMember.PostalCode}
+Email: {!CampaignMember.Email}
+Reason and Quantity Requested: {!CampaignMember.Notes__c}
+
+Be sure to mark the record as "Sent" when fulfillment is complete.
+Link to record: https://na6.salesforce.com/{!CampaignMember.Id}

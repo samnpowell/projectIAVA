@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Survey to confirm Nationals volunteers.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Volunteers.MHL.Nationals</name>
+    <style>none</style>
+    <subject>Final Confirmation of Volunteers</subject>
+    <type>text</type>
+</EmailTemplate>

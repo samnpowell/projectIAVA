@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Informs civilians in NY/CA about RRRP services so they can refer it to vets</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>UPDATED: RRRP Services Information sent to Civilians</name>
+    <style>none</style>
+    <subject>Share This With a Veteran in Your Life...</subject>
+    <type>custom</type>
+</EmailTemplate>

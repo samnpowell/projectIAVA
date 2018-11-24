@@ -1,0 +1,15 @@
+<img src="https://farm9.staticflickr.com/8399/15603190719_111bd67256_b.jpg" align="right" height="174" width="260" border="1"/>
+<p>Hi {!IAVAEvent_Attendee__c.Event_Attendee_s_First_Name__c}!</p>
+
+<p>Thank you for RSVPing to {!IAVAEvent_Attendee__c.Event_Name__c}, our recent VetTogether near you! We hope you were able to join us! We'd just like to get a little feedback and hear about your thoughts for future events. Even if you weren't able to join, we'd love to hear your ideas!</p>
+
+<p>Please take a moment to fill out this quick <a href="https://iava.getfeedback.com/r/6U7cn8rc?IAVAEvent_Attendee__c={!IAVAEvent_Attendee__c.Id}">survey</a>.</p>
+
+<p>Thank you and we look forward to hearing about your experience!</p>
+
+<p>Best,</p>
+
+Anthony Pike<br/>
+USMC Veteran<br/>
+National Field Director<br/>
+Iraq and Afghanistan Veterans of America (IAVA)

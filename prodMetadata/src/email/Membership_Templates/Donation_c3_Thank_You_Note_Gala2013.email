@@ -1,0 +1,34 @@
+Dear {!Account.Name},
+
+Thank you for your ticket purchase(s) for IAVA’s 7th Annual Hero’s Gala on Tuesday, November 12th at Cirpriani on 42nd Street. If you purchased more than one ticket, please email katek@iava.org with guest(s) name(s). Stay tuned for more information.
+
+Donation Amount:  {!Opportunity.Amount}{!if(Opportunity.From_CnP_Recurring_Series__c = "True",", recurring","")}
+
+With the war in Iraq over and the conflict in Afghanistan drawing down, IAVA recognizes that the needs of returning veterans will only grow more urgent.
+
+Over 2.4 million women and men have served in Iraq or Afghanistan to date, and hundreds of thousands have been deployed multiple times. Your contribution allows IAVA to continue addressing critical issues facing new veterans and their families, including a staggering rate of unemployment, mental health injuries, a stretched and outdated VA system and inadequate healthcare for female veterans.
+
+As the nation’s first and largest nonpartisan organization for this generation of veterans, IAVA provides our 150,000 member veterans with valuable transitional resources related to mental health, employment, education, and access to Community of Veterans, IAVA’s exclusive online social network. On Community of Veterans, thousands of returning veterans share their struggles and triumphs as they readjust to civilian life.
+
+IAVA has been designated as a “Four Star Charity” by the nonprofit charity evaluation organization Charity Navigator – its highest ranking. IAVA has also been given an A rating from the American Institute of Philanthropy and was named one of the Best Charities in America by the Independent Charities of America.
+
+I encourage you to learn more about our mission and impact—please visit www.IAVA.org to receive the latest news and find ways you can get involved. And to continue supporting by making a one-time or recurring online donation, please visit www.IAVA.org/Donate.
+
+On behalf of every member veteran of IAVA, thank you for having our backs.
+
+Sincerely,
+
+Paul Rieckhoff
+Founder and Chief Executive Officer
+Iraq and Afghanistan Veterans of America (IAVA)
+www.iava.org
+
+IAVA is a 501(c)3 non-profit organization (Tax ID: 20-1664531). Your contribution is tax-deductible to the extent allowed by law. If you would like a record of this donation on an IAVA letterhead for tax purposes, please contact Derek Coy at Derekc@iava.org.
+
+Donation Summary:
+
+Donation Amount: {!Opportunity.Amount}{!if(Opportunity.From_CnP_Recurring_Series__c = "TRUE",", recurring","")}
+
+Donation Date: {!Opportunity.CloseDate}
+
+Donation Made By: {!Account.Name}

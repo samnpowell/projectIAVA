@@ -1,0 +1,78 @@
+<apex:page controller="dc_ctrl_RewardSearch">
+<style>
+.sample {
+font-family:"Trebuchet MS", Tahoma, Verdana, Arial, Helvetica, "Bitstream Vera Sans", sans-serif;
+  font-weight:bold;
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#5b534b;
+  display:block;
+  border:0;
+  margin:0;
+  padding:5px 31px 5px 10px;
+  height:14px;
+  background:url({!URLFOR($Resource.dc_css,'images/form_select-searchrewards.png')})  no-repeat top right;
+  overflow:hidden;
+  cursor:pointer;
+  text-align:left;
+  line-height:15px;
+  }
+</style>
+<div id="subcontent-top"> 
+ 
+                                    <div id="block-block-searchrewardsdetail" class="block block-block"> 
+                                        <div class="block-inner"> 
+ 
+                                            <h2 class="title"><img src="images/header_searchrewardsdetail.png" width="560" height="39" alt="Vets: Find Rewards Near You" /></h2> 
+ 
+                                            <div class="content"> 
+                                                <form action="" method="post" id=""> 
+                                                    <div class="container zip-dist"> 
+                                                        <label form="zip"><img src="images/block-searchrewards_zip.png" width="20" height="8" alt="Zip: "/></label> 
+                                                        <div class="text-wrapper"><input type="text" name="zip" value="90210" class="form-text" /></div> 
+                                                        <label form="distance"><img src="images/block-searchrewards_dist.png" width="25" height="8" alt="Zip: "/></label> 
+                                                       
+                                                        <div class="select-wrapper select-width-98"> 
+                                 <apex:form ><apex:selectList id="dist" value="{!distance_value}" size="1"  styleclass="sample" >
+																<apex:selectOptions value="{!distance}" />
+																	</apex:selectList></apex:form>
+                                                            <!--  <select name="distance" class="form-select" > 
+                                                                 <option value="1">Any</option> 
+                                                                <option value="10" selected="selected">10 miles</option> 
+                                                                <option value="25">25 miles</option> 
+                                                                <option value="50">50 miles</option> 
+                                                                <option value="100">100 miles</option>  
+                                                            </select>  -->
+                                                        </div> 
+                                                    </div> 
+                                                    <div class="container from-to"> 
+                                                        <label form="from"><img src="images/block-searchrewards_from.png" width="31" height="8" alt="Zip: "/></label> 
+                                                        <div class="text-wrapper"><input type="text" name="from" value="MM/DD/YY" class="form-text" id="datepicker-fr" /></div> 
+                                                        <label form="to"><img src="images/block-searchrewards_to.png" width="17" height="8" alt="Zip: "/></label> 
+                                                        <div class="text-wrapper"><input type="text" name="to" value="MM/DD/YY" class="form-text" id="datepicker-to" /></div> 
+                                                    </div> 
+                                                    <div class="container cat-submit"> 
+                                                        <label form="category"><img src="images/block-searchrewards_category.png" width="55" height="8" alt="Zip: "/></label> 
+                                                        <div class="select-wrapper select-width-144"> 
+                                                          <select name="category" class="form-select"> 
+                                                                <option value="1" selected="selected">All</option> 
+                                                                <option value="{!category}" />
+                                                                <option value="concerts">concerts</option> 
+                                                                <option value="food">food</option> 
+                                                                <option value="health">healthcare</option> 
+                                                                <option value="house">household items</option> 
+                                                                <option value="sports">sporting events</option> 
+                                                            </select> 
+                                                        </div> 
+                                                        <input type="image" src="images/form_submit-searchrewardsfull.png" onmouseover="javascript:this.src='images/form_submit-searchrewardsfull_ovr.png';" onmouseout="javascript:this.src='images/form_submit-searchrewardsfull.png';" value="submit" class="form-submit" /> 
+                                                    </div> 
+                                                    <div class="clearfix"></div> 
+                                                </form> 
+                                            </div> 
+ 
+                                        </div> 
+                                    </div> 
+ 
+                                </div> 
+</apex:page>

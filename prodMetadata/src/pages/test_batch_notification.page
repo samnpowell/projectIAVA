@@ -1,0 +1,5 @@
+<apex:page controller="test_batch_notification_controller" >
+	<apex:form >
+		<apex:commandButton action="{!execute}" value="Execute Batch" />
+	</apex:form>
+</apex:page>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>San Fran Follow-up Survey (Unconfirmed)</name>
+    <style>none</style>
+    <subject>Did they call you back?</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Let us know by filling out our survey here: http://iava.org/fleet-week-smart-job-fair-follow-survey.
+
+IAVA was proud to kick-off our first Smart Job Fair last week in San Francisco. And we hope that you walked away with valuable career advice, resume tips and - most importantly - new job prospects. AAnd don&apos;t forget about your $200 gift certificate! I am still waiting to receive your paperwork that shows your service in Iraq or Afghanistan. Once I get that I will make sure that you will receive your gift certificate. Keep an eye on your inbox when we start distributing certificates November 26th. 
+
+But we want to hear from YOU exactly how effective the fair was in getting our members employment support that will help. Please help your fellow veterans. Take a minute to complete our post-event survey here: http://iava.org/fleet-week-smart-job-fair-follow-survey.
+
+Tell us how your job search is going. Did you set up an interview with Bechtel or Southwest? How helpful was the resume-writing workshop? What types of companies do you want to see at future job fairs?
+
+We&apos;ll be checking back regularly to track your progress in your job search. But, in the meantime, we&apos;re here to help you get access to more resources and contacts so you can land your dream job.
+
+Your feedback is critical to help as we take events like this across the country. So let us know how it went - so that we can lower veteran unemployment nationwide.
+
+In the coming year, we&apos;re heading to Dallas, Atlanta, Chicago and NYC for more job fairs, so be sure to spread the word to your friends. 
+
+Thank you for supporting IAVA. And stay in touch!
+
+Sincerely,
+
+Jason
+ 
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)
+
+P.S. Save the date - 11/11/11! IAVA will be back in the Bay Area next month to celebrate Veterans Day. Sign up now to come march with us here: http://iava.org/march-iava-san-francisco.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

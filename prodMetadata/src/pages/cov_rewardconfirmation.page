@@ -1,0 +1,135 @@
+<apex:page controller="dc_ctrl_requestreward" showHeader="false" sidebar="false" action="{!LoadSuccessInfo}">
+
+<apex:composition template="cov_template">
+
+    <apex:define name="page-title">
+        <apex:outputText value="{!if(give.Category__c =='Events', 'Event', 'Reward') + ' Confirmation: ' + if(isblank(give.Name), '[not found]', give.Name) + '  - myIAVA'}" />
+    </apex:define>
+
+
+        <apex:define name="body">
+
+            <div class="popup-container">
+
+                <h3>Request Confirmation</h3>
+                <p>&nbsp;</p>
+
+
+                 <table class="table">
+                    <tbody>
+                        <apex:outputPanel layout="none" rendered="{!logo != ' '}"> 
+                            <tr>
+                                <td colspan="2">
+                                    <apex:image id="att" URL="{!logo}" style="max-width:250px; max-height: 150px;" />  
+                                </td>
+                            </tr>
+                        </apex:outputPanel> 
+                        <tr>
+                            <td class="heading">Reward:</td>
+                            <td>
+                                <h4>
+                                    <a href="cov_reward?giveid={!give.Id}"><apex:outputtext value="{!give.Name}"/></a>
+                                </h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading">Date:</td>
+                            <td>
+                                 <h4>
+                                     <apex:outputtext value="{!instance.Date_From__c}"/>
+                                 </h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading">For:</td>
+                            <td>
+                                 <h4>
+                                     <apex:outputtext value="{!contactName}"/>
+                                 </h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading">Email Sent To:</td>
+                            <td>
+                                 <h4>
+                                     <apex:outputtext value="{!contactEmail}"/>
+                                 </h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading" colspan="2">
+                                <p>Instructions:</p>
+                                <p>&nbsp;</p>
+
+
+                                        <apex:outputtext value="Thanks.  We have received your request and you are tentatively on the list to receive the reward. However we'll be in touch before the reward date to confirm the availability of the reward." rendered="{!if(Stage == 'Tentative confirmation',true,false)}" styleClass="lead" />
+
+                                        <apex:outputPanel rendered="{!if(Stage == 'Wait-list',true,false)}" >
+                                            <h4><apex:outputtext value="You are on the wait list." /></h4>
+                                            <p class="lead"><apex:outputtext value="Thanks, we have received your request and you are now on the waitlist.  Because of high demand for this reward, there is limited availability. We'll be in touch to let you know if your request has been approved." /></p>
+                                        </apex:outputPanel>    
+
+                                        <apex:outputtext value="Thanks, we have received your request.  This is a Premium Reward, so availability is very limited. We'll be in touch before the reward date to let you know whether you've received the reward." rendered="{!if(Stage == 'Give requested',true,false)}" styleClass="lead" />
+
+                                        <apex:outputtext value="Please check your email to confirm whether the reward was available." rendered="{!if(Stage != 'Tentative confirmation' && Stage != 'Wait-list' && Stage != 'Give requested' && Stage != 'Final confirmation' && Stage != 'Information sent',true,false)}" styleClass="lead" />
+
+                                        <apex:outputpanel rendered="{!if(Stage == 'Final confirmation',true,false)}" styleClass="lead">
+                                            <apex:outputtext value="Congratulations, you are now on the list for this reward."/>
+                                            <apex:outputtext value="Here are the instructions to claim your reward:"/>
+                                            <p>&nbsp;</p>
+                                            <apex:outputtext value="{!give.Fulfillment_Instructions_rtf__c}" escape="false" rendered="{!if(give.Fulfillment_Instructions_rtf__c != '',true,false)}" />
+                                            <apex:outputtext value="No instructions given. Please contact IAVA if you have questions." rendered="{!if(give.Fulfillment_Instructions_rtf__c == '',true,false)}"/> 
+                                            <p>&nbsp;</p>
+                                            <apex:outputtext value="We hope you enjoy your experience."/> 
+                                        </apex:outputpanel>
+                                        <apex:outputpanel rendered="{!if(Stage == 'Information sent',true,false)}">
+                                            <apex:outputtext value="{!give.Fulfillment_Instructions_rtf__c}" escape="false" rendered="{!if(give.Fulfillment_Instructions_rtf__c != '',true,false)}" />
+                                            <apex:outputtext value="No details given. Please contact IAVA if you have questions." rendered="{!if(give.Fulfillment_Instructions_rtf__c == '',true,false)}"/> 
+
+                                            <p>&nbsp;</p>
+                                            <apex:outputtext styleClass="italicer" value="You should receive an email with this information as well."/>
+                                            <p>&nbsp;</p>
+
+                                        </apex:outputpanel>
+                       
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="heading" colspan="2">
+                                <p>&nbsp;</p>
+                                <ul class="block-list">
+                                    <li>
+                                        <a href="http://twitter.com/home?status=Just%20requested%20this%20from%20IAVA%27s%20myIAVA%20site:%20{!$Site.currentSiteUrl}cov_reward?giveid=%3D{!give.Id}" title="Talk about it on Twitter" target="_blank" class="tw"><apex:image URL="{!URLFOR($Resource.cov_files,'img/socialmedia/twitter.png')}" alt="Share on Twitter"/></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.facebook.com/sharer.php?u={!$Site.currentSiteUrl}cov_reward?giveid={!give.Id}" target="_blank" title="Share on Facebook" ><apex:image URL="{!URLFOR($Resource.cov_files,'img/socialmedia/facebook.png')}" alt="Share on Facebook"/></a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:?subject={!give.Name}&body={!mail_body} {!$Site.currentSiteUrl}cov_reward?giveid={!give.Id}" class="email"><apex:image URL="{!URLFOR($Resource.cov_files,'img/socialmedia/email.png')}" alt="Share via Email" /></a>
+                                    </li>
+                                </ul>
+                                <p><apex:outputtext value="Share this {!if(give.Category__c =='Events', 'event', 'reward')} so your friends can participate too!"/></p>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+                <p>&nbsp;</p>
+
+                <p><a href="{!$Page.cov_reward}?giveid={!give.Id}"><apex:outputtext value="{!'Return to the main ' + if(give.Category__c =='Events', 'event', 'reward') + ' page'}"/></a></p>
+
+
+    </div>
+
+        </apex:define>  
+
+</apex:composition>
+
+</apex:page>

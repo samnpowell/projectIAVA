@@ -1,0 +1,44 @@
+<!-- DEPRECATED - no longer used -->
+
+<apex:page controller="cov_rewards_controller">
+
+    <div class="dashboard-list">
+        <div class="box-heading"><h5>Rewards You've Requested</h5></div>
+        
+        <apex:pageMessages />
+        
+		<apex:outputPanel id="rewardsRequested" rendered="{!conId != null}">
+
+	        <table class="table">  
+	             <thead>  
+	              <tr>  
+	                <th>&nbsp;</th>
+	                <th>Reward</th>  
+	                <th>Status</th>  
+	                <th>Date</th>  
+	              </tr>  
+	             </thead>  
+	             <tbody>  
+	                <apex:repeat id="RewardRequests" value="{!giveRequests}" var="gr">
+	                    <tr>
+	                        <td><a href="{!gr.Id}"><span class="glyphicon glyphicon-search"></span></a></td>
+	                        <td>{!gr.Give_Name__c}</td>
+	                        <td>{!gr.Stage__c}</td>
+	                        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"><apex:param value="{!gr.Give_Instance_Start_Date__c}" /></apex:outputText>
+	                            </td>   
+	                    </tr>
+	                </apex:repeat>
+	            </tbody>  
+	        </table>
+        </apex:outputPanel>
+
+		<apex:outputPanel styleclass="conn-contact-msg" rendered="{!conId == null}">
+			No connected contact, rewards unavailable
+		</apex:outputPanel>		
+
+
+        
+    </div>
+
+
+</apex:page>

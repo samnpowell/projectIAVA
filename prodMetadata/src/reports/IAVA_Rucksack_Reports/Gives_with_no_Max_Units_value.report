@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Give__c$Earliest_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Name</field>
+    </columns>
+    <description>Gives with Max Units left blank may not allow give requests - bug discovered Dec 2012</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Give__c$Maximum_Units_per_Member__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Give__c$Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Gives with no Max Units value</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>IAVA_Gives__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Give__c$Active_Datestamp__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

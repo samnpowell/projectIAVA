@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_PHONE1</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_EMAIL</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.Total_Influenced_Amount__c</field>
+    </columns>
+    <columns>
+        <field>Account.npo02__FirstCloseDate__c</field>
+    </columns>
+    <columns>
+        <field>Account.npo02__LastOppAmount__c</field>
+    </columns>
+    <columns>
+        <field>Account.npo02__LastCloseDate__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.npo02__FirstCloseDate__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.npo02__LastCloseDate__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.npo02__LastOppAmount__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STREET</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_CITY</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_ZIP</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_ID</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.Contact_ID_18_digits__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_ID</field>
+    </columns>
+    <columns>
+        <field>Account.Parent_Org_ID_18_digits__c</field>
+    </columns>
+    <columns>
+        <field>Account.Account_ID_18_digits__c</field>
+    </columns>
+    <description>All Contacts 5000+
+Geo
+Phone
+EM
+Owner
+Contact ID
+Acct ID 18</description>
+    <filter>
+        <criteriaItems>
+            <column>Account.npe01__LifetimeDonationHistory_Amount__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>5000</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>All Contacts 5000+</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountCustomEntity$npe5__Affiliation__c@npe5__Affiliation__c.npe5__Contact__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

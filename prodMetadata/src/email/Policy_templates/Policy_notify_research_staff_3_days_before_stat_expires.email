@@ -1,0 +1,6 @@
+The latest Stat Measurement for the Stat: {!Stat__c.Name} will expire in three days, on {!Stat__c.Latest_Measurement_Expiration_Date__c}
+
+The last stat measurement from {!Stat__c.Measurement_Amount_Date__c} was:
+{!Stat__c.Most_Recent_Amount__c} ({!Stat__c.Amount_Type__c})
+
+Thanks!

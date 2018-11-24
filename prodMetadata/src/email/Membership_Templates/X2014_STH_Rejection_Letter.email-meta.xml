@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2014 STH Rejection Letter</name>
+    <style>none</style>
+    <subject>Your Storm the Hill application status</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for applying to be a part of Storm the Hill 2014.
+
+We received an astounding number of applications for a limited amount of positions available for the different Brigades. The applications once again showed the passion and determination of you - our members. Every year, this program is growing the new veterans movement in unprecedented ways.
+
+I regret to inform you that you were not chosen for Storm the Hill. Though your application and initiative were impressive, we&apos; had a limited number of opportunities, and we&apos;ve had to make some tough choices. However, as we expand our organizing and advocacy activities across the country we would like to recruit you to build community at home and join in our virtual campaign activities throughout the year, especially by participating in our Storm the Hill web site (http://stormthehill.org) designed to leverage the power of social media as we Storm The Hill this year. We hope you&apos;ll follow along and share your story with us.
+
+You offered to join the Storm the Hill 2014 because you want to make a difference for our community, and you can still help us fulfill that mission - in fact, our success depends on it. If we want to change the landscape of support for new vets, we need the whole IAVA community to make some noise. Through out the year we will be encouraging our members to lead VetTogethers (http://vettogethers.org). These are member driven events in your local community meant to build the veteran community. Please visit VetTogethers.org to learn more and to host a VetTogether in your community.
+
+Thank you for supporting Storm the Hill 2014.
+
+Sincerely,
+Paul
+
+Paul Rieckhoff
+Founder and CEO
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

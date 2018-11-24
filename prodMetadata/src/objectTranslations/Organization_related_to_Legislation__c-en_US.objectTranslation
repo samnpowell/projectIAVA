@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Organization related to Legislation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Organizations related to Legislation</value>
+    </caseValues>
+    <fields>
+        <label><!-- Legislation --></label>
+        <name>Legislation__c</name>
+        <relationshipLabel><!-- Organizations related to Legislation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
+        <relationshipLabel><!-- Organizations related to Legislation --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Organization&apos;s position on bill --></help>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+        <picklistValues>
+            <masterLabel>Key Ally</masterLabel>
+            <translation><!-- Key Ally --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lean Oppose</masterLabel>
+            <translation><!-- Lean Oppose --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lean Support</masterLabel>
+            <translation><!-- Lean Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Fence</masterLabel>
+            <translation><!-- On Fence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oppose</masterLabel>
+            <translation><!-- Oppose --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Target</masterLabel>
+            <translation><!-- Target --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

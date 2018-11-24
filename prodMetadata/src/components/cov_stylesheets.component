@@ -1,0 +1,1183 @@
+<apex:component layout="none" >
+
+    <c:cov_include_css_bootstrap />
+
+
+    
+    <style type="text/css">
+    
+    /* Move to separate file */
+    
+		/* Navbar CSS is in header file  */	
+    
+		body {
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+			/*font-size: 14px;
+			line-height: 16px;*/
+			font-size: 16px;
+            line-height: 22px;
+			color: #333;
+			padding-bottom: 140px; /* extended in case of short content page */
+		}
+
+        .bootstrap .table>thead>tr>th, .bootstrap .table>tbody>tr>th, .bootstrap .table>tfoot>tr>th, .bootstrap .table>thead>tr>td, .bootstrap .table>tbody>tr>td, .bootstrap .table>tfoot>tr>td {
+            line-height: 1.6;
+        }
+
+		.bootstrap a
+		, .dashboard-list .dashboard-title a, .dashboard-link-style
+		, .bootstrap a:hover, .bootstrap a:focus {
+			color: #284734;
+			font-weight: bold;
+		}
+
+		.bootstrap a:hover.btn {
+			font-weight: normal;
+		}
+
+		#dashboard-chatter {
+			/*font-size: 12px;*/
+			font-size: 14px;
+			font-family: arial, helvetica, clean, sans-serif;
+		}
+
+		@media only screen and (max-device-width: 480px) {		
+	        #dashboard-chatter #feedwrapper {
+	            font-size: 14px;
+	        }
+	    }
+
+		.stronger {
+			font-weight: bold;
+		}
+		.smaller {
+			/*font-size: 9px;*/
+			font-size: 11px;
+		}
+		.mediummer {
+			font-size: 11px;
+		}
+		.lighter {
+			color: #999;
+		}
+		.italicer {
+			font-style: italic;
+		}
+		a.lighter-link {
+			font-weight: normal;
+			font-size: 12px;
+		}
+		.spaced-horiz {
+			margin-left: 12px;
+			margin-right: 12px;
+		}
+		.spaced-top {
+			margin-top: 12px;
+		}
+		.bootstrap .links-alt-style a {
+			border-bottom: 1px dotted;
+			font-weight: normal;
+			text-decoration: none;
+		}
+		.bootstrap .links-alt-style a:hover {
+			border-bottom: 1px solid;
+			font-weight: normal;
+			text-decoration: none;
+		}
+		.bootstrap .no-padding-sides {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.bootstrap .big-icon-group .list-group-item .glyphicon {
+			font-size: 24px;
+			margin-right: 12px;
+		}
+		.big-icon-group .item-description {
+			margin-left: 12px;
+			color: #999;
+		}
+		#event-resources-panel .big-icon-group li {
+			margin-left: 0;
+		}
+		.color-iava-green {
+			color: #284634;
+		}
+		.color-success {
+			color: #009933;
+		}
+		.color-error {
+			color: #FF0000;
+		}
+		.relative {
+			position: relative;
+		}
+		.absolute {
+			position: absolute;
+		}
+		/* http://tutorialsplane.com/vertical-align-in-bootstrap-3/ */
+		.vertical-center {
+		    vertical-align: middle !important;
+		}
+		.vertical-top {
+		    vertical-align: top !important;
+		}
+		.vertical-bottom {
+		    vertical-align: bottom  !important;
+		}
+		.padded-regular {
+			padding: 12px;
+		}
+		.padded-small {
+			padding: 6px;
+		}
+
+ 		.almost-hidden, .bootstrap a.almost-hidden, .bootstrap a:visited.almost-hidden {
+			color: #eee;
+		}
+		.almost-hidden-bg {
+			background-color: #111;
+		}
+
+		.section {
+			margin-bottom: 20px;
+			margin-top: 12px
+		}
+		
+		.well-inner {
+			max-width: 600px;
+		}
+
+		.user-photo
+		, .bootstrap .dashboard-list img.list-thumbnail
+		, .chatter-avatar img.chatter-photo,  .chatter-avatar img.chatter-avatarStyle
+		 {
+			border-radius: 100%;
+		}
+		
+/*		.glyphicon {
+    		text-indent:-99999px;
+			 So icons can have text for accessibility that doesnt display 
+		}
+*/
+		ul.block-list li {
+			display: inline-block; 
+			vertical-align: top;
+		}
+
+		ul.block-list-in-table {
+			padding-left: 0;
+		}
+
+		.icon-flipped {
+			transform: scaleX(-1);
+		    -moz-transform: scaleX(-1);
+		    -webkit-transform: scaleX(-1);
+		    -ms-transform: scaleX(-1);
+		}
+
+		a#docViewerOverlayX {
+			background: transparent url('/img/alohaSkin/closeX.png');
+			/* otherwise gets overwritten by bootstrap */
+		}
+
+		/* make sure chatter popup displays on top of header so close button visible */
+		.docViewerPanel {
+			z-index: 1200;
+		}
+
+        /* force thumbails to appear a bit larger in chatter feed */
+        /* same css in header html file */
+/*
+        img.contentThumbnail {
+            min-width: 200px;
+        }
+
+		img.contentThumbnail.contentThumbnailNoPreview {
+			min-width: inherit;
+		}
+		
+        .feeditemcomment img.contentThumbnail {
+            max-width: inherit;
+            max-height: inherit;
+        }
+
+        .contentPost .rightSideCell {
+            display: none;
+        }
+        .contentPost .rightSideCell .contentFileTitle {
+            display: none;
+        }
+        td.thumbnailCell:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    
+        a.contentThumbnail-a {
+            width: inherit !important;
+            height: inherit !important;
+        }
+*/           
+        /* end thumbnail css */
+
+
+		.bootstrap .tooltip-inner {
+			background-color: #333;
+		}
+		.bootstrap .tooltip.top .tooltip-arrow, .bootstrap .tooltip.top-left .tooltip-arrow, .bootstrap .tooltip.top-right .tooltip-arrow {
+			border-top-color:#333
+		}
+		.bootstrap .tooltip.right .tooltip-arrow{border-right-color: #333;}
+		.bootstrap .tooltip.left .tooltip-arrow{border-left-color:#333}
+		.bootstrap .tooltip.bottom .tooltip-arrow, .bootstrap .tooltip.bottom-left .tooltip-arrow, .bootstrap .tooltip.bottom-right .tooltip-arrow{
+			border-bottom-color:#333
+		}
+
+		.bootstrap .btn-default .glyphicon.lighter {
+			color: #999;
+		}
+
+		.lightshade {
+			background-color: #eee;
+		}
+
+		tr.clickable-row, div.clickable-div { 
+			cursor: pointer; 
+		}
+
+/*		/-* From http://blog.avtex.com/2012/01/27/how-to-make-an-entire-div-clickable-with-css/ *-/
+		div.clickable { /-* Containing div must have a position value *-/ 
+			position:relative; 
+		} 
+		div.clickable a { 
+			position:absolute; 
+			width:100%; 
+			height:100%; 
+			top:0; 
+			left:0; 
+			text-decoration:none; /-* Makes sure the link   doesnt get underlined *-/ 
+			z-index:10; /-* raises anchor tag above everything else in div *-/ 
+			background-color:white; /-*workaround to make clickable in IE *-/ 
+			opacity: 0; /-*workaround to make clickable in IE *-/ 
+			filter: alpha(opacity=1); /-*workaround to make clickable in IE *-/ 
+		} 
+
+		.clickable-span-container {
+			position: relative;
+		}
+
+		.clickable-span {
+			position:absolute; 
+			width:100%;
+			height:100%;
+			top:0;
+			left: 0;
+			z-index: 1;
+			/-* edit: fixes overlap error in IE7/8 *-/
+			background-image: url({!URLFOR($Resource.cov_files,'img/empty.gif?G')});
+		}
+*/
+		h3.popover-title {
+			display: block; /* was getting set to inline by common.css */
+		}
+
+		.popover[class*=tour-] {
+			z-index: 1200; /* no idea why it was appearing behind some elements at the default 1100 */
+		}
+
+		.bootstrap .table>tbody>tr>td.no-border-top, .bootstrap .table>tbody>tr.no-border-top>td {
+			border-top: none;
+		}
+
+		/* COV DASHBOARD STYLES */
+				
+/*		#dashboard-chatter {
+			width: 466px;
+		}	
+*/
+		#dashboard-chatter .publishercontainer .contentPublisherSlideDown table.postInput {
+			width: inherit;
+		}
+
+		#dashboard-chatter input.cxcommentplaceholderaction {
+			height: inherit;
+			font-weight: initial;
+		}
+
+		.bootstrap .cxcommentplaceholder label {
+			display: inherit;
+		}
+
+		#dashboard-chatter .feedcontainer {
+			max-width: 760px;
+		}
+
+		#dashboard-chatter .feedcontainer .feeditemcomment, 
+		#dashboard-chatter .feedcontainer .feeditemcommentplaceholder, 
+		#dashboard-chatter .feedcontainer .feeditemlike, 
+		#dashboard-chatter .feedcontainer .feedcommentsshowmore {
+		    background-color: #f2f3f5;
+		    border-bottom-color: #dfe4ea;
+		    border-top: none;
+		    border-top-width: initial;
+		    border-top-style: none;
+		    border-top-color: initial;
+
+		    border-bottom: 1px solid #dfe4ea;
+		}
+
+		#dashboard-chatter * {
+			box-sizing: initial;
+		}
+
+/*		#dashboard-chatter .publishercontainer input[type="text"] {
+			width: 320px;
+		}
+*/
+		#announcements-header {
+			margin-bottom: 10px;
+		}
+
+/*		.feeditem div.feeditemaux {
+			width: 370px;
+		}
+*/		
+		@media only screen and (max-device-width: 480px) {
+	        #dashboard-chatter .feedcontainer .feeditemfooter
+	        , #dashboard-chatter .feedcontainer .feedcommentfooter {
+	        	font-size: 12px;
+	            line-height: 14px;
+	        }
+	    }
+
+		
+
+		#profile-panel {
+			margin-top: 12px;
+			padding-bottom: 36px;
+		}
+		.profilepanel {
+			margin-bottom: 10px;
+		}
+		#profilepanel-photo {
+			margin-right: 14px;
+		}
+		.profilepanel img {
+			max-width: 150px;
+			/*height: 150px;*/
+		}
+		#profilepanel-name h5 {
+			margin-bottom: 2px;
+			display: block;
+		}
+		#profilepanel-info, #profilepanel-messages {
+			color: #999;
+			font-size: 10px;
+		}
+		.profilepanel ul {
+			list-style-type: none;
+			padding-left: 0;
+			margin-top: 14px;
+		}
+		.profilepanel ul li {
+			margin-left: 0;
+		}
+/*		.profilepanel .icons-list {
+			position: relative;
+			left: -15px;
+		}
+*/
+		.profilepanel .icons-list .glyphicon {
+			margin-right: 5px;
+		}
+		.profilepanel .icons-list .glyphicon,
+		.profilepanel ul li a,
+		.profilepanel ul li a:visited {
+			color: #aaa;
+		
+		}
+		.profilepanel .icons-list .needs-attn .glyphicon,
+		.profilepanel ul li .needs-attn a,
+		.profilepanel ul li .needs-attn a:visited {
+			color: orange;
+		}
+
+		.dashboard-list {
+		    padding: 11px;
+		    font-size: 14px;
+		}
+		.dashboard-list h5 {
+			color: #333;
+		}
+		.dashboard-list #vouch-form {
+			margin-left: 10px;
+			margin-bottom: 20px;
+		}
+		#vouch-form h6 {
+			color: #555;
+		}
+/*		.dashboard-list .dashboard-title a {
+			font-size: 12px;
+?			font-weight: bold;
+			color: #015ba7;			
+		}
+		.dashboard-link-style {
+?			font-weight: bold;
+			color: #015ba7;			
+		}
+*/
+
+		#container-overall {
+/*			padding-right: 15px;
+			padding-left: 15px;
+*/			background-color: white;
+			margin-right: auto;
+			margin-left: auto;
+			background-repeat: repeat;
+	    	padding-left: 30px;
+	    	padding-right: 30px;
+			max-width: inherit;
+
+			/* full-width window */
+            width: 100%;
+            max-width: 1800px;
+
+		}    
+		#container-overall {
+			/*min-width: 470px;*/
+/*			workaround for container-fluid not stretching
+			full-width on mobile portrait view			
+*/		}
+
+		#container-guests {
+			padding-top: 68px;
+		}
+
+		.container-dashboard {
+			background: url('{!URLFOR($Resource.cov_files,'img/backgrounds/details-gotyourback1-darker.jpg')}') #343432 no-repeat;
+			background-position: center bottom;
+			background-size: 3200px 1800px;
+			background-attachment: fixed;
+		}
+
+		.bootstrap .container-fluid {
+			padding-left: inherit;
+			padding-right: inherit;
+		}
+
+		#container-overall.container-fluid {
+			padding-left: inherit;
+			padding-right: inherit;
+			padding-top: inherit;
+		}
+
+		#container-page {
+			margin-top: 50px;
+			padding-top: 15px;
+		}
+
+		/* full-height bootstrap columns */
+		.full-height-container {
+			display: table;
+		}
+
+		.full-height-row {
+			display: table-row;
+		}
+
+		.full-height-column {
+			display: table-cell;
+			float: none;
+		}
+
+
+		.bootstrap .dashboard-list .table .table
+		, .feedcontainer .feeditemcomment, .feedcontainer .feedcommentsshowmore, .feedcontainer .feeditemcommentplaceholder, .feedcontainer .feeditemlike
+		, .feedcontainer .feeditemcommentplaceholder input, .feedcontainer .feeditemcommentnew .foobar
+		 {
+			background: transparent;
+		}
+
+		.dashboard-list .dashboard-description, .dashboard-panel .dashboard-description {
+			/*font-size: 11px;*/
+			color: #999; 
+		}
+		#active-users .dashboard-description {
+			/*margin-top: 2px;*/
+			margin-bottom: 2px;
+		}
+/*		.dashboard-list .btn {
+			width: 50px;
+			padding: 2px;
+		}
+		.dashboard-list .form-control, .dashboard-list .btn {
+			font-size: 10px;
+		}
+*/
+		.dashboard-list .form-control.input[type="text"] {
+			width: 60px;
+			height: 18px;
+		}
+		.dashboard-list	.input-longer {
+			width: 100px;
+		}
+		.dashboard-list .wider-input {
+			width:90px;
+		}
+
+		.dashboard-list .large-icon {
+			font-size: 14px;
+		}
+
+		.box-heading {
+		  width: 100%;
+		  height: 60px;
+		  clear: both;
+		}
+
+		.box-heading-edge { 
+			float: left; 
+			position: absolute;
+			width: 0px; 
+			height: 0px; 
+			border-top: 60px solid rgba(64,64,64,0.8); 
+			border-right: 30px solid transparent; 
+			-webkit-transform: scale(0.9999); 
+			-ms-transform: scale(0.9999); 
+			transform: scale(0.9999); 
+		}
+
+		/*.box-heading, .box-heading::after{*/
+		.box-heading-content {
+			background-color: rgba(64,64,64,0.8);
+			border-top: none;
+			border-right: none;
+			border-left: none;
+		}
+
+		.box-heading-content {
+		    /*background-color : #343432;*/
+		    float: left;
+		    position : relative;
+		    display : block;
+		    height : 60px;
+		    width : 100%;
+		    padding: 18px;
+		    /*border-bottom: 4px solid #d7f35a;*/
+			z-index: 5;
+		}
+
+/*		.box-heading::after {
+		    content: '';
+		    height: 60px;
+		    width: 50px;
+		    // background-color: #343432;
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    left: auto;
+		    transform: skewX(155deg);
+		    transform-origin: top;
+		    -webkit-transform: skewX(155deg);
+		    -webkit-transform-origin: 100% 100%;
+		    z-index: -4;
+			// border-bottom: 4px solid #d7f35a;
+		}*/
+
+		.box-heading a, .box-heading a:visited {
+			color: #ddd;
+		}
+
+		.box-heading a:hover {
+			color: #fff;
+		}
+
+		.box-heading h5, .bootstrap h5, .bootstrap .h5 {
+			font-size: 20px;
+		}
+		.box-heading h5, .box-heading h3 {
+		    /*padding-left: 14px;*/
+		    color: #d7f35a;
+		}
+		.bootstrap .box-heading h5 a, .bootstrap .box-heading h5 a:focus {
+			text-decoration: none;
+			color: #d7f35a;
+			border-bottom: 1px;
+		}
+		.bootstrap .box-heading h5 a {
+			border-bottom-style: dotted;
+		}
+		.bootstrap .box-heading h5 a:focus, .bootstrap .box-heading h5 a:hover {
+			border-bottom-style: solid;
+		}
+		.box-heading .glyphicon {
+			color: #ddd;
+		}
+		.box-content {
+			margin-top: 3px;
+			padding: 18px; 
+		}
+		.box-content
+		, .bootstrap .dashboard-list .well {
+			background-color: white;
+		}
+		.box-content .list-thumbnail {
+			max-height: 40px;
+		}
+
+
+
+		/* eliminate side padding on mobile */
+		@media only screen and (max-device-width: 480px) {
+			#container-overall {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.dashboard-list {
+				padding: 0;
+			}
+			#dashboard-page .col-sm-12 {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.box-heading-edge {
+				border-right: 0;
+			}
+
+		}
+
+
+		/* bottom nav bar */
+		.navbar-fixed-bottom {
+			background-color: #343432;
+		}
+
+		#bottomNav .active {
+			/*color: #284634;*/
+			border: 2px solid #ddd;
+			background-color: #eee;
+		}
+
+		#bottomNav a {
+			/*font-weight: normal;*/
+			text-transform: uppercase;
+			height: 100%;
+		}
+
+		#bottomNav .nav-item {
+			padding: 6px 0;
+		}
+		#bottomNav.row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		@media all and (orientation:portrait) {
+			#bottomNav {
+				font-size: 10px;
+				line-height: 12px;
+			}
+
+			#bottomNav .glyphicon {
+				font-size: 22px;
+				margin-bottom: 12px
+			}
+
+		}
+
+		@media all and (orientation:landscape) {
+			#bottomNav {
+				font-size: 9px;
+				line-height: 11px;
+			}
+
+			#bottomNav .glyphicon {
+				font-size: 22px;
+				margin-bottom: 8px
+			}
+
+		}
+
+		/* to allow 5 column layout */
+		div.col-xs-2.dot-four {
+			width: 20%;
+		}
+
+
+
+
+		.dashboard-list .eventStatus-Label {
+			font-size: 10px;
+			font-style: italic;
+			margin-right: 2px;
+		}
+
+
+		#groups-recent-activity .groupDescription,
+		#groups-recent-activity .memberAndOwner,
+		#groups-recent-activity .groupMembership {
+			color: #999;
+			font-size: 11px;
+		}
+		.dashboard-list .groups-recent-activity-private {
+			color: #999;
+		}
+		#dashboard-announce-container .announce-thumb {
+			width: 80px;
+			height: 80px;
+			margin-right: 20px;
+		}
+		.bootstrap .dashboard-announce-item {
+			background-color: #e3e3e3;
+		}
+		.dashboard-announce-item .close {
+			position: absolute;
+			right: 1px;
+			top: 1px;
+			font-size: 14px;
+			width: 28px;
+		}
+		.dashboard-announce-item .btn-attn {
+			background-color: #E4A580;
+			font-size: 12px;
+			margin-top: 12px;
+		}
+		.dashboard-announce-body {
+			color: #666;
+			display: table;
+			/*font-size: 12px;*/
+		}
+		.relative-container {
+			position: relative;
+		}
+		.dashboard-announce-item .more-link {
+			position: absolute;
+			bottom: 6px;
+			right: 6px;
+		}
+		body.modal-open {
+			overflow: hidden;
+		}
+		#popupBox .modal-body .modal-iframe {
+			width: 100%;
+			min-height: 100%;
+		}
+		#modal-container {
+			max-width: 600px;
+		}
+		@media only screen and (max-device-width: 480px) {
+			#modal-container {
+			max-width: 100%;
+		}
+		}
+		#popupBox .modal-dialog,
+		#popupBox .modal-content {
+			height: 96%;
+			/* firefox crappy fix */
+		}
+		#popupBox .modal-body {
+			height: 90%;
+			/* firefox crappy fix */
+		}
+	 	.popup-container {
+			max-width: 520px;
+			margin: auto;
+			padding: 0 16px;
+		}
+
+		.popup-container #searchBox
+		, .popup-container .tt-search-box
+		, .popup-container .tt-query
+		, .popup-container .tt-hint {
+			border-radius: 0;
+			height: inherit;
+		}
+		.popup-container .twitter-typeahead {
+			margin-bottom: 12px;
+			width: 50%;
+		}
+		.half-width {
+			width: 50%;
+		}
+		.spacer-bottom-small {
+			margin-bottom: 12px;
+		}
+		.gray-border {
+			border: 2px solid #ccc;
+		}
+		.highlight-section {
+			padding: 20px; 
+			border: 1px dotted lightgray;
+		}
+
+		/* detail-pg like on the popup box, as opposed to detail-page like cov_vouchees */
+		/* sorry, confusing! */
+
+		.detail-pg {
+			font-family: 'Arial','Helvetica',sans-serif;
+		}
+		.detail-pg .detail-image {
+			margin: 20px 0;
+		}
+		.detail-pg h2 {
+			margin-bottom: 20px;
+			display: block;
+		}
+		.detail-pg td.heading {
+			width: 100px;
+			padding-top: 16px;
+		}	
+		.detail-pg .heading {
+			font-size: 14px;
+			margin-bottom: 12px;			
+		}
+
+		.detail-pg table tr td h4 {
+			display: block;
+			margin-top: 2px;
+			margin-bottom: 2px;
+		}
+
+		.bootstrap .btn-green .btn, .bootstrap button.btn-green {
+			color: #fff;
+			background-color: #5cb85c;
+			border-color: #4cae4c;
+		}
+
+		.bootstrap .btn-red .btn, .bootstrap button.btn-red {
+			color: #fff;
+			background-color: #d9534f;
+			border-color: #d43f3a;
+		}
+
+		.bootstrap .btn-yellow .btn, .bootstrap button.btn-yellow {
+			color: #fff;
+			background-color: #f0ad4e;
+			border-color: #eea236;
+		}
+
+		.bootstrap .btn-pre-save .btn, 
+		.bootstrap button.btn-pre-save, 
+		.bootstrap button.btn-pre-save:focus, 
+		.bootstrap button.btn-pre-save:active {
+			border: 3px dashed orange !important;
+			background-color: #fff;
+			font-style: italic;
+			color: orange;
+		}
+
+		.bootstrap button.btn-pre-save.btn-overridden {
+			position: relative;
+			border: none !important;
+		}
+
+		.bootstrap button.btn-pre-save.btn-overridden::after {
+			border-bottom: 3px solid orange;
+		    content: "";
+		    left: 6px;
+		    position: absolute;
+		    right: 6px;
+		    top: 50%;
+		}
+
+		.pre-save-button p, .pre-save {
+			color: orange;
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		.bootstrap .btn-lightgreen .btn, .bootstrap button.btn-lightgreen,
+		.bootstrap button.btn-lightgreen.btn-option-set:focus {
+			color: #4cae4c;
+			background-color: #d9ead3;
+			border-color: #4cae4c;
+		}
+
+		.bootstrap .btn-lightred .btn, .bootstrap button.btn-lightred,
+		.bootstrap button.btn-lightred.btn-option-set:focus {
+			color: #d43f3a;
+			background-color: #f4cccc;
+			border-color: #d43f3a;
+		}
+
+		.bootstrap .btn-overridden .btn, .bootstrap button.btn-overridden,
+		.bootstrap .btn-overridden .btn, .bootstrap button.btn-overridden:focus {
+			background-color: #eee !important;
+			border-color: #e6e6e6;
+			font-style: italic;
+			color: #bbb;
+			text-decoration: line-through;
+		}
+
+		.bootstrap button.btn-checkin {
+		    padding-left: 20px;
+		    padding-right: 20px;
+		}
+
+		.bootstrap button.btn-lightgreen {
+		    padding-left: 12px;
+		    padding-right: 12px;
+		}
+
+		.table-header {
+			font-weight: bold;
+		}
+
+		.detail-pg .eventStatus-section {
+			margin-left: 10px;
+		}
+
+		.detail-pg .eventStatus-Label {
+			font-style: italic;
+		}
+
+		.detail-pg .eventStatus {
+			font-weight: bold;
+			font-size: 14px;
+		}
+
+		.detail-pg .detail-image img {
+			max-width: 90%;
+			max-height: 50%;
+		}
+
+		.detail-pg .detail-img-thumb {
+			max-height: 50px;
+			max-width: 50px;
+		}
+		
+		.detail-pg .heading-category {
+			color: #ccc;
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+
+		.conn-contact-msg {
+			font-size: 9px;
+			font-style: italic;
+			color: #999;
+		}
+
+		.smaller-chatter-icon-container .chatter-avatarRegular, 
+		.smaller-chatter-icon-container .chatter-avatarRegular .chatter-photo, 
+		.smaller-chatter-icon-container .chatter-avatarRegular .chatter-avatarStyle {
+			width: 30px;
+			height: 30px;
+		}
+
+		.td-indent {
+			width: 10px;
+		}
+		
+		.cov-inner-table, .bootstrap .cov-inner-table {
+			margin-bottom: 0;
+			background-color: #fff;
+		}
+
+		table.radio-large {
+			margin: 20px 0;
+		}
+
+		table.radio-large td input[type="radio"] {
+			margin-right: 13px;
+		}
+
+		table.radio-large td {
+			height: 50px;
+			font-size: 16px;
+		}
+
+		.radio-horiz td {
+			padding: 0 10px;
+			font-size: 14px;
+		}
+
+		.radio-horiz td label {
+			margin-left: 6px;
+		}
+
+		.bootstrap .smaller-close {
+			font-size: 14px;
+		}
+
+		.bootstrap .case-comment textarea {
+			width: 70%;
+			margin: 10px 0;
+		}
+
+		.bootstrap textarea.form-control {
+			height: inherit;
+		}
+
+		.bootstrap .half-width {
+			width: 50%;
+		}
+
+		.comment-msg {
+			font-style: italic;
+			font-weight: bold;
+		}
+
+		/* DETAIL PG e.g. cov_vouchees */
+		
+		.detail-page .form-inline input[type="text"] {
+			width: 100px;
+			margin-right: 5px;
+		}
+ 
+		.detail-page .form-inline textarea {
+			max-width: 500px;
+			height: auto;
+		}
+
+		.detail-page .form-inline input.btn {
+			margin-left: 5px;
+		}
+
+		.detail-page .form-inline input.input-longer {
+			width: 200px;
+		}
+				
+/*		.detail-page .btn {
+			background-color: #DBE8BE;
+		}
+*/
+		.form-inline-row {
+			margin: 20px auto;
+		}
+
+		#vouch-form .checkbox {
+			margin-right: 8px;
+		}
+
+		#vouchees-table {
+			max-width: 750px;
+		}
+
+		#guest-reply-row {
+			background-color: rgba(215, 243, 90, 0.2);
+		}
+		#guest-reply-cell {
+			padding: 20px;
+		}
+		#guest-reply-table {
+			background-color: inherit;
+		}
+		.guest-reply-radio label {
+			font-size: 18px;
+			font-weight: normal;
+		}
+
+		#page-refresher {
+			margin-bottom: 14px;
+		}
+		
+		/* PROFILE PG */
+ 		
+		.profile-frame {
+			width: 730px;
+			margin-top: 12px;
+		}
+
+		.profile-frame .box-heading {
+			margin-bottom: 8px;
+		}
+
+		.big-textarea textarea {
+			height: 50px;
+			width: 400px;
+		}
+
+		.bigger-textarea textarea {
+			height: 100px;
+			width: 400px;
+		}
+ 		.narrow-dropdown select {
+ 			width: 60px;
+ 		}
+ 		
+		.profile-frame,
+ 		.profile-frame .form-select,
+ 		.profile-frame input,
+ 		.profile-frame label {
+ 			font-size: 12px;
+ 		}
+
+ 		.profile-frame .form-select,
+ 		.profile-frame input[type="text"] {
+ 			width: 80px;
+ 		}
+ 		.profile-frame textarea {
+ 			width: 130px;
+ 		}
+ 		
+ 		.returnLink-wrapper {
+ 			width: 100%;
+ 		}
+
+ 		.bootstrap #eventlist-tabs .nav>li>a {
+ 			padding-top: 4px;
+ 			padding-bottom: 4px;
+ 		}
+
+ 		.bootstrap #eventlist-tabs .nav-tabs>li.active>a
+ 		, .bootstrap #eventlist-tabs .nav-tabs>li.active>a:hover
+ 		, .bootstrap #eventlist-tabs .nav-tabs>li.active>a:focus {
+ 			color: #666;
+ 			background-color: #d7f35a;
+ 		}
+
+ 		.callout-box {
+ 			background-color: white;
+ 			padding: 6px;
+ 		}
+
+ 		.callout-box, .callout-box a
+ 		, .image-block .callout-box a
+ 		, .image-block .callout-box a:visited
+ 		, .image-block .callout-box a:hover {
+ 			color: #333;
+ 		}
+
+ 		.link-bar {
+ 			padding: 10px 6px;
+ 			background-color: #343432;
+ 			color: #666;
+ 			font-size: 18px;
+ 		}
+
+ 		.link-bar a, .link-bar a:hover, .link-bar a:active, .link-bar a:visited{
+			color: #666;
+		}
+
+		.link-bar a:hover {
+			text-decoration: 1px dotted underline;
+		}
+
+ 		.bootstrap .spaced-section {
+ 			padding: 6px 12px 12px;
+ 			margin-bottom: 6px;
+ 		}
+
+ 		.bootstrap .spaced-section h5 {
+ 			display: block;
+ 		}
+
+ 		.bootstrap .spaced-section ul li {
+ 			margin-bottom: 12px;
+		} 		
+
+		.bootstrap .bottom-space {
+			margin-bottom: 8px;
+		}
+ 		
+ 		/* IAVA Plus / Rucksack content */
+ 		
+ 		.sub-content table td {
+ 			padding-bottom: 10px;
+ 		}
+
+ 
+    </style>
+
+</apex:component>

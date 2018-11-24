@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Memorial Day LL AAR</name>
+    <style>none</style>
+    <subject>Memorial Day wrap up</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Congratulations on being a part of IAVA’s first national campaign for Memorial Day. We have always recognized the importance of honoring the service and sacrifice of the 2.2 million OIF/OEF veterans and of the millions who have served in past conflicts and wars. Until this year, we have focused our attention on bringing members and supporters together at Arlington National Cemetery. Although Arlington is a great focal point for this poignant holiday, IAVA members are spread across the country. This year, with your help, we were able to connect with more of our members and supporters on this day than ever before.
+
+We reached out to places we have never been before such as Kodak, TN, and to old strongholds like New York, Los Angeles and San Diego. I want to hear back from you to see how things went on the ground. Please feel out this short survey, it should only take 15 minutes and will help me and all of IAVA with future events. &lt;http://iava.org/2011-memorial-day-aar&gt;
+
+Again, I thank you for stepping up and being a true IAVA leader. If you haven’t already done so, please email me any pictures you have.
+
+Sincerely,
+Anthony
+-- 
+Anthony Pike
+Membership Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue, 10th Floor
+New York, NY 10017
+(212) 982-9699
+www.iava.org 
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

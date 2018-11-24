@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles*Contact$Contact_ID_18_digits__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Id</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Campaign</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Direct Mail 2012</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Is_First_Donation__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Donors for Direct Mail 2012</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Donations_with_Contact_Roles_and_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity.OpportunityContactRoles*Contact$Contact_ID_18_digits__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

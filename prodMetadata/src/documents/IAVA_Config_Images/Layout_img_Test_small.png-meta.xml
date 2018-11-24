@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Blue &quot;Test&quot; image smaller for related list views</description>
+    <internalUseOnly>true</internalUseOnly>
+    <name>Layout img - Test small</name>
+    <public>false</public>
+</Document>

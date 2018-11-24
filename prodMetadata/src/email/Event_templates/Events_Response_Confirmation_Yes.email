@@ -1,0 +1,22 @@
+Hi {!IAVAEvent_Attendee__c.Event_Attendee_s_First_Name__c},
+
+Thanks for signing up to join IAVA at our upcoming {!IF(IAVAEvent_Attendee__c.Event_Type__c = "VetTogether", "VetTogether,","event,")} {!IAVAEvent_Attendee__c.Event_Name__c}.
+
+Here's all the info one more time:
+.
+{!IAVAEvent_Attendee__c.Event_Name__c} 
+{!IAVAEvent_Attendee__c.Event_Date__c} 
+{!IAVAEvent_Attendee__c.Event_Times__c} 
+
+{!IAVAEvent_Attendee__c.Event_Venue__c} 
+{!IAVAEvent_Attendee__c.Event_Street_Address__c} 
+{!IAVAEvent_Attendee__c.Event_CityStateZip__c} 
+
+{!IAVAEvent_Attendee__c.Brief_Description__c}
+
+For more info, or to sign up a friend, check out the event page!
+https://cov.force.com/iava/cov_event?id={!IAVAEvent_Attendee__c.EventId__c}
+
+Be sure to also check out our VetTogether page, http://iava.org/vettogether/ to see what else is coming up near you, or to sign up to host the next event! 
+
+Thanks for being a part of IAVA!

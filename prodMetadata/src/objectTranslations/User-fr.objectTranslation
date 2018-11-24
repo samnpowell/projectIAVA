@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- DB Region --></label>
+        <name>DB_Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date the user joined COV, thereby accepting any terms and conditions listed on the COV Gateway page. --></help>
+        <label><!-- Date of COV Terms and Conduct Acceptance --></label>
+        <name>Date_of_COV_Terms_and_Conduct_Acceptance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Marking the first time the user logs in to COV --></help>
+        <label><!-- Date of first COV login --></label>
+        <name>Date_of_first_COV_login__c</name>
+    </fields>
+    <fields>
+        <label><!-- Don&apos;t Feature on COV --></label>
+        <name>Don_t_Feature_on_COV__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, COV users will automatically follow this user on first login --></help>
+        <label><!-- Everyone follows in COV --></label>
+        <name>Everyone_follows_in_COV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last VetTogether Hosted w attendance --></label>
+        <name>Last_VetTogether_Hosted_w_attendance__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sort order for prioritizing user records, especially for myIAVA --></help>
+        <label><!-- Preferred User Sort Order --></label>
+        <name>Preferred_User_Sort_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Staff Type --></label>
+        <name>Staff_Type__c</name>
+        <picklistValues>
+            <masterLabel>Full-Time Staff</masterLabel>
+            <translation><!-- Full-Time Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent Contractor</masterLabel>
+            <translation><!-- Independent Contractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intern</masterLabel>
+            <translation><!-- Intern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Part-Time Staff</masterLabel>
+            <translation><!-- Part-Time Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer</masterLabel>
+            <translation><!-- Volunteer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Certified Product Owner --></label>
+        <name>agf__Certified_Product_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Certified Scrum Master --></label>
+        <name>agf__Certified_Scrum_Master__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>agf__External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- GUS User Type --></label>
+        <name>agf__GUS_User_Type__c</name>
+        <picklistValues>
+            <masterLabel>API User</masterLabel>
+            <translation><!-- API User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contractor</masterLabel>
+            <translation><!-- Contractor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Time Employee</masterLabel>
+            <translation><!-- Full Time Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team User</masterLabel>
+            <translation><!-- Team User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Adjusts how often you are sent emails about Work.
+
+Bread &amp; Butter:  User comments and added as an Assignee
+Meat &amp; Potatoes: User comments, status changes and added as Assignee
+The Whole Enchilada: All notifications (Default) --></help>
+        <label><!-- Work Notification Level --></label>
+        <name>agf__Notification_Level__c</name>
+        <picklistValues>
+            <masterLabel>Bread &amp; Butter</masterLabel>
+            <translation><!-- Bread &amp; Butter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meat &amp; Potatoes</masterLabel>
+            <translation><!-- Meat &amp; Potatoes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Whole Enchilada</masterLabel>
+            <translation><!-- The Whole Enchilada --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Owner Certified Date --></label>
+        <name>agf__Product_Owner_Certified_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scrum Master Certified Date --></label>
+        <name>agf__Scrum_Master_Certified_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show All Work Comments --></label>
+        <name>agf__Show_All_Work_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Summary --></label>
+        <name>agf__Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team Member Allocation --></label>
+        <name>agf__Team_Member_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Preference --></label>
+        <name>agf__User_Preference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wall Preference --></label>
+        <name>agf__Wall_Preference__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines which version of the Work page you will see for Bugs and User Stories. --></help>
+        <label><!-- Work User Interface --></label>
+        <name>agf__Work_User_Interface__c</name>
+        <picklistValues>
+            <masterLabel>Classic</masterLabel>
+            <translation><!-- Classic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Next Generation</masterLabel>
+            <translation><!-- Next Generation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Default Marketing Cloud Page --></label>
+        <name>et4ae5__Default_ET_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default MID --></label>
+        <name>et4ae5__Default_MID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange Admin --></label>
+        <name>et4ae5__ExactTargetForAppExchangeAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud for AppExchange User --></label>
+        <name>et4ae5__ExactTargetForAppExchangeUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Cloud Username --></label>
+        <name>et4ae5__ExactTargetUsername__c</name>
+    </fields>
+    <fields>
+        <label><!-- @deprecated --></label>
+        <name>et4ae5__ExactTarget_OAuth_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud Admin --></label>
+        <name>et4ae5__ValidExactTargetAdmin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid Marketing Cloud User --></label>
+        <name>et4ae5__ValidExactTargetUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow MapAnything Exports --></label>
+        <name>sma__AllowMapAnythingExports__c</name>
+    </fields>
+    <fields>
+        <label><!-- Default Proximity Radius --></label>
+        <name>sma__DefaultProximityRadius__c</name>
+    </fields>
+    <fields>
+        <label><!-- Edit MapAnything Org Wide Queries --></label>
+        <name>sma__EditMapAnythingOrgWirdeQueries__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Beta Tester --></label>
+        <name>sma__MABetaTester__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Default Latitude --></label>
+        <name>sma__MADefaultLatitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Default Longitude --></label>
+        <name>sma__MADefaultLongitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- MADefaultType --></label>
+        <name>sma__MADefaultType__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Default Zoom Level --></label>
+        <name>sma__MADefaultZoomLevel__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Max Export Size --></label>
+        <name>sma__MAMaxExportSize__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Max Query Size --></label>
+        <name>sma__MAMaxQuerySize__c</name>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Version --></label>
+        <name>sma__MAVersion__c</name>
+        <picklistValues>
+            <masterLabel>Beta</masterLabel>
+            <translation><!-- Beta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current</masterLabel>
+            <translation><!-- Current --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous</masterLabel>
+            <translation><!-- Previous --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Map Anything Settings --></label>
+        <name>sma__MapAnythingSettings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Type of Measurement --></label>
+        <name>sma__PreferredTypeOfMeasurement__c</name>
+        <picklistValues>
+            <masterLabel>Feet</masterLabel>
+            <translation><!-- Feet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Km</masterLabel>
+            <translation><!-- Km --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meters</masterLabel>
+            <translation><!-- Meters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miles</masterLabel>
+            <translation><!-- Miles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yards</masterLabel>
+            <translation><!-- Yards --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Receive Batch Exception Emails --></label>
+        <name>sma__ReceiveBatchExceptionEmails__c</name>
+    </fields>
+    <fields>
+        <label><!-- TestUserLookup --></label>
+        <name>sma__TestUserLookup__c</name>
+        <relationshipLabel><!-- Users --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Community Member Layout</layout>
+        <layoutType>CommunityMemberLayout</layoutType>
+        <sections>
+            <label><!-- Basic Information --></label>
+            <section>Basic Information</section>
+        </sections>
+        <sections>
+            <label><!-- Chatter Settings --></label>
+            <section>Chatter Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Language And Locale Settings --></label>
+            <section>Language And Locale Settings</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>User Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- MapAnything --></label>
+            <section>MapAnything</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label><!-- Conga_Composer_OAuth --></label>
+        <name>APXTConga4__Conga_Composer_OAuth</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Conga_Mail_Merge --></label>
+        <name>APXTConga4__Conga_Mail_Merge</name>
+    </webLinks>
+</CustomObjectTranslation>

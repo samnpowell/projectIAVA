@@ -1,0 +1,5 @@
+*** ALERT: NO ADOPTED USERS ***
+
+{!Process__c.Name} has no adopted users. Please identify and train new responsible users.
+
+{!Process__c.Link}

@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ConvertLead</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CreateOpportunity</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Ally_Sponsor__c</fullName>
+        <externalId>false</externalId>
+        <label>Ally Sponsor</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Alternate_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.npe01__AlternateEmail__c</formula>
+        <label>Alternate Email</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Archive__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>archives previous responses from the same contact</inlineHelpText>
+        <label>Archive</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Birthday__c</fullName>
+        <externalId>true</externalId>
+        <label>Birthday</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Calendar_Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATEVALUE(CreatedDate)</formula>
+        <label>Calendar Year</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Call_Center_Caller__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Center Caller</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alicia Richardson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Allison Chansky</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Anthony Pike</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Blake Henderson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brandon Willitts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brian DiPaolo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Brian Graham</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Carly Henderson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chris Brogger</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Christina Kim</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Christina Roof</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chris Zezza</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Craig Spivack</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dana Morrissey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Derek Bennett</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Derek Coy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Devon Collins</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ellen Marty</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Garrett Gleeson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gilbert Nguyen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gretchen Anderson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jacob Worrell</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jason Hansman</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jeff Park</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jonathan Schleifer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kara Horowitz</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kate Horner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kate Kelly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kate O&apos;Gorman</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Katie VanLangen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Laura Slusarczyk</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marco Bongioanni</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Matt Colvin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Matt Gallagher</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maura McCarthy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Megan Hemler</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Michael Carey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Michael Houston</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Michael Preston</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Michelle McCarthy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Millie Scimia</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mitch Stoller</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Naveed Ali Shah</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nick Colgin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nicole Venutolo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Paul Rieckhoff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Phoebe Gavin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ramsey Sulayman</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Robert Redfield</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ryan Nelson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ryan Weemer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Samantha Heffner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shannon Carey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tom Tarantino</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Zack Baddorf</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Champion_Sponsor__c</fullName>
+        <externalId>false</externalId>
+        <label>Champion Sponsor</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City</fullName>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Campaign_Lift_URL_Autocomplete__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Campaign Lift URL Autocomplete</label>
+        <length>16384</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Campaign_Lift_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Campaign Lift URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Increment__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Increment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Lift_Expiration_date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Lift Expiration date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Lift_Last_Updated__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Lift Last Updated</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Start_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Start Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CompanyOrAccount</fullName>
+    </fields>
+    <fields>
+        <fullName>Company__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Company__c</formula>
+        <label>Company</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Primary_Mailing_List__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Contact_Primary_Mailing_List__c</formula>
+        <label>Contact Primary Mailing List</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country</fullName>
+    </fields>
+    <fields>
+        <fullName>Days_Available_Volunteer__c</fullName>
+        <description>What days are you most available to volunteer?</description>
+        <externalId>false</externalId>
+        <label>Days avaliable</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>DoNotCall</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstName</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstRespondedDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Friend_Individual__c</fullName>
+        <externalId>false</externalId>
+        <label>Friend Individual</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Geocode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Geocode</label>
+        <referenceTo>geopointe__Geocode__c</referenceTo>
+        <relationshipLabel>Campaign Members</relationshipLabel>
+        <relationshipName>Campaign_Members</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Guest_s__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Names of any guest(s)</inlineHelpText>
+        <label>Guest(s)</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfFax</fullName>
+    </fields>
+    <fields>
+        <fullName>HasResponded</fullName>
+    </fields>
+    <fields>
+        <fullName>Hero_Sponsor__c</fullName>
+        <externalId>false</externalId>
+        <label>Hero Sponsor</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours_A_Week__c</fullName>
+        <description>How many hours a week are you able to spend in a leadership role?</description>
+        <externalId>false</externalId>
+        <label>Leadership avaliable hours</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Integrated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by the DIA Integration.  Not for users.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used by the DIA Integration.  Not for users.</inlineHelpText>
+        <label>Integrated</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>KW_Issues__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(INCLUDES(  Contact.kw__Issues__c , &quot;Veterans&quot;), &quot;Veterans&quot;, NULL) + BR() + 
+IF(INCLUDES( Contact.kw__Issues__c , &quot;Military&quot;), &quot;Military&quot;, NULL)</formula>
+        <label>KW Issues</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LastName</fullName>
+    </fields>
+    <fields>
+        <fullName>LeadId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Local_POC__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign.Local_POC__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Local POC</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member_Veteran__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Member Veteran</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MobilePhone</fullName>
+    </fields>
+    <fields>
+        <fullName>Next_Targeting_Deadline__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The ideal date by which we will have contacted this individual next in whichever manner deemed applicable.</inlineHelpText>
+        <label>Next Targeting Deadline</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Notes_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes 2</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Notes_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes 3</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>10000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Number_of_Guests__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of guests that a contact is bringing to an event</inlineHelpText>
+        <label>Number of Guests</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Own_Transportation__c</fullName>
+        <description>Are you able to provide your own transportation?</description>
+        <externalId>false</externalId>
+        <label>Provide your own transportation?</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>POC_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>POC Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Personal_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.npe01__HomeEmail__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Personal Email</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Platinum_Hero__c</fullName>
+        <externalId>false</externalId>
+        <label>Platinum Hero</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PostalCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Volunteer - Leader/Host</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Volunteer - General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recruited At</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VIP</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Salutation</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sponsorship_or_Ticket_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Sponsorship/Ticket type for the Gala</inlineHelpText>
+        <label>Sponsorship or Ticket Type</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Staff_Evaluation_of_Volunteer__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>1 (Least Involved) to 5 (Most Involved)</inlineHelpText>
+        <label>Staff Evaluation of Volunteer</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Street</fullName>
+    </fields>
+    <fields>
+        <fullName>Supporter_Individual__c</fullName>
+        <externalId>false</externalId>
+        <label>Supporter Individual</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Table__c</fullName>
+        <externalId>false</externalId>
+        <label>Table</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tier__c</fullName>
+        <externalId>false</externalId>
+        <label>Tier</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Comp</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Comp Press</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Donor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Press</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sponsor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ticket</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Valor_Sponsor__c</fullName>
+        <externalId>false</externalId>
+        <label>Valor Sponsor</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vol_s_Evaluation_of_Event_AAR__c</fullName>
+        <externalId>false</externalId>
+        <label>Vol&apos;s Evaluation of Event (AAR)</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Excellent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Good</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fair</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Poor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Vol_s_Evaluation_of_Volunteer_Exp__c</fullName>
+        <externalId>false</externalId>
+        <label>Vol&apos;s Evaluation of Volunteer Exp</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Excellent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Good</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fair</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Poor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Volunteer_Hours_Spent__c</fullName>
+        <externalId>false</externalId>
+        <label>Volunteer Hours Spent</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>et4ae5__Activity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Activity</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unsubscribed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>percET__Effective_Action_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>If campaign has start &amp; end date &amp; response logged within that span, use FirstRespondedDate of CM.  Otherwise:
+* if campaign has start &amp; End date, use end date
+* if campaign has start date but no end date, and response logged within a month of the start date, use FirstRespondedDate
+* if campaign has only start OR End date, use the one we have
+* else use created date of campaign</description>
+        <externalId>false</externalId>
+        <formula>IF (  
+NOT(ISBLANK(Campaign.StartDate)) ,
+        IF ( NOT(ISBLANK(Campaign.EndDate)),
+                IF (Campaign.StartDate &lt;=  FirstRespondedDate &amp;&amp; Campaign.EndDate &gt;= FirstRespondedDate,
+                        FirstRespondedDate,
+                        Campaign.EndDate),        
+                IF (FirstRespondedDate &gt; Campaign.StartDate &amp;&amp; FirstRespondedDate - Campaign.StartDate &lt;= 31,
+                        FirstRespondedDate ,
+                        Campaign.StartDate)),
+        IF ( NOT(ISBLANK(Campaign.EndDate)),
+                Campaign.EndDate,
+                DATEVALUE(Campaign.CreatedDate)
+        )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The date this action is considered to have taken place for StepUp scoring.  Depends on the campaign start/end dates and when the membership was added.</inlineHelpText>
+        <label>Effective Action Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>percET__Engagement_Jump_From_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Set automatically by StepUp.</inlineHelpText>
+        <label>Engagement Jump From Level</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Engagement_Jump_To_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Set automatically by StepUp.</inlineHelpText>
+        <label>Engagement Jump To Level</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Engagement_Jump_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Breakthrough = First time this high up the pyramid
+Rebound = Was at this level or higher in the past, but had since dropped to a lower level</description>
+        <externalId>false</externalId>
+        <label>Engagement Jump Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Breakthrough</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rebound</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>percET__Engagement_Level_At_Insert__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Set by trigger, hide from end-user</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The contact&apos;s engagement level (as a number) at the time this campaign membership was created.  Set automatically by StepUp.</inlineHelpText>
+        <label>Engagement Level At Insert</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Engagement_Levels_Jumped__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>percET__Engagement_Jump_To_Level__c -  percET__Engagement_Jump_From_Level__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The number of levels (if any) this contact jumped because of paritcipation in this campaign.</inlineHelpText>
+        <label>Engagement Levels Jumped</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Is_Engagement_Jump__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engagement Jump</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>percET__Is_New_Supporter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Set by campaign batch process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Was participation in this campaign responsible for giving the contact their very first engagement level above 0? Set automatically by StepUp.</inlineHelpText>
+        <label>New Supporter</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>percET__Level_Change_Timestamp_At_Insert__c</fullName>
+        <deprecated>false</deprecated>
+        <description>set by trigger</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Datestamp of last engagement level chg when CM entered.  Set automatically by StepUp.</inlineHelpText>
+        <label>Engagement Lvl Chg Timestamp At Insert</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Team__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Classy Team</label>
+        <referenceTo>stayclassy__Classy_Team__c</referenceTo>
+        <relationshipLabel>Campaign Members</relationshipLabel>
+        <relationshipName>Campaign_Members</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <sharingModel>ControlledByCampaign</sharingModel>
+    <validationRules>
+        <fullName>FourOrFewerSupporterIndividualTickets</fullName>
+        <active>false</active>
+        <description>no more than 4 $2500 tickets (supporter individual) can be purchased at one time</description>
+        <errorConditionFormula>Supporter_Individual__c &gt; 4</errorConditionFormula>
+        <errorMessage>We have limited purchase of Supporter Individual ($2500) to four tickets per purchaser. Please contact heroesgala@iava.org with any questions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TwoOrFewerFriendIndividualTickets</fullName>
+        <active>false</active>
+        <description>no more than 2 $1250 tickets (friend individual) can be purchased at one time</description>
+        <errorConditionFormula>Friend_Individual__c &gt; 2</errorConditionFormula>
+        <errorMessage>We have limited purchase of Friend Individual ($1250) to two tickets per purchaser. Please contact heroesgala@iava.org with any questions.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>stayclassy__Transfer_Participant</fullName>
+        <availability>online</availability>
+        <description>Transfer to a new Team</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Transfer Participant</masterLabel>
+        <openType>sidebar</openType>
+        <page>stayclassy__TransferParticipantVF</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

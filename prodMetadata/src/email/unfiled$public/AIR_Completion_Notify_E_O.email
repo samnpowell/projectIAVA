@@ -1,0 +1,15 @@
+Hello,
+
+A new AIR, {!AIR__c.Name}, has just been completed by {!AIR__c.LastModifiedBy}
+
+Here is a link to the Event Report : https://na8.salesforce.com/{!AIR__c.Id}
+
+{!AIR__c.Impact_Overview__c}
+
+
+Other Event Details:
+Total Attendance: {!AIR__c.Num_Attended__c}
+Money Raised: {!AIR__c.Money_Raised__c}
+Available Units:{!AIR__c.Num_Units__c}
+Positive Summary: {!AIR__c.Summary_Positive__c}
+Negative Summary: {!AIR__c.Summary_Negative__c}

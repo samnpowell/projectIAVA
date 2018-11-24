@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Candidate Review</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Candidate Reviews</value>
+    </caseValues>
+    <fields>
+        <label><!-- Analytical Thinking Comments --></label>
+        <name>Analytical_Thinking_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Analytical Thinking --></label>
+        <name>Analytical_Thinking__c</name>
+        <picklistValues>
+            <masterLabel>1 - Needs Improvement</masterLabel>
+            <translation><!-- 1 - Needs Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Minimally Acceptable</masterLabel>
+            <translation><!-- 2 - Minimally Acceptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Meets Standards</masterLabel>
+            <translation><!-- 3 - Meets Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Exceeds Standards</masterLabel>
+            <translation><!-- 4 - Exceeds Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Outstanding</masterLabel>
+            <translation><!-- 5 - Outstanding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Candidate --></label>
+        <name>Candidate__c</name>
+        <relationshipLabel><!-- Candidate Reviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Communication Comments --></label>
+        <name>Communication_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Written and Oral --></help>
+        <label><!-- Communication --></label>
+        <name>Communication__c</name>
+        <picklistValues>
+            <masterLabel>1 - Needs Improvement</masterLabel>
+            <translation><!-- 1 - Needs Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Minimally Acceptable</masterLabel>
+            <translation><!-- 2 - Minimally Acceptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Meets Standards</masterLabel>
+            <translation><!-- 3 - Meets Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Exceeds Standards</masterLabel>
+            <translation><!-- 4 - Exceeds Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Outstanding</masterLabel>
+            <translation><!-- 5 - Outstanding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Drive Comments --></label>
+        <name>Drive_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Initiative and Ambition --></help>
+        <label><!-- Drive --></label>
+        <name>Drive__c</name>
+        <picklistValues>
+            <masterLabel>1 - Needs Improvement</masterLabel>
+            <translation><!-- 1 - Needs Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Minimally Acceptable</masterLabel>
+            <translation><!-- 2 - Minimally Acceptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Meets Standards</masterLabel>
+            <translation><!-- 3 - Meets Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Exceeds Standards</masterLabel>
+            <translation><!-- 4 - Exceeds Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Outstanding</masterLabel>
+            <translation><!-- 5 - Outstanding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Execution Comments --></label>
+        <name>Execution_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quality and Timeliness of Work --></help>
+        <label><!-- Execution --></label>
+        <name>Execution__c</name>
+        <picklistValues>
+            <masterLabel>1 - Needs Improvement</masterLabel>
+            <translation><!-- 1 - Needs Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Minimally Acceptable</masterLabel>
+            <translation><!-- 2 - Minimally Acceptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Meets Standards</masterLabel>
+            <translation><!-- 3 - Meets Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Exceeds Standards</masterLabel>
+            <translation><!-- 4 - Exceeds Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Outstanding</masterLabel>
+            <translation><!-- 5 - Outstanding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- General Comments --></label>
+        <name>General_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overall Rating --></label>
+        <name>Overall_Rating__c</name>
+        <picklistValues>
+            <masterLabel>1 - Does not meet expectations</masterLabel>
+            <translation><!-- 1 - Does not meet expectations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Minimally meets expectations</masterLabel>
+            <translation><!-- 2 - Minimally meets expectations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Meets Expectations</masterLabel>
+            <translation><!-- 3 - Meets Expectations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Exceeds Expectations</masterLabel>
+            <translation><!-- 4 - Exceeds Expectations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Outstanding</masterLabel>
+            <translation><!-- 5 - Outstanding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pre-screen Recommendation --></label>
+        <name>Pre_screen_Recommendation__c</name>
+        <picklistValues>
+            <masterLabel>Do not invite for interview</masterLabel>
+            <translation><!-- Do not invite for interview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invite to Interview</masterLabel>
+            <translation><!-- Invite to Interview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Possibly invite</masterLabel>
+            <translation><!-- Possibly invite --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pre-screen Score --></label>
+        <name>Pre_screen_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed For --></label>
+        <name>Reviewed_For__c</name>
+        <picklistValues>
+            <masterLabel>Internship</masterLabel>
+            <translation><!-- Internship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storm the Hill 2013</masterLabel>
+            <translation><!-- Storm the Hill 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storm the Hill 2014</masterLabel>
+            <translation><!-- Storm the Hill 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storm the Hill 2017</masterLabel>
+            <translation><!-- Storm the Hill 2017 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reviewer --></label>
+        <name>Reviewer__c</name>
+        <relationshipLabel><!-- Candidate Reviews --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reviewing Department --></label>
+        <name>Reviewing_Department__c</name>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Office</masterLabel>
+            <translation><!-- Executive Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy</masterLabel>
+            <translation><!-- Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programs</masterLabel>
+            <translation><!-- Programs --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Teamwork Comments --></label>
+        <name>Teamwork_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Teamwork --></label>
+        <name>Teamwork__c</name>
+        <picklistValues>
+            <masterLabel>1 - Needs Improvement</masterLabel>
+            <translation><!-- 1 - Needs Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Minimally Acceptable</masterLabel>
+            <translation><!-- 2 - Minimally Acceptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Meets Standards</masterLabel>
+            <translation><!-- 3 - Meets Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Exceeds Standards</masterLabel>
+            <translation><!-- 4 - Exceeds Standards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Outstanding</masterLabel>
+            <translation><!-- 5 - Outstanding --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pizazz, what-what, 1-5, 5 is the Best --></help>
+        <label><!-- X Factor --></label>
+        <name>X_Factor__c</name>
+    </fields>
+    <layouts>
+        <layout>Candidate Review Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Prescreen</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Detailed Review --></label>
+        <name>Detailed_Review</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Prescreen --></label>
+        <name>Prescreen</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

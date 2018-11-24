@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Account.npe01__One2OneContact__c</field>
+    </columns>
+    <columns>
+        <field>Account.POC_Email__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>DUE_DATE</field>
+    </columns>
+    <crossFilters>
+        <criteriaItems>
+            <column>Amount</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>500</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>IsWon</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <operation>with</operation>
+        <primaryTableColumn>ACCOUNT_ID</primaryTableColumn>
+        <relatedTable>Opportunity</relatedTable>
+        <relatedTableJoinColumn>Account</relatedTableJoinColumn>
+    </crossFilters>
+    <description>$500 One Time Donations and Up
+Tristate Area (NY, NJ, CT)
+All Local Orgs and Fdn Contacts</description>
+    <filter>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <column>ADDRESS1_STATE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>NY,New York,NJ,New Jersey,Connecticut,CT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ADDRESS2_STATE</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>NY,New York,NJ,New Jersey,Connecticut,CT</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>1/24/17 Donor Lunch Universe</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

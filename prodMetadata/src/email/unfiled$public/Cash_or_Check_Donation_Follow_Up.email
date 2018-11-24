@@ -1,0 +1,7 @@
+A new offline donation has been received:
+
+{!Opportunity.Name} | {!Opportunity.Amount} | {!Opportunity.Payment_Method__c}
+
+Please find the Next Steps listed below:
+
+{!Opportunity.NextStep}

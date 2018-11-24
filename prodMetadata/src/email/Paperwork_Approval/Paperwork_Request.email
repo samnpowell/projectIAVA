@@ -1,0 +1,26 @@
+<p><b>Dear {!Contact.FirstName},</b></p>
+
+<p>Thank you for joining IAVA.  As a part of IAVA, you're a part of so much more - our movement is growing, and we're glad to have you as part of it!  </p>
+
+<p>As a member of IAVA you will have the opportunity to:</p>
+<p>• Attend and Host a VetTogether: VetTogethers are monthly gatherings of veterans, family members and supporters across the country, and provide a number of fun and unique ways to get connected.  You can see more at <a href="http://vettogethers.org/">www.vettogethers.org.</a><br />
+• Be sure to stay connected.  Hang out with us online at <a href="https://www.facebook.com/IAVA.org">Facebook</a>, <a href="https://twitter.com/iava">Twitter</a>, and <a href="http://instagram.com/iava">Instagram</a>.<br />
+• Be a part of our advocacy program such as Storm the Hill, which brings the stories of 2.6+ million veterans to lawmakers in D.C.</p>
+
+<p>To receive the full benefits of a confirmed veteran IAVA member, you can submit service paperwork for approval <a href="https://iava.org/veteran-paperwork/?tfa_email={!urlencode(Contact.Email)}">here</a>. Also, stay tuned for new and exciting opportunities that we're working on to make your member experience even better!</p>
+ 
+<p>If you have any questions please let us know at <a href="mailto:membership@iava.org">membership@iava.org</a></p>
+
+<p>Look forward to seeing you soon.</p>
+
+<p>Best,</p>
+
+<p>Paul</p>
+
+<p>Paul Rieckhoff<br />
+Iraq Veteran<br />
+Executive Director & Founder<br />
+Iraq and Afghanistan Veterans of America (IAVA)<br /></p>
+ 
+<p><b>P.S. Think your friends would want to join IAVA? Send them this message:</b><br />
+"I just joined IAVA, the nation’s first and largest organization for veterans of Iraq and Afghanistan. Membership is free! Sign up at <a href="http://iava.org/#join">http://iava.org/#join</a></p>

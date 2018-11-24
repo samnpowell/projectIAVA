@@ -1,0 +1,12 @@
+Hello,
+
+Media Request: {!Media_Request__c.Name} has been created by {!Media_Request__c.CreatedBy}
+
+Proposed Date and Time: {!Media_Request__c.Proposed_Date_and_Time__c}
+Press Outlet: {!Media_Request__c.Press_Outlet__c}
+Reporter/Producer: {!Media_Request__c.Reporter_Producer__c}
+Contact Phone #: {!Media_Request__c.Contact_Phone__c}
+Contact Email: {!Media_Request__c.Contact_Email__c}
+Proposed Spokesperson: {!Media_Request__c.Proposed_Spokesperson__c}
+
+Here is a link: https://na8.salesforce.com/{!Media_Request__c.Id}

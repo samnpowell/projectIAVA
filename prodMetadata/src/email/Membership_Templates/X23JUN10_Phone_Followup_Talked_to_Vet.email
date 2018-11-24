@@ -1,0 +1,18 @@
+Dear {!Contact.Name},
+
+I'm writing to follow up from earlier today.
+
+Today, you received a call from IAVA about confirming your membership. We want to make sure you can take full advantage of everything IAVA has to offer - and that includes free tickets for you and your family to see the Padres take on the Houston Astros at Petco Park on July 4th.
+
+We've made it easier than ever to confirm your service. Just click here:
+
+http://iavaonline.org/form2?tfa_email={!Contact.Email}
+
+If you have any questions, don't hesitate to contact us at membership@iava.org or 212-982-9699.
+
+Hope to see you at the Padres game on July 4th!
+
+Thanks,
+
+Jason Hansman
+Community Manager

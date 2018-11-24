@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>custom email template sent to confirm vets day give registration by site guest user</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Rucksack_UnlimitedGiveRequest_VetsDayCustomConfirmationSiteGuest</name>
+    <style>none</style>
+    <subject>{!Give_Request__c.Give_Name__c}</subject>
+    <type>custom</type>
+</EmailTemplate>

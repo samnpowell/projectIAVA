@@ -1,0 +1,40 @@
+<!--
+Copyright (c) 2009 Etherios LLC
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are not permitted.
+
+Author: Nick Koopman, nkoopman@etherios.com
+-->
+<!-- HTML FORMATTED PAGE - OLD
+<apex:page controller="AutoMemberCon" action="{!ProcessInsert}">
+	<apex:pageMessages />
+    <apex:form >
+        <apex:variable var="c" value="{!newContact}"/>
+        <apex:pageBlock title="{! "Contact: " + c.Id}">
+            <apex:pageBlockSection columns="1">
+                <apex:outputField value="{!c.FirstName}"/>
+                <apex:outputField value="{!c.LastName}"/>
+                <apex:outputField value="{!c.Email}"/>
+                <apex:outputField value="{!c.Phone}"/>
+                <apex:outputField value="{!c.MailingStreet}"/>
+                <apex:outputField value="{!c.MailingCity}"/>
+                <apex:outputField value="{!c.MailingState}"/>
+                <apex:outputField value="{!c.MailingPostalCode}"/>
+                <apex:outputField value="{!c.MailingCountry}"/>
+                <apex:outputField value="{!c.Veteran_of_OEF__c}"/>
+                <apex:outputField value="{!c.Veteran_of_OIF__c}"/>
+                <apex:outputField value="{!c.Rank__c}"/>
+                <apex:outputField value="{!c.Branch_of_Service__c}"/>
+                <apex:outputField value="{!c.Current_Status__c}"/>
+                <apex:outputField value="{!c.Service_Type__c}"/>
+                <apex:outputField value="{!c.Most_Recent_Unit__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+NEW PAGE FORMATTED IN JSON -->
+<apex:page controller="AutoMemberCon" action="{!ProcessInsert}" contentType="text/html" showHeader="false" >
+{!JSON}
+</apex:page>

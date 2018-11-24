@@ -1,0 +1,25 @@
+<messaging:emailTemplate subject="Subject here" recipientType="Contact" relatedToType="IAVAEvent_Attendee__c">
+<messaging:htmlEmailBody >
+
+<style type="text/css">
+ #header { background-color: black; padding: 12px; margin-bottom: 24px;}
+</style>
+
+<div id="header">
+ <div id="logo">
+  <a href="https://my.iava.org/"><img src="https://iava.org/wp-content/uploads/Banners/myIAVA-logo-gray-150.png" alt="myIAVA" width="150" height="35" border="0" /></a>
+ </div>
+</div>
+
+
+<p>Dear Sucka,</p>
+
+<p>Have yourself a merry little cheese puff.</p>
+
+<p>Love,<br />
+IAVA</p>
+
+
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

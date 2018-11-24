@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Pat&apos;s Run Waiver Reminder (DRAFT)</name>
+    <style>none</style>
+    <subject>One more step to get on Team IAVA</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for taking the time to register for Pat’s Run! By now you should have received an email asking you to complete the Pat’s Run waiver. 
+
+Without this waiver IAVA is not able to complete your registration for Pat’s Run, so please complete it here: 
+
+http://iava.org/pats-run-2011-consent-form-part-2
+
+Also make sure that you sign up for Community of Veterans to get to know the other runners on your team and get started training for Pat&apos;s Run.  Sign up here:
+
+http://iava.communityofveterans.org/?xgi=2ZLWpc9nVu83RB
+
+Hope to see you on race day!
+ 
+Sincerely,
+
+Jason Hansman
+Online Community Manager
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

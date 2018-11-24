@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Travel Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Travel Plans</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Travel Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Departure Date --></label>
+        <name>Departure_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Departure Time --></label>
+        <name>Departure_Time__c</name>
+        <picklistValues>
+            <masterLabel>Afternoon</masterLabel>
+            <translation><!-- Afternoon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evening</masterLabel>
+            <translation><!-- Evening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morning</masterLabel>
+            <translation><!-- Morning --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- From Location --></label>
+        <name>From_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- From State --></label>
+        <name>From_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Date --></label>
+        <name>Return_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Time --></label>
+        <name>Return_Time__c</name>
+        <picklistValues>
+            <masterLabel>Afternoon</masterLabel>
+            <translation><!-- Afternoon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evening</masterLabel>
+            <translation><!-- Evening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morning</masterLabel>
+            <translation><!-- Morning --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- To Location --></label>
+        <name>To_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- To State --></label>
+        <name>To_State__c</name>
+    </fields>
+    <layouts>
+        <layout>Travel Plan Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

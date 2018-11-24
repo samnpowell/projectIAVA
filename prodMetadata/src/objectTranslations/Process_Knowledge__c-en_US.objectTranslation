@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Process Knowledge</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Process Knowledge</value>
+    </caseValues>
+    <fields>
+        <help><!-- The User should know how to report on Salesforce limits, such as API Calls. --></help>
+        <label><!-- Limits &amp; Configuration --></label>
+        <name>API_Calls__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Applications, Candidate Reviews, and any other objects created to track the hiring process (as well as any related objects). --></help>
+        <label><!-- Applications --></label>
+        <name>Applications_Candidate_Reviews__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Campaigns and Campaign Members (as well as any related objects). --></help>
+        <label><!-- Campaigns --></label>
+        <name>Campaigns_Campaign_Members__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Cases (as well as any related objects). --></help>
+        <label><!-- Cases --></label>
+        <name>Cases__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Communities, Groups, Portal Users, Posts and any other objects created to track our Salesforce Community (as well as any related objects). --></help>
+        <label><!-- Communities --></label>
+        <name>Communities_Groups_and_Posts__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Contacts (also referred to as Donors, Members, Supporters, KnowWho Contacts, Press Contacts, among others), as well as any related objects. --></help>
+        <label><!-- Contacts --></label>
+        <name>Contacts_Donors_Members_KnowWho__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on DC Events, Track a Calls, and any other objects created to track our advocacy efforts (as well as any related objects). --></help>
+        <label><!-- DC Events &amp; Track a Calls --></label>
+        <name>DC_Events_Track_a_Calls__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Email Sends and any other objects created to track our outreach through ExactTarget (as well as any related objects). --></help>
+        <label><!-- Email Sends --></label>
+        <name>Email_Sends__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on IAVA Events, Event Attendees, and Budget Requests (as well as any related objects). --></help>
+        <label><!-- Events --></label>
+        <name>Events_Attendees_and_Budgets__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Focus Areas, Policy Recommendations, Legislation, and any other objects created to track our policy agenda (as well as any related objects). --></help>
+        <label><!-- Policy Agenda --></label>
+        <name>Focus_Areas_Policy_Recs_and_Leg__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Gives, Give Instances, Give Requests and any other objects created to track rewards (as well as any related objects). --></help>
+        <label><!-- Gives --></label>
+        <name>Gives_Give_Instances_and_Give_Requests__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Grant Obligations, Grant Deadlines, and any other objects created to track grants (as well as any related objects). --></help>
+        <label><!-- Grant Tracking --></label>
+        <name>Grant_Obligations_Grant_Deadlines__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Inventory Categories, Inventories, Line Items, and any other objects created to track inventory (as well as any related objects). --></help>
+        <label><!-- Inventory --></label>
+        <name>Inventory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Test Date --></label>
+        <name>Last_Test_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Training Date --></label>
+        <name>Last_Training_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Level of Expertise --></label>
+        <name>Level_of_Expertise__c</name>
+        <picklistValues>
+            <masterLabel>Needs additional training</masterLabel>
+            <translation><!-- Needs additional training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs improvement</masterLabel>
+            <translation><!-- Needs improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs training</masterLabel>
+            <translation><!-- Needs training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not tested</masterLabel>
+            <translation><!-- Not tested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pass</masterLabel>
+            <translation><!-- Pass --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Super user</masterLabel>
+            <translation><!-- Super user --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Library Documents and any other objects created to track articles relating to research (as well as any related objects). --></help>
+        <label><!-- Library Documents --></label>
+        <name>Library_Documents__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to run a location-based report. --></help>
+        <label><!-- Locations --></label>
+        <name>Locations__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on NGIB Queries (as well as any related objects). --></help>
+        <label><!-- NGIB Queries --></label>
+        <name>NGIB_Queries__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Opportunities, also known as donations or potential donations, (as well as any related objects). --></help>
+        <label><!-- Opportunities --></label>
+        <name>Opportunities__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Organizations (as well as any related objects). --></help>
+        <label><!-- Organizations --></label>
+        <name>Organizations__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Partnerships and any other objects created to track existing and potential partnerships (as well as any related objects). --></help>
+        <label><!-- Partnerships --></label>
+        <name>Partnerships__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Press Hits and any other objects created to track anything relating to IAVA in the media (as well as any related objects). --></help>
+        <label><!-- Press Hits --></label>
+        <name>Press_Hits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process --></label>
+        <lookupFilter>
+            <errorMessage><!-- This process either does not exist or is not active. You must either select a different process or re-activate the existing one. --></errorMessage>
+        </lookupFilter>
+        <name>Process__c</name>
+        <relationshipLabel><!-- Users --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Processes, Process Knowledge, and any other objects created to track the the business processes captured in and managed through Salesforce (as well as any related objects). --></help>
+        <label><!-- Process Tracking --></label>
+        <name>Processes_Process_Knowledge__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Programs, Referrals, and any other objects created to track the rrrp program (as well as any related objects). --></help>
+        <label><!-- Programs &amp; Referrals --></label>
+        <name>Programs_Referrals__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Stats, Stat Measurements, and any other objects created to track statistics the research team would like to watch (as well as any related objects). --></help>
+        <label><!-- Statistics --></label>
+        <name>Stats_Stat_Measurements__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Tasks (also referred to as calls, emails, or meetings), as well as any related objects. --></help>
+        <label><!-- Tasks --></label>
+        <name>Tasks_Calls_Emails_Meetings__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <lookupFilter>
+            <errorMessage><!-- The user you are searching for either does not exist or is not active. A process can only be assigned to an active user. --></errorMessage>
+        </lookupFilter>
+        <name>User__c</name>
+        <relationshipLabel><!-- Process Knowledge --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Users and any other objects created to track Salesforce users and licenses (as well as any related objects). --></help>
+        <label><!-- Users --></label>
+        <name>Users__c</name>
+    </fields>
+    <fields>
+        <help><!-- The User should know how to report on Wait Times and any other objects created to track how our members interact with the VA (as well as any related objects). --></help>
+        <label><!-- Wait Times --></label>
+        <name>Wait_Times__c</name>
+    </fields>
+    <fields>
+        <label><!-- userIsActive --></label>
+        <name>userIsActive__c</name>
+    </fields>
+    <layouts>
+        <layout>Process Knowledge Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Topic --></label>
+            <section>Topic</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

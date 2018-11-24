@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is the email sent to a new OIF/OEF/OND Veterans</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Welcome – OIF/OEF/OND Veteran</name>
+    <style>none</style>
+    <subject>Welcome to IAVA!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for becoming a member of IAVA. We are thrilled to welcome you to the family! Here are three things you’ll want to do right away:
+
+1. Check out The Rucksack - our giveaway portal exclusively for OIF/OEF/OND vets like you. You’ll find free tickets to sporting events, concerts, resume workshops – you name it. You’ll receive an email from us with instructions on how to get your Rucksack password within 24 hours.
+
+2. Join our online communities. Our members have built a thriving online community on our social networks. There’s always something fun happening on our Facebook page. Follow us on Twitter and you’ll get tons of updates in your timeline on things happening at IAVA and in the veterans community. Shutterbugs will want to hook up with us on Instagram. And we just started hanging out on Tumblr, too.
+
+3. Invite a friend to join. We want to reach every OIF/OEF/OND vet in the country and invite them to become part of our growing community. We need your help finding them. Invite the men and women you served with or any other veterans you know to join IAVA.
+
+Now that you’re part of IAVA, you’re part of so much more. You’re part of the movement that’s currently fighting to end the VA disability benefits backlog. You’re part of the organization that secured advanced funding for VA healthcare and helped push the Vow to Hire Heroes Act through a divided Congress. You’re part of part of the group that championed the New GI Bill. Most importantly, you’re part of a community that is committed to improving the lives of veterans and their families – a community that works together and gets results.
+
+It’s an exciting time to be a member of IAVA. We have spent all year working on a plan to make IAVA bigger and better. It’s finally time to get the wheels turning on what we’re calling “IAVA 2.0.” Be sure to check your email regularly for exciting updates and opportunities to get more involved!
+
+Best, 
+
+Anthony Pike, Acting Membership Director 
+OIF Veteran, USMC</textOnly>
+    <type>custom</type>
+</EmailTemplate>

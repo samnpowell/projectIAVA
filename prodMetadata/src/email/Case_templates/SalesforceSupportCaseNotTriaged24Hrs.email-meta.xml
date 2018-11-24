@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification that a Salesforce Support Case has not been reviewed in the 24 hour window</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SalesforceSupportCaseNotTriaged24Hrs</name>
+    <style>none</style>
+    <subject>Case Needs Review - 24 Hour Rule</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,6 @@
+A donor's cumulative donation amount has exceeded $1,000.
+
+Donor: {!Contact.FirstName} {!Contact.LastName}
+Lifetime Donation Total: {!Contact.npe01__Lifetime_Giving_History_Amount__c}
+
+Click here to view the donor's record: {!Contact.Link}

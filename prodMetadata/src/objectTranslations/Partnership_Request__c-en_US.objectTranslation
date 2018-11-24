@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Partnership</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Partnerships</value>
+    </caseValues>
+    <fields>
+        <label><!-- AAA Categories --></label>
+        <name>AAA_Categories__c</name>
+        <picklistValues>
+            <masterLabel>Advocacy</masterLabel>
+            <translation><!-- Advocacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assistance</masterLabel>
+            <translation><!-- Assistance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awareness</masterLabel>
+            <translation><!-- Awareness --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is this the right time for this partnership? --></help>
+        <label><!-- Appropriate Timing --></label>
+        <name>Appropriate_Timing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Short Summary of background of Partnership --></help>
+        <label><!-- Background of Partnership --></label>
+        <name>Background_of_Partnership__c</name>
+    </fields>
+    <fields>
+        <label><!-- Background on Organization --></label>
+        <name>Background_on_Organization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Benefit to IAVA --></label>
+        <name>Benefit_to_IAVA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Boot Camp --></label>
+        <name>Boot_Camp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Information --></label>
+        <name>Contact_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Core Business --></label>
+        <name>Core_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currently Working with Veterans --></label>
+        <name>Currently_Working_with_Veterans__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the goal for each metric? How much/many? --></help>
+        <label><!-- Detailed Goal Description --></label>
+        <name>Detailed_Goal_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Director --></label>
+        <name>Director__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distribution Plan --></label>
+        <name>Distribution_Plan__c</name>
+    </fields>
+    <fields>
+        <help><!-- Distributor for Film --></help>
+        <label><!-- Distributor --></label>
+        <name>Distributor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Partnership End Date. --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- What needs to be accomplished by the end of the partnership? --></help>
+        <label><!-- End Stage Goals --></label>
+        <name>End_Stage_Goals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Date --></label>
+        <name>Event_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Existing Partners &amp; Involvement --></label>
+        <name>Existing_Partners_Involvement__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the result expected of this partnership? --></help>
+        <label><!-- Expected Results --></label>
+        <name>Expected_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- Will make this partner appear on the rewards site as the featured partner (only one partnership record should have this checked). --></help>
+        <label><!-- Featured Partner --></label>
+        <name>Featured_Partner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Film Festival Screenings --></label>
+        <name>Film_Festival_Screenings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Film URL --></label>
+        <name>Film_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Support Description --></label>
+        <name>Financial_Support_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Support Offer --></label>
+        <name>Financial_Support_Offer__c</name>
+    </fields>
+    <fields>
+        <help><!-- How can the goal be accomplished? --></help>
+        <label><!-- Goal Achievement Plan --></label>
+        <name>Goal_Achievement_Plan__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the goal reasonable? --></help>
+        <label><!-- Goal is Reasonable --></label>
+        <name>Goal_is_Reasonable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goals in Working with IAVA --></label>
+        <name>Goals_in_Working_with_IAVA__c</name>
+    </fields>
+    <fields>
+        <label><!-- HEEC Categories --></label>
+        <name>HEEC_Categories__c</name>
+        <picklistValues>
+            <masterLabel>Community</masterLabel>
+            <translation><!-- Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment</masterLabel>
+            <translation><!-- Employment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health</masterLabel>
+            <translation><!-- Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- How Do You Envision Working with IAVA --></label>
+        <name>How_Do_You_Envision_Working_with_IAVA__c</name>
+    </fields>
+    <fields>
+        <label><!-- How Will Film Add Value to IAVA --></label>
+        <name>How_Will_Film_Add_Value_to_IAVA__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this match the overall goals of IAVA? --></help>
+        <label><!-- IAVA Goals Aligned --></label>
+        <name>IAVA_Goals_Aligned__c</name>
+    </fields>
+    <fields>
+        <help><!-- Will it help improve the lives of Iraq and Afghanistan veterans and their families? --></help>
+        <label><!-- IAVA Mission Aligned --></label>
+        <name>IAVA_Mission_Aligned__c</name>
+    </fields>
+    <fields>
+        <help><!-- What investment of money or resources will be required of IAVA? --></help>
+        <label><!-- IAVA Resource Investment --></label>
+        <name>IAVA_Resource_Investment__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does this align with IAVA values? --></help>
+        <label><!-- IAVA Values Aligned --></label>
+        <name>IAVA_Values_Aligned__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who is the best person at IAVA to be working on this? --></help>
+        <label><!-- Ideal Staff POC --></label>
+        <name>Ideal_Staff_POC__c</name>
+        <relationshipLabel><!-- Partnerships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- In-Kind Contribution Description --></label>
+        <name>In_Kind_Contribution_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- In-Kind Contribution Offer --></label>
+        <name>In_Kind_Contribution_Offer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is there an internal Veteran&apos;s affinity group at the Partner&apos;s Organization? --></help>
+        <label><!-- Internal Veterans Affinity Group --></label>
+        <name>Internal_Veterans_Affinity_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Iraq/Afghanistan Veteran Involvement --></label>
+        <name>Iraq_Afghanistan_Veteran_Involvement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is the Film Fully Funded --></label>
+        <name>Is_the_Film_Fully_Funded__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Key Leadership --></label>
+        <name>Key_Leadership__c</name>
+    </fields>
+    <fields>
+        <help><!-- What is the timing of the partnership? --></help>
+        <label><!-- Length of Partnership --></label>
+        <name>Length_of_Partnership__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing Budget --></label>
+        <name>Marketing_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name of Film --></label>
+        <name>Name_of_Film__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Step (deprec) --></label>
+        <name>Next_Step__c</name>
+    </fields>
+    <fields>
+        <help><!-- Include Links --></help>
+        <label><!-- Notable Press Coverage --></label>
+        <name>Notable_Press_Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes / Next Steps --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of total related Gives on the partnership record --></help>
+        <label><!-- Num. Total Gives --></label>
+        <name>Number_of_Total_Gives__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the organization which is related to the partnership request submitted by webform. --></help>
+        <label><!-- Org Name --></label>
+        <name>Org_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
+        <relationshipLabel><!-- Partnerships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Organizations/Experts Involved with Film --></label>
+        <name>Organizations_Experts_Involved_with_Film__c</name>
+    </fields>
+    <fields>
+        <label><!-- Origin of Relationship --></label>
+        <name>Origin_of_Relationship__c</name>
+        <picklistValues>
+            <masterLabel>Introduced by another person</masterLabel>
+            <translation><!-- Introduced by another person --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Previous Partners</masterLabel>
+            <translation><!-- Previous Partners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Partnerships</masterLabel>
+            <translation><!-- Strategic Partnerships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsolicited</masterLabel>
+            <translation><!-- Unsolicited --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Other Current Partners --></label>
+        <name>Other_Current_Partners__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Partnership Description --></label>
+        <name>Other_Partnership_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Partnership Offer --></label>
+        <name>Other_Partnership_Offer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does anyone else at IAVA need to be brought in on this? --></help>
+        <label><!-- Other Staff Needed --></label>
+        <name>Other_Staff_Needed__c</name>
+    </fields>
+    <fields>
+        <help><!-- What other charities do they currently support? --></help>
+        <label><!-- Other Supported Charities --></label>
+        <name>Other_Supported_Charities__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who is involved? (IAVA and Partners) --></help>
+        <label><!-- Parties Involved --></label>
+        <name>Parties_Involved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Category --></label>
+        <name>Partner_Category__c</name>
+        <picklistValues>
+            <masterLabel>Apparel</masterLabel>
+            <translation><!-- Apparel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arts</masterLabel>
+            <translation><!-- Arts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto</masterLabel>
+            <translation><!-- Auto --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business</masterLabel>
+            <translation><!-- Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defense/military</masterLabel>
+            <translation><!-- Defense/military --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Digital</masterLabel>
+            <translation><!-- Digital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics</masterLabel>
+            <translation><!-- Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy</masterLabel>
+            <translation><!-- Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food/beverage</masterLabel>
+            <translation><!-- Food/beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health</masterLabel>
+            <translation><!-- Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hotel</masterLabel>
+            <translation><!-- Hotel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non profit</masterLabel>
+            <translation><!-- Non profit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurant/bar</masterLabel>
+            <translation><!-- Restaurant/bar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sports</masterLabel>
+            <translation><!-- Sports --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel</masterLabel>
+            <translation><!-- Travel --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Level --></label>
+        <name>Partner_Level__c</name>
+        <picklistValues>
+            <masterLabel>Active Action</masterLabel>
+            <translation><!-- Active Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Active Conversations</masterLabel>
+            <translation><!-- Active Conversations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Courting</masterLabel>
+            <translation><!-- Courting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospective</masterLabel>
+            <translation><!-- Prospective --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stewardship</masterLabel>
+            <translation><!-- Stewardship --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What can be measured for each aspect of the partnership to track success? --></help>
+        <label><!-- Partnership/Program Metrics --></label>
+        <name>Partnership_Program_Metrics__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partnership Type --></label>
+        <name>Partnership_Type__c</name>
+        <picklistValues>
+            <masterLabel>Corporation &amp; Sponsorship</masterLabel>
+            <translation><!-- Corporation &amp; Sponsorship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Film</masterLabel>
+            <translation><!-- Film --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nonprofit &amp; Government Org</masterLabel>
+            <translation><!-- Nonprofit &amp; Government Org --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRISM</masterLabel>
+            <translation><!-- PRISM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resources &amp; Benefits</masterLabel>
+            <translation><!-- Resources &amp; Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ticket Give</masterLabel>
+            <translation><!-- Ticket Give --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Does this seem worthwhile? --></help>
+        <label><!-- Partnership Worthwhile --></label>
+        <name>Partnership_Worthwhile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Philanthropic Focus --></label>
+        <name>Philanthropic_Focus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Point in Production Process --></label>
+        <name>Point_in_Production_Process__c</name>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribution</masterLabel>
+            <translation><!-- Distribution --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post-Production</masterLabel>
+            <translation><!-- Post-Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Production</masterLabel>
+            <translation><!-- Pre-Production --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Production</masterLabel>
+            <translation><!-- Production --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Would this partnership be considered controversial by some? Is preliminary review needed? --></help>
+        <label><!-- Potentially Controversial --></label>
+        <name>Potentially_Controversial__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Producer --></label>
+        <name>Producer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Production Budget --></label>
+        <name>Production_Budget__c</name>
+    </fields>
+    <fields>
+        <help><!-- For related Gives, this description will appear on the Rucksack site wherever a short description of the partner is needed. --></help>
+        <label><!-- Public Brief Description --></label>
+        <name>Public_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the long description that will appear on the Rucksack site when someone drills into this specific partnership record. --></help>
+        <label><!-- Public Detail Description --></label>
+        <name>Public_Detail_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of partner to appear on Rewards site --></help>
+        <label><!-- Public Partner Name --></label>
+        <name>Public_Partner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publicity Plan --></label>
+        <name>Publicity_Plan__c</name>
+    </fields>
+    <fields>
+        <help><!-- What are the specific reasons, purpose or benefits of accomplishing the goal? --></help>
+        <label><!-- Reasons for Pursuing --></label>
+        <name>Reasons_for_Pursuing__c</name>
+    </fields>
+    <fields>
+        <help><!-- Campaign used for tracking fundraising on this partnership --></help>
+        <label><!-- Related Campaign --></label>
+        <name>Related_Campaign__c</name>
+        <relationshipLabel><!-- Partnerships --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If there is a specific contact related to this object, select it here. --></help>
+        <label><!-- Related Contact --></label>
+        <name>Related_Contact__c</name>
+        <relationshipLabel><!-- Partnerships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Department --></label>
+        <name>Related_Department__c</name>
+        <picklistValues>
+            <masterLabel>Ad Council</masterLabel>
+            <translation><!-- Ad Council --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership</masterLabel>
+            <translation><!-- Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Partnerships</masterLabel>
+            <translation><!-- Strategic Partnerships --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Release Date --></label>
+        <name>Release_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- FormAssembly response ID --></help>
+        <label><!-- FormAssembly Response ID --></label>
+        <name>Response_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to original response --></help>
+        <label><!-- FA Response Link --></label>
+        <name>Response_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue Last 3 Years --></label>
+        <name>Revenue_Last_3_Years__c</name>
+    </fields>
+    <fields>
+        <help><!-- What needs to be accomplished daily, weekly and monthly to stay on track? --></help>
+        <label><!-- Rolling Action Items --></label>
+        <name>Rolling_Action_Items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scheduled Screenings --></label>
+        <name>Scheduled_Screenings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Services Offer --></label>
+        <name>Services_Offer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether logo appears in partner section of Rucksack website --></help>
+        <label><!-- Partner logo on partners page --></label>
+        <name>Show_Partner_Logo__c</name>
+    </fields>
+    <fields>
+        <help><!-- Determines whether logo shows up in logo block on Rewards site --></help>
+        <label><!-- Partner logo in logo block --></label>
+        <name>Show_partner_logo_on_rewards_homepage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sort Order in Logo block --></label>
+        <name>Sort_Order_in_Logo_block__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sort Order on Partners page --></label>
+        <name>Sort_Order_on_Partners_page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Active Partnership</masterLabel>
+            <translation><!-- Active Partnership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed/Rejected</masterLabel>
+            <translation><!-- Closed/Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IAVA to Outreach</masterLabel>
+            <translation><!-- IAVA to Outreach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive/Completed Partnership</masterLabel>
+            <translation><!-- Inactive/Completed Partnership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Followup</masterLabel>
+            <translation><!-- Needs Followup --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted by Partner</masterLabel>
+            <translation><!-- Submitted by Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Partnership Start Date. --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- What action steps need to be taken to achieve the goal? (Action Plan) --></help>
+        <label><!-- Strategic Action Plan --></label>
+        <name>Strategic_Action_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Summary of Film --></label>
+        <name>Summary_of_Film__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ticket Give Stage --></label>
+        <name>Ticket_Give_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Accepted by Membership &amp; Sent to Online</masterLabel>
+            <translation><!-- Accepted by Membership &amp; Sent to Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Accepted by SP &amp; Sent to Membership</masterLabel>
+            <translation><!-- Accepted by SP &amp; Sent to Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Form Setup Online</masterLabel>
+            <translation><!-- Form Setup Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Names Sent to Partner</masterLabel>
+            <translation><!-- Names Sent to Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offer Sent to Members</masterLabel>
+            <translation><!-- Offer Sent to Members --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Followup Completed</masterLabel>
+            <translation><!-- Partner Followup Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected by Membership</masterLabel>
+            <translation><!-- Rejected by Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted by Partner</masterLabel>
+            <translation><!-- Submitted by Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ticket Winners Confirmed</masterLabel>
+            <translation><!-- Ticket Winners Confirmed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Timing Considerations Moving Forward --></label>
+        <name>Timing_Considerations_Moving_Forward__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timing Considerations --></label>
+        <name>Timing_Considerations__c</name>
+    </fields>
+    <fields>
+        <help><!-- How will I know when it is accomplished? How will I track these action steps and goal? --></help>
+        <label><!-- Trackable Performance Measurements --></label>
+        <name>Trackable_Performance_Measurements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Veteran Service Organization Involvement --></label>
+        <name>Veteran_Service_Organization_Involvement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Veterans on Sr. Leadership --></label>
+        <name>Veterans_on_Sr_Leadership__c</name>
+    </fields>
+    <fields>
+        <label><!-- What Will Be Provided to IAVA --></label>
+        <name>What_Will_Be_Provided_to_IAVA__c</name>
+        <picklistValues>
+            <masterLabel>&quot;In Association With&quot; Credit</masterLabel>
+            <translation><!-- &quot;In Association With&quot; Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DVDs</masterLabel>
+            <translation><!-- DVDs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribute IAVA Materials - DVDs</masterLabel>
+            <translation><!-- Distribute IAVA Materials - DVDs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distribute IAVA Materials - Screenings</masterLabel>
+            <translation><!-- Distribute IAVA Materials - Screenings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Include IAVA PSAs on DVDs</masterLabel>
+            <translation><!-- Include IAVA PSAs on DVDs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Include IAVA in Other Promo Materials</masterLabel>
+            <translation><!-- Include IAVA in Other Promo Materials --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inclusion in Press Outreach</masterLabel>
+            <translation><!-- Inclusion in Press Outreach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Participation in Q&amp;A/Discussions</masterLabel>
+            <translation><!-- Participation in Q&amp;A/Discussions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage of Total Revenues</masterLabel>
+            <translation><!-- Percentage of Total Revenues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Promote IAVA on Film Website</masterLabel>
+            <translation><!-- Promote IAVA on Film Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Show IAVA PSAs at Screenings</masterLabel>
+            <translation><!-- Show IAVA PSAs at Screenings --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsorship Credit</masterLabel>
+            <translation><!-- Sponsorship Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tickets to Screenings</masterLabel>
+            <translation><!-- Tickets to Screenings --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Who Has Ownership of the Film --></label>
+        <name>Who_Has_Ownership_of_the_Film__c</name>
+    </fields>
+    <fields>
+        <label><!-- Who Owns Licensing Rights to the Film --></label>
+        <name>Who_Owns_Licensing_Rights__c</name>
+    </fields>
+    <fields>
+        <label><!-- Writer --></label>
+        <name>Writer__c</name>
+    </fields>
+    <layouts>
+        <layout>External User Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Film Request Layout</layout>
+        <sections>
+            <label><!-- Basic Film Information --></label>
+            <section>Basic Film Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Film Distribution Information --></label>
+            <section>Film Distribution Information</section>
+        </sections>
+        <sections>
+            <label><!-- Film Funding/Rights Information --></label>
+            <section>Film Funding/Rights Information</section>
+        </sections>
+        <sections>
+            <label><!-- Film Partnership Information --></label>
+            <section>Film Partnership Information</section>
+        </sections>
+        <sections>
+            <label><!-- Film Partnership Information - IAVA --></label>
+            <section>Film Partnership Information - IAVA</section>
+        </sections>
+        <sections>
+            <label><!-- Film Publicity Information --></label>
+            <section>Film Publicity Information</section>
+        </sections>
+        <sections>
+            <label><!-- IAVA Mission Connection --></label>
+            <section>IAVA Mission Connection</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partnership Layout</layout>
+        <sections>
+            <label><!-- Attainable --></label>
+            <section>Attainable</section>
+        </sections>
+        <sections>
+            <label><!-- Background Info --></label>
+            <section>Background Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Measurable --></label>
+            <section>Measurable</section>
+        </sections>
+        <sections>
+            <label><!-- No longer used? --></label>
+            <section>No longer used?</section>
+        </sections>
+        <sections>
+            <label><!-- Offer Information --></label>
+            <section>Offer Information</section>
+        </sections>
+        <sections>
+            <label><!-- Relevant --></label>
+            <section>Relevant</section>
+        </sections>
+        <sections>
+            <label><!-- Rucksack info --></label>
+            <section>Rucksack info</section>
+        </sections>
+        <sections>
+            <label><!-- SMART Questions --></label>
+            <section>SMART Questions</section>
+        </sections>
+        <sections>
+            <label><!-- Specific --></label>
+            <section>Specific</section>
+        </sections>
+        <sections>
+            <label><!-- Time-Bound --></label>
+            <section>Time-Bound</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Film --></label>
+        <name>Film</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

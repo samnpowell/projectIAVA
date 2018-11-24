@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Give__c$Id</field>
+    </columns>
+    <columns>
+        <field>Give__c$Name</field>
+    </columns>
+    <columns>
+        <field>Give__c.Give_Instances__r$Name</field>
+    </columns>
+    <columns>
+        <field>Give__c.Give_Instances__r.Give_Requests__r$Name</field>
+    </columns>
+    <columns>
+        <field>Give__c.Give_Instances__r.Give_Requests__r$Applicant__c.Portal_User__c.CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Give__c.Give_Instances__r.Give_Requests__r$Applicant__c.First_COV_Login__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Give__c$Name</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>IAVA&apos;s Home for the Holidays Contest</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Give__c.Give_Instances__r.Give_Requests__r$Applicant__c.Portal_User__c.CreatedDate</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>12/19/2016 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>New myIAVA Users from SW Give</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Gives_with_Give_Instances_and_Give_Requests__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Give__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Automatically sends to someone after they make a Gala donation.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Gala Donation Thank-You Note</name>
+    <style>none</style>
+    <subject>Thank You for Your Gala Ticket Purchase!</subject>
+    <type>text</type>
+</EmailTemplate>

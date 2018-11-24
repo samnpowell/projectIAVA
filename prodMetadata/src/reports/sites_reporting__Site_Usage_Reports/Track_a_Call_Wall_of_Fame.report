@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Activity_Junction__c.Date_of_Call__c</field>
+    </columns>
+    <columns>
+        <field>Activity_Junction__c.Contact__c</field>
+    </columns>
+    <columns>
+        <field>Activity_Junction__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Activity_Junction__c.Call_Notes__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Activity_Junction__c.Assigned_To__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Track a Call Wall of Fame</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Activity_Junction__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Activity_Junction__c.Date_of_Call__c</dateColumn>
+        <interval>INTERVAL_LAST30</interval>
+    </timeFrameFilter>
+</Report>

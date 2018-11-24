@@ -1,0 +1,12 @@
+A new myIAVA  Feedback record was created by {!Feedback__c.OwnerFullName} at {!Feedback__c.CreatedDate}
+
+You can use Chatter to respond at:
+{!Feedback__c.Link}
+
+Record Name: {!Feedback__c.Name}
+URL that the user was on: {!Feedback__c.URL__c}
+Star rating given: {!Feedback__c.Rating__c}
+
+Message
+-------------
+{!Feedback__c.Message__c}

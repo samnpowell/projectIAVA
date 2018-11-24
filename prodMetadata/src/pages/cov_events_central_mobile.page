@@ -1,0 +1,93 @@
+<apex:page showHeader="false" sidebar="false" controller="cov_events_central_mobile_controller">
+	
+
+	<apex:composition template="cov_template">
+
+
+    <apex:define name="page-title">
+        myIAVA VetTogether Central
+    </apex:define>
+
+    <apex:define name="meta-tags">
+        <meta property="og:title" content="myIAVA VetTogether Central" />
+        <meta property="og:url" content="{!$Site.currentSiteUrl}" />
+        <meta property="og:description" content="A vibrant, peer-supported online community for veterans of Iraq and Afghanistan." />
+        <meta property="og:type" content="non-profit" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    </apex:define>
+
+
+
+	    <apex:define name="layout"> 
+
+
+			<apex:outputPanel rendered="{!selectedTab == 'AllEvents'}" >
+                <apex:include pageName="cov_eventsmap_dash" />
+				<apex:include pageName="cov_events_dash" />
+			</apex:outputPanel>
+			<apex:outputPanel rendered="{!selectedTab == 'MyEvents'}" >
+				<apex:include pageName="cov_events_dash" />
+			</apex:outputPanel>
+			<apex:outputPanel rendered="{!selectedTab == 'Resources'}" >
+				<apex:include pageName="cov_event_resources_dash" />
+			</apex:outputPanel>
+			<apex:outputPanel rendered="{!selectedTab == 'Social'}" >
+				<apex:include pageName="cov_socialstream_dash" />
+			</apex:outputPanel>
+			<apex:outputPanel rendered="{!selectedTab == 'Chat'}" >
+		       <div class="dashboard-list">
+                    <div id="chatter_header">
+                        <div class="box-heading"><div class="box-heading-content"><h5>#VetTogether Hosts Group</h5></div><div class="relative pull-left"><div class="box-heading-edge"></div></div></div>
+                    </div>
+                    <div class="well box-content" id="dashboard-chatter">
+                        <c:cov_feed_customized entityId="{!if(isSandbox, '0F9M00000000jG7', '0F9C0000000CpZ8')}" disableDefaultToEveryone="true" />
+                    </div>
+               </div>
+			</apex:outputPanel>
+
+
+
+			<nav class="navbar navbar-default navbar-fixed-bottom mobile-only">
+				<div class="container-fluid">
+					<div class="row" id="bottomNav">
+				    	<div class="nav-item col-xs-2 dot-four text-center {!if(selectedTab=='AllEvents','active','')}">
+				    		<a href="cov_events_central?tab=AllEvents">
+					    		<div class="glyphicon glyphicon-calendar"></div>
+					    		<div class="bottom-nav-label">All Events</div>
+				    	</a>
+					    </div>
+					    <div class="nav-item col-xs-2 dot-four text-center {!if(selectedTab=='MyEvents','active','')}">
+					    	<a href="cov_events_central?tab=MyEvents">
+					    		<div class="glyphicon glyphicon-saved"></div>
+					    		<div class="bottom-nav-label">My Events</div>
+				    		</a>
+					    		</div>
+					    <div class="nav-item col-xs-2 dot-four text-center {!if(selectedTab=='Resources','active','')}">
+					    	<a href="cov_events_central?tab=Resources">
+					    		<div class="glyphicon glyphicon-folder-open"></div>
+					    		<div class="bottom-nav-label">Resources</div>
+				    		</a>
+					    		</div>
+					    <div class="nav-item col-xs-2 dot-four text-center {!if(selectedTab=='Social','active','')}">
+					    	<a href="cov_events_central?tab=Social">
+					    		<div class="glyphicon glyphicon-th"></div>
+					    		<div class="bottom-nav-label">Social Wall</div>
+				    		</a>
+					    		</div>
+					    <div class="nav-item col-xs-2 dot-four text-center {!if(selectedTab=='Chat','active','')}">
+					    	<a href="cov_events_central?tab=Chat">
+					    		<div class="glyphicon glyphicon-user"></div>
+					    		<div class="bottom-nav-label">Host Chat</div>
+				    		</a>
+			    		</div>
+					</div>
+				</div>
+			</nav>
+
+		</apex:define>
+
+	</apex:composition>
+
+
+</apex:page>

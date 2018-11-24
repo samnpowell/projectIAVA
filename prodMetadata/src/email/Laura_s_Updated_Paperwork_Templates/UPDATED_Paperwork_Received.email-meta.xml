@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent when paperwork first uploaded, before staff has reviewed it.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>UPDATED: Paperwork Received</name>
+    <style>none</style>
+    <subject>We’ve Got Your Paperwork!</subject>
+    <textOnly>{!Contact.FirstName},
+
+Thank you for submitting paperwork to verify your service. Since we review all paperwork by hand, it may take 7-10 business days before you receive a confirmation email. Please stay tuned! 
+
+In the meantime, stay plugged in to the community on myIAVA, and check out www.vettogether.org to find (or host) an event near you. We hope to chat with, or see you soon! 
+
+Best, 
+
+Team IAVA
+
+P.S. Think your friends would want to join IAVA? Send them this message: &quot;I just joined IAVA, the nation’s first and largest organization for veterans of Iraq and Afghanistan. Membership is free! Sign up at www.iava.org/#join.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

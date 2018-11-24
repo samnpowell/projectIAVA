@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>9/14/13 WhiteSox Final Reminder</name>
+    <style>none</style>
+    <subject>Let&apos;s go White Sox!</subject>
+    <textOnly>{!Contact.FirstName}
+
+I just wanted to make sure that you all had the information on tomorrow&apos;s  game(Copied below).
+
+Here is the down and dirty, I will be near Gate 2 with the rest of the IAVA staff at 4:30PM with your tickets. PLEASE NOTE THAT GATE 2 IS A CHANGE FROM PREVIOUS INFORMATION. Game starts at 6:10PM and our check in table will be closed by 7PM. Please be sure to stop by and say hi - and get your tickets. Go Sox!
+
+Cheers,
+
+Matt
+
+Matt Colvin, USAF
+
+Strategic Partnerships Senior Associate
+
+Iraq and Afghanistan Veterans of America (IAVA)
+
+Forwarded message
+From: Team IAVA
+Subject: Fwd: Final Confirmation and Reminder: IAVA-Miller High Life Chicago White Sox vs. Cleveland Indians Game, 9/14
+
+Dear IAVA Member:
+
+If you are receiving this message, you have final confirmed for the IAVA-Miller High Life Chicago White Sox vs. Cleveland Indians game taking place on Saturday, September 14. Details of the day are below:
+What: Chicago White Sox vs. Cleveland Indians
+When: Saturday, September 14: First pitch at 6:10 p.m.; pre-game party begins at 4:30 p.m.
+Where: U.S. Cellular Field - 333 W. 35th Street, Chicago, IL 60616
+
+Logistics
+Driving Directions
+Seating Map of U.S. Cellular Field
+
+Tickets
+Tickets for the game can be picked up at the Will Call window located next to the IAVA table near Gate 1 (right field) at U.S. Cellular Field starting at 4:30 p.m. Once you receive your tickets, you will be directed to the pre-game party with food and drinks. The pre-game party begins at 4:30 p.m.
+
+Parade Lap
+All IAVA member veterans who are 21 and over are invited to participate in a parade lap on the field prior to the start of the game. To participate, member veterans need to meet in the hallway outside the pre-game party patio at 5:15 p.m. The parade lap will begin at 5:30 p.m.
+
+Questions &amp; Cancellations
+If you have any questions or your plans have changed and you can no longer attend the game, please email rucksack@iava.org as soon as possible.
+
+Thank you and have a great time at the game!
+
+Best, Team IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

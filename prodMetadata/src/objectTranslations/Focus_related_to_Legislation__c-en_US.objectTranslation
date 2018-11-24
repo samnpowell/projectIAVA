@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Focus Area related to Legislation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Focus Areas related to Legislation</value>
+    </caseValues>
+    <fields>
+        <help><!-- The Focus Area related to the Legislation --></help>
+        <label><!-- Related Focus Area --></label>
+        <name>Related_Focus_Area__c</name>
+        <relationshipLabel><!-- Legislation related to this Focus Area --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Legislation related to the Focus Area --></help>
+        <label><!-- Related Legislation --></label>
+        <name>Related_Legislation__c</name>
+        <relationshipLabel><!-- Focus Areas related to this Legislation --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

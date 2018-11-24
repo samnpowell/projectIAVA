@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Greenzone Acceptance</name>
+    <style>none</style>
+    <subject>Green Zone Screening with IAVA</subject>
+    <textOnly>Dear {!Contact.FirstName},
+ 
+We’re really looking forward to seeing you at the screening of Green Zone tomorrow night. We also want to invite you and your guests to head over to Geisha House after the film, for free drinks and food, and to hang out with other OIF/OEF vets. 
+ 
+When: 10:00 PM - Midnight (Immediately following the screening of Green Zone) 
+Where: Geisha House (6633 Hollywood Boulevard, Los Angeles, CA 90028-6207) - Map here: http://bit.ly/aFI8mg
+ 
+IAVA staff will be outside Mann’s Chinese Theatre to direct you to the venue. 
+ 
+If you can’t make it to the screening, we hope you can still make it out to Geisha House. 
+ 
+NOTE: You must be 21 years of age to enter Geisha House. Dress code is smart casual. 
+ 
+We’re looking forward to seeing you there! 
+ 
+Best, 
+ 
+Blake 
+ 
+Blake Henderson
+
+Deputy Membership Director
+
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

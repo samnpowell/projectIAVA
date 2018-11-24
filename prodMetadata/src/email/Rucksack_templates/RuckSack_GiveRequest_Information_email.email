@@ -1,0 +1,14 @@
+Hi {!Contact.FirstName}, 
+
+Thanks for requesting this information!
+
+{!NullValue(Give_Request__c.Give_Name__c, "Details not found - contact IAVA for assistance")}
+
+Details:
+
+{!NullValue(Give_Request__c.Give_Fulfillment_Instructions__c, "(No details given)")} 
+
+
+We hope this is valuable.  Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area.
+
+Thank you for supporting IAVA.

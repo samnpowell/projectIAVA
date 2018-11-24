@@ -1,0 +1,222 @@
+<apex:page controller="cov_resources_controller" sidebar="false" showheader="false" action="{!initStep1}">
+
+
+<apex:composition template="cov_template{!if(isInModal, '_noheader', '')}">
+
+	<apex:define name="meta-tags">
+        <meta property="og:title" content="RRRP: We're here to help - myIAVA" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</apex:define>
+
+	<apex:define name="page-title">
+		RRRP: We're here to help - myIAVA
+	</apex:define>
+
+    <apex:define name="layout">
+
+
+        <div class="popup-container">
+        
+          <div class="detail-pg">           
+        
+          <h2>We're here to help</h2>
+
+          <p>Rapid Response Referral Program (RRRP) is IAVA’s case management and referral services program, connecting our Member Veterans and their families with veteran-specific resources.</p>
+<!-- comment lines 26-38 out to hide the new case button 
+          <apex:outputPanel rendered="{!existingCases.size > 0}">
+          	<apex:form >
+		        <p>&nbsp;</p>
+
+				// <div class="text-center">
+					// <apex:commandButton value="Open a New Case" action="{!createNewRRRPcase}" styleclass="btn btn-primary btn-large" />
+				// </div>
+                <div class="text-center">
+                    	<apex:commandButton value="Open a New Case" action="{!intakeFormCreateNewRRRPCase}" styleclass="btn btn-primary btn-large"/>
+                </div>
+            </apex:form>
+
+          </apex:outputPanel>
+ --> <!-- comment lines 40-55 out to hide the new case button
+          <apex:outputPanel rendered="{!existingCases.size == 0 && c != null}">
+
+	        <p>&nbsp;</p>
+
+              // <div class="text-center">
+              	// <apex:form >
+              		// <apex:commandButton value="Yes, please contact me" action="{!createNewRRRPcase}" styleclass="btn btn-primary btn-large" />
+              	// </apex:form>
+              // </div>
+              <div class="text-center">
+                  <apex:form >
+                    <apex:commandButton value="Yes, please contact me" action="{!intakeFormCreateNewRRRPCase}" styleclass="btn btn-primary btn-large"/>
+                  </apex:form>
+                </div>
+
+          </apex:outputPanel>
+ -->
+          <p>&nbsp;</p>
+
+
+          <div style="padding-top: 20px; padding-bottom: 20px;">
+              <div class="row">
+                  <div class="col-xs-3 col-sm-3 no-padding-sides">
+                    <img src="{!URLFOR($Resource.rrrp_files,'img/disability_claims.png')}" class="img-responsive" alt="Disability Claims"/>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 no-padding-sides">
+                    <img src="{!URLFOR($Resource.rrrp_files,'img/education_benefits.png')}" class="img-responsive" alt="Education Benefits"/>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 no-padding-sides">
+                    <img src="{!URLFOR($Resource.rrrp_files,'img/for_profit_school_counseling.png')}" class="img-responsive" alt="For-Profit School Counseling"/>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 no-padding-sides">
+                    <img src="{!URLFOR($Resource.rrrp_files,'img/mental_health.png')}" class="img-responsive" alt="Mental Health"/>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12">&nbsp;</div>
+              </div>
+
+              <div class="row">
+                  <div class="col-xs-3 col-sm-3 no-padding-sides">
+                    <img src="{!URLFOR($Resource.rrrp_files,'img/financial_assistance.png')}" class="img-responsive" alt="Financial Assistance"/>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 no-padding-sides">
+                    <img src="{!URLFOR($Resource.rrrp_files,'img/employment_services.png')}" class="img-responsive" alt="Employment Services"/>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 no-padding-sides">
+                    <img src="{!URLFOR($Resource.rrrp_files,'img/housing_services.png')}" class="img-responsive" alt="Housing Services"/>
+                  </div>
+
+                  <div class="col-xs-3 col-sm-3 no-padding-sides">
+                    <img src="{!URLFOR($Resource.rrrp_files,'img/public_benefits.png')}" class="img-responsive" alt="Public Benefits"/>
+                  </div>
+              </div>
+          </div>
+
+          <p>&nbsp;</p>
+
+          <apex:outputPanel id="existingCasesPanel" rendered="{!existingCases.size > 0}">
+
+            <apex:form >
+	          	<div>
+		          	<h4>Your currently open inquiries:</h4>
+		          	<p>&nbsp;</p>
+		          	<ul class="list-group">
+			          	<apex:repeat value="{!existingCases}" var="ec">
+			          		<li class="list-group-item">
+			          			<apex:outputText value="Ref #{!ec.caseNumTrimmed} - " />
+			          			<apex:outputText value="{0,date,M'/'dd'/'yyyy} - ">
+		    						<apex:param value="{!ec.cs.CreatedDate}" /> 
+								</apex:outputText>
+			          			<apex:outputText value="{!ec.cs.Status} - " />
+			          			<apex:outputPanel rendered="{!ec.cs.Contact_Preference__c != null}">
+				          			By&nbsp; <apex:outputLink value="cov_rrrp_2?id={!ec.cs.Id}" >
+					          			<apex:outputText value="{!ec.cs.Contact_Preference__c}" />
+					          		</apex:outputLink>
+					          		&nbsp;-&nbsp;
+					          	</apex:outputPanel>
+			          			<apex:commandLink value="Add comment" reRender="existingCasesPanel" rendered="{!ec.cs.Id != caseIdforComment}">
+			          				<apex:param name="caseId" value="{!ec.cs.Id}" assignTo="{!caseIdforComment}"/>
+			          			</apex:commandLink>
+			          			<apex:outputPanel rendered="{!ec.editable}" > - 
+				          			<apex:outputLink value="cov_rrrp_{!if(isblank(ec.cs.Intake_Step_Completed__c), '2', value(ec.cs.Intake_Step_Completed__c) + 1)}?id={!ec.cs.Id + extraParameters}" >
+				          				Continue filling out
+				          			</apex:outputLink>
+				          		</apex:outputPanel>
+				          		<apex:outputPanel id="msgPanel" rendered="{!ec.cs.Id == caseIdforComment_prev}" >
+				          					&nbsp;<apex:outputText value="{!commentMsg}" id="comment-msg" styleClass="comment-msg color-iava-green" />
+				          		</apex:outputPanel>	
+			          			<!-- <a class="add-comment-link" id="comment-link-{!ec.cs.Id}" href="javascript:void(0);">Add comment</a>  -->
+			          			&nbsp;
+			          			<apex:outputPanel id="comment-panel" rendered="{!ec.cs.Id == caseIdforComment}">
+				          			<div class="case-comment" id="comment-{!ec.cs.Id}">
+					          			<apex:inputTextArea styleClass="form-control" rows="3" value="{!caseComment}" html-placeholder="Enter your comment" />
+					          			<apex:commandButton styleclass="btn btn-large" id="save-comment-button" value="Send Comment" action="{!saveCaseComment}" reRender="existingCasesPanel" >
+					          				<apex:param name="caseId" value="{!ec.cs.Id}" assignTo="{!caseIdforComment}"/>
+					          			</apex:commandButton>			          			
+					          		</div>
+					          	</apex:outputPanel>
+			          		</li>
+			          	</apex:repeat>
+		          	</ul>
+		        </div>
+			</apex:form>
+<!-- comment lines 152-163 out to hide the new case button 
+			<apex:form >
+		        <p>&nbsp;</p>
+
+                // <div class="text-center">
+                	// <apex:commandButton value="Open a New Case" action="{!createNewRRRPcase}" styleclass="btn btn-primary btn-large" />
+                // </div>
+                <div class="text-center">
+                    	<apex:commandButton value="Open a New Case" action="{!intakeFormCreateNewRRRPCase}" styleclass="btn btn-primary btn-large"/>
+                </div>
+            </apex:form>
+ -->
+          </apex:outputPanel>
+<!-- comment lines 165-181 out to hide the new case button 
+          <apex:outputPanel rendered="{!existingCases.size == 0 && c != null}">
+
+	        <p>&nbsp;</p>
+
+			// <div class="text-center">
+				// <apex:form >
+					// <apex:commandButton value="Yes, please contact me" action="{!createNewRRRPcase}" styleclass="btn btn-primary btn-large" />
+				// </apex:form>
+			// </div>
+              <div class="text-center">
+                    <apex:form >
+                    	<apex:commandButton value="Yes, please contact me" action="{!intakeFormCreateNewRRRPCase}" styleclass="btn btn-primary btn-large"/>
+                    </apex:form>
+                </div>
+          </apex:outputPanel>
+ -->
+          <apex:outputPanel styleclass="conn-contact-msg text-center" rendered="{!c == null}">
+	            No connected contact, can't open a case.
+          </apex:outputPanel>
+
+
+        <div class="text-center">
+	        <p>&nbsp;</p>
+            <a href="http://iava.org/rrrp" target="_blank">Want more info?</a>
+        </div>
+
+        <p>&nbsp;</p>
+
+        <div class="pull-right">
+            <button type="button" class="close smaller-close" onclick="closeIfModal();" aria-hidden="true">Close</button>
+        </div>
+
+          
+         </div>
+        </div>
+    
+	 	<script type="text/javascript">
+			var j$ = jQuery.noConflict();
+			j$(document).ready(function()    {
+				j$(".add-comment-link").click(function () {
+					j$('.case-comment').hide();
+					var targetId = j$(this).attr("id").slice(-1 * (j$(this).attr("id").length - 'comment-link-'.length));
+					j$('#commentMsg').html('Saving...');
+		   			j$('#comment-' + targetId).show();
+				});
+				j$('#save-comment-button').click(function () {
+					j$('div[id$=comment-msg]').html('One moment...');
+				});
+			});
+		</script>   
+    
+    
+    
+    </apex:define>
+
+</apex:composition>
+
+
+</apex:page>

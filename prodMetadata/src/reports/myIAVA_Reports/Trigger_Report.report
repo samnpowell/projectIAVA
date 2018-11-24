@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Signup_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Documents_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Accepted_TOS_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Last_Email_Opened_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Last_Give_Request_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Last_Event_Date_with_Tracked_Attendance__c</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <description>what is triggering members to finally sign into myIAVA?</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Accepted_TOS_Date__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>10/16/2015 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Trigger Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Contact.Last_Email_Opened_Date__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

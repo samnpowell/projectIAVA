@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Shakespeare Thank You</name>
+    <style>none</style>
+    <subject>Thank you for joining us!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for participating in the Simply Shakespeare performance on Monday night! We hope you had a great time and appreciate you representing IAVA and the 2.2 million veterans of the wars in Iraq and Afghanistan.
+
+If you have any stories or photos to share from the event, we would love to see them! You can send them as an attachment in a reply to this email or feel free to upload them to Facebook, Twitter or Community of Veterans and shoot us a link. 
+
+Do you have friends who are OEF/OIF veterans and aren’t members of IAVA, yet? Encourage them to sign up &lt;http://iavaonline.org/form&gt; — membership is free and they’ll get access to IAVA’s exclusive online Community of Veterans and the opportunity to request rewards through The Rucksack. 
+
+We look forward to seeing you at another IAVA event soon!
+
+Thank you for standing with us.
+
+Sincerely,
+Adam
+
+Adam Bryant
+
+Membership Director
+
+Iraq and Afghanistan Veterans of America (IAVA)
+ 
+292 Madison Avenue, 10th Floor
+ 
+New York, NY 10017
+ 
+(212) 982-9699
+ 
+http://www.iava.org
+ 
+Follow us on Twitter at @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

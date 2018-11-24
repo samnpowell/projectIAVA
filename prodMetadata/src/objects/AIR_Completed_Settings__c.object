@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used by AIRCountComplete trigger which checks/unchecks the AIR Completed box on the related record if the Completed box is checked/unchecked on the AIR.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AIR_Completed_field__c</fullName>
+        <description>If empty, trigger will assume that the field on the related record is named AIR_Completed__c. If not, specify name here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If empty, trigger will assume that the field on the related record is named AIR_Completed__c. If not, specify name here.</inlineHelpText>
+        <label>AIR Completed field (if non-standard)</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether or not this field is checked in the trigger that checks the Completed box on the related record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether or not this field is checked in the trigger that checks the Completed box on the related record.</inlineHelpText>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Field_API_Name__c</fullName>
+        <description>Name of field on AIR record containing a related record ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of field on AIR record containing a related record ID</inlineHelpText>
+        <label>Field API Name on AIR containing an ID</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>AIR Completed Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

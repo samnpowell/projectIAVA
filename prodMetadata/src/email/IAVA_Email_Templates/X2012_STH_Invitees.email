@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+    </head>
+    <body style="margin: 0px; padding: 0px;">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#daccae">
+            <tbody>
+                <tr>
+                    <td valign="top" align="center">
+                    <table width="622" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600"><a href="http://www.iava.org/"><img width="600" height="106" border="0" alt="IAVA" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/iava_header.png" /></a></td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="top" bgcolor="#ffffff" align="center"><img width="600" height="17" alt="" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/bg.png" />
+                                <table width="600" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td height="10" colspan="3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="20"></td>
+                                            <td width="660" valign="top" align="left">
+                                            <P>Dear {!Contact.FirstName},</P> 
+
+<P>Congratulations! We are very pleased to invite you to be a part of IAVA’s Storm the Hill 2012 Ground Team in Washington, DC from March 24-30. It will be an exciting, demanding and historic week, and we know you will be an excellent addition. We’ll show millions of our fellow veterans around the world that we’ve got their back.</P>
+
+<p>This year IAVA received a record setting 450 applications for a handful of slots on our ground team in Washington and our digital team across the country. All of our applications were inspiring – and the increasing level of interest in Storm the Hill thrills us. Every year, this program is growing the new veterans movement in unprecedented ways.</P>
+
+<P>IAVA is taking care of your travel and lodging, but we need a couple things from you to make that happen. First, we need you to complete a <a href="http://iava.org/2012-storm-hill-travel-information">travel information form</A> and a <a href="http://iava.org/storm-hill-ground-team-bios?tfa_3={!Contact.Email}&tfa_1={!Contact.FirstName}&tfa_2={!Contact.LastName}">biographical information form.</A>  Please complete these forms no later than 5:00 pm EST Monday. If you experience difficulties with the form, please email <a href="mailto:anthony@iava.org">anthony@iava.org</a> for assistance. </P> 
+
+<P>In the coming days, you will receive an itinerary detailing your travel to Washington, as well as an informational packet from IAVA. Inside will be all of the important details that you will need to know about Storm the Hill. </P> 
+
+<P>In the meantime, if you have any questions or concerns, please contact Anthony Pike at <a href="mailto:anthony@iava.org">anthony@iava.org</a>. Anthony will be working to ensure that your experience in Washington DC is as seamless possible. We are excited to have you as a member of Storm the Hill 2012 and look forward to seeing you later this month. Welcome to the team! </P> 
+
+<P>Sincerely, <BR>
+Jason</P>
+
+<P>Jason Hansman<BR>
+Membership Director<BR> 
+Iraq and Afghanistan Veterans of America (IAVA) </P>
+</td>
+                                            <td width="20"></td>
+                                        </tr>
+                                        <tr>
+                                            <td height="50" colspan="3"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="middle" height="38" bgcolor="#3d4722" align="center"><a href="http://www.iava.org/donate"><img width="68" height="38" border="0" alt="DONATE" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_donate.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/contact-us"><img width="66" height="38" border="0" alt="CONTACT US" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_contactus.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/spread-word"><img width="49" height="38" border="0" alt="RECRUIT" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_recruit.png" /></a><img width="21" height="38" alt="*" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/star.png" /><a href="http://iava.org/veteranjoin"><img width="61" height="38" border="0" alt="SUBSCRIBE" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/link_subscribe.png" /></a></td>
+                                <td width="11"></td>
+                            </tr>
+                            <tr>
+                                <td width="11"></td>
+                                <td width="600" valign="top">
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="431" valign="middle" align="left">
+                                            </td>
+                                            <td width="170" valign="middle" height="48" align="right"><img width="115" height="20" alt="CONNECT WITH IAVA:" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/txt_connect.png" /><a href="http://www.facebook.com/IAVA.org"><img width="28" height="20" border="0" alt="Facebook" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/share_fb.png" /></a><a href="http://twitter.com/iava"><img width="24" height="20" border="0" alt="Twitter" src="https://s3.amazonaws.com/media.iava.org/dia_email_template_primary_newlogo/share_tw.png" /></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </td>
+                                <td width="11"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

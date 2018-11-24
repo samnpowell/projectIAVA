@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>IAVA Rewards Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>IAVA Rewards Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- AUTOMATICALLY MAINTAINED.  DO NOT UPDATE.
+The Last Member ID assigned to a Contact.  Is 8 character string that looks like a number.  First number assigned to any Contact is 15325001.  Is sequential after that. --></help>
+        <label><!-- Last Member ID --></label>
+        <name>Last_Member_ID__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

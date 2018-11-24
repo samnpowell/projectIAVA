@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CONTACT_ID</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__Full_Name__c</field>
+    </columns>
+    <columns>
+        <field>Detailed_Deployment_Information__c.Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Detailed_Deployment_Information__c.End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Detailed_Deployment_Information__c.OEF_OIF__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <format>Summary</format>
+    <name>Deployments added last week</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactCustomEntity$Detailed_Deployment_Information__c</reportType>
+    <scope>my</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_LASTWEEK</interval>
+    </timeFrameFilter>
+</Report>

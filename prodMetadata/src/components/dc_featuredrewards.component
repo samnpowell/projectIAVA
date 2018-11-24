@@ -1,0 +1,71 @@
+<apex:component controller="dc_ctrl_homepage">
+
+
+<div class="hr page-divider">
+    <hr/>
+    <h2><img src="{!URLFOR($Resource.dc_css,'images/hr_header_rewards-featuredrewards.png')}" width="146" height="22" alt="IAVA featured REWARDS"/></h2>
+</div>
+
+<div id="view-rewards-list-teaser" class="view view-page-full">
+<apex:repeat id="Reward" value="{!feature_reward}" var="feat_rew" >
+    <div class="view-content">
+
+        <div class="views-row views-row-odd views-row-1">
+
+            <div class="node node-type-teaser">
+                <div class="node-inner">
+                    <div class="content">
+                        <p class="alignleft"><a href="javascript:RewardDetail('{!feat_rew.giveid_1}')"><apex:image id="att" URL="{!feat_rew.attachment_1}" width="103" height="98" rendered="{!if(feat_rew.title_1 != '' && feat_rew.attachment_1 != 'false',true,false)}"/>
+                        <apex:image id="att_def6" URL="{!URLFOR($Resource.dc_defaultlogo,feat_rew.defaultlogo_1)}" width="103" height="98" rendered="{!if(feat_rew.title_1 != '' && feat_rew.attachment_1 == 'false',true,false)}"/>
+                        </a></p>
+                        <h4><a href="javascript:RewardDetail('{!feat_rew.giveid_1}')">{!feat_rew.title_1}</a></h4>
+                        <p class="location"><apex:outputtext value="{!feat_rew.location_1}" /></p>
+                        <p class="location reward-status"><apex:outputtext value="{!feat_rew.available_1}" /></p>
+                        <!-- 
+                        <p class="more-link"><a href="javascript:RewardDetail('{!feat_rew.giveid_1}')" class="rover more-details"></a></p>
+						 -->
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="views-row views-row-even views-row-2">
+            <div class="node node-type-teaser">
+                <div class="node-inner">
+                    <div class="content">
+                        <p class="alignleft"><a href="javascript:RewardDetail('{!feat_rew.giveid_2}')"><apex:image id="att2" URL="{!feat_rew.attachment_2}" width="103" height="98" rendered="{!if(feat_rew.title_2 != '' && feat_rew.attachment_2 != 'false',true,false)}"/>
+                        <apex:image id="att_def3" URL="{!URLFOR($Resource.dc_defaultlogo,feat_rew.defaultlogo_2)}" width="103" height="98" rendered="{!if(feat_rew.title_2 != '' && feat_rew.attachment_2 == 'false',true,false)}"/>
+                        </a></p>
+                        <h4><a href="javascript:RewardDetail('{!feat_rew.giveid_2}')">{!feat_rew.title_2}</a></h4>
+                        <p class="location"><apex:outputtext value="{!feat_rew.location_2}" /></p>
+                        <p class="location reward-status"><apex:outputtext value="{!feat_rew.available_2}" /></p>
+						<!-- 
+                        <p class="more-link"><a href="javascript:RewardDetail('{!feat_rew.giveid_2}')" class="rover more-details"></a></p>
+						 -->
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div><!-- /view-content -->
+	</apex:repeat>
+    <p class="alignright more-link"><a href="{!$Page.dc_RewardList}" class="rover more-rewards"></a></p>
+</div> <!-- /view -->
+
+
+<script type="text/javascript"> 
+function RewardDetail(id)
+{
+				var newURL = window.location.protocol + "//" + window.location.host;
+                var pageName = '{!$Page.dc_RewardDetails}' + "?giveid=" + id;
+                var finalURL = newURL + pageName;
+               	return window.location = finalURL;
+}
+</script>
+</apex:component>

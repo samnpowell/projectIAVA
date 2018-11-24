@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>IAVAEvent_Attendee__c$Name</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent_Attendee__c$Event_ID__c</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent_Attendee__c$ContactId_18__c</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent_Attendee__c$Searchable_Name__c</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent_Attendee__c$Reply_Status__c</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent_Attendee__c$Attended__c</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent_Attendee__c$Parent_Attendee_Id__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>IAVAEvent_Attendee__c$Event_ID__c</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>a5PC0000000Gn43</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>NYC Vets Day Parade attendees</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Event_Attendees__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>IAVAEvent_Attendee__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

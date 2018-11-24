@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Settings for Give Instance and Give Requests UI</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Give_Request_Page_Size__c</fullName>
+        <description>Page size of Give Requests related list. Must be less than or equal to 1,000 so as not to exceed Visualforce limit.</description>
+        <externalId>false</externalId>
+        <label>Give Request Page Size</label>
+        <precision>4</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Give Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

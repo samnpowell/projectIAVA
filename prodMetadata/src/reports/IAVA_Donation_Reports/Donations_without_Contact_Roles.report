@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity.OpportunityContactRoles*Contact$kw__Full_Name_link__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Org_Type__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Amount</field>
+    </columns>
+    <columns>
+        <field>Opportunity$c3_c4__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Payment_Method__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles$Role</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Account</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles*Contact$npe01__Organization_Type__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles*Contact$Org_match_check__c</field>
+    </columns>
+    <description>The top section shows donations without contact roles as long as the Org Type is blank, One-to-One Individual, or Other.</description>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Org_Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Organizational Ally,Corporate Donor,Press Outlet,Foundation,Vendor</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.OpportunityContactRoles$Id</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Donations without Contact Roles</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Donations_with_or_without_Contact_Roles__c</reportType>
+    <roleHierarchyFilter>SystemAdministrator</roleHierarchyFilter>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity$CloseDate</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_PREVFY</interval>
+    </timeFrameFilter>
+</Report>

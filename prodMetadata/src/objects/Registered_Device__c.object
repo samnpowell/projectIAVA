@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This custom Salesforce object will be used to store information pertaining to mobile devices.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will be used to indicate whether the device is active or not.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>App_Version__c</fullName>
+        <description>This field will be used to store the App Version.</description>
+        <externalId>false</externalId>
+        <label>App Version</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Device_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The Device Unique Id</description>
+        <externalId>true</externalId>
+        <inlineHelpText>The Device Unique Id</inlineHelpText>
+        <label>Device Id</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Device_Model__c</fullName>
+        <description>This field will be used to store the Device Model.</description>
+        <externalId>false</externalId>
+        <label>Device Model</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Device_OS__c</fullName>
+        <description>This field will be used to store the Device OS.</description>
+        <externalId>false</externalId>
+        <label>Device OS</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Device_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field will be used to store the ID of the Contact to whom this device belongs.</description>
+        <externalId>false</externalId>
+        <label>Device Owner</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Registered Devices</relationshipLabel>
+        <relationshipName>Registered_Devices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Device_Token__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This field will be used to store the Device Token.  It should be configured as an External ID field that is unique across all records.</description>
+        <externalId>false</externalId>
+        <label>Device Token</label>
+        <length>64</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Latitude__c</fullName>
+        <description>This field will be used to store the Last Latitude that was searched for by this device.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to store the Last Latitude that was searched for by this device.</inlineHelpText>
+        <label>Last Latitude</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Longitude__c</fullName>
+        <description>This field will be used to store the Last Longitude that was searched for by this device.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to store the Last Longitude that was searched for by this device.</inlineHelpText>
+        <label>Last Longitude</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Search_By__c</fullName>
+        <description>This field will be used to indicate how the last search was done by the device.  The valid values are: ‘Latitude and Longitude’, ‘Zip Code’.  This field may be null if the device has just been registered and no searches have yet been performed OR if the last search was generic and did not use Zip Code or Latitude and Longitude.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to indicate how the last search was done by the device.</inlineHelpText>
+        <label>Last Search By</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Latitude and Longitude</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Zip Code</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Search_On__c</fullName>
+        <description>This field will be used to indicate the timestamp for when the last search was performed by the device.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to indicate the timestamp for when the last search was performed by the device.</inlineHelpText>
+        <label>Last Search On</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Zip_Code__c</fullName>
+        <description>This field will be used to store the Last Zip Code that was searched for by this device.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field will be used to store the Last Zip Code that was searched for by this device.</inlineHelpText>
+        <label>Last Zip Code</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>New_Rewards__c</fullName>
+        <description>This field will be used to store the number of new rewards that have been created near the owner’s location since they last searched for rewards.</description>
+        <externalId>false</externalId>
+        <label>New Rewards</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receive_Messages__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This filed will be used to indicate whether the device accepts messages or not.</description>
+        <externalId>false</externalId>
+        <label>Receive Messages</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Registration_Timestamp__c</fullName>
+        <description>The timestamp when the device was last registered.</description>
+        <externalId>false</externalId>
+        <label>Registration Timestamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Registered Device</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Active__c</columns>
+        <columns>App_Version__c</columns>
+        <columns>Device_Model__c</columns>
+        <columns>Device_OS__c</columns>
+        <columns>Device_Owner__c</columns>
+        <columns>Device_Token__c</columns>
+        <columns>Device_Id__c</columns>
+        <columns>Receive_Messages__c</columns>
+        <columns>Registration_Timestamp__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Registered Device Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Registered Devices</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Device_Owner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Device_Token__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>New_Rewards__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>App_Version__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Device_OS__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Device_Model__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Receive_Messages__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Registration_Timestamp__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Device_Id_Length</fullName>
+        <active>true</active>
+        <description>Device Id must contains 40 characters.</description>
+        <errorConditionFormula>LEN( Device_Id__c )  &lt;&gt; 40</errorConditionFormula>
+        <errorDisplayField>Device_Id__c</errorDisplayField>
+        <errorMessage>Device Id has to be 40 characters long.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Device_Token_Validation</fullName>
+        <active>true</active>
+        <description>The Device Token could be empty or a 64 chars hexadecimal number.</description>
+        <errorConditionFormula>AND(  NOT(ISBLANK( Device_Token__c )), NOT(REGEX( Device_Token__c , &apos;[0-9a-fA-F]{64}&apos;) ))</errorConditionFormula>
+        <errorDisplayField>Device_Token__c</errorDisplayField>
+        <errorMessage>The Device Token can be empty or an hexadecimal number (0-9a-f) of 64 characters.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,117 @@
+<apex:page standardController="Case" extensions="cov_resources_controller" sidebar="false" showheader="false" action="{!initStep4}">
+
+
+<apex:composition template="cov_template_noheader">
+
+
+    <apex:define name="layout">
+        
+        <div class="popup-container">
+        
+          <div class="detail-pg">   
+                  
+       
+          <h2>One last step...</h2>
+
+        <p>Iraq and Afghanistan Veterans of America (IAVA) maintains a strict policy on the confidentiality of your records.  All information you share or which we become aware of through our work with you will remain confidential.  This means it will not be shared with anyone outside the Rapid Response Referral Program (RRRP) unless you provide us written permission. </p>
+
+		<p>There are some circumstances in which this policy becomes VOID and we are required by law to release information.  These include:</p>
+
+		<ul>
+			<li>If we become aware that you may be a danger to yourself or others.</li>
+			<li>If we become aware of an adult, elderly, or child abuse situation taking place.</li>
+			<li>Under court order</li>
+		</ul>
+
+		<p>In situations mentioned above, we would be required by law to release the information to the appropriate authority.</p>
+
+		  <p>&nbsp;</p>
+          
+            <apex:form html-role="form" styleClass="form-horizontal">
+
+		        <apex:inputField rendered="false" value="{!Case.Contact.FirstName}" />
+		        <apex:inputField rendered="false" value="{!Case.Contact.LastName}" />
+
+                <div class="form-group">
+                    <label for="name" class="col-xs-5 control-label">Name</label>
+                    <div class="col-xs-7">
+                    	<p class="form-control-static" id="name">{!Case.Contact.FirstName} {!Case.Contact.LastName}</p>
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="housing" class="col-xs-5 control-label">Current housing / living status</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="housing" value="{!Case.Current_Housing_Living_Status__c}" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Healthcare" class="col-xs-5 control-label">VA Healthcare/Primary care</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="healthcare" value="{!Case.Healthcare__c}" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Marital Status" class="col-xs-5 control-label">Marital Status</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="marital" value="{!Case.Marital_Status__c}" />
+                        <apex:outputField value="{!Case.Contact.Marital_Status__c}" rendered="false" />
+                        <!-- <apex:inputText value="{!maritalStatusOnContact_prev}" rendered="false" /> -->
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="employment" class="col-xs-5 control-label">Employment Status</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="employment" value="{!Case.Employment__c}" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="household-income" class="col-xs-5 control-label">Household Income</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="household-income" value="{!Case.Annual_Family_income__c}" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="discharge" class="col-xs-5 control-label">Discharge Status</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="discharge" value="{!Case.Discharge_Status__c}" />
+                	</div>
+                </div>
+
+
+          <p>&nbsp;</p>
+
+	        <div class="text-center">
+	                <apex:commandButton value="Finished!" action="{!save}" styleclass="btn btn-primary btn-large" />
+	        </div>
+
+ 		</apex:form>
+
+
+        <p>&nbsp;</p>
+
+        <div class="pull-right">
+            <button type="button" class="close smaller-close" onclick="window.parent.closeModal();" aria-hidden="true">Close</button>
+            <apex:outputPanel rendered="{!closeTarget != null && closeTarget != ''}">
+                <input type="hidden" id="closetarget" value="{!closeTarget}" />
+            </apex:outputPanel>
+        </div>
+
+          
+         </div>
+        </div>
+    
+    
+    
+    
+    </apex:define>
+
+</apex:composition>
+
+
+</apex:page>

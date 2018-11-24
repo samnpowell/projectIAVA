@@ -1,0 +1,16 @@
+Hi {!Contact.FirstName},
+
+Thanks for requesting this IAVA reward:
+
+{!NullValue(Give_Request__c.Give_Name__c, "Reward not found - contact IAVA for assistance")}
+{!Give_Instance__c.Start_Date__c} {!Give_Instance__c.Start_Time__c}
+
+Number of tickets/units requested: 1 
+
+Here are the instructions to claim your reward:
+
+{!NullValue(Give_Request__c.Give_Fulfillment_Instructions__c, "(No instructions given)")}
+
+Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

@@ -1,0 +1,56 @@
+<apex:page controller="cov_announcements_controller">
+
+<apex:outputPanel id="announcementWrapper" rendered="{!hasAnnouncements}">
+
+<div class="dashboard-segment dashboard-list" id="dashboard-announce-container">
+<!-- <apex:pageMessages escape="false" /> -->
+
+	<apex:repeat id="announcementsList" value="{!announcementsList}" var="an">
+
+		<apex:outputPanel id="announcementPanel" rendered="{!an.details != null}">
+			<div class="dashboard-announce-item clearfix well relative-container">
+			
+	
+<!-- 				<button type="button" class="close pull-right" aria-hidden="true">&times;</button> -->
+				<apex:form >
+<!-- 					<apex:commandbutton action="{!dismiss}" styleclass="close pull-right">&times;<apex:param name="cmpId" value="{!an.cId}" assignTo="{!cmpIdChosen}"/></apex:commandbutton> -->
+				
+		            <apex:commandButton value="x" action="{!dismiss}" styleclass="close pull-right" rendered="{!conId != null}" rerender="announcementWrapper">
+<!-- 		            <apex:commandButton value="x" action="{!dismiss}" styleclass="close pull-right"> -->
+									<apex:param name="cmpId" value="{!an.cId}" assignTo="{!cmpIdChosen}"/>
+					</apex:commandButton>
+
+				
+		
+	<!-- 			<img class="announce-thumb pull-left" src="https://mts1.google.com/vt/lyrs=m@227000000&amp;hl=en&amp;src=app&amp;x=74033&amp;s=&amp;y=48314&amp;z=17&amp;s=Galil"/> -->
+				<apex:outputText styleclass="announce-thumb pull-left" escape="false" value="{!an.picThumb}" rendered="{!an.hasPicThumb}" />
+			
+				<div class="dashboard-announce-body">
+				
+						<apex:outputText escape="false" value="{!an.details}" />
+				
+				</div>
+		            <apex:commandButton value="Sign Petition" action="{!signPetition}" styleclass="btn-attn" rendered="{!conId != null && an.type == 'Petition' && !an.hasSigned}" rerender="announcementWrapper">
+									<apex:param name="cmpId" value="{!an.cId}" assignTo="{!cmpIdChosen}"/>
+									<apex:param name="cmpName" value="{!an.name}" assignTo="{!cmpNameChosen}"/>
+					</apex:commandButton>
+
+<!-- 		            <apex:outputPanel rendered="{!conId != null && an.type == 'Petition' && an.hasSigned}" >
+		            	<div class="btn-completed">Signed</div>
+		            </apex:outputPanel>
+ -->
+		
+	<!-- 			<a class="more-link" href="#">More...</a> -->
+
+				</apex:form>			
+			</div>
+		</apex:outputPanel>
+		
+	</apex:repeat>
+
+</div>
+
+
+</apex:outputPanel>
+
+</apex:page>

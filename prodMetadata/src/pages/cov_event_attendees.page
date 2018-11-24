@@ -1,0 +1,350 @@
+<apex:page controller="cov_events_controller" action="{!initAttendeePage}" name="Event detail" id="cov_event" sidebar="false" showheader="false" standardStylesheets="true" applyBodyTag="false" applyHtmlTag="false">
+
+
+<apex:composition template="{!templateName}">
+
+	<apex:define name="page-title">
+		Event Attendees: {!ce.Name} - myIAVA
+	</apex:define>
+
+	<apex:define name="meta-tags">
+		<apex:outputPanel rendered="{!ce != null}">
+			<meta property="og:title" content="{!ce.Name}" />
+			<meta property="og:image" content="{!if(ce.hasPicFull, left($Site.currentSiteUrl, len($Site.currentSiteUrl) - len($Site.Prefix) - 1) + URLFOR($Action.Attachment.Download, ce.picFullId), '')}" />
+			<meta property="og:url" content="{!$Site.currentSiteUrl + 'cov_event?id=' + ce.eId}" />
+		    <meta property="og:description" content="{!ce.eventType} Event - myIAVA" />
+			<meta property="og:type" content="activity" />
+		</apex:outputPanel>
+	</apex:define>
+
+	<apex:define name="layout"> 
+
+      	<c:cov_include_js_jquery /> 	
+      	<c:cov_include_js_validationengine /> 
+      	<c:cov_include_css_validationengine />
+
+
+		<!-- <apex:outputPanel rendered="{!ce.organizerId == $User.Id}"> -->
+		<apex:outputPanel >
+
+			<br />
+			<div>Reply List and Attendance Tracking</div>
+			<h2><a href="cov_event?id={!ce.eId}"><apex:outputText value="{!ce.name}" /></a></h2>
+			<div><h2><apex:outputText value="{0,date,MMM' 'dd', 'yyyy}"><apex:param value="{!ce.startDate}" /></apex:outputText></h2></div>
+
+
+				<p>&nbsp;</p>
+				<p class="italicer"><a href="#newAttendee" onclick="setTimeout(function() { j$('input[id$=newAttendee-first]').focus(); }, 30);"><span class="glyphicon glyphicon-flash"></span></a>New: Add someone else who is not on this list with the form at the <a href="#newAttendee" onclick="setTimeout(function() { j$('input[id$=newAttendee-first]').focus(); }, 30);">bottom of this page.</a></p>
+
+
+				<apex:form >
+					<center>
+						<div class="save-changes-button" style="visibility: hidden;">
+							<apex:commandButton styleClass="btn btn-warning" value="Save Changes" action="{!saveAttendanceChanges}"/>
+							<p>Changes must be saved to be recorded</p>
+						</div>
+						<apex:inputHidden id="attendanceArray" value="{!attendanceArray}" />
+					</center>
+				</apex:form>
+
+			<table class="table">
+
+				<apex:outputPanel rendered="{!AND(yesAttendeesList != null, yesAttendeesList.size > 0)}">
+					<tr>
+						<td colspan="3" class="lightshade">
+							<h4>People who replied 'Yes' ({!yesAttendeesList.size})</h4>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-header">
+							Name
+						</td>
+						<td class="table-header">
+							Reply
+						</td>
+						<td class="table-header">
+							Attended?
+						</td>
+					</tr>
+					<apex:repeat value="{!yesAttendeesList}" var="attnd">
+						<tr>
+							<td>
+								{!attnd.Attendee_Name__c}
+							</td>
+							<td>
+								{!attnd.Reply_Status__c}
+							</td>
+							<td>
+								<button type="button" class="btn btn-default btn-option-set{!if(attnd.Attended__c == 'Yes',' btn-lightgreen','')} btn-for-{!attnd.Id}" onclick="changeAttendance(this, '{!attnd.Id}', 'Yes');" data-was-selected="{!if(attnd.Attended__c == 'Yes','true','false')}">Attended</button>
+								<button type="button" class="btn btn-default btn-option-set{!if(attnd.Attended__c == 'No',' btn-lightred','')} btn-for-{!attnd.Id}"   onclick="changeAttendance(this, '{!attnd.Id}', 'No');" data-was-selected="{!if(attnd.Attended__c == 'No','true','false')}">Did not attend</button>
+							</td>
+						</tr>
+					</apex:repeat>
+					<tr><td colspan="3">&nbsp;</td></tr>
+				</apex:outputPanel>
+
+				<apex:outputPanel rendered="{!AND(invitedAttendeesList != null, invitedAttendeesList.size > 0)}">
+					<tr>
+						<td colspan="3" class="lightshade">
+							<h4>Invited but not yet responded ({!invitedAttendeesList.size})</h4>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-header">
+							Name
+						</td>
+						<td class="table-header">
+							Reply
+						</td>
+						<td class="table-header">
+							Attended?
+						</td>
+					</tr>
+					<apex:repeat value="{!invitedAttendeesList}" var="attnd">
+						<tr>
+							<td>
+								{!attnd.Attendee_Name__c}
+							</td>
+							<td>
+								{!attnd.Reply_Status__c}
+							</td>
+							<td>
+								<button type="button" class="btn btn-default btn-option-set{!if(attnd.Attended__c == 'Yes',' btn-lightgreen','')} btn-for-{!attnd.Id}" onclick="changeAttendance(this, '{!attnd.Id}', 'Yes');" data-was-selected="{!if(attnd.Attended__c == 'Yes','true','false')}">Attended</button>
+								<button type="button" class="btn btn-default btn-option-set{!if(attnd.Attended__c == 'No',' btn-lightred','')} btn-for-{!attnd.Id}"   onclick="changeAttendance(this, '{!attnd.Id}', 'No');" data-was-selected="{!if(attnd.Attended__c == 'No','true','false')}">Did not attend</button>
+							</td>
+						</tr>
+					</apex:repeat>
+					<tr><td colspan="3">&nbsp;</td></tr>
+				</apex:outputPanel>
+
+				<apex:outputPanel rendered="{!AND(notOnListAttendeesList != null, notOnListAttendeesList.size > 0)}">
+					<tr>
+						<td colspan="3" class="lightshade">
+							<h4>Showed Up ({!notOnListAttendeesList.size})</h4>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-header">
+							Name
+						</td>
+						<td class="table-header">
+							Reply
+						</td>
+						<td class="table-header">
+							Attended?
+						</td>
+					</tr>
+					<apex:repeat value="{!notOnListAttendeesList}" var="attnd">
+						<tr>
+							<td>
+								{!attnd.Attendee_Name__c}
+							</td>
+							<td>
+								{!attnd.Reply_Status__c}
+							</td>
+							<td>
+								<button type="button" class="btn btn-default btn-option-set{!if(attnd.Attended__c == 'Yes',' btn-lightgreen','')} btn-for-{!attnd.Id}" onclick="changeAttendance(this, '{!attnd.Id}', 'Yes');" data-was-selected="{!if(attnd.Attended__c == 'Yes','true','false')}">Attended</button>
+								<button type="button" class="btn btn-default btn-option-set{!if(attnd.Attended__c == 'No',' btn-lightred','')} btn-for-{!attnd.Id}"   onclick="changeAttendance(this, '{!attnd.Id}', 'No');" data-was-selected="{!if(attnd.Attended__c == 'No','true','false')}">Did not attend</button>
+							</td>
+						</tr>
+					</apex:repeat>
+					<tr><td colspan="3">&nbsp;</td></tr>
+				</apex:outputPanel>
+
+
+				<apex:outputPanel rendered="{!AND(noAttendeesList != null, noAttendeesList.size > 0)}">
+					<tr>
+						<td colspan="3" class="lightshade">
+							<h4>People who replied 'No' ({!noAttendeesList.size})</h4>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-header">
+							Name
+						</td>
+						<td class="table-header">
+							Reply
+						</td>
+						<td class="table-header">
+							Attended?
+						</td>
+					</tr>
+					<apex:repeat value="{!noAttendeesList}" var="attnd">
+						<tr>
+							<td>
+								{!attnd.Attendee_Name__c}
+							</td>
+							<td>
+								{!attnd.Reply_Status__c}
+							</td>
+							<td>
+								<button type="button" class="btn btn-default btn-option-set{!if(attnd.Attended__c == 'Yes',' btn-lightgreen','')} btn-for-{!attnd.Id}" onclick="changeAttendance(this, '{!attnd.Id}', 'Yes');" data-was-selected="{!if(attnd.Attended__c == 'Yes','true','false')}">Attended</button>
+							</td>
+						</tr>
+					</apex:repeat>
+					<tr><td colspan="3">&nbsp;</td></tr>
+				</apex:outputPanel>
+
+				<tr class="save-changes-button" style="visibility: hidden;">
+					<td colspan="3" align="center">
+						<apex:form >
+							<div class="pre-save-button" >
+								<apex:commandButton styleClass="btn btn-warning" value="Save Changes" action="{!saveAttendanceChanges}" />
+								<p>Changes must be saved to be recorded</p>
+							</div>
+							<div>
+								<input type="button" class="btn btn-default" value="Cancel changes" onClick="cancelAttendanceChanges();return false;" />
+							</div>
+							<apex:inputHidden id="attendanceArray" value="{!attendanceArray}" />
+						</apex:form>
+					</td>
+				</tr>
+
+
+					<tr>
+						<td colspan="3" class="lightshade">
+							<a name="newAttendee"></a>
+							<h4>Add someone else who showed up</h4>
+					        <div class="pre-save" id="disableIfChangesPrompt" style="display:none;" styleClass="btn-overridden">First save attendance changes above to avoid losing them!</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">						
+					        <apex:form styleclass="form validated-form" id="newAttendeeForm">
+					        <div class="form-group form-inline">
+					        	<div class="form-group">
+									<label class="sr-only" for="newAttendee-first">First Name</label>
+							    	<apex:inputText styleclass="form-control validate[required] disableIfChanges" value="{!newAttendeeFirstName}" id="newAttendee-first" html-placeholder="First Name" />
+								</div>
+					        	<div class="form-group">
+									<label class="sr-only" for="newAttendee-last">Last Name</label>
+							    	<apex:inputText styleclass="form-control validate[required] disableIfChanges" value="{!newAttendeeLastName}" id="newAttendee-last" html-placeholder="Last Name"  />
+								</div>
+					        	<div class="form-group">
+									<label class="sr-only" for="newAttendee-email">Email</label>
+							    	<apex:inputText styleclass="form-control validate[required,custom[email]] input-longer disableIfChanges" value="{!newAttendeeEmail}" id="newAttendee-email"  html-placeholder="Email" />
+								</div>
+								 <div class="form-group">
+						        		<div class="checkbox spaced-horiz">
+											<label>
+												<apex:inputCheckbox value="{!newAttendeeVeteran}" id="Veteran" styleClass="disableIfChanges" /> Post 9/11 Veteran
+											</label>
+										</div>
+								</div>
+								<div class="form-group spaced-horiz">
+							    	<apex:commandButton action="{!addNewAttendee}" value="Add" id="newAttendeeButton" styleclass="btn btn-primary disableIfChanges" />
+						        </div>
+					        </div>
+
+					        </apex:form>
+
+						</td>
+					</tr>
+
+
+
+			</table>
+
+		
+
+
+		</apex:outputPanel>
+
+	
+	  	<c:cov_include_js_validationengine_init />
+
+		<script type="text/javascript">
+
+			var changeAttendance = function changeAttendance(clickedSelector, key, value) {
+				// console.log('changeAttendance(' + clickedSelector +', ' + key + ', ' + value +')');
+				var revertingAChange = false;
+				j$('.btn-for-' + key).each(function(){
+					if (j$(this).is(clickedSelector)) {
+						// console.log('for the clicked button...');
+						if (j$(this).data('newSelection') == true || j$(this).data('overridden') == true) {
+							/* had been selected to be changed in this session so cancel and revert to stored value */
+							// console.log('was already being changed or overridden and now reverting.');
+							revertingAChange = true;
+							j$('input[id$=attendanceArray]').val(removeFromArray(j$('input[id$=attendanceArray]').val(), key));
+							j$('.btn-for-' + key).removeClass('btn-overridden');
+							j$(this).removeClass('btn-pre-save');
+							j$(this).data('newSelection', false);
+							j$(this).data('overridden', false);
+						} else {
+							/* hasnt yet been selected in this session */
+							// console.log('wasnt already being changed or overridden');
+							j$(this).data('newSelection', true);
+							j$(this).addClass('btn-pre-save');
+							if (j$(this).data('wasSelected') == true) {
+								/* the user wants to null out the stored value */
+								// console.log('was selected on page load so need to null out');
+								j$('input[id$=attendanceArray]').val(addToArray(j$('input[id$=attendanceArray]').val(), key, ''));
+								j$(this).addClass('btn-overridden');
+							} else {
+								/* the user is adding a new selection */
+								// console.log('adding a plain old new selection');
+								j$('input[id$=attendanceArray]').val(addToArray(j$('input[id$=attendanceArray]').val(), key, value));
+								j$(this).removeClass('btn-overridden');
+							}
+						}
+					} else {
+						/* this button wasnt the one clicked */
+						// console.log('for the non-clicked button... hide orange lines and remove newSelection data');
+						j$(this).removeClass('btn-pre-save');
+						j$(this).data('newSelection', false);
+						if (j$(this).data('wasSelected') == true && revertingAChange == false) {
+							// console.log('was selected on page load and the other button is not being reverted so add overridden');
+							j$(this).addClass('btn-overridden');
+							j$(this).data('overridden', true);
+						} else {
+							// console.log('was either not selected on page load or other button is being reverted so just remove overridden if present');
+							j$(this).removeClass('btn-overridden');
+							j$(this).data('overridden', false);
+						}
+					}
+				});
+				// console.log('----------');
+
+				var saveButtonVisibility = 'visible';
+				if (j$.trim(j$('input[id$=attendanceArray]').val()) == '') {
+					saveButtonVisibility = 'hidden';
+				} 
+				j$('.save-changes-button').css('visibility', saveButtonVisibility);
+
+				toggleNewAttendeeForm();
+
+			}
+
+			var cancelAttendanceChanges = function cancelAttendanceChanges() {
+				j$('input[id$=attendanceArray]').val('');
+				j$('.btn').each(function(){
+					j$(this).data('newSelection', false);
+					j$(this).data('overridden', false);
+					j$(this).removeClass('btn-overridden');
+					j$(this).removeClass('btn-pre-save');
+				});
+				j$('.save-changes-button').css('visibility', 'hidden');
+				toggleNewAttendeeForm();
+			}
+
+			var toggleNewAttendeeForm = function toggleNewAttendeeForm() {
+				if (j$('.save-changes-button').css('visibility') == 'visible') {
+					j$('.disableIfChanges').attr('disabled','disabled');
+					j$('#disableIfChangesPrompt').show();
+				} else {
+					j$('.disableIfChanges').removeAttr('disabled');	
+					j$('#disableIfChangesPrompt').hide();		
+				}
+			}
+
+
+		</script>
+
+	
+	
+	</apex:define>
+
+</apex:composition>
+
+
+</apex:page>

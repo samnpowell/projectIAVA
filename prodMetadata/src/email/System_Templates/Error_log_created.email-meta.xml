@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify admin that an error log was created in case action required</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Error log created</name>
+    <style>none</style>
+    <subject>[May be urgent] Error log created in IAVA Salesforce</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,17 @@
+{!Contact.Name},
+
+Unfortunately we had some trouble with the paperwork you uploaded to confirm your service.
+
+DETAILS:
+{!if(ispickval(Contact.Paperwork_Issue__c,"Orders"),"We do not accept orders deploying you or recalling you as they do not definitively document that you served in Iraq or Afghanistan.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"Upload Problem"),"It looks like your paperwork failed to transmit properly. The most likely reason is that your document size exceeds 5 MB. Please resize and try again.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"Illegible"),"We are unable to read the documentation due to the document being illegible or too small to read. Please rescan or resize your document and send again.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"Unable to open"),"Unfortunately we are unable to open your document. Please save it as a .jpeg or .pdf document and resend.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"Email not found"),"Unfortunately we are unable to find this email address in our system. Please resend with the email address you used to apply for membership.","")}{!if(ispickval(Contact.Paperwork_Issue__c,"No ICM, ACM, GWOTEM, or service dates"),"Unfortunately we are unable to see a qualifying award or service location and dates listed on your document.","")}
+
+{!if (not(isblank(Contact.Approval_Related_Comments__c)), "COMMENTS: " + Contact.Approval_Related_Comments__c,"")}
+
+If you have any technical issues or other questions please contact us at myiava@iava.org. We’re standing by to help.
+
+Look forward to seeing you in the community soon!
+
+
+Best, 
+
+Team IAVA

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>CONTACT_LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>CampaignMember.Notes__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>EMAIL</column>
+            <isUnlocked>true</isUnlocked>
+            <operator>notContain</operator>
+            <value>iava,test</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Go Silent 2017 Campaign</name>
+    <params>
+        <name>scopeid</name>
+        <value>701C0000001XsGw</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignContact</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

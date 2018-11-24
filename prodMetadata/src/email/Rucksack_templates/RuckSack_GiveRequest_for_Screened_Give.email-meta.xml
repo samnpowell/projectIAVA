@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Confirmation of a request for a screened give</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RuckSack - GiveRequest for Screened Give</name>
+    <style>none</style>
+    <subject>IAVA Reward: {!Give_Request__c.Give_Name__c}</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,36 @@
+<apex:component controller="dc_ctrl_PartnerDetails">
+ 
+<div class="view view-page-full one-node"> 
+ 
+	<div class="view-header"> 
+    	<h1 class="title"><span>IAVA Partner</span></h1> 
+	</div> 
+
+<div class="view-content">
+<apex:form id="frm">
+
+<div class="views-row-1 views-row-odd"> 
+<div class="node node-type-page">
+<div class="node-inner"> 
+	<h2 class="title">
+		<apex:outputtext value="{!Partner.Public_Partner_Name__c}" />
+	</h2> 
+	<div class="content"> 
+		<p class="alignleft">
+    		<a href=""><apex:image id="att" URL="{!logoURL}"  alt="{!Partner.Public_Partner_Name__c}"  rendered="{!if(logoURL != ' ',true,false)}" style="border: 0;" /> </a>
+        	<apex:image id="att1" URL="{!URLFOR($Resource.dc_defaultlogo,Partnerdefaultlogo)}"  alt="{!Partner.Public_Partner_Name__c}"  rendered="{!if(logoURL == ' ',true,false)}" style="border: 0;" />	 
+    	</p> 
+    	<p><span style="white-space:pre-wrap"><apex:outputtext value="{!Partner.Public_Detail_Description__c}" escape="false"/></span></p> 
+    	<div class="hr"><hr/>
+    	</div>                                 
+	</div>
+	<div class="clearfix"></div> 
+</div> 
+</div>          
+</div>
+
+</apex:form>
+</div>
+</div> <!-- /view --> 
+
+</apex:component>

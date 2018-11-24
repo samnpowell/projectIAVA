@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Alert to attendee when event is canceled</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Event Canceled notification</name>
+    <style>none</style>
+    <subject>Canceled: {!IAVAEvent_Attendee__c.Event_Name__c} ({!IAVAEvent_Attendee__c.Event_Date__c})</subject>
+    <type>text</type>
+</EmailTemplate>

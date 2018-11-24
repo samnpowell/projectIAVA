@@ -1,0 +1,38 @@
+<apex:page >
+	<apex:include pageName="IAVAPlus_SignIn"/>
+</apex:page>
+<!-- <apex:page id="pg" controller="IAVAPlus_SignIn" sidebar="true" showHeader="false" standardStylesheets="false">
+ <apex:composition template="{!$Site.Template}">
+   
+
+		<apex:define name="body">
+		
+			<style type="text/css">
+				div#main {
+					background: white;
+					padding: 10px 0;
+					width: 865px;
+				}
+				#subcontent {
+					background: none;
+				}
+				#subcontent #subcontent-inner,
+				#subcontent #subcontent-area {
+					padding: 0;
+				}
+				.front-rewards #page {
+					margin-top: -5px;
+				}
+				#page-inner {
+					width: inherit;
+				}
+				.rewards-popup #page {
+					width: 900px;
+				}
+			</style>
+
+			<apex:include pageName="IAVAPlus_SignIn"/>
+		</apex:define>
+
+  </apex:composition>
+</apex:page> -->

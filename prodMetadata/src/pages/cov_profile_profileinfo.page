@@ -1,0 +1,417 @@
+<apex:page id="cov_profile_profileinfo" sidebar="false" showHeader="false" standardStylesheets="true" controller="cov_profile_controller">
+<html>  
+  <head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  		<apex:define name="stylesheets">
+			<c:cov_stylesheets /> 
+		</apex:define>  
+		
+<!--     	<apex:styleSheet value="{!URLFOR($Resource.cov_files,'css/bootstrap.min.css?G')}" /> -->
+        
+        
+        
+        
+        
+        
+        
+    <style type="text/css">
+    
+    /* Just temporarily so it doesn't look messed up  */
+    
+
+/*        .bootstrap .form-control {
+        	width: inherit;
+        	height: inherit;
+        }
+*/
+        #container-overall {
+        	width: 550px;
+        }
+
+	</style>
+	
+	
+    <c:cov_include_js_jquery />  
+	<c:cov_include_js_bootstrap /> 
+
+	        
+        
+        
+        
+  </head>  
+  <body class="bootstrap">  
+
+	<div class="returnLink-wrapper clearfix">
+		<div class="returnLink pull-right">
+			<apex:outputLink value="{!$Page.cov_dashboard}" target="_parent">Back to Home >></apex:outputLink>
+		</div>
+		<apex:outputPanel rendered="{!isOwnProfile}">
+			<div class="returnLink">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="{!$Site.currentSiteUrl}_ui/core/chatter/ui/ChatterPage?deepLinkType=directMessage" target="_parent">
+					Messages <apex:outputPanel rendered="{!hasUnreadMessages}">{!' (' + text(unreadMessageCount) + ' new) '}</apex:outputPanel>&gt;&gt;
+				</a>
+			</div>
+		</apex:outputPanel>
+	</div>
+
+  
+    <div class="container" id="container-overall">
+    
+    	<apex:pageMessages />
+    
+  		<apex:form styleclass="form-horizontal">
+       
+       
+		<div class="section">
+	
+	    	<div class="box-heading">
+				<div class="box-heading-content">
+	    			<h5>Public Info</h5>
+	        	</div>
+	        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+	    	</div>
+	
+			<div class="form-group spacer">
+				<label>&nbsp;</label>  
+				&nbsp;
+			</div>  
+	    
+	
+		    	<apex:outputPanel rendered="{!isOwnProfile}">
+				    <div class="form-group big-textarea">
+			    		<label for="" class="col-xs-4 control-label">
+			    			About Me
+			    			<span id="tooltip-aboutme" data-toggle="tooltip" data-placement="bottom" data-html="false" title="Use this space to talk about what you're doing now in your civilian or personal life">
+			    				<span class="glyphicon glyphicon-question-sign"></span>
+			    			</span>
+			    		</label>
+			    		<div class="col-xs-8">
+							<apex:inputTextArea value="{!aboutme}" id="aboutme-input" styleclass="form-control" html-maxlength="1000" rows="6" />
+							<div class="pull-right" id="counter"></div>
+						</div>
+					</div>
+					<apex:outputPanel rendered="{!theC != null}">
+						<apex:outputPanel rendered="{!not(isNonVeteran)}">
+						    <div class="form-group bigger-textarea">
+					    		<label for="" class="col-xs-4 control-label">My Veteran Story
+						    		<span data-toggle="tooltip" data-placement="bottom" data-html="false" title="Use this space to talk about your service. Why did you join? What did you do? How has your service impacted you?">
+						    			<span class="glyphicon glyphicon-question-sign"></span>
+						    		</span>
+						    		<apex:outputPanel rendered="{!askIfNonVeteran}">
+							    		<div class="mediummer spaced-top">
+							    			(or: <apex:commandLink action="{!setAsNonVeteran}">I'm not a veteran</apex:commandLink>)
+							    		</div>
+							    	</apex:outputPanel>
+						    	</label>
+					    		<div class="col-xs-8">
+									<apex:inputTextArea value="{!vetstory}" id="vetstory-input" styleClass="form-control" rows="6" />
+								</div>
+							</div>
+						</apex:outputPanel>
+
+						<div class="form-group">
+							<label class="col-xs-4">Twitter Handle</label>
+							<div class="col-xs-8">
+								<apex:inputText value="{!twitterHandle}" styleclass="form-control" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-xs-4">Instagram Handle</label>
+							<div class="col-xs-8">
+								<apex:inputText value="{!instagramHandle}" styleclass="form-control" />
+							</div>
+						</div>
+
+					</apex:outputPanel>
+					<div class="form-group">
+					    <div class="col-xs-8 col-xs-offset-4">
+					      <apex:commandButton action="{!saveProfileInfo}" value="Save This Info" styleClass="btn btn-primary" id="save-profile-info-button" reRender="saveMessage" onclick="document.getElementById('saveMsg').innerHTML = 'one moment...';"/>
+					      <apex:outputPanel id="saveMessage" styleclass="" >
+					      	<span id="saveMsg" style="margin-left:40px; font-style:italic;">{!saveMsgProfileInfo}</span>
+				      	  </apex:outputPanel>
+					    </div>
+					</div>	
+
+					<apex:outputPanel rendered="{!AND(theC != null, isNonVeteran)}">
+						<div class="form-group">
+							<label class="col-xs-4 control-label">&nbsp;</label>
+							<div class="col-xs-8">
+								<p class="form-control-static"><span class="italicer">You have indicated that you are not a veteran. </span><apex:commandLink action="{!unsetNonVeteranSetVeteran}" styleclass="mediummer">[&nbsp;Actually&nbsp;I&nbsp;am&nbsp;a&nbsp;veteran&nbsp;]</apex:commandLink></p>
+							</div>
+						</div>
+					</apex:outputPanel>
+
+		
+				</apex:outputPanel>
+		    	<apex:outputPanel rendered="{!not(isOwnProfile)}">
+					<apex:outputPanel rendered="{!not(isblank(trim(u.AboutMe)))}">
+					    <div class="form-group bigger-textarea">
+				    		<label for="" class="col-xs-3 control-label">About Me</label>
+				    		<div class="col-xs-8">
+								<p class="form-control-static"><apex:outputText value="{!u.AboutMe}" /></p>
+							</div>
+						</div>
+					</apex:outputPanel>
+					<apex:outputPanel rendered="{!not(isblank(trim(theC.My_Veteran_Story__c)))}">
+					    <div class="form-group bigger-textarea">
+			    			<label for="" class="col-xs-3 control-label">My Veteran Story</label>
+			    			<div class="col-xs-8">
+								<p class="form-control-static"><apex:outputText value="{!theC.My_Veteran_Story__c}" /></p>
+							</div>
+						</div>
+					</apex:outputPanel>
+
+					<apex:outputPanel rendered="{!NOT(ISBLANK(TRIM(theC.Twitter_ID__c)))}">
+						<div class="form-group">
+							<label class="col-xs-3">Twitter Handle</label>
+							<div class="col-xs-8">
+								<p class="form-control-static">
+									<apex:outputLink value="{!'http://twitter.com/' + theC.Twitter_ID__c}" target="_blank">
+										@<apex:outputText value="{!theC.Twitter_ID__c}" />
+									</apex:outputLink>
+								</p>
+							</div>
+						</div>
+					</apex:outputPanel>
+
+					<apex:outputPanel rendered="{!NOT(ISBLANK(TRIM(theC.Instagram_ID__c)))}">
+						<div class="form-group">
+							<label class="col-xs-3">Instagram Handle</label>
+							<div class="col-xs-8">
+								<p class="form-control-static">
+									<apex:outputLink value="{!'http://instagram.com/' + theC.Instagram_ID__c}" target="_blank">
+										@<apex:outputText value="{!theC.Instagram_ID__c}" />
+									</apex:outputLink>
+								</p>
+							</div>
+						</div>
+					</apex:outputPanel>
+
+				</apex:outputPanel>
+	
+	
+		</div>       
+
+		<apex:outputPanel id="profileContactSection" rendered="{!AND(theC != null, NOT(isNonVeteran), OR(hasServiceInfo, isOwnProfile))}">
+
+       
+		<div class="section">
+
+	    	<div class="box-heading">
+				<div class="box-heading-content">
+
+		    		<h5>Service Details</h5>
+	        	</div>
+	        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+		    		
+	    	</div>
+
+			<div class="form-group">
+				<label>&nbsp;</label>  
+				&nbsp;
+			</div>  
+	 
+    		<apex:outputPanel rendered="{!askIfNonVeteran}" >
+				<div class="form-group">
+					<label class="col-xs-4 control-label">&nbsp;</label>  
+					<div class="col-xs-8">
+						<p class="form-control-static links-alt-style italicer mediummer">
+								or:&nbsp;<apex:commandLink action="{!setAsNonVeteran}" >I'm not a veteran</apex:commandLink>
+					    </p>
+					    <p>&nbsp;</p>
+					</div>
+				</div>  
+			</apex:outputPanel>
+
+       	    
+		    <div class="form-group">
+		    	<label for="" class="col-xs-4 control-label">Served in</label>
+		  		
+		  		<div class="col-xs-8">
+		  			<table>
+		  			<tr>
+					<apex:outputPanel rendered="{!isOwnProfile || theC.Veteran_of_OEF__c}">
+			  			<td>
+			  				<div class="well">
+			  					<apex:outputPanel rendered="{!isOwnProfile}">
+						  			 <div class="checkbox">
+					    				<label>
+											<apex:inputField value="{!theC.Veteran_of_OEF__c}" />
+											OEF
+										</label>
+									 </div>
+								</apex:outputPanel>
+								<apex:outputPanel rendered="{!not(isOwnProfile)}">
+									OEF
+								</apex:outputPanel>
+							</div>
+						</td>
+					</apex:outputPanel>
+					
+					<apex:outputPanel rendered="{!isOwnProfile || theC.Veteran_of_OIF__c}">
+			  			<td>
+			  				<div class="well">
+			  					<apex:outputPanel rendered="{!isOwnProfile}">
+						  			 <div class="checkbox">
+					    				<label>
+											<apex:inputField value="{!theC.Veteran_of_OIF__c}" />
+											OIF
+										</label>
+									 </div>
+								</apex:outputPanel>
+								<apex:outputPanel rendered="{!not(isOwnProfile)}">
+									OIF
+								</apex:outputPanel>
+							</div>
+						</td>
+					</apex:outputPanel>
+	
+					<apex:outputPanel rendered="{!isOwnProfile || theC.Veteran_of_OND__c}">
+			  			<td>
+			  				<div class="well">
+			  					<apex:outputPanel rendered="{!isOwnProfile}">
+						  			 <div class="checkbox">
+					    				<label>
+											<apex:inputField value="{!theC.Veteran_of_OND__c}" />
+											OND
+										</label>
+									 </div>
+								</apex:outputPanel>
+								<apex:outputPanel rendered="{!not(isOwnProfile)}">
+									OND
+								</apex:outputPanel>
+							</div>
+						</td>
+					</apex:outputPanel>
+					
+					</tr>
+					</table>
+				</div>
+	
+	
+			</div>
+	
+		    <div class="form-group">
+		    	<label for="" class="col-xs-4 control-label">Branch of Service</label>
+		    	<div class="col-xs-8">
+					<apex:inputField value="{!theC.Branch_of_Service__c}" rendered="{!isOwnProfile}" id="branch-input" styleclass="col-xs-9 form-control" />
+					<apex:outputText value="{!theC.Branch_of_Service__c}" rendered="{!not(isOwnProfile)}"  styleclass="col-xs-9 form-control" />
+				</div>
+			</div>
+	
+		    <div class="form-group">
+		    	<label for="" class="col-xs-4 control-label">Current Status</label>
+		    	<div class="col-xs-8">
+					<apex:inputField value="{!theC.Current_Status__c}" rendered="{!isOwnProfile}" id="currentstatus-input" styleclass="col-xs-9 form-control" />
+					<apex:outputText value="{!theC.Current_Status__c}" rendered="{!not(isOwnProfile)}" styleclass="col-xs-9 form-control" />
+				</div>
+			</div>
+			
+		    <div class="form-group">
+		    	<label for="" class="col-xs-4 control-label">Type of Service</label>
+		    	<div class="col-xs-8">
+					<apex:inputField value="{!theC.Service_Type__c}" rendered="{!isOwnProfile}" id="servicetype-input" styleclass="col-xs-9 form-control" />
+					<apex:outputText value="{!theC.Service_Type__c}" rendered="{!not(isOwnProfile)}" styleclass="col-xs-9 form-control" />
+				</div>
+			</div>
+			
+		    <div class="form-group">
+		    	<label for="" class="col-xs-4 control-label">Last Unit</label>
+		    	<div class="col-xs-8">
+					<apex:inputField value="{!theC.Most_Recent_Unit__c}" rendered="{!isOwnProfile}" id="lastunit-input" styleclass="col-xs-9 form-control" />
+					<apex:outputText value="{!theC.Most_Recent_Unit__c}" rendered="{!not(isOwnProfile)}" styleclass="col-xs-9 form-control" />
+				</div>
+			</div>
+	
+			<apex:outputPanel rendered="{!isOwnProfile}">
+				<div class="form-group">
+				    <div class="col-xs-8 col-xs-offset-4">
+				      <apex:commandButton action="{!saveTheC}" value="Save Changes" id="savechanges-button" styleClass="btn btn-primary"
+				      	reRender="saveMessageServiceDetails" onclick="document.getElementById('saveMsgServiceDetails').innerHTML = 'one moment...';" />
+				      <apex:outputPanel id="saveMessageServiceDetails" >
+				      	<span id="saveMsgServiceDetails" style="margin-left:40px; font-style:italic;">{!saveMsgTheC}</span>
+			      	  </apex:outputPanel>
+				    </div>
+				</div>	
+			</apex:outputPanel>	
+			
+		</div>
+
+
+		</apex:outputPanel>
+
+ 	    </apex:form>
+
+		
+		<apex:outputPanel styleclass="conn-contact-msg" rendered="{!theC == null && isOwnProfile}">
+			No connected contact for service info
+		</apex:outputPanel>		
+
+		<apex:outputPanel >
+			<div class="section">
+				<div class="form-group">
+					<label>&nbsp;</label>  
+					&nbsp;
+				</div>  
+
+				<div class="form-group">
+					<label>&nbsp;</label>  
+					&nbsp;
+				</div>  
+
+	    	<div class="box-heading">
+				<div class="box-heading-content">
+
+		    		<h5>Related Posts</h5>
+	        	</div>
+	        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+		    		
+	    	</div>
+
+				<chatter:feed entityId="{!uId}" showPublisher="true" />
+			</div>
+		</apex:outputPanel>
+
+    
+    </div>
+
+	<script type="text/javascript">
+
+		var j$ = jQuery.noConflict();
+
+		j$(document).ready(function()  {
+		 //    var characters = 1000;
+		 //    var countdown = 100;
+		 //    j$(".aboutme-input").keyup(function(){
+		 //        if(j$(this).val().length > characters){
+		 //        j$(this).val(j$(this).val().substr(0, characters));
+		 //        }
+		 //    var remaining = characters -  j$(this).val().length;
+		 //    if (remaining > countdown && j$("#counter").not(':empty')) {
+		 //    	j$("#counter").html("");
+		 //    } else if (remaining <= countdown) {
+			//     j$("#counter").html(remaining + " characters remaining");
+			// }
+		 //    if(remaining <= 10) {
+		 //        j$("#counter").css("color","red");
+		 //    }
+		 //    else {
+		 //        j$("#counter").css("color","black");
+		 //    }
+		 //    });
+			countCharsRemaining('textarea[id$=aboutme-input]', '#counter', 1000, 100);
+		});
+
+	</script>
+
+	<c:cov_js_utils /> 
+
+
+
+    </body>
+</html>
+    
+</apex:page>

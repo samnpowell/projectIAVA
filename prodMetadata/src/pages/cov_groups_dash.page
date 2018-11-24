@@ -1,0 +1,73 @@
+<apex:page controller="cov_groups_controller">
+
+    <div class="dashboard-list" id="groups-recent-activity">
+        <div class="box-heading"><h5>Groups With Recent Activity</h5></div>
+        
+        <apex:pageMessages />
+        
+        <table class="table"><tbody>
+
+            <apex:repeat id="Groups" value="{!Groups}" var="gr">
+
+                <tr id="{!gr.cg.Id}" class="">
+<td>
+<a href="{!$Site.currentSiteUrl}_ui/core/chatter/groups/GroupProfilePage?g={!gr.cg.Id}" class="groupicon">
+<span class="chatter-avatarRegular chatter-avatar" title="{!gr.cg.Name}"><img src="{!gr.cg.SmallPhotoUrl}" alt="{!gr.cg.Name}" width="45" height="45" class="chatter-photo" title="{!gr.cg.Name}" /><img src="/s.gif" alt="" class="chatter-avatarStyle" title="" /><apex:image value="/s.gif" styleclass="chatter-photoInfoIcon chatter-privateIcon" rendered="{!gr.cg.CollaborationType=='Private'}" /></span></a>
+</td>
+<td>
+<span class="groupinfo displayName"><a href="{!$Site.currentSiteUrl}_ui/core/chatter/groups/GroupProfilePage?g={!gr.cg.Id}" title="{!gr.cg.Name}">{!gr.cg.Name}</a><apex:outputText rendered="{!gr.cg.CollaborationType=='Private'}" value=" (Private)" styleclass="groups-recent-activity-private"/></span>
+
+<div class="groupDescription">{!left(gr.cg.Description, 150)}
+<apex:outputPanel rendered="{!gr.cg.Description != null && len(gr.cg.Description) > 150}">...</apex:outputPanel>
+</div>
+</td>
+<td>
+
+<div class="groupmanagementlink groupmembership">
+
+<apex:outputPanel rendered="{!gr.isOwner}">
+    <div class="owner">
+        <img class="check" src="/s.gif" alt="" />
+        Owner
+    </div>
+</apex:outputPanel>
+
+<apex:outputPanel rendered="{!gr.isMember && not(gr.isOwner)}">
+    <div class="member">
+        <img class="check" src="/s.gif" alt="" />
+        <span onmouseover="SfdcApp.ChatterGroupMembership.onHover(this, true);" onmouseout="SfdcApp.ChatterGroupMembership.onHover(this, false);">
+          Member
+            <a href="javascript:void(0);" title="Leave this group" onclick="return SfdcApp.ChatterGroupMembership.leave(this, {groupId: '{!gr.cg.Id}', style: 'list'});">                <img class="actionIcon" alt="Leave this group" src="/s.gif" /></a>    
+        </span>
+    </div>
+</apex:outputPanel>
+
+<apex:outputPanel rendered="{!not(gr.isMember) && not(gr.isPrivate)}">
+    <div class="nonmember">
+        <a href="javascript:void(0);" title="Join this group" class="asktojoin" onclick="return SfdcApp.ChatterGroupMembership.join(this, {groupId: '{!gr.cg.Id}', style: 'list'});"><img class="check" src="/s.gif" alt="" /> <span>Join</span></a>
+    </div>
+</apex:outputPanel>
+
+<apex:outputPanel rendered="{!not(gr.isMember) && gr.isPrivate}">
+    <div class="nonmember">    
+        <a href="javascript:void(0);" title="Ask to join this group" class="asktojoin" onclick="return SfdcApp.ChatterGroupMembership.asktojoin(this, {groupId: '{!gr.cg.Id}', style: 'list'});"><img class="check" src="/s.gif" alt="" /> <span>Ask&nbsp;to Join</span></a>
+    </div>  
+</apex:outputPanel>  
+    
+</div>
+
+</td>
+
+</tr>
+</apex:repeat>
+
+<tr><td colspan="3"><span class="pull-right"><a class="dashboard-more-link" href="{!$Site.currentSiteUrl}_ui/core/chatter/groups/GroupListPage">More groups...</a></span></td></tr>
+</tbody></table>
+
+        
+        
+       
+        
+    </div>
+
+</apex:page>

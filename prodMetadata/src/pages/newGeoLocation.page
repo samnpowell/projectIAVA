@@ -1,0 +1,75 @@
+<apex:page standardController="Give__c"
+	extensions="newGeoLocationExt,geoApiKey">
+	<apex:includeScript value="{!jsapi_script}" />
+	<apex:includeScript value="{!maps_script}" />
+	<apex:form >
+		<apex:sectionHeader title="New Geo Location" subtitle="Step 1 "
+			rendered="{!isStep1}" />
+
+		<apex:pageBlock title="">
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!step2}" value=" Create " />
+				<apex:commandButton action="{!cancel}" value=" Cancel " />
+			</apex:pageBlockButtons>
+
+			<apex:pageBlockSection title="Give Information" columns="2">
+				<apex:outputField value="{!Give__c.name}" />
+				<apex:outputField value="{!Give__c.Location_Description__c}" />
+				<apex:outputField value="{!Give__c.City__c}" />
+				<apex:outputField value="{!Give__c.Location_by_State_s__c }" />
+				<apex:outputField value="{!Give__c.Zip_Code_s__c}" />
+				<!--  <apex:outputField value="{!account.billingcountry}" />-->
+				<apex:outputField value="{!Give__c.More_Info_Link__c}" />
+				<apex:outputfield value="{!Give__c.Geo_Location__c}"
+					rendered="false" />
+				<apex:outputfield value="{!Give__c.Description__c}" rendered="false" />
+
+			</apex:pageBlockSection>
+
+			<apex:pageBlockSection title="Generate Location Information"
+				columns="1">
+				<apex:selectRadio value="{!method}">
+					<apex:selectOptions value="{!items}" />
+				</apex:selectRadio>
+				<p>Lat, Lon : <span id='point2'></span></p>
+				<apex:outputPanel id="hidden">
+					<apex:inputHidden id="status" value="{!geostatus}" />
+					<apex:inputHidden id="point" value="{!geopoint}" />
+					<br />
+
+<script>
+	var geocoder;
+    var previousOnload = window.onload;        
+    window.onload = function() { 
+        if (previousOnload) {             previousOnload();        }
+        geocoder = new GClientGeocoder();
+        geocode_one_account();
+    } 
+       
+	function geocode_one_account() { 
+		if ( "{!hasNextAddress}" == "true"  ) {		  // geocode it 
+			var address = '<apex:outputText value="{!nextAddr}" />';
+			geocoder.getLocations(  address,   function( stat ) {
+	    		var code = stat.Status.code;
+	    		var point; 
+	    		if ( code == 200 ) {	point =  stat.Placemark.pop(); 	}
+		    	
+		    	document.getElementById( "{!$Component.status}" ) .value = code; 
+			 	if ( code == 200 ) {
+				 	document.getElementById( "{!$Component.point}" ) .value = point.Point.coordinates[0] + ',' +point.Point.coordinates[1]; 
+				} else {
+					document.getElementById( "{!$Component.point}" ) .value = '';
+				}
+				document.getElementById( 'point2' ) .innerHTML = 
+					document.getElementById( "{!$Component.point}" ) .value;
+			} );
+		}   
+	}
+
+</script>
+				</apex:outputPanel>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+
+	</apex:form>
+</apex:page>

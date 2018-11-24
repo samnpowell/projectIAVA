@@ -1,0 +1,4 @@
+{!Opportunity.Name} was entered 48 hours ago. Please acknowledge the donation or contact Derek Coy if you are unable to comply.
+
+Here is a link to the donation record:
+https://na8.salesforce.com/{!Opportunity.Id}

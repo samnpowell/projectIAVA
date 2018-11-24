@@ -1,0 +1,24 @@
+A new co-sponsor has been added to an Active bill you're tracking:
+
+
+Name: {!Contact_Leg_junction__c.Contact__c}
+Role: {!Contact_Leg_junction__c.Role__c}
+
+
+Bill:
+ {!Legislation__c.Name}
+ {!Legislation__c.AKA__c}
+ Sponsor: {!Legislation__c.Sponsor__c}
+
+
+Tweet it up:
+
+{!nullvalue(Contact_Leg_junction__c.Tweet_From_Template__c,"no template specified on Legislation record")} 
+
+
+
+Legislation record here: {!Legislation__c.Link}
+Contact record here: {!Contact.Link}
+
+
+Co-sponsor record here: {!Contact_Leg_junction__c.Link}

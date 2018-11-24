@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Training only</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Iava testing</name>
+    <style>none</style>
+    <subject>IAVA Training Staff to Use Email Templates</subject>
+    <type>text</type>
+</EmailTemplate>

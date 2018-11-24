@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This custom Salesforce object will be used to store notification messages that need to be sent to a device.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Delivered__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field will become checked once the message has been delivered to the Notification Service.</description>
+        <externalId>false</externalId>
+        <label>Delivered</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Message_Text__c</fullName>
+        <description>This field will be used to store the message text.</description>
+        <externalId>false</externalId>
+        <label>Message Text</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Registered_Device__c</fullName>
+        <description>This field will be used to store the ID of the Registered Device to which this Notification Message belongs.</description>
+        <externalId>false</externalId>
+        <label>Registered Device</label>
+        <referenceTo>Registered_Device__c</referenceTo>
+        <relationshipLabel>Notification Messages</relationshipLabel>
+        <relationshipName>Notification_Messages</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Notification Message</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Delivered__c</columns>
+        <columns>Message_Text__c</columns>
+        <columns>Registered_Device__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Non_Delivered</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Delivered__c</columns>
+        <columns>Message_Text__c</columns>
+        <columns>Registered_Device__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Delivered__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Non Delivered</label>
+    </listViews>
+    <listViews>
+        <fullName>Notification_Messages</fullName>
+        <columns>NAME</columns>
+        <columns>Registered_Device__c</columns>
+        <columns>Message_Text__c</columns>
+        <columns>Delivered__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Notification Messages</label>
+    </listViews>
+    <nameField>
+        <label>Notification Message Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Notification Messages</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Registered_Device__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Message_Text__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Delivered__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

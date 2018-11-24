@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>xtma_Individual_Email_Result__c.Date_Time_Opened__c</field>
+    </columns>
+    <columns>
+        <field>xtma_Individual_Email_Result__c.Number_of_Total_Clicks__c</field>
+    </columns>
+    <columns>
+        <field>xtma_Individual_Email_Result__c.Number_of_Unique_Clicks__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>xtma_Individual_Email_Result__c.Number_of_Total_Clicks__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Individual Email Clickers last month</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$xtma_Individual_Email_Result__c@xtma_Individual_Email_Result__c.Contact__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>xtma_Individual_Email_Result__c.Date_Time_Sent__c</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

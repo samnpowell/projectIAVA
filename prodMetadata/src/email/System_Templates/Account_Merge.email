@@ -1,0 +1,16 @@
+Dear {!Contact.Name},
+
+This is an automatic system message from Iraq and Afghanistan Veterans of America (IAVA). Please note that we have found duplicate records of this account which have now been merged.
+
+When requesting any future rewards from The Rucksack, you may use the following information.
+
+Email Address: {!Contact.Email}
+Member Number: {!Contact.Membership_ID__c}
+
+If you also have an account with Community of Veterans, your previous login information will not have changed.
+
+If you have any issues or concerns, please contact rucksack@iava.org. Thank you!
+
+Regards,
+
+IAVA

@@ -1,0 +1,17 @@
+ONE WEEK NOTICE:
+
+Hello {!Case.Requestor__c},
+
+The status of Case {!Case.CaseNumber} was put into status "{!Case.Status}" one week ago.  If there is no change to the Case status within the next week, it will be automatically closed (on {!TODAY()+7}).
+
+
+
+-----------------------------------------------------------------------------
+
+Subject: {!Case.Subject}
+Priority: {!Case.Priority}
+Click on the link to access the case: {!Case.Link}
+
+
+Original description:
+{!Case.Description}

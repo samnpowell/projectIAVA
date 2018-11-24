@@ -1,0 +1,12 @@
+Dear {!Give_Request__c.Applicant_Name__c},
+
+Thanks for requesting this IAVA {!Give_Request__c.Give_Descriptor__c}.
+
+{!Give_Request__c.Give_Name__c}
+{!Give_Request__c.Give_Instance_Start_Date__c} {!Give_Request__c.Give_Instance_Start_Time__c}
+
+{!IF(Give_Request__c.Units_Requested__c > 0, "Number of tickets/units: "+Give_Request__c.Units_Requested__c, "")}
+
+We hope you enjoy your experience.
+
+Thank you for supporting IAVA.

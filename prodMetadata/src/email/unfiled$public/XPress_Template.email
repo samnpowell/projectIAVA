@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script>
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script>
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script>
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script>
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script>
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script>
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script>
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/change_sink.js"></script>
+<meta name="document_iterator.js" />
+<meta name="find_proxy.js" />
+<meta name="get_html_text.js" />
+<meta name="global_constants.js" />
+<meta name="name_injection_builder.js" />
+<meta name="number_injection_builder.js" />
+<meta name="string_finder.js" />
+<meta name="change_sink.js" />
+<meta name="document_iterator.js" />
+<meta name="find_proxy.js" />
+<meta name="get_html_text.js" />
+<meta name="global_constants.js" />
+<meta name="name_injection_builder.js" />
+<meta name="number_injection_builder.js" />
+<meta name="string_finder.js" />
+<meta name="change_sink.js" />
+</head>
+<body style="padding: 0px; margin: 0px">
+<table bgcolor="#daccae" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td align="center" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" width="622">
+<tbody>
+<tr>
+<td width="11"><br />
+</td>
+<td width="600"><a href="http://www.iava.org/"><img alt="IAVA" src="http://www2.stormthehill.org/images/newlogo/iava_header.png" 
+
+border="0" height="106" width="600" /></a></td>
+<td width="11"><br />
+</td></tr>
+<tr>
+<td width="11"><br />
+</td>
+<td align="center" bgcolor="#ffffff" valign="top" width="600"><img alt="" src="http://www2.stormthehill.org/images/newlogo/bg.png" 
+
+height="17" width="600" />
+<table border="0" cellpadding="0" cellspacing="0" width="600">
+<tbody>
+<tr>
+<td colspan="3" height="10"><br />
+</td></tr>
+<tr>
+<td width="20"><br />
+</td>
+<td align="left" valign="top" width="660">
+<p>Dear {{$first_name}},<br />
+<br /><a href="http://iava.org/redirect?redirect=https://secure.iava.org/operationhomecoming&amp;{{$par}}" title="" 
+
+target="_self"><img alt="" style="margin: 5px" title="" src="http://media.iava.org/email_images/OpHomecoming_emailgraphic_2.gif" 
+
+align="right" border="0" height="298" width="200" /></a>If you haven’t heard, the President (POTUS) just announced that the last
+40,000 troops are on their way back from Baghdad. After eight years of
+combat, the rest of the country may start to tune out when they hear
+“Mission Accomplished.” But we know all too well that these wars don’t
+end with a single speech.<br />
+<br />
+So what now? <a href="http://iava.org/redirect?redirect=https://secure.iava.org/operationhomecoming&amp;{{$par}}" title="" 
+
+target="_self">We’ve got to get each other’s backs.</a><br />
+<br />
+If your situation was anything like mine, the transition home was a
+lonely road. <strong>That’s why we started IAVA and why we keep membership free –
+to connect our community to each other and to resources like the Post-9/11
+GI Bill and Combat to Career programs.</strong><br />
+<br />
+If you benefited from IAVA in 2011, help us expand our programs for the
+40,000 members about to swell our ranks. <a href="http://iava.org/redirect?redirect=https://secure.iava.org/operationhomecoming&amp;
+
+{{$par}}" title="" target="_self">Please take a second to give
+back – every dollar counts.</a><br />
+<br />
+We’ve given a large part of our lives, and some of our friends gave all,
+serving in these wars. Iraq isn’t over for us today. And the battle
+still continues in Afghanistan.<br />
+<br />
+Help us keep this community strong.<br />
+<br />
+Paul<br />
+<br />
+Paul Rieckhoff<br />
+Founder and Executive Director<br />
+Iraq and Afghanistan Veterans of America (IAVA)<br />
+<br /><br />
+<!-- TemplateEndEditable --></p></td>
+<td width="20"><br />
+</td></tr>
+<tr>
+<td colspan="3" height="50"><br />
+</td></tr></tbody></table></td>
+<td width="11"><br />
+</td></tr>
+<tr>
+<td width="11"><br />
+</td>
+<td align="center" bgcolor="#3d4722" height="38" valign="middle" width="600"><a href="http://www.iava.org/donate"><img alt="DONATE" 
+
+src="http://www2.stormthehill.org/images/newlogo/link_donate.png" border="0" height="38" width="68" /></a><img alt="*" 
+
+src="http://www2.stormthehill.org/images/newlogo/star.png" height="38" width="21" /><a href="http://iava.org/contact-us"><img 
+
+alt="CONTACT US" src="http://www2.stormthehill.org/images/newlogo/link_contactus.png" border="0" height="38" width="66" /></a><img 
+
+alt="*" src="http://www2.stormthehill.org/images/newlogo/star.png" height="38" width="21" /><a 
+
+href="http://www2.stormthehill.org/p/salsa/web/tellafriend/public/?tell_a_friend_KEY=9040"><img alt="RECRUIT" 
+
+src="http://www2.stormthehill.org/images/newlogo/link_recruit.png" border="0" height="38" width="49" /></a><img alt="*" 
+
+src="http://www2.stormthehill.org/images/newlogo/star.png" height="38" width="21" /><a 
+
+href="http://www2.iava.org/o/436/t/8492/signUp.jsp?key=310"><img alt="SUBSCRIBE" 
+
+src="http://www2.stormthehill.org/images/newlogo/link_subscribe.png" border="0" height="38" width="61" /></a><img alt="*" 
+
+src="http://www2.stormthehill.org/images/newlogo/star.png" height="38" width="21" /></td>
+<td width="11"><br />
+</td></tr>
+<tr>
+<td width="11"><br />
+</td>
+<td valign="top" width="600">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td align="left" valign="middle" width="431"><br />
+</td>
+<td align="right" height="48" valign="middle" width="170"><img alt="CONNECT WITH IAVA:" 
+
+src="http://www2.stormthehill.org/images/newlogo/txt_connect.png" height="20" width="115" /><a 
+
+href="http://www.facebook.com/IAVA.org"><img alt="Facebook" src="http://www2.stormthehill.org/images/newlogo/share_fb.png" border="0" 
+
+height="20" width="28" /></a><a href="http://twitter.com/iava"><img alt="Twitter" 
+
+src="http://www2.stormthehill.org/images/newlogo/share_tw.png" border="0" height="20" width="24" 
+
+/></a></td></tr></tbody></table></td>
+<td width="11"><br />
+</td></tr></tbody></table></td></tr></tbody></table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>COV Access Profile Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>COV Access Profile Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter the name or ID of the campaign that contains contacts who are allowed to be automatically switched to the profile that gives them access to COV. --></help>
+        <label><!-- Allow members of Campaign(Name or ID) --></label>
+        <name>Allow_members_of_Campaign__c</name>
+    </fields>
+    <fields>
+        <help><!-- Semicolon-separated list of relationship-types to an existing member which would enable member to be given permission set for access to COV. --></help>
+        <label><!-- Allowed relationship types to COVuser --></label>
+        <name>Allowed_relationship_types_to_COVuser__c</name>
+    </fields>
+    <fields>
+        <help><!-- Semicolon-separated list of member categories who are allowed to be automatically switched to the profile that gives them access to COV (spelling must match Member Categories formula values on Contact object) --></help>
+        <label><!-- Authorized member categories --></label>
+        <name>Authorized_member_categories__c</name>
+    </fields>
+    <fields>
+        <help><!-- Permission sets that grant COV access should all start with the same prefix, e.g. &quot;COV Access - Internal&quot; and &quot;COV Access - Overage High Volume Customer Portal&quot;. In those cases the prefix is &quot;COV Access&quot;. --></help>
+        <label><!-- Prefix for COV Access Permission Sets --></label>
+        <name>Prefix_for_COV_Access_Permission_Sets__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

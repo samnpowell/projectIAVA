@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Library Documents</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Library Documents</value>
+    </caseValues>
+    <fields>
+        <label><!-- Author 1 First Name --></label>
+        <name>Author_1_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Author 1 Last Name --></label>
+        <name>Author_1_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Author 2 First Name --></label>
+        <name>Author_2_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Author 2 Last Name --></label>
+        <name>Author_2_Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Report Citation --></help>
+        <label><!-- Citation Template --></label>
+        <name>Citation_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Published --></label>
+        <name>Date_Published__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issue --></label>
+        <name>Issue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Page Numbers --></label>
+        <name>Page_Numbers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publication --></label>
+        <name>Publication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Number --></label>
+        <name>Reference_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Link --></label>
+        <name>Report_Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- Report Summary --></help>
+        <label><!-- Report Summary --></label>
+        <name>Report_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Type --></label>
+        <name>Report_Type__c</name>
+        <picklistValues>
+            <masterLabel>Academic</masterLabel>
+            <translation><!-- Academic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VSO</masterLabel>
+            <translation><!-- VSO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>non-VSO Advocacy Organization</masterLabel>
+            <translation><!-- non-VSO Advocacy Organization --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Review Status --></label>
+        <name>Review_Status__c</name>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reviewed By --></label>
+        <name>Reviewed_By__c</name>
+        <relationshipLabel><!-- Library Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Volume --></label>
+        <name>Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year Published --></label>
+        <name>Year_Published__c</name>
+    </fields>
+    <layouts>
+        <layout>Report Detail Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

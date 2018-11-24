@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>SKUID Page for Give Instances with a tab to see and modify Give Requests associated with it</description>
+    <label>GiveInstanceApplicantsTabs</label>
+    <packageVersions>
+        <majorNumber>2</majorNumber>
+        <minorNumber>34</minorNumber>
+        <namespace>skuid</namespace>
+    </packageVersions>
+</ApexPage>

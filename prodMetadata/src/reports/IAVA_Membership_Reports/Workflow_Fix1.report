@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CONTACT_ID</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Contact.Approved_Date__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Paperwork_Confirmation__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Signup_Date__c</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <description>Didn&apos;t receive approval email because workflow was switched off between 6/24/10 and 6/30/10</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND 4 and (5 or 6)</booleanFilter>
+        <criteriaItems>
+            <column>Contact.Signup_Date__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Approved_Date__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Paperwork_Confirmation__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Paperwork Accepted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_UPDATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>6/24/2010 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CONTACT_LAST_UPDATE_BY</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>John Q Public,Adam Bryant,Cara Hammer,Jason Hansman,Paayal Mahajan</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Signup_Date__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>6/24/2010</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Workflow Fix - Approval email needed</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

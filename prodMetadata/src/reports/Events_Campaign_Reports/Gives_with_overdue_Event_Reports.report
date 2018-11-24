@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Give__c$Earliest_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$City_Formula__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Name</field>
+    </columns>
+    <columns>
+        <field>Give__c$Partnership_Request__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Type__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Give__c$AIR_Overdue__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>True</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Give__c$Internal_POC__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Gives with overdue Event Reports</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Gives_with_Give_Instances__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Give__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

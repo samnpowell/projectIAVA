@@ -1,0 +1,17 @@
+Dear {!Contact.FirstName},
+
+Thank you for your interest in Veterans on Wall Street conference and Chamber of Commerce job fair.  Even if you decided not to attend, we’d like to get your feedback.
+
+Please take a few minutes to complete our brief survey and you’ll be entered into a drawing for box seats to an upcoming Baltimore Orioles v. New York Yankees game on September 6 at Yankees Stadium.  Follow the link below to fill out the survey:
+
+http://iava.org/veterans-wall-street-survey?tfa_Membership={!Contact.Membership_ID__c}
+
+If you have already completed our survey please disregard this email.  
+
+Thank you for your helping us make our events even better.
+
+Sincerely,
+
+Jason Hansman
+Online Community Manager
+Iraq and Afghanistan Veterans of America

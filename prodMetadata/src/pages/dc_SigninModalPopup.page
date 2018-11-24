@@ -1,0 +1,346 @@
+<apex:page id="pg" controller="dc_ctrl_RewardSearch" sidebar="true" showHeader="false" standardStylesheets="false">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--  <link rel="shortcut icon" href="{!URLFOR($Resource.dc_css,'images/favicon.ico')}" type="image/x-icon" /> --> 
+    <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/dc_style4.css?G')}" />
+    <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/rewards.css?G')}" />
+
+     <!--[if IE]-->
+     <apex:outputpanel rendered="{!if(oldieversion == 'false',true,false)}" >
+     <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/ie.css?G')}"  />
+     </apex:outputpanel>
+     
+    <!--[if IE 7]-->
+    
+     <apex:outputpanel rendered="{!if(oldieversion == 'true',true,false)}" >
+     <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/ie7.css?G')}"  />
+     <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/ie.css?G')}"  />
+     </apex:outputpanel>
+    
+    <!-- -if MAC -->
+    <apex:outputpanel rendered="{!if(Macos == 'true',true,false)}" >
+     <apex:styleSheet value="{!URLFOR($Resource.dc_css,'css/macosx.css?G')}"  />
+     </apex:outputpanel>
+    
+    
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/actions.js?G')}" />   
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/jquery-ui-1.7.2.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/jquery.bind.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/ui.checkbox.js')}" /> 
+    <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/jquery-1.3.2.min.js')}" /> 
+    
+   <!--  <apex:includeScript value="{!URLFOR($Resource.dc_css,'js/jquery.pngFix.pack.js?G')}" />-->
+    
+</head>
+<div id="myPanel">
+<div name="body" class="rewards-popup">
+<body class="rewards-popup"> 
+ 
+<div id="page"><div id="page-inner"> 
+ 
+    <div id="block-block-havenumber" class="block block-block"> 
+        <div class="block-inner"> 
+ 
+             <h2 class="title"> 
+           <apex:image URL="{!URLFOR($Resource.dc_css,'images/header_haveaniavamembernumber.png')}" width="414" height="45" alt="Have an IAVA Member Number?" />
+            </h2>  
+            
+            <div class="content"> 
+            <H5><apex:outputlabel value="{!$Label.dc_thickbox_validation_err}" style="display: none; color: #FFFFFF;" id="ol" /></H5>
+            <h3>Claim Your Reward:</h3> 
+               <apex:form id="frm">
+                <apex:actionRegion > 
+                    <div class="container"> 
+                        <label form="memnum"><img src="{!URLFOR($Resource.dc_css,'images/form_label_memnum-membernumber.png')}" width="95" height="8" alt="" /></label> 
+                        <div class="text-wrapper"><apex:inputtext id="Mnumber" value="{!Membership_Number}" onfocus="clearField(this,'Membership Number');" onblur="replaceField(this,'Membership Number');" styleclass="form-text" tabindex="1" /></div> 
+                        <p class="forgot">
+                        <apex:commandlink value="Forgot Member Number?" oncomplete="forgot(); parent.$.fn.colorbox.close();" tabindex="3" /></p> 
+                    </div> 
+                    <div class="container email"> 
+                        <label form="email"><img src="{!URLFOR($Resource.dc_css,'images/form_label_memnum-emailaddressonfile.png')}" width="129" height="8" alt="" /></label> 
+                        <div class="text-wrapper"><apex:inputtext id="Email" value="{!Email}" onfocus="clearField(this,'Email');" onblur="replaceField(this,'Email');" styleclass="form-text"  tabindex="2" /></div> 
+                    </div> 
+                    
+                    <apex:outputpanel id="vall">
+                    <apex:outputtext id="val" value="{!validate}" style="display: none;color: #FF0000;"/>
+                    <apex:outputtext id="conid" value="{!contactid}" style="display: none;color: #FF0000;"/>
+                   </apex:outputpanel>
+                    <!-- NGKJ - add onclick javascript -->
+                    <p class="submit">
+                     <apex:commandLink action="{!validateinfo}" onClick="setClicked()" oncomplete="sel();"> <!-- val(); -->
+                        <input id="CLICK" type="image" src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue.png')}" onmouseover="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue_ovr.png')}';" onmouseout="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue.png')}';" value="submit" class="form-submit" tabindex="4" />
+                     </apex:commandLink>
+                    </p> 
+                    <!-- NGKJ - add onclick javascript -->
+                <apex:actionFunction name="sell" rerender="vall" oncomplete="val();"/>
+                </apex:actionRegion>
+                </apex:form>
+                <!-- </form> -->  
+            </div> 
+ 
+        </div> 
+    </div> 
+ 
+    <div id="block-block-neednumber" class="block block-block"> 
+        <div class="block-inner"> 
+ 
+            <h2 class="title">
+            <apex:image URL="{!URLFOR($Resource.dc_css,'images/header_needaniavamembernumber.png')}" width="414" height="45" alt="Need an IAVA Member Number?" />
+           </h2>
+ 
+            <div class="content" >  
+                <H5><apex:outputlabel id="am" value="{!$Label.dc_thickbox_alreadymember}" style="display: none;color: #FFFFFF;" /></H5><!-- COMMANDLINK IS NOT NECESSARY, already links on the popup -->
+                
+                <h3>Open to all Veterans of Iraq (OIF/OND) and Afghanistan (OEF)</h3> 
+                <p>All IAVA Members are eligible to claim IAVA Rewards, and getting a Member Number is free and easy.</p>
+                <p>Whether you're an IAVA Member or not, just enter your email address and where you served to get started.</p>
+                
+                <apex:form id="frm1">
+                    <apex:actionRegion >
+                    <div class="col-left"> 
+                        <div class="container"> 
+                            <label form="email"><img src="{!URLFOR($Resource.dc_css,'images/form_label_memnum-email.png')}" width="34" height="8" alt="Email:" /></label> 
+                            <div class="text-wrapper"><apex:inputtext id="Emailtoreg" value="{!Emailtoreg}" onfocus="clearField(this,'Email');" onblur="replaceField(this,'Email');" styleclass="form-text" /></div> 
+                        </div> 
+                        <div class="container vet-of"> 
+                            <p class="lbl"><img src="{!URLFOR($Resource.dc_css,'images/form_label_memnum-iamaveteranof.png')}" width="104" height="8" alt="I am a veteran of:" /></p> 
+                            <div class="checkradio-wrapper"> 
+                                <apex:outputpanel >
+                                <apex:inputCheckbox id="oif" value="{!oif}" styleclass="form-radio" /> 
+                                <apex:outputtext value="OIF"/> &nbsp;&nbsp;
+                                <apex:inputCheckbox id="oef" value="{!oef}" styleclass="form-radio" />  
+                                <apex:outputtext value="OEF"/> <br />
+                                <apex:inputCheckbox id="ond" value="{!ond}" styleclass="form-radio" />  
+                                <apex:outputtext value="OND"/> 
+                                </apex:outputpanel>
+                            </div> 
+                        </div> 
+                    </div> 
+                        
+                    <div class="col-right"> 
+                    <!-- NGKJ - add onclick javascript -->
+                    <p class="submit">
+                     <apex:commandLink action="{!signup}" onClick="setClick2()" oncomplete="sign();">
+                        <input id="CLICK2" type="image" src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}" onmouseover="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit_ovr.png')}';" onmouseout="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}';" value="submit" class="form-submit" />
+                     </apex:commandLink>
+                    </p> 
+                    <!-- NGKJ - add onclick javascript (above) - >
+                    <apex:commandLink action="{!signup}" oncomplete="sign();">
+                        <p class="submit"><input type="image" src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}" onmouseover="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit_ovr.png')}';" onmouseout="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}';" value="submit" class="form-submit" /></p>  
+                    </apex:commandLink -->
+                    </div> 
+                    <div class="clearfix"></div> 
+                    <apex:outputpanel id="page1">
+                    <apex:outputtext id="pName" value="{!pName}" style="color: #C11B17;" />
+                    <apex:outputtext id="oif_val" value="{!oif_val}" style="color: #C11B17;" />
+                    <apex:outputtext id="ond_val" value="{!ond_val}" style="color: #C11B17;" />
+                    <apex:outputtext id="oef_val" value="{!oef_val}" style="color: #C11B17;" />
+                    </apex:outputpanel>
+                    <apex:actionFunction name="fo" rerender="page1" oncomplete="signin();"/>
+                    </apex:actionRegion></apex:form>
+                <!--    </form> --> 
+            </div> 
+ 
+        </div> 
+    </div> 
+ 
+</div></div> 
+<!-- /#page-inner, /#page --> 
+ 
+</body> 
+</div>
+</div>
+
+<script src="/soap/ajax/14.0/connection.js"></script>
+<script src="/soap/ajax/14.0/apex.js"></script>
+<script type="text/javascript"> 
+    // NGKJ - added setClicked, resetClicked, overIMG, and outIMG 
+    function setClicked()
+    {
+        document.getElementById('CLICK').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue_clk.png')}";
+        document.getElementById('CLICK').onmouseover="";
+        document.getElementById('CLICK').onmouseout="";
+    }
+    function resetClicked()
+    {
+        document.getElementById('CLICK').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue.png')}"
+        document.getElementById('CLICK').onmouseover="overIMG()";
+        document.getElementById('CLICK').onmouseout="outIMG()";
+    }
+    function overIMG()
+    {
+        document.getElementById('CLICK').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue_ovr.png')}";
+    }
+    function outIMG()
+    {
+        document.getElementById('CLICK').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue.png')}";
+    }
+    function setClick2()
+    {
+        document.getElementById('CLICK2').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardscontinue_clk.png')}";
+        document.getElementById('CLICK2').onmouseover="";
+        document.getElementById('CLICK2').onmouseout="";
+    }
+    function resetClick2()
+    {
+        document.getElementById('CLICK2').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}"
+        document.getElementById('CLICK2').onmouseover="overIMG2()";
+        document.getElementById('CLICK2').onmouseout="outIMG2()";
+    }
+    function overIMG2()
+    {
+        document.getElementById('CLICK2').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit_ovr.png')}";
+    }
+    function outIMG2()
+    {
+        document.getElementById('CLICK2').src="{!URLFOR($Resource.dc_css,'images/form_submit-rewardssubmit.png')}";
+    }
+    // NGKJ - end additions
+    function make_blankEmail()
+    {
+        document.getElementById('{!$Component.frm.Email}').value = '';
+    }
+    function make_blankMem()
+    {
+        document.getElementById('{!$Component.frm.Mnumber}').value = '';
+    }
+    function make_blankEmailtoReg()
+    {
+        document.getElementById('{!$Component.frm1.Emailtoreg}').value = '';
+    } 
+    function init() 
+    {
+        sforce.connection.sessionId = '{!$Api.Session_ID}';
+    }
+    function forgot()
+    {
+                var newURL = window.location.protocol + "//" + window.location.host;
+                var pageName = '{!$Page.dc_GetMembershipNumber}';
+                var finalURL = newURL + pageName;
+                parent.window.location.replace(finalURL);
+    }
+    
+    function sel()
+    {
+        try{
+        window.setTimeout(sell);
+            }
+        catch(err){
+        alert(err);
+        }
+    }
+
+    function val() 
+    { 
+        try{
+        var con = document.getElementById('{!$Component.frm.conid}').innerHTML;
+        document.getElementById('{!$Component.ol}').style.display = 'none';
+        document.getElementById('{!$Component.frm.val}').style.display = 'none';
+        var val = document.getElementById('{!$Component.frm.val}').innerHTML;
+        var fullURL = document.location.href ;
+        var giveid  = fullURL.substring(fullURL.indexOf('?')+3, fullURL.length);
+        var Membership_Number = document.getElementById('{!$Component.frm.Mnumber}').value;
+        var Email = document.getElementById('{!$Component.frm.Email}').value;
+        var instanceId = '{!$CurrentPage.parameters.instanceId}';
+        Email = Email;
+
+        if(val == 'true')
+        {
+                var newURL = window.location.protocol + "//" + window.location.host;
+                var pageName = '{!$Page.dc_ClaimReward}' + "?giveid=" + giveid + "&mem-id=" + Membership_Number + "&email=" + Email + "&con=" + con;
+                if(instanceId!='') { pageName += "&instanceId=" + instanceId; }
+                var finalURL = newURL + pageName;
+                parent.window.location.replace(finalURL);
+        }
+        else if(val == 'false')
+        {
+            document.getElementById('{!$Component.ol}').style.display = '';
+            // NGKJ - call resetClicked();
+            resetClicked();
+        }
+        }
+        catch(err){
+
+            alert(err)
+
+        }
+    }
+    window.onload       = new function(){onLoadActivity();};
+    function onLoadActivity(){
+        init();
+        document.getElementById('{!$Component.ol}').style.display = 'none';
+        document.getElementById('{!$Component.am}').style.display = 'none';
+        }
+    function sign()
+    {
+        try
+        { 
+            
+            document.getElementById('{!$Component.am}').style.display = 'none';
+            var Email = document.getElementById('{!$Component.frm1.Emailtoreg}').value;
+            var voif = document.getElementById('{!$Component.frm1.oif}').value;
+            var voef = document.getElementById('{!$Component.frm1.oef}').value;
+            var vond = document.getElementById('{!$Component.frm1.ond}').value;
+            window.setTimeout(fo);
+            document.getElementById('{!$Component.frm1.page1}').style.display = 'none';
+        }
+        catch(err){
+        alert(err)}
+    }
+
+    function signin()   
+    {
+    try{
+    
+        document.getElementById('{!$Component.frm1.page1}').style.display = 'none';
+        var val = document.getElementById('{!$Component.frm1.pName}').innerHTML.replace('&amp;','&');
+        var oif_val = document.getElementById('{!$Component.frm1.oif_val}').innerHTML;
+        var oef_val = document.getElementById('{!$Component.frm1.oef_val}').innerHTML;
+        var ond_val = document.getElementById('{!$Component.frm1.ond_val}').innerHTML;
+        var pageName;
+        if(val == 'none')
+        {
+            document.getElementById('{!$Component.am}').style.display = '';
+            // NGKJ - call resetClick2();
+            resetClick2();
+        }
+        else
+        {
+            pageName = val ;
+            if(oif_val != '')
+            {
+            pageName = pageName + '&' + oif_val;
+            }
+            if(oef_val != '')
+            {
+            pageName = pageName + '&' + oef_val;
+            }
+            if(ond_val != '')
+            {
+            pageName = pageName + '&' + ond_val;
+            }
+            parent.window.location.replace(pageName);
+            
+        }
+    }
+     catch(err){
+
+    //alert(err)
+
+    }    
+   }
+   function clearField(field, defaultText) {
+ if (field.value == defaultText ) {
+    field.value = '';
+ }
+}
+ 
+function replaceField(field, defaultText) {
+ if (field.value == '' ) {
+    field.value = defaultText;
+ }
+}
+</script> 
+</apex:page>

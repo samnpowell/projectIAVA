@@ -1,0 +1,6 @@
+Your budget request for {!Budget_Request__c.Event__c} was rejected.
+
+Event: {!Budget_Request__c.Event__c}
+Requested Budget: {!Budget_Request__c.Requested_Budget__c}
+
+You can access the budget request by clicking this link: {!Budget_Request__c.Link}

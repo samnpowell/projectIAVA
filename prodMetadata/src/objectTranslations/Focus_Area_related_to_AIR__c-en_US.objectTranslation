@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Focus Area related to AIR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Focus Areas related to AIRs</value>
+    </caseValues>
+    <fields>
+        <label><!-- AIR --></label>
+        <name>AIR__c</name>
+        <relationshipLabel><!-- Focus Areas --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Focus Area --></label>
+        <name>Focus_Area__c</name>
+        <relationshipLabel><!-- AIRs --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

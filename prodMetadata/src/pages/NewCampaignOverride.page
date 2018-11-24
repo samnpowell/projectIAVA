@@ -1,0 +1,39 @@
+<!--
+Copyright (c) 2009 Etherios LLC
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are not permitted.
+
+Author: Nick Koopman, nkoopman@etherios.com
+-->
+<!-- 
+
+{!URLFOR(target, id, [inputs], [no override])}
+target: URL or action, s-control, or static resource merge variable
+id: reference to the record
+inputs: optional parameters
+no override: optional, defaults to "false", use true for the standard action when you have defined an override. 
+
+-->
+<apex:page standardController="Campaign" extensions="NewCampaignOverrideExtension" tabStyle="Campaign">
+    <apex:sectionHeader title="Campaigns" subtitle="Create a New Campaign from a Template"/>
+    <apex:form >
+    <apex:pageMessages />
+    <apex:pageBlock title="Choose a Campaign Template">
+        <apex:pageBlockButtons location="both">
+            <apex:commandButton value="New Campaign"    action="{!URLFOR($Action.Campaign.Clone,selection,[cpn1='New Campaign&cpn16=1&00N80000004GKWJ=0'])}" rendered="{!NOT(error)}"/>       
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+          <!-- 4/12/12 SD: disabling New Template button  <apex:commandButton value="New Template " action="{!URLFOR($Action.Campaign.New,null,[cpn1='New Campaign&cpn16=0&00N80000004GKWJ=1'],true)}" style="margin-left: 2em"/>  --> 
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection rendered="{!NOT(error)}">
+            <apex:pageBlockSectionItem helptext="Choose an existing template.  Your new Campaign will be modeled after the template.">
+            <apex:outputLabel value="Campaign Template"/>
+            <apex:selectList value="{!selection}" multiselect="false" size="1">
+                <apex:selectOptions value="{!templates}"/>
+            </apex:selectList>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

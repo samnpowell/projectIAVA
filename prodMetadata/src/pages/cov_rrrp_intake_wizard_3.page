@@ -1,0 +1,187 @@
+<apex:page standardController="Case" extensions="cov_resources_controller" sidebar="false" showheader="false" action="{!initStep3}">
+
+
+<apex:composition template="cov_template_noheader">
+
+
+    <apex:define name="layout">
+
+        <c:cov_include_js_datepicker />
+        <c:cov_include_css_datepicker />
+
+        <div class="popup-container">
+        
+          <div class="detail-pg">   
+        
+          
+        
+          <h2>Basic info</h2>
+
+          
+            <apex:form html-role="form" styleClass="form-horizontal">
+
+            	<!-- include fields here so they will be present in query for Step 4 -->
+                <apex:outputField rendered="false" value="{!Case.Contact}" />
+            	<apex:inputField rendered="false" value="{!Case.Current_Housing_Living_Status__c}" />
+                <apex:inputField rendered="false" value="{!Case.Discharge_Status__c}" />
+                <apex:inputField rendered="false" value="{!Case.Annual_Family_income__c}" />
+                <apex:inputField rendered="false" value="{!Case.Contact.Marital_Status__c}" />
+                <apex:inputField rendered="false" value="{!Case.Marital_Status__c}" />
+                <apex:inputField rendered="false" value="{!Case.Healthcare__c}" />
+                <apex:inputField rendered="false" value="{!Case.Intake_Step_Completed__c}" />
+                <apex:inputField rendered="false" value="{!Case.Employment__c}" />
+                <apex:inputField rendered="false" value="{!Case.Contact.FirstName}" />
+                <apex:inputField rendered="false" value="{!Case.Contact.LastName}" />
+
+
+                <div class="form-group">
+                    <label for="dob" class="col-xs-5 control-label">Date of Birth</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="dob" value="{!Case.Contact.Birthdate}" showDatePicker="false" 
+                    		html-placeholder="MM/DD/YYYY" html-data-provide="datepicker" html-data-date-autoclose="true" html-data-date-start-view="2" html-data-date-todayHighlight="false" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Address" class="col-xs-5 control-label">Street Address</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="address" value="{!Case.Contact.MailingStreet}" html-placeholder="Street Address" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Address" class="col-xs-5 control-label">City</label>
+                    <div class="col-xs-7">
+	                    <div class="pull-left" style="width: 45%">
+	                    	<apex:inputField styleclass="form-control" id="city" value="{!Case.Contact.MailingCity}" html-placeholder="City" />
+	                	</div>
+	                    <div class="pull-left" style="width: 25%">
+	                    	<apex:selectList value="{!Case.Contact.MailingState}" size="1" styleClass="form-select form-control" style="height: 34px;" >
+								<apex:selectOptions value="{!stateOptions}" />
+							</apex:selectList>
+	                	</div>
+	                    <div class="pull-left" style="width: 30%">
+	                    	<apex:inputField styleclass="form-control" id="zip" value="{!Case.Contact.MailingPostalCode}" html-placeholder="Zip" />
+	                	</div>
+	                </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="how-heard" class="col-xs-5 control-label">How did you hear about us?</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="how-heard" value="{!Case.How_did_you_hear_about_us__c}" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="branch" class="col-xs-5 control-label">Branch of Service</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="branch" value="{!Case.Contact.Branch_of_Service__c}" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Rank" class="col-xs-5 control-label">Rank</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="rank" value="{!Case.Contact.Rank__c}" />
+                	</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mos" class="col-xs-5 control-label">MOS</label>
+                    <div class="col-xs-7">
+                    	<apex:inputField styleclass="form-control" id="mos" value="{!Case.Contact.MOS_Military_Job__c}" />
+                	</div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="OEF" class="col-xs-5 control-label">Operation</label>
+                    <div class="col-xs-7">
+                    	
+	                    <div class="row">
+
+	                    	<div class="col-xs-4">
+	                    		<div class="well">
+					  			 <div class="checkbox">
+				    				<label>
+										<apex:inputField value="{!Case.Contact.Veteran_of_OEF__c}" />
+										OEF
+									</label>
+								 </div>
+								</div>
+							</div>
+							
+	                    	<div class="col-xs-4">
+					  			<div class="well">
+					  			 <div class="checkbox">
+				    				<label>
+										<apex:inputField value="{!Case.Contact.Veteran_of_OIF__c}" />
+										OIF
+									</label>
+								 </div>
+								</div>
+							</div>
+							
+	                   		<div class="col-xs-4">
+					  			<div class="well">
+					  			 <div class="checkbox">
+				    				<label>
+										<apex:inputField value="{!Case.Contact.Veteran_of_OND__c}" />
+										OND
+									</label>
+								 </div>
+								</div>
+							</div>
+										
+
+
+	                    </div>
+
+                	</div>
+                </div>
+
+
+
+	        <div class="text-center">
+	                <apex:commandButton value="Almost there..." action="{!save}" styleclass="btn btn-primary btn-large" />
+	        </div>
+
+ 		</apex:form>
+
+
+        <div class="pull-right">
+            <button type="button" class="close smaller-close" onclick="window.parent.closeModal();" aria-hidden="true">Close</button>
+            <apex:outputPanel rendered="{!closeTarget != null && closeTarget != ''}">
+                <input type="hidden" id="closetarget" value="{!closeTarget}" />
+            </apex:outputPanel>
+        </div>
+
+          
+         </div>
+        </div>
+    
+    <script type="text/javascript">
+
+    	var j$ = jQuery.noConflict();
+		j$(document).ready(function() {
+			j$('input[id$=dob]').click(function () {
+			    if (j$(this).val() == '') {
+			    	var back20years = new Date();
+					back20years.setDate(back20years.getDate() - 7300);
+					j$(this).datepicker('setDate', back20years);
+					j$(this).datepicker('update');
+					j$(this).val('');
+				}
+			});
+		});
+    </script>
+    
+    
+    
+    </apex:define>
+
+</apex:composition>
+
+
+</apex:page>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Giselle Reconfirm Email</name>
+    <style>none</style>
+    <subject>From IAVA: Please Reconfirm Your Request for &quot;Giselle&quot; Tickets, 7/14</subject>
+    <type>text</type>
+</EmailTemplate>

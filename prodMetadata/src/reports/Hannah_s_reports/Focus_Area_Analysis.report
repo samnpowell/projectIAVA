@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <block>
+        <blockInfo>
+            <blockId>B1</blockId>
+            <joinTable>fkx</joinTable>
+        </blockInfo>
+        <columns>
+            <field>CUST_NAME</field>
+        </columns>
+        <format>Summary</format>
+        <name>Programs with Focus Area block 1</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>CustomEntity$Program__c@Program__c.Focus_Area__c</reportType>
+        <scope>organization</scope>
+        <timeFrameFilter>
+            <dateColumn>Program__c.Last_Referral_Date__c</dateColumn>
+            <interval>INTERVAL_CUSTOM</interval>
+        </timeFrameFilter>
+    </block>
+    <block>
+        <blockInfo>
+            <blockId>B0</blockId>
+            <joinTable>Referral__c.Focus_Area_for_Referral__c</joinTable>
+        </blockInfo>
+        <columns>
+            <field>Referral__c$Name</field>
+        </columns>
+        <format>Summary</format>
+        <name>Referrals with Focus Area block 2</name>
+        <params>
+            <name>co</name>
+            <value>1</value>
+        </params>
+        <reportType>Referrals_with_Focus_Area__c</reportType>
+        <scope>organization</scope>
+        <timeFrameFilter>
+            <dateColumn>Referral__c$CreatedDate</dateColumn>
+            <interval>INTERVAL_CURRENT</interval>
+        </timeFrameFilter>
+    </block>
+    <blockInfo>
+        <blockId xsi:nil="true"/>
+        <joinTable>fkx</joinTable>
+    </blockInfo>
+    <format>MultiBlock</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Focus Area Analysis</name>
+    <reportType>CustomEntity$Program__c@Program__c.Focus_Area__c</reportType>
+    <showDetails>false</showDetails>
+</Report>

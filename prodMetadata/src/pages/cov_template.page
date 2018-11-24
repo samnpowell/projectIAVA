@@ -1,0 +1,167 @@
+<apex:page id="cov_template" controller="cov_template_controller" sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" action="{!checkURLPath}">
+<html>  
+  <head>  
+    <title><apex:insert name="page-title" /></title>  
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>   -->
+	<c:cov_meta_tags />
+	<apex:insert name="meta-tags" />
+
+
+	<link rel="shortcut icon" href="{!URLFOR($Resource.IAVA_Favicon)}" type="image/x-icon" />
+
+
+<!-- 		<apex:define name="feedback-tab-header">
+			<apex:include pageName="cov_feedback_widget_header"  rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}" />
+        </apex:define> 
+ -->    
+
+	<script type="text/javascript">
+		var currenturl = window.location.href;
+
+		if (currenturl.match('^{!baseUrl}{!pathPrefix}/apex/')) {
+			window.location.replace(currenturl.replace('{!baseUrl}{!pathPrefix}/apex/', '{!baseUrl}{!pathPrefix}/'));
+		}
+	</script>
+
+	<c:cov_include_js_analytics />
+
+	<!-- <apex:define name="stylesheets" > -->
+	<c:cov_stylesheets /> 
+	<!-- </apex:define>   -->
+
+    <c:cov_include_js_jquery /> 
+
+
+  </head>  
+  <body class="bootstrap">  
+
+		  	<apex:outputPanel rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">
+			  		<apex:define name="header">
+						<c:cov_header /> 
+					</apex:define>  
+			</apex:outputPanel>
+
+		  	<apex:outputPanel rendered="{!ISPICKVAL($User.UserType,'Guest')}">
+			  		<apex:define name="header">
+						<c:cov_header_guests /> 
+					</apex:define>  
+			</apex:outputPanel>
+
+
+<!-- 			<apex:define name="feedback-tab">
+				<apex:include pageName="cov_feedback_widget"  rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}" />
+	        </apex:define> 
+ -->	  
+	    <div class="container{!if(or(isMobile,contains($CurrentPage.Name, 'vettogether')), '-fluid', '')}{!if(or(contains($CurrentPage.Name, 'dashboard'), contains($CurrentPage.Name, '_central')), ' container-dashboard', '')}{!if(ISPICKVAL($User.UserType,'Guest'), ' container-guests', '')}" id="container-overall">
+	  
+	  	    <apex:pageMessages id="messages" escape="false"/>
+
+	  		<apex:define name="firstlogin">
+				<apex:include pageName="cov_firstlogin" rendered="{!AND(NOT(ISPICKVAL($User.UserType,'Guest')), OR($CurrentPage.Name == 'cov_dashboard', $CurrentPage.Name == 'cov_events_central'))}" />
+	        </apex:define>  
+
+
+	  		<apex:insert name="layout" />
+	  		<apex:insert name="body" />
+	  
+		</div> <!-- .container-fluid -->
+	  
+	  	<apex:outputPanel rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">
+			<div id="popupBox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="popupBox" aria-hidden="true">
+				<div class="modal-dialog modal-lg" id="modal-container">
+					<div class="modal-content">
+						<div class="modal-header">
+						    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						    <h4>Details</h4>
+						</div>
+						<div class="modal-body">
+							<iframe class="modal-iframe" frameborder="0" hspace="0" scrolling="auto"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</apex:outputPanel>
+
+	  
+	  
+	    <c:cov_include_js_bootstrap /> 
+
+
+	    <apex:outputPanel rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}"> 
+		    <apex:includeScript value="{!URLFOR($Resource.bootstrap_files,'js/modal.js')}" />  
+		    <apex:includeScript value="{!URLFOR($Resource.bootstrap_files,'js/transition.js')}" />  
+		    <apex:includeScript value="{!URLFOR($Resource.cov_files,'js/jquery.tabSlideOut.v1.3.js')}" />  
+
+		    <apex:includeScript value="{!URLFOR($Resource.cov_files,'js/bootstrap-tour.min.js')}" />  
+
+			<script type="text/javascript">
+				var j$ = jQuery.noConflict();
+			
+				j$(document).ready(function()    {
+					initializePage();
+				});
+
+				var initializePage = function initializePage() {
+					j$('[data-target="#popupBox"]').click(function(e) {
+						openModal(j$(this).attr('data-url'), j$(this).data('name'));
+						j$('#popupBox').data('type', j$(this).data('type'));
+					});	
+					j$('#popupBox').on('hide.bs.modal', function () {
+						var closetarget = j$('#popupBox .modal-iframe').contents().find('#closetarget').val();
+						if (closetarget != null && closetarget != '') { 
+							j$('#popupBox .modal-iframe').attr('src', closetarget);
+							return false;
+						}
+					});
+					j$('#popupBox').on('hidden.bs.modal', function () {
+						if (window.location.hash.substr(0,6) == "#event") {
+							window.location.href = window.location.href.substr(0, window.location.href.indexOf('#'));
+						} else if (j$(this).data('type') == 'event') { 
+							refreshEvents(); 
+						}
+		    			j$('#popupBox .modal-iframe').attr('src', null);
+		    			return false;
+					});		
+
+					// if (window.location.pathname.split('/').pop() == "cov_rrrp") {
+					// 	openModal('cov_rrrp_1', 'RRRP: IAVA Transition Managers are here to help');
+					// } 
+					/*
+					else if (window.location.hash.substr(0,6) == "#event") {
+		    			var evId = j$.getUrlVar('id');
+		    			console.log('evId: ' + evId);
+		    			if (evId != '' && evId != null) {
+		    				openModal('cov_event?id=' + evId, 'Event Detail');
+		    			}
+					}	
+					*/	
+				}
+
+				// open modal with given url and name
+				var openModal = function openModal(url, name) {
+						j$('#popupBox .modal-iframe').attr('src', url);
+						j$('#popupBox h4').text(name);
+						j$('#popupBox').modal('show');
+						return false;
+				};
+
+
+				window.closeModal = function(){ // can be called from within iframe
+		    		j$('#popupBox').modal('hide');
+				};
+
+			</script>
+
+
+		</apex:outputPanel>
+
+		<c:cov_js_utils /> 
+
+
+  		<apex:define name="footer">
+			<c:cov_footer /> 
+		</apex:define>  	
+
+  </body>  
+</html>  
+</apex:page>

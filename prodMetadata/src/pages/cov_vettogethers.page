@@ -1,0 +1,408 @@
+<apex:page showHeader="false" sidebar="true">
+
+	<apex:composition template="cov_template">
+
+		<apex:define name="page-title">
+			VetTogethers - myIAVA
+		</apex:define>
+
+
+		<apex:define name="layout"> 
+
+			<c:cov_include_js_jquery />
+		
+					<!-- 	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+						<link href="http://iava.org/wp-content/themes/iava_theme/style.css" rel="stylesheet" media="screen" />
+					 -->
+					 	<!-- <apex:styleSheet value="https://iava.org/wp-content/themes/iava_theme/style.css" /> -->
+
+					 	<style type="text/css">
+
+
+							/* VetTogether Page */
+							.vt-intro { padding-top: 70px !important; }
+
+							.vt-intro-col-1 { padding-right: 4.1666666667%; }
+
+							/*.vt-subtitle { margin: 0 0 20px; }*/
+
+							.vt-intro-col-2 { padding-left: 0; padding-top: 12px; }
+
+							.vt-content-detail { min-height: 1px; }
+							.vt-content-detail p { text-align: left !important; margin-bottom: 1.125em; line-height: 1.5555555556; }
+							.vt-content-detail p:last-child { margin-bottom: 0; }
+
+							.vt-map-title-bar { width: 100%; background-color: rgba(17, 17, 17, 0.8); }
+							.vt-map-title-bar:before { display: block; margin-right: 55px; border-top: 5px solid #DCF428; border-right: 5px solid transparent; -webkit-transform: scale(0.9999); -ms-transform: scale(0.9999); transform: scale(0.9999); content: ""; }
+							.vt-map-title-bar .container { padding-top: 26px; padding-bottom: 26px; }
+
+							.vt-map-title, .vt-map-or, .vt-map-button { display: block; float: left; line-height: 42px; text-transform: uppercase; }
+
+							/*.vt-map-title { font-size: 36px; color: #ffffff; margin: 0 18px 0 0; }*/
+
+
+
+
+
+							#vt-submit-event-modal .wFormTitle { font-size: 24px; }
+							#vt-submit-event-modal .label { padding-left: 0; font-weight: normal; }
+							#vt-submit-event-modal .label-large { font-size: 16px; }
+							#vt-submit-event-modal input[type=text] { width: 16em; border: 1px solid #b5b5b5; padding: 4px 6px; border-radius: 2px; }
+							#vt-submit-event-modal .primaryAction.btn { padding-top: 5px; line-height: 24px; font-size: 18px; }
+
+							.vt-social-stream-intro { background-color: #f3f3f3; background-image: -webkit-linear-gradient(#ffffff, #f3f3f3); background-image: linear-gradient(#ffffff, #f3f3f3); }
+							.vt-social-stream-intro > .container { padding-top: 80px; padding-bottom: 20px; }
+							.vt-social-stream-intro .row > :last-child { padding-left: 40px; }
+
+							.vt-social-stream-title { position: relative; display: inline-block; margin: 0; padding: 5px 16px 0 25px; background: #DCF428; line-height: 67px; font-size: 42px; text-transform: uppercase; color: #111111; }
+							.vt-social-stream-title:after { position: absolute; display: block; top: 0; left: 100%; border-top: 72px solid #DCF428; border-right: 37px solid transparent; -webkit-transform: scale(0.9999); -ms-transform: scale(0.9999); transform: scale(0.9999); content: ""; }
+
+							.vt-social-stream-intro-text { font-size: 28px; line-height: 1.2857142857; color: #828282; letter-spacing: -.025em; }
+							.vt-social-stream-intro-text > strong { color: #343432; }
+
+							.vt-social-stream-list { background-color: #f3f3f3; }
+							.vt-social-stream-list .dcsns-toolbar { display: none; margin: 0; }
+							.vt-social-stream-list .wall-outer { width: 240px; margin: 0 auto; padding: 26px 0 50px; }
+							@media only screen and (min-width: 480px) { .vt-social-stream-list .wall-outer { width: 482px; } }
+							@media only screen and (min-width: 720px) { .vt-social-stream-list .wall-outer { width: 722px; } }
+							@media only screen and (min-width: 960px) { .vt-social-stream-list .wall-outer { width: 962px; } }
+							@media only screen and (min-width: 1200px) { .vt-social-stream-list .wall-outer { width: 1202px; } }
+							@media only screen and (min-width: 1450px) { .vt-social-stream-list .wall-outer { width: 1452px; } }
+
+							.vt-more-about { padding: 0; background-image: url(images/vt-more-about-bg@2x.jpg); background-repeat: no-repeat; background-position: 50% 80%; background-size: cover; }
+							@media only screen and (min-width: 1300px) { .vt-more-about { background-position-y: 40%; } }
+							@media only screen and (min-width: 1400px) { .vt-more-about { background-position-y: 35%; } }
+							@media only screen and (min-width: 1600px) { .vt-more-about { background-position-y: 28%; } }
+							@media only screen and (max-width: 1199px) { .vt-more-about { background-position-y: 90%; } }
+							.vt-more-about > .container { padding: 60px 0; }
+							.vt-more-about > .container > h1 { margin: 0 0 25px; }
+							.vt-more-about > .container > h1 > span { position: relative; display: inline-block; margin-right: 15px; padding: 0 12px 0 20px; font-size: 36px; line-height: 60px; color: #DCF428; background-color: rgba(0, 0, 0, 0.7); }
+							.vt-more-about > .container > h1 > span:after { position: absolute; display: block; top: 0; left: 100%; border-top: 60px solid rgba(0, 0, 0, 0.7); border-right: 36px solid transparent; -webkit-transform: scale(0.9999); -ms-transform: scale(0.9999); transform: scale(0.9999); content: ""; }
+							.vt-more-about .filters-more { margin-bottom: 180px; }
+							.vt-more-about .links-container { padding: 32px 20px 10px; background-color: rgba(17, 17, 17, 0.8); min-height: 322px; }
+							.vt-more-about .links-container .links-text { min-height: 118px; border-bottom-color: rgba(130, 130, 130, 0.3); }
+							.vt-more-about .links-container .links-text:nth-child(odd) { margin-right: 106px; }
+							.vt-more-about .links-container .links-text a { display: block; }
+							.vt-more-about .links-container .links-text p, .vt-more-about .links-container .links-text p b { color: #ffffff; color: rgba(255, 255, 255, 0.9); }
+							.vt-more-about .links-container .links-text b { color: #828282; color: rgba(130, 130, 130, 0.7); text-transform: uppercase; }
+							.vt-more-about .links-container .links-text a:hover p, .vt-more-about .links-container .links-text a:hover p b { color: #ffffff; }
+							.vt-more-about .links-container .links-text a:hover b { color: rgba(130, 130, 130, 0.8); }
+							.vt-more-about .more-button { bottom: 15px; }
+							.vt-more-about .more-button .btn { text-transform: uppercase; font-size: 18px; height: 36px; width: 120px; background-color: rgba(17, 17, 17, 0.5); color: rgba(255, 255, 255, 0.85); -webkit-transition: all 150ms ease-out; transition: all 150ms ease-out; }
+							.vt-more-about .more-button a:hover .btn { background-color: rgba(17, 17, 17, 0.8); color: #ffffff; }
+
+
+
+
+
+
+
+
+
+
+					 		/* general website definitions, adapted */
+							.bootstrap .btn.btn-cta {
+							  background: #DCF428;
+							  color: #343432;
+							}
+							.green-bar { width: 300px; height: 0; border-top: 7px solid #DCF428; border-right: 7px solid transparent; }
+							.header-tall {
+							  height: 500px;
+							}
+
+
+
+					 		/* tweaks for myIAVA */
+							.vt-intro { padding-bottom: 70px; }
+							.vt-intro .green-bar { display: block; margin-bottom: 50px; }
+							.vt-subtitle { margin: 0 0 20px; display: block; }
+							.bootstrap h3.vt-map-title { color: #ffffff; margin: 0 18px 0 0; }
+							.bootstrap .btn.vt-map-button { padding: 2px 16px 0; line-height: 40px; font-size: 17px; color: #343432; -webkit-transition: background-color 150ms ease-out; transition: background-color 150ms ease-out; }
+							.bootstrap .btn.vt-map-button:hover { color: #111111; background-color: rgba(220, 244, 40, 0.9); }
+
+
+/*							#social-stream-frame {
+								min-height: 500px;
+							}*/
+
+
+							/* Top Header Slogan For VetTogether (and other) page */
+							.header-slogan { position: absolute; width: 610px; top: 230px; left: 0; right: 0; margin: 0 auto; }
+
+							.header-slogan-tier-1 { margin-bottom: 4px; height: 76px; float: right; clear: both; }
+							.header-slogan-tier-1 .slice-left { float: left; border-bottom: 76px solid rgba(0, 0, 0, 0.7); border-left: 45px solid transparent; -webkit-transform: scale(0.9999); -ms-transform: scale(0.9999); transform: scale(0.9999); }
+							.header-slogan-tier-1 .header-slogan-title { padding-left: 16px; padding-right: 28px; line-height: 76px; font-size: 56px; }
+
+							.header-slogan-tier-2 { height: 103px; float: left; clear: both; }
+							.header-slogan-tier-2 .slice-right { float: right; border-top: 103px solid rgba(0, 0, 0, 0.7); border-right: 60px solid transparent; -webkit-transform: scale(0.9999); -ms-transform: scale(0.9999); transform: scale(0.9999); }
+							.header-slogan-tier-2 .header-slogan-title { padding-left: 31px; padding-right: 18px; line-height: 103px; font-size: 78px; }
+
+							.bootstrap .header-slogan-title { display: inline-block; background-color: rgba(0, 0, 0, 0.7); letter-spacing: -0.031em; margin: 0; text-align: center; color: #DCF428; }
+
+							#social-stream-frame {
+								height: 10000px;
+								width: 100%;
+								border: 0;
+							}
+							/* quick workarounds for resizing iframe height */
+							@media screen and (max-width: 1270px) {
+								#social-stream-frame {
+									height: 15000px;
+								}
+							}
+							@media screen and (max-width: 990px) {
+								#social-stream-frame {
+									height: 8000px;
+								}
+							}
+							@media screen and (max-width: 974px) {
+								#social-stream-frame {
+									height: 10000px;
+								}
+							}
+							@media screen and (max-width: 734px) {
+								#social-stream-frame {
+									height: 15000px;
+								}
+							}
+							@media screen and (max-width: 495px) {
+								#social-stream-frame {
+									height: 29000px;
+								}
+							}
+							
+
+							@media screen and (max-width: 1023px) {
+								.header-slogan {
+								  width: 407px;
+								  top: 157px;
+								}
+								.header-slogan-tier-1 {
+								  height: 51px;
+								}
+								.header-slogan-tier-1 .header-slogan-title {
+								  padding-left: 11px;
+								  padding-right: 18px;
+								  line-height: 51px;
+								  font-size: 37px;
+								}
+								.header-slogan-tier-2 {
+								  height: 69px;
+								}
+								.header-slogan-tier-2 .header-slogan-title {
+								  padding-left: 21px;
+								  padding-right: 12px;
+								  line-height: 69px;
+								  font-size: 52px;
+								}
+								.header-tall {
+								  min-height: 315px;
+								  max-height: 315px;
+								  height: auto;
+								}
+								.header-slogan-tier-1 .slice-left {
+								  border-bottom-width: 51px;
+								  border-left-width: 30px;
+								}
+								.header-slogan-tier-2 .slice-right {
+								  border-top-width: 69px;
+								  border-right-width: 40px;
+								}
+
+								.vt-intro-col-2 {
+								  padding-top: 8px;
+								  padding-left: 15px;
+								}
+							}
+							@media screen and (max-width: 767px) and (orientation: portrait) {
+								.header-slogan {
+								  width: 262px;
+								  top: 70px;
+								}
+								.header-slogan-tier-1 {
+								  height: 33px;
+								}
+								.header-tall {
+								  min-height: 170px;
+								  max-height: 170px;
+								  height: auto;
+								}
+								.header-slogan-tier-1 .header-slogan-title {
+								  padding-left: 7px;
+								  padding-right: 12px;
+								  line-height: 33px;
+								  font-size: 24px;
+								}
+								.header-slogan-tier-2 {
+								  height: 44px;
+								}
+								.header-slogan-tier-2 .header-slogan-title {
+								  padding-left: 13.5px;
+								  padding-right: 8px;
+								  line-height: 44px;
+								  font-size: 33px;
+								}
+								.header-slogan-tier-1 .slice-left {
+								  border-bottom-width: 33px;
+								  border-left-width: 19px;
+								}
+								.header-slogan-tier-2 .slice-right {
+								  border-top-width: 44px;
+								  border-right-width: 26px;
+								}
+
+								.vt-intro-col-2 {
+								  padding-left: 15px;
+								  padding-right: 15px;
+								}
+							}
+
+
+/*#social-stream-frame-wrapper { 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#social-stream-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}*/
+
+					 	</style>
+
+						<c:cov_eventsmap_code mapHeight="590" searchBoxPosition="TOP_LEFT" searchBoxFontSize="15px" />
+
+
+
+						<div class="alert alert-warning alert-dismissible" role="alert" id="alert-div" style="display:none;">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <div id="alert-msg"></div>
+						</div>
+						<script type="text/javascript">
+							j$ = jQuery.noConflict();
+							j$(document).ready(function() {
+								var msg = j$.getUrlVar('msg');
+								if (msg != null) {
+									msg = msg.replace(/+/g, ' ');
+								}
+								if (msg != '' && msg != null) {
+									j$('#alert-msg').html(msg);
+									j$('#alert-div').show();
+								}
+							});
+						</script>
+
+						<header class="header-tall" style="background: url('https://iava.org/wp-content/uploads/2015/03/vt-banner-2x.jpg') #343432 no-repeat; background-position: center center; background-size: cover;">
+							<div class="row">
+								<div class="no-padding-tb relative">
+									<div class="header-slogan">
+										<div class="header-slogan-tier-1">
+											<h1 class="header-slogan-title font-light">Let&rsquo;s have a</h1>
+											<div class="slice-left"></div>
+										</div>
+										<div class="header-slogan-tier-2">
+											<h1 class="header-slogan-title font-bold">#VetTogether</h1>
+											<div class="slice-right"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</header>
+
+	<!-- Begin Intro Content -->
+	<section class="container pad vt-intro">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 vt-intro-col-1">
+				<h1 class="subtitle vt-subtitle">Foster Camaraderie in Your Community</h1>
+				<div class="green-bar"></div>
+
+			</div><!-- col -->
+			<div class="col-xs-12 col-sm-6 col-md-5 vt-intro-col-2">
+				<section class="content-detail vt-content-detail no-dropcap">
+					
+					<p>VetTogethers are community. Veterans and supporters share in a common goal: to (re)build camaraderie. Driven by our growing member base, VetTogethers boost local leaders who foster a strong peer network and keep conversations going with every monthly event.</p>
+
+					<p>VetTogethers ensure that connections are forged whether you’re a veteran transitioning home, a retiree looking for a way to give back or a student hoping to engage with your peers.</p>
+
+				</section>
+			</div><!-- col -->
+		</div>
+	</section>
+
+
+
+
+						<section class="vt-map">
+							<div class="vt-map-title-bar">
+								<div class="container">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="vt-map-title-wrap">
+												<h3 class="vt-map-title font-light">Register for a Local Event in Your Area</h3>
+												<span class="vt-map-or font-light">or</span>
+												<div class="clearfix hidden-md hidden-lg"></div>
+											</div>
+											<div class="vt-map-button-wrap">
+					<!-- 							<button type="button" class="btn btn-cta vt-map-button font-regular" data-toggle="modal" data-target="#vt-submit-event-modal">Submit an Event</button>
+					 -->
+					 							<a role="button" class="btn btn-cta vt-map-button font-regular" href="cov_event_entry">Submit an Event</a>
+											</div>
+										</div>
+									</div>			
+								</div>
+							</div>
+							<input id="pac-input" class="controls" type="text" placeholder="Search" />
+							<div id="vt-map-canvas" class=""></div>
+						</section><!-- vt-map -->
+
+			<!-- <div class="container-fluid full-height-container"> -->
+			<div class="container-fluid">
+				<!-- <div class="row full-height-row"> -->
+				<div class="row">
+
+					<!-- <div class="col-sm-12 col-md-6 full-height-column"> -->
+					<div class="col-sm-12 col-md-5">
+
+						<apex:include pageName="cov_events_dash" />
+
+					</div>
+
+					<!-- <div class="col-sm-12 col-md-6 full-height-column"> -->
+					<div class="col-sm-12 col-md-7">
+
+							<!-- Begin Social Stream Section -->
+<!-- 							<section class="vt-social-stream">
+								<div class="vt-social-stream-intro">
+									<div>
+										<div class="row">
+											<div class="col-sm-4">
+												<h2 class="vt-social-stream-title font-light">#VetsRising</h2>
+											</div>
+											<div class="col-sm-8">
+												<p class="vt-social-stream-intro-text font-regular"><strong class="font-bold">IAVA encourages you to tag</strong> your veteran related pictures, comments, and videos with <strong class="font-bold">#VetsRising</strong>.</p>
+											</div>
+										</div>
+									</div>
+								</div><!- vt-social-stream-intro ->
+
+							</section> -->
+							<div>
+								<div id="social-stream-frame-wrapper">
+									<iframe id="social-stream-frame" src="https://iava.org/vetsrising-social-stream/" scrolling="no" />
+								</div>
+							</div>
+
+					</div>
+
+				</div>
+			</div>
+
+
+		</apex:define>
+
+	</apex:composition>
+
+</apex:page>

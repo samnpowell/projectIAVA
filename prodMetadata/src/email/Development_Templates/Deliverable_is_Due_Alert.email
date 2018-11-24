@@ -1,0 +1,12 @@
+Hello {!Grant_Obligation__c.Program_Staff_Responsible__c},
+
+{!Grant_Obligation__c.Activity__c} for {!Grant_Obligation__c.Grant__c} is due on {!Grant_Obligation__c.Due_Date__c}
+
+Status: {!Grant_Obligation__c.Status__c}
+
+Description of the Obligation: 
+{!Grant_Obligation__c.Obligation_Description__c}
+
+{!Grant_Obligation__c.Comments__c}
+
+To see the record for this deliverable, click here: https://na8.salesforce.com/{!Grant_Obligation__c.Id}

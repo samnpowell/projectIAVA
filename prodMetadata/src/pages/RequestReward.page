@@ -1,0 +1,3 @@
+<apex:page controller="MobileRequestController" action="{!handleRewardRequest}" contentType="text/plain" showHeader="false">
+{!JSONr4}
+</apex:page>

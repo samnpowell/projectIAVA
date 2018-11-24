@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>2/26/2013 STH 2013 DIGITAL ACCEPT</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2/26/2013 STH 2013 DIGITAL ACCEPT</name>
+    <style>none</style>
+    <subject>Welcome to the Digital Swarm!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Congratulations! We are very pleased to invite you to be a 2013 Digital Swarmer with IAVA! This is an exciting, demanding and historic opportunity to organize for the rights of veterans online and in your home communities. We know you&apos;ll bring honor to the team as a force in your hometown and on social media force during Storm the Hill in March and throughout the year. With your leadership, we&apos;ll show millions of our fellow veterans around the world that we&apos;ve got their back.
+
+This year IAVA received some of our best applications to date. All of our applications were inspiring - and the increasing level of interest in Storm the Hill thrills us. Every year, this program is growing the new veterans movement in unprecedented ways.
+
+As a Swarmer, you will lead the fight from your hometown. Your voice from back home will put critical pressure on your elected leaders in DC. They need to hear from you that the issues confronting veterans and their families impact communities across the country - and in their districts. We know that elected leaders in Washington act when they see a real need in their home district, it rarely fails. Your leadership from outside the DC beltway will be the most important part of our fight this year.
+
+We need a couple of things from you. First, we need you to complete a biographical information form. Please complete this form no later than 5:00 pm EST on Thursday, February 28. If you experience difficulties with the form, please email me at laura@iava.org for assistance.
+
+In the coming days, you will receive an informational packet from IAVA. Inside will be all of the important details that you will need to know about Storm the Hill and details about upcoming training.
+
+In the meantime, if you have any questions or concerns, please contact me at laura@iava.org. I will be working to ensure that your experience is as seamless possible. We are excited to have you as a member of Storm the Hill 2013 and look forward to working with you later this month. Welcome to the team!
+
+Sincerely,
+Laura
+
+Laura Slusarczyk
+Program Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

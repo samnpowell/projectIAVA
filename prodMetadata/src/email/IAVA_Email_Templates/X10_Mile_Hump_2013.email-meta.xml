@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>10 Mile Hump in DFW 2013</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>10 Mile Hump 2013</name>
+    <style>none</style>
+    <subject>In Need of Last Minute Plans for the 4th of July?</subject>
+    <type>text</type>
+</EmailTemplate>

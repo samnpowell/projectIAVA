@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OPPORTUNITY_ID</field>
+    </columns>
+    <columns>
+        <field>OPPORTUNITY_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AMOUNT</field>
+    </columns>
+    <description>Customizable report on donations related to a campaign by tracking code</description>
+    <filter>
+        <booleanFilter>1 OR 2 or 3 or 4 or 5</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity.Tracking_Code__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>StormTheHillStore2010</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Tracking_Code__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>StormTheHillStore10</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Tracking_Code__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>StormTheHillStore10map</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Tracking_Code__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>StormTheHillStore10nomap</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Tracking_Code__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>StormTheHillStoreTshirt</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Campaign Donations</name>
+    <params>
+        <name>open</name>
+        <value>all</value>
+    </params>
+    <params>
+        <name>probability</name>
+        <value>&gt;0</value>
+    </params>
+    <reportType>Opportunity</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>OPPORTUNITY_ID</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CLOSE_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

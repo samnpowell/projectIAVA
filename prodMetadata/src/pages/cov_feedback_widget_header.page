@@ -1,0 +1,76 @@
+<apex:page >
+
+		<script type="text/javascript">
+
+			var j$ = jQuery.noConflict();
+
+			j$.extend({
+	          getUrlVars: function(){
+	            var vars = [], hash;
+	            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+	            for(var i = 0; i < hashes.length; i++)
+	            {
+	              hash = hashes[i].split('=');
+	              vars.push(hash[0]);
+	              vars[hash[0]] = hash[1];
+	            }
+	            return vars;
+	          },
+	          getUrlVar: function(name){
+	            return j$.getUrlVars()[name];
+	          }
+	        });       
+	        //wait until logged in to gs
+	        waitforsf = function() {                     
+	            if(chatterService && chatterService.getSearchBox()){
+	                j$(".csInfo").html('Click on a search result at the top to view its detail')
+	                var searchid="cs:searchAskInput";
+	                var searchname=getCleanName(searchid);
+	                Ext.get(searchid).dom.isGhost=false;
+	                j$(searchname).focus().removeClass('blur').val(unescape(st));       
+	                chatterService.getSearchBox().search();                                   
+	            } 
+	            else {
+	                setTimeout(waitforsf, 100);
+	            }
+	        };
+	        var st;
+
+	        function getCleanName(theName)
+	        {
+	            return '#' + theName.replace(/:/gi,"\\:");
+	        }
+
+
+			
+			j$(document).ready(function(){
+				st=j$.getUrlVar('st');
+	            if(st){
+	                waitforsf();      
+	            }  
+
+				j$('#feedback-frame').html('<iframe width="300" height="260" src="{!$Site.currentSiteUrl}apex/cov_feedback?url='+ window.location.href + '" frameBorder="0"></iframe>');
+
+				j$('.handle').click( function() { 
+					j$('#feedback-frame').toggle('fast');
+				});
+
+				j$(function(){
+		            j$('#feedback-widget').tabSlideOut({
+		                tabHandle: '.handle',                              //class of the element that will be your tab
+		                pathToTabImage: "{!URLFOR($Resource.cov_files, 'img/feedback-tab.jpg')}",          //path to the image for the tab (optionaly can be set using css)
+		                imageHeight: '90px',                               //height of tab image
+		                imageWidth: '30px',                               //width of tab image    
+		                tabLocation: 'right',                               //side of screen where tab lives, top, right, bottom, or left
+		                speed: 300,                                        //speed of animation
+		                action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
+		                topPos: '200px',                                   //position from the top
+		                fixedPosition: false                               //options: true makes it stick(fixed position) on scroll
+		            });
+		        });
+
+			});
+
+		</script>
+	
+</apex:page>

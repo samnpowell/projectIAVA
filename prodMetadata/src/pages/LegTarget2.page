@@ -1,0 +1,96 @@
+<apex:page id="step2" standardcontroller="Legislation__c" extensions="LegTargetingController" >
+<apex:form >
+
+<apex:pageMessages ></apex:pageMessages>
+
+<apex:pageBlock >
+<apex:outputPanel id="confMsgSection" >
+<apex:outputText >{!confMsg}</apex:outputText>
+</apex:outputPanel>
+
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="Previous" action="{!step1}" />
+<apex:commandButton action="{!cancel}" value="Cancel"/>
+</apex:pageBlockButtons>
+
+
+
+<apex:pageBlockSection columns="1">
+<!--Legislation lookup field-->
+	<apex:pageBlockSectionItem >
+            <apex:outputLabel value="Bill ID" for="the_bill"/>
+            <apex:outputLink value="/{!Legislation__c.Id}" id="the_bill">
+                <apex:outputText value="{!Legislation__c.Name}"/>
+            </apex:outputLink>
+    </apex:pageBlockSectionItem>
+	<apex:outputField value="{!Legislation__c.AKA__c}" rendered="{!Legislation__c.AKA__c != ''}" />
+	<apex:outputField value="{!Legislation__c.Bill_Title__c}" rendered="{!Legislation__c.AKA__c == ''}" />
+
+<br />
+
+<apex:outputPanel id="positionssection" >
+Selected Positions: &nbsp;<apex:outputText ><span style="font-weight: bold;">{!positions}</span></apex:outputText>
+</apex:outputPanel>
+<apex:outputPanel id="rolessection" >
+Selected Staff Roles: &nbsp;<apex:outputText style="font-weight: bold;"><span style="font-weight: bold;">{!roles}</span></apex:outputText>
+</apex:outputPanel>
+
+<br />
+<apex:outputPanel >
+Number of contacts selected: &nbsp;<apex:outputText ><span style="font-weight: bold;">{!ctcs2.size}</span></apex:outputText>
+</apex:outputPanel>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+<apex:pageBlock title="Add the contacts to an existing campaign or create a new campaign" rendered="{!ctcs2.size > 0}">
+<apex:pageBlockSection columns="2">
+	<apex:inputField value="{!idHolder.Campaign__c}" label="Select Existing Campaign"/>
+	<apex:inputText value="{!newCampaignName}" label="Name of Campaign to be Created"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection >
+	<apex:commandButton value="Add to Existing Campaign" action="{!addToExisting}" />
+	<apex:commandButton value="Add to New Campaign" action="{!addToNew}" />
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+
+</apex:form>
+
+
+<apex:pageBlock title="Contacts that will be added to the campaign" rendered="{!ctcs2.size > 0}">
+    <apex:dataTable value="{!ctcs2}"
+                    var="ctc2"
+                    cellPadding="4" border="0">
+      <apex:column headerValue="Name">
+        {!ctc2.Name}
+      </apex:column>
+      <apex:column headerValue="Office">
+        {!ctc2.Account.Name}
+      </apex:column>     
+      <apex:column >
+        {!IF(ctc2.KW_IsTheMember__c=="True","Member","")}
+      </apex:column>   
+      <apex:column >
+        {!IF(ctc2.KW_Chief_of_Staff__c=="True","Chief of Staff","")}
+      </apex:column>    
+      <apex:column >
+        {!IF(ctc2.KW_Comms_Director__c=="True","Comms Dir","")}
+      </apex:column>    
+      <apex:column >
+        {!IF(ctc2.KW_Leg_Assistant__c=="True","Leg Asst","")}
+      </apex:column>    
+      <apex:column >
+        {!IF(ctc2.KW_Leg_Director__c=="True","Leg Dir","")}
+      </apex:column>    
+      <apex:column >
+        {!IF(ctc2.KW_Scheduler__c=="True","Scheduler","")}
+      </apex:column>    
+      
+    </apex:dataTable>
+  </apex:pageBlock>
+
+
+
+</apex:page>

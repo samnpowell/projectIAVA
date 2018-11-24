@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.Applications__r$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$npe01__WorkEmail__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Applications__r$Position__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Applications__r$Progress_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Contact$General_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Applications__r$Stage__c</field>
+    </columns>
+    <description>Captures email addresses; stage of review</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact$Veteran_Member__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Veteran Member Job Applicants</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_Applications__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Contact.Applications__r$Stage__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contact.Applications__r$LastModifiedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

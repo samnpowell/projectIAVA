@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Registered Device</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Registered Devices</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- App Version --></label>
+        <name>App_Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Device Unique Id --></help>
+        <label><!-- Device Id --></label>
+        <name>Device_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Model --></label>
+        <name>Device_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device OS --></label>
+        <name>Device_OS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Device Owner --></label>
+        <name>Device_Owner__c</name>
+        <relationshipLabel><!-- Registered Devices --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Device Token --></label>
+        <name>Device_Token__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will be used to store the Last Latitude that was searched for by this device. --></help>
+        <label><!-- Last Latitude --></label>
+        <name>Last_Latitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will be used to store the Last Longitude that was searched for by this device. --></help>
+        <label><!-- Last Longitude --></label>
+        <name>Last_Longitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will be used to indicate how the last search was done by the device. --></help>
+        <label><!-- Last Search By --></label>
+        <name>Last_Search_By__c</name>
+        <picklistValues>
+            <masterLabel>Latitude and Longitude</masterLabel>
+            <translation><!-- Latitude and Longitude --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zip Code</masterLabel>
+            <translation><!-- Zip Code --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This field will be used to indicate the timestamp for when the last search was performed by the device. --></help>
+        <label><!-- Last Search On --></label>
+        <name>Last_Search_On__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will be used to store the Last Zip Code that was searched for by this device. --></help>
+        <label><!-- Last Zip Code --></label>
+        <name>Last_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Rewards --></label>
+        <name>New_Rewards__c</name>
+    </fields>
+    <fields>
+        <label><!-- Receive Messages --></label>
+        <name>Receive_Messages__c</name>
+    </fields>
+    <fields>
+        <label><!-- Registration Timestamp --></label>
+        <name>Registration_Timestamp__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Device Id has to be 40 characters long. --></errorMessage>
+        <name>Device_Id_Length</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Device Token can be empty or an hexadecimal number (0-9a-f) of 64 characters. --></errorMessage>
+        <name>Device_Token_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

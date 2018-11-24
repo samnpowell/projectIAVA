@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User.PortalContacts__r$Member_of_myIAVA__c</field>
+    </columns>
+    <columns>
+        <field>User.PortalContacts__r$myIAVA_Link__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>User$Profile</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>IAVA Plus Portal User</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.PortalContacts__r$Accepted_TOS_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Portal Users with Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Portal_Users_with_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

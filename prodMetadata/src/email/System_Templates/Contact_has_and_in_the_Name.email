@@ -1,0 +1,12 @@
+This contact has "and" in its name.  It may be from a donation given by a couple, in which case there should instead be two separate records with donation roles for each.
+
+Clean it up, clean it up, clean it up!
+
+{!Contact.Link}
+
+Name: {!Contact.Name}
+Last Modified by: {!Contact.LastModifiedBy}
+Date Modified: {!Contact.LastModifiedDate}
+Date Created: {!Contact.CreatedDate}
+Primary Mailing List: {!Contact.Contact_Primary_Mailing_List__c}
+Lifetime Transaction Total (if greater than 0 there are donations): {!Contact.npe01__Lifetime_Giving_History_Amount__c}

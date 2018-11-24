@@ -1,0 +1,12 @@
+Dear {!Give_Request__c.Applicant_Name__c},
+
+You are now on the waitlist for the following IAVA reward:
+
+{!Give_Request__c.Give_Name__c}
+{!Give_Request__c.Give_Instance_Start_Date__c} {!Give_Request__c.Give_Instance_Start_Time__c}
+
+Because of high demand for this reward, there is limited availability. We've placed you on a waiting list and we'll be in touch to let you know if your request has been approved.
+
+{!IF(Give_Request__c.Units_Requested__c > 0, "Number of tickets/units: ", "")}{!IF(Give_Request__c.Units_Requested__c > 0, Give_Request__c.Units_Requested__c, "")}
+
+Thank you for supporting IAVA.

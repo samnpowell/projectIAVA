@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Contact.Paperwork_Confirmation__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Branch_of_Service__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Service_Type__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Rank__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Veteran_of_OEF__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Veteran_of_OIF__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND 2</booleanFilter>
+        <criteriaItems>
+            <column>Contact.Paperwork_Confirmation__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Paperwork Accepted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ADDRESS2_ZIP</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>23001,23062,23090,23107,23125,23131,23138,23163,23184,23304,23310,23313,23314,23316,23320,23321,23322,23323,23324,23325,23326,23327,23328,23397,23419,23424,23429,23430,23431,23432,23433,23434,23435,23436,23439,23443,23450,23451,23452,23454,23455,23456,23457,23458,23459,23460,23461,23462,23463,23464,23465,23466,23467,23468,23471,23479,23487,23501,23502,23503,23504,23505,23506,23507,23508,23509,23510,23511,23512,23513,23514,23515,23517,23518,23519,23520,23521,23523,23529,23530,23541,23551,23601,23602,23603,23604,23605,23606,23607,23608,23609,23612,23628,23630,23631,23651,23653,23661,23662,23663,23664,23665,23666,23667,23668,23669,23670,23681,23690,23691,23692,23693,23694,23696,23701,23702,23703,23704,23705,23707,23708,23709</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Norfolk Confirmed Veterans_50mi_Radius</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

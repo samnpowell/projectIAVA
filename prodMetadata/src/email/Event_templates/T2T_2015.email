@@ -1,0 +1,11 @@
+<img src="https://farm9.staticflickr.com/8399/15603190719_111bd67256_b.jpg" align="right" height="174" width="260" border="1"/>
+<p>Hi {!IAVAEvent_Attendee__c.Event_Attendee_s_First_Name__c},</p>
+
+<p>Thanks so much for your interest in our Tunnel to Towers event! We’d love to get your <a href="https://iava.getfeedback.com/r/6U7cn8rc?IAVAEvent_Attendee__c={!IAVAEvent_Attendee__c.Id}">feedback</a> on the how things went, even if you weren’t able to attend. IAVA invested in the Tunnel to Towers festivities this year to create the strongest possible experience for our members, and we need your input to help make the next event even better. <a href="https://iava.getfeedback.com/r/6U7cn8rc?IAVAEvent_Attendee__c={!IAVAEvent_Attendee__c.Id}">Take the next three minutes to ensure your voice is heard and sound off today!</a></p>
+
+<p>And don’t forget, Veterans Day is around the corner! Stay tuned for more information on IAVA’s festivities for November 11th. Until then, if you’re interested in helping make this year’s event a smash, email Rebecca Forbes at rebecca.forbes@iava.org to find out more about volunteer opportunities!</p>
+
+<p>Thank you!</p>
+
+<p>Best,<br>
+Team IAVA</p>

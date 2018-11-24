@@ -1,0 +1,3 @@
+{!Account.Name} has just made an ad journal purchase of {!Opportunity.Amount} for the IAVA 2015 Heroes Gala. 
+
+They can be reached at {!Opportunity.Donor_Email__c} and {!Opportunity.Donor_Phone__c}.

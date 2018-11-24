@@ -1,0 +1,76 @@
+<apex:page controller="dc_ctrl_RewardSearch" showHeader="false" sidebar="false" action="{!defaultEmail}">
+
+<apex:composition template="dc_Template_Subpages">	
+		
+		<apex:define name="header">
+			<c:dc_Header />
+		</apex:define>
+		 
+		 <apex:define name="findreward">
+			
+		</apex:define>
+<!-- ----------------------------------------BODY STARTS----------------------------------------------->		 
+		<apex:define name="body">
+			 <div class="view view-page-full one-node">  
+             	<div class="view-header"> 
+             		<h1 class="title"><span>Forgot Member Number</span></h1> 
+             	</div>
+             	<div class="view-content"> 
+			 	<div id="forgot-number">  <!-- NEW --> 
+                <div class="views-row-1 views-row-odd"> 
+                <div class="node node-type-page">
+                <div class="node-inner"> 
+ 					<h2 class="title">Forgot your Member Number?</h2> 
+                	<div class="content"> 
+                		<apex:form id="frm">
+ 						<p><apex:outputlabel value="If you already have an IAVA Member Number, enter your email below to have it sent to you.  If you no longer have access to the email address on file," /> <a href="http://iava.org/contact-us">contact us</a>.</p> 
+ 						<apex:inputtext value="{!Email_Member}" required="true" onfocus="clearField(this,'Email Address');" onblur="replaceField(this,'Email Address');" /> 
+ 						<apex:commandButton value="Go" action="{!mail_memberid}"></apex:commandButton> <p></p>
+ 						<p><apex:outputlabel value="{!$Label.dc_MemberId_sent_mesg}" escape="false" rendered="{!if(Email_MemberConf == true,true,false)}" /></p>
+                        <div class="hr"><hr/></div> 
+                        </apex:form>
+ 					</div> 
+ 					<div class="clearfix"></div> 
+                </div>
+                </div> 
+				</div></div>
+				</div> <!-- NEW --> 
+                </div> <!-- /view-content --><!-- /view-posts --> 
+		</apex:define>  
+<!-- ------------------------------------------BODY ENDS------------------------------------------------------------- -->		
+		<apex:define name="inthissection">
+			<apex:include pageName="dc_InThisSection"/>
+		</apex:define>
+		
+		<apex:define name="rewardsearch">
+			<c:dc_getareward />
+		</apex:define> 
+		
+		<apex:define name="featuredpartner">
+			<c:dc_featuredPartner />
+		</apex:define> 
+		
+		<apex:define name="PartnerLogo">
+			<c:dc_PartnerLogo /> 
+		</apex:define> 
+		
+		<apex:define name="Footer">
+			<c:dc_Footer />	 
+		</apex:define> 
+
+</apex:composition> 
+<script type="text/javascript">
+ 
+function clearField(field, defaultText) {
+ if (field.value == defaultText ) {
+	field.value = '';
+ }
+}
+ 
+function replaceField(field, defaultText) {
+ if (field.value == '' ) {
+	field.value = defaultText;
+ }
+}
+</script> 
+</apex:page>

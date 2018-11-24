@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Ally Sponsor --></label>
+        <name>Ally_Sponsor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternate Email --></label>
+        <name>Alternate_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- archives previous responses from the same contact --></help>
+        <label><!-- Archive --></label>
+        <name>Archive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Birthday --></label>
+        <name>Birthday__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calendar Year --></label>
+        <name>Calendar_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Center Caller --></label>
+        <name>Call_Center_Caller__c</name>
+        <picklistValues>
+            <masterLabel>Alicia Richardson</masterLabel>
+            <translation><!-- Alicia Richardson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Allison Chansky</masterLabel>
+            <translation><!-- Allison Chansky --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anthony Pike</masterLabel>
+            <translation><!-- Anthony Pike --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blake Henderson</masterLabel>
+            <translation><!-- Blake Henderson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brandon Willitts</masterLabel>
+            <translation><!-- Brandon Willitts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brian DiPaolo</masterLabel>
+            <translation><!-- Brian DiPaolo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brian Graham</masterLabel>
+            <translation><!-- Brian Graham --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carly Henderson</masterLabel>
+            <translation><!-- Carly Henderson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chris Brogger</masterLabel>
+            <translation><!-- Chris Brogger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chris Zezza</masterLabel>
+            <translation><!-- Chris Zezza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Christina Kim</masterLabel>
+            <translation><!-- Christina Kim --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Christina Roof</masterLabel>
+            <translation><!-- Christina Roof --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Craig Spivack</masterLabel>
+            <translation><!-- Craig Spivack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dana Morrissey</masterLabel>
+            <translation><!-- Dana Morrissey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Derek Bennett</masterLabel>
+            <translation><!-- Derek Bennett --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Derek Coy</masterLabel>
+            <translation><!-- Derek Coy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Devon Collins</masterLabel>
+            <translation><!-- Devon Collins --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ellen Marty</masterLabel>
+            <translation><!-- Ellen Marty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Garrett Gleeson</masterLabel>
+            <translation><!-- Garrett Gleeson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gilbert Nguyen</masterLabel>
+            <translation><!-- Gilbert Nguyen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gretchen Anderson</masterLabel>
+            <translation><!-- Gretchen Anderson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jacob Worrell</masterLabel>
+            <translation><!-- Jacob Worrell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jason Hansman</masterLabel>
+            <translation><!-- Jason Hansman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jeff Park</masterLabel>
+            <translation><!-- Jeff Park --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jonathan Schleifer</masterLabel>
+            <translation><!-- Jonathan Schleifer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kara Horowitz</masterLabel>
+            <translation><!-- Kara Horowitz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kate Horner</masterLabel>
+            <translation><!-- Kate Horner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kate Kelly</masterLabel>
+            <translation><!-- Kate Kelly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kate O&apos;Gorman</masterLabel>
+            <translation><!-- Kate O&apos;Gorman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Katie VanLangen</masterLabel>
+            <translation><!-- Katie VanLangen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laura Slusarczyk</masterLabel>
+            <translation><!-- Laura Slusarczyk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marco Bongioanni</masterLabel>
+            <translation><!-- Marco Bongioanni --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matt Colvin</masterLabel>
+            <translation><!-- Matt Colvin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matt Gallagher</masterLabel>
+            <translation><!-- Matt Gallagher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maura McCarthy</masterLabel>
+            <translation><!-- Maura McCarthy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Megan Hemler</masterLabel>
+            <translation><!-- Megan Hemler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michael Carey</masterLabel>
+            <translation><!-- Michael Carey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michael Houston</masterLabel>
+            <translation><!-- Michael Houston --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michael Preston</masterLabel>
+            <translation><!-- Michael Preston --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michelle McCarthy</masterLabel>
+            <translation><!-- Michelle McCarthy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Millie Scimia</masterLabel>
+            <translation><!-- Millie Scimia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mitch Stoller</masterLabel>
+            <translation><!-- Mitch Stoller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Naveed Ali Shah</masterLabel>
+            <translation><!-- Naveed Ali Shah --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nick Colgin</masterLabel>
+            <translation><!-- Nick Colgin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nicole Venutolo</masterLabel>
+            <translation><!-- Nicole Venutolo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paul Rieckhoff</masterLabel>
+            <translation><!-- Paul Rieckhoff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phoebe Gavin</masterLabel>
+            <translation><!-- Phoebe Gavin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ramsey Sulayman</masterLabel>
+            <translation><!-- Ramsey Sulayman --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Robert Redfield</masterLabel>
+            <translation><!-- Robert Redfield --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ryan Nelson</masterLabel>
+            <translation><!-- Ryan Nelson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ryan Weemer</masterLabel>
+            <translation><!-- Ryan Weemer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Samantha Heffner</masterLabel>
+            <translation><!-- Samantha Heffner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shannon Carey</masterLabel>
+            <translation><!-- Shannon Carey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tom Tarantino</masterLabel>
+            <translation><!-- Tom Tarantino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zack Baddorf</masterLabel>
+            <translation><!-- Zack Baddorf --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Champion Sponsor --></label>
+        <name>Champion_Sponsor__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Campaign Lift URL Autocomplete --></label>
+        <name>CnP_PaaS__CnP_Campaign_Lift_URL_Autocomplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Campaign Lift URL --></label>
+        <name>CnP_PaaS__CnP_Campaign_Lift_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Increment --></label>
+        <name>CnP_PaaS__CnP_Increment__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Lift Expiration date --></label>
+        <name>CnP_PaaS__CnP_Lift_Expiration_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Lift Last Updated --></label>
+        <name>CnP_PaaS__CnP_Lift_Last_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Start Value --></label>
+        <name>CnP_PaaS__CnP_Start_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Primary Mailing List --></label>
+        <name>Contact_Primary_Mailing_List__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days avaliable --></label>
+        <name>Days_Available_Volunteer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Friend Individual --></label>
+        <name>Friend_Individual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geocode --></label>
+        <name>Geocode__c</name>
+        <relationshipLabel><!-- Campaign Members --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Names of any guest(s) --></help>
+        <label><!-- Guest(s) --></label>
+        <name>Guest_s__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hero Sponsor --></label>
+        <name>Hero_Sponsor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Leadership avaliable hours --></label>
+        <name>Hours_A_Week__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used by the DIA Integration.  Not for users. --></help>
+        <label><!-- Integrated --></label>
+        <name>Integrated__c</name>
+    </fields>
+    <fields>
+        <label><!-- KW Issues --></label>
+        <name>KW_Issues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local POC --></label>
+        <name>Local_POC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Veteran --></label>
+        <name>Member_Veteran__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ideal date by which we will have contacted this individual next in whichever manner deemed applicable. --></help>
+        <label><!-- Next Targeting Deadline --></label>
+        <name>Next_Targeting_Deadline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes 2 --></label>
+        <name>Notes_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes 3 --></label>
+        <name>Notes_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of guests that a contact is bringing to an event --></help>
+        <label><!-- Number of Guests --></label>
+        <name>Number_of_Guests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provide your own transportation? --></label>
+        <name>Own_Transportation__c</name>
+    </fields>
+    <fields>
+        <label><!-- POC Email --></label>
+        <name>POC_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Personal Email --></label>
+        <name>Personal_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platinum Hero --></label>
+        <name>Platinum_Hero__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Recruited At</masterLabel>
+            <translation><!-- Recruited At --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VIP</masterLabel>
+            <translation><!-- VIP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer - General</masterLabel>
+            <translation><!-- Volunteer - General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer - Leader/Host</masterLabel>
+            <translation><!-- Volunteer - Leader/Host --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Sponsorship/Ticket type for the Gala --></help>
+        <label><!-- Sponsorship or Ticket Type --></label>
+        <name>Sponsorship_or_Ticket_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- 1 (Least Involved) to 5 (Most Involved) --></help>
+        <label><!-- Staff Evaluation of Volunteer --></label>
+        <name>Staff_Evaluation_of_Volunteer__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Supporter Individual --></label>
+        <name>Supporter_Individual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Table --></label>
+        <name>Table__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier --></label>
+        <name>Tier__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Comp</masterLabel>
+            <translation><!-- Comp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comp Press</masterLabel>
+            <translation><!-- Comp Press --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor</masterLabel>
+            <translation><!-- Donor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press</masterLabel>
+            <translation><!-- Press --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sponsor</masterLabel>
+            <translation><!-- Sponsor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ticket</masterLabel>
+            <translation><!-- Ticket --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Valor Sponsor --></label>
+        <name>Valor_Sponsor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vol&apos;s Evaluation of Event (AAR) --></label>
+        <name>Vol_s_Evaluation_of_Event_AAR__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fair</masterLabel>
+            <translation><!-- Fair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vol&apos;s Evaluation of Volunteer Exp --></label>
+        <name>Vol_s_Evaluation_of_Volunteer_Exp__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fair</masterLabel>
+            <translation><!-- Fair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Volunteer Hours Spent --></label>
+        <name>Volunteer_Hours_Spent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity --></label>
+        <name>et4ae5__Activity__c</name>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation>Gesendet</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsubscribed</masterLabel>
+            <translation>Abbestellt</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The date this action is considered to have taken place for StepUp scoring.  Depends on the campaign start/end dates and when the membership was added. --></help>
+        <label><!-- Effective Action Date --></label>
+        <name>percET__Effective_Action_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set automatically by StepUp. --></help>
+        <label><!-- Engagement Jump From Level --></label>
+        <name>percET__Engagement_Jump_From_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set automatically by StepUp. --></help>
+        <label><!-- Engagement Jump To Level --></label>
+        <name>percET__Engagement_Jump_To_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Jump Type --></label>
+        <name>percET__Engagement_Jump_Type__c</name>
+        <picklistValues>
+            <masterLabel>Breakthrough</masterLabel>
+            <translation><!-- Breakthrough --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rebound</masterLabel>
+            <translation><!-- Rebound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The contact&apos;s engagement level (as a number) at the time this campaign membership was created.  Set automatically by StepUp. --></help>
+        <label><!-- Engagement Level At Insert --></label>
+        <name>percET__Engagement_Level_At_Insert__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of levels (if any) this contact jumped because of paritcipation in this campaign. --></help>
+        <label><!-- Engagement Levels Jumped --></label>
+        <name>percET__Engagement_Levels_Jumped__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Jump --></label>
+        <name>percET__Is_Engagement_Jump__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was participation in this campaign responsible for giving the contact their very first engagement level above 0? Set automatically by StepUp. --></help>
+        <label><!-- New Supporter --></label>
+        <name>percET__Is_New_Supporter__c</name>
+    </fields>
+    <fields>
+        <help><!-- Datestamp of last engagement level chg when CM entered.  Set automatically by StepUp. --></help>
+        <label><!-- Engagement Lvl Chg Timestamp At Insert --></label>
+        <name>percET__Level_Change_Timestamp_At_Insert__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy Team --></label>
+        <name>stayclassy__Classy_Team__c</name>
+        <relationshipLabel><!-- Campaign Members --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Campaign Member Page Layout</layout>
+        <sections>
+            <label><!-- Gala Info --></label>
+            <section>Gala Info</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Salesforce1 Campaign Member Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- We have limited purchase of Supporter Individual ($2500) to four tickets per purchaser. Please contact heroesgala@iava.org with any questions. --></errorMessage>
+        <name>FourOrFewerSupporterIndividualTickets</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- We have limited purchase of Friend Individual ($1250) to two tickets per purchaser. Please contact heroesgala@iava.org with any questions. --></errorMessage>
+        <name>TwoOrFewerFriendIndividualTickets</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Transfer_Participant --></label>
+        <name>stayclassy__Transfer_Participant</name>
+    </webLinks>
+</CustomObjectTranslation>

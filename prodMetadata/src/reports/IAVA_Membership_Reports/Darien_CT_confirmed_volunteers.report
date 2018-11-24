@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 or 2) AND 3 AND 4 and 5</booleanFilter>
+        <criteriaItems>
+            <column>ADDRESS2_ZIP</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>06404,06430,06431,06432,06436,06440,06490,06497,06601,06602,06604,06605,06606,06607,06608,06610,06611,06612,06615,06650,06673,06699,06807,06813,06814,06816,06817,06820,06829,06830,06831,06832,06836,06840,06842,06850,06851,06852,06853,06854,06855,06856,06857,06858,06859,06860,06870,06875,06876,06877,06878,06879,06880,06881,06883,06888,06889,06896,06897,06901,06902,06903,06904,06905,06906,06907,06910,06911,06912,06913,06914,06920,06921,06922,06925,06926,06927,06928,10502,10504,10506,10507,10510,10514,10518,10523,10526,10528,10530,10532</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ADDRESS2_ZIP</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>10533,10536,10538,10543,10545,10546,10549,10551,10552,10557,10558,10559,10560,10562,10570,10571,10572,10573,10576,10577,10578,10580,10581,10583,10590,10591,10592,10594,10595,10597,10601,10602,10603,10604,10605,10606,10607,10610,10625,10629,10633,10650,10702,10707,10709,10801,10802,10804,11721,11724,11725,11731,11740,11743,11746,11768,11790</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Paperwork_Confirmation__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Paperwork Accepted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Veteran_Member__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Volunteer__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Darien CT confirmed volunteers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

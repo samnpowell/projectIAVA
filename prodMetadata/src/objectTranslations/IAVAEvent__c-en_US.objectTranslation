@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Event</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Events</value>
+    </caseValues>
+    <fields>
+        <label><!-- Any follow up required by staff? --></label>
+        <name>Any_follow_up_required_by_staff__c</name>
+    </fields>
+    <fields>
+        <help><!-- Cost associated with attending the event --></help>
+        <label><!-- Associated Cost --></label>
+        <name>Associated_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- Average Event Rating --></help>
+        <label><!-- Average Event Rating --></label>
+        <name>Average_Event_Rating__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to blog post --></help>
+        <label><!-- Blog Post Link --></label>
+        <name>Blog_Post_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brief Description --></label>
+        <name>Brief_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chatter Group Mirror Group Id --></label>
+        <name>Chatter_Group_Mirror_Group_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Chatter Group Mirror record for the group used to communicate with event attendees (gets automatically populated on save). --></help>
+        <label><!-- Chatter Group Mirror (auto populated) --></label>
+        <name>Chatter_Group_Mirror__c</name>
+        <relationshipLabel><!-- Related Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If selected, guest Email will be collected at time of request. --></help>
+        <label><!-- Collect Guest Email --></label>
+        <name>Collect_Guest_Email__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optional</masterLabel>
+            <translation><!-- Optional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Required</masterLabel>
+            <translation><!-- Required --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If selected, Guest First and Last Name will be collected at time of request. --></help>
+        <label><!-- Collect Guest Name --></label>
+        <name>Collect_Guest_Name__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optional</masterLabel>
+            <translation><!-- Optional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Required</masterLabel>
+            <translation><!-- Required --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If selected, guest Mobile Phone will be collected at time of request. --></help>
+        <label><!-- Collect Guest Phone (mobile) --></label>
+        <name>Collect_Guest_Phone__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optional</masterLabel>
+            <translation><!-- Optional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Required</masterLabel>
+            <translation><!-- Required --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cost Description --></label>
+        <name>Cost_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Host --></label>
+        <name>Creator_Contact__c</name>
+        <relationshipLabel><!-- Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Date/Time when event creator accepted IAVA Leader Code of Conduct --></help>
+        <label><!-- Date Accepted Host TOS --></label>
+        <name>Date_Accepted_Host_TOS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Did any problems arise? --></label>
+        <name>Did_any_problems_arise__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, this event will not show up on the map of event markers --></help>
+        <label><!-- Do not show in public event marker feed --></label>
+        <name>Do_not_show_in_public_event_marker_feed__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked (default) do not automatically create a chatter group for event communication. --></help>
+        <label><!-- Don&apos;t create Chatter Group --></label>
+        <name>Dont_create_Chatter_Group__c</name>
+    </fields>
+    <fields>
+        <help><!-- enter the text of the invite email --></help>
+        <label><!-- Email Text --></label>
+        <name>Email_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- Format: 9:30 PM (use local time for the event) --></help>
+        <label><!-- End Time (local) --></label>
+        <name>End_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Date --></label>
+        <name>Event_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Day of Month --></label>
+        <name>Event_Day_of_Month__c</name>
+    </fields>
+    <fields>
+        <help><!-- 1 is Sunday, 2 is Monday, 3 is Tuesday, 4 is Wednesday, 5 is Thursday, 6 is Friday, 7 is Saturday --></help>
+        <label><!-- Event Day of Week --></label>
+        <name>Event_Day_of_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Day - week --></label>
+        <name>Event_Day_week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Month --></label>
+        <name>Event_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Public Details --></label>
+        <name>Event_Public_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Relative URL for main event page (used so code can pull from a single source and when URL algorithm changes, can just change it in this formula) --></help>
+        <label><!-- Event Relative URL --></label>
+        <name>Event_Relative_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- External RSVP link --></help>
+        <label><!-- External Link (Internal Use Only) --></label>
+        <name>External_Link_Internal_Use_Only__c</name>
+    </fields>
+    <fields>
+        <label><!-- Facebook Promotion Language --></label>
+        <name>Facebook_Promotion_Language__c</name>
+    </fields>
+    <fields>
+        <help><!-- field team member that is working with external member --></help>
+        <label><!-- Field Team POC --></label>
+        <name>Field_Team_POC__c</name>
+        <relationshipLabel><!-- Events (Field Team POC) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- enter the text of the follow up email --></help>
+        <label><!-- Follow up Email Text --></label>
+        <name>Follow_up_Email_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Joinable By (not yet functional) --></label>
+        <name>Joinable_By__c</name>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Everyone</masterLabel>
+            <translation><!-- Everyone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family</masterLabel>
+            <translation><!-- Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Era</masterLabel>
+            <translation><!-- Other Era --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unconfirmed</masterLabel>
+            <translation><!-- Unconfirmed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location City --></label>
+        <name>Location_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location State --></label>
+        <name>Location_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location Street Address --></label>
+        <name>Location_Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location Venue --></label>
+        <name>Location_Venue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Required if you want event to be located in geographic/zip searches. --></help>
+        <label><!-- Location Zip Code (important) --></label>
+        <name>Location_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude --></label>
+        <name>Longitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- If more than 0, allow member to register guests. --></help>
+        <label><!-- Max number of additional guests --></label>
+        <name>Max_number_of_guests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Invited --></label>
+        <name>Num_Invited__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of available reply spots if there is a reply cap. If no cap this field will be blank. --></help>
+        <label><!-- Num. Replies Remaining --></label>
+        <name>Num_Replies_Remaining__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of replies of all statuses --></help>
+        <label><!-- Num. Replies (Total) --></label>
+        <name>Num_Replies_Total__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of Event Attendee replies with status &quot;Yes&quot; --></help>
+        <label><!-- Num. Replies (Yes) --></label>
+        <name>Num_Replies_Yes__c</name>
+    </fields>
+    <fields>
+        <help><!-- number of attendees pulls from the event attendees object --></help>
+        <label><!-- Number of Attendees --></label>
+        <name>Number_of_Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organizer Type --></label>
+        <name>Organizer_Type__c</name>
+        <picklistValues>
+            <masterLabel>Distributed</masterLabel>
+            <translation><!-- Distributed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff</masterLabel>
+            <translation><!-- Staff --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Origin --></label>
+        <name>Origin__c</name>
+        <picklistValues>
+            <masterLabel>COV</masterLabel>
+            <translation><!-- COV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External source</masterLabel>
+            <translation><!-- External source --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff</masterLabel>
+            <translation><!-- Staff --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- limit 255 characters --></help>
+        <label><!-- Post-Event Short Summary --></label>
+        <name>Post_Event_Short_Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- PowerOfOne --></label>
+        <name>PowerOfOne__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region # --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <help><!-- Maximum number of &quot;Yes&quot; responses before Event becomes closed to more replies. If blank then no cap. --></help>
+        <label><!-- Reply Cap --></label>
+        <name>Reply_Cap__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check to resend attendee survey --></help>
+        <label><!-- Resend Attendee Survey --></label>
+        <name>Resend_Attendee_Survey__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when social media was posted --></help>
+        <label><!-- Social_Media_Published_Date__c --></label>
+        <name>Social_Media_Published_Date_c__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of social media post --></help>
+        <label><!-- Social Media Status --></label>
+        <name>Social_Media_Status__c</name>
+        <picklistValues>
+            <masterLabel>Do Not Post</masterLabel>
+            <translation><!-- Do Not Post --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Posted</masterLabel>
+            <translation><!-- Not Posted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Published</masterLabel>
+            <translation><!-- Post Published --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Requested</masterLabel>
+            <translation><!-- Post Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- URL for Facebook promotion --></help>
+        <label><!-- Facebook Promotion Link --></label>
+        <name>Social_Promotion_Link_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- URL for Twitter promotion --></help>
+        <label><!-- Twitter Promotion Link --></label>
+        <name>Social_Promotion_Link_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Format: 12:15 PM (use local time for the event) --></help>
+        <label><!-- Start Time (local) --></label>
+        <name>Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flagged/Removed</masterLabel>
+            <translation><!-- Flagged/Removed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Published</masterLabel>
+            <translation><!-- Published --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unpublished</masterLabel>
+            <translation><!-- Unpublished --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status of Follow up Email --></label>
+        <name>Status_of_Follow_up_Email__c</name>
+        <picklistValues>
+            <masterLabel>Not Sent</masterLabel>
+            <translation><!-- Not Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If checked, don&apos;t send attendee notification emails when an event&apos;s details change --></help>
+        <label><!-- Suppress Event Changed Notifications --></label>
+        <name>Suppress_Attendee_Notifications__c</name>
+    </fields>
+    <fields>
+        <help><!-- When the user uploads a new photo to a published group, the URL of the thumbnail version is inserted here and takes precedence over any attached thumbnail images. For an external site use a secure HTTPS link to prevent a secure site certificate error. --></help>
+        <label><!-- Thumbnail image URL (automatic) - HTTPS --></label>
+        <name>Thumbnail_image_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- 1=IAVA mandated event (Press Conf/Testimony); 2=Creator is receptive to IAVA directives; 3=Creator is a reliable leader &amp; uses own devices; 4=Creator is using the VetTogether tool to promote their own event &amp; not interested in deeper engagement --></help>
+        <label><!-- Tier --></label>
+        <name>Tier__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Topics --></label>
+        <name>Topics__c</name>
+        <picklistValues>
+            <masterLabel>Afghanistan</masterLabel>
+            <translation><!-- Afghanistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alternative Therapy</masterLabel>
+            <translation><!-- Alternative Therapy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COV</masterLabel>
+            <translation><!-- COV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clay Hunt SAV Act</masterLabel>
+            <translation><!-- Clay Hunt SAV Act --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DOD</masterLabel>
+            <translation><!-- DOD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discrimination</masterLabel>
+            <translation><!-- Discrimination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment &amp; Financial Hardship</masterLabel>
+            <translation><!-- Employment &amp; Financial Hardship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GI Bill</masterLabel>
+            <translation><!-- GI Bill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gala</masterLabel>
+            <translation><!-- Gala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Homelessness</masterLabel>
+            <translation><!-- Homelessness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iraq</masterLabel>
+            <translation><!-- Iraq --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iraqi Interpreters</masterLabel>
+            <translation><!-- Iraqi Interpreters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Events</masterLabel>
+            <translation><!-- Local Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Love</masterLabel>
+            <translation><!-- Love --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Survey</masterLabel>
+            <translation><!-- Member Survey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mental Health</masterLabel>
+            <translation><!-- Mental Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military COLA</masterLabel>
+            <translation><!-- Military COLA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military Recruitment</masterLabel>
+            <translation><!-- Military Recruitment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military Sexual Trauma</masterLabel>
+            <translation><!-- Military Sexual Trauma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NGIB</masterLabel>
+            <translation><!-- NGIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NYC Veterans</masterLabel>
+            <translation><!-- NYC Veterans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online Campaigns</masterLabel>
+            <translation><!-- Online Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Op-Ed</masterLabel>
+            <translation><!-- Op-Ed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overextended Military</masterLabel>
+            <translation><!-- Overextended Military --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTSD</masterLabel>
+            <translation><!-- PTSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partnerships</masterLabel>
+            <translation><!-- Partnerships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Politics</masterLabel>
+            <translation><!-- Politics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RRRP</masterLabel>
+            <translation><!-- RRRP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rally</masterLabel>
+            <translation><!-- Rally --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red Tape Report</masterLabel>
+            <translation><!-- Red Tape Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STH2014</masterLabel>
+            <translation><!-- STH2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shutdown</masterLabel>
+            <translation><!-- Shutdown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Starting a new venture</masterLabel>
+            <translation><!-- Starting a new venture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suicide</masterLabel>
+            <translation><!-- Suicide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Summer Storm</masterLabel>
+            <translation><!-- Summer Storm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Wait We Carry</masterLabel>
+            <translation><!-- The Wait We Carry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traumatic Brain Injury</masterLabel>
+            <translation><!-- Traumatic Brain Injury --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA Backlog</masterLabel>
+            <translation><!-- VA Backlog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vets Day</masterLabel>
+            <translation><!-- Vets Day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vets Prevail</masterLabel>
+            <translation><!-- Vets Prevail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VetsRising</masterLabel>
+            <translation><!-- VetsRising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wait for Care &amp; Benefits</masterLabel>
+            <translation><!-- Wait for Care &amp; Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walter Reed</masterLabel>
+            <translation><!-- Walter Reed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Women in the Military</masterLabel>
+            <translation><!-- Women in the Military --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Twitter Promotion Language --></label>
+        <name>Twitter_Promotion_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Advocacy</masterLabel>
+            <translation><!-- Advocacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awareness Action</masterLabel>
+            <translation><!-- Awareness Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bar Gathering</masterLabel>
+            <translation><!-- Bar Gathering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Career Development</masterLabel>
+            <translation><!-- Career Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concert</masterLabel>
+            <translation><!-- Concert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cookout</masterLabel>
+            <translation><!-- Cookout --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DPAA Burial</masterLabel>
+            <translation><!-- DPAA Burial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fundraiser</masterLabel>
+            <translation><!-- Fundraiser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal IAVA Training</masterLabel>
+            <translation><!-- Internal IAVA Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Movie Screening</masterLabel>
+            <translation><!-- Movie Screening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outdoor Activity</masterLabel>
+            <translation><!-- Outdoor Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parade</masterLabel>
+            <translation><!-- Parade --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Run</masterLabel>
+            <translation><!-- Run --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar/Education</masterLabel>
+            <translation><!-- Seminar/Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Project</masterLabel>
+            <translation><!-- Service Project --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social</masterLabel>
+            <translation><!-- Social --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sporting Event</masterLabel>
+            <translation><!-- Sporting Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VetTogether</masterLabel>
+            <translation><!-- VetTogether --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- VIPs in Attendance --></label>
+        <name>VIPs_in_Attendance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visible To (not yet functional) --></label>
+        <name>Visible_To__c</name>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Everyone</masterLabel>
+            <translation><!-- Everyone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family</masterLabel>
+            <translation><!-- Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Era</masterLabel>
+            <translation><!-- Other Era --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unconfirmed</masterLabel>
+            <translation><!-- Unconfirmed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Were pictures taken? --></label>
+        <name>Were_pictures_taken__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- IAVA Endorsed Event --></label>
+        <name>isIAVAEndorsed__c</name>
+    </fields>
+    <fields>
+        <label><!-- myIAVA Event Link --></label>
+        <name>myIAVA_Event_Link__c</name>
+    </fields>
+    <layouts>
+        <layout>Event Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Details --></label>
+            <section>Details</section>
+        </sections>
+        <sections>
+            <label><!-- Event Host Survey Results --></label>
+            <section>Event Host Survey Results</section>
+        </sections>
+        <sections>
+            <label><!-- Guest Info --></label>
+            <section>Guest Info</section>
+        </sections>
+        <sections>
+            <label><!-- Location --></label>
+            <section>Location</section>
+        </sections>
+        <sections>
+            <label><!-- Promotion --></label>
+            <section>Promotion</section>
+        </sections>
+        <sections>
+            <label><!-- Public Details --></label>
+            <section>Public Details</section>
+        </sections>
+        <sections>
+            <label><!-- Replies --></label>
+            <section>Replies</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Event Layout - external</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>External Host Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- That is not a valid End Time.  The correct format should be: 12:15 PM --></errorMessage>
+        <name>End_Time_validate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- That is not a valid Start Time.  The correct format should be: 12:15 PM --></errorMessage>
+        <name>Start_Time_validate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Zip code should be a 5-digit number --></errorMessage>
+        <name>Zip_code_validate</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_AIR --></label>
+        <name>Create_AIR</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Event_RSVP_Report --></label>
+        <name>Event_RSVP_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Event_Responses --></label>
+        <name>Event_Responses</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_It --></label>
+        <name>Map_It</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Post_Event_Report --></label>
+        <name>Post_Event_Report</name>
+    </webLinks>
+</CustomObjectTranslation>

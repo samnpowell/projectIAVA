@@ -1,0 +1,26 @@
+<apex:page controller="cov_header_controller">
+
+	<apex:outputPanel rendered="{!right(u.SmallPhotoUrl,5) == '005/T'}" id="profilephoto-prompt">
+	    <div class="dashboard-list" id="profilephoto-prompt">
+	        <div class="box-heading">
+				<div class="box-heading-content">
+
+	        		<h5>You Need a Profile Photo!</h5>
+	        	</div>
+	        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+	        		
+	        </div>
+
+
+			<table class="table">  
+	             <tbody>  
+	             <tr><td width="100%" align="center">
+	             	<apex:outputLink value="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}"><apex:image value="/img/userprofile/default_profile_45.png" /></apex:outputLink>
+					<div class="dashboard-title"><apex:outputLink value="_ui/core/userprofile/UserProfilePage?u={!$User.Id}">Add your photo</apex:outputLink></div>
+	             </td></tr>
+	             </tbody>
+	        </table>
+	    </div>
+	</apex:outputPanel>       
+
+</apex:page>

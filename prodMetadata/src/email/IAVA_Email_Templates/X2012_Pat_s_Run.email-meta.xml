@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2012 Pat&apos;s Run Content Collection</name>
+    <style>none</style>
+    <subject>Team IAVA and Pat&apos;s Run</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for running with Team IAVA in the 2012 Pat&apos;s Run and Pat&apos;s Run shadow runs.
+
+Whether you are running for competition, camaraderie, or in remembrance of someone, I wish you all the best of luck.
+
+Being a member of Team IAVA, you will be running in unison with hundreds of other IAVA members. Help show your support of Team IAVA by including @IAVA in your tweets and tagging IAVA in your Facebook posts and photos. We&apos;ll do our best to share them through our properties - and give you credit!
+
+Also, if you have any photos you would like to share, please send those to us at Patsrun@iava.org. 
+
+Thank you and good luck!
+
+Sincerely,
+Anthony
+
+Anthony Pike
+Membership Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

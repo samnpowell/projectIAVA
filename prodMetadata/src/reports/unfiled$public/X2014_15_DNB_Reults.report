@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>xtma_Email_Result__c.Subject__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>xtma_Email_Result__c.Open_Rate__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>xtma_Email_Result__c.Click_Through_Rate__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Daily News Brief</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>xtma_Email_Result__c.Subject__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>2014,2015</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>2014-15 DNB Reults</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$xtma_Email_Result__c@xtma_Email_Result__c.Campaign__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>xtma_Email_Result__c.Date_Sent__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

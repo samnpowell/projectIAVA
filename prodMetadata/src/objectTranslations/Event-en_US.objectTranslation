@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Appointment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Appointments</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Calendar Appointment</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Calendar Appointments</value>
+        </caseValues>
+        <name>calendar_event</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Calendar Appointment Edit</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Calendar Appointment Edit</value>
+        </caseValues>
+        <name>calendar_event_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Calendar Appointment Subject</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Calendar Appointment Subject</value>
+        </caseValues>
+        <name>calendar_event_subject</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Attendee</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Attendee</value>
+        </caseValues>
+        <name>event_attendee</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Data</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Data</value>
+        </caseValues>
+        <name>event_data</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Detail</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Details</value>
+        </caseValues>
+        <name>event_detail</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Detail Page</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Detail Page</value>
+        </caseValues>
+        <name>event_detail_page</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Information</value>
+        </caseValues>
+        <name>event_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Invitation</value>
+        </caseValues>
+        <name>event_invitation</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Occurrence</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Occurrences</value>
+        </caseValues>
+        <name>event_occurrence</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Appointment Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Appointment Record Types</value>
+        </caseValues>
+        <name>event_record_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Group Calendar Appointment</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Group Calendar Appointment</value>
+        </caseValues>
+        <name>group_calendar_event</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Group Calendar Appointment Edit</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Group Calendar Appointment Edit</value>
+        </caseValues>
+        <name>group_calendar_event_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Group Appointment</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Groups Appointments</value>
+        </caseValues>
+        <name>group_event</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <label><!-- AIR Completed --></label>
+        <name>AIR_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- AIR Required --></label>
+        <name>AIR_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ask/Objective --></label>
+        <name>Ask_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ask for $$? --></label>
+        <name>Ask_for_Money__c</name>
+    </fields>
+    <fields>
+        <label><!-- Briefing Report Complete --></label>
+        <name>Briefing_Report_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Briefing Report Link --></label>
+        <name>Briefing_Report_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Briefing Report Needed --></label>
+        <name>Briefing_Report_Needed__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Account SID --></label>
+        <name>CnP_PaaS__SMS_Account_SID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Auth Token --></label>
+        <name>CnP_PaaS__SMS_Auth_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Error Code --></label>
+        <name>CnP_PaaS__SMS_Error_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Error Message --></label>
+        <name>CnP_PaaS__SMS_Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS SID --></label>
+        <name>CnP_PaaS__SMS_Message_SID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Sent From --></label>
+        <name>CnP_PaaS__SMS_Sent_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Sent To --></label>
+        <name>CnP_PaaS__SMS_Sent_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- DB Activity Type --></label>
+        <name>DB_Activity_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Note that will be sent upon save to Executive Director if &quot;Send Follow up to ED&quot; is checked --></help>
+        <label><!-- Follow up Note for ED --></label>
+        <name>Follow_up_Note_for_ED__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow-up Sent --></label>
+        <name>Follow_up_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Goal / Ask --></label>
+        <name>Goal_Ask__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invite to next event --></label>
+        <name>Invite_to_next_event__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invite to next event notes --></label>
+        <name>Invite_to_next_event_notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clean City (MapAnything) --></label>
+        <name>MA_Clean_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clean Country (MapAnything) --></label>
+        <name>MA_Clean_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clean County (MapAnything) --></label>
+        <name>MA_Clean_County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clean District (MapAnything) --></label>
+        <name>MA_Clean_District__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clean Postal Code (MapAnything) --></label>
+        <name>MA_Clean_Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clean State (MapAnything) --></label>
+        <name>MA_Clean_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clean Street (MapAnything) --></label>
+        <name>MA_Clean_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude (MapAnything) --></label>
+        <name>MA_Latitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude (MapAnything) --></label>
+        <name>MA_Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quality (MapAnything) --></label>
+        <name>MA_Quality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Similarity Level (MapAnything) --></label>
+        <name>MA_Similarity_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Needs from EO --></label>
+        <name>Needs_from_EO__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, this Activity is really just a stand-in for the Track a Call record for purposes of reporting and apps like Cirrus.  So when the user views the Activity, redirect to the TAC instead. --></help>
+        <label><!-- This is really a Track a Call --></label>
+        <name>Really_TAC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send Follow up to PR --></label>
+        <name>Send_Follow_up_to_PR__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to Success Story, which should be attached to Contact or Organization&apos;s record --></help>
+        <label><!-- Success Story Link --></label>
+        <name>Success_Story_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Plan Task --></label>
+        <name>npsp__Engagement_Plan_Task__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Engagement Plan --></label>
+        <name>npsp__Engagement_Plan__c</name>
+        <relationshipLabel><!-- Tasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- MapAnything Base Object --></label>
+        <name>sma__BaseObjectId__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Check Out Accuracy (m) --></label>
+        <name>sma__CheckOutAccuracy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Out Date --></label>
+        <name>sma__CheckOutDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Out Distance From Record (mi) --></label>
+        <name>sma__CheckOutDistanceFromRecordMi__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Out Latitude --></label>
+        <name>sma__CheckOutLatitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Out Longitude --></label>
+        <name>sma__CheckOutLongitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Latitude --></label>
+        <name>sma__CreatedLatitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Location Accuracy (m) --></label>
+        <name>sma__CreatedLocationAccuracy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Location Verified --></label>
+        <name>sma__CreatedLocationVerified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Longitude --></label>
+        <name>sma__CreatedLongitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distance from Record (ft) --></label>
+        <name>sma__DistanceFromRecordFt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distance from Record (km) --></label>
+        <name>sma__DistanceFromRecordKm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distance from Record (m) --></label>
+        <name>sma__DistanceFromRecordM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Distance from Record (mi) --></label>
+        <name>sma__DistanceFromRecordMi__c</name>
+    </fields>
+    <fields>
+        <label><!-- Layer Id --></label>
+        <name>sma__LayerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time On Site (Minutes) --></label>
+        <name>sma__TimeOnSiteMinutes__c</name>
+    </fields>
+    <layouts>
+        <layout>Event Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <label><!-- Create_AIR --></label>
+        <name>Create_AIR</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+</CustomObjectTranslation>

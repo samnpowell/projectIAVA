@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Application</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Applications</value>
+    </caseValues>
+    <fields>
+        <label><!-- Applicant --></label>
+        <name>Applicant__c</name>
+        <relationshipLabel><!-- Applications --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Check if staff has completed onboarding --></help>
+        <label><!-- Completed Onboarding --></label>
+        <name>Completed_Onboarding__c</name>
+    </fields>
+    <fields>
+        <help><!-- check this for applications that should be in the pipeline --></help>
+        <label><!-- Consider for Future Openings --></label>
+        <name>Consider_for_Future_Openings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Convicted of a Felony --></label>
+        <name>Convicted_of_a_Felony__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Conviction Details --></label>
+        <name>Conviction_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- The division that the job falls under. --></help>
+        <label><!-- Division --></label>
+        <name>Division__c</name>
+        <picklistValues>
+            <masterLabel>Engagement</masterLabel>
+            <translation><!-- Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Office</masterLabel>
+            <translation><!-- Executive Office --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations</masterLabel>
+            <translation><!-- Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy</masterLabel>
+            <translation><!-- Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Products</masterLabel>
+            <translation><!-- Products --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programs</masterLabel>
+            <translation><!-- Programs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resources</masterLabel>
+            <translation><!-- Resources --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hire Date --></label>
+        <name>Hire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Long-Term Goals --></label>
+        <name>Long_Term_Goals__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked if phone screen is completed --></help>
+        <label><!-- Phone Screen Completed --></label>
+        <name>Phone_Screen_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position Filled --></label>
+        <name>Position_Filled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position --></label>
+        <name>Position__c</name>
+    </fields>
+    <fields>
+        <label><!-- Progress Notes --></label>
+        <name>Progress_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Applying --></label>
+        <name>Reason_for_Applying__c</name>
+    </fields>
+    <fields>
+        <label><!-- References --></label>
+        <name>References__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referred By --></label>
+        <name>Referred_By__c</name>
+        <relationshipLabel><!-- Applications (Referred By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rejection Sent --></label>
+        <name>Rejection_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relevant Experience --></label>
+        <name>Relevant_Experience__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salary History --></label>
+        <name>Salary_History__c</name>
+    </fields>
+    <fields>
+        <label><!-- Salary Requirements --></label>
+        <name>Salary_Requirements__c</name>
+    </fields>
+    <fields>
+        <help><!-- Answer to the question: How did you here about this opportunity? --></help>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Interviewed by HC – rejected</masterLabel>
+            <translation><!-- Interviewed by HC – rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interviewed by hiring manager/other – rejected</masterLabel>
+            <translation><!-- Interviewed by hiring manager/other – rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interviews in progress</masterLabel>
+            <translation><!-- Interviews in progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Yet Reviewed</masterLabel>
+            <translation><!-- Not Yet Reviewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offer extended – accepted</masterLabel>
+            <translation><!-- Offer extended – accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offer extended – declined</masterLabel>
+            <translation><!-- Offer extended – declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pipeline Hold</masterLabel>
+            <translation><!-- Pipeline Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pipeline Outreach</masterLabel>
+            <translation><!-- Pipeline Outreach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Position Eliminated</masterLabel>
+            <translation><!-- Position Eliminated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected - Reviewed Resume - No Interview (HC)</masterLabel>
+            <translation><!-- Rejected - Reviewed Resume - No Interview (HC) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected - Reviewed Resume - No Interview (Hiring Manager)</masterLabel>
+            <translation><!-- Rejected - Reviewed Resume - No Interview (Hiring Manager) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to hiring manager</masterLabel>
+            <translation><!-- Submitted to hiring manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrew</masterLabel>
+            <translation><!-- Withdrew --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of Application --></label>
+        <name>Type_of_Application__c</name>
+        <picklistValues>
+            <masterLabel>Internship</masterLabel>
+            <translation><!-- Internship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Job</masterLabel>
+            <translation><!-- Job --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Volunteer</masterLabel>
+            <translation><!-- Volunteer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Veteran Member field from Contact record --></help>
+        <label><!-- Veteran --></label>
+        <name>Veteran_Member__c</name>
+    </fields>
+    <layouts>
+        <layout>Application Layout</layout>
+        <sections>
+            <label><!-- Application Summary --></label>
+            <section>Application Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

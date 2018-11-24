@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_$Legislation__c.Full_Bill_Number__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Bill_Title__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Position__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Latest_Major_Action__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Legislation__c.Notes__c</field>
+    </columns>
+    <description>Who is assigned to which active legislation, organized by Policy Priority</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Legislation__c.Active__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Assignments - Legislation by PolicyPrior</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Policy_Rec__c$PRec_Leg_junction__c@PRec_Leg_junction__c.Legislation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Policy_Rec__c.Retire_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

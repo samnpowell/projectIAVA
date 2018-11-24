@@ -1,0 +1,59 @@
+<apex:page controller="dc_ctrl_reconfirm">
+
+<div class="view view-page-full one-node">  
+                <div class="view-header"> 
+                    <h1 class="title"><span>Request Confirmation</span></h1> 
+                </div>
+                <div class="view-content"> 
+                <div id="forgot-number">  <!-- NEW --> 
+                <div class="views-row-1 views-row-odd"> 
+                <div class="node node-type-page">
+                <div class="node-inner"> 
+                    <div class="content">  
+                    
+                    <h4>
+                    <div style="line-height:220%">
+                        <a href="dc_RewardDetails?giveid={!give.Id}"><apex:outputtext value="{!give.Name}"/></a><br />
+                        <apex:outputtext value="{!instance.Date_From__c}"/><br />
+                        <apex:outputtext value="{!contactName}"/> - <apex:outputtext value="{!contactEmail}"/>
+                    </div>
+                    </h4>
+                    
+                    <div class="hr"><hr /></div>
+						<span class="meta"><p><apex:outputtext value="{!dc_reconfirmed_confirmation_message}" rendered="{!ShouldShowReConfirmedMessage}" /></p></span>
+						<span class="meta"><p><apex:outputtext value="{!dc_cancelled_confirmation_message}" rendered="{!ShouldShowCancelledMessage}" /></p></span>
+                       
+						<p><apex:outputtext value="If you have any questions, or to change/cancel your request, please refer to the"/> 
+						  <a href="{!$Page.dc_FAQ}"><apex:outputtext value="FAQ"/></a>.</p>
+
+
+                    <table cellspacing="0" cellpadding="0" border="0" width="460">
+                    <tbody>
+                    <tr>
+                    <td><a href="http://twitter.com/home?status=Just%20requested%20this%20reward%20from%20IAVA%27s%20Rucksack:%20{!$Site.CustomWebAddress}dc_RewardDetails?giveid%3D{!give.Id}" title="Talk about it on Twitter" target="_blank" class="tw"><apex:image URL="{!URLFOR($Resource.dc_css,'images/share_twitter_large.jpg')}" alt="Share on Twitter"/></a></td>
+                    <td><a href="http://www.facebook.com/sharer.php?u={!$Site.CustomWebAddress}dc_RewardDetails?giveid={!give.Id}" target="_blank" title="Share on Facebook" ><apex:image URL="{!URLFOR($Resource.dc_css,'images/share_facebook_large.jpg')}" alt="Share on Facebook"/></a></td>
+                    <td><a href="mailto:?subject={!give.Name}&body={!mail_body} {!$Site.CustomWebAddress}dc_RewardDetails?giveid={!give.Id}" class="email"><apex:image URL="{!URLFOR($Resource.dc_css,'images/share_email_large.jpg')}" alt="Share via Email" /></a></td>
+                    </tr>
+                    </tbody>
+                    </table>
+
+
+        <p><apex:outputtext value="Share this reward so your friends can participate too!"/></p>
+        
+        
+        <p>&nbsp;</p>
+<div class="hr"><hr /></div>
+
+<p>        <a href="{!$Page.dc_homepage}"><apex:outputtext value="Return to Rucksack homepage"/></a>
+</p>
+
+   
+                    </div> 
+                    <div class="clearfix"></div> 
+                </div>
+                </div> 
+                </div></div>
+                </div> <!-- NEW --> 
+                </div> <!-- /view-content --><!-- /view-posts -->    
+
+</apex:page>

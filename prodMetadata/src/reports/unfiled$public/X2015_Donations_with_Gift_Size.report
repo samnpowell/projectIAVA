@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_79224727</developerName>
+        <masterLabel>Gift Size</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>Opportunity$Amount</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>1,000</to>
+            </sourceValues>
+            <value>Less than or Equal to 1k</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>1,000</from>
+                <to>4,999</to>
+            </sourceValues>
+            <value>1k - 4,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>4,999</from>
+                <to>24,999</to>
+            </sourceValues>
+            <value>5k - 24,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>24,999</from>
+                <to>49,999</to>
+            </sourceValues>
+            <value>25k - 49,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>49,999</from>
+                <to>99,999</to>
+            </sourceValues>
+            <value>50k - 99,999</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>99,999</from>
+            </sourceValues>
+            <value>100,000+</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>Opportunity.OpportunityContactRoles*Contact$kw__Full_Name_link__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity$Amount</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$IsWon</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_79224727</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.OpportunityContactRoles*Contact$Contact_ID_18_digits__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>2015 Donations with Gift Size</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Donations_with_Contact_Roles_and_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_PREVFY</interval>
+    </timeFrameFilter>
+</Report>

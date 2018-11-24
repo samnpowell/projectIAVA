@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is reserved for DC event and congressional testimony tracking</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Address__c</fullName>
+        <description>Street address of location where event takes place</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Street address of location where event takes place</inlineHelpText>
+        <label>Address</label>
+        <length>120</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_Staffer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the IAVA staff member assigned to manage this event</description>
+        <externalId>false</externalId>
+        <label>Assigned Staffer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>DC_Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <defaultValue>&quot;Washington&quot;</defaultValue>
+        <description>City where event takes place</description>
+        <externalId>false</externalId>
+        <inlineHelpText>City where event takes place</inlineHelpText>
+        <label>City</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Committee__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>For other, fill in the Other Committee box below</inlineHelpText>
+        <label>Committee</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Event_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Senate Veterans Affairs Committee</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>House Veterans Affairs Committee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Senate Armed Services Committee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>House Armed Services Committee</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Congressional Testimony</controllingFieldValue>
+                <controllingFieldValue>Summit</controllingFieldValue>
+                <controllingFieldValue>Roundtable</controllingFieldValue>
+                <valueName>Senate Veterans Affairs Committee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Congressional Testimony</controllingFieldValue>
+                <controllingFieldValue>Summit</controllingFieldValue>
+                <controllingFieldValue>Roundtable</controllingFieldValue>
+                <valueName>House Veterans Affairs Committee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Congressional Testimony</controllingFieldValue>
+                <controllingFieldValue>Summit</controllingFieldValue>
+                <controllingFieldValue>Roundtable</controllingFieldValue>
+                <valueName>Senate Armed Services Committee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Congressional Testimony</controllingFieldValue>
+                <controllingFieldValue>Summit</controllingFieldValue>
+                <controllingFieldValue>Roundtable</controllingFieldValue>
+                <valueName>House Armed Services Committee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Congressional Testimony</controllingFieldValue>
+                <controllingFieldValue>Summit</controllingFieldValue>
+                <controllingFieldValue>Roundtable</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Date_and_Time__c</fullName>
+        <description>If this event takes place on one date, indicate that here.  If the event spans multiple days, indicate the start date here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If this event takes place on one date, indicate that here.  If the event spans multiple days, indicate the start date here.</inlineHelpText>
+        <label>Date (Start Date)</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If the event spans multiple days, indicate the end date here.  Otherwise, leave blank.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Expectation__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Expectation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Speak before Audience</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Network</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Observe</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Event_Name__c</fullName>
+        <description>Name of the event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the event</inlineHelpText>
+        <label>Event Name</label>
+        <length>80</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Type__c</fullName>
+        <description>For press-related events, use the Press Hits tab instead</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For press-related events, use the Press Hits tab instead</inlineHelpText>
+        <label>Event Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Congressional Testimony</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Conference</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ceremony</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Presentation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dinner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Summit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Roundtable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FYI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IAVA_Department__c</fullName>
+        <description>Department with primary responsibility for providing fulfillment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Department with primary responsibility for providing fulfillment</inlineHelpText>
+        <label>IAVA Department</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Policy</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Membership</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Parnerships</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Operations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invited_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Pick the contact who invited us.  If necessary, create the contact record first.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Pick the contact who invited us.  If necessary, create the contact record first.</inlineHelpText>
+        <label>Invited By</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>DC_Events</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Level_of_Importance__c</fullName>
+        <description>How high a priority is it for us to attend this event?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How high a priority is it for us to attend this event?</inlineHelpText>
+        <label>Level of Importance</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TBD</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Materials__c</fullName>
+        <description>The materials needed to be brought to/presented at this event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The materials needed to be brought to/presented at this event.</inlineHelpText>
+        <label>Materials</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Any additional notes regarding this event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Any additional notes regarding this event</inlineHelpText>
+        <label>Notes</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_Committee__c</fullName>
+        <defaultValue>&quot;N/A&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Fill in for other committees.  Leave blank if committee is SVAC or HVAC or for non-testimony events.</inlineHelpText>
+        <label>Other Committee</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Place__c</fullName>
+        <description>Name of the location where this event takes place.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the location where this event takes place.</inlineHelpText>
+        <label>Place</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Paul</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Congressional Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other IAVA Department</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Generic Invitation</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <defaultValue>&quot;DC&quot;</defaultValue>
+        <description>State where event takes place</description>
+        <externalId>false</externalId>
+        <inlineHelpText>State where event takes place</inlineHelpText>
+        <label>State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subcommittee__c</fullName>
+        <externalId>false</externalId>
+        <label>Subcommittee</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Committee__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Disability Assistance and Memorial Affairs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Economic Opportunity</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Readiness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Seapower and Expeditionary Forces</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Air and Land Forces</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Oversight and Investigations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Terrorism, Unconventional Threats and Capabilities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Forces</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military Personnel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Airland</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Emerging Threats and Capabilities</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Personnel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Readiness and Management Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Seapower</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>House Veterans Affairs Committee</controllingFieldValue>
+                <valueName>Disability Assistance and Memorial Affairs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Veterans Affairs Committee</controllingFieldValue>
+                <valueName>Economic Opportunity</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Veterans Affairs Committee</controllingFieldValue>
+                <valueName>Health</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Veterans Affairs Committee</controllingFieldValue>
+                <controllingFieldValue>House Armed Services Committee</controllingFieldValue>
+                <valueName>Oversight and Investigations</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Armed Services Committee</controllingFieldValue>
+                <valueName>Readiness</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Armed Services Committee</controllingFieldValue>
+                <valueName>Seapower and Expeditionary Forces</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Armed Services Committee</controllingFieldValue>
+                <valueName>Air and Land Forces</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Armed Services Committee</controllingFieldValue>
+                <valueName>Terrorism, Unconventional Threats and Capabilities</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Armed Services Committee</controllingFieldValue>
+                <controllingFieldValue>Senate Armed Services Committee</controllingFieldValue>
+                <valueName>Strategic Forces</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>House Armed Services Committee</controllingFieldValue>
+                <valueName>Military Personnel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senate Armed Services Committee</controllingFieldValue>
+                <valueName>Airland</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senate Armed Services Committee</controllingFieldValue>
+                <valueName>Emerging Threats and Capabilities</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senate Armed Services Committee</controllingFieldValue>
+                <valueName>Personnel</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senate Armed Services Committee</controllingFieldValue>
+                <valueName>Readiness and Management Support</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Senate Armed Services Committee</controllingFieldValue>
+                <valueName>Seapower</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Time__c</fullName>
+        <description>Indicate the start time in the following format (HH:MM XX) where XX is AM or PM.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicate the start time in the following format (HH:MM XX) where XX is AM or PM.</inlineHelpText>
+        <label>Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>DC Popularity Index</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Name__c</columns>
+        <columns>Event_Type__c</columns>
+        <columns>Date_and_Time__c</columns>
+        <columns>Time__c</columns>
+        <columns>Assigned_Staffer__c</columns>
+        <columns>Level_of_Importance__c</columns>
+        <columns>Invited_By__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>Place__c</columns>
+        <columns>Source__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Current</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Name__c</columns>
+        <columns>Event_Type__c</columns>
+        <columns>Date_and_Time__c</columns>
+        <columns>Time__c</columns>
+        <columns>Assigned_Staffer__c</columns>
+        <columns>Level_of_Importance__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>Place__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Date_and_Time__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>All Current &amp; Future</label>
+    </listViews>
+    <listViews>
+        <fullName>Congressional_Testimony</fullName>
+        <columns>Event_Name__c</columns>
+        <columns>Date_and_Time__c</columns>
+        <columns>Time__c</columns>
+        <columns>Assigned_Staffer__c</columns>
+        <columns>Committee__c</columns>
+        <columns>Other_Committee__c</columns>
+        <columns>Event_Type__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Type__c</field>
+            <operation>notContain</operation>
+            <value>Conference,Ceremony,Meeting,Presentation,Dinner,Summit,Other</value>
+        </filters>
+        <filters>
+            <field>Event_Type__c</field>
+            <operation>equals</operation>
+            <value>Congressional Testimony</value>
+        </filters>
+        <label>Congressional Testimony</label>
+    </listViews>
+    <listViews>
+        <fullName>Congressional_Testimony_Current_Future</fullName>
+        <columns>Event_Name__c</columns>
+        <columns>Date_and_Time__c</columns>
+        <columns>Time__c</columns>
+        <columns>Assigned_Staffer__c</columns>
+        <columns>Committee__c</columns>
+        <columns>Other_Committee__c</columns>
+        <columns>Event_Type__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Type__c</field>
+            <operation>notContain</operation>
+            <value>Conference,Ceremony,Meeting,Presentation,Dinner,Summit,Other</value>
+        </filters>
+        <filters>
+            <field>Event_Type__c</field>
+            <operation>equals</operation>
+            <value>Congressional Testimony</value>
+        </filters>
+        <filters>
+            <field>Date_and_Time__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Congressional Testimony Today &amp; Future</label>
+    </listViews>
+    <listViews>
+        <fullName>Current_and_Future_Events</fullName>
+        <columns>NAME</columns>
+        <columns>Assigned_Staffer__c</columns>
+        <columns>Event_Name__c</columns>
+        <columns>Event_Type__c</columns>
+        <columns>Date_and_Time__c</columns>
+        <columns>Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Date_and_Time__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Event_Type__c</field>
+            <operation>notContain</operation>
+            <value>congressional testimony,Roundtable</value>
+        </filters>
+        <label>Events Current and Future</label>
+    </listViews>
+    <listViews>
+        <fullName>Events</fullName>
+        <booleanFilter>1</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Event_Name__c</columns>
+        <columns>Event_Type__c</columns>
+        <columns>Level_of_Importance__c</columns>
+        <columns>Date_and_Time__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Time__c</columns>
+        <columns>Assigned_Staffer__c</columns>
+        <columns>Event_Expectation__c</columns>
+        <columns>City__c</columns>
+        <columns>State__c</columns>
+        <columns>Source__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Type__c</field>
+            <operation>notContain</operation>
+            <value>Congressional Testimony,Roundtable</value>
+        </filters>
+        <label>Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Unassigned_Current_and_Future</fullName>
+        <columns>Event_Name__c</columns>
+        <columns>Level_of_Importance__c</columns>
+        <columns>City__c</columns>
+        <columns>Date_and_Time__c</columns>
+        <columns>Event_Type__c</columns>
+        <columns>Notes__c</columns>
+        <columns>Source__c</columns>
+        <columns>Assigned_Staffer__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Assigned_Staffer__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Date_and_Time__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>All Unassigned Current and Future</label>
+    </listViews>
+    <nameField>
+        <displayFormat>E-{YYYY}{MM}{DD}-{000}</displayFormat>
+        <label>Event ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>DC Popularity Index</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Event_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Event_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_and_Time__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Event_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_and_Time__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

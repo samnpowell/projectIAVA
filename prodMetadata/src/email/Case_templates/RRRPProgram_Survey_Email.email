@@ -1,0 +1,7 @@
+Dear {!Case.Contact},
+
+You recently worked with Veteran Transition Manager, {!Case.OwnerFullName} from IAVA's Rapid Response Referral Program. To ensure that we are providing quality service, we would appreciate if you could answer the following questions about your experience with the Rapid Response Referral Program.
+
+Please complete this survey at: http://iava.org/rapid-response-referral-program-survey?tfa_63={!Case.Id}
+
+The RRRP Team

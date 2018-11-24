@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Focus Area related to DC Event</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Focus Areas related to DC Events</value>
+    </caseValues>
+    <fields>
+        <help><!-- The DC Event related to the Focus Area --></help>
+        <label><!-- Related DC Event --></label>
+        <name>Related_DC_Event__c</name>
+        <relationshipLabel><!-- Focus Areas related to this DC Event --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Focus Area related to the DC Event --></help>
+        <label><!-- Related Focus Area --></label>
+        <name>Related_Focus_Area__c</name>
+        <relationshipLabel><!-- DC Events related to this Focus Area --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Focus Area related to DC Event Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminds the member monthly to upload their paperwork.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Paperwork Request</name>
+    <style>none</style>
+    <subject>Welcome to IAVA</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for joining IAVA.  As a part of IAVA, you&apos;re a part of so much more - our movement is growing, and we&apos;re glad to have you as part of it!
+
+As a member of IAVA you will have the opportunity to:
+• Attend and Host a VetTogether: VetTogethers are monthly gatherings of veterans, family members and supporters across the country, and provide a number of fun and unique ways to get connected.  You can see more at www.vettogethers.org .
+• Be sure to stay connected.  Hang out with us online at Facebook, Twitter, and Instagram.
+• Be a part of our advocacy program such as Storm the Hill, which brings the stories of 2.6+ million veterans to lawmakers in D.C.
+
+Also, stay tuned for new and exciting opportunities that we&apos;re working on to make your member experience even better!
+
+If you have any questions please let us know at membership@iava.org.
+
+Look forward to seeing you soon.
+
+Best,
+
+
+Paul Rieckhoff
+Founder and Chief Executive Officer
+Iraq Veteran
+
+
+P.S. Think your friends would want to join IAVA? Send them this message:
+&quot;I just joined IAVA, the nation’s first and largest organization for veterans of Iraq and Afghanistan. Membership is free! Sign up at http://iava.org/#join.&quot;</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Grant Obligation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Grant Obligations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Activity --></label>
+        <name>Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Challenges to Delivery --></label>
+        <name>Current_Challenges_to_Delivery__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Focus Area - Issue --></label>
+        <name>Focus_Area_Issue__c</name>
+        <relationshipLabel><!-- Grant Obligations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Focus Area - Program --></label>
+        <name>Focus_Area_Program__c</name>
+        <relationshipLabel><!-- Grant Obligations (Focus Area - Program) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Grant --></label>
+        <name>Grant__c</name>
+        <relationshipLabel><!-- Grant Obligations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Details of current status --></help>
+        <label><!-- Latest Results --></label>
+        <name>Latest_Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Status Date --></label>
+        <name>Latest_Status_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Deliverable --></label>
+        <name>Link_to_Deliverable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Measurement --></label>
+        <name>Measurement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Obligation Description --></label>
+        <name>Obligation_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Staff Responsible --></label>
+        <name>Program_Staff_Responsible__c</name>
+        <relationshipLabel><!-- Grant Obligations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Aborted</masterLabel>
+            <translation><!-- Aborted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Survey Data Highlights --></label>
+        <name>Survey_Data_Highlights__c</name>
+    </fields>
+    <layouts>
+        <layout>Grant Obligation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Latest Status Update --></label>
+            <section>Latest Status Update</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

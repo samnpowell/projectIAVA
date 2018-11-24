@@ -1,0 +1,8 @@
+A new online donation has been received:
+
+Donor: {!Opportunity.Name}
+Email Address: {!Contact.Email}
+Amount: {!Opportunity.Amount}
+Payment Method:{!NullValue(Opportunity.Payment_Method__c, "Payment Method: Not Specified")}
+
+Click here to view this donation: {!Opportunity.Link}

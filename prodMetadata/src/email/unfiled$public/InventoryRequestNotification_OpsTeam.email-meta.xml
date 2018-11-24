@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>InventoryRequestNotification_OpsTeam</name>
+    <style>none</style>
+    <subject>{!Line_Item__c.Inventory_Item__c} Request</subject>
+    <type>text</type>
+</EmailTemplate>

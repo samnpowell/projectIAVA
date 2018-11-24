@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Press Hit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Press Hits</value>
+    </caseValues>
+    <fields>
+        <help><!-- AAR for Press Hit --></help>
+        <label><!-- AAR --></label>
+        <name>AAR__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ad Value --></label>
+        <name>Ad_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Teaser section that goes in the list of press hits (as opposed to the full text). --></help>
+        <label><!-- Article Teaser --></label>
+        <name>Article_Teaser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Text --></label>
+        <name>Article_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Article Title --></label>
+        <name>Article_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Details/Show --></label>
+        <name>Details_Show__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link --></label>
+        <name>Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Press Contact Notes --></label>
+        <name>Press_Contact_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Press Outlet --></label>
+        <name>Press_Outlet__c</name>
+        <relationshipLabel><!-- Press Hits --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Show press hit on force.com press site --></help>
+        <label><!-- Publish on website --></label>
+        <name>Publish_on_website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Media Request --></label>
+        <name>Source_Media_Request__c</name>
+        <relationshipLabel><!-- Press Hits --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Possible Story</masterLabel>
+            <translation><!-- Possible Story --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Story Published</masterLabel>
+            <translation><!-- Story Published --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on someone else</masterLabel>
+            <translation><!-- Waiting on someone else --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Story Date --></label>
+        <name>Story_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier --></label>
+        <name>Tier__c</name>
+        <picklistValues>
+            <masterLabel>Tier 1</masterLabel>
+            <translation><!-- Tier 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 2</masterLabel>
+            <translation><!-- Tier 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 3</masterLabel>
+            <translation><!-- Tier 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Topic --></label>
+        <name>Topic__c</name>
+        <picklistValues>
+            <masterLabel>Afghanistan</masterLabel>
+            <translation><!-- Afghanistan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alternative Therapy</masterLabel>
+            <translation><!-- Alternative Therapy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COV</masterLabel>
+            <translation><!-- COV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clay Hunt SAV Act</masterLabel>
+            <translation><!-- Clay Hunt SAV Act --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DOD</masterLabel>
+            <translation><!-- DOD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discrimination</masterLabel>
+            <translation><!-- Discrimination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment &amp; Financial Hardship</masterLabel>
+            <translation><!-- Employment &amp; Financial Hardship --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GI Bill</masterLabel>
+            <translation><!-- GI Bill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gala</masterLabel>
+            <translation><!-- Gala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Homelessness</masterLabel>
+            <translation><!-- Homelessness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iraq</masterLabel>
+            <translation><!-- Iraq --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iraqi Interpreters</masterLabel>
+            <translation><!-- Iraqi Interpreters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Events</masterLabel>
+            <translation><!-- Local Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Love</masterLabel>
+            <translation><!-- Love --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Survey</masterLabel>
+            <translation><!-- Member Survey --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mental Health</masterLabel>
+            <translation><!-- Mental Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military COLA</masterLabel>
+            <translation><!-- Military COLA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military Recruitment</masterLabel>
+            <translation><!-- Military Recruitment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military Sexual Trauma</masterLabel>
+            <translation><!-- Military Sexual Trauma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NGIB</masterLabel>
+            <translation><!-- NGIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NYC Veterans</masterLabel>
+            <translation><!-- NYC Veterans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online Campaigns</masterLabel>
+            <translation><!-- Online Campaigns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Op-Ed</masterLabel>
+            <translation><!-- Op-Ed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overextended Military</masterLabel>
+            <translation><!-- Overextended Military --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTSD</masterLabel>
+            <translation><!-- PTSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partnerships</masterLabel>
+            <translation><!-- Partnerships --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Politics</masterLabel>
+            <translation><!-- Politics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RRRP</masterLabel>
+            <translation><!-- RRRP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rally</masterLabel>
+            <translation><!-- Rally --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red Tape Report</masterLabel>
+            <translation><!-- Red Tape Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STH2014</masterLabel>
+            <translation><!-- STH2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shutdown</masterLabel>
+            <translation><!-- Shutdown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Starting a new venture</masterLabel>
+            <translation><!-- Starting a new venture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suicide</masterLabel>
+            <translation><!-- Suicide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Summer Storm</masterLabel>
+            <translation><!-- Summer Storm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>The Wait We Carry</masterLabel>
+            <translation><!-- The Wait We Carry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traumatic Brain Injury</masterLabel>
+            <translation><!-- Traumatic Brain Injury --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA Backlog</masterLabel>
+            <translation><!-- VA Backlog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vets Day</masterLabel>
+            <translation><!-- Vets Day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vets Prevail</masterLabel>
+            <translation><!-- Vets Prevail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VetsRising</masterLabel>
+            <translation><!-- VetsRising --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wait for Care &amp; Benefits</masterLabel>
+            <translation><!-- Wait for Care &amp; Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walter Reed</masterLabel>
+            <translation><!-- Walter Reed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Women in the Military</masterLabel>
+            <translation><!-- Women in the Military --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Impressions --></label>
+        <name>Total_Impressions__c</name>
+    </fields>
+    <layouts>
+        <layout>Press Hit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CAMPAIGN_NAME</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Company__c</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_CITY</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_STATE</field>
+    </columns>
+    <columns>
+        <field>MEMBER_STATUS</field>
+    </columns>
+    <columns>
+        <field>MEMBER_LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>CampaignMember.Notes__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Donor_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Contact.General_Notes__c</field>
+    </columns>
+    <description>Added members of April 16 week follow-up report to a generic month of April report, capturing f/u from before LA trip</description>
+    <format>Tabular</format>
+    <name>Follow-up April 2012</name>
+    <params>
+        <name>scopeid</name>
+        <value>701C0000000Qvc3</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignContact</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

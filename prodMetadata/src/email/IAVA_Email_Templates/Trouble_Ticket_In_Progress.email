@@ -1,0 +1,7 @@
+Hi {!01I80000000acfe.OwnerFirstName}, 
+
+Your iWant #{!01I80000000acfe.Name} involving the {!01I80000000acfe.00N80000004HkUG} is in progress.  Additional information or action on your part may be needed.  Please see technician's comments below:
+
+Technician's comments: {!01I80000000acfe.00N80000004Hm1g}
+
+We will do all we can to get this request fulfilled as quickly as possible.  You can check the status at any time by clicking here: http://na6.salesforce.com/{!01I80000000acfe.Id} (login required).

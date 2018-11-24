@@ -1,0 +1,144 @@
+<apex:page standardController="Contact" showHeader="false">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+    <head>
+    <title>IAVA</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+
+<link type="text/css" rel="stylesheet" media="all" href="http://www2.iava.org/o/436/images/system-menus.css?B" />
+<link type="text/css" rel="stylesheet" media="all" href="http://www2.iava.org/o/436/images/defaults.css?B" />
+
+    <link type="text/css" rel="stylesheet" media="all" href="http://www2.iava.org/o/436/images/html-elements.css" />
+
+    <link type="text/css" rel="stylesheet" media="all" href="http://www2.iava.org/o/436/images/layout.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="http://www2.iava.org/o/436/images/iava.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="http://www2.iava.org/o/436/images/substyles.css" />
+    <link type="text/css" rel="stylesheet" media="print" href="http://www2.iava.org/o/436/images/print.css" />
+
+    <!--[if IE]>
+        <link type="text/css" rel="stylesheet" media="all" href="http://www2.iava.org/o/436/images/ie.css" />
+    <![endif]-->
+
+  <script type="text/javascript" src="http://www2.iava.org/o/436/js/jquery.js?G"></script>
+    <script type="text/javascript" src="http://www2.iava.org/o/436/js/drupal.js?G"></script>
+
+    <script type="text/javascript" src="http://www2.iava.org/o/436/js/jquery-ui-tabs-1.5.2.packed.js"></script><!-- frontpage only -->
+    <script type="text/javascript">jQuery.extend(Drupal.settings, { "basePath": "./" });</script>
+    <script type="text/javascript" src="http://www2.iava.org/o/436/js/actions.js?G"></script>
+    <script type="text/javascript" src="http://www2.iava.org/swf/swfobject.js"></script>
+
+
+</head>
+    <body class="not-front not-logged-in page-blog page-blog section-blog no-feature">
+
+    <div id="bodywrap"></div>
+    <div id="page"><div id="page-inner">
+
+            <div id="header"><div id="header-inner">
+
+                    <div id="logo-title">
+
+                            <div id="logo"><a href="http://iava.org" title="Home" rel="home"><img src="http://www2.iava.org/o/436/images/logo.png" alt="Home" id="logo-image" /></a></div>
+
+
+                        </div> <!-- /#logo-title -->
+                        <!-- begin header links -->
+            <div id="block-block-actionlinks" class="block block-views"><div class="block-inner">
+    <div class="content">
+
+    </div>
+</div>          <!-- end begin header links -->
+
+            </div></div>
+            <!-- /#header-inner, /#header -->
+
+        <div id="main"><div id="main-inner" class="clear-block with-navbar">
+
+                    <div id="navbar"><div id="navbar-inner" class="region region-navbar">
+
+                                            <div id="primary">
+                          <ul class="links">             <li class="menu-about-iava first"><a title="IAVA in Washington"></a></li>
+                        <li class="menu-take-action"><a title="IAVA in Washington"></a></li>
+                        <li class="menu-membership-and-resources"><a title="IAVA in Washington"></a></li>
+                        <li class="menu-iava-in-washington"><a title="IAVA in Washington"></a></li>
+                        <li class="menu-for-press-and-bloggers last"><a title="IAVA in Washington"></a></li>
+</ul>                       </div> <!-- /#primary -->
+
+                    </div></div>
+                    <!-- /#navbar-inner, /#navbar -->
+
+                    <div class="clearfix"></div>
+
+                    <div id="content"><div id="content-inner">
+
+                        <div id="content-area">
+                            <!-- HEADER BANNER -->
+                                                            <div id="block-block-pageheader" class="block block-block"><div class="block-inner">
+                                    <div class="content">
+                                        <img src="http://www2.iava.org/o/436/images/pgheader_dia.jpg" width="910" height="109" alt=""/>
+                                    </div><!-- /content -->
+                                </div></div> <!-- /block-inner, /block -->
+
+                                                        <!-- /HEADER BANNER -->
+                            <!-- INTRO -->
+                                                            <div class="node node-mine node-type-intro"><div class="node-inner">
+                                    <div class="node-header">
+            <img src="http://www2.iava.org/o/436/images/header-section_takeaction.png" width="17" height="59" alt="Take Action" />                                  </div>
+                                    <!-- /node-header -->
+                                </div></div> <!-- /node-inner, /node -->
+                                                        <!-- /INTRO -->
+
+                            <!--CONTENT -->
+<br />
+<p style="text-align: center; font-family: verdana; font-size: 22pt;">Welcome to Pat's Run<b style="color:green;"> Tempe, AZ</b>!<br />
+<p style="text-align: center; font-family: verdana; font-size: 22pt; color: darkbrown;">Hi {!NullValue(Contact.FirstName,"There! Please see an IAVA Staff Member regarding registration")}!</p>
+<br />
+<center>
+<table style="text-align: left; font-family: verdana; font-size: 22pt;" cellpadding="4">
+<tr><td style="color:darkgreen; text-align:right">First Name:</td><td>{!NullValue(Contact.FirstName,"Unknown")}</td></tr>
+<tr><td style="color:darkgreen; text-align:right">Last Name:</td><td>{!Contact.LastName}</td></tr>
+<tr><td style="color:darkgreen; text-align:right">Branch of Service:</td><td>{!Contact.Branch_of_Service__c}</td></tr>
+<tr><td style="color:darkgreen; text-align:right">Email:</td><td>{!Contact.Email}</td></tr></table></center></p>
+<center><form method="link" action="http://iavaonline.org/eventcheckin"><input style="font-family: verdana; font-size: 22pt;" type="submit" value="Yep, that's me!" /></form></center>
+
+
+                <!--/CONTENT-->
+                                                    <!--/CONTENT-->
+                        </div>
+
+                    </div></div>
+                    <!-- /#content-inner, /#content -->
+
+                    <!-- /#sidebar-right-inner, /#sidebar-right -->
+
+                </div>
+            </div>
+            <!-- /#main-inner, /#main -->
+
+                        <div id="footer"><div id="footer-inner" class="region region-footer">
+                <div id="block-menu-menu-footer" class="block block-menu"><div class="block-inner">
+
+    <div class="content">
+        <ul class="menu">
+<li class="menu-contact-us first"><a href="http://www2.iava.org/contact-us" title="Contact Us"></a></li>
+<li class="menu-iava-store"><a href="http://www.iavastore.org/" title="IAVA Store"></a></li>
+<li class="menu-pptou"><a href="http://www2.iava.org/content/privacy-policy-and-terms-use" title="Privacy Policy and Terms of Use"></a></li>
+<li class="menu-search last"><a href="http://www2.iava.org/search" title="Search"></a></li>
+</ul>
+    </div>
+</div></div>
+<!-- /block-inner, /block -->           </div></div>
+            <!-- /#footer-inner, /#footer -->
+
+    </div></div>
+
+    <!-- /#page-inner, /#page -->
+
+    <script type="text/javascript" src="http://www2.iava.org/o/436/images/iava-methods.js"></script>
+
+    </body>
+
+    </html>
+    </apex:page>

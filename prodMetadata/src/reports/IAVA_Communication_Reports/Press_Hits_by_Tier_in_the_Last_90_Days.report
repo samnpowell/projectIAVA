@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Contact.Press_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Press_Contact_Type__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Press_Hits__c</field>
+    </columns>
+    <columns>
+        <field>Press_Hits_Contacts__c.Role__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Press_Hit__c.Press_Outlet__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Press_Hit__c.Story_Date__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Press_Hit__c.Article_Title__c</field>
+    </columns>
+    <description>Breaks down the number of Press Hits a Contact has had in the Last 90 Days</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Press_Hit__c.Tier__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Press Hits by Tier in the Last 90 Days</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactCustomEntity$Press_Hits_Contacts__c@Press_Hits_Contacts__c.Press_Hit__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>FK_$Press_Hit__c.Story_Date__c</dateColumn>
+        <interval>INTERVAL_LAST90</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SD Member Event 2010</name>
+    <style>none</style>
+    <subject>IAVA Event in San Diego</subject>
+    <textOnly>Greetings!
+
+Thank you for signing up to attend the IAVA event this Friday night 
+in San Diego! This is the final leg of IAVA’s California Tour, and 
+after great stops in San Francisco and Los Angeles, we’re looking 
+forward to keeping the momentum going in San Diego with free food and 
+drinks, and live entertainment.
+
+When: Friday, March 12th from 6:00 PM – 9:00 PM
+Where: Red Circle (420 E St, San Diego, CA 92101) - map here: http://bit.ly/atkS6M
+Dress Code: Smart Casual
+
+The event will be a perfect opportunity to get to know fellow vets in 
+the area and have a great time.
+
+Let me know if you have any questions or won’t be able to make it.
+
+We’re really looking forward to seeing you out there!
+
+Best,
+
+Blake
+
+-- 
+Blake Henderson
+Deputy Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue, 10th Floor
+New York, NY 10017
+www.IAVA.org</textOnly>
+    <type>custom</type>
+</EmailTemplate>

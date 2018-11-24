@@ -1,0 +1,48 @@
+<apex:page controller="cov_resources_controller" action="{!initDash}">
+
+    <apex:outputPanel rendered="{!inRRRPstate}">
+        <div class="dashboard-list" id="resources">
+<!--             <div class="box-heading">
+                <div class="box-heading-content">
+                    <h5>RRRP: Transition Assistance</h5>
+                </div>
+                <div class="relative pull-left"><div class="box-heading-edge"></div></div>
+
+            </div> -->
+            
+            <!-- <div class="box-content"> -->
+
+
+                <!-- <apex:pageMessages /> -->
+                
+                <!-- <div class="dashboard-title"> -->
+<!--                     <p>
+                        <apex:outputPanel rendered="{!NOT(isMobile)}" layout="none">
+                            <a href="javascript:void(0);" data-target="#popupBox" data-type="rrrp" data-url="cov_rrrp_1?modal=true" data-name="{!$Label.cov_RRRP_dashboard_link_text}">{!$Label.cov_RRRP_dashboard_link_text}</a>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!isMobile}" layout="none">
+                            <a href="cov_rrrp">{!$Label.cov_RRRP_dashboard_link_text}</a>
+                        </apex:outputPanel>
+                    </p> -->
+
+
+                    <p>
+                        <a href="{!if(isMobile, 'cov_rrrp', 'javascript:void(0);')}" data-target="{!if(isMobile, 'none', '#popupBox')}" data-type="rrrp" data-url="cov_rrrp_1?modal=true" data-name="{!$Label.cov_RRRP_dashboard_link_text}"><img src="{!URLFOR($Resource.cov_files,'img/banners/myIAVA_RRRP_banner.png')}" width="410" height="437" /></a>
+
+                    </p>
+
+<!-- comment out ngib widget (lines 35-37) until we get everything figured out with the va
+                    <p>
+                            <a href="http://newgibill.org" target="_new" onclick="trackOutboundLink('http://newgibill.org'); return false;"><img src="{!URLFOR($Resource.cov_files,'img/banners/myIAVA_newgibill_banner.jpg')}" alt="Visit newGIbill.org to calculate your education benefits" width="410" height="391" /></a>
+                    </p>
+-->
+
+                <!-- </div> -->
+
+            <!-- </div> -->
+    
+        </div>
+    </apex:outputPanel>
+
+
+</apex:page>

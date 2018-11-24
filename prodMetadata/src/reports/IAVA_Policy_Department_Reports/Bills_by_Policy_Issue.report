@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Focus_Area__c.Policy_Recommendations__r.PolRec_covered_in_Leg__r$Legislation__c.Full_Bill_Number__c</field>
+    </columns>
+    <columns>
+        <field>Focus_Area__c.Policy_Recommendations__r.PolRec_covered_in_Leg__r$Legislation__c.Active__c</field>
+    </columns>
+    <columns>
+        <field>Focus_Area__c.Policy_Recommendations__r.PolRec_covered_in_Leg__r$Legislation__c.Bill_Title__c</field>
+    </columns>
+    <columns>
+        <field>Focus_Area__c.Policy_Recommendations__r.PolRec_covered_in_Leg__r$Legislation__c.Position__c</field>
+    </columns>
+    <columns>
+        <field>Focus_Area__c.Policy_Recommendations__r.PolRec_covered_in_Leg__r$Legislation__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Focus_Area__c.Policy_Recommendations__r.PolRec_covered_in_Leg__r$Legislation__c.Latest_Major_Action__c</field>
+    </columns>
+    <description>List of all bills grouped by Policy Issue</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Focus_Area__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Bills by Policy Issue</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Policy_Issues_with_Recommendations_and_Bills__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Focus_Area__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

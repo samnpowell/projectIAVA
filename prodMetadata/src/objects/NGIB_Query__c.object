@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores data from the new GI Bill Calculator site</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Contact_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact&apos;s First Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>NGIB Queries</relationshipLabel>
+        <relationshipName>NGIB_Queries</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subscribe_to_College_Factual_Emails__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if NGIB user subscribed to College Factual emails</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if NGIB user subscribed to College Factual emails</inlineHelpText>
+        <label>Subscribe to College Factual Emails</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>collegeId1__c</fullName>
+        <description>College Factual field; Form Question: First college entry</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: First college entry</inlineHelpText>
+        <label>collegeId1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>collegeId2__c</fullName>
+        <description>College Factual field; Form Question: Second college entry</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Second college entry</inlineHelpText>
+        <label>collegeId2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>collegeId3__c</fullName>
+        <description>College Factual field; Form Question: Third college entry</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Third college entry</inlineHelpText>
+        <label>collegeId3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myAttendancePct__c</fullName>
+        <description>College Factual field; Form Question: Plan To Attend</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Plan To Attend</inlineHelpText>
+        <label>myAttendancePct</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myCumulativePost911Service__c</fullName>
+        <description>College Factual field; Form Question: Cumulative Post 9-11 Active Duty Service</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Cumulative Post 9-11 Active Duty Service</inlineHelpText>
+        <label>myCumulativePost911Service</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myDischargeDate__c</fullName>
+        <description>College Factual field; Form Question: Anticipated Final Active Duty Discharge</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Anticipated Final Active Duty Discharge</inlineHelpText>
+        <label>myDischargeDate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myMilitaryStatus__c</fullName>
+        <description>College Factual field; Form Question: Military Status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Military Status</inlineHelpText>
+        <label>myMilitaryStatus</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myMontgomoryContribution__c</fullName>
+        <description>College Factual field; Form Question:</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question:</inlineHelpText>
+        <label>myMontgomoryContribution</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myOnlineStatus__c</fullName>
+        <description>College Factual field; Form Question: Classes Will be Taken</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Classes Will be Taken</inlineHelpText>
+        <label>myOnlineStatus</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myPost911BenefitRecipient__c</fullName>
+        <description>College Factual field; Form Question: Benefit to be used by</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Benefit to be used by
+*Used to be myBenefitRecipient</inlineHelpText>
+        <label>myPost911BenefitRecipient</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myPost911BenefitUsed__c</fullName>
+        <description>College Factual field; Form Question: Post-9/11 GI Bill Benefit Already Used</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Post-9/11 GI Bill Benefit Already Used</inlineHelpText>
+        <label>myPost911BenefitUsed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myPriorObligation__c</fullName>
+        <description>College Factual field; Form Question: Enlisted or Commissioned</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Enlisted or Commissioned</inlineHelpText>
+        <label>myPriorObligation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>myState__c</fullName>
+        <description>College Factual field; Form Question: Permanent Residence Is In</description>
+        <externalId>false</externalId>
+        <inlineHelpText>College Factual field; Form Question: Permanent Residence Is In</inlineHelpText>
+        <label>myState</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>NGIB Query</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>NGIB-{0000}</displayFormat>
+        <label>NGIB Query</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>NGIB Queries</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

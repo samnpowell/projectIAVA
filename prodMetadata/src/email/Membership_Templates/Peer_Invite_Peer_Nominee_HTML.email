@@ -1,0 +1,28 @@
+<p>Hi {!npe4__Relationship__c.First_Name_of_Primary_Contact__c},</p>
+
+<p><b>{!npe4__Relationship__c.npe4__RelatedContact__c}</b> is inviting you to become a member of Iraq and Afghanistan Veterans of America by verifying that you served in Iraq or Afghanistan.</p>
+
+<p>Membership is completely free and there are some great perks. But the first step is for you to <a href="https://iava.org/nomination-accept/?tfa_ContactID={!npe4__Relationship__c.npe4__ContactId__c}&tfa_Email={!npe4__Relationship__c.Primary_Contact_s_Email__c}&tfa_FIRSTNAME={!URLENCODE(npe4__Relationship__c.First_Name_of_Primary_Contact__c)}&tfa_LASTNAME={!URLENCODE(npe4__Relationship__c.Last_Name_of_Primary_Contact__c)}&tfa_3783473255399={!npe4__Relationship__c.npe4__RelatedContactId__c}"<b>accept the invitation and join myIAVA!</b></a></p>
+
+{!if(isblank(npe4__Relationship__c.Peer_Invite_Message__c),"", "Here is a message from "+npe4__Relationship__c.npe4__RelatedContact__c+":    <br />" + npe4__Relationship__c.Peer_Invite_Message__c)} 
+
+<p/>
+
+<center><a href="https://iava.org/nomination-accept/?tfa_ContactID={!npe4__Relationship__c.npe4__ContactId__c}&tfa_Email={!npe4__Relationship__c.Primary_Contact_s_Email__c}&tfa_FIRSTNAME={!URLENCODE(npe4__Relationship__c.First_Name_of_Primary_Contact__c)}&tfa_LASTNAME={!URLENCODE(npe4__Relationship__c.Last_Name_of_Primary_Contact__c)}&tfa_3783473255399={!npe4__Relationship__c.npe4__RelatedContactId__c}"><img src="https://c.na8.content.force.com/servlet/servlet.ImageServer?id=015C00000020uu4&oid=00D80000000d0vO&lastMod=1380570318000"></a></center>
+</p>
+
+<p>Why join myIAVA? There are plenty of reasons! myIAVA makes it easier to:</p>
+
+<ul>
+<li>Meet other vets in your area
+<li>Join IAVA events or host your own <a href="http://iava.org/vettogether">VetTogether</a> !
+<li>Access private support groups
+<li>Invite your friends using our vouch feature
+<li>Publicize your thoughts, projects and interests
+</ul>
+
+<p>So come on in, {!npe4__Relationship__c.First_Name_of_Primary_Contact__c}. {!npe4__Relationship__c.npe4__RelatedContact__c} is waiting for you on myIAVA!</p>
+
+<p><a href="https://iava.org/nomination-accept/?tfa_ContactID={!npe4__Relationship__c.npe4__ContactId__c}&tfa_Email={!npe4__Relationship__c.Primary_Contact_s_Email__c}&tfa_FIRSTNAME={!URLENCODE(npe4__Relationship__c.First_Name_of_Primary_Contact__c)}&tfa_LASTNAME={!URLENCODE(npe4__Relationship__c.Last_Name_of_Primary_Contact__c)}&tfa_3783473255399={!npe4__Relationship__c.npe4__RelatedContactId__c}">See you around the community,</a></p></p>
+
+<p>The IAVA Team</p>

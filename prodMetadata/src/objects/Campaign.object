@@ -1,0 +1,4244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>AdvancedSetup</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fieldSets>
+        <fullName>Post_Event_Report_fields</fullName>
+        <description>Event Reports</description>
+        <displayedFields>
+            <field>AIR_Completed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AIR_Overdue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AIR_Required__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Num_Attended__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Num_Confirmed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Post-Event Report fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>kwlw__KnowWho_List_Results</fullName>
+        <availableFields>
+            <field>ActualCost</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>CampaignMemberRecordTypeId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>NumberOfContacts</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>ParentId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>Status</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>KnowWho List Wizard Review page</description>
+        <displayedFields>
+            <field>IsActive</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>BudgetedCost</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>StartDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>EndDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>KnowWho List Results</label>
+    </fieldSets>
+    <fields>
+        <fullName>AIR_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AIR Completed</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AIR_Overdue__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ((AND ( AIR_Required__c = True,  AIR_Completed__c = False, StartDate +3 &lt; DATEVALUE(NOW()))), &quot;True&quot;, &quot;False&quot;)</formula>
+        <label>AIR Overdue</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AIR_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AIR Required</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ActualCost</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Ally_Sponsorships__c</fullName>
+        <externalId>false</externalId>
+        <label>Ally Sponsorships</label>
+        <summarizedField>CampaignMember.Ally_Sponsor__c</summarizedField>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>AmountAllOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>AmountWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>Attendees__c</fullName>
+        <externalId>false</externalId>
+        <label>Attendees</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BudgetedCost</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>CampaignMemberRecordTypeId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Champion_Sponsorships__c</fullName>
+        <externalId>false</externalId>
+        <label>Champion Sponsorships</label>
+        <summarizedField>CampaignMember.Champion_Sponsor__c</summarizedField>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Chapter__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Chapter</label>
+        <referenceTo>Chapter__c</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Account_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Account Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Connect_Campaign_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Connect Campaign Link</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Connect_Campaign__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Connect Campaign</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Connect_Default_Selected_Item__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Default Selected Item testing feroz</inlineHelpText>
+        <label>C&amp;P Connect Default Selected Item</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Connect_Form_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Connect Form Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Last_Update__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Last Update</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Lift_Basis__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Lift Basis</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Lift_Campaign__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Lift Campaign</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Lift_Landing_Page__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Lift Landing Page</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Lift_Life_Span__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Lift Life Span</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Lift_Rate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Lift Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Patron_Rank_Max__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Patron Rank Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Patron_Rank_Min__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Patron Rank Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Payment_Maximum_Start_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Payment Maximum Start Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Payment_Maximum__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Payment Maximum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__CnP_Payment_Minimum__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>C&amp;P Payment Minimum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Collateral_distributed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Collateral distributed</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Group_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Group Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Media</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Contact Grouping</controllingFieldValue>
+                <valueName>Policy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Contact Grouping</controllingFieldValue>
+                <valueName>Media</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DB_Campaign_Tactic__c</fullName>
+        <description>This is a field that is installed by and used with the Adoption Dashboard AppExchange package. If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</description>
+        <externalId>false</externalId>
+        <label>DB Campaign Tactic</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Print Advertisement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment Seminars</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Webinars</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Public Relations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partners</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Referral Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lunches</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Direct Mail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sales Call Down</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online Banners/Ads</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Internal Website</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Default_Tracking_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Only applies when the Campaign record is a Donate Page.  If this campaign doesn&apos;t represent a donation page, leave this field null.</inlineHelpText>
+        <label>Default Tracking Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Donation_TY_Message__c</fullName>
+        <description>Gets added to the thank-you email for Donations in this campaign.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Gets added to the thank-you email for Donations in this campaign (only works when the campaign is assigned at the time of donation).</inlineHelpText>
+        <label>Donation Thank You Message</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>EndDate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Event_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Public_Details__c</fullName>
+        <description>Public event details for display on COV and external sites</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Public event details for display on COV and external sites. For images use the &quot;Web Address&quot; tab rather than uploading an image here directly (the latter will not work).  If you need a place to host the image you can use the Amazon S3 server.</inlineHelpText>
+        <label>Public Details</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_Scale__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Scale</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Small</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Large</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ExpectedResponse</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>ExpectedRevenue</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Expected_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Expected Size</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>External POC</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Campaigns (External POC)</relationshipLabel>
+        <relationshipName>Campaigns1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Friend_Individual_Tickets__c</fullName>
+        <externalId>false</externalId>
+        <label>Friend Individual Tickets</label>
+        <summarizedField>CampaignMember.Friend_Individual__c</summarizedField>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Fundraising_Campaign_Goal__c</fullName>
+        <externalId>false</externalId>
+        <label>Fundraising Campaign Goal</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>GWCC__Unconverted_Leads__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>NumberOfLeads - NumberOfConvertedLeads</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Leads that have not been converted into contacts.</inlineHelpText>
+        <label>Open Leads</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hero_Sponsorships__c</fullName>
+        <externalId>false</externalId>
+        <label>Hero Sponsorships</label>
+        <summarizedField>CampaignMember.Hero_Sponsor__c</summarizedField>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>HierarchyActualCost</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyAmountAllOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyAmountWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyBudgetedCost</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyExpectedRevenue</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfContacts</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfConvertedLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfResponses</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberOfWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>HierarchyNumberSent</fullName>
+    </fields>
+    <fields>
+        <fullName>IAVA_Partner_Event__c</fullName>
+        <externalId>false</externalId>
+        <label>IAVA/Partner/Member Event</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IAVA Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partner Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-IAVA Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Member Initiated</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Indoor_Outdoor__c</fullName>
+        <externalId>false</externalId>
+        <label>Indoor/Outdoor</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Indoor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Outdoor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Indoor</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Outdoor</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Link_to_Event_Donate_Page__c</fullName>
+        <description>Link to the page on the website that accepts payment or the form for people to sign up to attend.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to the page on the website that accepts payment or the form for people to sign up to attend.</inlineHelpText>
+        <label>Link to Event/Donate Page</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Link_to_Source_Report__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If this campaign was populated by a report, please put a link to the report here.</inlineHelpText>
+        <label>Link to Source Report</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Local_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the name of the local point of contact for this event.</description>
+        <externalId>false</externalId>
+        <label>Local POC</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location_Address_Venue__c</fullName>
+        <externalId>false</externalId>
+        <label>Location Address/Venue</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Location City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Location State</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AZ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>KY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>LA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ME</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NJ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ND</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OK</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VT</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WY</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AS (American Samoa)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FM (Federated States of Micronesia)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GU (Guam)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MH (Marshall Islands)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MP (Northern Mariana Islands)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PW (Palau)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PR (Puerto Rico)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VI (Virgin Islands)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Members_Recruited_from_Campaign__c</fullName>
+        <externalId>false</externalId>
+        <label>Members Recruited from Campaign</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Num_Attended__c</fullName>
+        <description>Count of campaign members with status &quot;Attended&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of campaign members with status &quot;Attended&quot;</inlineHelpText>
+        <label>Num. Attended</label>
+        <summaryFilterItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Attended</value>
+        </summaryFilterItems>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Num_Confirmed__c</fullName>
+        <description>Count of campaign members with status &quot;Confirmed&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of campaign members with status &quot;Confirmed&quot;</inlineHelpText>
+        <label>Num. Confirmed</label>
+        <summaryFilterItems>
+            <field>CampaignMember.Status</field>
+            <operation>equals</operation>
+            <value>Confirmed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>NumberOfContacts</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfConvertedLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfLeads</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfResponses</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberOfWonOpportunities</fullName>
+    </fields>
+    <fields>
+        <fullName>NumberSent</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>One_on_one_conversations__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>One-on-one conversations</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Openness__c</fullName>
+        <externalId>false</externalId>
+        <label>Openness</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Member-Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Open Event</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Member-Only</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Open Event</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone_number_entry__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Phone numbers were collected at this event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Phone numbers were collected at this event</inlineHelpText>
+        <label>Phone number entry</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Platinum_Hero_Sponsorships__c</fullName>
+        <externalId>false</externalId>
+        <label>Platinum Hero Sponsorships</label>
+        <summarizedField>CampaignMember.Platinum_Hero__c</summarizedField>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Potential_Leaders_Identified__c</fullName>
+        <externalId>false</externalId>
+        <label>Potential Leaders Identified</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Potential_RRRP_Clients_Identified__c</fullName>
+        <externalId>false</externalId>
+        <label>Potential RRRP Clients Identified</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Predictive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Predictive</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Presentation_training__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>There was an IAVA presentation or training at this event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>There was an IAVA presentation or training at this event</inlineHelpText>
+        <label>Presentation / training</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Show_Inside_COV_To__c</fullName>
+        <description>&quot;Everyone&quot; means show the announcement to everyone. After the user dismisses the announcement they are added to the campaign.  &quot;Campaign Members&quot; means only show to those people, and when they dismiss change the campaign status accordingly.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>&quot;Everyone&quot; means show the announcement to everyone. After the user dismisses the announcement they are added to the campaign.  &quot;Campaign Members&quot; means only show to those people, and when they dismiss change the campaign status accordingly.</inlineHelpText>
+        <label>Show Inside COV To</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Everyone</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Campaign Members</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Petition</controllingFieldValue>
+                <controllingFieldValue>COV Announcement</controllingFieldValue>
+                <valueName>Everyone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Petition</controllingFieldValue>
+                <controllingFieldValue>COV Announcement</controllingFieldValue>
+                <valueName>Campaign Members</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Show_Inside_COV__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Shows in COV 2.0 (only for types: Event, COV Announcement, Petition)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows in COV 2.0 (only for types: Event, COV Announcement, Petition)</inlineHelpText>
+        <label>Show Inside COV</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StartDate</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Advocacy/Lobbying Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Art Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ceremonial Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Concert</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Demob</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Donor VIP Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fundraising Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Happy Hour</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Membership Drive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Membership Meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Members repping IAVA event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Press Conference</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Resource Fair</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sporting Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vets Day</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VSO Event</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Advocacy/Lobbying Event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Art Event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Ceremonial Event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Donor VIP Event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Fundraising Event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Membership Drive</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Membership Meeting</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Members repping IAVA event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Other Event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Press Conference</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Event</controllingFieldValue>
+                <valueName>Sporting Event</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Supporter_Individual_Tickets__c</fullName>
+        <externalId>false</externalId>
+        <label>Supporter Individual Tickets</label>
+        <summarizedField>CampaignMember.Supporter_Individual__c</summarizedField>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Tabling__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Tabling</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Template__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checking this field allows this campaign to be used as a template campaign when creating a new campaign.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this field to allow this campaign to be used as a template when creating a new campaign.</inlineHelpText>
+        <label>Template</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Unique_Campaign_Name__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <defaultValue>Name</defaultValue>
+        <externalId>false</externalId>
+        <label>Unique Campaign Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Valor_Sponsorships__c</fullName>
+        <externalId>false</externalId>
+        <label>Valor Sponsorships</label>
+        <summarizedField>CampaignMember.Valor_Sponsor__c</summarizedField>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>WE_FW8_NP__Batch_Status_Indicator__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK(WE_FW8_NP__Number_of_Records_Processed__c), &quot;0&quot;,  TEXT(WE_FW8_NP__Number_of_Records_Processed__c)) &amp; &quot; of &quot; &amp; TEXT(WE_FW8_NP__Total_Records_Count__c) &amp; &quot; records sent to WealthEngine&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>WE Batch Status Indicator</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WE_FW8_NP__Is_Error_Found__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Error on Send</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WE_FW8_NP__Number_of_Records_Processed__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Records Sent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WE_FW8_NP__Total_Records_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total Records Count</label>
+        <summaryForeignKey>CampaignMember.CampaignId</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>WE_FW8_NP__Wealth_Engine_Batch_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>WE Batch Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Salesforce Batch In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Processing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Processing Complete</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>percET__Campaign_Engagement_Level_Numeric__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VALUE(LEFT(TEXT( percET__Campaign_Engagement_Level__c ),1))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Engagement Level as Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Campaign_Engagement_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Engagement level that should be earned by someone participating in this campaign.</inlineHelpText>
+        <label>Campaign Engagement Level</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Community</fullName>
+                    <color>#FFFF66</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Participating</fullName>
+                    <color>#FFCC66</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 - Endorsing</fullName>
+                    <color>#FF9900</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - Contributing</fullName>
+                    <color>#FF6600</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Promoting</fullName>
+                    <color>#FF0000</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6 - Owning</fullName>
+                    <color>#CC6600</color>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7 - Leading</fullName>
+                    <color>#660000</color>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>percET__Levels_Below_Top_of_Hierarchy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>/*IF ( Parent.Parent.Parent.Parent.Id != null , 4 ,
+IF (Parent.Parent.Parent.Id != null, 3,
+IF (Parent.Parent.Id != null, 2,
+IF (Parent.Id != null, 1 , 0)
+)))
+*/
+
+null</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>For internal use by StepUp.  Should be hidden from end users.</inlineHelpText>
+        <label>DEPRECATED Levels Below Top of Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Steps_Below_Hierarchy_Top__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>How many steps below top of hierarchy is this campaign?  For campaigns with no Parent, this will be 0.  Maintained automatically by StepUp.</inlineHelpText>
+        <label>Steps Below Hierarchy Top</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Top_Hierarchy_Campaign_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field uses up four of the 10 available slots for cross-object references in Campaign.  But is integral to the batch class for calculating campaign-based metrics.</description>
+        <externalId>false</externalId>
+        <formula>/*IF ( Parent.Parent.Parent.Parent.Id != null , Parent.Parent.Parent.Parent.Id ,
+  IF (Parent.Parent.Parent.Id != null, Parent.Parent.Parent.Id, 
+    IF (Parent.Parent.Id  != null, Parent.Parent.Id ,
+       IF (Parent.Id  != null, Parent.Id , Id )
+)))*/
+
+null</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>For internal use by StepUp.  Should be hidden from end users.</inlineHelpText>
+        <label>DEPRECATED Top of Hierarchy Campaign ID</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Top_of_Hierarchy_Campaign_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Top of Hierarchy Campaign ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Total_Engagement_Jumpers__c</fullName>
+        <deprecated>false</deprecated>
+        <description>set by campaign batch process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How many people moved up at least one engagement level due to participation in this campaign?  Calculated automatically by StepUp.</inlineHelpText>
+        <label>Total Engagement Jumpers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Total_Engagement_Jumpers_in_Hierarchy__c</fullName>
+        <deprecated>false</deprecated>
+        <description>set by campaign batch process</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of contacts that moved up at least engagement level due to participation in this campaign or one of its sub-campaigns.</inlineHelpText>
+        <label>Total Engagement Jumpers in Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Total_New_Supporters__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Count of how many contacts got their very first engagement level (above 0) because of participation in this campaign.</inlineHelpText>
+        <label>Total New Supporters</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Total_New_Supporters_in_Hierarchy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of contacts that got their very first engagement level (above 0) due to participation in this campaign or one of its sub-campaigns.</inlineHelpText>
+        <label>Total New Supporters in Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Total_Unique_Contacts_In_Hierarchy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>An unduplicated count of contacts in this campaign and all sub-campaigns.  Note that the Salesforce &quot;Total Contacts in Hierarchy&quot; field is not unduplicated.  Provided by StepUp.</inlineHelpText>
+        <label>Total Unique Contacts In Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Total_Unique_Leads_in_Hierarchy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>An unduplicated count of leads in this campaign and all sub-campaigns.  Note that the Salesforce &quot;Total Leads in Hierarchy&quot; field is not unduplicated.  Provided by StepUp.</inlineHelpText>
+        <label>Total Unique Leads in Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>percET__Total_Unique_Responses_in_Hierarchy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Answers the quesiton: how many unique contacts responded to this campaign or one of its sub-campaigns?  Note that the Salesforce &quot;Total Responses in Hierarchy&quot; field may count more than one response by a single contact.  Provided by StepUp.</inlineHelpText>
+        <label>Total Unique Responses in Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Allocated_Fund__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Allocated Funds</label>
+        <summarizedField>stayclassy__Classy_Allocations__c.stayclassy__Amount__c</summarizedField>
+        <summaryForeignKey>stayclassy__Classy_Allocations__c.stayclassy__Campaign__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Average_Gift__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF (
+HierarchyNumberOfWonOpportunities &gt; 0,
+HierarchyAmountWonOpportunities / HierarchyNumberOfWonOpportunities,
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Gift</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Campaign_Path__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Campaign Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_API_Request_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(stayclassy__Classy_API_Request__r.stayclassy__Status__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Classy API Request Status</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_API_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The most recent API request that updates this Campaign</description>
+        <externalId>false</externalId>
+        <label>Classy API Request</label>
+        <referenceTo>stayclassy__Classy_API_Request__c</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Campaign_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the level of the Campaign hierarchy for a record, either Campaign (a parent Classy Campaign), Team, or Fundraiser</description>
+        <externalId>false</externalId>
+        <label>Classy Campaign Hierarchy</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Campaign</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fundraiser</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Team</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Designation_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The external Classy Designation ID</description>
+        <externalId>false</externalId>
+        <label>Classy Designation ID</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_External_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Represents the ID of a Campaign, Fundraising Page, or Team.  The ID is a combination of the type of campaign and the Classy ID.</description>
+        <externalId>true</externalId>
+        <label>Classy External ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Fundraising_Team__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Campaign record of the Classy fundraising team.</description>
+        <externalId>false</externalId>
+        <label>Classy Fundraising Team</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Campaigns (Classy Fundraising Team)</relationshipLabel>
+        <relationshipName>Campaigns1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Member_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Classy Member ID</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Mode_Checked_By_Default__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If true, and if the &quot;classy_mode_enabled&quot; option is true, this will check the &quot;Classy Mode&quot; selection by default on donation forms on Classy</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If true, and if the &quot;classy_mode_enabled&quot; option is true, this will check the &quot;Classy Mode&quot; selection by default on donation forms on Classy</inlineHelpText>
+        <label>Classy Mode Checked By Default</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Mode_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If true, give the donor the option to cover the transaction fee on Classy Donation form</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If true, give the donor the option to cover the transaction fee on Classy Donation form</inlineHelpText>
+        <label>Classy Mode Enabled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Organization_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The external Classy Organization ID</description>
+        <externalId>false</externalId>
+        <label>Classy Organization ID</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Parent_Campaign_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Classy Parent Campaign ID</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Parent_Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Campaign record of the parent Classy campaign</description>
+        <externalId>false</externalId>
+        <label>Classy Parent Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Classy_Team_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Classy Team ID</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Commitment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Represents the Commitment level of a fundraiser or supporter</description>
+        <externalId>false</externalId>
+        <label>Fundraising Commitment</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Currency_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Currency Code</label>
+        <length>3</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Deferred_Transaction_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total amount of deferred transactions related to this Campaign</description>
+        <externalId>false</externalId>
+        <label>Deferred Transaction Amount</label>
+        <summarizedField>stayclassy__Deferred_Transaction__c.stayclassy__Amount__c</summarizedField>
+        <summaryForeignKey>stayclassy__Deferred_Transaction__c.stayclassy__Campaign__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Effective_Fixed_FOT_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Percentage to be added to fee_on_top transactions for the campaign to cover fees. If fixed_fot_percent is null falls back on the organization&apos;s fixed_fot_percent.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage to be added to fee_on_top transactions for the campaign to cover fees. If fixed_fot_percent is null falls back on the organization&apos;s fixed_fot_percent.</inlineHelpText>
+        <label>Effective Fixed FOT Percent</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Classy End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Event_Image_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For top-level events, this is the URL to the main event image</description>
+        <externalId>false</externalId>
+        <label>Event Image URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Fixed_FOT_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Percentage campaign elects to be added to fee_on_top transactions to cover fees.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage campaign elects to be added to fee_on_top transactions to cover fees.</inlineHelpText>
+        <label>Fixed FOT Percent</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Fundraiser_Alias__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to distinguish multiple fundraising pages created by a single Contact.  Since a single user can sign up multiple people to create fundraising pages, the alias can be used to represent one of the additional supporters.  For example, a parent might sign up their children for fundraising pages.  The parent remains the Contact attached to the fundraising page, and the alias would be the children&apos;s names.</description>
+        <externalId>false</externalId>
+        <label>Fundraiser Alias</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Fundraising_Page_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Fundraising Page Title</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Fundraising_Team_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Fundraising Team Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Raw_Currency_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Raw Currency Code</label>
+        <length>3</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Raw_Goal_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Raw Goal Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Classy Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Team_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For fundraising pages that belong to a team, this field denotes whether the individual fundraiser is either a captain or a co-captain of the team.</description>
+        <externalId>false</externalId>
+        <label>Team Role</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>primary-captain</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>co-captain</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Team__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Classy Team</label>
+        <referenceTo>stayclassy__Classy_Team__c</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__Timezone_Identifier__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Timezone Identifier</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__address1__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <length>250</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__address2__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Address 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__campaign_url__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( stayclassy__Campaign_Path__c  = null,
+IF(stayclassy__sc_event_id__c &gt; 0 &amp;&amp; ISPICKVAL(stayclassy__Classy_Campaign_Type__c, &quot;Fundraiser&quot;), &quot;https://&quot; &amp;  BLANKVALUE($Setup.stayclassy__Classy_Profile_Settings__c.stayclassy__Classy_Domain__c, &quot;classy.org&quot;) &amp; &quot;/fundraise?fcid=&quot; &amp; text(stayclassy__sc_event_id__c), 
+IF(stayclassy__sc_event_id__c &gt; 0 &amp;&amp; ISPICKVAL(stayclassy__Classy_Campaign_Type__c, &quot;Team&quot;), &quot;https://&quot; &amp;  BLANKVALUE($Setup.stayclassy__Classy_Profile_Settings__c.stayclassy__Classy_Domain__c, &quot;classy.org&quot;) &amp; &quot;/fundraise/team?ftid=&quot; &amp; text(stayclassy__sc_event_id__c), 
+IF(stayclassy__sc_event_id__c &gt; 0 &amp;&amp; ISPICKVAL(stayclassy__Classy_Campaign_Type__c, &quot;Campaign&quot;), &quot;https://&quot; &amp;  BLANKVALUE($Setup.stayclassy__Classy_Profile_Settings__c.stayclassy__Classy_Domain__c, &quot;classy.org&quot;) &amp; &quot;/events/detail?eid=&quot; &amp; text(stayclassy__sc_event_id__c), 
+&quot;&quot;
+))), &quot;https://&quot; &amp; BLANKVALUE($Setup.stayclassy__Classy_Profile_Settings__c.stayclassy__Classy_Domain__c, &quot;classy.org&quot;) &amp; stayclassy__Campaign_Path__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign URL</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__city__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__country__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__percent_goal_reached__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ExpectedRevenue &gt; 0, HierarchyAmountWonOpportunities / ExpectedRevenue, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>% of Goal Reached</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__sc_event_id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Classy Campaign ID</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__sf_contact_id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Contact for this individual fundraiser or team captain for a team fundraiser</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__sf_designation_id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Classy Designation for this Campaign, Fundraiser, or Team</description>
+        <externalId>false</externalId>
+        <label>Classy Designations</label>
+        <referenceTo>stayclassy__sc_designation__c</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>stayclassy__state__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__venue_name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Name of the Venue</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>stayclassy__zip__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>AllActiveCampaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.CREATED_DATE</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.NAME</field>
+            <operation>notContain</operation>
+            <value>[Event auto-add]</value>
+        </filters>
+        <filters>
+            <field>CORE.USERS.LAST_NAME</field>
+            <operation>equals</operation>
+            <value>handy</value>
+        </filters>
+        <label>All Active Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Campaigns</fullName>
+        <columns>CAMPAIGN.CREATED_DATE</columns>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.BUDGETED_COST</columns>
+        <columns>CAMPAIGN.ACTUAL_COST</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.STATUS</field>
+            <operation>equals</operation>
+            <value>Planned,In Progress</value>
+        </filters>
+        <label>All Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>C2CS_Concert_Series</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.BUDGETED_COST</columns>
+        <columns>CAMPAIGN.ACTUAL_COST</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.NAME</field>
+            <operation>startsWith</operation>
+            <value>linkin park at,miller coors at,mayhem at,gaga at</value>
+        </filters>
+        <label>C2CS Concert Series</label>
+    </listViews>
+    <listViews>
+        <fullName>COMMO_Campaigns</fullName>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.NUM_CONTACTS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.NAME</field>
+            <operation>startsWith</operation>
+            <value>COMMO</value>
+        </filters>
+        <label>COMMO Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>COMMO_Civilian_Campaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.NUM_SENT</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.NAME</field>
+            <operation>startsWith</operation>
+            <value>COMMO</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.NAME</field>
+            <operation>contains</operation>
+            <value>Civilian</value>
+        </filters>
+        <label>COMMO Civilian Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>Campaign_Templates</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>Template__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Template__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Campaign Templates</label>
+    </listViews>
+    <listViews>
+        <fullName>Campaigns_created_this_week</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CORE.USERS.FIRST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>Campaigns created this week</label>
+    </listViews>
+    <listViews>
+        <fullName>Campaigns_with_Associated_Donations</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>TOT_AMOUNT_WON</columns>
+        <columns>AMOUNT_WON</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TOT_AMOUNT_WON</field>
+            <operation>greaterThan</operation>
+            <value>1</value>
+        </filters>
+        <label>Campaigns with Associated Donations</label>
+    </listViews>
+    <listViews>
+        <fullName>Campaigns_with_E_Level</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.BUDGETED_COST</columns>
+        <columns>CAMPAIGN.ACTUAL_COST</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>percET__Campaign_Engagement_Level__c</columns>
+        <columns>CAMPAIGN.NUM_CONTACTS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>percET__Campaign_Engagement_Level__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Campaigns with Engagment Level</label>
+        <sharedTo>
+            <group>Sysadmins</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Donate_Pages</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CAMPAIGN.NUM_OPPORTUNITIES</columns>
+        <columns>AMOUNT_ALL</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>PARENT_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.CAMPAIGN_TYPE</field>
+            <operation>equals</operation>
+            <value>Donate Page,Storefront Page</value>
+        </filters>
+        <label>Donate and Storefront Pages</label>
+    </listViews>
+    <listViews>
+        <fullName>Fundraising_Campaigns_and_Events</fullName>
+        <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>Sub_Type__c</columns>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>TOT_AMOUNT_WON</columns>
+        <columns>Attendees__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.CAMPAIGN_TYPE</field>
+            <operation>equals</operation>
+            <value>Event</value>
+        </filters>
+        <filters>
+            <field>Sub_Type__c</field>
+            <operation>equals</operation>
+            <value>Donor VIP Event,Fundraising Event</value>
+        </filters>
+        <filters>
+            <field>CAMPAIGN.CAMPAIGN_TYPE</field>
+            <operation>equals</operation>
+            <value>Fundraising Campaign</value>
+        </filters>
+        <label>Fundraising Campaigns and Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Gala_Campaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.NUM_CONTACTS</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.NAME</field>
+            <operation>contains</operation>
+            <value>Gala</value>
+        </filters>
+        <label>Gala Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>Membership_Events</fullName>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>Sub_Type__c</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>Chapter__c</columns>
+        <columns>Attendees__c</columns>
+        <columns>Members_Recruited_from_Campaign__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.CAMPAIGN_TYPE</field>
+            <operation>equals</operation>
+            <value>Event</value>
+        </filters>
+        <filters>
+            <field>Sub_Type__c</field>
+            <operation>equals</operation>
+            <value>Membership Drive,Membership Meeting,Art Event,Sporting Event</value>
+        </filters>
+        <filters>
+            <field>Sub_Type__c</field>
+            <operation>equals</operation>
+            <value>Advocacy/Lobbying Event,Ceremonial Event,Other Event,Members repping IAVA event</value>
+        </filters>
+        <label>Membership Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Modified_in_last_month</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.ACTIVE</columns>
+        <columns>CAMPAIGN.NUM_CONTACTS</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>AMOUNT_WON</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.LAST_UPDATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>LAST_MONTH</value>
+        </filters>
+        <label>Modified in last month</label>
+    </listViews>
+    <listViews>
+        <fullName>MyActiveCampaigns</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CAMPAIGN.ACTIVE</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Active Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>Partner_Funding_Campaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.EXP_REVENUE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>AMOUNT_WON</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CAMPAIGN.CAMPAIGN_TYPE</field>
+            <operation>equals</operation>
+            <value>Partner Funding</value>
+        </filters>
+        <label>Partner Funding Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>Show_in_COV_campaigns</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>Sub_Type__c</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>Chapter__c</columns>
+        <columns>Attendees__c</columns>
+        <columns>Members_Recruited_from_Campaign__c</columns>
+        <columns>Show_Inside_COV__c</columns>
+        <columns>Show_Inside_COV_To__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Show_Inside_COV_To__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Show_Inside_COV__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Show in COV campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>X7_15_2014_SF_Prepwork</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.BUDGETED_COST</columns>
+        <columns>CAMPAIGN.ACTUAL_COST</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <filterScope>Mine</filterScope>
+        <label>7.15.2014 SF Prepwork</label>
+    </listViews>
+    <listViews>
+        <fullName>stayclassy__Classy_Fundraisers</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>stayclassy__sc_event_id__c</columns>
+        <columns>stayclassy__sf_contact_id__c</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>stayclassy__Team_Role__c</columns>
+        <columns>CAMPAIGN.EXP_REVENUE</columns>
+        <columns>CAMPAIGN.TOT_WON_OPPORTUNITIES</columns>
+        <columns>TOT_AMOUNT_WON</columns>
+        <columns>stayclassy__Classy_Team_ID__c</columns>
+        <columns>CAMPAIGN.CREATED_DATE</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>stayclassy__Classy_Campaign_Type__c</field>
+            <operation>equals</operation>
+            <value>Fundraiser</value>
+        </filters>
+        <label>Classy Fundraising Pages</label>
+    </listViews>
+    <listViews>
+        <fullName>stayclassy__Classy_Parent_Campaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>stayclassy__sc_event_id__c</columns>
+        <columns>CAMPAIGN.CREATED_DATE</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <columns>AMOUNT_WON</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>stayclassy__sc_event_id__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>stayclassy__Classy_Campaign_Type__c</field>
+            <operation>equals</operation>
+            <value>Campaign</value>
+        </filters>
+        <label>Classy Parent Campaigns</label>
+    </listViews>
+    <listViews>
+        <fullName>stayclassy__Classy_Teams</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>PARENT_NAME</columns>
+        <columns>stayclassy__sf_contact_id__c</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>TOT_AMOUNT_WON</columns>
+        <columns>CAMPAIGN.EXP_REVENUE</columns>
+        <columns>AMOUNT_ALL</columns>
+        <columns>stayclassy__sc_event_id__c</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>stayclassy__Classy_Campaign_Type__c</field>
+            <operation>equals</operation>
+            <value>Team</value>
+        </filters>
+        <label>Classy Teams</label>
+    </listViews>
+    <listViews>
+        <fullName>stayclassy__StayClassy_Campaigns</fullName>
+        <columns>CAMPAIGN.NAME</columns>
+        <columns>stayclassy__sc_event_id__c</columns>
+        <columns>CAMPAIGN.START_DATE</columns>
+        <columns>CAMPAIGN.END_DATE</columns>
+        <columns>CAMPAIGN.EXP_REVENUE</columns>
+        <columns>AMOUNT_WON</columns>
+        <columns>stayclassy__percent_goal_reached__c</columns>
+        <columns>CAMPAIGN.STATUS</columns>
+        <columns>stayclassy__campaign_url__c</columns>
+        <columns>CAMPAIGN.CAMPAIGN_TYPE</columns>
+        <columns>CAMPAIGN.NUM_CONTACTS</columns>
+        <columns>CAMPAIGN.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>stayclassy__sc_event_id__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>All Classy Campaigns</label>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <description>use this campaign record type for any non-Classy campaigns</description>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>CnP_PaaS__CnP_Lift_Campaign__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contact_Group_Type__c</picklist>
+            <values>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DB_Campaign_Tactic__c</picklist>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment Seminars</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunches</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Banners%2FAds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Call Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinars</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Scale__c</picklist>
+            <values>
+                <fullName>Large</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IAVA_Partner_Event__c</picklist>
+            <values>
+                <fullName>IAVA Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-IAVA Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Event</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Indoor_Outdoor__c</picklist>
+            <values>
+                <fullName>Indoor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location_State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AS %28American Samoa%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FM %28Federated States of Micronesia%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GU %28Guam%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MH %28Marshall Islands%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP %28Northern Mariana Islands%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PR %28Puerto Rico%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PW %28Palau%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VI %28Virgin Islands%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Openness__c</picklist>
+            <values>
+                <fullName>Member-Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Event</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Show_Inside_COV_To__c</picklist>
+            <values>
+                <fullName>Campaign Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Everyone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Aborted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Type__c</picklist>
+            <values>
+                <fullName>Advocacy%2FLobbying Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Art Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ceremonial Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demob</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor VIP Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fundraising Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Happy Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Members repping IAVA event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership Drive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource Fair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sporting Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VSO Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vets Day</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>COV Announcement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>COV Cohort Invitees</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Grouping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donate Page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fundly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fundraising Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Office Volunteer Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Petition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Series</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storefront Page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XPress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>WE_FW8_NP__Wealth_Engine_Batch_Status__c</picklist>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce Batch In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>percET__Campaign_Engagement_Level__c</picklist>
+            <values>
+                <fullName>1 - Community</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Participating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Endorsing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Contributing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Promoting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 - Owning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 - Leading</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>stayclassy__Classy_Campaign_Type__c</picklist>
+            <values>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fundraiser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>stayclassy__Team_Role__c</picklist>
+            <values>
+                <fullName>co-captain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>primary-captain</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>stayclassy__Classy</fullName>
+        <active>true</active>
+        <description>Default Record Type for Campaigns created via Classy</description>
+        <label>Classy</label>
+        <picklistValues>
+            <picklist>CnP_PaaS__CnP_Lift_Campaign__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contact_Group_Type__c</picklist>
+            <values>
+                <fullName>Media</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DB_Campaign_Tactic__c</picklist>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment Seminars</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Website</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunches</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online Banners%2FAds</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Call Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinars</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Scale__c</picklist>
+            <values>
+                <fullName>Large</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Small</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IAVA_Partner_Event__c</picklist>
+            <values>
+                <fullName>IAVA Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Initiated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-IAVA Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Event</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Indoor_Outdoor__c</picklist>
+            <values>
+                <fullName>Indoor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location_State__c</picklist>
+            <values>
+                <fullName>AK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AS %28American Samoa%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FM %28Federated States of Micronesia%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GU %28Guam%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>KY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ME</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MH %28Marshall Islands%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MP %28Northern Mariana Islands%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NJ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NY</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PR %28Puerto Rico%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PW %28Palau%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TN</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VI %28Virgin Islands%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WY</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Openness__c</picklist>
+            <values>
+                <fullName>Member-Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open Event</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Show_Inside_COV_To__c</picklist>
+            <values>
+                <fullName>Campaign Members</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Everyone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Aborted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sub_Type__c</picklist>
+            <values>
+                <fullName>Advocacy%2FLobbying Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Art Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ceremonial Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concert</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demob</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Donor VIP Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fundraising Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Happy Hour</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Members repping IAVA event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership Drive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resource Fair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sporting Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VSO Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vets Day</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Direct Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fundraising Campaign</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>WE_FW8_NP__Wealth_Engine_Batch_Status__c</picklist>
+            <values>
+                <fullName>Processing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Processing Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Salesforce Batch In Progress</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>percET__Campaign_Engagement_Level__c</picklist>
+            <values>
+                <fullName>1 - Community</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Participating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Endorsing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Contributing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Promoting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 - Owning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7 - Leading</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>stayclassy__Classy_Campaign_Type__c</picklist>
+            <values>
+                <fullName>Campaign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fundraiser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>stayclassy__Team_Role__c</picklist>
+            <values>
+                <fullName>co-captain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>primary-captain</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CAMPAIGN.NAME</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CAMPAIGN.NAME</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CAMPAIGN.NAME</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CAMPAIGN.NUM_CONTACTS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>FullAccess</sharingModel>
+    <validationRules>
+        <fullName>FriendIndividualTicketLimit</fullName>
+        <active>false</active>
+        <description>no more than 35 $1250 tickets (friend individual) can be purchased for the 2017 gala</description>
+        <errorConditionFormula>Friend_Individual_Tickets__c &gt; 35</errorConditionFormula>
+        <errorMessage>We have limited the sale of Friend Individual ($1250) to 35 tickets. Please contact heroesgala@iava.org with any questions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SupporterIndividualTicketLimit</fullName>
+        <active>false</active>
+        <description>no more than 70 $2500 tickets (supporter individual) can be purchased for the 2017 gala</description>
+        <errorConditionFormula>Supporter_Individual_Tickets__c &gt; 70</errorConditionFormula>
+        <errorMessage>We have limited the sale of Supporter Individual ($2500) to 70 tickets. Please contact heroesgala@iava.org with any questions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>stayclassy__Goal_Must_Exceed_Commitment</fullName>
+        <active>true</active>
+        <description>The goal for a fundraising page or team must be greater than or equal to the commitment</description>
+        <errorConditionFormula>stayclassy__Commitment__c &gt; 0 &amp;&amp; ExpectedRevenue &lt; stayclassy__Commitment__c</errorConditionFormula>
+        <errorMessage>Expected Revenue (Fundraising Goal) can not be less than Commitment</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Add_Donors</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Add Donors</masterLabel>
+        <openType>sidebar</openType>
+        <page>AddDonorsToCampaign</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Campaign_Member_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Campaign Member Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na8.salesforce.com/00OC0000005JDyu?pv0={!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Campaign_Opportunities_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Campaign Opportunities Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na8.salesforce.com/00OC0000006SZYG?pv0={!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>CnP_PaaS__Virtual_Terminal</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Virtual Terminal</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/CnP_PaaS__VirtualTerminal?SFCampaignid={!Campaign.Id}&amp;ItemSFCampaignId={!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_AIR</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create AIR</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a33/e?retURL=%2F{!Campaign.Id}&amp;CF00NC0000005ULlw={!Campaign.Name}&amp;CF00NC0000005ULlw_lkid={!Campaign.Id}&amp;Name=Impact: {!Campaign.Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GWCC__Combine_Campaigns</fullName>
+        <availability>online</availability>
+        <description>Opens the Campaign Combiner page with the current campaign selected, so you can add or exclude members from other campaigns.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Combine Campaigns</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/gwcc__campaignCombiner?id={!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Mass_Delete</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Mass Delete</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/9.0/connection.js&quot;)} 
+
+var records = {!GETRECORDIDS(  $ObjectType.Campaign  )}; 
+
+if (records[0] == null) { 
+alert(&quot;Please select at least one record.&quot;) } 
+else { 
+
+var errors = []; 
+var result = sforce.connection.deleteIds(records); 
+if (result &amp;&amp; result.length){ 
+var numFailed = 0; 
+var numSucceeded = 0; 
+for (var i = 0; i &lt; result.length; i++){ 
+var res = result[i]; 
+if (res &amp;&amp; res.success == &apos;true&apos;){ 
+numSucceeded++; 
+} else { 
+var es = res.getArray(&quot;errors&quot;); 
+if (es.length &gt; 0) { 
+errors.push(es[0].message); 
+} 
+numFailed++; 
+} 
+} 
+if (numFailed &gt; 0){ 
+alert(&quot;Failed: &quot; + numFailed + &quot;\nSucceeded: &quot; + numSucceeded + &quot; \n Due to: &quot; + errors.join(&quot;\n&quot;)); 
+} else { 
+alert(&quot;Number of records deleted: &quot; + numSucceeded); 
+} 
+} 
+window.location.reload(); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendExactTargetEmail</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send ExactTarget Email</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>https://members.s6.exacttarget.com/Integration/SalesforceUI/EmailSend.aspx?sendtype=Campaign&amp;sfid={!Campaign.Id}&amp;sessid={!API.Session_ID}&amp;sessurl={!API.Partner_Server_URL_60}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>ViewCampaignInfluenceReport</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Campaign Influence Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O?rt=117&amp;break0=CAN&amp;scope=1&amp;scopeid_lkid={!Campaign.Id}&amp;scopeid={!Campaign_Name}&amp;c=CAN&amp;c=MR&amp;c=PCS&amp;c=CFN&amp;c=RN&amp;c=ON&amp;c=OA&amp;c=OS&amp;c=OCD&amp;c=AN&amp;s=OA&amp;duel0=CAN%2CMR%2CCFN%2CRN%2CAN%2CON%2CPCS%2COS%2COCD%2COA&amp;details=yes&amp;format=t</url>
+        <width>500</width>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Attendee_Count</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>View Attendee Count</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/00O80000003cycg?pv1={!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Recruited_At_Count</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>View Recruited At Count</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/00O80000003cyaV?pv1={!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>WE_FW8_NP__Get_Wealth_Info</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Get Wealth Info</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+try{
+var status = &apos;{!Campaign.WE_FW8_NP__Wealth_Engine_Batch_Status__c}&apos;;
+if( status == &quot;Processing&quot; || status == &quot;Salesforce Batch In Progress&quot;){
+var alertMsg = &quot;This Campaign is already submitted and in progress. Please check back after some time.&quot;;
+alert(alertMsg);
+} else {
+var campaignMemberRecords = sforce.connection.query(&quot;SELECT Id FROM CampaignMember WHERE CampaignId = &apos;{!Campaign.Id}&apos;&quot;);
+if (campaignMemberRecords.size != 0) {
+if (window.confirm(&quot;Are you sure you want to process &quot; + campaignMemberRecords.size + &quot; records?  This may take some time.  Check back later to see results&quot;)) {
+var message = sforce.apex.execute(&quot;WE_FW8_NP.PersonSearchWebService&quot;,&quot;searchPersonWebService&quot;,{campaignId:&quot;{!Campaign.Id}&quot;});
+if (message != &apos;&apos;) {
+alert(message);
+}
+}
+} else {
+alert(&quot;No Campaign Members for this record&quot;);
+}
+}
+} catch(err) {
+alert(err);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>et4ae5__Send_ExactTarget_Email</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Marketing Cloud Email</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/19.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/apex.js&quot;)}
+try
+{
+var urlPrefix = sforce.apex.execute(&quot;et4ae5/jsButtonMethods&quot;,&quot;namespace&quot;, {});
+var theUrl = &quot;https://&quot;+urlPrefix+&quot;/apex/singleSendETEmail?campaignId={!CASESAFEID( Campaign.Id )}&quot;;
+parent.location.href = theUrl;
+}
+catch (e)
+{
+var theUrl = &quot;/apex/singleSendETEmail?campaignId={!CASESAFEID( Campaign.Id )}&quot;;
+parent.location.href = theUrl;
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>et4ae5__ViewCampaignInfluenceReport</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Campaign Influence Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O?rt=117&amp;break0=CAN&amp;scope=1&amp;scopeid_lkid={!Campaign.Id}&amp;scopeid={!Campaign.Name}&amp;c=CAN&amp;c=MR&amp;c=PCS&amp;c=CFN&amp;c=RN&amp;c=ON&amp;c=OA&amp;c=OS&amp;c=OCD&amp;c=AN&amp;s=OA&amp;duel0=CAN%2CMR%2CCFN%2CRN%2CAN%2CON%2CPCS%2COS%2COCD%2COA&amp;details=yes&amp;format=t</url>
+        <width>500</width>
+    </webLinks>
+    <webLinks>
+        <fullName>npo02__Household_Mailing_List</fullName>
+        <availability>online</availability>
+        <description>Deduplicated mailing list of Households</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Household Mailing List</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/npsp__HH_CampaignDedupeBTN?id={!Campaign.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>stayclassy__ViewCampaignInfluenceReport</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>500</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Campaign Influence Report</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O?rt=117&amp;break0=CAN&amp;scope=1&amp;scopeid_lkid={!Campaign.Id}&amp;scopeid={!Campaign.Name}&amp;c=CAN&amp;c=MR&amp;c=PCS&amp;c=CFN&amp;c=RN&amp;c=ON&amp;c=OA&amp;c=OS&amp;c=OCD&amp;c=AN&amp;s=OA&amp;duel0=CAN%2CMR%2CCFN%2CRN%2CAN%2CON%2CPCS%2COS%2COCD%2COA&amp;details=yes&amp;format=t</url>
+        <width>500</width>
+    </webLinks>
+</CustomObject>

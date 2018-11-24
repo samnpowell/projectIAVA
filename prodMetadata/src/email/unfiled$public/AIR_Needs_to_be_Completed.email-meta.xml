@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends reminder to AIR creator to complete their AIR</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>AIR Needs to be Completed</name>
+    <style>none</style>
+    <subject>Please complete your AIR</subject>
+    <type>text</type>
+</EmailTemplate>

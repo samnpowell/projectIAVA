@@ -1,0 +1,30 @@
+-- Automatic alert --
+
+{!if(isblank(Opportunity.CnP_Checkout_Page__c),"",Opportunity.CnP_Checkout_Page__c)}
+
+Possible incomplete donation record entered by {!Opportunity.LastModifiedBy}, leaving blank one of more of these fields:
+
+  c3/c4: {!Opportunity.c3_c4__c}
+  Medium: {!Opportunity.Medium__c}
+  Payment Method: {!Opportunity.Payment_Method__c}
+  System: {!Opportunity.System__c}
+
+
+Click here to fill in the missing info: {!Opportunity.Link}
+
+
+
+Close Date: {!Opportunity.CloseDate}
+Amount: {!Opportunity.Amount}
+Account Name: {!Opportunity.Account}
+Created by: {!Opportunity.CreatedBy}
+Stage: {!Opportunity.StageName}
+Type: {!Opportunity.Type}
+CnP Checkout Page: {!Opportunity.CnP_Checkout_Page__c}
+CnP Order Number: {!Opportunity.CnP_PaaS__CnP_OrderNumber__c}
+
+Actual/Goal: {!Opportunity.Actual_Goal__c}
+Contact ID for Role: {!Opportunity.npe01__Contact_Id_for_Role__c}
+From Recurring Series: {!Opportunity.From_Recurring_Series__c}
+Tracking Code: {!Opportunity.Tracking_Code__c}
+Source Details: {!Opportunity.Source_Details__c}

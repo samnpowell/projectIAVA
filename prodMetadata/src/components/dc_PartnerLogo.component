@@ -1,0 +1,31 @@
+<apex:component controller="dc_ctrl_homepage">
+                <!-- SPONSORS -->
+                <div class="node node-type-sponsor node-full"><div class="node-inner">
+
+                    <div class="node-header">
+                        <img src="{!URLFOR($Resource.dc_css,'images/header-section_iavapartners.png')}" width="17" height="77" alt="IAVA Partners" />
+                    </div>
+                    <!-- /node-header -->
+
+                    <div class="content">
+
+                        <p class="more-link alignleft"><a href="{!$Label.dc_BecomeAPartner}" class="become-a-partner"></a></p>
+                        <p class="more-link alignright"><a href="{!$Page.dc_Partners}" class="seeall"></a></p>
+
+                        <div class="sponsor-logos">
+                        <table width="820" border="0" cellspacing="0" cellpadding="0"> 
+                              <tr> 
+                              <apex:form >
+                            	<apex:repeat value="{!PostImgId}" var="PartnerDetails" >
+                        		<td align="center" valign="middle" height="65"><a href="{!$Page.dc_PartnerDetails}?id={!PartnerDetails.logoId}"><apex:image URL="{!PartnerDetails.logoURL}" /></a></td>
+                        		</apex:repeat>
+                          		</apex:form>
+                          		</tr>
+                         </table>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                </div></div> <!-- /node-inner, /node -->
+</apex:component>

@@ -1,0 +1,7 @@
+Dear {!Give_Request__c.Applicant_Name__c},
+
+We’ve received your request for the following IAVA {!Give_Request__c.Give_Descriptor__c}:
+{!Give_Request__c.Give_Name__c}
+{!Give_Request__c.Give_Instance_Start_Date__c} {!Give_Request__c.Give_Instance_Start_Time__c}
+
+Thank you for supporting IAVA.

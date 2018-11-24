@@ -1,0 +1,23 @@
+<apex:page controller="cov_firstlogin_controller" action="{!checkFirstLogin}">
+
+<!-- <apex:pageMessages /> -->
+
+<apex:outputPanel rendered="{!and(not(isFirstLogin), isFirstLoginDate, $CurrentPage.Name == 'cov_dashboard')}">
+
+	<div class="well" style="margin-top:12px;">
+		<h3>Welcome to the new myIAVA!  Have a look around. </h3>
+		<div style="max-width:600px; margin-top:10px;">
+		  	<p>The new myIAVA is still in beta, and we need your feedback and ideas! Let us know what you think using the green "Feedback" tab on the right of the screen, or the "Ideas" tab up top.</p>
+  		</div>
+  		<div class="smaller lighter pull-right">
+			This box will disappear tomorrow.
+		</div>
+  	</div>
+
+</apex:outputPanel>
+
+	<apex:outputPanel rendered="{!and(isFirstLogin, $CurrentPage.Name == 'cov_dashboard')}">
+		<c:cov_tour_newuser /> 
+	</apex:outputPanel>
+
+</apex:page>

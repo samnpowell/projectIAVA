@@ -1,0 +1,83 @@
+<apex:page controller="cov_uplevel_controller" showHeader="false" sidebar="false">
+
+		<apex:outputPanel id="uplevelPanel" rendered="{!isUnconfirmed}">
+		<!-- TODO: add rendered for user type -->
+
+		        
+		        <!-- <apex:pageMessages /> -->
+		        
+
+		        <apex:outputPanel id="paperworkUploadPanel" rendered="{!AND(paperworkStatus != 'Paperwork Received', paperworkStatus != 'Paperwork Accepted')}">
+
+
+
+		        	<apex:form html-role="form" enctype="multipart/form-data">
+<!-- 		        		<p>Upload your proof of service to get access to cheese puffs, milk duds, and club soda.</p>
+ -->
+
+			        	<apex:outputPanel rendered="{!paperworkStatus == 'Standard Question/Issue'}" styleClass="color-error" >
+
+			        		<apex:outputPanel rendered="{!paperworkIssue == 'Orders'}" >
+			        			<p>There was an issue with the paperwork you submitted previously. We do not accept orders deploying you or recalling you as they do not definitively document that you served in Iraq or Afghanistan.</p>
+			        		</apex:outputPanel>
+			        		<apex:outputPanel rendered="{!paperworkIssue == 'Upload Problem'}" >
+			        			<p>It looks like your paperwork failed to transmit properly. The problem may be that your previous document size exceeded 5 MB. Please resize and try again.</p>
+			        		</apex:outputPanel>
+			        		<apex:outputPanel rendered="{!paperworkIssue == 'Illegible'}" >
+			        			<p>We are unable to read the documentation you previously submitted due to the document being illegible or too small to read. Please rescan or resize it and send again.</p>
+			        		</apex:outputPanel>
+			        		<apex:outputPanel rendered="{!paperworkIssue == 'Unable to open'}" >
+			        			<p>Unfortunately we are unable to open the document you previously submitted. Please save it as a .jpeg or .pdf document and re-send.</p>
+			        		</apex:outputPanel>
+			        		<apex:outputPanel rendered="{!paperworkIssue == 'Email not found'}" >
+			        			<p>Unfortunately we are unable to find your record in our system. Please contact the membership department.</p>
+			        		</apex:outputPanel>
+			        		<apex:outputPanel rendered="{!paperworkIssue == 'No ICM, ACM, GWOTEM, or service dates'}" >
+			        			<p>Unfortunately we are unable to see a qualifying award or service location and dates listed on the document you previously submitted.</p>
+			        		</apex:outputPanel>
+
+			        		<apex:outputPanel rendered="{!isblank(paperworkIssue)}" >
+				        		<p>There was an issue with the paperwork you previously submitted. Please review the guidelines for submitting paperwork and use the form below to correct the issue.</p>
+			        		</apex:outputPanel>
+
+
+							<apex:outputPanel rendered="{!AND(paperworkComments != null, TRIM(paperworkComments) != '')}" styleClass="color-error" >
+			        			<p>Additional Comments:</p>
+			        			<p>{!paperworkComments}</p>
+			        		</apex:outputPanel>
+
+			        	</apex:outputPanel>
+
+
+ 			            <div class="form-group">
+			                <label for="paperwork-upload" class="control-label"><a href="javascript:void(0);" onclick="console.log('1');toggleHidden('span[id$=upload-widget]');console.log('2');">Upload your proof of service</a> (DD214, <a href="https://iava.org/veteran-paperwork?tfa_ContactID={!contactId}" target="_blank">etc...</a>) for access to Veteran-only areas</label>
+			            </div>
+
+
+			        	<apex:outputPanel id="upload-widget" style="display: none;" >
+
+			                <div class="form-group">
+			                	<apex:inputFile id="paperwork-upload" value="{!paperworkFile.body}" filename="{!paperworkFile.Name}" title="Upload your proof of service" />
+			            	</div>
+			            	<apex:commandButton styleClass="btn btn-primary" action="{!uploadPaperwork}" value="Upload" />
+			            </apex:outputPanel>
+
+		            </apex:form>
+		        </apex:outputPanel>
+
+		        <apex:outputPanel rendered="{!paperworkStatus == 'Paperwork Received'}">
+
+		        	<p>Your paperwork has been received and will be reviewed within a few days, sometimes even quicker. Thanks for your patience.</p>
+
+		        </apex:outputPanel>
+
+
+
+
+
+
+
+		    
+		</apex:outputPanel>
+	
+</apex:page>

@@ -1,0 +1,909 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>After Impact Review</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>Post_Event_Report_fields</fullName>
+        <description>Post event report fields from event report object</description>
+        <displayedFields>
+            <field>AAR_Required__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Attendee_survey_sent__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Contact_for_Followup_Note__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsDeleted</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Draft_Language_for_ED__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Impact_Overview__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>External_POC__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Follow_up_Note_sent_to_Personal_Contact__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Give__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Hot_Wash_Complete__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastActivityDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Local_wrap_up_email_sent__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Location_of_Event__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Note_for_Relationship_Mgr__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Num_Attended__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Num_Confirmed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Num_Units__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Send_Follow_up_to_EO__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Start_Date_of_Event__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Success_Story__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Success_Story_Posted__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Summary_Negative__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Summary_Positive__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SystemModstamp</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Post-Event Report fields</label>
+    </fieldSets>
+    <fields>
+        <fullName>AAR_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AAR Required</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Activity_ID__c</fullName>
+        <description>Can&apos;t have lookup to Activities so using a text field instead to store the ID.</description>
+        <externalId>false</externalId>
+        <label>Activity ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Activity_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(isblank(Activity_ID__c), &quot;&quot;, HYPERLINK(&quot;/&quot; +  Activity_ID__c, &quot;View Related Activity&quot;  ))</formula>
+        <label>Activity Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendee_survey_sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Attendee survey sent</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipName>Event_Reports</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Community__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked box indicates this event / activity impacted community.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked box indicates this event / activity impacted community.</inlineHelpText>
+        <label>Community</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Completed</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact_for_Followup_Note__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact for Followup Note</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Event_Reports</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>DC_Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DC Event</label>
+        <referenceTo>DC_Event__c</referenceTo>
+        <relationshipLabel>AIRs</relationshipLabel>
+        <relationshipName>AIRs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Draft_Language_for_ED__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Draft text for CEO to send to External POC</inlineHelpText>
+        <label>Draft Language for E.D.</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Education__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Education</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Employment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked box indicates this event / activity impacted employment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked box indicates this event / activity impacted employment.</inlineHelpText>
+        <label>Employment</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>IAVAEvent__c</referenceTo>
+        <relationshipLabel>AIRs</relationshipLabel>
+        <relationshipName>AIRs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_POC__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (NOT (ISBLANK ( Campaign__c)),  HYPERLINK(&quot;/&quot;+   Campaign__r.External_POC__c     ,     Campaign__r.External_POC__r.FirstName  +&quot; &quot; +   Campaign__r.External_POC__r.LastName )   , 
+IF (NOT (ISBLANK ( Give__c )),  HYPERLINK(&quot;/&quot;+ Give__r.External_POC__r.Id   ,    Give__r.External_POC__r.FirstName +&quot; &quot; +  Give__r.External_POC__r.LastName   )  , &quot;&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>External POC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Note_sent_to_Personal_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Follow-up Note sent to Personal Contact</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Give__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Give</label>
+        <referenceTo>Give__c</referenceTo>
+        <relationshipName>Event_Reports</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Health__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Health</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Hot_Wash_Complete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Hot Wash Complete?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Impact_Overview__c</fullName>
+        <externalId>false</externalId>
+        <label>Impact Overview</label>
+        <length>10000</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Link_to_Posted_Success_Story__c</fullName>
+        <externalId>false</externalId>
+        <label>Link to Posted Success Story</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Local_wrap_up_email_sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Local wrap-up email sent</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Location_of_Event__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (NOT (ISBLANK ( Campaign__c)),  Campaign__r.Location_City__c , 
+IF (NOT (ISBLANK ( Give__c )),  Give__r.City_Formula__c  ,&quot;&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Location of Event</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Money_Raised__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign__r.HierarchyAmountWonOpportunities</formula>
+        <label>Money Raised</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Note_for_Relationship_Mgr__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Include notes for the IAVA staff person that is managing this relationship.</inlineHelpText>
+        <label>Note for Relationship Mgr</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Num_Attended__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (NOT (ISBLANK (  Event__c )),  Event__r.Number_of_Attendees__c ,
+IF (NOT (ISBLANK ( Campaign__c)),   Campaign__r.Num_Attended__c   ,
+IF (NOT (ISBLANK ( Give__c )),  Give__r.Num_Attended__c  , 
+VALUE(&quot;&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num. Attended</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Num_Confirmed__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (NOT (ISBLANK (  Event__c )), ( Event__r.Num_Replies_Yes__c ),
+IF (NOT (ISBLANK ( Campaign__c)),  (Campaign__r.Num_Confirmed__c +  Campaign__r.Num_Attended__c ) ,
+IF (NOT (ISBLANK ( Give__c )),  Give__r.Number_of_Confirmed_Units__c  , VALUE(&quot;&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num. Confirmed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Num_Units__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (NOT (ISBLANK (   Event__c )),  Event__r.Reply_Cap__c  ,
+IF (NOT (ISBLANK (  Campaign__c)),  Campaign__r.Expected_Size__c ,
+IF (NOT (ISBLANK (  Give__c )),  Give__r.Number_of_Units__c , VALUE(&quot;&quot;))))</formula>
+        <label>Num. Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OK_to_Publish_Success_Story__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OK to Publish Success Story</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Photos_posted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Photos should be attached to this record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Photos should be attached to this record.</inlineHelpText>
+        <label>Photos posted</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Related_Focus_Areas__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Focus Areas</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Community</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reported_Amount_of_Money_Raised__c</fullName>
+        <description>Amount of money raised at the event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount of money raised at the event</inlineHelpText>
+        <label>Reported Amount of Money Raised</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Reported_Number_of_New_Contacts__c</fullName>
+        <description>Number of new leads</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of new leads generated by this event</inlineHelpText>
+        <label>Reported Number of New Contacts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Send_Follow_up_to_EO__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If this is checked, an email is sent to the Executive Office including the &quot;Draft Language for E.D.&quot; text</inlineHelpText>
+        <label>Send Follow-up to EO</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_Override__c</fullName>
+        <description>This will override start date pulled from parent or be used in the absence of a parent record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This will override start date pulled from parent or be used in the absence of a parent record.</inlineHelpText>
+        <label>Start Date Override</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_of_Event__c</fullName>
+        <description>Gets the date from either the associated Give or Campaign.</description>
+        <externalId>false</externalId>
+        <formula>IF (NOT(ISBLANK ( Start_Date_Override__c )),  Start_Date_Override__c ,
+IF (NOT (ISBLANK ( Campaign__c)), Campaign__r.StartDate , 
+IF (NOT (ISBLANK ( Give__c )), Give__r.Earliest_Start_Date__c , 
+IF (NOT(ISBLANK ( Track_a_Call__c )),  Track_a_Call__r.Date_of_Call__c ,
+IF (NOT (ISBLANK ( DC_Event__c )),  DC_Event__r.Date_and_Time__c ,
+NULL)))))</formula>
+        <label>Start Date of Event</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Success_Story_Posted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Success Story Posted?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Success_Story__c</fullName>
+        <externalId>false</externalId>
+        <label>Success Story</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Summary_Negative__c</fullName>
+        <externalId>false</externalId>
+        <label>Summary - Negative</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Summary_Positive__c</fullName>
+        <externalId>false</externalId>
+        <label>Summary - Positive</label>
+        <length>5000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Track_a_Call__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Track a Call</label>
+        <referenceTo>Activity_Junction__c</referenceTo>
+        <relationshipLabel>AIRs</relationshipLabel>
+        <relationshipName>AIRs</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vets_affected__c</fullName>
+        <externalId>false</externalId>
+        <label>Vets affected</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>AIR</label>
+    <listViews>
+        <fullName>AIRs_owned_by_site_guest_users</fullName>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Completed__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>contains</operation>
+            <value>site</value>
+        </filters>
+        <filters>
+            <field>OWNER.LAST_NAME</field>
+            <operation>contains</operation>
+            <value>guest</value>
+        </filters>
+        <filters>
+            <field>OWNER.ALIAS</field>
+            <operation>contains</operation>
+            <value>guest</value>
+        </filters>
+        <label>AIRs owned by site guest users</label>
+        <sharedTo>
+            <group>Sysadmins</group>
+            <role>SystemAdministrator</role>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>C2CS_Concert_Series</fullName>
+        <columns>NAME</columns>
+        <columns>Completed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>linkin park at,miller coors at,mayhem at,gaga at</value>
+        </filters>
+        <label>C2CS Concert Series</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_in_the_last_2_months</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Completed__c</columns>
+        <columns>Contact_for_Followup_Note__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:60</value>
+        </filters>
+        <label>Created in the last 2 months</label>
+    </listViews>
+    <listViews>
+        <fullName>Incomplete_AIRS</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Completed__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Incomplete AIRS</label>
+    </listViews>
+    <listViews>
+        <fullName>My_AIRs</fullName>
+        <columns>NAME</columns>
+        <columns>Completed__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Mine</filterScope>
+        <label>My AIRs</label>
+    </listViews>
+    <nameField>
+        <label>AIR Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>AIRs</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Confidential_Cs_Only</fullName>
+        <active>true</active>
+        <description>These AIRs can only be seen by Chiefs</description>
+        <label>Confidential - Cs Only</label>
+        <picklistValues>
+            <picklist>Related_Focus_Areas__c</picklist>
+            <values>
+                <fullName>Community</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard_AIR</fullName>
+        <active>true</active>
+        <label>Standard AIR</label>
+        <picklistValues>
+            <picklist>Related_Focus_Areas__c</picklist>
+            <values>
+                <fullName>Community</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Only_one_source_record</fullName>
+        <active>false</active>
+        <description>These reports must have only one source. If Give is not blank and Campaign is not blank, return an error.</description>
+        <errorConditionFormula>AND (NOT (ISBLANK ( Give__c )),NOT (ISBLANK ( Campaign__c )))</errorConditionFormula>
+        <errorDisplayField>Campaign__c</errorDisplayField>
+        <errorMessage>These reports must have only one source. Please associate with either a Give or a Campaign only, but not both.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_COMMO_request</fullName>
+        <availability>online</availability>
+        <description>For twitter, facebook, and local email</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create COMMO request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/500/e?retURL={!AIR__c.Id}&amp;RecordType=012C0000000BqGr&amp;ent=Case</url>
+    </webLinks>
+</CustomObject>

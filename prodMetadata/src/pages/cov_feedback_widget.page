@@ -1,0 +1,12 @@
+<apex:page showHeader="false" sidebar="false">
+
+		<div id="feedback">
+			<div id="feedback-widget" style="z-index:300;">
+				<a class="handle" style="border-left:1px solid #ddd;border-top:1px solid #ddd;border-bottom:1px solid #ddd;" href="#">Feedback</a>
+				<div id="feedback-frame" style="display:none;">
+					
+				</div>
+			</div>
+		</div>
+	
+</apex:page>

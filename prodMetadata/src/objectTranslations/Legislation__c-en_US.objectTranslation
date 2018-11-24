@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Legislation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Legislation</value>
+    </caseValues>
+    <fields>
+        <help><!-- Any alternate names that IAVA uses to refer to this bill, i.e. &quot;New GI Bill 2.0&quot; --></help>
+        <label><!-- AKA --></label>
+        <name>AKA__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether IAVA is currently tracking this bill --></help>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Just the numerical part of the bill or amendment number. --></help>
+        <label><!-- Bill Number --></label>
+        <name>Bill_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Bill prefix corresponding to bill title, e.g. &quot;HR&quot; for HR1212 --></help>
+        <label><!-- Bill Prefix --></label>
+        <name>Bill_Prefix__c</name>
+        <picklistValues>
+            <masterLabel>HAMDT</masterLabel>
+            <translation><!-- HAMDT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCRES</masterLabel>
+            <translation><!-- HCRES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HJRES</masterLabel>
+            <translation><!-- HJRES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HR</masterLabel>
+            <translation><!-- HR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HRES</masterLabel>
+            <translation><!-- HRES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IAVA</masterLabel>
+            <translation><!-- IAVA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>S</masterLabel>
+            <translation><!-- S --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAMDT</masterLabel>
+            <translation><!-- SAMDT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SCRES</masterLabel>
+            <translation><!-- SCRES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SJRES</masterLabel>
+            <translation><!-- SJRES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SRES</masterLabel>
+            <translation><!-- SRES --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Title of proposed bill.  Leave out Bill Number (e.g. HR3254), which should go into Bill Number field. --></help>
+        <label><!-- Bill Title --></label>
+        <name>Bill_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Categories --></label>
+        <name>Categories__c</name>
+        <picklistValues>
+            <masterLabel>Benefits</masterLabel>
+            <translation><!-- Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Defense</masterLabel>
+            <translation><!-- Defense --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disability</masterLabel>
+            <translation><!-- Disability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GI Bill</masterLabel>
+            <translation><!-- GI Bill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jobs</masterLabel>
+            <translation><!-- Jobs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military</masterLabel>
+            <translation><!-- Military --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- E.g. for the 112th congress select 112.  Must be filled in for Thomas link to work. --></help>
+        <label><!-- Congressional Session --></label>
+        <name>Congressional_Session__c</name>
+        <picklistValues>
+            <masterLabel>109</masterLabel>
+            <translation><!-- 109 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>110</masterLabel>
+            <translation><!-- 110 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>111</masterLabel>
+            <translation><!-- 111 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>112</masterLabel>
+            <translation><!-- 112 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>113</masterLabel>
+            <translation><!-- 113 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>114</masterLabel>
+            <translation><!-- 114 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>115</masterLabel>
+            <translation><!-- 115 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cosponsors --></label>
+        <name>Cosponsors__c</name>
+    </fields>
+    <fields>
+        <help><!-- When bill info was last pulled in from GovTrack --></help>
+        <label><!-- Date Bill Info Updated --></label>
+        <name>Date_Bill_Info_Updated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether the bill should appear in the DC section of the website. --></help>
+        <label><!-- Display on Website --></label>
+        <name>Display_on_Website__c</name>
+    </fields>
+    <fields>
+        <help><!-- Combination of prefix and number, e.g. HR5322 --></help>
+        <label><!-- Full Bill Number --></label>
+        <name>Full_Bill_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the bill was introduced --></help>
+        <label><!-- Introduced Date --></label>
+        <name>Introduced_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Introduced --></label>
+        <name>Introduced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Major Action --></label>
+        <name>Latest_Major_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legislative Body --></label>
+        <name>Legislative_Body__c</name>
+        <picklistValues>
+            <masterLabel>House</masterLabel>
+            <translation><!-- House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senate</masterLabel>
+            <translation><!-- Senate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State Body</masterLabel>
+            <translation><!-- State Body --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Position/Status --></label>
+        <name>Position_Status__c</name>
+        <picklistValues>
+            <masterLabel>Ignore</masterLabel>
+            <translation><!-- Ignore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Position</masterLabel>
+            <translation><!-- No Position --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oppose</masterLabel>
+            <translation><!-- Oppose --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review</masterLabel>
+            <translation><!-- Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review Board</masterLabel>
+            <translation><!-- Review Board --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Watch</masterLabel>
+            <translation><!-- Watch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- IAVA&apos;s position on the bill --></help>
+        <label><!-- IAVA Position --></label>
+        <name>Position__c</name>
+        <picklistValues>
+            <masterLabel>Ignore</masterLabel>
+            <translation><!-- Ignore --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No position</masterLabel>
+            <translation><!-- No position --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oppose</masterLabel>
+            <translation><!-- Oppose --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review</masterLabel>
+            <translation><!-- Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review Board</masterLabel>
+            <translation><!-- Review Board --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support</masterLabel>
+            <translation><!-- Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Watch</masterLabel>
+            <translation><!-- Watch --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top</masterLabel>
+            <translation><!-- Top --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Use in report card --></label>
+        <name>Report_card_eligible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sponsor Info --></label>
+        <name>Sponsor_Info__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sponsor --></label>
+        <name>Sponsor__c</name>
+        <relationshipLabel><!-- Legislation --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status in Congress --></label>
+        <name>Status_in_Congress__c</name>
+    </fields>
+    <fields>
+        <help><!-- CRS Summary --></help>
+        <label><!-- Summary --></label>
+        <name>Summary__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to THOMAS description of bill.  Only works if Bill Name and Congressional Session are filled in. --></help>
+        <label><!-- THOMAS link --></label>
+        <name>THOMAS_link__c</name>
+    </fields>
+    <fields>
+        <label><!-- TMC Position --></label>
+        <name>TMC_Position__c</name>
+        <picklistValues>
+            <masterLabel>Opposed through TMC</masterLabel>
+            <translation><!-- Opposed through TMC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supported through TMC</masterLabel>
+            <translation><!-- Supported through TMC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Tweet to be added to &quot;new co-sponsor&quot; notification email. Use &lt;BILL&gt; &lt;TITLE&gt; &lt;NAME&gt; &lt;TWUSER&gt; --></help>
+        <label><!-- Tweet Template --></label>
+        <name>Tweet_Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- Uniqueness Test --></label>
+        <name>Uniqueness_Test__c</name>
+    </fields>
+    <layouts>
+        <layout>Legislation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- THOMAS Info (filled in automatically - refresh after saving) --></label>
+            <section>THOMAS Info (filled in automatically - refresh after saving)</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Target_Staffers --></label>
+        <name>Target_Staffers</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Track_a_Call --></label>
+        <name>Track_a_Call</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update_Bill --></label>
+        <name>Update_Bill</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Relates Contacts to Legislation object with many to many relationship</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>KW - Member Record, KW - Staffer Record</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Legislation related to this Contact</relationshipLabel>
+        <relationshipName>Contact_Leg_junction</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Date_Cosponsored__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Cosponsored</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legislation__c</fullName>
+        <externalId>false</externalId>
+        <label>Legislation</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Legislation__c.Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Legislation__c</referenceTo>
+        <relationshipLabel>Contacts related to this Legislation</relationshipLabel>
+        <relationshipName>Contact_Leg</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Priority__c</fullName>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Co-sponsor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Key Ally</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Leaning Oppose</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lean Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On Fence</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Oppose</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Target</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Tweet_From_Template__c</fullName>
+        <description>Tweet from Tweet template on Legislation page with merge fields filled in.</description>
+        <externalId>false</externalId>
+        <formula>if (isblank(Legislation__r.Tweet_Template__c),&quot;&quot;,
+ SUBSTITUTE(
+   SUBSTITUTE(
+      SUBSTITUTE(
+          SUBSTITUTE( Legislation__r.Tweet_Template__c, &quot;&lt;BILL&gt;&quot;, Legislation__r.Full_Bill_Number__c ), 
+     &quot;&lt;TITLE&gt;&quot;,  text(Contact__r.Salutation) ),
+   &quot;&lt;NAME&gt;&quot;,   Contact__r.FirstName &amp; &quot; &quot; &amp; Contact__r.LastName  ),
+  &quot;&lt;TWUSER&gt;&quot;,   if(isblank(Contact__r.Twitter_ID_from_KW__c), &quot;[No TW handle]&quot;, Contact__r.Twitter_ID_from_KW__c) )
+)</formula>
+        <inlineHelpText>Tweet from Tweet template on Legislation page with merge fields filled in.</inlineHelpText>
+        <label>Tweet From Template</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Contact Related to Legislation</label>
+    <nameField>
+        <displayFormat>ContLeg-{0000}</displayFormat>
+        <label>Contact-Leg ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Contacts Related to Legislation</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>OBJECT_ID</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Legislation__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Role__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <searchFilterFields>OBJECT_ID</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Contact__c</searchFilterFields>
+        <searchFilterFields>Legislation__c</searchFilterFields>
+        <searchFilterFields>Role__c</searchFilterFields>
+        <searchFilterFields>CREATED_DATE</searchFilterFields>
+        <searchFilterFields>LAST_UPDATE</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AAR__c</fullName>
+        <description>AAR for Press Hit</description>
+        <externalId>false</externalId>
+        <inlineHelpText>AAR for Press Hit</inlineHelpText>
+        <label>AAR</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Ad_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Ad Value</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Article_Teaser__c</fullName>
+        <description>Teaser section that goes in the list of press hits (as opposed to the full text).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Teaser section that goes in the list of press hits (as opposed to the full text).</inlineHelpText>
+        <label>Article Teaser</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Article_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Article Text</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Article_Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Article Title</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Details_Show__c</fullName>
+        <externalId>false</externalId>
+        <label>Details/Show</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Link__c</fullName>
+        <externalId>false</externalId>
+        <label>Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Press_Contact_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Press Contact Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Press_Outlet__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Press Outlet</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Press Hits</relationshipLabel>
+        <relationshipName>Press_Hits</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Publish_on_website__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Show press hit on force.com press site</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Show press hit on force.com press site</inlineHelpText>
+        <label>Publish on website</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Source_Media_Request__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Source Media Request</label>
+        <referenceTo>Media_Request__c</referenceTo>
+        <relationshipLabel>Press Hits</relationshipLabel>
+        <relationshipName>Press_Hits</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Deferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Possible Story</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Story Published</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waiting on someone else</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Story_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Story Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Tier__c</fullName>
+        <externalId>false</externalId>
+        <label>Tier</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Tier 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 3</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Topic__c</fullName>
+        <externalId>false</externalId>
+        <label>Topic</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Afghanistan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Alternative Therapy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Clay Hunt SAV Act</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>COV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Discrimination</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DOD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment &amp; Financial Hardship</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gala</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GI Bill</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Healthcare</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Homelessness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Iraq</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Iraqi Interpreters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Local Events</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Love</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Member Survey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mental Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military COLA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military Recruitment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military Sexual Trauma</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NGIB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NYC Veterans</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online Campaigns</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Op-Ed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Overextended Military</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partnerships</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Politics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PTSD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rally</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Red Tape Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RRRP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shutdown</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Starting a new venture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>STH2014</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Suicide</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Summer Storm</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>The Wait We Carry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Traumatic Brain Injury</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA Backlog</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vets Day</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vets Prevail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VetsRising</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wait for Care &amp; Benefits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Walter Reed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Women in the Military</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Total_Impressions__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Impressions</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Press Hit</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Tier__c</columns>
+        <columns>Press_Outlet__c</columns>
+        <columns>Details_Show__c</columns>
+        <columns>Article_Title__c</columns>
+        <columns>Status__c</columns>
+        <columns>Story_Date__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Press_Hits_Last_14_Days</fullName>
+        <columns>NAME</columns>
+        <columns>Story_Date__c</columns>
+        <columns>Press_Outlet__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Tier__c</columns>
+        <columns>Details_Show__c</columns>
+        <columns>Link__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Story_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:14</value>
+        </filters>
+        <label>Press Hits Last 14 Days</label>
+    </listViews>
+    <listViews>
+        <fullName>Press_Hits_Last_7_Days</fullName>
+        <columns>NAME</columns>
+        <columns>Story_Date__c</columns>
+        <columns>Press_Outlet__c</columns>
+        <columns>Article_Title__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Tier__c</columns>
+        <columns>Details_Show__c</columns>
+        <columns>Link__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Story_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Press Hits Last 7 Days</label>
+    </listViews>
+    <listViews>
+        <fullName>Press_Hits_This_Year</fullName>
+        <columns>NAME</columns>
+        <columns>Story_Date__c</columns>
+        <columns>Press_Outlet__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Tier__c</columns>
+        <columns>Press_Contact_Notes__c</columns>
+        <columns>Details_Show__c</columns>
+        <columns>Link__c</columns>
+        <columns>Publish_on_website__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Story_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>12/31/2011 12:00 AM</value>
+        </filters>
+        <label>Press Hits This Year</label>
+    </listViews>
+    <listViews>
+        <fullName>Suicide_Press_Hits</fullName>
+        <columns>Topic__c</columns>
+        <columns>NAME</columns>
+        <columns>Press_Outlet__c</columns>
+        <columns>Story_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Topic__c</field>
+            <operation>includes</operation>
+            <value>Suicide</value>
+        </filters>
+        <filters>
+            <field>Story_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2014 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Story_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>12/31/2014 12:00 AM</value>
+        </filters>
+        <label>Suicide Press Hits</label>
+    </listViews>
+    <listViews>
+        <fullName>The_Wait_we_Carry</fullName>
+        <columns>Press_Outlet__c</columns>
+        <columns>Article_Title__c</columns>
+        <columns>Link__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Tier__c</columns>
+        <columns>Total_Impressions__c</columns>
+        <columns>Ad_Value__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Topic__c</field>
+            <operation>includes</operation>
+            <value>The Wait We Carry</value>
+        </filters>
+        <label>The Wait We Carry</label>
+    </listViews>
+    <listViews>
+        <fullName>Tier_1</fullName>
+        <columns>NAME</columns>
+        <columns>Press_Outlet__c</columns>
+        <columns>Article_Title__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Story_Date__c</columns>
+        <columns>Link__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Tier__c</field>
+            <operation>equals</operation>
+            <value>Tier 1</value>
+        </filters>
+        <label>Tier 1</label>
+    </listViews>
+    <listViews>
+        <fullName>Tier_2</fullName>
+        <columns>NAME</columns>
+        <columns>Press_Outlet__c</columns>
+        <columns>Article_Title__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Story_Date__c</columns>
+        <columns>Link__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Tier__c</field>
+            <operation>equals</operation>
+            <value>Tier 2</value>
+        </filters>
+        <label>Tier 2</label>
+    </listViews>
+    <listViews>
+        <fullName>Tier_3</fullName>
+        <columns>NAME</columns>
+        <columns>Press_Outlet__c</columns>
+        <columns>Article_Title__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Story_Date__c</columns>
+        <columns>Link__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Tier__c</field>
+            <operation>equals</operation>
+            <value>Tier 3</value>
+        </filters>
+        <label>Tier 3</label>
+    </listViews>
+    <listViews>
+        <fullName>Wait_Time</fullName>
+        <columns>Press_Outlet__c</columns>
+        <columns>Article_Title__c</columns>
+        <columns>Link__c</columns>
+        <columns>Topic__c</columns>
+        <columns>Tier__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Topic__c</field>
+            <operation>includes</operation>
+            <value>The Wait We Carry,Wait for Care &amp; Benefits</value>
+        </filters>
+        <label>Wait Time</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PH-{00000}</displayFormat>
+        <label>Press Hit Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Press Hits</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Story_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Article_Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Press_Outlet__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Tier__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Topic__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Link__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Story_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Article_Title__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Press_Outlet__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Tier__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Story_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Article_Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Press_Outlet__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Tier__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Link__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

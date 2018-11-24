@@ -1,0 +1,31 @@
+<apex:component >
+
+  <div id="footer">   
+  <div id="footer-inner" class="region region-footer">
+  <div id="block-menu-menu-footer" class="block block-menu">
+  <div class="block-inner">
+  <div class="content">
+  <ul class="menu">
+    <li class="menu-contact-us first"><a href="http://iava.org/contact-us" title="Contact Us"></a></li>
+    <li class="menu-iava-store"><a href="http://www.iavastore.org/" title="IAVA Store"></a></li>
+    <li class="menu-pptou"><a href="http://iava.org/content/privacy-policy-and-terms-use" title="Privacy Policy and Terms of Use"></a></li>
+    <li class="menu-search last"><a href="http://iava.org/search" title="Search"></a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- /block-inner, /block -->        
+</div>
+</div>
+    
+    <!-- FB conversion tracking -->
+<script src="//ah8.facebook.com/js/conversions/tracking.js"></script><script type="text/javascript">
+try {
+  FB.Insights.impression({
+     'id' : 6002803658291,
+     'h' : 'a6a5907a30'
+  });
+} catch (e) {}
+</script>
+
+</apex:component>

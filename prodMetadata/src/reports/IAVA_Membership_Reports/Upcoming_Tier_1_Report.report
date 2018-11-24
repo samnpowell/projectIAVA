@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>IAVAEvent__c.Event_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent__c.Location_City__c</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent__c.Location_State__c</field>
+    </columns>
+    <columns>
+        <field>IAVAEvent__c.Num_Replies_Yes__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>IAVAEvent__c.Tier__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>IAVAEvent__c.Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Published</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Upcoming Tier 1 Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$IAVAEvent__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>IAVAEvent__c.Event_Date__c</dateColumn>
+        <interval>INTERVAL_NEXT7</interval>
+    </timeFrameFilter>
+</Report>

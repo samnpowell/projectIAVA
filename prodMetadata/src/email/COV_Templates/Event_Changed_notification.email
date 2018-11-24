@@ -1,0 +1,6 @@
+The {!IAVAEvent_Attendee__c.Event_Name__c} host has made the following change(s) to this event:
+
+{!IAVAEvent_Attendee__c.change_tracking_for_email__c}
+
+You can find the full event details here:
+https://my.iava.org/cov_event?id={!IAVAEvent_Attendee__c.EventId__c}

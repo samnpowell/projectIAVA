@@ -1,0 +1,12 @@
+Hi {!Contact.FirstName}, 
+
+Thanks again for requesting {!Give_Request__c.Units_Requested__c} tickets/units related to  "{!Give_Request__c.Give_Name__c}" on {!Give_Request__c.Give_Instance_Start_Date__c}. 
+
+{!if (isblank(Give_Request__c.Reconfirm_Info_from_Instance__c),"", "1. PLEASE READ: " + Give_Request__c.Reconfirm_Info_from_Instance__c)}
+
+{!if (isblank(Give_Request__c.Reconfirm_Info_from_Instance__c),"", "2. ")} TO REMAIN ELIGIBLE FOR THIS REWARD, YOU MUST CLICK THIS LINK: 
+http://iava.force.com/rucksack/dc_ReConfirm?GiveRequestID={!Give_Request__c.Id}&ContactID={!Contact.Id}&PageAction=confirmation
+
+If you have any questions, please email rucksack@iava.org. Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

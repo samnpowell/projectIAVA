@@ -1,0 +1,173 @@
+<messaging:emailTemplate subject="myIAVA {!relatedTo.Give_Instance__r.Give__r.Descriptor__c}: {!relatedTo.Give_Name__c}" recipientType="Contact" relatedToType="Give_Request__c" >
+
+<messaging:htmlEmailBody >
+
+
+    <html>
+
+        <body style="font-family: 'Helvetica', 'Arial', sans-serif;">
+
+            <table border="0" cellspacing="0" cellpadding="10" height="100%" width="100%">
+                <tr>
+                    <td height="100%" width="100%" align="center" valign="top">
+
+                        <table border="0" width="100%" cellspacing="0" cellpadding="10" style="max-width: 580px;">
+
+                            <tr bgcolor="#343432" height="66">
+                                <td>&nbsp;</td>
+                                <td align="left" valign="middle">
+                                    <a href="https://my.iava.org"><apex:image id="Logo" value="https://c.na8.content.force.com/servlet/servlet.ImageServer?id=015C00000022SKO&oid=00D80000000d0vO&lastMod=1429588592000" height="35" width="174" style="position:relative; left:-15px;"/></a>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td width="5%">&nbsp;</td>
+                                <td width="90%" >&nbsp;</td>
+                                <td width="5%">&nbsp;</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+
+                                <td>
+                                <apex:outputText value="{!relatedTo.Give_Instance__r.Give__r.Descriptor__c}" rendered="false" />
+
+                                    <p>Dear {!relatedTo.Applicant__r.FirstName}, </p>
+
+                                    <apex:outputPanel rendered="{!relatedTo.Give_Instance__r.Give__r.Type__c == 'Information'}">
+                                        <p>Thanks for requesting this {!relatedTo.Give_Instance__r.Give__r.Descriptor__c}.</p>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel rendered="{!relatedTo.Give_Instance__r.Give__r.Type__c == 'Unlimited'}">
+                                        <p>Thanks for requesting this IAVA {!relatedTo.Give_Instance__r.Give__r.Descriptor__c}.</p>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel rendered="{!AND(relatedTo.Give_Instance__r.Give__r.Type__c != 'Unlimited', relatedTo.Give_Instance__r.Give__r.Type__c != 'Information')}">
+                                        <p>
+                                            <apex:outputPanel rendered="{!relatedTo.Stage__c == 'Wait-list'}">
+                                                <p>You are now on the waitlist for the following IAVA reward: </p>
+                                            </apex:outputPanel>
+
+                                            <apex:outputPanel rendered="{!relatedTo.Stage__c == 'Final confirmation'}">
+                                                Great news – you are confirmed for the IAVA {!relatedTo.Give_Instance__r.Give__r.Descriptor__c} you requested:
+                                            </apex:outputPanel>
+
+                                            <apex:outputPanel rendered="{!relatedTo.Stage__c == 'Tentative confirmation'}">
+                                                We’ve received your request for the following IAVA {!relatedTo.Give_Instance__r.Give__r.Descriptor__c}:
+                                            </apex:outputPanel>
+
+                                            <apex:outputPanel rendered="{!relatedTo.Stage__c == 'Give requested'}">
+                                                We’ve received your request for the following IAVA {!relatedTo.Give_Instance__r.Give__r.Descriptor__c}:
+                                            </apex:outputPanel>
+
+                                            <apex:outputPanel rendered="{!and(relatedTo.Give_Instance__r.Give__r.Type__c == 'Screened Give', relatedTo.Stage__c == 'Give requested')}">
+                                                We’ve received your request for the following IAVA {!relatedTo.Give_Instance__r.Give__r.Descriptor__c}:
+                                            </apex:outputPanel>
+
+                                        </p>
+                                    </apex:outputPanel>
+
+                                    <c:cov_attachmentpuller_gives rewardId="{!relatedTo.Give_Instance__r.Give__r.Id}" max-width="250px" max-height="150px" />
+
+                                    <p>
+                                        <strong>
+                                            {!NullValue(relatedTo.Give_Name__c, "Details not found - contact IAVA for assistance")}
+                                            <apex:outputPanel rendered="{!not(isblank(relatedTo.Give_Instance__r.Start_Date__c))}">
+                                                <br />
+                                                <apex:outputText value="{0,date,MMM dd, yyyy}">
+                                                    <apex:param value="{!relatedTo.Give_Instance__r.Start_Date__c}" /> 
+                                                </apex:outputText>
+                                                <apex:outputText value=" {!relatedTo.Give_Instance__r.Start_Time__c}" rendered="{not(isblank(relatedTo.Give_Instance__r.Start_Time__c))" />
+                                            </apex:outputPanel>
+                                        </strong>
+                                    </p>
+
+
+                                    <apex:outputPanel rendered="{!OR(relatedTo.Stage__c == 'Final confirmation'
+                                                                    , relatedTo.Give_Instance__r.Give__r.Type__c == 'Information')}">
+                                        <p><em>Details:</em></p>
+
+                                        <apex:outputpanel rendered="{!isblank(relatedTo.Give_Instance__r.Give__r.Fulfillment_Instructions_rtf__c)}">
+                                            <p>(No details given)</p>
+                                        </apex:outputpanel>
+                                        <apex:outputpanel rendered="{!not(isblank(relatedTo.Give_Instance__r.Give__r.Fulfillment_Instructions_rtf__c))}">
+                                            <apex:outputField value="{!relatedTo.Give_Instance__r.Give__r.Fulfillment_Instructions_rtf__c}" />
+                                        </apex:outputpanel>
+
+
+                                        <p>&nbsp;</p>
+                                    </apex:outputPanel>
+
+
+                                    <apex:outputPanel rendered="{!relatedTo.Stage__c == 'Wait-list'}">
+                                        <p>Because of high demand for this reward, there is limited availability. We’ve placed you on a waiting list and we’ll be in touch to let you know if your request has been approved.</p>
+                                    </apex:outputPanel>
+
+
+                                    <apex:outputPanel rendered="{!AND(relatedTo.Give_Instance__r.Give__r.Type__c != 'Unlimited', relatedTo.Give_Instance__r.Give__r.Type__c != 'Information')}">
+                                    <p>
+
+                                            <apex:outputPanel rendered="{!relatedTo.Stage__c == 'Final confirmation'}">
+                                                We hope you enjoy your experience!
+                                            </apex:outputPanel>
+
+                                            <apex:outputPanel rendered="{!relatedTo.Stage__c == 'Tentative confirmation'}">
+                                                You are tentatively on the list to receive the reward. However we’ll be in touch before the reward date to confirm the availability of the reward.
+                                            </apex:outputPanel>
+
+                                            <apex:outputPanel rendered="{!and(relatedTo.Give_Instance__r.Give__r.Type__c == 'Screened Give', relatedTo.Stage__c == 'Give requested')}">
+                                                This is a Premium Reward, so availability is highly limited. We’ll be in touch before the reward date to let you know whether you're one of the lucky ones to receive the reward.
+                                            </apex:outputPanel>
+
+
+                                    </p>
+                                    </apex:outputPanel>
+
+
+                                    <apex:outputPanel rendered="{!not(isblank(relatedTo.Units_Requested__c))}">
+                                        <p>
+                                            <br />
+                                            <em>Number of tickets/units:</em> {!relatedTo.Units_Requested__c}
+                                        </p>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel rendered="{!relatedTo.Give_Instance__r.Give__r.Type__c == 'Information'}">
+                                        <p>We hope you find this information valuable.</p>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel rendered="{!relatedTo.Give_Instance__r.Give__r.Type__c == 'Unlimited'}">
+                                        <p>We hope you enjoy your experience.</p>
+                                    </apex:outputPanel>
+
+
+
+                                    <p>Thank you for supporting IAVA.</p>
+
+                                    <p>&nbsp;</p>
+
+                                </td>
+
+                                <td>
+                                    &nbsp;
+                                </td>
+
+                            </tr>
+
+
+                        </table>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </body>
+
+    </html>
+
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

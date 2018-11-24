@@ -1,0 +1,198 @@
+<apex:component >
+
+
+	<script type="text/javascript">
+
+		j$ = jQuery.noConflict();
+
+		// function to check whether fields are present (accepts array argument)
+		var elementsArePresent = function elementsArePresent(elementsArray) {
+			var noElementsMissingSoFar = true;
+		    for (var i=0; i<elementsArray.length && noElementsMissingSoFar; i++) {
+		    	// console.log('noElementsMissingSoFar: ' + noElementsMissingSoFar);
+		    	// console.log('now checking for: ' + elementsArray[i]);
+		        if(!j$(elementsArray[i]).length) {
+		        	noElementsMissingSoFar = false;
+		        	// console.log(elementsArray[i] + ' is missing');
+		        }
+		    }
+		    // console.log('about to return that elementsArePresent = '+ noElementsMissingSoFar);
+		    return noElementsMissingSoFar;
+		};
+
+
+
+		// function to get URL parameters from https://gist.github.com/1771618
+		(function($){
+			$.getUrlVar = function(key){
+				var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search); 
+				return result && unescape(result[1]) || ""; 
+			};
+		})(jQuery);
+
+		// function to get URL parameters as array from http://www.designchemical.com/blog/index.php/jquery/8-useful-jquery-snippets-for-urls-querystrings/
+		var getUrlParamsAsArray = function getUrlParamsAsArray() {
+				var vars = [], hash;
+				    var q = document.URL.split('?')[1];
+				    if(q != undefined){
+				        q = q.split('&');
+				        for(var i = 0; i < q.length; i++){
+				            hash = q[i].split('=');
+				            // vars.push(hash[1]);
+				            vars[hash[0]] = hash[1];
+				        }
+				}
+				return vars;
+		};
+
+		// set form field based on URL parameter
+		var setFieldFromUrl = function setFieldFromUrl(fieldSelector, argument) {
+	        argValue = j$.getUrlVar(argument);
+	        if (argValue != '' && elementsArePresent([fieldSelector])) {
+	            j$(fieldSelector).val(argValue);
+	            return true;
+	        } else {
+	        	return false;
+	        }
+		};
+
+		// // autosubmit form based on URL parameter = 'true'
+		// var submitFormFromUrl = function submitFormFromUrl(formSelector, argument) {
+	 //        argValue = $.getUrlVar(argument);
+	 //        if (argValue == 'true' && elementsArePresent([formSelector])) {
+	 //            $(formSelector).submit();
+	 //        }
+		// };
+
+		var setField = function setField(selector, value) {
+			j$(selector).val(value); 
+		};
+
+		var setProp = function setProp(selector, prop, value) {
+			j$(selector).prop(prop, value);
+		}
+
+		var toggleHidden = function toggleHidden(selector) {
+			j$(selector).toggle();
+		}
+
+		var swapClass = function swapClass(selector, className1, className2) {
+			if (j$(selector).hasClass(className1)) {
+				j$(selector).addClass(className2);
+				j$(selector).removeClass(className1);				
+		    } else if (j$(selector).hasClass(className2)) {
+				j$(selector).addClass(className1);
+				j$(selector).removeClass(className2);				
+		    }
+		}
+
+		var addClass = function addClass(selector, className) {
+			j$(selector).addClass(className);
+		}
+
+		var removeClass = function addClass(selector, className) {
+			j$(selector).removeClass(className);
+		}
+
+		var addToArray = function addToArray(arrayValue, key, value) {
+			return removeFromArray(arrayValue, key) + key + ':' + value + ';';
+		}
+
+		var removeFromArray = function removeFromArray(arrayValue, key) {
+			if (arrayValue != null) {
+				var startSnipIndex = arrayValue.indexOf(key);
+				if (startSnipIndex >= 0) {
+					var restAfterKey = arrayValue.substring(startSnipIndex + key.length);
+					var snippedArray = arrayValue.substring(0, startSnipIndex) + restAfterKey.substring(restAfterKey.indexOf(';') + 1);
+					return snippedArray;
+				} else {
+					return arrayValue;
+				}
+			} else {
+				return '';
+			}
+		}
+
+
+		/* http://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse */
+		function selectText(element) {
+		    var doc = document
+		        , text = doc.getElementById(element)
+		        , range, selection
+		    ;    
+		    if (doc.body.createTextRange) { //ms
+		        range = doc.body.createTextRange();
+		        range.moveToElementText(text);
+		        range.select();
+		    } else if (window.getSelection) { //all others
+		        selection = window.getSelection();        
+		        range = doc.createRange();
+		        range.selectNodeContents(text);
+		        selection.removeAllRanges();
+		        selection.addRange(range);
+		    }
+		}
+		function jumpToBottom() {
+			j$('html, body').scrollTop( j$(document).height() );
+		}
+
+		/* Characters-left counter for length-limited fields */
+
+		var countCharsRemaining = function countCharsRemaining(fieldSelectorToCount, counterSelector, charsAllowed, countdownStart) {
+			var characters = charsAllowed;
+		    var countdown = countdownStart;
+		    j$(fieldSelectorToCount).keyup(function(){
+		        if(j$(this).val().length > characters){
+		        	j$(this).val(j$(this).val().substr(0, characters));
+		        }
+			    var remaining = characters -  j$(this).val().length;
+			    if (remaining > countdown && j$(counterSelector).not(':empty')) {
+			    	j$(counterSelector).html("");
+			    } else if (remaining <= countdown) {
+				    j$(counterSelector).html(remaining + " characters remaining");
+				}
+			    if(remaining <= 10) {
+			        j$(counterSelector).css("color","red");
+			    }
+			    else {
+			        j$(counterSelector).css("color","black");
+			    }
+		    });
+		}
+
+		var closeIfModal = function closeIfModal() {
+			if (window.parent != window.self) {
+	 		    // console.log('we are not in the top window. calling window.parent.closeModal()');
+				window.parent.closeModal();
+			} else {
+				var closetarget = j$('#closetarget').val();
+				if (closetarget != null && closetarget != '') { 
+					window.location.href = closetarget;
+				} else {
+					window.location.href = 'cov_rrrp';
+				}
+			}
+		}
+
+		var hideElementIfTextFound = function hideElementIfTextFound(textSelector, textToFind, targetSelector) {
+				var selector = textSelector + (textToFind.len ? ':contains(' + textToFind + ')' : '');
+				j$(selector).each(function(i){
+						j$(this).closest(targetSelector).hide();
+                });
+		}
+
+
+		j$(document).ready(function() {
+			j$('[data-toggle="tooltip"]').tooltip();
+
+			j$('.chk-nonvet').click(function() {
+				j$('.chk-vet').prop('checked', false);
+			});
+			j$('.chk-vet').click(function() {
+				j$('.chk-nonvet').prop('checked', false);
+			});
+		});
+
+	</script>
+
+</apex:component>

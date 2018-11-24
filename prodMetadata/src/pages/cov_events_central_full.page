@@ -1,0 +1,241 @@
+<apex:page name="myIAVA Dashboard" id="cov_dashboard" sidebar="false" showheader="false" applyBodyTag="false" applyHtmlTag="false" controller="cov_events_central_mobile_controller">
+
+<apex:composition template="cov_template">
+
+
+    <apex:define name="page-title">
+        myIAVA VetTogether Central
+    </apex:define>
+
+    <apex:define name="meta-tags">
+        <meta property="og:title" content="myIAVA VetTogether Central" />
+<!--             <meta property="og:image" content="{!left($Site.currentSiteUrl, len($Site.currentSiteUrl) - len($Site.Prefix) - 1) + URLFOR($Action.Attachment.Download, ce.picFullId)}" />
+-->         <meta property="og:url" content="{!$Site.currentSiteUrl}" />
+        <meta property="og:description" content="A vibrant, peer-supported online community for veterans of Iraq and Afghanistan." />
+        <meta property="og:type" content="non-profit" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </apex:define>
+
+
+    <apex:define name="layout">
+
+        <div id="dashboard-page">
+
+            <div class="row-fluid">
+                <div class="col-sm-12">
+
+                        <style type="text/css">
+                            /* general website definitions, adapted */
+                            .bootstrap .btn.btn-cta {
+                              background: #DCF428;
+                              color: #343432;
+                            }
+                            .green-bar { width: 300px; height: 0; border-top: 7px solid #DCF428; border-right: 7px solid transparent; }
+                            .header-tall {
+                              height: 150px;
+                            }
+
+                            /* Top Header Slogan For VetTogether (and other) page */
+                            .header-slogan { position: absolute; width: 610px; top: 230px; left: 0; right: 0; margin: 0 auto; }
+
+                            .header-slogan-tier-1 { margin-bottom: 4px; height: 76px; float: right; clear: both; }
+                            .header-slogan-tier-1 .slice-left { float: left; border-bottom: 76px solid rgba(0, 0, 0, 0.7); border-left: 45px solid transparent; -webkit-transform: scale(0.9999); -ms-transform: scale(0.9999); transform: scale(0.9999); }
+                            .header-slogan-tier-1 .header-slogan-title { padding-left: 16px; padding-right: 28px; line-height: 76px; font-size: 56px; }
+
+                            .header-slogan-tier-2 { height: 103px; float: left; clear: both; }
+                            .header-slogan-tier-2 .slice-right { float: right; border-top: 103px solid rgba(0, 0, 0, 0.7); border-right: 60px solid transparent; -webkit-transform: scale(0.9999); -ms-transform: scale(0.9999); transform: scale(0.9999); }
+                            .header-slogan-tier-2 .header-slogan-title { padding-left: 31px; padding-right: 18px; line-height: 103px; font-size: 78px; }
+
+                            .bootstrap .header-slogan-title { display: inline-block; background-color: rgba(0, 0, 0, 0.7); letter-spacing: -0.031em; margin: 0; text-align: center; color: #DCF428; }
+
+
+                            .header-slogan { 
+                                top: 30px;
+                                width: 520px;
+                            }
+                            /* prevent header being too wide on mobile */
+                            @media only screen and (max-device-width: 480px) {
+                                .header-slogan {
+                                    width: 100%;
+                                }
+                            }
+
+
+
+                            .header-slogan-tier-1 .header-slogan-title {
+                                font-size: 30px;
+                                line-height: 46px;
+                            }
+                            .header-slogan-tier-1 {
+                                height: 46px;
+                            }
+                            .header-slogan-tier-1 .slice-left {
+                                border-bottom-width: 46px;
+                                border-left-width: 30px;
+                            }
+                            .header-slogan-tier-2 .header-slogan-title {
+                                font-size: 45px;
+                                line-height: 55px;
+                            }
+                            .header-slogan-tier-2 {
+                                height: 50px;
+                            }
+                            .header-slogan-tier-2 .slice-right {
+                                border-top-width: 55px; 
+                                border-right-width: 38px;
+                            }
+
+
+                            #vt-map-canvas #pac-input {
+                                font-size: 12px;
+                            }
+
+                        </style>
+
+
+                        <style type="text/css">
+                            /* adjustments for full width window */
+
+                            #container-overall {
+                                width: 100%;
+                                max-width: 1800px;
+                            }
+
+                            @media only screen and (min-width: 1200px) {
+                            
+                                .header-tall {
+                                    height: 280px;
+                                }
+
+                                .header-slogan-tier-1 {
+                                    height: 54px;
+                                    margin-bottom: 58px;
+                                }
+
+                                .header-slogan-tier-1 .header-slogan-title {
+                                    font-size: 40px;
+                                    line-height: 54px;
+                                }
+
+                                .header-slogan-tier-2 {
+                                    height: 65px;
+                                }
+
+                                .header-slogan-tier-2 .header-slogan-title {
+                                    font-size: 55px;
+                                    line-height: 65px;
+                                }
+
+                                .header-slogan-tier-1 .slice-left {
+                                    border-bottom-width: 54px;
+                                }
+
+                                .header-slogan-tier-2 .slice-right {
+                                    border-top-width: 64px;
+                                }
+
+                            }
+
+                            /* larger fonts - move to cov_stylesheets.component to implement site-wide */
+
+                            body {
+                                font-size: 18px;
+                                line-height: 22px;
+                            }
+
+                            .bootstrap .table>thead>tr>th, .bootstrap .table>tbody>tr>th, .bootstrap .table>tfoot>tr>th, .bootstrap .table>thead>tr>td, .bootstrap .table>tbody>tr>td, .bootstrap .table>tfoot>tr>td {
+                                line-height: 1.6;
+                            }
+
+                            .smaller {
+                                font-size: 11px;
+                            }
+
+                            #dashboard-chatter {
+                                font-size: 14px;
+                            }
+
+                        </style>
+
+                        <div class="header-tall" style="background: url('{!URLFOR($Resource.cov_files,'img/banners/vt-short-banner-2x.jpg')}') #343432 no-repeat; background-position: center center; background-size: cover;">
+                            <div class="row-fluid">
+                                <div class="no-padding-tb relative">
+                                    <div class="header-slogan">
+                                        <div class="header-slogan-tier-1">
+                                            <h1 class="header-slogan-title font-light">Let's Have a</h1>
+                                            <div class="slice-left"></div>
+                                        </div>
+                                        <div class="header-slogan-tier-2">
+                                            <h1 class="header-slogan-title font-bold">#VetTogether</h1>
+                                            <div class="slice-right"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+            <div class="row-fluid">  
+
+                <div class="col-sm-12 col-md-5 col-md-push-7">
+
+                    <div id="profilephotoprompt-div">
+                        <apex:define name="ProfilePhoto_Prompt_Dash">
+                            <apex:include pageName="cov_profilephoto_prompt_dash" />
+                        </apex:define> 
+                    </div>
+
+                    <apex:define name="ProfilePanel_Dash">
+                        <apex:include pageName="cov_profilepanel_dash" />
+                    </apex:define> 
+
+                    <div id="event-resources-div">
+                        <apex:define name="Event_Resources_Dash">
+                            <apex:include pageName="cov_event_resources_dash" />
+                        </apex:define> 
+                    </div>
+
+                    <apex:define name="EventsMap_Dash">
+                        <apex:include pageName="cov_eventsmap_dash" />
+                    </apex:define>  
+
+                    <apex:define name="SocialStream_Dash">
+                        <apex:include pageName="cov_socialstream_dash" />
+                    </apex:define>  
+
+
+                </div>
+
+                <div class="col-sm-12 col-md-7 col-md-pull-5">
+
+                    <apex:define name="Events_Dash">
+                        <apex:include pageName="cov_events_dash" />
+                    </apex:define>  
+
+                    <a name="feed" />
+                    <div class="dashboard-list">
+                        <div id="chatter_header">
+                            <div class="box-heading"><div class="box-heading-content"><h5>#VetTogether Hosts Group</h5></div><div class="relative pull-left"><div class="box-heading-edge"></div></div></div>
+                        </div>
+                        <div class="well box-content" id="dashboard-chatter">
+                                <!-- <chatter:newsfeed id="chatter_on_dashboard" /> -->
+                            <c:cov_feed_customized entityId="{!if(isSandbox, '0F9M00000000jG7', '0F9C0000000CpZ8')}" disableDefaultToEveryone="true" />
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+            
+    </apex:define>
+
+</apex:composition> 
+
+</apex:page>

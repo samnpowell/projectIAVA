@@ -1,0 +1,14 @@
+<head><center><img src="https://c.na8.content.force.com/servlet/servlet.ImageServer?id=015C0000002vAlD&oid=00D80000000d0vO&lastMod=1471649492000" alt="IAVA-logo"/></center></head>
+
+<p>Hi {!IAVAEvent_Attendee__c.Event_Attendee_s_First_Name__c},</p>
+<p>Thank you for signing up for yesterday's VetTogether! We hope you were able to make it to the event, and that you had a great time. While we'd love to have you join us for another event in the future, there is no shortage of ways to get involved now in supporting this generation of veterans. Here's what you can do:</p>
+<ol type="1">
+   <li>Join our <a href="https://iava.org/she-who-borne-the-battle/">She Who Borne The Battle Campaign</a> to support women veterans.</li>
+   <li><a href="https://iava.org/donate/?tr=VetTogetherFollowUpEmail">Donate</a> to IAVA to help us continue our important work of recognizing and supporting all veterans.</li>
+   <li>Follow us on <a href="https://www.facebook.com/IAVA.org/">Facebook</a>, <a href="https://twitter.com/iava">Twitter</a>, and <a href="https://www.instagram.com/iava/?hl=en">Instagram</a> - and share with your networks. We're stronger together!</li>
+   <!--<li>Sign up for the <a href="https://iava.org/press/">Daily News Brief</a> - stay in the know about issues affecting our community.</li>-->
+   <li><a href="https://www.oscarmike.org/collections/iava">Gear up!</a> Spread the word about IAVA by sporting your own gear - made in the USA by veteran-owned business, Oscar Mike.</li>
+</ol>
+<p>Thanks again for being a part of the community - we hope to see you again soon!</p>
+<p>Best,</p>
+<p>The IAVA Team</p>

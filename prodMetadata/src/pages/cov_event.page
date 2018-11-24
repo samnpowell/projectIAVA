@@ -1,0 +1,957 @@
+<apex:page controller="cov_events_controller" action="{!getEventID}" name="Event detail" id="cov_event" sidebar="false" showheader="false" standardStylesheets="true" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+
+
+<apex:composition template="{!templateName}">
+
+	<apex:define name="page-title">
+		Event: {!ce.Name} - myIAVA
+	</apex:define>
+
+	<apex:define name="meta-tags">
+		<apex:outputPanel rendered="{!ce != null}">
+			<meta property="og:title" content="{!ce.Name}" />
+			<meta property="og:image" content="{!if(ce.hasPicFull, left($Site.currentSiteUrl, len($Site.currentSiteUrl) - len($Site.Prefix) - 1) + URLFOR($Action.Attachment.Download, ce.picFullId), '')}" />
+			<meta property="og:url" content="{!$Site.currentSiteUrl + 'cov_event?id=' + ce.eId}" />
+		    <meta property="og:description" content="{!ce.eventType} Event - myIAVA" />
+            <!-- lines 16-19 added 2016-10-27 by SP for IAVA Endorsed Event flags -->
+            <apex:outputPanel rendered="{!ce.isEndorsed}">
+                <meta property="og:endorsed" content="Endorsed by IAVA" />
+            </apex:outputPanel>
+			<meta property="og:type" content="activity" />
+		</apex:outputPanel>
+	</apex:define>
+
+	<apex:define name="layout"> 
+
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=236819866480534&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+      	<c:cov_include_js_jquery /> 	
+      	<c:cov_include_js_validationengine /> 
+      	<c:cov_include_css_validationengine />
+
+		<div class="popup-container" id="event-container">
+		
+		  <div class="detail-pg">
+
+		  <apex:outputPanel rendered="{!ce == null}">
+		  	<p>Event not found.</p>
+		  </apex:outputPanel>
+
+		  <apex:outputPanel rendered="{!AND(ce != null, ce.status == 'Canceled')}">
+		  	<p>This event has been canceled.</p>
+		  </apex:outputPanel>
+
+		  <apex:outputPanel rendered="{!AND(ce != null, ce.status != 'Canceled')}">
+
+			  <apex:outputPanel rendered="{!ce.organizerType == 'Distributed' && ce.organizerId == $User.Id}">
+			  	  <apex:outputPanel rendered="{!not(ce.past)}">
+					  <div class="pull-right">
+					  	<a href="cov_event_entry?id={!ce.eId}{!if(not(isblank(headerParam)),'&header=' + headerParam, '')}">[EDIT EVENT]</a>
+					  </div>
+			      </apex:outputPanel>
+	          	  <apex:outputPanel rendered="{!ce.status == 'Unpublished'}">
+	          	  	<p class="bg-warning">This event is unpublished and invisible to other users.<br /><br/></p>
+	          	  </apex:outputPanel>
+	          	  <apex:outputPanel rendered="{!ce.status == 'Published'}">
+					  <div>
+					  	<a href="cov_event_checkin?id={!ce.eId}">[Reply List and Attendance Tracking]</a>
+					  </div>
+			      </apex:outputPanel>
+			  </apex:outputPanel>
+			
+			  <!-- <apex:pageMessages id="messages"/> -->
+
+			  <div class="heading-category"><apex:outputText value="[{!ce.eventType}]" /></div>
+              <!-- lines 73-74 added 2016-10-27 by SP for IAVA Endorsed Event flags -->
+              <div class="heading-category"><apex:outputText value="Endorsed by IAVA" rendered="{!ce.isEndorsed}" /></div>
+
+			  <apex:outputPanel rendered="{!ce.hasPicFull}">
+			  	<div class="detail-image">
+			  		<!-- <apex:outputText escape="false" value="{!ce.picFull}" /> -->
+			  		<!-- <apex:image value="{!ce.picFull}" styleClass="detail-img" alt="{!ce.Name}" /> -->
+			  		<img src="{!URLFOR($Action.Attachment.Download, ce.picFullId)}" styleClass="detail-img" alt="{!ce.Name}" />
+			  	</div>
+			  </apex:outputPanel>
+			
+			  <h2><apex:outputText value="{!ce.name}" /></h2>
+			  <p><apex:outputText rendered="{!ce.past}" value="[Event date has passed] " /></p>
+
+	          	<apex:form styleClass="validated-form">
+
+			  		<apex:outputPanel id="joinButton" rendered="{!AND(NOT(ISPICKVAL($User.UserType,'Guest')), conId != null, OR(ce.status == 'Published', ce.status == 'Unpublished'))}">
+
+<!-- 								<apex:outputPanel rendered="{!ce.collectGuestInfo}" id="guestNumberPanel">
+									<div class="form-group">
+										<div class="form-inline">
+										  <div class="form-group">
+										    <label for="numGuests">Number of Guests: &nbsp;</label>
+										    	<apex:selectList id="numGuests" value="{!numGuestsChosen}" size="1" styleClass="form-control" >
+										    		<apex:actionSupport event="onchange" action="{!refreshGuestSection}" reRender="guestInfoPanel" />
+													<apex:selectOptions value="{!guestNumberList}"/>
+												</apex:selectList>
+										  </div>
+										</div>
+									</div>
+								</apex:outputPanel> -->
+
+
+	                			<div class="btn-group">
+	                        			<span class="{!if(ce.replyStatus == 'Yes','btn-green','')}">
+		                        			<apex:commandButton value="Yes" action="{!eventReply}" styleclass="btn btn-default" rerender="joinButton,guestArea" disabled="{!ce.replyStatus == 'Yes' || ce.past || not(ce.OpenForSignup)}" onclick="document.getElementById('status-update-msg').innerHTML = 'one moment...';">
+		   										<apex:param name="eventId" value="{!ce.eId}" assignTo="{!eventIdChosen}"/>
+		   										<apex:param name="replyValue" value="Yes" assignTo="{!replyValue}"/>
+		   									</apex:commandButton>
+	   									</span>
+
+	                        			<span class="{!if(ce.replyStatus == 'No','btn-red','')}">
+		                        			<apex:commandButton value="No" action="{!eventReply}" styleclass="btn btn-default" rerender="joinButton,discuss-panel,discuss-panel-heading,guestArea" disabled="{!ce.replyStatus == 'No' || ce.past}" onclick="document.getElementById('status-update-msg').innerHTML = 'one moment...';">
+		   										<apex:param name="eventId" value="{!ce.eId}" assignTo="{!eventIdChosen}"/>
+		   										<apex:param name="replyValue" value="No" assignTo="{!replyValue}"/>
+		   									</apex:commandButton>
+	   									</span>
+
+<!-- 	                        			<span class="{!if(ce.replyStatus == 'Maybe','btn-yellow','')}">
+		                        			<apex:commandButton value="Maybe" action="{!eventReply}" styleclass="btn btn-default" rerender="joinButton" disabled="{!ce.replyStatus == 'Maybe' || ce.past}" onclick="document.getElementById('status-update-msg').innerHTML = 'one moment...';">
+		   										<apex:param name="eventId" value="{!ce.eId}" assignTo="{!eventIdChosen}"/>
+		   										<apex:param name="replyValue" value="Maybe" assignTo="{!replyValue}"/>
+		   									</apex:commandButton>
+	   									</span> -->
+
+								</div>
+
+	                      		<span class="eventStatus-section">
+									<apex:outputPanel rendered="{!AND(ce.replyStatus != 'Yes', NOT(ce.past), NOT(ce.openForSignup))}">
+										<span class="eventStatus-Label">Event is full.</span>
+									</apex:outputPanel>
+
+	   								<apex:outputPanel rendered="{!AND(ce.replyStatus == null, not(ce.past), ce.openForSignup)}">
+										<span class="eventStatus-Label">You have not yet replied.</span>
+									</apex:outputPanel>
+	   								<apex:outputPanel rendered="{!AND(ce.replyStatus == null, ce.past)}">
+										<span class="eventStatus-Label">You did not reply.</span>
+									</apex:outputPanel>
+
+									<apex:outputPanel rendered="{!AND(ce.replyStatus == 'Invited', not(ce.past), ce.openForSignup)}">
+										<span class="eventStatus-Label">You have been invited but have not yet replied.</span>
+									</apex:outputPanel>
+									<apex:outputPanel rendered="{!AND(ce.replyStatus == 'Invited', ce.past)}">
+										<span class="eventStatus-Label">You were invited but did not reply.</span>
+									</apex:outputPanel>
+
+									<apex:outputPanel rendered="{!AND(ce.replyStatus != 'Invited', ce.replyStatus != null, not(ce.past))}">
+										<span class="eventStatus-Label">Your current reply is:
+										</span>
+										<apex:outputText value=" {!ce.replyStatus}" styleClass="eventStatus" />
+									</apex:outputPanel>
+									<apex:outputPanel rendered="{!AND(ce.replyStatus != 'Invited', ce.replyStatus != null, ce.past)}">
+										<span class="eventStatus-Label">Your reply was:
+										</span>
+										<apex:outputText value=" {!ce.replyStatus}" styleClass="eventStatus" />
+									</apex:outputPanel>
+								</span>	
+
+								<div id="status-update-msg" style="margin: 20px 0 0 50px; display: block;">
+
+								</div>
+
+								<div id="page-refresher">
+									<apex:outputPanel rendered="{!includePageRefresher}">
+										<apex:commandLink action="{!refreshPage}"><b>Refresh to see changes </b>
+											<apex:outputPanel rendered="{!and(or(ce.replyStatus == 'Yes', ce.replyStatus == 'Maybe'), not(suppressGroupDisplay))}">
+											<b> and event feed</b>
+											</apex:outputPanel>
+										</apex:commandLink>
+									</apex:outputPanel>
+								</div>
+
+					</apex:outputPanel>
+
+					<apex:outputPanel id="guestArea">
+				  		<apex:outputPanel rendered="{!ce.collectGuestInfo}">
+
+							<apex:outputPanel id="guestHeaderPanel" layout="none">
+								<apex:outputPanel rendered="{!showGuestsHeader}" >
+									<h3>Your Guests</h3>
+								</apex:outputPanel>
+							</apex:outputPanel>
+
+							<apex:outputPanel id="guestDisplayPanel" layout="none">
+								<table class="table form-group-sm">
+
+									<apex:variable value="{!0}" var="guestIndex"/>
+									<apex:repeat value="{!ce.guests}" var="gst">
+
+										<apex:outputPanel rendered="{!guestEditIndex != guestIndex}" layout="none">
+
+											<tr>
+												<td>
+													<div>
+														<p class="form-control-static"><apex:outputText value="{!guestIndex + 1}." /></p>
+													</div>
+												</td>
+												<apex:outputPanel rendered="{!ce.collectGuestName}" layout="none">
+													<td>
+														<p class="form-control-static">
+															<apex:outputText value="{!gst.FirstName}" rendered="{!gst.displayInfo}" />
+															<apex:outputText value="*" rendered="{!NOT(gst.displayInfo)}" />
+														</p>
+													</td>
+													<td>
+														<p class="form-control-static">
+															<apex:outputText value="{!gst.LastName}" rendered="{!gst.displayInfo}" />
+															<apex:outputText value="*" rendered="{!NOT(gst.displayInfo)}"  />
+														</p>
+													</td>
+												</apex:outputPanel>
+
+												<apex:outputPanel rendered="{!ce.collectGuestEmail}" layout="none">
+													<td>
+														<p class="form-control-static">
+															<apex:outputText value="{!gst.Email}"  rendered="{!gst.displayInfo}" />
+															<apex:outputText value="*" rendered="{!NOT(gst.displayInfo)}" />
+														</p>
+													</td>
+												</apex:outputPanel>	
+
+												<apex:outputPanel rendered="{!ce.collectGuestPhone}" layout="none">
+													<td>
+														<p class="form-control-static">
+															<apex:outputText value="{!gst.Phone}" rendered="{!gst.displayInfo}" />
+															<apex:outputText value="*" rendered="{!NOT(gst.displayInfo)}" />
+														</p>
+													</td>
+												</apex:outputPanel>	
+
+												<td>
+													<apex:outputPanel rendered="{!AND(not(ce.past), gst.displayInfo)}" layout="none">
+														<apex:commandLink action="{!deleteGuest}" onclick="if(!confirm('Are you sure you want to remove this guest from the event?')){return false};">
+															<span class="glyphicon glyphicon-trash"></span>
+															<apex:param name="guestIndexDelete" value="{!guestIndex}" assignTo="{!guestIndexChosen}"/>
+														</apex:commandLink>
+													</apex:outputPanel>
+<!-- 															<apex:commandLink action="{!editGuest}">
+														<span class="glyphicon glyphicon-pencil"></span>
+														<apex:param name="guestIndexEdit" value="{!guestIndex}" assignTo="{!guestIndexChosen}"/>
+													</apex:commandLink> -->
+												</td>
+											</tr>
+
+										</apex:outputPanel>
+
+										<apex:variable var="guestIndex" value="{!guestIndex + 1}"/>
+									</apex:repeat>
+
+									<apex:outputPanel rendered="{!AND(ISPICKVAL($User.UserType,'Guest'), someGuestsHidden)}" layout="none">
+										<tr>
+											<td colspan="{!2 + if(ce.collectGuestName,2,0) + if(ce.collectGuestEmail,1,0) + if(ce.collectGuestPhone,1,0)}">
+												<p class="italicer">* = To edit or delete previous guest info, <a href="cov_login?startURL={!currentEncodedUrlWithoutBase}">log into myIAVA</a>.</p>
+											</td>
+										</tr>
+									</apex:outputPanel>
+
+								</table>
+							</apex:outputPanel>
+
+							<apex:outputPanel id="guestEditPanel">
+								<apex:outputPanel rendered="{!inGuestEditMode}" layout="none">
+									
+										<div class="form-inline form-inline-row">
+											<apex:outputPanel rendered="{!ce.collectGuestName}" layout="none">
+												<div class="form-group form-group-sm">
+													<label class="sr-only" for="guest-first">First Name{!if(ce.guestNameRequired, ' (required)', '')}</label>
+													<apex:inputText value="{!guestInputFirstName}" styleClass="form-control{!if(ce.guestNameRequired, ' validate[required]', '')}" id="guest-first" html-placeholder="First Name{!if(ce.guestNameRequired, '*', '')}" />
+												</div>
+												<div class="form-group form-group-sm">
+													<label class="sr-only" for="guest-last">Last Name{!if(ce.guestNameRequired, ' (required)', '')}</label>
+													<apex:inputText value="{!guestInputLastName}" styleClass="form-control{!if(ce.guestNameRequired, ' validate[required]', '')}" id="guest-last" html-placeholder="Last Name{!if(ce.guestNameRequired, '*', '')}" />
+												</div>
+											</apex:outputPanel>
+
+											<apex:outputPanel rendered="{!ce.collectGuestEmail}" layout="none">
+												<div class="form-group form-group-sm">
+													<label class="sr-only" for="guest-last">Email{!if(ce.guestEmailRequired, ' (required)', '')}</label>
+													<apex:input type="email" value="{!guestInputEmail}" styleClass="form-control{!if(ce.guestEmailRequired, ' validate[required,custom[email]]', '')}" id="guest-email" html-placeholder="Email{!if(ce.guestEmailRequired, '*', '')}" />
+												</div>
+											</apex:outputPanel>
+
+											<apex:outputPanel rendered="{!ce.collectGuestPhone}" layout="none">
+												<div class="form-group form-group-sm">
+												<label class="sr-only" for="guest-last">Mobile Phone{!if(ce.guestPhoneRequired, ' (required)', '')}</label>
+												<apex:input type="tel" value="{!guestInputPhone}" styleClass="form-control{!if(ce.guestPhoneRequired, ' validate[required]', '')}" id="guest-phone" html-placeholder="Mobile Phone{!if(ce.guestPhoneRequired, '*', '')}" />
+												</div>
+											</apex:outputPanel>
+
+											<div class="form-group form-group-sm">
+												<apex:commandLink action="{!saveGuest}" styleClass="btn btn-default btn-sm" >
+													<apex:outputText value="{!if(isnull(guestEditIndex), 'Add', 'Done')}" />
+												</apex:commandLink>
+											</div>
+										</div>
+								</apex:outputPanel>
+							</apex:outputPanel>
+
+
+							<apex:outputPanel id="addGuestPanel">
+								<apex:outputPanel rendered="{!AND(not(inGuestEditMode), OR(ce.canAddGuests, ce.guestListFull) )}">
+									<apex:outputPanel rendered="{!ce.canAddGuests}">
+										<div>
+											<apex:commandLink action="{!addGuest}" rerender="guestArea,addGuestPanelLower"><span class="glyphicon glyphicon-plus-sign"></span> Add Guest</apex:commandLink>
+										</div>
+									</apex:outputPanel>
+
+									<apex:outputPanel rendered="{!ce.guestListFull}">
+										<div class="lighter">
+											<span class="glyphicon glyphicon-ban-circle"></span> Max Guests Reached
+										</div>
+									</apex:outputPanel>
+								</apex:outputPanel>
+							</apex:outputPanel>
+
+
+
+
+
+						</apex:outputPanel>
+					</apex:outputPanel>
+
+				</apex:form>		
+
+
+				<apex:outputPanel styleclass="conn-contact-msg" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest')) && conId == null}">
+					No connected contact, signup unavailable
+				</apex:outputPanel>
+
+			  
+			  <table class="table">
+			  <tbody>
+			  	
+			  <apex:outputPanel rendered="{!ce.nextDate != null}" >
+					<tr>
+						<td class="heading">When:</td>
+						<td>
+						     <h4>
+						  	 <apex:outputText value="{0,date,MMM' 'dd', 'yyyy}"><apex:param value="{!ce.nextDate}" /></apex:outputText>
+						  	 <apex:outputText rendered="{!(ce.endDate != null) && (ce.endDate != ce.nextDate)}" value="- {0,date,MMM' 'dd', 'yyyy}"><apex:param value="{!ce.endDate}" /></apex:outputText>
+							 </h4>
+
+							 <apex:outputPanel rendered="{!ce.startTime != null}">
+							 	<h4>
+									<apex:outputText value="{!ce.startTime}" />
+									<apex:outputText value=" - {!ce.endTime}" rendered="{!ce.endTime != null}" />
+								</h4>
+							 </apex:outputPanel>
+
+
+						</td>
+					</tr>
+			  </apex:outputPanel>
+
+
+				<apex:outputPanel rendered="{!ce.venue != null || ce.city != null || ce.state != null || ce.street != null}" >
+					<tr>
+						<td class="heading">Where:</td>
+						<td>
+							<apex:outputPanel rendered="{!ce.venue != null}">
+								<h4><apex:outputText value="{!ce.venue}" /></h4>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!ce.street != null}">
+								<h4><apex:outputText value="{!ce.street}" /></h4>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!or(ce.city != null, ce.state != null, ce.zip != null)}">
+								<h4>
+									<apex:outputText rendered="{!ce.city != null}" value="{!ce.city}" />
+							  		<apex:outputText rendered="{!ce.city != null && ce.state != null}" value=", " />
+							  		<apex:outputText rendered="{!ce.state != null}" value="{!ce.state}" />
+							  		<apex:outputText rendered="{!ce.zip != null}" value=" {!ce.zip}" />
+							  	</h4>
+							</apex:outputPanel>
+					  	</td>
+				  	</tr>
+				</apex:outputPanel>
+
+
+				<apex:outputPanel rendered="{!ce.OrganizerName != null}" >
+					<tr>
+						<td class="heading">Host:</td>
+						<td>
+							<apex:outputPanel rendered="{!AND(NOT(ISPICKVAL($User.UserType,'Guest')), NOT(ce.organizerIsContact))}" >
+								<apex:outputPanel rendered="{!ce.organizerType == 'Distributed'}">
+									<apex:outputLink value="{!ce.organizerId}" target="_parent">
+										<apex:image value="{!ce.organizerPhotoURL}" width="40" height="40" />
+										<span>
+											<apex:outputText value="{!ce.organizerName}" />
+										</span>
+									</apex:outputLink>
+								</apex:outputPanel>
+								<apex:outputPanel rendered="{!ce.organizerType != 'Distributed'}">
+										<apex:image value="{!URLFOR($Resource.cov_files,'img/IAVA-icon.png')}" width="40" height="40" />
+										<span>
+											<apex:outputText value="{!ce.organizerName}" />
+										</span>
+								</apex:outputPanel>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!OR(ISPICKVAL($User.UserType,'Guest'), ce.organizerIsContact)}" >
+									<span>
+										<apex:outputText value="{!ce.organizerName}" />
+									</span>
+							</apex:outputPanel>					  	
+						</td>
+				  	</tr>
+				</apex:outputPanel>
+
+			  <apex:outputPanel rendered="{!OR(AND(NOT(ISNULL(ce.cost)), ce.cost != 0), NOT(ISNULL(ce.costDescription)))}" >
+					<tr>
+						<td class="heading">Cost:</td>
+						<td>
+					     	<apex:outputPanel rendered="{!AND(NOT(ISNULL(ce.cost)), ce.cost != 0)}">
+						     	<h4>$<apex:outputText value="{!ce.cost}" /></h4>
+						  	 </apex:outputPanel>
+					     	<apex:outputPanel rendered="{!NOT(ISNULL(ce.costDescription))}">
+						     	<h4><apex:outputText value="{!ce.costDescription}" /></h4>
+						  	</apex:outputPanel>
+						</td>
+					</tr>
+			  </apex:outputPanel>
+
+
+				<apex:outputPanel rendered="{!AND(not(ce.past), ce.status == 'Published')}">
+					<apex:outputPanel rendered="{!AND(NOT(ISPICKVAL($User.UserType,'Guest')), NOT(inInviteMode))}">
+						<tr>
+							<td class="heading">&nbsp;</td>
+							<td>
+								<div>
+									<apex:outputPanel rendered="{!NOT(ce.openForSignup)}">
+										<span class="eventStatus-Label">Event is full.</span>
+									</apex:outputPanel>
+									<apex:form >
+										<!-- <apex:commandLink action="{!toInviteMode}" >Invite people</apex:commandLink> -->
+										<apex:commandButton value="Invite People" action="{!toInviteMode}" styleclass="btn btn-primary btn-large" />
+									</apex:form>
+								</div>
+							</td>
+						</tr>
+					</apex:outputPanel>
+
+					<apex:outputPanel rendered="false">
+						<tr>
+							<td class="heading">&nbsp;</td>
+							<td>
+								<div class="fb-like" data-href="{!$Site.currentSiteUrl + '/cov_event?id=' + ce.eId}" data-width="200" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+							</td>
+						</tr>
+					</apex:outputPanel>
+
+				</apex:outputPanel>
+
+				<apex:outputPanel rendered="{!not(inInviteMode)}">
+						
+						<apex:outputPanel rendered="{!not(isblank(ce.description))}">
+							<tr>
+								<td class="heading">Description:</td>
+								<td>
+									<div>
+										<apex:outputText value="{!ce.description}" />
+									</div>
+								</td>
+							</tr>
+						</apex:outputPanel>
+
+
+						<apex:outputPanel rendered="{!not(isblank(ce.details))}">
+							<tr>
+								<td class="heading">&nbsp;</td>
+								<td>
+									<div class="rtf">
+										<apex:outputText escape="false" value="{!ce.details}" />
+									</div>
+								</td>
+							</tr>
+						</apex:outputPanel>
+
+						<apex:outputPanel rendered="{!and(not(isblank(ce.latitude)),not(isblank(ce.longitude)))}">
+							<tr>
+								<apex:outputPanel rendered="{!NOT(isMobile)}">
+								<td class="heading">&nbsp;</td>
+								</apex:outputPanel>
+								<td colspan="{!if(isMobile, '2', '1')}" >
+									<div>
+										<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+										<div style="overflow:hidden;height:250px;width:100%;">
+											<div id="gmap_canvas" style="height:250px;width:100%;">
+											</div>
+											<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+										</div>
+										<script type="text/javascript"> 
+											function init_map(){
+												var myOptions = {zoom:14,center:new google.maps.LatLng({!ce.latitude},{!ce.longitude}),mapTypeId: google.maps.MapTypeId.ROADMAP};
+												map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+												marker = new google.maps.Marker({map: map,position: new google.maps.LatLng({!ce.latitude}, {!ce.longitude})});
+												// infowindow = new google.maps.InfoWindow({content:"<b>The Breslin</b><br/>2880 Broadway<br/> New York" });
+												// google.maps.event.addListener(marker, "click", function(){
+												// 	infowindow.open(map,marker);
+												// });
+												// infowindow.open(map,marker);
+											}
+											google.maps.event.addDomListener(window, 'load', init_map);
+										</script>
+									</div>
+								</td>
+							</tr>
+						</apex:outputPanel>
+
+				</apex:outputPanel>
+
+
+				<apex:outputPanel rendered="{!AND(ISPICKVAL($User.UserType,'Guest'), NOT(ce.past))}" id="nonAuthReplyPanel">
+					<tr id="guest-reply-row">
+						<td colspan="2" id="guest-reply-cell">
+								<table class="table" id="guest-reply-table">
+									<tr class="no-border-top">
+										<td>
+											<apex:outputPanel rendered="{!NOT(nonAuthReplied)}">
+												<apex:outputPanel rendered="{!not(ce.openForSignup)}">
+													<p class="italicer">Event full</p>
+												</apex:outputPanel>
+												<apex:form html-role="form" styleClass="form-horizontal">
+													<div class="form-group">
+														<apex:selectRadio value="{!nonAuthReplyValue}" styleClass="radio-horiz guest-reply-radio">
+															<!-- <label class="radio-inline"> -->
+																<apex:selectOption itemValue="Yes" itemLabel="{!if(ce.openForSignup,'Yes', $Label.cov_disabled_opening_span_tag + 'Yes</span>')}"  itemEscaped="false" itemDisabled="{!not(ce.openForSignup)}" />
+															  <!-- <input type="radio" name="nonAuthReply" id="nonAuthReplyYes" value="Yes" /> Yes -->
+															<!-- </label> -->
+															<!-- <label class="radio-inline"> -->
+																<apex:selectOption itemValue="No" itemLabel="No" />
+															  <!-- <input type="radio" name="nonAuthReply" id="nonAuthReplyNo" value="Yes" /> No -->
+															<!-- </label> -->
+														</apex:selectRadio>
+													</div>
+													<div class="form-group">
+														<label class="sr-only">First Name</label>
+														<apex:inputText value="{!nonAuthReplyFirstName}" styleClass="form-control" html-placeholder="First Name" />
+													</div>
+													<div class="form-group">
+														<label class="sr-only">Last Name</label>
+														<apex:inputText value="{!nonAuthReplyLastName}" styleClass="form-control" html-placeholder="Last Name" />
+													</div>
+													<div class="form-group">
+														<label class="sr-only">Email Address</label>
+														<apex:input type="email" value="{!nonAuthReplyEmail}" styleClass="form-control" html-placeholder="Email" />
+													</div>
+													<div class="form-group">
+														<label class="sr-only">Mobile Phone</label>
+														<apex:input type="tel" value="{!nonAuthReplyPhone}" styleClass="form-control" html-placeholder="Phone" />
+													</div>
+													<div class="form-group">
+														Veteran of:<br/>
+
+														<div class="form-inline">
+															<div class="checkbox">
+																<label>
+																	<apex:inputCheckbox value="{!nonAuthReplyOEF}" styleClass="chk-vet" /> OEF&nbsp;
+																	<!-- <apex:inputCheckbox value="{!nonAuthReplyVeteranStatus}" /> I am a post-9/11 veteran -->
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<apex:inputCheckbox value="{!nonAuthReplyOIF}" styleClass="chk-vet" /> OIF&nbsp;
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<apex:inputCheckbox value="{!nonAuthReplyOND}" styleClass="chk-vet" /> OND&nbsp;
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<apex:inputCheckbox value="{!nonAuthReplyPost911}" styleClass="chk-vet" /> Post-9/11
+																</label>
+															</div>
+														</div>
+
+														<div class="form-inline">
+															<div class="checkbox">
+																<label>
+																	<apex:inputCheckbox value="{!nonAuthReplyOtherEra}" styleClass="chk-vet" /> Pre-9/11&nbsp;
+																</label>
+															</div>
+															<div class="checkbox">
+																<label>
+																	<apex:inputCheckbox value="{!nonAuthReplyFamily}" /> Family member
+																</label>
+															</div>
+														</div>
+
+														<div class="form-inline">
+															<div class="checkbox">
+																<label>
+																	<apex:inputCheckbox value="{!nonAuthReplyNotVeteran}" styleClass="chk-nonvet" /> I'm not a veteran
+																</label>
+															</div>
+														</div>
+
+													</div>
+													<center>
+														<apex:commandButton value="Submit" action="{!nonAuthReply}" styleclass="btn btn-primary btn-large" />
+													</center>
+												</apex:form>
+											</apex:outputPanel>
+											<apex:outputPanel rendered="{!nonAuthReplied}">
+												<apex:form >
+													You have replied "{!nonAuthReplyValue}" for this event.&nbsp; <apex:commandLink value="Change reply." action="{!changeNonAuthReply}" />
+												</apex:form>
+												<apex:outputPanel id="addGuestPanelLower">
+													<apex:outputPanel rendered="{!ce.canAddGuests}">
+															<div>
+																<p>&nbsp;</p>
+																<apex:form >
+																	<apex:commandLink action="{!addGuest}" rerender="guestArea,addGuestPanelLower"><span class="glyphicon glyphicon-plus-sign"></span> Add Guest (above)</apex:commandLink>
+																</apex:form>
+															</div>
+													</apex:outputPanel>
+												</apex:outputPanel>
+											</apex:outputPanel>
+										</td>
+										<td id="blank-column" style="border-right: thin solid lightgray;">
+											&nbsp;
+										</td>
+										<td>
+											&nbsp;
+										</td>
+										<td valign="middle">
+											<div class="heading">
+												Or <a href="cov_login?startURL={!currentEncodedUrlWithoutBase}">Log In</a> for one-click reply
+												<apex:outputPanel rendered="{!AND(OR(not(isnull(ce.attendeeId)), not(isnull(conId))), ce.status == 'Published' )}">
+													<apex:outputText value=" and to manage guests." />
+												</apex:outputPanel>
+											</div>
+											<br />
+											<br />
+											<center>
+												<a href="cov_login?startURL={!currentEncodedUrlWithoutBase}" class="btn btn-primary btn-large" role="button">Log In</a>
+												<!-- <button type="submit" class="btn btn-primary btn-large" >Log In</button> -->
+											</center>
+										</td>
+									</tr>
+								</table>
+						</td>
+					</tr>
+
+<!-- 					<tr>
+						<td class="heading">&nbsp;</td>
+						<td>
+							<div>
+								<a href="cov_login?startURL={!currentEncodedUrlWithoutBase}">Log In</a> or <a href="{!portalLoginBaseUrl}/?startURL={!currentEncodedUrlWithBase}">Get an Account</a> to RSVP
+							</div>
+						</td>
+					</tr> -->
+				</apex:outputPanel>
+
+				<apex:outputPanel id="lower-half" rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">
+
+					<apex:outputPanel rendered="{!not(inInviteMode)}">
+						
+<!-- 						<apex:outputPanel rendered="{!not(isblank(ce.details))}">
+							<tr>
+								<td class="heading">&nbsp;</td>
+								<td>
+									<div class="rtf">
+										<apex:outputText escape="false" value="{!ce.details}" />
+									</div>
+								</td>
+							</tr>
+						</apex:outputPanel> -->
+
+
+						<apex:outputPanel rendered="{!ce.yesAttendees.size > 0}">
+							<tr>
+								<td class="heading">myIAVA Members Attending:</td>
+								<td>
+									<ul class="block-list block-list-in-table">
+										<apex:repeat value="{!ce.yesAttendees}" var="a" rows="{!MAX_ATTENDEE_PHOTOS_SHOWN}">
+											<li>
+												<apex:outputLink value="{!$Site.currentSiteUrl + a.Id}" target="_parent"><apex:image value="{!a.SmallPhotoUrl}" width="30" height="30" />
+												<br />
+												<span class="smaller"><apex:outputText value="{!a.FirstName}" /></span>
+												</apex:outputLink>
+											</li>
+										</apex:repeat>
+									</ul>
+									<apex:outputPanel rendered="{!AND(NOT(ISBLANK(ce.numRepliesYesRollup)), ce.numRepliesYesRollup > MIN(ce.yesAttendees.size, MAX_ATTENDEE_PHOTOS_SHOWN))}">
+										<div>
+											<apex:outputText value="and {!ce.numRepliesYesRollup - MIN(ce.yesAttendees.size, MAX_ATTENDEE_PHOTOS_SHOWN)} more..." />
+										</div>
+									</apex:outputPanel>
+								</td>
+							</tr>
+						</apex:outputPanel>
+						<apex:outputPanel rendered="{!ce.maybeAttendees.size > 0}">
+							<tr>
+								<td class="heading">May Attend:</td>
+								<td>
+									<ul class="block-list block-list-in-table">
+										<apex:repeat value="{!ce.maybeAttendees}" var="a">
+											<li>
+												<apex:outputLink value="{!$Site.currentSiteUrl + a.Id}" target="_parent"><apex:image value="{!a.SmallPhotoUrl}" width="30" height="30" />
+												<br />
+												<span class="smaller"><apex:outputText value="{!a.FirstName}" /></span>
+												</apex:outputLink>
+											</li>
+										</apex:repeat>
+									</ul>
+									<apex:outputPanel rendered="{!ce.maybeAttendees.size > MAX_ATTENDEE_PHOTOS_SHOWN}">
+										<div>
+											<apex:outputText value="and {!ce.maybeAttendees.size - MAX_ATTENDEE_PHOTOS_SHOWN} more..." />
+										</div>
+									</apex:outputPanel>
+								</td>
+							</tr>
+						</apex:outputPanel>
+						<apex:outputPanel rendered="{!AND(ce.noAttendees.size > 0, ce.yesAttendees.size < MAX_ATTENDEE_PHOTOS_SHOWN)}">
+							<tr>
+								<td class="heading">Not Attending:</td>
+								<td>
+									<ul class="block-list block-list-in-table">
+										<apex:repeat value="{!ce.noAttendees}" var="a">
+											<li>
+												<apex:outputLink value="{!$Site.currentSiteUrl + a.Id}" target="_parent"><apex:image value="{!a.SmallPhotoUrl}" width="30" height="30" />
+												<br />
+												<span class="smaller"><apex:outputText value="{!a.FirstName}" /></span>
+												</apex:outputLink>
+											</li>
+										</apex:repeat>
+									</ul>
+									<apex:outputPanel rendered="{!ce.noAttendees.size > MAX_ATTENDEE_PHOTOS_SHOWN}">
+										<div>
+											<apex:outputText value="and {!ce.noAttendees.size - MAX_ATTENDEE_PHOTOS_SHOWN} more..." />
+										</div>
+									</apex:outputPanel>
+								</td>
+							</tr>
+						</apex:outputPanel>
+
+						<apex:outputPanel rendered="{!ce.eventGroupId != null}">
+								<tr>
+									<td class="heading">
+										<apex:outputPanel id="discuss-panel-heading">
+											<apex:outputPanel rendered="{!and(not(suppressGroupDisplay), not(ce.eventGroupIsPrivate) || ce.isInGroup)}">
+												Discuss:
+											</apex:outputPanel>
+										</apex:outputPanel>
+									</td>
+									<td>&nbsp;</td>
+								</tr>
+
+								<tr>
+									<td colspan="2">
+										<apex:outputPanel id="discuss-panel">
+											<apex:outputPanel rendered="{!and(not(suppressGroupDisplay), or(not(ce.eventGroupIsPrivate), ce.isInGroup))}">
+													<chatter:feed entityId="{!ce.eventGroupId}" />
+											</apex:outputPanel>
+										</apex:outputPanel>
+									</td>
+								</tr>
+						</apex:outputPanel>
+
+					</apex:outputPanel>
+
+					<apex:outputPanel id="invite-panel" rendered="{!inInviteMode}">
+
+						<tr>
+							<td colspan="2">
+								<br />
+								<h4>Invite Others to This Event</h4>
+
+								<apex:outputPanel rendered="{!NOT(ce.openForSignup)}">
+									<br /><br />
+									<h5>Note: Event is currently full!</h5>
+									<br /><br />
+								</apex:outputPanel>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								Invite people already in myIAVA
+							</td>
+							<td>
+								<apex:form html-role="form" styleClass="form-horizontal">
+
+									<apex:commandButton value="Invite myIAVA Users" action="{!sendInvitesToUsers}" reRender="invitee-users-panel" styleclass="btn btn-primary btn-large pull-right" onclick="setProp(this, 'disabled', true);" oncomplete="setProp(this, 'disabled', false);"  />
+
+									<c:Typeahead object="User" destinationForSelectedId="inviteeId" destinationForSelectedValue="inviteeName"
+										searchBoxId="user-typeahead"
+										primaryField="Name" secondaryField="CompanyName"
+										placeHolder="Start typing name..."
+										searchScope="Name" filterClause="isActive=true and Date_of_COV_Terms_and_Conduct_Acceptance__c != null"
+										 />   
+									<apex:inputHidden id="inviteeId" value="{!inviteeId}" /> 
+									<apex:inputHidden id="inviteeName" value="{!inviteeName}" /> 
+									<apex:actionFunction name="addUser" action="{!addUser}" rerender="invitee-names-panel" oncomplete="setField('input[id$=user-typeahead]', '');">
+<!-- 										<apex:param name="idParam" id="idParam" assignTo="{!inviteeId}" value="" />
+ -->
+ 									</apex:actionFunction>
+								</apex:form> 
+
+								<apex:outputPanel id="invitee-users-panel">
+
+									<apex:outputPanel id="invitee-names-panel">
+										<apex:repeat value="{!inviteeNames}" var="inv">
+											{!inv}<br />
+										</apex:repeat>
+									</apex:outputPanel>
+
+									<div>
+										<apex:outputPanel id="successful-invites-panel" rendered="{!successfulInviteeIds != null && successfulInviteeIds.size > 0}" >
+											<hr />
+											<div class="color-success italicer">Successfully invited:</div>
+											<apex:repeat value="{!successfulInviteeIds}" var="Sinv">
+												<apex:outputText value="{!inviteeIdNameMap[Sinv]}" />
+												<br />
+											</apex:repeat>
+										</apex:outputPanel>
+
+										<apex:outputPanel id="failed-invites-panel" rendered="{!failedInviteeIds != null && failedInviteeIds.size > 0}" >
+											<br />
+											<hr />
+											<div class="color-error italicer">Sorry, these people were not invited successfully:</div>
+											<apex:repeat value="{!failedInviteeIds}" var="Finv">
+												<apex:outputText value="{!inviteeIdNameMap[Finv]}" />
+												<br />
+											</apex:repeat>
+										</apex:outputPanel>
+									</div>
+								</apex:outputPanel>
+
+							</td>
+						</tr>
+
+					<apex:form html-role="form" styleClass="form-horizontal">
+
+						<tr>
+							<td>
+								Invite others by email address
+							</td>
+							<td>
+								<apex:commandButton value="Invite by Email" action="{!sendInvitesToEmails}" reRender="invitee-email-panel" styleclass="btn btn-primary btn-large pull-right" onclick="setProp(this, 'disabled', true);" oncomplete="setField('textarea[id$=inviteeEmailBox]', ''); setProp(this, 'disabled', false);"/>
+								<apex:inputTextArea id="inviteeEmailBox" value="{!inviteeEmailBox}" rows="3" styleClass="half-width spacer-bottom-small gray-border" />
+
+								<apex:outputPanel id="invitee-email-panel">
+									<div>
+										<apex:outputPanel id="successful-emails-panel" rendered="{!successfulEmails != null && successfulEmails.size > 0}" >
+											<br />
+											<div class="color-success italicer">Invites sent:</div>
+											<apex:repeat value="{!successfulEmails}" var="Seml">
+												<apex:outputText value="{!Seml}" />
+												<br />
+											</apex:repeat>
+										</apex:outputPanel>
+
+
+										<apex:outputPanel id="failed-emails-panel" rendered="{!failedEmails != null && failedEmails.size > 0}" >
+											<br />
+											<div class="color-error italicer">Sorry, these emails were not invited successfully:</div>
+											<apex:repeat value="{!failedEmails}" var="Feml">
+												<apex:outputText value="{!Feml}" />
+												<br />
+											</apex:repeat>
+										</apex:outputPanel>
+									</div>
+								</apex:outputPanel>
+
+
+
+							</td>
+						</tr>
+
+
+						<tr>
+							<td>
+								Invite people using your own email
+							</td>
+							<td align="right">
+								<button type="button" class="btn btn-primary btn-large" onclick="toggleHidden('#invite-copy-paste'); swapClass(this, 'btn-primary', 'btn-default'); selectText('invite-copy-paste'); jumpToBottom(); return false;">Copy-and-paste to your own email</button>
+							</td>
+						</tr>
+						<tr id="invite-copy-paste" style="display: none;">
+							<td colspan="2">
+								<div class="highlight-section">
+										Hey!<br />
+										<br />
+										Come join me at this event!<br />
+										<br />
+										<b>{!ce.Name}</b> <br />
+										<apex:outputText value="{0,date,MMM' 'dd', 'yyyy}"><apex:param value="{!ce.nextDate}" /></apex:outputText>
+						  				<apex:outputText rendered="{!(ce.endDate != null) && (ce.endDate != ce.nextDate)}" value="- {0,date,MMM' 'dd', 'yyyy}"><apex:param value="{!ce.endDate}" /></apex:outputText><br />
+										<apex:outputPanel rendered="{!ce.startTime != null}">
+											<apex:outputText value="{!ce.startTime}" />
+											<apex:outputText value=" - {!ce.endTime}" rendered="{!ce.endTime != null}" /><br />
+										</apex:outputPanel>
+										<apex:outputText value="{!ce.venue}" rendered="{!ce.venue != null}" /><br />
+										<apex:outputText value="{!ce.street}" rendered="{!ce.street != null}" /><br />
+										{!ce.city} {!ce.state} {!ce.zip}<br />
+										<br />
+										Details here on myIAVA:<br />
+										<a href="{!$Site.currentSiteUrl + 'cov_event?id=' + ce.eId + '&inviter=' + conId}">{!$Site.currentSiteUrl + 'cov_event?id=' + ce.eId + '&inviter=' + conId}</a><br />
+								</div>
+							</td>
+						</tr>
+
+
+ 						<tr>
+							<td colspan="2" align="center">
+								<apex:commandButton value="Back to Event" action="{!toDetailPage}" styleclass="btn btn-default btn-large" />
+							</td>
+						</tr>
+
+					</apex:form> 
+
+					</apex:outputPanel>				
+			  
+			  	</apex:outputPanel>
+				
+				<br /><br />
+			  
+			  </tbody>
+			  </table>
+
+		  </apex:outputPanel>
+
+		  
+		 </div>
+		</div>
+
+	<c:cov_include_js_validationengine_init />
+	
+	<script type="text/javascript">
+
+		var j$ = jQuery.noConflict();
+		j$(document).ready(function() {
+			j$('input[id$=user-typeahead]').on( "typeahead:selected", function() {
+				// j$('input[id$=inviteeName]').val(j$(this).val());
+				addUser();
+			});
+			j$('input[id$=user-typeahead]').on( "blur", function() {
+				j$(this).val('');
+			});
+
+			hideElementIfTextFound('span[id$=messages] .message.errorM3 .messageText', 'OP_WITH_INVALID_USER_TYPE_EXCEPTION', '.message.errorM3');
+		});
+
+	</script>
+
+	
+	
+	</apex:define>
+
+</apex:composition>
+
+
+</apex:page>

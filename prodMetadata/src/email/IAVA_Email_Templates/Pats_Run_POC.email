@@ -1,0 +1,10 @@
+Dear {!CampaignMember.Local_POC__c},
+
+A new runner has signed up for your team! Please get in touch with them as soon as possible in order to provide them with details for the run.
+
+Name: {!CampaignMember.FirstName} {!CampaignMember.LastName}
+Phone Number: {!CampaignMember.Phone}
+Email Address: {!CampaignMember.Email}
+Veteran Member: {!CampaignMember.Member_Veteran__c}
+
+Please contact Don Gomez at membership@iava.org if you have any questions or concerns.

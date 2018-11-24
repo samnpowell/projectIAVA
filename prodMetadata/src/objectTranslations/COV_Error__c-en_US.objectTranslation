@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>COV Error</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>COV Errors</value>
+    </caseValues>
+    <fields>
+        <help><!-- The first 255 characters of the full error message --></help>
+        <label><!-- Brief Error Message --></label>
+        <name>Brief_Error_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- For a developer to use to pass info about the error without worrying about the scope of the exception. --></help>
+        <label><!-- Developer Message --></label>
+        <name>Developer_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Date/Time --></label>
+        <name>Error_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Stack Trace --></label>
+        <name>Error_Stack_Trace__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Type --></label>
+        <name>Error_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Error Message --></label>
+        <name>Full_Error_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- URL of the page the user was trying to visit. --></help>
+        <label><!-- Original URL --></label>
+        <name>Original_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referrer --></label>
+        <name>Referrer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>(Old)</masterLabel>
+            <translation><!-- (Old) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Addressed</masterLabel>
+            <translation><!-- Addressed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed</masterLabel>
+            <translation><!-- Reviewed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User Agent (browser) --></label>
+        <name>User_Agent__c</name>
+    </fields>
+    <fields>
+        <help><!-- User&apos;s description of what user was doing when got error --></help>
+        <label><!-- User Message --></label>
+        <name>User_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- The user who got the error --></help>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- COV Errors --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>COV Error Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

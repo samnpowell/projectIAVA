@@ -1,0 +1,14 @@
+A new incident involving {!Incidents__c.Contact__c} has been recorded by {!Incidents__c.CreatedBy}.  The following pertains:
+
+Incident ID: {!Incidents__c.Name}
+Date/Time of Incident: {!Incidents__c.Date_Time_of_Incident__c}
+Incident Type: {!Incidents__c.Incident_Type__c}, {!Incidents__c.Type_Detail__c}
+Location or Medium: {!Incidents__c.Location_Medium__c}, {!Incidents__c.Location_Detail__c}, {!Incidents__c.Campaign__c}
+Description: {!Incidents__c.Description__c}
+Current Status: {!Incidents__c.Status__c}
+Result: {!NullValue(Incidents__c.Result__c, "not yet resolved")}
+
+Follow-up action has been assigned to you, due {!Incidents__c.Follow_up_Due_Date__c}, with the following notes:
+{!Incidents__c.Follow_up_Description__c}
+
+Link to the incident is here: https://na6.salesforce.com/{!Incidents__c.Id}

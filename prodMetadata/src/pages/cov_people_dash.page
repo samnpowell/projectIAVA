@@ -1,0 +1,52 @@
+<apex:page controller="cov_people_controller">
+
+	<apex:outputPanel rendered="{!people.size > 0}">
+	    <div class="dashboard-list" id="active-users">
+	        <div class="box-heading">
+                <div class="box-heading-content">
+                    <h5>Active Users</h5>
+                </div>
+                <div class="relative pull-left"><div class="box-heading-edge"></div></div>
+            </div>
+	        
+            <div class="box-content">
+
+    	        <!-- <apex:pageMessages /> -->
+    	        
+    	        <table class="table">  
+    	
+    	             <tbody>  
+                        <apex:repeat id="People" value="{!people}" var="pp">
+                            <tr>
+                            <td width="70" valign="top"><apex:outputLink value="{!$Site.currentSiteUrl + pp.uid}"><apex:image value="{!pp.smallPhotoUrl}" width="64" height="64" styleClass="user-photo" /></apex:outputLink></td>
+<!--                             <td><img src = "{!URLFOR($Resource.cov_files,'img/empty.gif?G')}" width="16" height="1" /></td>
+ -->
+                            <td class="vertical-center">
+                                <div class="dashboard-title">
+                                    <apex:outputLink value="{!$Site.currentSiteUrl + pp.uid}">
+                                        <apex:outputText value="{!pp.fullName}" />
+                                    </apex:outputLink>
+                                </div>
+                                <apex:outputPanel rendered="{!pp.orgName != null}">
+                                    <div class="dashboard-description">
+                                         ({!pp.orgName})
+                                    </div>
+                                </apex:outputPanel>
+                            </td>
+                            <td class="vertical-center">
+                                <apex:outputPanel layout="none" rendered="{!pp.displayFollowTag}">
+                                    <chatter:follow entityid="{!pp.uid}" />
+                                </apex:outputPanel>
+                            </td>
+                            </tr>
+                        </apex:repeat>
+    	            </tbody>  
+    	        </table>
+
+            </div>
+	
+	    </div>
+    </apex:outputPanel>
+
+
+</apex:page>

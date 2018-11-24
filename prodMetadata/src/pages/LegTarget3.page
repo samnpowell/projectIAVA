@@ -1,0 +1,95 @@
+<apex:page id="step3" standardcontroller="Legislation__c" extensions="LegTargetingController" >
+
+
+<apex:pageMessages ></apex:pageMessages>
+
+<apex:form >
+
+<apex:pageBlock >
+
+<apex:pageBlockButtons location="bottom">
+<apex:commandButton value="Previous" action="{!step2}" />
+<apex:commandButton action="{!cancel}" value="Cancel"/>
+</apex:pageBlockButtons>
+
+<apex:outputPanel >
+<br />
+<apex:outputText style="font-weight: bold;" value="{!numContactsAdded} contacts added to campaign:  " />
+<apex:outputLink value="/{!theCampaign.Id}">{!theCampaign.Name}</apex:outputLink>
+<br />
+<br />
+<apex:outputText style="font-style: italic;" value="{!numContactsAlreadyThere} contacts were already present in campaign."
+							rendered="{!numContactsAlreadyThere != null && numContactsAlreadyThere != 0}" />
+<br />
+<br />
+</apex:outputPanel>
+</apex:pageBlock>
+</apex:form>
+
+
+
+<apex:pageBlock >
+<apex:pageBlockSection columns="1">
+	<apex:pageBlockSectionItem >
+            <apex:outputLabel value="Bill ID" for="the_bill"/>
+            <apex:outputLink value="/{!Legislation__c.Id}" id="the_bill">
+                <apex:outputText value="{!Legislation__c.Name}"/>
+            </apex:outputLink>
+    </apex:pageBlockSectionItem>
+	<apex:outputField value="{!Legislation__c.AKA__c}" />
+	<apex:outputField value="{!Legislation__c.Bill_Title__c}" />
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+
+<apex:pageBlock >
+<apex:pageBlockSection columns="1">
+<apex:outputPanel id="positionssection" >
+Selected Positions: &nbsp;<apex:outputText ><span style="font-weight: bold;">{!positions}</span></apex:outputText>
+</apex:outputPanel>
+<apex:outputPanel id="rolessection" >
+Selected Staff Roles: &nbsp;<apex:outputText style="font-weight: bold;"><span style="font-weight: bold;">{!roles}</span></apex:outputText>
+</apex:outputPanel>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+
+
+
+<apex:pageBlock title="Contacts List">
+    <apex:dataTable value="{!ctcs2}"
+                    var="ctc2"
+                    cellPadding="4" border="0">
+      <apex:column headerValue="Name">
+        {!ctc2.Name}
+      </apex:column>
+      <apex:column headerValue="Office">
+        {!ctc2.Account.Name}
+      </apex:column>     
+      <apex:column >
+        {!IF(ctc2.KW_IsTheMember__c=="True","Member","")}
+      </apex:column>   
+      <apex:column >
+        {!IF(ctc2.KW_Chief_of_Staff__c=="True","Chief of Staff","")}
+      </apex:column>    
+      <apex:column >
+        {!IF(ctc2.KW_Comms_Director__c=="True","Comms Dir","")}
+      </apex:column>    
+      <apex:column >
+        {!IF(ctc2.KW_Leg_Assistant__c=="True","Leg Asst","")}
+      </apex:column>    
+      <apex:column >
+        {!IF(ctc2.KW_Leg_Director__c=="True","Leg Dir","")}
+      </apex:column>    
+      <apex:column >
+        {!IF(ctc2.KW_Scheduler__c=="True","Scheduler","")}
+      </apex:column>    
+      
+    </apex:dataTable>
+  </apex:pageBlock>
+
+
+
+</apex:page>

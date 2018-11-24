@@ -1,0 +1,133 @@
+<messaging:emailTemplate subject="Welcome to IAVA!" recipientType="Contact" relatedToType="Contact">
+  <!-- don't set a plain text body for now -->
+  <!-- <messaging:plainTextEmailBody >
+    Congratulations!
+    This is your new Visualforce Email Template.
+  </messaging:plainTextEmailBody> -->
+  <messaging:htmlEmailBody >
+   <div style="max-width:563px; margin:0 auto;">
+    <header><center><apex:image id="headerImage" value="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmBE&oid=00D4B0000008x9W&lastMod=1464037248000" width="173" height="70"/></center></header>
+    <hr/>
+    <!-- only display the following outputPanel if the contact is a veteran -- -->
+    <!-- comment out when we are doing the survey -->
+    <apex:outputPanel rendered="{!relatedTo.Post_9_11_Veteran__c || relatedTo.Veteran_Member__c || relatedTo.Veteran_of_Other_Era__c}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p><apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Welcome to IAVA! We&#39;re over 400,000 members strong, and together we&#39;re working to change our communities and our country for the better. I&#39;m glad you joined us! As part of IAVA, you&#39;re a part of something big - our movement is growing, and there are lots of ways to get involved. Here&#39;s where you can start:</p>
+      <apex:outputPanel >
+        <ul>
+          <li style="margin-bottom: 10px;">Connect with the community on&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_vet">myIAVA</apex:outputLink>. Chat with other vets, and find VetTogethers near you! A temporary password should hit your inbox soon!</li>
+          <li style="margin-bottom: 10px;">Spread the word about our&nbsp;<apex:outputLink value="https://iava.org/rrrp-contact-us/" id="rrrpLink_vet">RRRP Program</apex:outputLink>. We&#39;ve got you and your battle buddies covered with free, confidential support. No matter how big or small the need - we&#39;re standing by to help.</li>
+          <li style="margin-bottom: 10px;">Learn more about our advocacy efforts on behalf of veterans, and&nbsp;<apex:outputLink value="https://iava.org/take-action/" id="takeAction_vet">take action</apex:outputLink> to show your support.</li>
+          <li style="margin-bottom: 10px;"><apex:outputLink value="https://www.oscarmike.org/brands/iava/" id="storeLink_vet">Gear up</apex:outputLink> - Rep for IAVA in your community by picking up some awesome, American-made gear from veteran-owned business, Oscar Mike!</li>
+          <li style="margin-bottom: 10px;">Follow us on social media to get up-to-the-minute info about what we&#39;re working on. You can check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_vet">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_vet">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_vet">Instagram</apex:outputLink>.</li>
+        </ul>
+      </apex:outputPanel>
+      <p>Thanks again for joining&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_vet">IAVA</apex:outputLink> - we&#39;re glad you&#39;re here</p>
+      <p>Onward!</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+
+    <!-- only display the following outputPanel if the contact is not a veteran -- -->
+    <apex:outputPanel rendered="{!(relatedTo.Veteran_Family_Member__c || relatedTo.Not_a_Veteran__c) && NOT(relatedTo.Veteran_of_Other_Era__c) && NOT(relatedTo.Post_9_11_Veteran__c) && NOT(relatedTo.Veteran_Member__c)}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p><apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Welcome to IAVA! We&#39;re over 400,000 members strong, and together we&#39;re working to change our communities and our country for the better. I&#39;m glad you joined us! As part of IAVA, you&#39;re a part of something big - our movement is growing, and there are lots of ways to get involved. Here&#39;s where you can start:</p>
+      <apex:outputPanel >
+        <ul>
+          <li style="margin-bottom: 10px;">Connect with the community on&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_nv">myIAVA</apex:outputLink>. Chat with other vets, and find VetTogethers near you! A temporary password should hit your inbox soon!</li>
+          <li style="margin-bottom: 10px;">Spread the word about our&nbsp;<apex:outputLink value="https://iava.org/rrrp-contact-us/" id="rrrpLink_nv">RRRP Program</apex:outputLink>. We&#39;ve got you and your battle buddies covered with free, confidential support. No matter how big or small the need - we&#39;re standing by to help.</li>
+          <li style="margin-bottom: 10px;">Learn more about our advocacy efforts on behalf of veterans, and&nbsp;<apex:outputLink value="https://iava.org/take-action/" id="takeAction_nv">take action</apex:outputLink> to show your support.</li>
+          <li style="margin-bottom: 10px;"><apex:outputLink value="https://www.oscarmike.org/brands/iava/" id="storeLink_nv">Gear up</apex:outputLink> - Rep for IAVA in your community by picking up some awesome, American-made gear from veteran-owned business, Oscar Mike!</li>
+          <li style="margin-bottom: 10px;">Follow us on social media to get up-to-the-minute info about what we&#39;re working on. You can check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_nv">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_nv">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_nv">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Help keep all of our programs and services free for veterans by&nbsp;<apex:outputLink value="https://donate.iava.org" id="donateLink_nv">making an investment</apex:outputLink> in our mission today!</li>
+        </ul>
+      </apex:outputPanel>
+      <p>Thanks again for joining&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_nv">IAVA</apex:outputLink> - we&#39;re glad you&#39;re here</p>
+      <p>Onward!</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    
+    <!-- only display the following outputPanel if the contact is a post 9/11 veteran and we are sending member survey -->
+    <!--
+    <apex:outputPanel rendered="{!relatedTo.Post_9_11_Veteran__c || relatedTo.Veteran_Member__c}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p><apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Welcome to IAVA! We&#39;re over 400,000 members strong, and together we&#39;re working to change our communities and our country for the better. I&#39;m glad you joined us! As part of IAVA, you&#39;re part of something big - our movement is growing, and there are lots of ways to get involved. Here&#39;s where you can start:</p>
+      <apex:outputPanel >
+        <ol>
+          <li style="margin-bottom: 10px;">Share your voice. IAVA will be front-and-center this year, but we can&#39;t set our agenda without your feedback. Please take some time to complete our&nbsp;<apex:outputLink value="https://iava.az1.qualtrics.com/jfe/form/SV_2rwtL1s47qEoskJ" id="memberSurvey" style="font-weight:bold">Annual Member Survey</apex:outputLink> and enter to win two roundtrip tickets on Southwest Airlines to travel anywhere Southwest flies before the end of 2017.</li>
+          <li style="margin-bottom: 10px;">Connect with the community on&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_ms">myIAVA</apex:outputLink>. Chat with other vets, and find VetTogethers near you! A temporary password should hit your inbox soon!</li>
+          <li style="margin-bottom: 10px;">Spread the word about our&nbsp;<apex:outputLink value="https://iava.org/rrrp-contact-us/" id="rrrpLink_ms">RRRP Program</apex:outputLink>. We&#39;ve got you and your battle buddies covered with free, confidential support. No matter how big or small the need - we&#39;re standing by to help.</li>
+          <li style="margin-bottom: 10px;">Learn more about our advocacy efforts on behalf of veterans, and&nbsp;<apex:outputLink value="https://iava.org/take-action/" id="takeAction_ms">take action</apex:outputLink> to show your support.</li>
+          <li style="margin-bottom: 10px;"><apex:outputLink value="https://www.oscarmike.org/brands/iava/" id="storeLink_ms">Gear up</apex:outputLink> - Rep for IAVA in your community by picking up some awesome, American-made gear from veteran-owned business, Oscar Mike!</li>
+          <li style="margin-bottom: 10px;">Follow us on social media to get up-to-the-minute info about what we&#39;re working on. You can check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_ms">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_ms">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_ms">Instagram</apex:outputLink>.</li>
+        </ol>
+      </apex:outputPanel>
+      <p>Thanks again for joining&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_ms">IAVA</apex:outputLink> - we&#39;re glad you&#39;re here.</p>
+      <p>Onward!</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    -->
+    
+    <!-- only display the following outputPanel if the contact is a pre 9/11 veteran and we are sending member survey -->
+    <!--
+    <apex:outputPanel rendered="{!relatedTo.Veteran_of_Other_Era__c && NOT(relatedTo.Post_9_11_Veteran__c) && NOT(relatedTo.Veteran_Member__c)}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p><apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Welcome to IAVA! We&#39;re over 400,000 members strong, and together we&#39;re working to change our communities and our country for the better. I&#39;m glad you joined us! As part of IAVA, you&#39;re a part of something big - our movement is growing, and there are lots of ways to get involved. Here&#39;s where you can start:</p>
+      <apex:outputPanel >
+        <ul>
+          <li style="margin-bottom: 10px;">Connect with the community on&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_vet">myIAVA</apex:outputLink>. Chat with other vets, and find VetTogethers near you! A temporary password should hit your inbox soon!</li>
+          <li style="margin-bottom: 10px;">Spread the word about our&nbsp;<apex:outputLink value="https://iava.org/rrrp-contact-us/" id="rrrpLink_vet">RRRP Program</apex:outputLink>. We&#39;ve got you and your battle buddies covered with free, confidential support. No matter how big or small the need - we&#39;re standing by to help.</li>
+          <li style="margin-bottom: 10px;">Learn more about our advocacy efforts on behalf of veterans, and&nbsp;<apex:outputLink value="https://iava.org/take-action/" id="takeAction_vet">take action</apex:outputLink> to show your support.</li>
+          <li style="margin-bottom: 10px;"><apex:outputLink value="https://www.oscarmike.org/brands/iava/" id="storeLink_vet">Gear up</apex:outputLink> - Rep for IAVA in your community by picking up some awesome, American-made gear from veteran-owned business, Oscar Mike!</li>
+          <li style="margin-bottom: 10px;">Follow us on social media to get up-to-the-minute info about what we&#39;re working on. You can check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_vet">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_vet">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_vet">Instagram</apex:outputLink>.</li>
+        </ul>
+      </apex:outputPanel>
+      <p>Thanks again for joining&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_vet">IAVA</apex:outputLink> - we&#39;re glad you&#39;re here</p>
+      <p>Onward!</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    -->
+    
+    <!-- only display the following outputPanel if the contact came in through a special iava campaign -->
+    <apex:outputPanel rendered="{!relatedTo.Source__c = 'Special IAVA Campaign' && NOT(relatedTo.Not_a_Veteran__c) && NOT(relatedTo.Veteran_Family_Member__c) && NOT(relatedTo.Veteran_of_Other_Era__c) && NOT(relatedTo.Post_9_11_Veteran__c) && NOT(relatedTo.Veteran_Member__c)}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p><apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Welcome to IAVA! We&#39;re over 400,000 members strong, and together we&#39;re working to change our communities, and our country for the better. I&#39;m glad you joined us! As part of IAVA, you&#39;re a part of something big - our movement is growing, and there are lots of ways to get involved. Here&#39;s where you can start:</p>
+      <apex:outputPanel >
+        <ul>
+          <li style="margin-bottom: 10px;">Connect with the community on&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_sc">myIAVA</apex:outputLink>. Chat with other vets, and find VetTogethers near you! A temporary password should hit your inbox soon!</li>
+          <li style="margin-bottom: 10px;">Spread the word about our&nbsp;<apex:outputLink value="https://iava.org/rrrp-contact-us/" id="rrrpLink_sc">RRRP Program</apex:outputLink>. We&#39;ve got you and your battle buddies covered with free, confidential support. No matter how big or small the need - we&#39;re standing by to help.</li>
+          <li style="margin-bottom: 10px;">Learn more about our advocacy efforts on behalf of veterans, and&nbsp;<apex:outputLink value="https://iava.org/take-action/" id="takeAction_sc">take action</apex:outputLink> to show your support.</li>
+          <li style="margin-bottom: 10px;"><apex:outputLink value="https://www.oscarmike.org/brands/iava/" id="storeLink_sc">Gear up</apex:outputLink> - Rep for IAVA in your community by picking up some awesome, American-made gear from veteran-owned business, Oscar Mike!</li>
+          <li style="margin-bottom: 10px;">Follow us on social media to get up-to-the-minute info about what we&#39;re working on. You can check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_sc">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_sc">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_sc">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Help keep all of our programs and services free for veterans by&nbsp;<apex:outputLink value="https://donate.iava.org" id="donateLink_sc">making an investment</apex:outputLink> in our mission today!</li>
+        </ul>
+      </apex:outputPanel>
+      <p>Thanks again for joining&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_sc">IAVA</apex:outputLink> - we&#39;re glad you&#39;re here</p>
+      <p>Onward!</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    <hr/>
+    <!--<footer><center><apex:image id="footerImage" value="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmF1&oid=00D4B0000008x9W&lastMod=1464112887000" style="max-width:100%"/></center></footer>-->
+    <footer><center><apex:outputLink id="joinLink" value="http://www.iava.org/join"><apex:image id="footerImage" value="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmF1&oid=00D4B0000008x9W&lastMod=1464112887000" style="max-width:100%"/></apex:outputLink></center></footer>
+   </div>
+  </messaging:htmlEmailBody>
+</messaging:emailTemplate>

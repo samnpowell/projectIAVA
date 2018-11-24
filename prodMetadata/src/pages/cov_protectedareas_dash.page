@@ -1,0 +1,130 @@
+<apex:page controller="cov_protectedareas_controller">
+<!-- <apex:page controller="cov_events_controller" action="{!getEventsList}"> -->
+
+    <apex:outputPanel rendered="{!AND(NOT(ISBLANK(contactId)), NOT(isNull(restrictedGroups)), restrictedGroups.size > 0)}">
+
+         <div class="dashboard-list" id="recent-activity">
+            <div class="box-heading">
+                <div class="box-heading-content">
+
+                    <h5>{!if(isUnconfirmed, "Unlock: Veteran-Only Groups", "Veteran-Only Groups")}</h5>
+                    
+                </div>
+                <div class="relative pull-left"><div class="box-heading-edge"></div></div>
+
+            </div>
+
+
+            <div class="box-content">
+
+<!--                <apex:outputPanel rendered="{!isUnconfirmed}">
+                    <h6>Restricted groups</h6>
+                </apex:outputPanel>
+ -->
+                <apex:form >
+
+                <apex:outputPanel id="restricted-groups-table">
+                <table class="table">
+                <apex:repeat value="{!restrictedGroups}" var="g" >
+                    <tr>
+                    <td class="large-icon vertical-center">
+                    <!-- <div> -->
+                      <!-- <label> -->
+                        <apex:outputPanel rendered="{!g.isMember}">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!AND( NOT(g.isMember), g.isEligible )}">
+                            <!-- <apex:inputCheckbox value="{!g.cg.Id}" /> -->
+                            <apex:commandLink action="{!addToGroup}" reRender="restricted-groups-table" onclick="swapIcon('{!g.cg.Id}');">
+                                <span class="glyphicon glyphicon-plus-sign"  id="add-icon-{!g.cg.Id}"></span>
+                                <apex:param name="groupIdSelected" value="{!g.cg.Id}" assignTo="{!groupIdSelected}" />
+                            </apex:commandLink>
+                        </apex:outputPanel>
+        <!--                <apex:outputPanel rendered="{!AND(isUnconfirmed, NOT(g.forUnconfirmed))}">
+                            <span class="glyphicon glyphicon-ban-circle"></span>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!AND(isConfirmed, NOT(g.forConfirmed))}">
+                            <span class="glyphicon glyphicon-ban-circle"></span>
+                        </apex:outputPanel>
+         -->
+                    </td>
+                    <td>
+                        <apex:outputPanel rendered="{!AND( NOT(g.isMember), g.isEligible )}">
+                            <apex:commandLink action="{!addToGroup}" reRender="restricted-groups-table" onclick="swapIcon('{!g.cg.Id}');">
+                                <span>Join:</span>
+                                <apex:param name="groupIdSelected" value="{!g.cg.Id}" assignTo="{!groupIdSelected}" />
+                            </apex:commandLink>
+                            <apex:outputText value="{!' '}" />
+                            <img src="{!g.cg.smallPhotoUrl}" class="list-thumbnail" />
+                            {!g.cg.Name}
+                        </apex:outputPanel>
+
+                        <apex:outputPanel rendered="{!AND( NOT(g.isMember), NOT(g.isEligible) )}">
+                            <img src="{!g.cg.smallPhotoUrl}" class="list-thumbnail" />
+                            {!g.cg.Name}
+                        </apex:outputPanel>
+
+                        <apex:outputPanel rendered="{!g.isMember}">
+                            <apex:outputText value="{!' '}" />
+                            <apex:outputLink value="{!g.cg.Id}">
+                                <img src="{!g.cg.smallPhotoUrl}" class="list-thumbnail" />
+                            </apex:outputLink>
+                            <apex:outputLink value="{!g.cg.Id}">
+                                {!g.cg.Name}
+<!--                                <span class="glyphicon glyphicon-new-window"></span>
+ -->
+                            </apex:outputLink>
+                        </apex:outputPanel>
+                      <!-- </label> -->
+                    <!-- </div> -->
+                    </td>
+                    </tr>
+                </apex:repeat>
+                </table>
+                <script type="text/javascript">
+                    var j$ = jQuery.noConflict();
+
+                    function swapIcon(groupId) {
+                        console.log('1');
+                        console.log(j$('#add-icon-' + groupId));
+                        j$('#add-icon-' + groupId).removeClass('glyphicon-plus-sign');
+                        console.log('2');
+                        j$('#add-icon-' + groupId).addClass('glyphicon-hourglass');
+                        console.log('3');
+                    }
+                </script>
+                </apex:outputPanel>
+
+        <!--        <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="" />
+                    OIF Veterans
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="" />
+                    OND Veterans
+                  </label>
+                </div> -->
+
+                </apex:form>
+
+
+
+                <apex:include pageName="cov_uplevel_widget" rendered="{!isUnconfirmed}" />
+
+
+
+        <!--        <apex:outputPanel rendered="{!not(isUnconfirmed)}">
+                You don't seem to need to uplevel, you.
+                </apex:outputPanel> -->
+                
+            </div>
+
+        </div>
+    </apex:outputPanel>
+
+
+    
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This is the default email alert template invitation to the Survey: Joao Hwang - Post-Summer Internship Department S...</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>[ Send Using Workflow ] Joao Hwang - Post-Summer Internship Department S...</name>
+    <style>none</style>
+    <subject>Please complete this Survey: Joao Hwang - Post-Summer Internship Department S...</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TEST-Referred by email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>TEST-Referred by email</name>
+    <style>none</style>
+    <subject>Refer a friend to IAVA today!</subject>
+    <textOnly>{!Contact.FirstName},
+
+Wondering how you can make an impact with the veterans community today? Refer a friend to the great services that IAVA has to offer!
+
+Send your friend this unique web address today to get started. http://www.tfaforms.com/273628?tfa_Referredby={!Contact.Id}
+
+Best,
+
+Anthony
+--
+Anthony Pike
+Veteran OIF
+Program Coordinator
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,200 @@
+<messaging:emailTemplate subject="Welcome to IAVA!" recipientType="Contact" relatedToType="Contact">
+  <!-- don't set a plain text body for now -->
+  <!-- <messaging:plainTextEmailBody >
+    Congratulations!
+    This is your new Visualforce Email Template.
+  </messaging:plainTextEmailBody> -->
+  <messaging:htmlEmailBody >
+   <div style="max-width:563px; margin:0 auto;">
+    <header><center><apex:image id="headerImage" value="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmBE&oid=00D4B0000008x9W&lastMod=1464037248000" width="173" height="70"/></center></header>
+    <hr/>
+    <!-- this is a sample section that will can be toggled to always or never render -->
+    <!-- this outputPanel was copied from the email to all post 9/11 veterans -->
+    <!-- *** REMEMBER TO SET RENDERED TO FALSE ONCE WE'VE HANDLED ALL USE CASES *** -->
+    <apex:outputPanel rendered="false" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p>Dear&nbsp;<apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Thank you for joining us! We couldn’t do what we do without the support from people like you, and to have you join our family means so much to us!</p>
+      <p>As part of IAVA, you’re a part of something great and empowering - our movement is growing, and we are honored to have you a part of it!</p>
+      <p>As a member of IAVA of you have the opportunity to:</p>
+      <apex:outputPanel >
+        <ol>
+          <li style="margin-bottom: 10px;">Log in to&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_all" style="font-weight:bold">myIAVA</apex:outputLink> to host and attend VetTogethers! <b>Be sure to check your e-mail soon for your temporary password.</b></li>
+          <ul>
+            <li style="margin-bottom: 10px;"><b><i>What are VetTogethers?</i></b> They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out&nbsp;<apex:outputLink value="http://www.vettogethers.org/" id="vettogetherLink_all">www.vettogethers.org</apex:outputLink> to get started.</li>
+          </ul>
+          <li style="margin-bottom: 10px;">Stay connected with IAVA on social media! Check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_all">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_all">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_all">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Want to rock your own IAVA gear? Access the store&nbsp;<apex:outputLink value="https://www.oscarmike.org/collections/iava" id="storeLink_all">HERE</apex:outputLink>!</li>
+        </ol>
+      </apex:outputPanel>
+      <p>If you have any login issues or questions please contact us at&nbsp;<apex:outputLink value="mailto:myiava@iava.org" id="myiavaEmail_all">myiava@iava.org</apex:outputLink>.</p>
+      <p>Thank you for your continued support of&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_all">IAVA</apex:outputLink> and welcome to the family!</p>
+      <p>Sincerely,</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    
+    <!-- 20170222 NL: Uncommented this section since the survey window ended -->
+    <!-- 20170209 SP: commented out to temporarily replace with survey language
+    -- only display the following outputPanel if the contact is a post 9/11 veteran -- -->
+    <apex:outputPanel rendered="{!relatedTo.Post_9_11_Veteran__c || relatedTo.Veteran_Member__c}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p>Dear&nbsp;<apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Thank you for joining us! We couldn’t do what we do without the support from people like you, and to have you join our family means so much to us!</p>
+      <p>As part of IAVA, you’re a part of something great and empowering - our movement is growing, and we are honored to have you a part of it!</p>
+      <p>As a member of IAVA of you have the opportunity to:</p>
+      <apex:outputPanel >
+        <ol>
+          <li style="margin-bottom: 10px;">Log in to&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_post911" style="font-weight:bold">myIAVA</apex:outputLink> to host and attend VetTogethers! <b>Be sure to check your e-mail soon for your temporary password.</b></li>
+          <ul>
+            <li style="margin-bottom: 10px;"><b><i>What are VetTogethers?</i></b> They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out&nbsp;<apex:outputLink value="http://www.vettogethers.org/" id="vettogetherLink_post911">www.vettogethers.org</apex:outputLink> to get started.</li>
+          </ul>
+          <li style="margin-bottom: 10px;">Stay connected with IAVA on social media! Check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_post911">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_post911">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_post911">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Want to rock your own IAVA gear? Access the store&nbsp;<apex:outputLink value="https://www.oscarmike.org/collections/iava" id="storeLink_post911">HERE</apex:outputLink>!</li>
+        </ol>
+      </apex:outputPanel>
+      <p>If you have any login issues or questions please contact us at&nbsp;<apex:outputLink value="mailto:myiava@iava.org" id="myiavaEmail_post911">myiava@iava.org</apex:outputLink>.</p>
+      <p>Thank you for your continued support of&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_post911">IAVA</apex:outputLink> and welcome to the family!</p>
+      <p>Sincerely,</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    
+    <!-- 20170222 NL: Commented out this section since the survey window ended -->
+    <!-- 20170209 SP: uncommented section since we'll be asking members to complete the survey -->
+    <!-- only display the following outputPanel if the contact is a post 9/11 veteran and we are sending member survey -->
+    <!--<apex:outputPanel rendered="{!relatedTo.Post_9_11_Veteran__c || relatedTo.Veteran_Member__c}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p>Dear&nbsp;<apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Thank you for joining us! We couldn’t do what we do without the support from people like you, and to have you join our family means so much to us!</p>
+      <p>As part of IAVA, you’re a part of something great and empowering - our movement is growing, and we are honored to have you a part of it!</p>
+      <p>As a member of IAVA of you have the opportunity to:</p>
+      <apex:outputPanel >
+        <ol>
+          <li style="margin-bottom: 10px;"><b>SHARE YOUR VOICE</b>. IAVA will be front-and-center this year, but we can&#39;t set our agenda without your feedback. Please take some time to complete our Annual Member Survey and enter to win two roundtrip tickets on Southwest Airlines to travel anywhere Southwest flies before the end of 2017.&nbsp;<apex:outputLink value="https://gmuchss.az1.qualtrics.com/SE/?SID=SV_1BpWgI2epUkFoc5" id="memberSurvey" style="font-weight:bold">CLICK HERE TO TAKE THE SURVEY</apex:outputLink></li>
+          <li style="margin-bottom: 10px;">Log in to&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_post911Survey" style="font-weight:bold">myIAVA</apex:outputLink> to host and attend VetTogethers! <b>Be sure to check your e-mail soon for your temporary password.</b></li>
+          <ul>
+            <li style="margin-bottom: 10px;"><b><i>What are VetTogethers?</i></b> They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out&nbsp;<apex:outputLink value="http://www.vettogethers.org/" id="vettogetherLink_post911Survey">www.vettogethers.org</apex:outputLink> to get started.</li>
+          </ul>
+          <li style="margin-bottom: 10px;">Stay connected with IAVA on social media! Check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_post911Survey">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_post911Survey">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_post911Survey">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Want to rock your own IAVA gear? Access the store&nbsp;<apex:outputLink value="https://www.oscarmike.org/collections/iava" id="storeLink_post911Survey">HERE</apex:outputLink>!</li>
+        </ol>
+      </apex:outputPanel>
+      <p>If you have any login issues or questions please contact us at&nbsp;<apex:outputLink value="mailto:myiava@iava.org" id="myiavaEmail_post911Survey">myiava@iava.org</apex:outputLink>.</p>
+      <p>Thank you for your continued support of&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_post911Survey">IAVA</apex:outputLink> and welcome to the family!</p>
+      <p>Sincerely,</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel> -->
+    <!-- only display the following outputPanel if the contact is a pre 9/11 veteran -->
+    <apex:outputPanel rendered="{!relatedTo.Veteran_of_Other_Era__c && NOT(relatedTo.Post_9_11_Veteran__c) && NOT(relatedTo.Veteran_Member__c)}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p>Dear&nbsp;<apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Thank you for joining us! We couldn’t do what we do without the support from people like you and to have you join our family means so much to us!</p>
+      <p>As part of IAVA, you’re a part of something great and empowering - our movement is growing, and we are honored to have you a part of it!</p>
+      <p>As a member of IAVA of you have the opportunity to:</p>
+      <apex:outputPanel >
+        <ol>
+          <li style="margin-bottom: 10px;">Log in to&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_pre911" style="font-weight:bold">myIAVA</apex:outputLink> to host and attend VetTogethers! <b><i>Be sure to check your e-mail soon for your temporary password.</i></b></li>
+          <ul>
+            <li style="margin-bottom: 10px;"><b><i>What are VetTogethers?</i></b> They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out&nbsp;<apex:outputLink value="http://www.vettogethers.org/" id="vettogetherLink_pre911">www.vettogethers.org</apex:outputLink> to get started.</li>
+          </ul>
+          <li style="margin-bottom: 10px;">Stay connected with IAVA on social media! Check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_pre911">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_pre911">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_pre911">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Want to rock your own IAVA gear? Access the store&nbsp;<apex:outputLink value="https://www.oscarmike.org/collections/iava" id="storeLink_pre911">HERE</apex:outputLink>!</li>
+          <li style="margin-bottom: 10px;">If you have any technical issues or questions please contact us at&nbsp;<apex:outputLink value="mailto:myiava@iava.org" id="myiavaEmail_pre911">myiava@iava.org</apex:outputLink>.</li>
+        </ol>
+      </apex:outputPanel>
+      <p>Thank you for your continued support of&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_pre911">IAVA</apex:outputLink> and welcome to the family!</p>
+      <p>Sincerely,</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    <!-- only display the following outputPanel if the contact is a veteran family member -->
+    <apex:outputPanel rendered="{!relatedTo.Veteran_Family_Member__c && NOT(relatedTo.Veteran_of_Other_Era__c) && NOT(relatedTo.Post_9_11_Veteran__c) && NOT(relatedTo.Veteran_Member__c)}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p>Dear&nbsp;<apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Thank you for joining us! We couldn’t do what we do without the support from people like you and to have you join our family means so much to us!</p>
+      <p>As part of IAVA, you’re a part of something great and empowering - our movement is growing, and we are honored to have you a part of it!</p>
+      <p>As a member of IAVA of you have the opportunity to:</p>
+      <apex:outputPanel >
+        <ol>
+          <li style="margin-bottom: 10px;">Log in to&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_family" style="font-weight:bold">myIAVA</apex:outputLink> to host and attend VetTogethers! <b><i>Be sure to check your e-mail soon for your temporary password.</i></b></li>
+          <ul>
+            <li style="margin-bottom: 10px;"><b><i>What are VetTogethers?</i></b> They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out&nbsp;<apex:outputLink value="http://www.vettogethers.org/" id="vettogetherLink_family">www.vettogethers.org</apex:outputLink> to get started.</li>
+          </ul>
+          <li style="margin-bottom: 10px;">Stay connected with IAVA on social media! Check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_family">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_family">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_family">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Want to rock your own IAVA gear? Access the store&nbsp;<apex:outputLink value="https://www.oscarmike.org/collections/iava" id="storeLink_family">HERE</apex:outputLink>!</li>
+          <li style="margin-bottom: 10px;">If you have any technical issues or questions please contact us at&nbsp;<apex:outputLink value="mailto:myiava@iava.org" id="myiavaEmail_family">myiava@iava.org</apex:outputLink>.</li>
+        </ol>
+      </apex:outputPanel>
+      <p>Thank you for your continued support of&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_family">IAVA</apex:outputLink> and welcome to the family!</p>
+      <p>Sincerely,</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    <!-- only display the following outputPanel if the contact is a supporter -->
+    <apex:outputPanel rendered="{!relatedTo.Not_a_Veteran__c && NOT(relatedTo.Veteran_Family_Member__c) && NOT(relatedTo.Veteran_of_Other_Era__c) && NOT(relatedTo.Post_9_11_Veteran__c) && NOT(relatedTo.Veteran_Member__c)}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p>Dear&nbsp;<apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Thank you for joining us! We couldn’t do what we do without the support from people like you and to have you join our family means so much to us!</p>
+      <p>As part of IAVA, you’re a part of something great and empowering - our movement is growing, and we are honored to have you a part of it!</p>
+      <p>As a member of IAVA of you have the opportunity to:</p>
+      <apex:outputPanel >
+        <ol>
+          <li style="margin-bottom: 10px;">Log in to&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_supporter" style="font-weight:bold">myIAVA</apex:outputLink> to host and attend VetTogethers! <b><i>Be sure to check your e-mail soon for your temporary password.</i></b></li>
+          <ul>
+            <li style="margin-bottom: 10px;"><b><i>What are VetTogethers?</i></b> They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out&nbsp;<apex:outputLink value="http://www.vettogethers.org/" id="vettogetherLink_supporter">www.vettogethers.org</apex:outputLink> to get started.</li>
+          </ul>
+          <li style="margin-bottom: 10px;">Stay connected with IAVA on social media! Check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_supporter">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_supporter">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_supporter">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Want to rock your own IAVA gear? Access the store&nbsp;<apex:outputLink value="https://www.oscarmike.org/collections/iava" id="storeLink_supporter">HERE</apex:outputLink>!</li>
+          <li style="margin-bottom: 10px;">If you have any technical issues or questions please contact us at&nbsp;<apex:outputLink value="mailto:myiava@iava.org" id="myiavaEmail_supporter">myiava@iava.org</apex:outputLink>.</li>
+        </ol>
+      </apex:outputPanel>
+      <p>Thank you for your continued support of&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_supporter">IAVA</apex:outputLink> and welcome to the family!</p>
+      <p>Sincerely,</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    <!-- only display the following outputPanel if the contact came in through a special iava campaign -->
+    <apex:outputPanel rendered="{!relatedTo.Source__c = 'Special IAVA Campaign' && NOT(relatedTo.Not_a_Veteran__c) && NOT(relatedTo.Veteran_Family_Member__c) && NOT(relatedTo.Veteran_of_Other_Era__c) && NOT(relatedTo.Post_9_11_Veteran__c) && NOT(relatedTo.Veteran_Member__c)}" style="font-family:Arial, Helvetica, sans-serif; font-size:13px;">
+      <p>Dear&nbsp;<apex:outputText value="{!relatedTo.FirstName}"/>,</p>
+      <p>Thank you for joining us! We couldn’t do what we do without the support from people like you and to have you join our family means so much to us!</p>
+      <p>As part of IAVA, you’re a part of something great and empowering - our movement is growing, and we are honored to have you a part of it!</p>
+      <p>As a member of IAVA of you have the opportunity to:</p>
+      <apex:outputPanel >
+        <ol>
+          <li style="margin-bottom: 10px;">Log in to&nbsp;<apex:outputLink value="https://my.iava.org/" id="myIAVALink_campaign" style="font-weight:bold">myIAVA</apex:outputLink> to host and attend VetTogethers! <b><i>Be sure to check your e-mail soon for your temporary password.</i></b></li>
+          <ul>
+            <li style="margin-bottom: 10px;"><b><i>What are VetTogethers?</i></b> They are monthly gatherings of veterans, family members and supporters across the nation, which provide a number of fun and unique ways to unite together. Check out&nbsp;<apex:outputLink value="http://www.vettogethers.org/" id="vettogetherLink_campaign">www.vettogethers.org</apex:outputLink> to get started.</li>
+          </ul>
+          <li style="margin-bottom: 10px;">Stay connected with IAVA on social media! Check us out on&nbsp;<apex:outputLink value="https://www.facebook.com/IAVA.org/" id="facebookLink_campaign">Facebook</apex:outputLink>,&nbsp;<apex:outputLink value="https://twitter.com/iava" id="twitterLink_campaign">Twitter</apex:outputLink>&nbsp;and&nbsp;<apex:outputLink value="https://www.instagram.com/iava/" id="instagramLink_campaign">Instagram</apex:outputLink>.</li>
+          <li style="margin-bottom: 10px;">Want to rock your own IAVA gear? Access the store&nbsp;<apex:outputLink value="https://www.oscarmike.org/collections/iava" id="storeLink_campaign">HERE</apex:outputLink>!</li>
+          <li style="margin-bottom: 10px;">If you have any technical issues or questions please contact us at&nbsp;<apex:outputLink value="mailto:myiava@iava.org" id="myiavaEmail_campaign">myiava@iava.org</apex:outputLink>.</li>
+        </ol>
+      </apex:outputPanel>
+      <p>Thank you for your continued support of&nbsp;<apex:outputLink value="http://iava.org/" id="IAVASite_campaign">IAVA</apex:outputLink> and welcome to the family!</p>
+      <p>Sincerely,</p>
+      <p>Paul Rieckhoff<br/>
+         Iraq Veteran<br/>
+         Executive Director &amp; Founder<br/>
+         Iraq and Afghanistan Veterans of America (IAVA)
+      </p>
+    </apex:outputPanel>
+    <hr/>
+    <!--<footer><center><apex:image id="footerImage" value="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmF1&oid=00D4B0000008x9W&lastMod=1464112887000" style="max-width:100%"/></center></footer>-->
+    <footer><center><apex:outputLink id="joinLink" value="http://www.iava.org/join"><apex:image id="footerImage" value="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmF1&oid=00D4B0000008x9W&lastMod=1464112887000" style="max-width:100%"/></apex:outputLink></center></footer>
+   </div>
+  </messaging:htmlEmailBody>
+</messaging:emailTemplate>

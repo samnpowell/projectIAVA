@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Automatically sends to someone after they make an Event Journal Ad Form donation.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Gala 2015 Journal Ad Purchase - Thank You</name>
+    <style>none</style>
+    <subject>Thank You for Your Heroes Gala 2015 Journal Ad Purchase!</subject>
+    <type>text</type>
+</EmailTemplate>

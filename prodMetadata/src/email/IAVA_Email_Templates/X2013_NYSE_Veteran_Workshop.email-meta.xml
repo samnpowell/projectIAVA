@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2013 NYSE Veteran Workshop</name>
+    <style>none</style>
+    <subject>From IAVA: Join us at the New York Stock Exchange!</subject>
+    <type>text</type>
+</EmailTemplate>

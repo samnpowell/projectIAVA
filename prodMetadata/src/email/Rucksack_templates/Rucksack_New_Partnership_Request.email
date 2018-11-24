@@ -1,0 +1,22 @@
+Click this link and change the STAGE field to process this partnership request:
+{!Partnership_Request__c.Link}
+
+Stage: {!Partnership_Request__c.Stage__c}
+
+
+Org Name: {!Partnership_Request__c.Public_Partner_Name__c}
+Date created: {!Partnership_Request__c.CreatedDate}
+
+Background on org:
+{!Partnership_Request__c.Background_on_Organization__c}
+
+Goals in working with IAVA:
+{!Partnership_Request__c.Goals_in_Working_with_IAVA__c}
+
+Currently working with Veterans:
+{!Partnership_Request__c.Currently_Working_with_Veterans__c}
+
+Working with other partners:
+{!Partnership_Request__c.Other_Current_Partners__c}
+
+(View record to see Related Contact record of person who submitted this request.)

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>August 20 - Norfolk Tides 1 Ticket</name>
+    <style>none</style>
+    <subject>Confirmation: Norfolk TIdes vs. Durham Bulls on August 20th</subject>
+    <textOnly>Dear {!Contact.FirstName} {!Contact.LastName},
+
+You are confirmed to receive 1 tickets to see the Durham Bulls take on the Norfolk Tides on Friday, August 20, 2010.
+
+In order to receive your tickets, please print and bring a copy of this email with you to the ticket redemption area outside the Picnic Gate in Parking Lot D at Harbor Park starting at 5:30PM on game day:
+
+Harbor Park
+150 Park Avenue
+Norfolk, VA 23510
+
+Map and Directions:
+
+To Harbor Park: http://bit.ly/9z41j2
+
+Ticket voucher redemption will be located outside Picnic Gate in Parking Lot D. Look for the Miller High Life tents at the gate entrance.
+
+5:30PM-8:30PM: Game check-in and voucher redemption for tickets.
+5:45PM: Gates open. (Please note that only the Picnic Gates will open at this time.)
+5:45PM-End of game: Private picnic in The Virginian-Pilot Picnic area located just behind the left field fence inside Harbor Park. The picnic entrance is located in Parking Lot D near the left-field scoreboard. Join other IAVA members and their guests for free food and beverages, raffle prizes and an appearance by former Orioles player Al Bumbry.
+
+We hope you have a great time at the event and please send any photos and feedback to membership@IAVA.org.
+
+Don’t forget to keep checking back at TheRucksack.org and follow us on Twitter (@theRucksack) to hear about new events happening in your area.
+
+Thank you for supporting IAVA. We look forward to seeing you there!
+
+Please note that your tickets are non-transferable and non-refundable. All guests 21 and older will receive wrist-bands upon admittance to the Stadium. By attending this event, you agree to MillerCoors and IAVA using and reproducing your name, likeness, and any and all photographs, videos or other recordings taken of you while participating at the event.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

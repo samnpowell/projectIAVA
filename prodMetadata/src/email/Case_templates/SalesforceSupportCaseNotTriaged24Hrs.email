@@ -1,0 +1,5 @@
+Hey Salesforce Team!
+
+Case {!Case.CaseNumber}: {!Case.Subject} has not been triaged within the 24 hour window.
+
+{!Case.Link}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LC.MMF.Reconfirm</name>
+    <style>none</style>
+    <subject>From IAVA: Please reconfirm your ticket request for 8/22, Mostly Mozart Festival at Lincoln Center</subject>
+    <type>text</type>
+</EmailTemplate>

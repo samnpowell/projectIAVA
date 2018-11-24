@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notify about a change in Leg status.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Policy_Notify of bill status</name>
+    <style>none</style>
+    <subject>Bill {!Legislation__c.Name} status=&quot;{!Legislation__c.Status__c}&quot; ({!Legislation__c.AKA__c})</subject>
+    <type>text</type>
+</EmailTemplate>

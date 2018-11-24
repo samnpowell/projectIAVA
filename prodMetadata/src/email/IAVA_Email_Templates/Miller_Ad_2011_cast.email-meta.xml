@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Miller Ad 2011, cast</name>
+    <style>none</style>
+    <subject>Thank You!</subject>
+    <textOnly>{!Contact.FirstName},
+
+We hope you enjoyed living the High Life with us.
+
+On behalf of Miller High Life, Todd, Katie, Adam and the entire IAVA team, thank you for coming out and participating in the ad shoot at the Honda Center. Last year, we connected over 5,000 Iraq and Afghanistan veterans with all kinds of High Life experiences. This year, we’re planning to make to make it even bigger by reaching out to more vets and offering more amazing (and free!) experiences—and you’ll be the face of the campaign. It was a long day, and we really appreciate you spending it with us. 
+
+We’d also like to let you know that thanks to the long hours you put in, you’ll be receiving your compensation for the shoot within 14 days. And don’t forget to let your friends and family know to look out for you on TV starting in June, when the commercial begins to air nationwide.
+
+Lastly, don’t forget to check out some of the awesome rewards and ways to get involved that are available in The Rucksack. Coming up this April, IAVA will be proudly sponsoring the Pat Tillman Foundation’s “Pat’s Run,” a 4.2 mile run hosted in honor of Pat’s legacy. Visit the Rucksack &lt;http://rucksack.iava.org&gt; to run with Team IAVA for free in Los Angeles or San Diego.
+
+Thanks again for being a critical part of this campaign, and showing all new veterans that we’ve got their back.
+
+Best,
+
+Paul
+
+Paul Rieckhoff
+Executive Director and Founder
+Iraq and Afghanistan Veterans of America (IAVA)
+
+P.S. Know any other Iraq and Afghanistan veterans that haven’t joined IAVA yet? Tell them to sign up today—membership is free. &lt;http://iava.org&gt;</textOnly>
+    <type>custom</type>
+</EmailTemplate>

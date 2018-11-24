@@ -1,0 +1,186 @@
+<apex:page id="cov_profile_contactinfo" sidebar="false" showHeader="false" standardStylesheets="false" controller="cov_profile_controller" docType="html-5.0">
+<html>  
+  <head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  		<apex:define name="stylesheets">
+			<c:cov_stylesheets /> 
+		</apex:define>  
+		
+<!--     	<apex:styleSheet value="{!URLFOR($Resource.cov_files,'css/bootstrap.min.css?G')}" /> -->
+
+
+
+
+
+
+
+
+    <style type="text/css">
+    
+    /* Just temporarily so it doesn't look messed up  */
+    
+
+        .bootstrap .form-control {
+        	width: inherit;
+        	height: inherit;
+        }
+
+	</style>
+
+
+
+
+
+
+
+        
+  </head>  
+  <body class="bootstrap">  
+
+	<div class="returnLink-wrapper clearfix">
+		<div class="returnLink pull-right">
+			<apex:outputLink value="{!$Page.cov_dashboard}" target="_parent">Back to Home >></apex:outputLink>
+		</div>
+	</div>
+
+	<apex:outputPanel rendered="{!isOwnProfile}" >
+	
+  
+    <div class="container" id="container-overall">
+  		<apex:form styleclass="form-horizontal">
+       
+
+
+	    <apex:pageMessages id="error"/>
+
+	
+		<div class="section">
+	
+	
+	
+	    	<div class="box-heading">
+				<div class="box-heading-content">
+
+	    			<h5>Account Info (private)</h5>
+
+	        	</div>
+	        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+	    			
+	    	</div>
+	
+				<div class="form-group spacer">
+					<label>&nbsp;</label>  
+					&nbsp;
+				</div>  
+	    
+				<apex:outputPanel id="emailContactSection" rendered="{!theC != null}">
+		
+				    <div class="form-group">
+				    	<label for="" class="col-xs-3 control-label">Email / Username</label>
+						<apex:inputField type="email" value="{!theC.Email}" styleclass="col-xs-9 form-control" html-name="email" html-autocomplete="email" />
+						&nbsp;&nbsp;&nbsp;
+						<div>
+							<apex:outputLink style="margin-left:20px" value="{!$Site.currentSiteUrl}IAVAPlus_ChangePassword" target="_parent" >Change Password</apex:outputLink>
+						</div>
+					</div>
+	
+				</apex:outputPanel>	
+
+				<apex:outputPanel rendered="{!facebookLoginActive}" id="facebook-link-panel">
+					<apex:outputPanel rendered="{!NOT(isFacebookLinked)}">
+						<div class="form-group button-group">
+							<label class="col-xs-3 control-label">&nbsp;</label>
+							<apex:commandLink action="https://{!if(isSandbox,'test','login')}.salesforce.com/services/auth/link/{!$Organization.Id}/Facebook?community={!urlencode($Site.currentSiteUrl)}" target="_parent" styleClass="btn btn-link">
+								<span>Use Facebook to Log Into myIAVA</span>
+							</apex:commandLink>
+						</div>
+					</apex:outputPanel>
+					<apex:outputPanel rendered="{!isFacebookLinked}">
+						<div class="form-group">
+							<label class="col-xs-3 control-label">&nbsp;</label>
+							<div class="col-xs-9">
+								<p class="form-control-static italicer">
+									Facebook account is linked 
+									<!-- [<apex:commandLink value="un-link" action="{!deleteFacebookLink}" rerender="facebook-link-panel, error"/>] -->
+								</p>
+							</div>
+						</div>
+					</apex:outputPanel>
+				</apex:outputPanel>
+	
+		</div>
+
+		<apex:outputPanel id="profileContactSection" rendered="{!theC != null}">
+	
+			<div class="section">
+			
+		
+				    <div class="form-group">
+				    	<label for="" class="col-xs-3 control-label">Phone</label>
+						<apex:inputField value="{!theC.Phone}" styleclass="col-xs-9 form-control" html-name="phone" html-autocomplete="tel" />
+					</div>
+		
+				
+			    <div class="form-group">
+				    	<label for="" class="col-xs-3 control-label">Street Address</label>
+						<apex:inputField value="{!theC.MailingStreet}" styleclass="col-xs-9 form-control" html-name="address" html-autocomplete="street-address" />
+				</div>
+		
+			    <div class="form-group">
+			    	<label for="" class="col-xs-3 control-label">City</label>
+					<apex:inputText value="{!city}" styleclass="col-xs-9 form-control" html-name="city" html-autocomplete="address-level2" />
+				</div>
+		
+			    <div class="form-group narrow-dropdown">
+			    	<label for="" class="col-xs-3 control-label">State / Province</label>
+						<apex:selectList value="{!state}" size="1" styleClass="form-select col-xs-9 form-control" html-name="state" html-autocomplete="address-level1" >
+							<apex:selectOptions value="{!StateOptions}" />
+						</apex:selectList>
+				</div>
+		
+		
+			    <div class="form-group">
+			    	<label for="" class="col-xs-3 control-label">Zip / Postal Code</label>
+					<apex:inputText value="{!zip}" styleclass="col-xs-9 form-control" html-name="zip" html-autocomplete="postal-code" />
+				</div>
+		
+			    <div class="form-group">
+			    	<label for="" class="col-xs-3 control-label">Country</label>
+					<apex:inputText value="{!country}" styleclass="col-xs-9 form-control" html-name="country" html-autocomplete="country" />
+				</div>
+				
+		
+					<div class="form-group">
+					    <div class="col-xs-3">
+							&nbsp;
+						</div>
+					    <div class="col-xs-9">
+					      <apex:commandButton action="{!saveTheC}" value="Save Contact Info" styleClass="btn btn-primary"
+					      		reRender="saveMessage" onclick="document.getElementById('saveMsg').innerHTML = 'one moment...';" />
+					      <apex:outputPanel id="saveMessage" styleclass="" >
+					      	  <span id="saveMsg" style="margin-left:40px; font-style:italic;">{!saveMsgTheC}</span>
+				      	  </apex:outputPanel>
+
+					    </div>
+					</div>	
+						
+			</div>
+		
+		</apex:outputPanel>
+		
+		<apex:outputPanel styleclass="conn-contact-msg" rendered="{!theC == null && isOwnProfile}">
+			No connected contact for contact info
+		</apex:outputPanel>		
+		
+		
+
+ 	    </apex:form>
+    
+    </div>
+  	</apex:outputPanel>
+    
+    </body>
+</html>
+    
+</apex:page>

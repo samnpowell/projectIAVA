@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Fleet Week Workshop Follow-up Email &amp; Survey</name>
+    <style>none</style>
+    <subject>From IAVA: Please Respond! IAVA &amp; Advertising Week&apos;s Job Fair on Monday, 10/1</subject>
+    <type>text</type>
+</EmailTemplate>

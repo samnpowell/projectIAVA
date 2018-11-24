@@ -1,0 +1,11 @@
+{!Media_Request__c.CreatedBy} has requested your approval for  the following item.  To approve or reject this item, click this link:
+
+{!Media_Request__c.Link}
+
+Interview Confirmation 
+
+For confirmation: {!Media_Request__c.Proposed_Spokesperson__c} has been scheduled to be interviewed at {!Media_Request__c.Proposed_Date_and_Time__c} on {!Media_Request__c.Press_Outlet__c} {!if(ISBLANK(Media_Request__c.Location__c),".", "at "+  Media_Request__c.Location__c)}. The interview will be about {!Media_Request__c.Name} and will be conducted {!if(Media_Request__c.Live__c,"live ","")} on {!Media_Request__c.Medium__c}. 
+
+Your primary contact at {!Media_Request__c.Press_Outlet__c} is {!Media_Request__c.Reporter_Producer__c}, who can be reached by:
+Email: {!Media_Request__c.Contact_Email__c} 
+Phone: {!Media_Request__c.Contact_Phone__c}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Donation_History__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Donation_History__r$Year__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Account.Donation_History__r$Amount_Posted__c</field>
+    </columns>
+    <columns>
+        <field>Account$npe01__LifetimeDonationHistory_Number__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Maximum</aggregateTypes>
+        <field>Account$npe01__LifetimeDonationHistory_Amount__c</field>
+    </columns>
+    <description>Custom Donation History check with Lifetime Total</description>
+    <filter>
+        <criteriaItems>
+            <column>Account$Multiple_D_Hist__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account$Id</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Donation History Data Check</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Donation_History_Custom_Object__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

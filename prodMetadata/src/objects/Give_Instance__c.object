@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is a sub-object of the Give object containing the Date, Date Range and Time for a given Give.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Application_Deadline__c</fullName>
+        <externalId>false</externalId>
+        <label>Application Deadline</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;US&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_From__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(Start_Date__c),&quot;&quot;,(IF(MONTH(Start_Date__c) == 1,&quot;Jan&quot;, 
+(IF(MONTH(Start_Date__c) == 2,&quot;Feb&quot;,
+(IF(MONTH(Start_Date__c) == 3,&quot;Mar&quot;,
+(IF(MONTH(Start_Date__c) == 4,&quot;Apr&quot;,
+(IF(MONTH(Start_Date__c) == 5,&quot;May&quot;,
+(IF(MONTH(Start_Date__c) == 6,&quot;Jun&quot;,
+(IF(MONTH(Start_Date__c) == 7,&quot;Jul&quot;,
+(IF(MONTH(Start_Date__c) == 8,&quot;Aug&quot;,
+(IF(MONTH(Start_Date__c) == 9,&quot;Sep&quot;,
+(IF(MONTH(Start_Date__c) == 10,&quot;Oct&quot;,
+(IF(MONTH(Start_Date__c) == 11,&quot;Nov&quot;,
+(IF(MONTH(Start_Date__c) == 12,&quot;Dec&quot;,&quot;&quot;))))))))))))))))))))))) &amp;  &quot; &quot; &amp; TEXT(DAY(Start_Date__c))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date From</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_To__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(End_Date__c), &quot;&quot;,(IF(MONTH(End_Date__c) == 1,&quot;Jan&quot;,
+(IF(MONTH(End_Date__c) == 2,&quot;Feb&quot;,
+(IF(MONTH(End_Date__c) == 3,&quot;Mar&quot;,
+(IF(MONTH(End_Date__c) == 4,&quot;Apr&quot;,
+(IF(MONTH(End_Date__c) == 5,&quot;May&quot;,
+(IF(MONTH(End_Date__c) == 6,&quot;Jun&quot;,
+(IF(MONTH(End_Date__c) == 7,&quot;Jul&quot;,
+(IF(MONTH(End_Date__c) == 8,&quot;Aug&quot;,
+(IF(MONTH(End_Date__c) == 9,&quot;Sep&quot;,
+(IF(MONTH(End_Date__c) == 10,&quot;Oct&quot;,
+(IF(MONTH(End_Date__c) == 11,&quot;Nov&quot;,
+(IF(MONTH(End_Date__c) == 12,&quot;Dec&quot;,&quot;&quot;))))))))))))))))))))))) &amp; &quot; &quot; &amp; TEXT(DAY(End_Date__c))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Differentiator__c</fullName>
+        <description>Differentiating term for this instance when there are multiple instances per Give (like the opposing team for a sporting event).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Differentiating term for this instance when there are multiple instances per Give (like the opposing team for a sporting event).</inlineHelpText>
+        <label>Distinguishing Term for this Instance</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>The end date of give date range. Blank if only one date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The end date of give date range. Blank if only one date.</inlineHelpText>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Time__c</fullName>
+        <description>In format (HH:MM XX) where XX is AM or PM in upper case. (e.g. 11:30 AM)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In format (HH:MM XX) where XX is AM or PM in upper case. (e.g. 11:30 AM)</inlineHelpText>
+        <label>End Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Geocode__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For use by Geopointe to map Give Instances.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For use by Geopointe to map Give Instances.</inlineHelpText>
+        <label>Geocode</label>
+        <referenceTo>geopointe__Geocode__c</referenceTo>
+        <relationshipLabel>Give Instances</relationshipLabel>
+        <relationshipName>Give_Instances</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Give_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Give Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Give__c</fullName>
+        <description>The parent Give object that these dates and times relate to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The parent Give object that these dates and times relate to.</inlineHelpText>
+        <label>Give</label>
+        <referenceTo>Give__c</referenceTo>
+        <relationshipLabel>Give Instances</relationshipLabel>
+        <relationshipName>Give_Instances</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Location__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give__r.Location_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Num_Attended__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Attended</label>
+        <summarizedField>Give_Request__c.Units_Requested__c</summarizedField>
+        <summaryFilterItems>
+            <field>Give_Request__c.Attended__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Give_Request__c.Give_Instance__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Num_Inst__c</fullName>
+        <externalId>false</externalId>
+        <formula>Give__r.Number_of_Give_Instances__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num. Instances on Give</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Remaining__c</fullName>
+        <externalId>false</externalId>
+        <formula>Number_of_Units__c  -  Number_of_Confirmed_Units__c -  Number_of_Tentative_Confirmed_Units__c -  Number_of_Waitlist_Units__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num. Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Applicants__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Applicants</label>
+        <summaryForeignKey>Give_Request__c.Give_Instance__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Confirmed_Requests__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Confirmed Requests</label>
+        <summaryFilterItems>
+            <field>Give_Request__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Final confirmation</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Give_Request__c.Give_Instance__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Confirmed_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Confirmed Units</label>
+        <summarizedField>Give_Request__c.Units_Requested__c</summarizedField>
+        <summaryFilterItems>
+            <field>Give_Request__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Final confirmation</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Give_Request__c.Give_Instance__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Tentative_Confirmed_Requests__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Tentative Confirmed Requests</label>
+        <summaryFilterItems>
+            <field>Give_Request__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Tentative confirmation</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Give_Request__c.Give_Instance__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Tentative_Confirmed_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Tentative Confirmed Units</label>
+        <summarizedField>Give_Request__c.Units_Requested__c</summarizedField>
+        <summaryFilterItems>
+            <field>Give_Request__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Tentative confirmation</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Give_Request__c.Give_Instance__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Units__c</fullName>
+        <description>Quantity of give items available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity of give items available.</inlineHelpText>
+        <label>Num. Units</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Waitlist_Requests__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Waitlist Requests</label>
+        <summaryFilterItems>
+            <field>Give_Request__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Wait-list</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Give_Request__c.Give_Instance__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Waitlist_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Waitlist Units</label>
+        <summarizedField>Give_Request__c.Units_Requested__c</summarizedField>
+        <summaryFilterItems>
+            <field>Give_Request__c.Stage__c</field>
+            <operation>equals</operation>
+            <value>Wait-list</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Give_Request__c.Give_Instance__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Numerical_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ispickval(Status__c,&quot;Open&quot;),3,IF( ispickval(Status__c ,&quot;Waitlist&quot;),2,1))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Numerical Status</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Partnership_hidden__c</fullName>
+        <description>Hidden field for use by geopointe.</description>
+        <externalId>false</externalId>
+        <formula>Give__r.Partnership_Request__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partnership (hidden)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PowerOfOne__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PowerOfOne</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reconfirm_Info_to_Send__c</fullName>
+        <description>This text is sent to users in the Reconfirm Email on the designated Reconfirm Date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This text is sent to users in the Reconfirm Email on the designated Reconfirm Date (limit 255 characters -- sorry).</inlineHelpText>
+        <label>Reconfirm Info to Send</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Reconfirm_date__c</fullName>
+        <description>Enter date when you want reconfirm request emails to go out at 8am ET to members who become Final Confirmed after you set this date.  To manually send reconfirm email, change Re-confirm Status field on the Give Request to &quot;Re-confirm Sent&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter date when you want reconfirm request emails to go out at 8am ET to members who become Final Confirmed after you set this date.  To manually send reconfirm email, change Re-confirm Status field on the Give Request to &quot;Re-confirm Sent&quot;.</inlineHelpText>
+        <label>Reconfirm date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>The associated date of this give instance or start date of range.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The associated date of this give instance or start date of range.</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Time__c</fullName>
+        <description>In format (HH:MM XX) where XX is AM or PM in upper case. (e.g. 11:30 AM)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In format (HH:MM XX) where XX is AM or PM in upper case. (e.g. 11:30 AM)</inlineHelpText>
+        <label>Start Time</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Waitlist</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Tentative_Number_Remaining__c</fullName>
+        <externalId>false</externalId>
+        <formula>Number_of_Units__c  - ( Number_of_Confirmed_Units__c + Number_of_Tentative_Confirmed_Units__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Num. Tentative Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR(End_Date__c))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year (End Date)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR(Start_Date__c ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year (Start Date)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Give Instance</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Application_Deadline__c</columns>
+        <columns>Number_of_Confirmed_Requests__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Date_From__c</columns>
+        <columns>Date_To__c</columns>
+        <columns>End_Time__c</columns>
+        <columns>Start_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Number_of_Confirmed_Requests__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>Give_Name__c</columns>
+        <columns>Application_Deadline__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_Remaining__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_in_the_last_2_months</fullName>
+        <columns>Give__c</columns>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Number_of_Units__c</columns>
+        <columns>Number_of_Confirmed_Requests__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_MONTHS:2</value>
+        </filters>
+        <label>Created in the last 2 months</label>
+    </listViews>
+    <listViews>
+        <fullName>Instances_with_Start_and_End_Time</fullName>
+        <columns>NAME</columns>
+        <columns>Start_Time__c</columns>
+        <columns>End_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Instances with Start and End Time</label>
+    </listViews>
+    <listViews>
+        <fullName>Prior_to_2013</fullName>
+        <columns>NAME</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Give_Name__c</columns>
+        <columns>Number_of_Applicants__c</columns>
+        <columns>Number_of_Confirmed_Requests__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Year_Start_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>2013</value>
+        </filters>
+        <label>Prior to 2013</label>
+    </listViews>
+    <nameField>
+        <displayFormat>GI-{000}</displayFormat>
+        <label>Give Instance ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Give Instances</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Give__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Time__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Give__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OBJECT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Location__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Available_Quantity_Check</fullName>
+        <active>false</active>
+        <description>SD: deactivated this, not sure why it would be on the Give Instance object.</description>
+        <errorConditionFormula>Number_Remaining__c &lt;0</errorConditionFormula>
+        <errorMessage>Available Quantity Exceeded</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Administer_Give_Requests</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Administer Give Requests</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/dc_GiveInstanceMassView?instanceId={!Give_Instance__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Manage_Applicants</fullName>
+        <availability>online</availability>
+        <description>Links to SKUID</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Manage Applicants</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/skuid__UI?id={!Give_Instance__c.Id}&amp;page=GiveInstanceApplicantsTabs</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Report_All_Give_Requests</fullName>
+        <availability>online</availability>
+        <description>Pulls up a report of all related Give Requests for a Give Instance.</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Report: All Give Requests</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na6.salesforce.com/00O80000004NmsH?pv0={!Give_Instance__c.Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Report_Final_Give_Requests</fullName>
+        <availability>online</availability>
+        <description>Pulls up a report of Final Confirmed Give Requests for this instance</description>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Report: Final Give Requests</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na6.salesforce.com/00O80000003uCRG?pv1={!Give_Instance__c.Name}</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>Application__c.Veteran_Member__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>Application__c.Stage__c</field>
+    </columns>
+    <columns>
+        <field>Application__c.Progress_Notes__c</field>
+    </columns>
+    <columns>
+        <field>Application__c.Source__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.Source__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.Source_Details__c</field>
+    </columns>
+    <description>Took report capturing all Job Applicants with Date and Veteran Status, added in only those with Stage equals Offer Accepted</description>
+    <filter>
+        <criteriaItems>
+            <column>Application__c.Position__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notContain</operator>
+            <value>internship,volunteer</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Application__c.Stage__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Offer extended – accepted</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>All Jobseekers w/ Date, Vet St, Offers A</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Application__c@Application__c.Applicant__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CUST_CREATED_DATE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Application__c.Hire_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

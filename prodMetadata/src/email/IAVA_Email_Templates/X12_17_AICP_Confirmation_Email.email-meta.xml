@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>12/17 AICP Confirmation Email</name>
+    <style>none</style>
+    <subject>From IAVA: Confirmation &amp; Information for 12/17 Event with Association of Independent Commercial Producers (AICP)</subject>
+    <type>text</type>
+</EmailTemplate>

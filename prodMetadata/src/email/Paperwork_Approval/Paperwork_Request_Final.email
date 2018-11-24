@@ -1,0 +1,53 @@
+<p><b>Dear {!Contact.FirstName},</b></p>
+
+<p>Thank you for signing up to join IAVA’s Community of Veterans. There’s one more step before you can become a member.  </p>
+
+<p>Before we can approve your application, <b>you must submit paperwork verifying your status</b> as an Operation Enduring Freedom (2001-Present) or Operation Iraqi Freedom (2003-Present) veteran. <b>Please send us ONE of the following documents in a non-editable format (i.e. PDF or .JPG files):</b></p>
+
+<ul>
+<li>A copy of your DD214 that shows:</li>
+<ul>
+<li>Your discharge status AND:</li>
+<li>Evidence of a Global War on Terrorism Expeditionary Medal, Iraq Campaign Medal, Afghanistan Campaign Medal, Combat Action Badge <b>OR</b></li>
+<li>Clearly stated service dates in Iraq and/or Afghanistan</li>
+</ul>
+<li>Officer Records Briefs or Enlisted Records Briefs</li>
+
+<li>Redeployment or REFRAD orders</li>
+
+<li>Medal, Award, or certificate of recognition from your service in Iraq and/or Afghanistan</li>
+
+<li>Paperwork from the Veterans Administration or Department of Defense indicating that you served in Iraq and/or Afghanistan</li>
+</ul>
+<p>You can upload a copy of these documents online by <a href="https://secure.iava.org/veteran-paperwork?tfa_ContactID={!Contact.Id}">clicking here</a>. You can also email, fax or mail a copy to us (including  cover letter with your name and the email address you used to register):</p>
+ 
+<p><b>Email:</b><br />
+<a href="mailto:paperwork@iava.org">paperwork@iava.org</a></p>
+
+<p><b>Fax:</b><br />
+646-607-0388<br />
+Attn: Community of Veterans</p>
+ 
+<p><b>Mail:</b><br />
+IAVA Community of Veterans<br />
+292 Madison Ave, 10th Floor<br />
+New York, NY 10003</p>
+ 
+<p><b>Once we receive your documents, you’ll be able to join our exclusive online social network, get access to free tickets and giveaways, and get connected to other OIF/OEF veterans in your area.</b></p>
+
+ 
+<p>If you have questions or want to do more, email <a href="mailto:community@iava.org">community@iava.org</a>.</p>
+
+<p>Thank you for getting involved. </p>
+ 
+<p>Sincerely,</p>
+
+<p>Paul</p>
+
+<p>Paul Rieckhoff<br />
+Iraq Veteran<br />
+Executive Director & Founder<br />
+Iraq and Afghanistan Veterans of America (IAVA)<br /></p>
+ 
+<p><b>P.S. Think your friends would want to join IAVA? Send them this message:</b><br />
+"I just joined IAVA, the nation’s first and largest organization for veterans of Iraq and Afghanistan. Membership is free! Get free tickets to concerts, movie screenings and network with other OIF/OEF vets. Sign up at <a href="http://iava.org/#join">www.iava.org/#join</a></p>

@@ -1,0 +1,8 @@
+Dear {!Case.Contact}, 
+
+Thank you for opening a case with RRRP. Your case number is: {!Case.CaseNumber}. A Veteran Transition Manager should contact you within one business day. If, for some reason, you are not contacted within 1-2 business days, please send us an email to transition@iava.org that includes your case number and a valid phone number and/or email address.
+
+Best,
+
+Rapid Response Referral Program (RRRP) Team
+{!Organization.Name}

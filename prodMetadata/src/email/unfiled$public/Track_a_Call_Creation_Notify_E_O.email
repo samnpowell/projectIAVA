@@ -1,0 +1,12 @@
+Hello,
+
+A new Track a Call, {!Activity_Junction__c.Name}, has just been completed by {!Activity_Junction__c.OwnerFullName}.
+
+Date of Call: {!Activity_Junction__c.Date_of_Call__c}
+
+For further details related to DC Events/Focus Areas/Legislation/Policy Recommendations/Stats, click here:
+https://na8.salesforce.com/{!Activity_Junction__c.Id}
+
+Main Contact: {!Activity_Junction__c.Contact__c}
+
+Call Notes: {!Activity_Junction__c.Call_Notes__c}

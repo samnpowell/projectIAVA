@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Inventory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Inventories</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assigned Assets --></label>
+        <name>Assigned_Assets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Inventory --></label>
+        <name>Current_Inventory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fulfilled Requests --></label>
+        <name>Fulfilled_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventory Category --></label>
+        <name>Inventory_Category__c</name>
+        <relationshipLabel><!-- Inventories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Large - Remaining --></label>
+        <name>Large_remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Large - Requested --></label>
+        <name>Large_requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Large - Stocked --></label>
+        <name>Large_stocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer --></label>
+        <name>Manufacturer__c</name>
+        <picklistValues>
+            <masterLabel>Oscar Mike</masterLabel>
+            <translation><!-- Oscar Mike --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undefeated</masterLabel>
+            <translation><!-- Undefeated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Medium - Remaining --></label>
+        <name>Medium_remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medium - Requested --></label>
+        <name>Medium_requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medium - Stocked --></label>
+        <name>Medium_stocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Restock --></label>
+        <name>Restock__c</name>
+    </fields>
+    <fields>
+        <label><!-- Small - Remaining --></label>
+        <name>Small_remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Small - Requested --></label>
+        <name>Small_requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Small - Stocked --></label>
+        <name>Small_stocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Starting Amount --></label>
+        <name>Starting_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stocked Inventory --></label>
+        <name>Stocked_Inventory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Assets --></label>
+        <name>Total_Assets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Annual Report</masterLabel>
+            <translation><!-- Annual Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banner</masterLabel>
+            <translation><!-- Banner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bracelet</masterLabel>
+            <translation><!-- Bracelet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coin</masterLabel>
+            <translation><!-- Coin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Computer</masterLabel>
+            <translation><!-- Computer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equipment</masterLabel>
+            <translation><!-- Equipment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Flag</masterLabel>
+            <translation><!-- Flag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hoodie</masterLabel>
+            <translation><!-- Hoodie --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Koozie</masterLabel>
+            <translation><!-- Koozie --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LS shirt</masterLabel>
+            <translation><!-- LS shirt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logo folder</masterLabel>
+            <translation><!-- Logo folder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pin</masterLabel>
+            <translation><!-- Pin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy Agenda</masterLabel>
+            <translation><!-- Policy Agenda --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Polo shirt</masterLabel>
+            <translation><!-- Polo shirt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T-shirt</masterLabel>
+            <translation><!-- T-shirt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Table skirt</masterLabel>
+            <translation><!-- Table skirt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tent</masterLabel>
+            <translation><!-- Tent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tote bag</masterLabel>
+            <translation><!-- Tote bag --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Veteran Crisis Line card</masterLabel>
+            <translation><!-- Veteran Crisis Line card --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unassigned Assets --></label>
+        <name>Unassigned_Assets__c</name>
+    </fields>
+    <fields>
+        <label><!-- XXX-Large - Remaining --></label>
+        <name>XXX_Large_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- XXX-Large - Requested --></label>
+        <name>XXX_Large_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- XXX-Large - Stocked --></label>
+        <name>XXX_Large_Stocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- XX-Large - Remaining --></label>
+        <name>XX_Large_remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- XX-Large - Requested --></label>
+        <name>XX_Large_requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- XX-Large - Stocked --></label>
+        <name>XX_Large_stocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- X-Large - Remaining --></label>
+        <name>X_Large_remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- X-Large - Requested --></label>
+        <name>X_Large_requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- X-Large - Stocked --></label>
+        <name>X_Large_stocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- X-Small - Remaining --></label>
+        <name>X_Small_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- X-Small - Requested --></label>
+        <name>X_Small_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- X-Small - Stocked --></label>
+        <name>X_Small_Stocked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- isLowStock --></label>
+        <name>isLowStock__c</name>
+    </fields>
+    <layouts>
+        <layout>Apparel Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Sizing Breakdown --></label>
+            <section>Sizing Breakdown</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Hardware Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Other Merch Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Apparel --></label>
+        <name>Apparel</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Hardware --></label>
+        <name>Hardware</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Other Merch --></label>
+        <name>Other_Merch</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter a description for miscellaneous inventory. --></errorMessage>
+        <name>RequireDescriptionForMiscInventory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please add the year of the policy agenda or annual report. --></errorMessage>
+        <name>RequireYearForPolicyAgendaAnnualReport</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- isLowStock can only be 0 or 1 --></errorMessage>
+        <name>isLowStock_1or0</name>
+    </validationRules>
+</CustomObjectTranslation>

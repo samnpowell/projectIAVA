@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Event Survey</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Event Surveys</value>
+    </caseValues>
+    <fields>
+        <label><!-- Answer1 --></label>
+        <name>Answer1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Answer to Custom Additional Question 2 --></help>
+        <label><!-- Answer2 --></label>
+        <name>Answer2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did you attend the event? --></help>
+        <label><!-- Attended --></label>
+        <name>Attended__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are you familiar with IAVA&apos;s Community of Veterans? --></help>
+        <label><!-- COV --></label>
+        <name>COV__c</name>
+        <picklistValues>
+            <masterLabel>I don&apos;t know what that is.</masterLabel>
+            <translation><!-- I don&apos;t know what that is. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I&apos;ve heard of it, but am not interested.</masterLabel>
+            <translation><!-- I&apos;ve heard of it, but am not interested. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I&apos;ve heard of it, but haven&apos;t signed up yet.</masterLabel>
+            <translation><!-- I&apos;ve heard of it, but haven&apos;t signed up yet. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes, I have an account.</masterLabel>
+            <translation><!-- Yes, I have an account. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Campaign/Event --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- Event Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Event Surveys --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Do you have any additional feedback for us? --></help>
+        <label><!-- Feedback --></label>
+        <name>Feedback__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do you thing you&apos;d attend future IAVA events? --></help>
+        <label><!-- Future events --></label>
+        <name>IAVAEvents__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Are you or someone you know using, or plan on using, the Post-9/11 GI Bill? --></help>
+        <label><!-- NewGIBill --></label>
+        <name>NewGIBill__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Question1 --></label>
+        <name>Question1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Custom Additional Question 2 --></help>
+        <label><!-- Question2 --></label>
+        <name>Question2__c</name>
+    </fields>
+    <fields>
+        <help><!-- How would you describe the website/RSVP process? --></help>
+        <label><!-- RSVP Process --></label>
+        <name>RSVP_Process__c</name>
+        <picklistValues>
+            <masterLabel>I really don&apos;t like submitting my information on a web form.</masterLabel>
+            <translation><!-- I really don&apos;t like submitting my information on a web form. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>It&apos;s a bit cumbersome.</masterLabel>
+            <translation><!-- It&apos;s a bit cumbersome. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>It&apos;s easy enough to do.</masterLabel>
+            <translation><!-- It&apos;s easy enough to do. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+        <picklistValues>
+            <masterLabel>Email from IAVA</masterLabel>
+            <translation><!-- Email from IAVA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facebook</masterLabel>
+            <translation><!-- Facebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saw a Flyer</masterLabel>
+            <translation><!-- Saw a Flyer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twitter</masterLabel>
+            <translation><!-- Twitter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of Mouth</masterLabel>
+            <translation><!-- Word of Mouth --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Event Survey Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

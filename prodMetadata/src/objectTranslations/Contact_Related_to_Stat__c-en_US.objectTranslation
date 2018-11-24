@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contact Related to Stat</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contacts Related to Stats</value>
+    </caseValues>
+    <fields>
+        <label><!-- Related Contact --></label>
+        <name>Related_Contact__c</name>
+        <relationshipLabel><!-- Contacts Related to Stats --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Stat --></label>
+        <name>Related_Stat__c</name>
+        <relationshipLabel><!-- Contacts Related to Stats --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

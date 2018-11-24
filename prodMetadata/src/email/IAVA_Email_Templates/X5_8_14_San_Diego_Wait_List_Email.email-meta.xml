@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>5.8.14 San Diego Wait List Email</name>
+    <style>none</style>
+    <subject>Update on your RSVP for IAVA&apos;s May 8th event</subject>
+    <type>text</type>
+</EmailTemplate>

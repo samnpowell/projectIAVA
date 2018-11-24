@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Press_Hit__c.Press_Outlet__c</field>
+    </columns>
+    <columns>
+        <field>Press_Hit__c.Story_Date__c</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Press_Hit__c.Topic__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Press_Hit__c.Article_Text__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>Wait we Carry</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Press Hits with Wait we Carry in text</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Press_Hit__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Press_Hit__c.Story_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

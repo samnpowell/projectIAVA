@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>STHLetterhead</letterhead>
+    <name>STHAcceptance</name>
+    <style>freeForm</style>
+    <subject>Storm the Hill 2010: You’re In!</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Congratulations! Throughout our rigorous and comprehensive selection process, you have excelled and showed us you are a powerful voice for new veterans. Therefore, we are very pleased to invite you to be a part of IAVA’s Storm the Hill 2010 in Washington, D.C. from February 6-12.
+
+It will be an exciting, demanding and historic week, and we know you will be an excellent addition. We’ll show millions of our fellow veterans around the world that we’ve got their back. However, there is a lot to do and only a short time to do it. 
+
+Let’s get to the logistics. IAVA is taking care of your travel and lodging, but we need two things from you to make that happen. 
+
+First, we need you to complete the attached form for the Air Compassion for Veterans program. They are providing air travel for our participating Veterans. Please complete the form and fax it to (212) 982-8645, “attention Dawn” by 5:00 pm on Thursday, January 28th. Alternatively, you can email the completed form to dawn@iava.org. Please put “Storm the Hill 2010 Travel” in the subject line of your email. 
+Second, we need you to complete the form here by 5:00 pm on Thursday, January 28th. This online form will help us manage your travel and logistics. We will also share some of this information with the media and congressional offices. 
+
+After completing these two steps, you will receive information with your air-travel details. You will also receive a packet by US mail with the rest of your travel arrangements and other important information about the upcoming trip by Wednesday, February 3rd.
+
+Please note: the dress code during all meetings will be Business Attire. That means a suit and a tie for men, and the equivalent for women. Please let us know ASAP if this will be an issue.
+
+If you have any questions about anything in the next few weeks, please contact Cara Hammer at membership@iava.org. She is an Iraq vet herself, and she’s here to help make your trip a success. 
+
+We are excited to have you as a member of Storm the Hill 2010 and look forward to seeing you in Washington, DC next month. 
+
+Welcome to the team!
+
+Sincerely,
+
+Paul Rieckhoff
+Executive Director and Founder
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>html</type>
+</EmailTemplate>

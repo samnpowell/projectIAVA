@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DC Event Attendee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DC Event Attendees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attendee Role --></label>
+        <name>Attendee_Role__c</name>
+        <picklistValues>
+            <masterLabel>Contact Made at event</masterLabel>
+            <translation><!-- Contact Made at event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IAVA Representative</masterLabel>
+            <translation><!-- IAVA Representative --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Attendee --></label>
+        <name>Attendee__c</name>
+        <relationshipLabel><!-- DC Event Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- DC Event --></label>
+        <name>DC_Event__c</name>
+        <relationshipLabel><!-- DC Event Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

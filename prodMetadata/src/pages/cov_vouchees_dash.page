@@ -1,0 +1,127 @@
+<apex:page controller="cov_vouching_controller" docType="html-5.0">
+
+<!-- 				<apex:outputPanel styleclass="conn-contact-msg" rendered="{!theConId == null}">
+					No connected contact, vouching unavailable
+				</apex:outputPanel>	
+ -->
+
+	<apex:outputPanel id="vouchingPanel" rendered="{!NOT(ISBLANK(theConId))}">
+
+
+		<apex:outputPanel rendered="{!isUnconfirmed}">
+		    <div class="dashboard-list">
+		        <div class="box-heading">
+					<div class="box-heading-content">
+			        	<h5>Unlock: Vouch for Other Veterans</h5>
+			        </div>
+        			<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+		        </div>
+
+		         <div class="box-content">
+
+
+
+
+					<p>Confirmed members can nominate other veterans for free IAVA membership.</p>
+
+			        <apex:include pageName="cov_uplevel_widget" />
+
+			     </div>
+
+
+			</div>
+
+		</apex:outputPanel>
+
+
+		<apex:outputPanel rendered="{!isConfirmed}" >
+
+		    <div class="dashboard-list">
+		        <div class="box-heading">
+					<div class="box-heading-content">
+		        		<h5>Vets You've Vouched For</h5>
+		        	</div>
+        			<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+		        </div>
+
+	            <div class="box-content">
+		        				
+					<!-- <apex:pageMessages /> -->
+											
+						        <table class="table">  
+						             <thead>  
+						              <tr>  
+						                <th>&nbsp;</th>
+						                <th>Name</th>  
+						                <th>Status</th>  
+						                <!-- <th>Date Vouched</th>   -->
+						                <th>&nbsp;</th>
+						              </tr>  
+						             </thead>  
+						             <tbody>  
+						                <apex:repeat id="Vouchees" value="{!vouchees}" var="cv" rows="4">
+				<!-- 		                    <tr> -->
+				<!-- 		                        <td><apex:outputLink rendered="{!not(ve[0]=='_none')}" value="{!ve[0]}"><apex:image value="{!ve[5]}" width="30" height="30" /></apex:outputLink></td> -->
+				<!-- 		                        <td><apex:outputLink rendered="{!not(ve[0]=='_none')}" value="{!ve[0]}">{!ve[1]} {!ve[2]}</apex:outputLink><apex:outputText rendered="{!ve[0]=='_none'}" value="{!ve[1]} {!ve[2]}"/></td> -->
+				<!-- 		                        <td>{!ve[3]}</td> -->
+				<!-- 		                        <td>{!ve[4]}</td>    -->
+				<!-- 		                    </tr> -->
+												<tr>
+													<td>
+														<apex:outputLink rendered="{!cv.cvId != null && cv.inNetwork}" value="{!$Site.currentSiteUrl + cv.cvId}"><apex:image value="{!cv.SmallPhotoUrl}" width="64" height="64" styleClass="user-photo" /></apex:outputLink>
+						                        		<apex:image value="{!cv.SmallPhotoUrl}" width="64" height="64" rendered="{!(cv.cvId != null) && not(cv.InNetwork)}" styleClass="user-photo" />
+													</td>
+							                        <td>
+							                        	<div>
+								                        	<apex:outputPanel rendered="{!cv.cvId != null}">
+								                        		<apex:outputLink value="{!$Site.currentSiteUrl + cv.cvId}" rendered="{!cv.InNetwork}">{!cv.first} {!cv.last}</apex:outputLink>
+								                        		<apex:outputText value="{!cv.first + ' ' + cv.last}" rendered="{!not(cv.InNetwork)}" />
+            		                                            <apex:outputPanel layout="none" rendered="{!cv.displayFollowTag && cv.InNetwork }">
+							                        				<chatter:follow entityId="{!cv.cvId}" />
+							                        			</apex:outputPanel>
+								                        	</apex:outputPanel>
+								                        	<apex:outputText rendered="{!cv.cvId == null}" value="{!cv.first} {!cv.last}"/>
+								                        </div>
+								                        <div class="smaller italicer">
+								                        	Vouched on <apex:outputText value=" " />
+								                        	<apex:outputText value="{0,date,M'/'d'/'yyyy}">
+													    		<apex:param value="{!cv.createdate}" /> 
+															</apex:outputText>
+								                        </div>
+							                        </td>
+							                        <td><apex:outputText value="{!cv.status}" /></td>
+<!-- 							                        <td><apex:outputText value="{0,date,M'/'d'/'yyyy}">
+													    	<apex:param value="{!cv.createdate}" /> 
+														</apex:outputText>
+													</td> -->
+												</tr>
+						                </apex:repeat>
+
+										<apex:outputPanel rendered="{!numVouchees > 4}">
+											<tr><td colspan="4"><span class="pull-right"><a class="dashboard-more-link" href="{!$Page.cov_vouchees}">More...</a></span></td></tr>
+										</apex:outputPanel>
+										<tr><td colspan="4" align="center"><h5><apex:outputLink value="{!$Page.cov_vouchees}" styleclass="strong-link">Vouch for Someone >></apex:outputLink></h5></td></tr>
+											
+						            </tbody>  
+						        </table>
+				<!-- 		        <div id="vouch-form"> -->
+				<!-- 		        	<h6>Vouch for someone:</h6> -->
+				<!-- 			        <apex:form styleclass="form-inline"> -->
+				<!-- 						span class="glyphicon glyphicon-plus-sign"/span  -->
+				<!-- 				    	<apex:inputText styleclass="form-control" value="{!vcfirst}" id="vouchee-first" html-placeholder="First" /> -->
+				<!-- 				    	<apex:inputText styleclass="form-control" value="{!vclast}" id="vouchee-last" html-placeholder="Last" /> -->
+				<!-- 				    	<apex:input type="email" styleclass="form-control input-longer" value="{!vcemail}" id="vouchee-email" html-placeholder="Email" /> -->
+				<!-- 						input type="text" class="form-control" placeholder="First" value="{!vcfirst}" id="vouchee-first" / -->
+				<!-- 				    	<apex:commandButton action="{!newvouchee}" value="Vouch" id="vouchButton"/> -->
+				<!-- 			        </apex:form> -->
+				<!-- 				</div> -->
+								
+				</div>
+				
+		    </div>
+		</apex:outputPanel>
+
+	</apex:outputPanel>
+		
+		
+</apex:page>

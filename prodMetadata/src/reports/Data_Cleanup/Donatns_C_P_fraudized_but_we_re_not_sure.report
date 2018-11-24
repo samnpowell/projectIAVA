@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>CnP_PaaS__CnPData__c.CnP_PaaS__OrderNumber__c</field>
+    </columns>
+    <columns>
+        <field>CUST_ID</field>
+    </columns>
+    <columns>
+        <field>CnP_PaaS__CnPData__c.CnP_PaaS__CnPDataID__c</field>
+    </columns>
+    <columns>
+        <field>CnP_PaaS__CnPData__c.CnP_PaaS__Contact__c</field>
+    </columns>
+    <columns>
+        <field>CnP_PaaS__CnPData__c.CnP_PaaS__Total_Charged__c</field>
+    </columns>
+    <columns>
+        <field>CnP_PaaS__CnPData__c.CnP_PaaS__StatusID__c</field>
+    </columns>
+    <columns>
+        <field>CnP_PaaS__CnPData__c.CnP_PaaS__Message__c</field>
+    </columns>
+    <description>C&amp;P didn&apos;t process these donations - called them fraud - but we&apos;re not sure if they really are.  As of 4/16/12 C&amp;P has said they will investigate.</description>
+    <filter>
+        <criteriaItems>
+            <column>CnP_PaaS__CnPData__c.CnP_PaaS__StatusID__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CnP_PaaS__CnPData__c.CnP_PaaS__Message__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>contains</operator>
+            <value>StageName</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CnP_PaaS__CnPData__c.CnP_PaaS__Name__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Janet Russo,Chris King,Maria Vitrar,Mariano Colombo,mariano colom</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CnP_PaaS__CnPData__c.CnP_PaaS__Name__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Megan Hemler,Dana Morrissey,Brian Graham,Nicholas Colgin,Jason Hansman</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CnP_PaaS__CnPData__c.CnP_PaaS__Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Donatns C&amp;P fraudized but we&apos;re not sure</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$CnP_PaaS__CnPData__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CUST_CREATED_DATE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

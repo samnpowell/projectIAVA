@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>CONTACT_CREATED</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>LAST_UPDATE</field>
+    </columns>
+    <columns>
+        <field>CONTACT_LAST_UPDATE_BY</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>Contact.Source__c</field>
+    </columns>
+    <filter>
+        <booleanFilter>(1 AND 4) OR (2 AND 3)</booleanFilter>
+        <criteriaItems>
+            <column>CREATED_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>6/14/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>LAST_UPDATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>6/14/2016 12:00 AM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CONTACT_LAST_UPDATE_BY</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>FormAssembly Robot</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CONTACT_CREATED</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>FormAssembly Robot</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>FormAssembly Watchlist</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CONTACT_LAST_UPDATE_BY</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

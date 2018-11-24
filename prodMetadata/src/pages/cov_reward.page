@@ -1,0 +1,550 @@
+<!-- Formerly dc_RewardMultipleDateTime -->
+
+
+<apex:page controller="dc_ctrl_RewardDetails" showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" action="{!givedetlist}" docType="html-5.0">
+
+
+<apex:composition template="cov_template">
+<!-- TODO: use variable to determine which template to use -->
+
+    <apex:define name="page-title">
+        <apex:outputText value="{!'Reward: ' + if(GiveList.size > 0, GiveList[0].Title, '[not found]') + '  - myIAVA'}" />
+    </apex:define>
+
+<!-- TODO: reinstate -->
+<!--     <apex:define name="meta-tags">
+        <apex:outputPanel rendered="{!ce != null}">
+            <meta property="og:title" content="{!ce.Name}" />
+            <meta property="og:image" content="{!if(ce.hasPicFull, left($Site.currentSiteUrl, len($Site.currentSiteUrl) - len($Site.Prefix) - 1) + URLFOR($Action.Attachment.Download, ce.picFullId), '')}" />
+            <meta property="og:url" content="{!$Site.currentSiteUrl + 'cov_event?id=' + ce.eId}" />
+            <meta property="og:description" content="{!ce.eventType} Event - myIAVA" />
+            <meta property="og:type" content="activity" />
+        </apex:outputPanel>
+    </apex:define> -->
+
+    <apex:define name="layout"> 
+
+<!-- TODO: move into own stylesheet -->
+
+<style type="text/css">
+
+    #premium-reward-badge .label {
+        font-size: 14px;
+        color: white;
+    }
+
+    #premium-reward-badge {
+        margin-bottom: 12px;
+    }
+
+    .partner-sponsor img {
+        max-width: 200px;
+    }
+
+    .give-label .label {
+        font-size: 100%;
+    }
+/*
+    .instance-label {
+        margin: 6px 0;
+    }
+
+    .instance-label .label {
+        font-size: 100%;
+    }*/
+
+    .closed-cell {
+        background-color: #eee;
+        color: #999;
+    }
+
+</style>
+
+
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=236819866480534&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+        <div class="popup-container" id="event-container">
+        
+          <div class="detail-pg">
+
+
+
+          <apex:outputPanel rendered="{!AND(GiveList != null, GiveList.size > 0)}">
+
+ 
+<!--     <div class="hr page-divider"> <hr/> 
+        <h2><img src="{!URLFOR($Resource.dc_css,'images/hr_header_rewards-rewarddetails.png')}" width="118" height="22" alt="Reward image"/></h2> 
+    </div>  -->
+
+    <!-- <div id="view-rewards-detail" class="view view-page-full">  -->
+    
+    <apex:form id="frm">
+<!--         <div class="view-header"> 
+            <ul class="share-links"> 
+                <li><a href="http://www.facebook.com/sharer.php?u={!$Site.CustomWebAddress}dc_RewardDetails?giveid={!tw_msg}" class="fb" target="_blank" title="Share on Facebook" ></a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></li> 
+                <li><a href="http://twitter.com/home?status=Just%20requested%20this%20reward%20from%20IAVA%27s%20Rucksack:%20{!$Site.CustomWebAddress}dc_RewardDetails?giveid%3D{!tw_msg}" title="Share on Twitter" target="_blank" class="tw"></a></li> 
+                <li><a href="mailto:?subject={!give_title}&body={!mail_body} {!$Site.CustomWebAddress}dc_RewardDetails?giveid={!tw_msg}" class="email"></a></li> 
+           </ul> 
+        </div>  -->
+        
+
+                            <!-- <apex:repeat id="Reward" value="{!GiveList}" var="GiveList[0]"> -->
+
+                                <div class="heading-category">[Reward]</div>
+
+                                <apex:outputPanel rendered="{!if(GiveList[0].logo != ' ',true,false)}"> 
+
+
+                                    <div class="detail-image">
+                                        <apex:image id="att" URL="{!GiveList[0].logo}" rendered="{!GiveList[0].logo != ' '}"/>  
+                                        <!-- <apex:image id="att_def" URL="{!URLFOR($Resource.dc_defaultlogo,GiveList[0].defaultlogo)}" width="110" height="106" rendered="{!if(GiveList[0].logo != ' ',false,true)}"/>  -->
+                                    </div>
+                                </apex:outputPanel> 
+
+
+                                <h2>{!GiveList[0].title}</h2>  
+
+                  
+                             <table class="table">
+                             <tbody>
+
+                                  <apex:outputPanel rendered="{!OR(NOT(isblank(trim(GiveList[0].available))), GiveList[0].givetype == 'Screened Give')}" >
+                                        <tr>
+                                            <td class="heading">Status:</td>
+                                            <td>
+                                                <apex:outputpanel rendered="{!GiveList[0].givetype == 'Screened Give'}">
+                                                    <div class="premium-reward" id="premium-reward-badge"> 
+                                                        <span class="label label-primary" data-toggle="tooltip" data-placement="right" data-html="false" data-delay="0" title="{!$Label.dc_PremiumReward}">
+                                                            Premium Reward
+                                                        </span>
+                                                    </div> 
+                                                </apex:outputpanel> 
+                                                <h4>
+                                                     <!-- <apex:outputtext value=" {!GiveList[0].available}"/> -->
+                                                     <!-- <div class="give-label">  -->
+                                                        <!-- <span class="label {!CASE(GiveList[0].available
+                                                                                , 'Waitlist', 'label-warning'
+                                                                                , 'Closed', 'label-default'
+                                                                                , 'label-success'
+                                                                                )}"> -->
+                                                            <apex:outputtext value="{!GiveList[0].available}"/>
+                                                        <!-- </span> -->
+                                                    <!-- </div>  -->
+                                                </h4>
+
+                                            </td>
+                                        </tr>
+                                  </apex:outputPanel>
+                                    
+                                  <apex:outputPanel rendered="{!NOT(isblank(trim(GiveList[0].gwhen)))}" >
+                                        <tr>
+                                            <td class="heading">When:</td>
+                                            <td>
+                                                 <h4>
+                                                     <apex:outputtext value=" {!GiveList[0].gwhen}"/>
+                                                 </h4>
+                                            </td>
+                                        </tr>
+                                  </apex:outputPanel>
+
+                                  <apex:outputPanel rendered="{!OR(NOT(isblank(trim(venue))), NOT(isblank(trim(addrStreet))), NOT(isblank(trim(addrDet))))}" >
+                                        <tr>
+                                            <td class="heading">Where:</td>
+                                            <td>
+                                                <apex:outputPanel rendered="{!NOT(isblank(trim(venue)))}">
+                                                    <h4><apex:outputText value="{!GiveList[0].gwhere}" /></h4>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!NOT(isblank(trim(addrStreet)))}">
+                                                    <h4><apex:outputText value="{!addrStreet}" /></h4>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!NOT(isblank(trim(addrDet)))}">
+                                                    <h4><apex:outputText value="{!addrDet}" /></h4>
+                                                </apex:outputPanel>
+                                            </td>
+                                        </tr>
+                                    </apex:outputPanel>
+
+
+                                    <apex:outputPanel rendered="{!NOT(isblank(trim(GiveList[0].quantity)))}" >
+                                        <tr>
+                                            <td class="heading">Quantity:</td>
+                                            <td>
+                                                 <h4>
+                                                     <apex:outputtext value=" {!GiveList[0].quantity}"/>
+                                                 </h4>
+                                            </td>
+                                        </tr>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel rendered="{!AND(NOT(isblank(trim(GiveList[0].deadline))), GiveList[0].deadline != 'N/A')}" >
+                                        <tr>
+                                            <td class="heading">Request by:</td>
+                                            <td>
+                                                 <h4>
+                                                     <apex:outputtext value=" {!GiveList[0].deadline}"/>
+                                                 </h4>
+                                            </td>
+                                        </tr>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel rendered="{!NOT(isblank(trim(GiveList[0].agelimit)))}" >
+                                        <tr>
+                                            <td class="heading">Restrictions:</td>
+                                            <td>
+                                                 <h4>
+                                                     <apex:outputtext value=" {!GiveList[0].agelimit}"/>
+                                                 </h4>
+                                            </td>
+                                        </tr>
+                                    </apex:outputPanel>
+
+                                    <apex:outputPanel rendered="{!NOT(isblank(trim(GiveList[0].partner)))}" >
+                                        <tr>
+                                            <td class="heading">Provided by:</td>
+                                            <td>
+                                                 <h4>
+                                                     <apex:outputtext value=" {!GiveList[0].partner}"/>
+                                                 </h4>
+                                            </td>
+                                        </tr>
+                                    </apex:outputPanel>
+
+
+                                <apex:outputPanel rendered="{!NOT(isblank(trim(GiveList[0].description)))}" >
+                                        <tr>
+                                            <td class="heading">Description:</td>
+                                            <td>
+                                                    <description>{!GiveList[0].description}</description>
+                                            </td>
+                                        </tr>
+                                </apex:outputPanel>
+
+                                <apex:outputpanel rendered="{!not(isblank(details))}">
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>    
+                                        <td>
+                                            <apex:outputtext value="{!details}" escape="false"/>
+                                        </td>
+                                    </tr>
+                                </apex:outputpanel>
+
+                                <apex:outputPanel rendered="{!and(not(isblank(trim(GiveList[0].latitude))),not(isblank(trim(GiveList[0].longitude))))}">
+                                    <tr>
+                                        <apex:outputPanel rendered="{!NOT(isMobile)}">
+                                        <td class="heading">&nbsp;</td>
+                                        </apex:outputPanel>
+                                        <td colspan="{!if(isMobile, '2', '1')}" >
+                                            <div>
+                                                <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+                                                <div style="overflow:hidden;height:250px;width:100%;">
+                                                    <div id="gmap_canvas" style="height:250px;width:100%;">
+                                                    </div>
+                                                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                                                </div>
+                                                <script type="text/javascript"> 
+                                                    function init_map(){
+                                                        var myOptions = {zoom:14,center:new google.maps.LatLng({!GiveList[0].latitude},{!GiveList[0].longitude}),mapTypeId: google.maps.MapTypeId.ROADMAP};
+                                                        map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+                                                        marker = new google.maps.Marker({map: map,position: new google.maps.LatLng({!GiveList[0].latitude}, {!GiveList[0].longitude})});
+                                                        // infowindow = new google.maps.InfoWindow({content:"<b>The Breslin</b><br/>2880 Broadway<br/> New York" });
+                                                        // google.maps.event.addListener(marker, "click", function(){
+                                                        //  infowindow.open(map,marker);
+                                                        // });
+                                                        // infowindow.open(map,marker);
+                                                    }
+                                                    google.maps.event.addDomListener(window, 'load', init_map);
+                                                </script>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </apex:outputPanel>
+
+                                
+                                <!-- <div class="clearfix"></div>  -->
+
+                                <!-- INCLUDE IN SIMPLE VIEW / START: --> 
+    <!--                                 <div class="action-links">
+
+                                        <apex:outputPanel rendered="{!not(multigive)}">
+
+                                            <tr>
+                                                <td class="heading">&nbsp;</td>
+                                                <td>
+
+                                                    <p>&nbsp;</p>
+
+                                                    <apex:outputpanel rendered="{!AND(GiveList[0].available != ' ', GiveList[0].available != 'Closed')}">
+                                                        <apex:outputpanel rendered="{!GiveList[0].available != 'Waitlist'}">
+                                                            <p class="request-now">
+                                                                <apex:outputPanel rendered="{!$Profile.Name == 'Rucksack Profile'}">
+                                                                    <a class="request-now btn btn-danger" role="button" href="{!IAVAHost}/dc_ClaimReward?giveid={!GiveList[0].giveId}">Request Now</a>
+                                                                </apex:outputPanel>
+                                                                <apex:outputPanel rendered="{!Not($Profile.Name == 'Rucksack Profile')}">
+                                                                    <a class="request-now btn btn-danger" role="button" href="{!$Page.dc_ClaimReward}?giveid={!GiveList[0].giveId}">Request Now</a>
+                                                                </apex:outputPanel>
+                                                            </p>
+                                                        </apex:outputpanel>
+                                                        <apex:outputpanel rendered="{!GiveList[0].available == 'Waitlist'}">
+                                                            <p class="request-now">
+                                                                <apex:outputPanel rendered="{!$Profile.Name == 'Rucksack Profile'}">
+                                                                    <a class="join-waitlist btn btn-danger" role="button" href="{!IAVAHost}/dc_ClaimReward?giveid={!GiveList[0].giveId}">Join Waitlist</a>
+                                                                </apex:outputPanel>
+                                                                <apex:outputPanel rendered="{!Not($Profile.Name == 'Rucksack Profile')}">
+                                                                    <a class="join-waitlist btn btn-danger" href="{!$Page.dc_ClaimReward}?giveid={!GiveList[0].giveId}">Join Waitlist</a>
+                                                                </apex:outputPanel>
+                                                            </p>
+                                                        </apex:outputpanel>
+                                                    </apex:outputpanel>
+
+                                                </td>
+                                            </tr>
+
+                                        </apex:outputPanel>
+                                    </div>  -->
+                            <!-- </tbody>
+                            </table> -->
+
+                                    
+                            <!-- END --> 
+                            <!-- </apex:repeat> -->
+
+                            <!-- INCLUDE IN COMPLEX VIEW / START: --> 
+                            <apex:outputpanel rendered="{!multigive}">
+                            
+                            <!-- <table class="table">
+                            <tbody> -->
+ 
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="heading">
+                                        Reward Options
+                                    </td> 
+
+                                        <td class="{!CASE(GiveInstList[0].available
+                                                                                , 'Waitlist', 'warning bolder'
+                                                                                , 'Closed', 'closed-cell'
+                                                                                , 'success bolder'
+                                                                                )}">
+                                            <h4><apex:outputtext value="{!GiveInstList[0].gwhen}" /></h4>
+
+                                            <apex:outputPanel layout="none" rendered="{!not(isblank(trim(GiveInstList[0].instDifferentiator)))}" ><h4><apex:outputtext value="{!GiveInstList[0].instDifferentiator}" /></h4></apex:outputPanel>
+
+                                            <h4><apex:outputtext value="{!GiveInstList[0].available}" /></h4>
+                                        </td>
+                                </tr>
+
+                                <apex:repeat id="Instance" value="{!GiveInstList}" var="ginst" first="1" rendered="{!GiveInstList.size > 1}">
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td class="{!CASE(ginst.available
+                                                                                , 'Waitlist', 'warning bolder'
+                                                                                , 'Closed', 'closed-cell'
+                                                                                , 'success bolder'
+                                                                                )}">
+                                            <h4><apex:outputtext value="{!ginst.gwhen}" /></h4> 
+                                            <apex:outputPanel layout="none" rendered="{!not(isblank(trim(ginst.instDifferentiator)))}" ><h4><apex:outputtext value="{!ginst.instDifferentiator}" /></h4></apex:outputPanel>
+                                            <h4><apex:outputtext value="{!ginst.available}" /></h4>
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+
+
+
+
+
+                            </apex:outputpanel>
+                            <!-- END --> 
+
+                        </tbody>
+                    </table>
+ 
+ 
+        </apex:form>
+
+        </apex:outputpanel>
+
+        <apex:outputPanel id="requestSection">
+
+            <apex:outputPanel rendered="{!NOT(ISNULL(existingRequest))}">
+                <div class="well">
+
+
+                            <apex:outputPanel rendered="{!OR(existingRequest.Stage__c == 'Canceled', existingRequest.Stage__c == 'Cancelled')}" >
+                                <apex:outputtext value="FYI you have a previous request on file which was canceled." styleClass="lead" />
+                            </apex:outputPanel>
+
+
+                            <apex:outputPanel rendered="{!existingRequest.Stage__c == 'Tentative confirmation'}" >
+                                <div class="give-label lead">
+                                    <span class="label label-primary">
+                                        Tentatively Confirmed
+                                    </span>
+                                </div>
+                                <apex:outputtext value="We have received your request and you are tentatively on the list to receive the reward. However we'll be in touch before the reward date to confirm the availability of the reward." styleClass="lead" />
+                            </apex:outputPanel>
+
+                            <apex:outputPanel rendered="{!existingRequest.Stage__c == 'Wait-list'}" >
+                                <div class="give-label lead">
+                                    <span class="label label-warning">
+                                        Waitlist
+                                    </span>
+                                </div>
+                                <p class="lead"><apex:outputtext value="You are currently on the waitlist for this reward.  Because of high demand for this reward, there is limited availability. We'll be in touch to let you know if your request has been approved." /></p>
+                            </apex:outputPanel>    
+
+                            <apex:outputPanel rendered="{!existingRequest.Stage__c == 'Give requested'}" >
+                                <div class="give-label lead">
+                                    <span class="label label-default">
+                                        Request on File
+                                    </span>
+                                </div>
+                                <apex:outputtext value="This is a Premium Reward, so availability is very limited. We'll be in touch before the reward date to let you know whether you've received the reward." styleClass="lead" />
+                            </apex:outputPanel>
+
+                            <apex:outputpanel rendered="{!existingRequest.Stage__c == 'Final confirmation'}" styleClass="lead">
+                                <div class="give-label lead">
+                                    <span class="label label-success">
+                                        Confirmed
+                                    </span>
+                                </div>
+                                <apex:outputtext value="You are on the list for this reward. Here are the instructions to claim your reward:"/>
+                                <p>&nbsp;</p>
+                                <apex:outputtext value="{!GiveList[0].fulfillmentInstructions}" rendered="{!not(isblank(GiveList[0].fulfillmentInstructions))}"/>
+                                <apex:outputtext value="No instructions given. Please contact IAVA if you have questions." rendered="{!isblank(GiveList[0].fulfillmentInstructions)}"/> 
+                                <p>&nbsp;</p>
+                                <apex:outputtext value="We hope you enjoy your experience."/> 
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!existingRequest.Stage__c == 'Information sent'}">
+                                <div class="give-label lead">
+                                    <span class="label label-primary">
+                                        Information Sent
+                                    </span>
+                                </div>
+                                <apex:outputtext value="You should have received an email with the information you requested." styleClass="lead"/>
+                                <p>&nbsp;</p>
+<!--                                <apex:outputtext value="{!GiveList[0].fulfillmentInstructions}" rendered="{!not(isblank(GiveList[0].fulfillmentInstructions))}"/>
+                                <apex:outputtext value="No details given. Please contact IAVA if you have questions." rendered="{!isblank(GiveList[0].fulfillmentInstructions)}"/> 
+                                <p>&nbsp;</p>
+-->                                
+                                <apex:outputtext value="We hope you enjoy your experience."/> 
+                            </apex:outputpanel>
+                           
+
+                            <apex:outputPanel rendered="{!existingRequest.Stage__c == 'Ineligible'}" >
+                                <apex:outputtext value="Sorry, your request was received but you did not appear to be eligible for this reward." styleClass="lead" />
+                            </apex:outputPanel>
+
+                            <apex:outputPanel rendered="{!existingRequest.Stage__c == 'Denied'}" >
+                                <div class="give-label lead">
+                                    <span class="label label-default">
+                                        Not Available
+                                    </span>
+                                </div>
+                                <apex:outputtext value="Unfortunately, we were unable to fulfill your request for this reward." styleClass="lead" />
+                            </apex:outputPanel>
+
+                            <apex:outputPanel rendered="{!existingRequest.Stage__c != 'Tentative confirmation' && existingRequest.Stage__c != 'Wait-list' && existingRequest.Stage__c != 'Give requested' && existingRequest.Stage__c != 'Final confirmation' && existingRequest.Stage__c != 'Information sent' && existingRequest.Stage__c != 'Canceled' && existingRequest.Stage__c != 'Cancelled' && existingRequest.Stage__c != 'Ineligible' && existingRequest.Stage__c != 'Denied'}" >
+                                <div class="give-label lead">
+                                    <span class="label label-primary">
+                                        Request on File
+                                    </span>
+                                </div>
+                                <apex:outputtext value="You have a request on file for this reward." styleClass="lead" />
+                            </apex:outputPanel>
+
+                          <p>&nbsp;</p>
+                          <p>&nbsp;</p>
+
+                          <apex:outputPanel rendered="{!AND(OR(existingRequest.Give_Instance_Start_Date__c == null, existingRequest.Give_Instance_Start_Date__c >= TODAY()), existingRequest.Stage__c != 'Canceled', existingRequest.Stage__c != 'Cancelled')}" >
+                                <apex:form >
+                                    <p>
+                                        <strong>Need to cancel?</strong> Spots for some rewards are limited, so if you do not plan to use the reward, please cancel to allow others the opportunity.<apex:outputText value=" " />
+                                        <apex:outputText styleClass="italicer" value="{!' Note that you will lose your spot in the list when you cancel, so please be sure before clicking the link.'}" rendered="{!OR(GiveList[0].givetype == 'First Come First Served', GiveList[0].givetype == 'Screened')}" />
+                                    </p>
+                                    <apex:commandButton styleClass="btn btn-default" value="Cancel Request" action="{!cancelRequest}" reRender="requestSection" onclick="if(!confirm('Are you sure you want to give up your spot on the list for this reward?')){return false};" />
+                                </apex:form>
+                          </apex:outputPanel>
+
+                          
+                </div>
+            </apex:outputPanel>
+
+
+
+        <apex:outputPanel rendered="{!AND(GiveList != null, GiveList.size > 0)}">
+
+            <!--  INCLUDE REQUEST PAGE -->
+            <apex:outputPanel rendered="{!OR(ISNULL(existingRequest), existingRequest.Stage__c == 'Canceled', existingRequest.Stage__c == 'Cancelled')}">
+                <apex:include pageName="cov_rewardrequest" />
+            </apex:outputPanel>
+
+
+
+
+
+
+
+
+
+                                    <div class="col-wrapper well"> 
+                                        <h5>
+                                            Partner Sponsor:
+                                        </h5> 
+     
+                                        <div class="partner-sponsor"> 
+                                             <p class="alignleft"><a href="{!$Page.dc_PartnerDetails}?id={!PR_id}"><apex:image URL="{!PartnerLogo}" rendered="{!if(PartnerLogo != '',true,false)}" alt="" /></a></p> 
+                                            <p class="desc"><apex:outputtext value="{!strFPdesc}"/>
+                                                <!-- <a href="{!$Page.dc_PartnerDetails}?id={!PR_id}" class="more-link"></a>  -->
+                                            </p>  
+                                        </div> 
+                                    </div> 
+
+        </apex:outputPanel>
+
+    </apex:outputPanel>
+
+    <apex:outputPanel rendered="{!OR(GiveList == null, GiveList.size == 0)}">
+        Reward not found.
+    </apex:outputPanel>
+
+
+
+
+
+
+ </div>
+</div>
+<!-- 
+        <script type="text/javascript">
+            var j$ = jQuery.noConflict();
+            j$(document).ready(function()  {
+                j$('[data-toggle="tooltip"]').tooltip()
+            });
+        </script>
+
+ -->
+    </apex:define>
+
+</apex:composition>
+
+</apex:page>

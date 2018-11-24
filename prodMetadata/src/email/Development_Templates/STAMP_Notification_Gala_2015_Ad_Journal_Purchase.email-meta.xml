@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sends STAMP a notification when an Event Ad Journal purchase is made.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>STAMP Notification: Gala 2015 Ad Journal Purchase</name>
+    <style>none</style>
+    <subject>Gala 2015 Ad Journal Purchase</subject>
+    <type>text</type>
+</EmailTemplate>

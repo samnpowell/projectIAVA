@@ -1,0 +1,14 @@
+Hi {!Contact.FirstName},
+
+We’ve received your request for the following IAVA reward: 
+
+{!NullValue(Give_Request__c.Give_Name__c, "Reward not found - contact IAVA for assistance")}
+{!Give_Instance__c.Start_Date__c}
+
+Number of tickets/units requested: {!Give_Request__c.Units_Requested__c} 
+
+This is a Premium Reward, so availability is highly limited.  We’ll be in touch before the reward date to let you know whether you're one of the lucky ones to receive the reward.
+
+Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

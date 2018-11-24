@@ -1,0 +1,69 @@
+<apex:page id="cov_profile_deployments" sidebar="false" showHeader="false" standardStylesheets="false" controller="cov_rewards_controller">
+
+<!-- <apex:composition template="cov_template_noheader"> -->
+
+<!-- <apex:define name="layout"> -->
+
+<!-- 	<div class="returnLink-wrapper clearfix"> -->
+<!-- 		<div class="returnLink pull-right"> -->
+<!-- 			<apex:outputLink value="{!$Page.cov_dashboard}" target="_parent">Back to Home >></apex:outputLink> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+    
+<!--     <div class="container profile-frame" id="container-overall"> -->
+
+    <div class="dashboard-list">
+        <div class="box-heading">
+			<div class="box-heading-content">
+
+	        	<h5>Rewards You've Requested</h5>
+
+        	</div>
+        	<div class="relative pull-left"><div class="box-heading-edge"></div></div>
+
+        </div>
+        
+        <apex:pageMessages />
+        
+		<apex:outputPanel id="rewardsRequested" rendered="{!conId != null}">
+
+	        <table class="table">  
+	             <thead>  
+	              <tr>  
+<!-- 	                <th>&nbsp;</th> -->
+	                <th>Reward</th>  
+	                <th>Status</th>  
+	                <th>Date</th>  
+	              </tr>  
+	             </thead>  
+	             <tbody>  
+	                <apex:repeat id="RewardRequests" value="{!rewardRequests}" var="rr">
+	                    <tr>
+<!-- 	                        <td><a href="{!$Site.currentSiteUrl}{!gr.Id}" target="_parent"><span class="glyphicon glyphicon-search"></span></a></td> -->
+	                        <td>{!rr.giveName}</td>
+	                        <td><apex:outputText value="{!rr.publicStage}" /></td>
+	                        <td><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"><apex:param value="{!rr.instanceStartDate}" /></apex:outputText>
+	                            </td>   
+	                    </tr>
+	                </apex:repeat>
+	            </tbody>  
+	        </table>
+        </apex:outputPanel>
+
+		<apex:outputPanel styleclass="conn-contact-msg" rendered="{!conId == null}">
+			No connected contact, rewards unavailable
+		</apex:outputPanel>		
+
+
+        
+    </div>
+    
+<!--     </div> -->
+    
+<!-- </apex:define> -->
+
+<!-- </apex:composition> -->
+    
+
+
+</apex:page>

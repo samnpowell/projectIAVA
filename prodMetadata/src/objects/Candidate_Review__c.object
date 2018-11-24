@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Analysis of a contact by a member of staff following the CADET model</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Analytical_Thinking_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Analytical Thinking Comments</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analytical_Thinking__c</fullName>
+        <externalId>false</externalId>
+        <label>Analytical Thinking</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Needs Improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Minimally Acceptable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 - Meets Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - Exceeds Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Outstanding</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Candidate__c</fullName>
+        <externalId>false</externalId>
+        <label>Candidate</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Candidate Reviews</relationshipLabel>
+        <relationshipName>Candidate_Reviews</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Communication_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Communication Comments</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Communication__c</fullName>
+        <description>Written and Oral</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Written and Oral</inlineHelpText>
+        <label>Communication</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Needs Improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Minimally Acceptable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 - Meets Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - Exceeds Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Outstanding</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Drive_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Drive Comments</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Drive__c</fullName>
+        <description>Initiative and Ambition</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Initiative and Ambition</inlineHelpText>
+        <label>Drive</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Needs Improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Minimally Acceptable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 - Meets Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - Exceeds Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Outstanding</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Execution_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Execution Comments</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Execution__c</fullName>
+        <description>Quality and Timeliness of Work</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quality and Timeliness of Work</inlineHelpText>
+        <label>Execution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Needs Improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Minimally Acceptable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 - Meets Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - Exceeds Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Outstanding</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>General_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>General Comments</label>
+        <length>5000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Overall_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Overall Rating</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Does not meet expectations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Minimally meets expectations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 - Meets Expectations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - Exceeds Expectations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Outstanding</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pre_screen_Recommendation__c</fullName>
+        <externalId>false</externalId>
+        <label>Pre-screen Recommendation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Invite to Interview</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Possibly invite</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Do not invite for interview</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pre_screen_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL( Pre_screen_Recommendation__c ,&quot;Invite to Interview&quot;), 2 ,(
+IF (ISPICKVAL( Pre_screen_Recommendation__c,&quot;Possibly Invite&quot;),1,
+IF (ISPICKVAL( Pre_screen_Recommendation__c,&quot;Do not invite for interview&quot;),-4, 0))))</formula>
+        <label>Pre-screen Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reviewed_For__c</fullName>
+        <externalId>false</externalId>
+        <label>Reviewed For</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Storm the Hill 2013</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Internship</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Storm the Hill 2014</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Storm the Hill 2017</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reviewer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Reviewer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Candidate_Reviews</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reviewing_Department__c</fullName>
+        <externalId>false</externalId>
+        <label>Reviewing Department</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Communications</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Programs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Policy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Executive Office</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Teamwork_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Teamwork Comments</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Teamwork__c</fullName>
+        <externalId>false</externalId>
+        <label>Teamwork</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 - Needs Improvement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 - Minimally Acceptable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 - Meets Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 - Exceeds Standards</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 - Outstanding</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>X_Factor__c</fullName>
+        <description>Pizazz, what-what, 1-5, 5 is the Best</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Pizazz, what-what, 1-5, 5 is the Best</inlineHelpText>
+        <label>X Factor</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Candidate Review</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Review-{00000}</displayFormat>
+        <label>Candidate Review Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Candidate Reviews</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Detailed_Review</fullName>
+        <active>true</active>
+        <label>Detailed Review</label>
+        <picklistValues>
+            <picklist>Analytical_Thinking__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Drive__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Execution__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Overall_Rating__c</picklist>
+            <values>
+                <fullName>1 - Does not meet expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally meets expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Pre_screen_Recommendation__c</picklist>
+            <values>
+                <fullName>Do not invite for interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invite to Interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Possibly invite</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reviewed_For__c</picklist>
+            <values>
+                <fullName>Internship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storm the Hill 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storm the Hill 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storm the Hill 2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reviewing_Department__c</picklist>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Teamwork__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Prescreen</fullName>
+        <active>true</active>
+        <label>Prescreen</label>
+        <picklistValues>
+            <picklist>Analytical_Thinking__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Drive__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Execution__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Overall_Rating__c</picklist>
+            <values>
+                <fullName>1 - Does not meet expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally meets expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Pre_screen_Recommendation__c</picklist>
+            <values>
+                <fullName>Do not invite for interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invite to Interview</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Possibly invite</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reviewed_For__c</picklist>
+            <values>
+                <fullName>Internship</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storm the Hill 2013</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storm the Hill 2014</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storm the Hill 2017</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reviewing_Department__c</picklist>
+            <values>
+                <fullName>Communications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Executive Office</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Policy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Programs</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Teamwork__c</picklist>
+            <values>
+                <fullName>1 - Needs Improvement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 - Minimally Acceptable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3 - Meets Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4 - Exceeds Standards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 - Outstanding</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

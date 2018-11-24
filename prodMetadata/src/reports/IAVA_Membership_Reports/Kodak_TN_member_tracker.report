@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>Contact.Veteran_Member__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ADDRESS2_ZIP</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>28702,28707,28713,28719,28721,28725,28733,28738,28743,28745,28751,28771,28786,28789,37701,37705,37707,37708,37709,37710,37711,37713,37714,37715,37716,37717,37719,37721,37722,37724,37725,37727,37729,37730,37731,37737,37738,37742,37743,37744,37745,37752,37753,37754,37757,37760,37762,37764,37765,37766,37769,37771,37772,37773,37774,37777,37778,37779,37801,37802,37803,37804,37806,37807,37809,37810,37811,37813,37814,37815,37816,37818,37820,37821,37822,37824</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ADDRESS2_ZIP</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>37825,37828,37830,37831,37840,37843,37845,37847,37848,37849,37851,37853,37857,37860,37861,37862,37863,37864,37865,37866,37867,37868,37869,37870,37871,37876,37877,37878,37879,37881,37882,37885,37886,37888,37890,37891,37901,37902,37909,37912,37914,37915,37916,37917,37918,37919,37920,37921,37922,37923,37924,37927,37928,37929,37930,37931,37932,37933,37938,37939,37940,37950,37990,37995,37996,37997,37998,37999,40965</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Paperwork_Confirmation__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Kodak, TN member tracker</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

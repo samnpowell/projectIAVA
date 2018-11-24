@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LA Dodgers 9/11/13 final reminder</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LA Dodgers 9/11/13 final reminder</name>
+    <style>none</style>
+    <subject>Let&apos;s go Dodgers</subject>
+    <textOnly>{!Contact.FirstName}
+
+Isn&apos;t the view great? I don&apos;t mean from the stadium, I mean from the top of the standings.
+
+Well, I just wanted to make sure that you all had the information on tonights game(Copied below).
+
+Here is the down and dirty, I will be in LOT B with the rest of the IAVA staff at 5PM with your tickets. Game starts at 7:10PM and our check in table will be closed by 8PM. Please be sure to stop by and say hi - and get your tickets. Go Dodgers!
+
+Cheers,
+Matt
+
+Matt Colvin, USAF
+Strategic Partnerships Senior Associate
+Iraq and Afghanistan Veterans of America (IAVA)
+
+
+Forwarded message
+From: Team IAVA
+Subject: IAVA-Miller High Life Los Angeles Dodgers vs Arizona Diamondbacks Game, 9/11
+
+Dear IAVA Member:
+
+If you are receiving this message, you were final confirmed for the IAVA-Miller High Life Los Angeles Dodgers vs. Arizona Diamondbacks Game taking place on Wednesday, September 11. Details of the day are below:
+
+What: Los Angeles Dodgers vs Arizona Diamondbacks
+When: Wednesday, September 11, 7:10 p.m.; check-in and parking lots open at 5:10 p.m.; Gates open at 5:40 p.m. Where: Dodger Stadium - 1000 Elysian Park Ave  Los Angeles, CA 90012
+
+Logistics
+Driving Directions
+Parking Map
+Seating Map of Dodger Stadium
+
+Tickets
+Check in for IAVA members and their guests will be in parking Lot B. We recommend entering Dodger Stadium at Sunset Gate A. Recommended parking lots are Lot F (preferred - $35); Lot 2 (general - $10); and Lot 12 (general - $10). You will see the giant Miller High Life inflatable bottles. IAVA representatives will be on hand to check in guests and to distribute tickets.
+
+Questions &amp; Cancellations
+If you have any questions or your plans have changed and you can no longer attend the game, please email rucksack@iava.org to let us know.
+
+Thank you and have a great time at the game!
+Best,
+Team IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

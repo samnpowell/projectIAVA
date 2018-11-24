@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Event Report for Give is Due Tomorrow</name>
+    <style>none</style>
+    <subject>Event Report for {!Give__c.Name} is due tomorrow!</subject>
+    <type>text</type>
+</EmailTemplate>

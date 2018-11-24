@@ -1,0 +1,14 @@
+Hi {!Contact.FirstName},
+
+You are now on the waitlist for the following IAVA reward:
+
+{!NullValue(Give_Request__c.Give_Name__c, "Reward not found - contact IAVA for assistance")}
+{!Give_Instance__c.Start_Date__c}
+
+Number of tickets/units requested: {!Give_Request__c.Units_Requested__c} 
+
+Because of high demand for this reward, there is limited availability.  We’ve placed you on a waiting list and we’ll be in touch to let you know if your request has been approved.
+
+Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

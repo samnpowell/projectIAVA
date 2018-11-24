@@ -1,0 +1,129 @@
+<apex:page controller="dc_ctrl_RewardSearch">
+
+
+        <div id="subcontent-top">
+            <div id="block-block-searchrewards" class="block block-block">
+                
+                <div class="block-inner">
+                    <h2 class="title">
+                        <img src="{!URLFOR($Resource.dc_css,'images/header_searchrewards.png')}" width="365" height="39" alt="Vets: Find Rewards Near You" />
+                    </h2>
+                    
+                    <div class="content">
+                         <apex:form id="frm">
+                              <apex:actionRegion >
+                              <!-- Adding this hidden input so the form has more than 1 input.  That way the Enter key will work in IE -->
+                              <apex:inputText style="display:none" />
+                        <!-- <form action="" method="post" id=""> -->
+                                <div class="container-inline">
+                                    <label form="zip-code"><img src="{!URLFOR($Resource.dc_css,'images/block-searchrewards_zipcode.png')}" width="50" height="8" alt="Zip Code: "/></label>
+                                    <div class="text-wrapper">
+                                          <apex:inputtext id="zip_val" value="{!Zip_Value}" styleclass="form-text" onkeypress="return noenter(event);"/>
+                                          
+                                          <!-- <input type="text" name="zip-code" value="{!Zip_Value}" class="form-text" /> --> 
+                                    </div>
+                                </div>           
+                                <apex:actionFunction name="sell" action="{!searchval}" />               
+                            </apex:actionRegion>
+                             
+                           <!--  <apex:commandlink id="s" action="{!searchval}">-->
+                            <img src="{!URLFOR($Resource.dc_css,'images/form_submit-searchrewards.png')}"  
+                                    onmouseover="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-searchrewards_ovr.png')}';" 
+                                    onmouseout="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-searchrewards.png')}';" 
+                                    value="submit" class="form-submit" onclick="geo();" />
+                           <!--</input> -->
+
+                        </apex:form>
+                        <!-- </form> -->
+                    </div>
+ 
+                        
+                </div>
+            </div>
+
+
+            <div id="block-block-aboutrucksack" class="block block-block">
+                <div class="block-inner">
+
+                    <h2 class="title"><img src="{!URLFOR($Resource.dc_css,'images/header_aboutrucksack.png')}" width="111" height="13" alt="About RuckSack:" /></h2>
+
+                    <div class="content">
+                        <a href="{!$Label.dc_HomepageVideo}" class="video-popup"><img src="{!URLFOR($Resource.dc_css,'resource/aboutrucksack.jpg')}" width="173" height="82" alt="" title="Watch the Rucksack video" /></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+  <script type="text/javascript">
+         function geo()
+         {
+         try{
+         	var zip = document.getElementById('{!$Component.frm.zip_val}').value;
+         	if(zip == '')
+         	{
+         		ref(0,0,'','');
+         	}
+          	var geocoder;
+          	var lat;
+          	var lon;
+          	var state = '';
+			geocoder = new google.maps.Geocoder();
+			geocoder.geocode( { 'address': zip}, function(results, status) {
+         	if (status == google.maps.GeocoderStatus.OK && results.length) {
+      			if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+      				lat = results[0].geometry.location.lat();
+      				lng = results[0].geometry.location.lng();
+      				for (i=0;i<=10;i++)
+					{
+						state = results[0].address_components[i].short_name;
+						if(state.length == 2)
+						{
+					   	break;
+						}
+					}
+					ref(lat,lng,state,zip);
+         		}
+         	}
+         	else {
+         	}
+     	 });
+     	 }
+     	 catch(err){
+     	 alert(err);
+     	 ref(0,0,'','');
+         }
+        }
+          function noenter(e){
+          try{
+               if(window.event){
+                    key = window.event.keyCode;     //IE
+               } else{
+                    key = e.which;     //firefox
+               }
+               if(key == 13) {
+                    geo(); 
+                    return false;
+               } else{
+                    return true;
+               } 
+              }
+              catch(err)
+              {
+              	alert(err);
+              }
+          }
+          
+          function ref(lat,lon,state,zip)
+          {
+          	var newURL = window.location.protocol + "//" + window.location.host;
+          	var pageName = '{!$Page.dc_RewardList}' + "?lat=" + lat + "&lon=" + lon + "&state=" + state + "&zip=" + zip;
+          	var finalURL = newURL + pageName;
+		  	return window.location = finalURL;
+		  	window.setTimeout(sell); 
+          	return false;
+          }
+     </script>
+</apex:page>

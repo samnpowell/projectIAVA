@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>LA Shakespeare Survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>LA Shakespeare Survey</name>
+    <style>none</style>
+    <subject>IAVA celebrity Shakespeare survey</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+I want to start by saying thank you for registering for the Los Angeles Celebrity reading of &quot;The Merry Wives of Windsor&quot; on Monday May 9th. This email is simply to follow up with you to verify information. 
+
+Please fill out this brief survey; it will only take 5 minutes of your time.
+
+Someone from IAVA will be in further contact to let you know if you have been selected to join us. 
+
+Sincerely,
+Anthony
+--
+ 
+Anthony Pike
+ 
+Membership Coordinator
+ 
+Iraq and Afghanistan Veterans of America (IAVA)
+ 
+292 Madison Avenue, 10th Floor 
+ 
+New York, NY 10017
+ 
+(212) 982-9699 
+ 
+http://www.iava.org 
+ 
+Follow us on Twitter at @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

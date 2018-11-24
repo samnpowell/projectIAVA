@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Hill Briefing</name>
+    <style>none</style>
+    <subject>Briefing on the Hill with IAVA</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Can you join us on Capitol Hill on Monday?
+
+We’re inviting all Congressional staffers to see our new public service advertising campaign, meet IAVA Veterans and leaders, learn more about our legislative priorities for 2010, and see how they can get engaged with Iraq and Afghanistan veterans – and we want you there.
+
+When: Monday, March 22nd from 12:30pm – 1:30 pm
+
+Where: Senate Dirksen 106
+
+Attire: Business
+
+Note – Lunch will be served
+
+Last month, we brought dozens of Iraq and Afghanistan veterans from across the country to Capitol Hill as part of IAVA’s 2010 Storm the Hill legislative trip. Since then, we&apos;ve made significant progress in meeting with members of Congress and moving forward with our legislative priorities. We hope you can join us on Monday as we continue to build the momentum for disability reform. 
+
+If you’re interested in attending, please email membership@iava.org with “Hill Briefing” in the subject line.
+
+We hope to see you on Monday.
+
+Sincerely,
+
+Adam
+
+Adam Bryant
+
+Membership Assistant
+
+Iraq and Afghanistan Veterans of America (IAVA)
+
+To stop receiving emails from IAVA, click here.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

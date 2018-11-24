@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>NO GETFEEDBACK - Work flow email sent after completion of event</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Event - NO GETFEEDBACK Post Event Survey</name>
+    <style>none</style>
+    <subject>How did we do at today&apos;s VetTogether?</subject>
+    <textOnly>Hi {!IAVAEvent_Attendee__c.Event_Attendee_s_First_Name__c},
+
+Thank you for registering for today&apos;s VetTogether!
+
+We hope you were able to join us today. If you weren&apos;t able that&apos;s okay too. We hope you can join us for the next event in your community. Don&apos;t see something on the map? Host your own event! Visit us at https://iava.org/vettogethers to learn more.
+
+Thanks!
+
+Team IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

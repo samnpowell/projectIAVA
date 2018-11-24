@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Peer - Invite Peer Nominee HTML</name>
+    <style>none</style>
+    <subject>{!npe4__Relationship__c.npe4__RelatedContact__c} has invited you to join IAVA!</subject>
+    <type>custom</type>
+</EmailTemplate>

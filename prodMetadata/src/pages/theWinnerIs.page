@@ -1,0 +1,65 @@
+<apex:page controller="randWinnerTest" tabStyle="Give_Request__c">
+  <apex:panelGrid rendered="{!(winSiz = 1) && ((ident = 'Event - On Screen') || (ident = 'Give - On Screen'))}">
+    <apex:panelGrid >
+      <apex:outputText value="SUCCESS! THE WINNER IS..."/>
+    </apex:panelGrid>
+  </apex:panelGrid>
+  <apex:panelGrid rendered="{!(winSiz != null) && (winSiz > 1) && ((ident = 'Event - On Screen') || (ident = 'Give - On Screen'))}">
+    <apex:panelGrid >
+      <apex:outputText value="SUCCESS! THE WINNERS ARE..."/>
+    </apex:panelGrid>
+  </apex:panelGrid>
+  <apex:panelGrid rendered="{!(ident = 'Event - in CSV') || (ident = 'Give - in CSV')}">
+    <apex:panelGrid >
+      <apex:outputText value="SUCCESS! THE CONTAINING THE WINNER(S) CAN BE FOUND HERE..."/>
+    </apex:panelGrid>
+  </apex:panelGrid>
+  
+  <apex:panelGrid rendered="{!ident = 'Event - On Screen'}">
+    <apex:dataTable border="1" cellpadding="5" columns="4" value="{!eWinList}" var="eWins">
+      <apex:column >
+        <apex:facet name="header">Id</apex:facet>
+        <apex:outputText value="{!eWins.Contact__c}"/>
+      </apex:column>
+      <apex:column >
+        <apex:facet name="header">Name</apex:facet>
+        <apex:outputLink value="/{!eWins.Contact__c}">{!eWins.Contact__r.Name}</apex:outputLink>
+      </apex:column>
+      <apex:column >
+        <apex:facet name="header">Email</apex:facet>
+        <apex:outputLink value="mailto:{!eWins.Contact__r.Email}">{!eWins.Contact__r.Email}</apex:outputLink>
+      </apex:column>
+      <apex:column >
+        <apex:facet name="header">Phone</apex:facet>
+        <apex:outputText value="{!eWins.Contact__r.MobilePhone}"/>
+      </apex:column>
+    </apex:dataTable>
+  </apex:panelGrid>
+  <apex:panelGrid rendered="{!ident = 'Give - On Screen'}">
+    <apex:dataTable border="1" cellpadding="5" columns="4" value="{!gWinList}" var="gWins">
+      <apex:column >
+        <apex:facet name="header">Id</apex:facet>
+        <apex:outputText value="{!gWins.Applicant__c}"/>
+      </apex:column>
+      <apex:column >
+        <apex:facet name="header">Name</apex:facet>
+        <apex:outputLink value="/{!gWins.Applicant__c}">{!gWins.Applicant__r.Name}</apex:outputLink>
+      </apex:column>
+      <apex:column >
+        <apex:facet name="header">Email</apex:facet>
+        <apex:outputLink value="mailto:{!gWins.Applicant__r.Email}">{!gWins.Applicant__r.Email}</apex:outputLink>
+      </apex:column>
+      <apex:column >
+        <apex:facet name="header">Phone</apex:facet>
+        <apex:outputText value="{!gWins.Applicant__r.MobilePhone}"/>
+      </apex:column>
+    </apex:dataTable>
+  </apex:panelGrid>
+  <apex:panelGrid rendered="{!(ident = 'Event - in CSV') || (ident = 'Give - in CSV')}">
+    <apex:dataTable border="0" cellpadding="5" columns="1" value="{!winCSV}" var="wincsv">
+      <apex:column >
+        <apex:outputLink value="/{!wincsv.Id}">{!wincsv.Title}</apex:outputLink>
+      </apex:column>
+    </apex:dataTable>
+  </apex:panelGrid>
+</apex:page>

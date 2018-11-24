@@ -1,0 +1,6 @@
+<apex:page standardController="Give_Instance__c" >
+    
+        <apex:detail subject="{!$CurrentPage.parameters.instanceid}" relatedList="false"/>
+      <apex:enhancedList height="400" rowsPerPage="100" type="Give_Request__c"  />
+    
+</apex:page>

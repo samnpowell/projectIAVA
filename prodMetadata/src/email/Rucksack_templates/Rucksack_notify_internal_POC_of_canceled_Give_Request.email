@@ -1,0 +1,14 @@
+A tentative or final confirmed give request was canceled for member {!Give_Request__c.Applicant__c}, and there are other members waiting on the waitlist.  
+
+To move someone else from the waitlist, go to Give Instance {!Give_Request__c.Give_Instance__c} here:
+{!left(Give_Request__c.Link,find(".com/",Give_Request__c.Link)+4) + Give_Request__c.Give_InstanceId__c}
+
+Give: {!Give_Request__c.Give_Name__c}
+Give Instance Start Date: {!Give_Request__c.Give_Instance_Start_Date__c}
+           
+Member who cancelled:  {!Give_Request__c.Applicant__c}
+Units requested: {!Give_Request__c.Units_Requested__c}
+           {!Give_Request__c.Applicant__c.Link}
+
+Give Request stage is now: {!Give_Request__c.Stage__c}
+Give Request record: {!Give_Request__c.Link}

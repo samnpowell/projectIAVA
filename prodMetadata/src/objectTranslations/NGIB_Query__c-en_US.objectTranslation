@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>NGIB Query</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NGIB Queries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact&apos;s First Name --></label>
+        <name>Contact_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- NGIB Queries --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Checked if NGIB user subscribed to College Factual emails --></help>
+        <label><!-- Subscribe to College Factual Emails --></label>
+        <name>Subscribe_to_College_Factual_Emails__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: First college entry --></help>
+        <label><!-- collegeId1 --></label>
+        <name>collegeId1__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Second college entry --></help>
+        <label><!-- collegeId2 --></label>
+        <name>collegeId2__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Third college entry --></help>
+        <label><!-- collegeId3 --></label>
+        <name>collegeId3__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Plan To Attend --></help>
+        <label><!-- myAttendancePct --></label>
+        <name>myAttendancePct__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Cumulative Post 9-11 Active Duty Service --></help>
+        <label><!-- myCumulativePost911Service --></label>
+        <name>myCumulativePost911Service__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Anticipated Final Active Duty Discharge --></help>
+        <label><!-- myDischargeDate --></label>
+        <name>myDischargeDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Military Status --></help>
+        <label><!-- myMilitaryStatus --></label>
+        <name>myMilitaryStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: --></help>
+        <label><!-- myMontgomoryContribution --></label>
+        <name>myMontgomoryContribution__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Classes Will be Taken --></help>
+        <label><!-- myOnlineStatus --></label>
+        <name>myOnlineStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Benefit to be used by
+*Used to be myBenefitRecipient --></help>
+        <label><!-- myPost911BenefitRecipient --></label>
+        <name>myPost911BenefitRecipient__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Post-9/11 GI Bill Benefit Already Used --></help>
+        <label><!-- myPost911BenefitUsed --></label>
+        <name>myPost911BenefitUsed__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Enlisted or Commissioned --></help>
+        <label><!-- myPriorObligation --></label>
+        <name>myPriorObligation__c</name>
+    </fields>
+    <fields>
+        <help><!-- College Factual field; Form Question: Permanent Residence Is In --></help>
+        <label><!-- myState --></label>
+        <name>myState__c</name>
+    </fields>
+    <layouts>
+        <layout>NGIB Query Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

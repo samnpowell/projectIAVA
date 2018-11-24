@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Follow up to 9/11/12 White Sox game attendees in Chicago</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2012.SEP11.WhiteSoxFollowUp</name>
+    <style>none</style>
+    <subject>From IAVA: Thank you for joining MHL &amp; IAVA at the Chicago White Sox vs. Detroit Tigers Game!</subject>
+    <type>text</type>
+</EmailTemplate>

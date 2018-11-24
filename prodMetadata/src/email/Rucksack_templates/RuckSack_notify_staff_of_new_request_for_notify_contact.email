@@ -1,0 +1,14 @@
+A new Give Request has been made by a contact whose Rucksack Status is set to "Notify Staff".
+
+Applicant: {!Give_Request__c.Applicant__c}
+Contact record: {!Contact.Link}
+Total confirmed Give Requests: {!Give_Request__c.Num_Confirmed_Give_Requests__c}
+{!Give_Request__c.Primary_Phone__c}
+
+Give Request record: {!Give_Request__c.Link}
+Give Name: {!Give_Request__c.Give_Name__c}
+Instance: {!Give_Request__c.Give_Instance__c}
+Start Date: {!Give_Request__c.Give_Instance_Start_Date__c}
+Stage: {!Give_Request__c.Stage__c}
+Units requested: {!Give_Request__c.Units_Requested__c}
+Special response: {!Give_Request__c.Special_Response__c}

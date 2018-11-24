@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Average_Customer_Service_Rating__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sum_of_Customer_Service_Rating__c  /  Count_of_Rated_Referrals__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Customer Service Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Average_Effectiveness_Rating__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sum_of_Effectiveness__c  /  Count_of_Rated_Referrals__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Effectiveness Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Average_Overall_Rating__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Average_Customer_Service_Rating__c  +  Average_Effectiveness_Rating__c  +  Average_Quality_Rating__c  +  Average_Timeliness_Rating__c ) / 4</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Overall Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Average_Quality_Rating__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sum_of_Quality_Rating__c  /  Count_of_Rated_Referrals__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Quality Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Average_Timeliness_Rating__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sum_of_Timeliness_Rating__c  /  Count_of_Rated_Referrals__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Timeliness Rating</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Average_of_Master_Ratings__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sum_of_Master_Ratings__c / Count_of_Total_Referrals__c</formula>
+        <label>Average of Master Ratings</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Best_in_Class__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Best in Class</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Count_of_Rated_Referrals__c</fullName>
+        <externalId>false</externalId>
+        <label>Count of Rated Referrals</label>
+        <summaryFilterItems>
+            <field>Referral__c.Quality__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Count_of_Total_Referrals__c</fullName>
+        <description>Count of all referrals with a master rating</description>
+        <externalId>false</externalId>
+        <label>Count of Total Referrals</label>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Created_More_Than_30_Referrals__c</fullName>
+        <description>For StepUp</description>
+        <externalId>false</externalId>
+        <formula>Number_of_Referrals_Created__c &gt;30</formula>
+        <label>Created More than 30 Referrals</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Emailed_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Emailed Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>External_Intake_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <label>External Intake Instructions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Five_Star_Service_Provider__c</fullName>
+        <description>For StepUp</description>
+        <externalId>false</externalId>
+        <formula>AND(Created_More_Than_30_Referrals__c=TRUE,Last_Referral_Date__c&gt;TODAY()-365)</formula>
+        <label>Five Star Service Provider</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Focus_Area__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Focus Area</label>
+        <referenceTo>Focus_Area__c</referenceTo>
+        <relationshipLabel>Programs</relationshipLabel>
+        <relationshipName>Programs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Funder_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Funder(s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Robin Hood</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HEEC__c</fullName>
+        <externalId>false</externalId>
+        <label>HEEC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Community</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Internal_Intake_Instructions__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Intake Instructions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Last_Referral_Date__c</fullName>
+        <description>For StepUp</description>
+        <externalId>false</externalId>
+        <label>Last Referral Date</label>
+        <summarizedField>Referral__c.Date_of_Referral__c</summarizedField>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>MOU_Terms__c</fullName>
+        <externalId>false</externalId>
+        <label>MOU Terms</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MOU__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>MOU</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Referrals_Created__c</fullName>
+        <description>For StepUp</description>
+        <externalId>false</externalId>
+        <label>Number of Benefits Received Referrals</label>
+        <summaryFilterItems>
+            <field>Referral__c.Benefit_Received__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Organization_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Organization__r.Id)</formula>
+        <label>Organization Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>This is the organization that manages and runs the program.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the organization that manages and runs the program.</inlineHelpText>
+        <label>Organization</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Programs</relationshipLabel>
+        <relationshipName>Programs</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Primary POC</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Programs</relationshipLabel>
+        <relationshipName>Programs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Program City</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Program State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Street Address</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Program_Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Program Zip</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Public_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Public Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Site_Visit_Complete_Y_N__c</fullName>
+        <externalId>false</externalId>
+        <label>Site Visit Complete (Y/N)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Customer_Service_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Sum of Customer Service Rating</label>
+        <summarizedField>Referral__c.Customer_Service__c</summarizedField>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Effectiveness__c</fullName>
+        <externalId>false</externalId>
+        <label>Sum of Effectiveness Rating</label>
+        <summarizedField>Referral__c.Effectiveness__c</summarizedField>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Master_Ratings__c</fullName>
+        <externalId>false</externalId>
+        <label>Sum of Master Ratings</label>
+        <summarizedField>Referral__c.Master_Rating__c</summarizedField>
+        <summaryFilterItems>
+            <field>Referral__c.Master_Rating__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Quality_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Sum of Quality Rating</label>
+        <summarizedField>Referral__c.Quality__c</summarizedField>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Timeliness_Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Sum of Timeliness Rating</label>
+        <summarizedField>Referral__c.Timeliness__c</summarizedField>
+        <summaryForeignKey>Referral__c.Program__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Suppress_Emails_for_Program_Merge__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When programs are merged, the referral survey email is getting triggered and sent to all the clients again. This is confusing and this checkbox is being added to the workflow criteria to prevent that from firing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this box if you are going to merge the program with a duplicate program so, clients don&apos;t get confusing referral survey emails.</inlineHelpText>
+        <label>Suppress Emails for Program Merge</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Program</label>
+    <listViews>
+        <fullName>All_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Focus_Area__c</columns>
+        <columns>Program_State__c</columns>
+        <columns>Description__c</columns>
+        <columns>Best_in_Class__c</columns>
+        <columns>Organization__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Case_Management_Programs</fullName>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Organization__c</columns>
+        <columns>Focus_Area__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Nicole Venutolo</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Allison Chansky</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Ryan Weemer</value>
+        </filters>
+        <label>Case Management Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Community_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Community</value>
+        </filters>
+        <label>Community Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Disability_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <columns>Focus_Area__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>contains</operation>
+            <value>Disability</value>
+        </filters>
+        <label>Disability Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Education_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <columns>Public_Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Education</value>
+        </filters>
+        <label>Education Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Employment_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Employment</value>
+        </filters>
+        <label>Employment Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Financial_Assistance_Organizations</fullName>
+        <columns>NAME</columns>
+        <columns>Internal_Intake_Instructions__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Financial Assistance</value>
+        </filters>
+        <label>Financial Assistance Organizations</label>
+    </listViews>
+    <listViews>
+        <fullName>Financial_Assistance_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Financial Assistance</value>
+        </filters>
+        <label>Financial Assistance Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Health_Care_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Health Care</value>
+        </filters>
+        <label>Health Care Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Homelessness_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Homelessness</value>
+        </filters>
+        <label>Homelessness Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Housing_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Housing</value>
+        </filters>
+        <label>Housing Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>IAVA_Programs</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Organization__c</field>
+            <operation>startsWith</operation>
+            <value>Iraq</value>
+        </filters>
+        <label>IAVA Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Legal_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <columns>Description__c</columns>
+        <columns>Public_Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Legal</value>
+        </filters>
+        <label>Legal Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Military_Families_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Military Families</value>
+        </filters>
+        <label>Military Families Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Focus_Area__c</columns>
+        <columns>Funder_s__c</columns>
+        <columns>Primary_POC__c</columns>
+        <columns>Organization__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Programs_Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>Focus_Area__c</columns>
+        <columns>Average_Quality_Rating__c</columns>
+        <columns>Average_Customer_Service_Rating__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Programs Created Today</label>
+    </listViews>
+    <listViews>
+        <fullName>Public_Benefits_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Public Benefits</value>
+        </filters>
+        <label>Public Benefits Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>Quality_Rating_is_not_blank</fullName>
+        <columns>NAME</columns>
+        <columns>Average_Quality_Rating__c</columns>
+        <columns>Description__c</columns>
+        <columns>Focus_Area__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Average_Quality_Rating__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>Quality Rating is not blank</label>
+    </listViews>
+    <listViews>
+        <fullName>Suicide_and_Mental_Health_Programs</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>Suicide and Mental Health</value>
+        </filters>
+        <label>Suicide and Mental Health Programs</label>
+    </listViews>
+    <listViews>
+        <fullName>VA_Healthcare_Utilization</fullName>
+        <columns>NAME</columns>
+        <columns>Program_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Focus_Area__c</field>
+            <operation>equals</operation>
+            <value>VA Healthcare Utilization</value>
+        </filters>
+        <label>VA Healthcare Utilization</label>
+    </listViews>
+    <listViews>
+        <fullName>Vet_Centers</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>Vet Center</value>
+        </filters>
+        <label>Vet Centers</label>
+    </listViews>
+    <nameField>
+        <label>Program Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Programs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

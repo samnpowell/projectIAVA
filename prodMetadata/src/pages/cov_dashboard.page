@@ -1,0 +1,108 @@
+<apex:page name="myIAVA Dashboard" controller="cov_redirect_controller" action="{!init_dashboard}" id="cov_dashboard" sidebar="false" showheader="false" applyBodyTag="false" applyHtmlTag="false">
+
+<apex:composition template="cov_template">
+
+
+    <apex:define name="page-title">
+        myIAVA - Home
+    </apex:define>
+
+    <apex:define name="meta-tags">
+        <meta property="og:title" content="myIAVA - Home" />
+<!--             <meta property="og:image" content="{!left($Site.currentSiteUrl, len($Site.currentSiteUrl) - len($Site.Prefix) - 1) + URLFOR($Action.Attachment.Download, ce.picFullId)}" />
+-->         <meta property="og:url" content="{!$Site.currentSiteUrl}" />
+        <meta property="og:description" content="A vibrant, peer-supported online community for veterans of Iraq and Afghanistan." />
+        <meta property="og:type" content="non-profit" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </apex:define>
+
+
+    <apex:define name="layout">
+
+        <div id="dashboard-page">
+
+            <div class="row-fluid">  
+
+                <div class="col-sm-12 col-md-7 col-lg-7">
+
+                    <div id="announcements-div">
+                        <apex:define name="Announcements_Dash">
+                            <apex:include pageName="cov_announcements_dash" />
+                        </apex:define> 
+                    </div>
+
+                    <apex:define name="Events_Dash">
+                        <apex:include pageName="cov_events_dash" />
+                    </apex:define>  
+
+                    <a name="newsfeed" />
+                    <div class="dashboard-list">
+                        <div id="chatter_header">
+                            <div class="box-heading"><div class="box-heading-content"><h5>Your Newsfeed</h5></div><div class="relative pull-left"><div class="box-heading-edge"></div></div></div>
+                        </div>
+                        <div class="well box-content" id="dashboard-chatter">
+                                <!-- <chatter:newsfeed id="chatter_on_dashboard" /> -->
+                            <apex:include pageName="cov_feed_customized" />
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-sm-12 col-md-5 col-lg-5">
+
+                    <div id="profilephotoprompt-div">
+                        <apex:define name="ProfilePhoto_Prompt_Dash">
+                            <apex:include pageName="cov_profilephoto_prompt_dash" />
+                        </apex:define> 
+                    </div>
+
+                    <apex:define name="ProfilePanel_Dash">
+                        <apex:include pageName="cov_profilepanel_dash" />
+                    </apex:define> 
+
+                    <div id="recentactivity-div">
+                        <apex:define name="RecentActivity_Dash">
+                            <apex:include pageName="cov_recentactivity_dash" />
+                        </apex:define> 
+                    </div>
+
+                    <apex:define name="ProtectedAreas_Dash">
+                        <apex:include pageName="cov_protectedareas_dash" />
+                    </apex:define> 
+
+                    <apex:define name="Vouchees_Dash">
+                        <apex:include pageName="cov_vouchees_dash"/>
+                    </apex:define>  
+<!-- comment lines 78-82 out to hide the rrrp component 
+                    <div id="resources-div">
+                        <apex:define name="Resources_Dash">
+                            <apex:include pageName="cov_resources_dash" />
+                        </apex:define> 
+                    </div>
+ -->
+                    <apex:define name="Rewards_Dash">
+                        <apex:include pageName="cov_rewards_dashboard" />
+                    </apex:define> 
+
+                    <div id="people-div">
+                        <apex:define name="People_Dash">
+                            <apex:include pageName="cov_people_dash" />
+                        </apex:define> 
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+            
+    </apex:define>
+
+</apex:composition> 
+
+</apex:page>

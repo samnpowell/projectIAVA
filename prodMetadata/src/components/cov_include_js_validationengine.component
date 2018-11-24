@@ -1,0 +1,7 @@
+<apex:component >
+	<apex:includeScript value="{!URLFOR($Resource.cov_files,'js/jquery.validationEngine.js')}" />  
+	<apex:includeScript value="{!URLFOR($Resource.cov_files,'js/jquery.validationEngine-en.js')}" />
+
+	<!-- ALSO REQUIRED: cov_include_validationengine_init component on pages using this script -->
+
+</apex:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>event changed notification email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>EventAlert_EventChangedNotification</name>
+    <style>none</style>
+    <subject>Event changed: {!IAVAEvent_Attendee__c.Event_Name__c} ({!IAVAEvent_Attendee__c.Event_Date__c})</subject>
+    <type>custom</type>
+</EmailTemplate>

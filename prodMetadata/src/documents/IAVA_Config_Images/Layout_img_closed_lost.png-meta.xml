@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Big red &quot;Closed Lost&quot; for donations of that Stage</description>
+    <internalUseOnly>true</internalUseOnly>
+    <keywords>closed, lost, donation, opportunity</keywords>
+    <name>Layout img - closed lost</name>
+    <public>false</public>
+</Document>

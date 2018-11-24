@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>TOTAL_AMOUNT_WON:SUM - EXP_REVENUE:SUM</calculatedFormula>
+        <datatype>currency</datatype>
+        <description>Posted vs. Goal</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Posted vs. Goal</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>IF(AMOUNT_WON:SUM&lt;&gt;0,AMOUNT_ALL:SUM/AMOUNT_WON:SUM,0)</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>Pledged to Posted</description>
+        <developerName>FORMULA2</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Pledged to Posted</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <colorRanges>
+        <columnName>FORMULA1</columnName>
+        <highBreakpoint>0.01</highBreakpoint>
+        <highColor>#54C254</highColor>
+        <lowBreakpoint>0.0</lowBreakpoint>
+        <lowColor>#C25454</lowColor>
+        <midColor>#C28B54</midColor>
+    </colorRanges>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AMOUNT_WON</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>AMOUNT_ALL</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>EXP_REVENUE</field>
+    </columns>
+    <description>Event Statistics</description>
+    <filter>
+        <booleanFilter>(1 AND 2 AND (3 OR 4)) AND 5</booleanFilter>
+        <criteriaItems>
+            <column>ACTIVE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_TYPE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Event,Fundraising Campaign,Donate Page</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>END_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>NEXT_QUARTER</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>END_DATE</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>LAST_QUARTER</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CAMPAIGN_NAME</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>IAVA Special Event- Heroes Celebration 2012 - 5/1/2012</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>ACTIVE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>TOTAL_AMOUNT_ALL</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CAMPAIGN_TYPE</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Event Statistics</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CampaignList</reportType>
+    <scope>userAll</scope>
+    <showDetails>true</showDetails>
+</Report>

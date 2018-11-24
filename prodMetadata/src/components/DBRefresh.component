@@ -1,0 +1,9 @@
+<apex:component >
+<apex:outputText value="The time right now is: 
+    {0,date,yyyy.MM.dd G 'at' HH:mm:ss z}">
+    <apex:param value="{!NOW()}" />
+</apex:outputText>
+<script>
+window.open('/01ZC0000000ngnj?poll=1&m=HOMEPAGE&nr=1&refresh=1', 'db_refresh_frame');
+</script>
+</apex:component>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Give Instance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Give Instances</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Deadline --></label>
+        <name>Application_Deadline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date From --></label>
+        <name>Date_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date To --></label>
+        <name>Date_To__c</name>
+    </fields>
+    <fields>
+        <help><!-- Differentiating term for this instance when there are multiple instances per Give (like the opposing team for a sporting event). --></help>
+        <label><!-- Distinguishing Term for this Instance --></label>
+        <name>Differentiator__c</name>
+    </fields>
+    <fields>
+        <help><!-- The end date of give date range. Blank if only one date. --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- In format (HH:MM XX) where XX is AM or PM in upper case. (e.g. 11:30 AM) --></help>
+        <label><!-- End Time --></label>
+        <name>End_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- For use by Geopointe to map Give Instances. --></help>
+        <label><!-- Geocode --></label>
+        <name>Geocode__c</name>
+        <relationshipLabel><!-- Give Instances --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Give Name --></label>
+        <name>Give_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The parent Give object that these dates and times relate to. --></help>
+        <label><!-- Give --></label>
+        <name>Give__c</name>
+        <relationshipLabel><!-- Give Instances --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Attended --></label>
+        <name>Num_Attended__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Instances on Give --></label>
+        <name>Num_Inst__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Remaining --></label>
+        <name>Number_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Applicants --></label>
+        <name>Number_of_Applicants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Confirmed Requests --></label>
+        <name>Number_of_Confirmed_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Confirmed Units --></label>
+        <name>Number_of_Confirmed_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Tentative Confirmed Requests --></label>
+        <name>Number_of_Tentative_Confirmed_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Tentative Confirmed Units --></label>
+        <name>Number_of_Tentative_Confirmed_Units__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quantity of give items available. --></help>
+        <label><!-- Num. Units --></label>
+        <name>Number_of_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Waitlist Requests --></label>
+        <name>Number_of_Waitlist_Requests__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Waitlist Units --></label>
+        <name>Number_of_Waitlist_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Numerical Status --></label>
+        <name>Numerical_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partnership (hidden) --></label>
+        <name>Partnership_hidden__c</name>
+    </fields>
+    <fields>
+        <label><!-- PowerOfOne --></label>
+        <name>PowerOfOne__c</name>
+    </fields>
+    <fields>
+        <help><!-- This text is sent to users in the Reconfirm Email on the designated Reconfirm Date (limit 255 characters - -  sorry). --></help>
+        <label><!-- Reconfirm Info to Send --></label>
+        <name>Reconfirm_Info_to_Send__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter date when you want reconfirm request emails to go out at 8am ET to members who become Final Confirmed after you set this date.  To manually send reconfirm email, change Re-confirm Status field on the Give Request to &quot;Re-confirm Sent&quot;. --></help>
+        <label><!-- Reconfirm date --></label>
+        <name>Reconfirm_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The associated date of this give instance or start date of range. --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- In format (HH:MM XX) where XX is AM or PM in upper case. (e.g. 11:30 AM) --></help>
+        <label><!-- Start Time --></label>
+        <name>Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waitlist</masterLabel>
+            <translation><!-- Waitlist --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Num. Tentative Remaining --></label>
+        <name>Tentative_Number_Remaining__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year (End Date) --></label>
+        <name>Year_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year (Start Date) --></label>
+        <name>Year_Start_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Give Instance Basic Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- detail --></label>
+            <section>detail</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Give Instance Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Available Quantity Exceeded --></errorMessage>
+        <name>Available_Quantity_Check</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Administer_Give_Requests --></label>
+        <name>Administer_Give_Requests</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Manage_Applicants --></label>
+        <name>Manage_Applicants</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Report_All_Give_Requests --></label>
+        <name>Report_All_Give_Requests</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Report_Final_Give_Requests --></label>
+        <name>Report_Final_Give_Requests</name>
+    </webLinks>
+</CustomObjectTranslation>

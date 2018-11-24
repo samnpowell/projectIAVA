@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to Tier 1 members</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>STH2012 Tier 1 Email</name>
+    <style>none</style>
+    <subject>We’re storming the Hill in March. Want to join us?</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We’re storming the Hill in March, and we want you on our team. Click here to apply, http://www.iava.org/storm-hill-questionnaire?tfa_821={!Contact.Email}.
+
+This fall, we had a huge victory for Iraq and Afghanistan veterans – passage of Vow to Hire Heroes Act. This landmark piece of legislation will help the more than 200,000 new veterans who are struggling to find work. And it couldn’t have happened without the efforts of all of our members over the past year. Following on the heels of this success we will once again be knocking on the doors of Congress, the White House, the DoD, and the VA in our annual Storm the Hill campaign with our message that veterans must remain a top priority for our nation’s lawmakers.
+
+From March 24th through the 31st of this year, we will bring two-dozen Iraq and Afghanistan veterans from across the country to Washington, D.C. to meet with more than 100 Congressional offices and to present our policy priorities for 2012.
+
+You are a leader in our community and we want to know if you would be interested in being a part of our Storm the Hill 2012 team. We are looking for our experienced leaders to join us both in Capitol Hill and in their local communities throughout the country. Please fill out this questionnaire to indicate your availability and soon after we’ll be in touch about what role you’ll play in STH 2012.
+
+If asked to join a team in Washington, you&apos;ll receive a free trip to Washington, hotel accommodations, and reimbursement for food and other expenses. We understand that the time commitment is significant, and we expect everyone to be here for the whole week, so we offer participants a daily stipend in addition to the expenses we pay on your behalf.
+
+Join us for Storm the Hill and help us show all veterans of Iraq and Afghanistan that we&apos;ve got their back. Click here to apply, http://www.iava.org/storm-hill-questionnaire?tfa_821={!Contact.Email}.
+
+Best,
+
+Jason
+
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue, 10th Floor
+New York, NY 10017
+(212) 982-9699
+www.iava.org
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

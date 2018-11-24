@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sent to SF members for testimonials</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>SF Testimonials</name>
+    <style>none</style>
+    <subject>Time sensitive, IAVA needs your help</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+It has been a while since IAVA was last in the San Francisco area and I wanted to hear from you. Recently you participated in an event with IAVA and we are looking to hear how that has impacted you - or how it has generally impacted you over the years. Whether it was running in the Pat&apos;s Run shadow run in the Presido, being a part of our focus group with IDEO, or sharing your thoughts of IAVA with us at breakfast. I would appreciate it if you could respond to me quickly.
+
+Sincerely,
+
+Jason
+--
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

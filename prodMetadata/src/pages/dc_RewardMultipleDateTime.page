@@ -1,0 +1,187 @@
+<apex:page controller="dc_ctrl_RewardDetails" action="{!givedetlist}">
+
+
+ 
+    <div class="hr page-divider"> <hr/> 
+        <h2><img src="{!URLFOR($Resource.dc_css,'images/hr_header_rewards-rewarddetails.png')}" width="118" height="22" alt="REWARD DETAILS"/></h2> 
+    </div> 
+    <div id="view-rewards-detail" class="view view-page-full"> 
+    
+    <apex:form id="frm">
+        <div class="view-header"> 
+            <ul class="share-links"> 
+                <li><a href="http://www.facebook.com/sharer.php?u={!$Site.CustomWebAddress}dc_RewardDetails?giveid={!tw_msg}" class="fb" target="_blank" title="Share on Facebook" ></a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script></li> 
+                <li><a href="http://twitter.com/home?status=Just%20requested%20this%20reward%20from%20IAVA%27s%20Rucksack:%20{!$Site.CustomWebAddress}dc_RewardDetails?giveid%3D{!tw_msg}" title="Share on Twitter" target="_blank" class="tw"></a></li> 
+                <li><a href="mailto:?subject={!give_title}&body={!mail_body} {!$Site.CustomWebAddress}dc_RewardDetails?giveid={!tw_msg}" class="email"></a></li> 
+           </ul> 
+        </div> 
+        
+        <div class="view-content"> 
+            <div class="views-row views-row-odd views-row-1"> 
+                <div class="node node-type-page"> 
+                    <div class="node-inner"> 
+                        <div class="content"> 
+                        <apex:repeat id="Reward" value="{!GiveList}" var="glist">
+                            <p class="alignleft"> 
+                                <apex:image id="att" URL="{!glist.logo}" width="110" height="106" rendered="{!if(glist.logo != ' ',true,false)}"/>  
+                                <apex:image id="att_def" URL="{!URLFOR($Resource.dc_defaultlogo,glist.defaultlogo)}" width="110" height="106" rendered="{!if(glist.logo != ' ',false,true)}"/> 
+                                <span class="counter">{!glist.available}</span> 
+                            </p> 
+ 
+                            <!-- INCLUDE IN COMPLEX VIEW / START: --> 
+                                            <apex:outputpanel rendered="{!if(glist.givetype == 'Screened Give',true,false)}">
+                                        <div class="premium-reward"> 
+                                        <a href="" class="open"><img src="{!URLFOR($Resource.dc_css,'images/rewards_premiumreward.png')}" width="101" height="36" alt="Premium Reward" /></a> 
+                                        <div class="content"><div id="premium-reward-content"> 
+                                        <p><span style="white-space:pre-wrap"><apex:outputlabel value="{!$Label.dc_PremiumReward}" escape="false"/></span></p>
+                                        </div></div> 
+                                        </div> 
+                                        </apex:outputpanel> 
+                            <!-- END --> 
+ 
+                            <h4><a href="#">{!glist.title}</a></h4> 
+                            <p class="description"><description>{!glist.description}</description></p> 
+                                <div class="stats"> 
+                                    <div class="col-left"> 
+                                        <p><strong>Where:</strong><apex:outputtext value=" {!venue}" rendered="{!if(venue != '',true,false)}"/><apex:outputtext value=" {!glist.gwhere}" rendered="{!if(venue == '',true,false)}"/></p> 
+                                        <apex:outputpanel rendered="{!if(venue != '',true,false)}">
+                                        <p><apex:outputtext value=" {!addrStreet}" /></p>
+                                        <p><apex:outputtext value=" {!addrDet}" /></p>
+                                        </apex:outputpanel>
+                                        <p><strong>When:</strong><apex:outputtext value=" {!glist.gwhen}"/></p> 
+                                        <apex:outputpanel rendered="{!if(glist.quantity != ' ',true,false)}">
+                                        <p><strong>Qty:</strong><apex:outputtext value=" {!glist.quantity}"/></p> 
+                                        </apex:outputpanel>
+                                        <p><strong>Request By:</strong><apex:outputtext value=" {!glist.deadline}"/></p> 
+                                        <apex:outputpanel rendered="{!if(glist.agelimit != ' ',true,false)}">
+                                            <p><strong>Restrictions:</strong><apex:outputtext value=" {!glist.agelimit}"/></p>
+                                        </apex:outputpanel>
+                                        <!-- DEBUG apex:outputPanel rendered="true">
+                                            <p><strong>Multiple:</strong><apex:outputtext value=" {!multigive}"/></p>
+                                            <p><strong>Status:</strong><apex:outputtext value="|{!glist.available}|"/></p>
+                                        </apex:outputPanel -->
+                                    </div> 
+                                    <div class="col-right"> 
+                                        <p><strong>Provided By:</strong> <a href="{!$Page.dc_PartnerDetails}?id={!PR_id}"><apex:outputtext value="{!glist.partner}"/></a></p> 
+                                   </div> 
+                                </div> 
+                                
+                                <div class="clearfix"></div> 
+ 
+                                <!-- INCLUDE IN SIMPLE VIEW / START: --> 
+                                    <div class="action-links">
+                                    <apex:outputpanel rendered="{!if((multigive != true && glist.available != ' ' && glist.available != 'Closed'),true,false)}">
+                                    <apex:outputpanel rendered="{!if((multigive != true && glist.available != 'Waitlist'),true,false)}">
+                                        <p class="request-now">
+                                            <!--
+                                            <a class="request-now" href="{!IAVAHost}/dc_ClaimReward?giveid={!glist.giveId}"></a>
+                                            -->
+                                           	<apex:outputPanel rendered="{!$Profile.Name == 'Rucksack Profile'}">
+                                           		<a class="request-now" href="{!IAVAHost}/dc_ClaimReward?giveid={!glist.giveId}"></a>
+                                           	</apex:outputPanel>
+                                           	<apex:outputPanel rendered="{!Not($Profile.Name == 'Rucksack Profile')}">
+                                           		<a class="request-now" href="{!$Page.dc_ClaimReward}?giveid={!glist.giveId}"></a>
+                                           	</apex:outputPanel>
+                                        </p>
+                                    </apex:outputpanel>
+                                    <apex:outputpanel rendered="{!if((multigive != true && glist.available == 'Waitlist'),true,false)}">
+                                        <p class="request-now">
+                                        	<!--
+                                            <a class="join-waitlist" href="{!IAVAHost}/dc_ClaimReward?giveid={!glist.giveId}"></a>
+                                            -->
+                                            <apex:outputPanel rendered="{!$Profile.Name == 'Rucksack Profile'}">
+                                           		<a class="join-waitlist" href="{!IAVAHost}/dc_ClaimReward?giveid={!glist.giveId}"></a>
+                                           	</apex:outputPanel>
+                                           	<apex:outputPanel rendered="{!Not($Profile.Name == 'Rucksack Profile')}">
+                                           		<a class="join-waitlist" href="{!$Page.dc_ClaimReward}?giveid={!glist.giveId}"></a>
+                                           	</apex:outputPanel>
+                                        </p>
+                                    </apex:outputpanel>
+                                    </apex:outputpanel>
+                                     
+                                </div> 
+                                
+                                <!-- END --> 
+                                </apex:repeat>
+                                <!-- INCLUDE IN COMPLEX VIEW / START: --> 
+                                <apex:outputpanel rendered="{!if(multigive == true,true,false)}">
+                                
+                                <div class="hr"><hr/></div> 
+ 
+                                <div class="col-wrapper"> 
+                                    <h4><img src="{!URLFOR($Resource.dc_css,'images/header_chooseyourreward.png')}" width="184" height="14" alt="Choose Your Reward:" /></h4> 
+                                </div> 
+                                <apex:repeat id="Instance" value="{!GiveInstList}" var="ginst">
+                                <div class="col-status"> 
+                                    <p class="alignleft"><apex:outputtext value="{!ginst.available}"/></p> 
+                                    <div class="col-right"> 
+                                        <p>{!ginst.gwhen}</p> 
+                                        <apex:outputpanel rendered="{!if(ginst.available != 'Closed',true,false)}">
+                                            <apex:outputpanel rendered="{!if(ginst.available != 'Waitlist',true,false)}">
+                                                <p class="request-now">
+                                                	<!--
+                                                    <a class="request-now" href="{!IAVAHost}/dc_ClaimReward?giveid={!ginst.giveid}&instanceId={!ginst.instanceId}"></a>
+                                                    -->
+                                                    <apex:outputPanel rendered="{!$Profile.Name == 'Rucksack Profile'}">
+		                                           		<a class="request-now" href="{!IAVAHost}/dc_ClaimReward?giveid={!ginst.giveid}&instanceId={!ginst.instanceId}"></a>
+		                                           	</apex:outputPanel>
+		                                           	<apex:outputPanel rendered="{!Not($Profile.Name == 'Rucksack Profile')}">
+		                                           		<a class="request-now" href="{!$Page.dc_ClaimReward}?giveid={!ginst.giveid}&instanceId={!ginst.instanceId}"></a>
+		                                           	</apex:outputPanel>
+                                                </p>
+                                            </apex:outputpanel>
+                                            <apex:outputpanel rendered="{!if(ginst.available == 'Waitlist',true,false)}">
+                                                <p class="request-now">
+                                                	<!--
+                                                    <a class="join-waitlist" href="{!IAVAHost}/dc_ClaimReward?giveid={!ginst.giveid}&instanceId={!ginst.instanceId}"></a>
+                                                    -->
+                                                    <apex:outputPanel rendered="{!$Profile.Name == 'Rucksack Profile'}">
+		                                           		<a class="join-waitlist" href="{!IAVAHost}/dc_ClaimReward?giveid={!ginst.giveid}&instanceId={!ginst.instanceId}"></a>
+		                                           	</apex:outputPanel>
+		                                           	<apex:outputPanel rendered="{!Not($Profile.Name == 'Rucksack Profile')}">
+		                                           		<a class="join-waitlist" href="{!$Page.dc_ClaimReward}?giveid={!ginst.giveid}&instanceId={!ginst.instanceId}"></a>
+		                                           	</apex:outputPanel>
+                                                </p>
+                                            </apex:outputpanel>
+                                        </apex:outputpanel>
+                                    </div> 
+                                    <div class="clearfix"></div> 
+                                </div> 
+                                </apex:repeat>
+                                </apex:outputpanel>
+                                <!-- END --> 
+ 
+                                <div class="hr"><hr/></div> 
+ 
+                                <div class="col-wrapper"> 
+                                    <h4><img src="{!URLFOR($Resource.dc_css,'images/header_partnersponsor.png')}" width="126" height="12" alt="Partner Sponsor:" /></h4> 
+ 
+                                    <div class="partner-sponsor"> 
+                                         <p class="alignleft"><a href="{!$Page.dc_PartnerDetails}?id={!PR_id}"><apex:image URL="{!PartnerLogo}" rendered="{!if(PartnerLogo != '',true,false)}" alt="" /></a></p> 
+                                        <p class="desc"><apex:outputtext value="{!strFPdesc}"/>
+                                            <a href="{!$Page.dc_PartnerDetails}?id={!PR_id}" class="more-link"></a> 
+                                        </p>  
+                                    </div> 
+                                </div> 
+ 
+                                <apex:outputpanel rendered="{!if(details != '',true,false)}">
+                                <div class="hr"><hr/></div> 
+ 
+                                <div class="col-wrapper"> 
+                                    <h4><img src="{!URLFOR($Resource.dc_css,'images/header_moreinfoaboutthisaward.png')}" width="213" height="12" alt="More Info About This Reward:" /></h4> 
+                                    <span style="white-space:pre-wrap"><p><apex:outputtext value="{!details}" escape="false"/></p></span>
+                                </div> 
+                                </apex:outputpanel>
+ 
+                                                        </div> 
+                                                    </div> 
+                                                </div> 
+                                            </div> 
+ 
+                                            <div class="clearfix"></div> 
+ 
+                                        </div><!-- /view-content --> 
+                                        </apex:form>
+                                    </div> <!-- /view --> 
+
+</apex:page>

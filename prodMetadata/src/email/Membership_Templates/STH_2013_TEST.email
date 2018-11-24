@@ -1,0 +1,6 @@
+Hi, click this.
+
+http://www.tfaforms.com/267167?tfa_FullName={!Contact.FirstName}&tfa_LastName={!Contact.LastName}&tfa_Email={!Contact.Email}&tfa_City={!Contact.MailingCity}&tfa_Zipcode1={!Contact.MailingPostalCode}&tfa_WhatisyourIAVAme={!Contact.Membership_ID__c}
+
+Thanks, 
+Anthony

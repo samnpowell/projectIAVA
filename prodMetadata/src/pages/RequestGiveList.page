@@ -1,0 +1,3 @@
+<apex:page controller="MobileRequestController" action="{!handleGiveListRequest}" contentType="text/plain" showHeader="false">
+{!JSONr2}
+</apex:page>

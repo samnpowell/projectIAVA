@@ -1,0 +1,18 @@
+Dear {!Case.Contact},
+
+A new referral has been created for you by {!Case.OwnerFullName}. For your reference, details about your referral are below.
+
+Program Name: {!Referral__c.Program__c}
+Program Description: {!Referral__c.Program_Description__c}
+Notes from Case Manager: {!Referral__c.Note_to_Client__c}
+
+If you have any questions about this referral please reach out to me, your Veteran Transition Manager at {!Case.OwnerEmail} or {!Case.OwnerPhone}.
+
+In order to improve our program we would appreciate if you would fill out a very short survey on the quality of the referral your received and the quality of my service. 
+
+Please complete this survey at: http://iava.org/rrrp-referral-survey?tfa_63={!Referral__c.Id}&tfa_3={!urlencode(Referral__c.Program__c)}&tfa_14={!Urlencode(Case.OwnerFullName)}
+
+
+Best,
+
+{!Case.OwnerFullName}

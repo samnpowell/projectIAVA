@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Track a Call to DC Event</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Track a Call to DC Events</value>
+    </caseValues>
+    <fields>
+        <label><!-- DC Event --></label>
+        <name>DC_Event__c</name>
+        <relationshipLabel><!-- Tracked Calls related to this to DC Event --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Track a Call --></label>
+        <name>Track_a_Call__c</name>
+        <relationshipLabel><!-- DC Events related to this Tracked Call --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

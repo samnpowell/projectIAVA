@@ -1,0 +1,12 @@
+Hi,
+
+The following event has been canceled:
+
+{!IAVAEvent_Attendee__c.Event_Name__c}
+{!IAVAEvent_Attendee__c.Event_Date__c}
+
+{!IAVAEvent_Attendee__c.Brief_Description__c}
+
+Sorry for any inconvenience. Be sure to visit the VetTogether page, http://iava.org/vettogether/ to see what else is available in your area. 
+
+Thank you for supporting IAVA.

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Latitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Latitude</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_Political_Leadership__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Populated by Research team</inlineHelpText>
+        <label>Local Political Leadership</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Longitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Longitude</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MaxLat__c</fullName>
+        <externalId>false</externalId>
+        <formula>Latitude__c + Radius_for_Searches__c /69</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MaxLat</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MaxLong__c</fullName>
+        <externalId>false</externalId>
+        <formula>Longitude__c + Radius_for_Searches__c /69</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MaxLong</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinLat__c</fullName>
+        <externalId>false</externalId>
+        <formula>Latitude__c - Radius_for_Searches__c /69</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MinLat</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinLong__c</fullName>
+        <externalId>false</externalId>
+        <formula>Longitude__c - Radius_for_Searches__c /69</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MinLong</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Relevant_Local_Stats__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Populated by Research team for situational awareness and additional context</inlineHelpText>
+        <label>Other Relevant Local Stats</label>
+        <length>3000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Radius_for_Searches__c</fullName>
+        <externalId>false</externalId>
+        <label>Radius for Searches</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Top_Donor_Minimum__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>DON&apos;T INCLUDE COMMAS - minimum donation amount that you want to appear on the reports</inlineHelpText>
+        <label>Top Donor Minimum</label>
+        <length>16</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Iraq_and_Afghanistan_Population__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Iraq and Afghanistan Population, not limited to our members, field populated by Research team</inlineHelpText>
+        <label>Total Iraq and Afghanistan Population</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Vet_Population__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>All Eras, not just our database, Populated by Research Team</inlineHelpText>
+        <label>Total Vet Population</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_Display__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( Zip_Length__c =4, 
+(&quot;0&quot;&amp;   TEXT(Zip__c)),
+TEXT(Zip__c))</formula>
+        <label>Zip Display</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_Length__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEN( TEXT(Zip__c) )</formula>
+        <label>Zip Length</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Location</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Latitude__c</columns>
+        <columns>Longitude__c</columns>
+        <columns>Zip_Display__c</columns>
+        <columns>Radius_for_Searches__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Location Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Locations</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Zip_Display__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Latitude__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Longitude__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Radius_for_Searches__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Zip_Display__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Latitude__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Longitude__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Radius_for_Searches__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Donations_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Donations Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na8.salesforce.com/00OC0000006Vav0?pv0={!Location__c.MinLat__c}&amp;pv1={!Location__c.MaxLat__c}&amp;pv2={!Location__c.MinLong__c}&amp;pv3={!Location__c.MaxLong__c}&amp;pv4={!Location__c.Top_Donor_Minimum__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Donors_within_Zip_Radius</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Largest Donors by Lifetime Giving within Zip Radius (over 10k)</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na8.salesforce.com/00OC0000005KT9E?pv0={!Location__c.MinLat__c}&amp;pv1={!Location__c.MaxLat__c}&amp;pv2={!Location__c.MinLong__c}&amp;pv3={!Location__c.MaxLong__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Location_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Location Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://www.appextremes.com/apps/Conga/Composer.aspx
+?sessionId={!API.Session_ID}
+&amp;serverUrl={!API.Partner_Server_URL_80}
+&amp;id={!Location__c.Id}
+&amp;TemplateId=a2sC00000060eTt
+&amp;reportid=[LapsedDonors]00OC0000005K1ZN
+?pv0={!Location__c.MinLat__c}
+~pv1={!Location__c.MaxLat__c}
+~pv2={!Location__c.MinLong__c}
+~pv3={!Location__c.MaxLong__c},
+[Prospects]00OC00000069zGs
+?pv0={!Location__c.MinLat__c}
+~pv1={!Location__c.MaxLat__c}
+~pv2={!Location__c.MinLong__c}
+~pv3={!Location__c.MaxLong__c},
+[LargestCurrentDonors]00OC0000005KT9E
+?pv0={!Location__c.MinLat__c}
+~pv1={!Location__c.MaxLat__c}
+~pv2={!Location__c.MinLong__c}
+~pv3={!Location__c.MaxLong__c},
+[DonationsbyLocation]00OC0000006A4Ij
+?pv0={!Location__c.MinLat__c}
+~pv1={!Location__c.MaxLat__c}
+~pv2={!Location__c.MinLong__c}
+~pv3={!Location__c.MaxLong__c}
+~pv4={!Location__c.Top_Donor_Minimum__c}
+&amp;DS7={!IF(User.Profile = &quot;System Administrator&quot;, &quot;0&quot;, &quot;3&quot;)}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>MGP_Relationship_Report</fullName>
+        <availability>online</availability>
+        <description>Button to run the Major Gifts Prospect Relationship Report for this location radius.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>MGP Relationship Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na8.salesforce.com/00OC0000006JTYA?pv1={!Location__c.MinLat__c}&amp;pv2={!Location__c.MaxLat__c}&amp;pv3={!Location__c.MinLong__c}&amp;pv4={!Location__c.MaxLong__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Map_It</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Map It</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/sma__mapanything?recordId={!Location__c.Id}&amp;baseObjectId=a2uC00000000HKBIA2&amp;tooltipField=Name&amp;color=%2366FF00</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Vets_within_Zip_Radius</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Vets within Zip Radius</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na8.salesforce.com/00OC0000006GVfW?pv0={!Location__c.MinLat__c}&amp;pv1={!Location__c.MaxLat__c}&amp;pv2={!Location__c.MinLong__c}&amp;pv3={!Location__c.MaxLong__c}</url>
+    </webLinks>
+</CustomObject>

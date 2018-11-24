@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Report$Name</field>
+    </columns>
+    <columns>
+        <field>Report$LastRunDate</field>
+    </columns>
+    <columns>
+        <field>Report$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Report$LastModifiedBy</field>
+    </columns>
+    <columns>
+        <field>Report$LastModifiedDate</field>
+    </columns>
+    <description>List of reports built using Contacts with Donations report type since the report type is based upon the wrong relationship with opportunities</description>
+    <filter>
+        <criteriaItems>
+            <column>Report$ReportTypeEnumOrId</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>070C00000004jB6</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Contacts with Donations Reports</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Report_Report__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Report$LastRunDate</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Report$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

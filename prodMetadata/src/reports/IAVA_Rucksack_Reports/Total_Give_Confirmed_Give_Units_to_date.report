@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CHILD_ID</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Give__c.Number_of_Confirmed_Units__c</field>
+    </columns>
+    <columns>
+        <field>Partnership_Request__c.Public_Partner_Name__c</field>
+    </columns>
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>Give__c.Category__c</field>
+    </columns>
+    <columns>
+        <field>Give__c.City__c</field>
+    </columns>
+    <columns>
+        <field>Give__c.Disclaimer__c</field>
+    </columns>
+    <columns>
+        <field>Give__c.Earliest_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Give__c.Location_Description__c</field>
+    </columns>
+    <columns>
+        <field>Give__c.Description__c</field>
+    </columns>
+    <columns>
+        <field>Give__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Give__c.Type__c</field>
+    </columns>
+    <description>Only include screened and first come first serve</description>
+    <filter>
+        <criteriaItems>
+            <column>Give__c.Type__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>First Come First Served,Screened Give</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>Total Give Confirmed Give Units to date</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$Partnership_Request__c$Give__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Partnership_Request__c.End_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

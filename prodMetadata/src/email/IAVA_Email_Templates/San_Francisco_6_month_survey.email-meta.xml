@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>San Francisco 6 month survey</name>
+    <style>none</style>
+    <subject>IAVA Fleet Week Smart job Fair follow up</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+It&apos;s been six months - how&apos;s your job search going? Let us know by logging onto http://iava.org/san-francisco-job-fair-follow-6-month.
+
+IAVA kicked off its series of Smart Job Fairs last October with the U.S. Chamber of Commerce in San Francisco with the goal of helping members of this New Greatest Generation find meaningful employment opportunities. We also wanted to connect you to resources to improve your job readiness and set you up with access to expanded educational opportunities.
+
+So now we want to hear from you. Please take a few minutes to complete our survey and let us know how effective we were in getting you hired. The survey can be found at http://iava.org/san-francisco-job-fair-follow-6-month.
+
+Though the economy is slowly starting to improve, it&apos;s not growing fast enough to help the many veterans out there who are looking for good jobs. A recent IAVA survey (http://iava.org/sth2012/get-educated) revealed that 17 percent of our own members are unemployed - higher than the 12.1% reported in 2011 by the U.S Department of Labor.
+
+IAVA is continuing its fight to lower the veteran unemployment rate through its partnership with the U.S. Chamber of Commerce this summer. In June, Smart Job Fairs are coming to Chicago and New York. Start spreading the word now through Facebook and Twitter.
+
+Your feedback is critical in helping us improve these events as we bring them to more veterans across the country. So let us know how things are going for you and how we can improve our efforts to lower veteran unemployment nationwide by opening up more job opportunities, resources and more.
+
+Thank you supporting IAVA and stay in touch.
+
+Sincerely,
+Michael
+
+Michael Preston
+Senior Strategic Partnerships Associate
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

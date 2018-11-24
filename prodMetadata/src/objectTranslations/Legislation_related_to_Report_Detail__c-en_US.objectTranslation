@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Legislation related to Report Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Legislation related to Report Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Legislation --></label>
+        <name>Legislation__c</name>
+        <relationshipLabel><!-- Legislation related to Report Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Report Detail --></label>
+        <name>Report_Detail__c</name>
+        <relationshipLabel><!-- Legislation related to Report Details --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

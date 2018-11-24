@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>DC Event 20100314</name>
+    <style>none</style>
+    <subject>DC Vets: This Thursday on Capitol Hill</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Last month IAVA brought 29 OIF/OEF veterans to Capitol Hill for Storm the Hill 2010. A crushing blizzard shut down the federal government, but in the end we met with 64 Congressional offices and the White House. It was a huge success.
+
+During those meetings IAVA presented our top legislative priorities to key lawmakers and their staff. Many have already taken our charge and have started to work with us on these priorities.
+
+On March 18th IAVA’s Tom Tarantino will be testifying before a joint session of the House and Senate Veterans Affairs committees on our 2010 Legislative Priorities - he will go on the record with our ideas.
+
+This is an incredible opportunity to have the attention of the members of Congress who can get things done on the issues we care so strongly about: jobs, housing, mental health injuries, the new GI Bill, and modernizing the VA claim processing system.
+
+Tom will be testifying, but we need you there to have his back and show the Senators and Congressmen that you stand with IAVA. Your presence will make a difference.
+
+The hearing starts at 9:30am in Room 50 of the Dirksen Senate Office Building. Click here for a map.
+
+If you can make it please RSVP to Tom Tarantino at tom@iava.org.
+
+Thanks for standing with IAVA at this very important hearing.
+
+Sincerely,
+
+Paul
+
+Paul Rieckhoff
+
+Executive Director &amp; Founder
+ 
+Iraq and Afghanistan Veterans of America (IAVA)
+
+PS. The bigger the sea of IAVA members, wearing our T-Shirts, the better - so please forward this on to your friends.
+
+To stop receiving emails from IAVA, click here.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

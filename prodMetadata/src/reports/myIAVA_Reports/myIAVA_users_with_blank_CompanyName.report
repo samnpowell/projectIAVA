@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Id</field>
+    </columns>
+    <columns>
+        <field>User$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User*User$Date_of_COV_Terms_and_Conduct_Acceptance__c</field>
+    </columns>
+    <columns>
+        <field>User.PortalContacts__r$Contact_ID_18_digits__c</field>
+    </columns>
+    <columns>
+        <field>User.PortalContacts__r$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>User.PortalContacts__r$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>User.PortalContacts__r$Name</field>
+    </columns>
+    <columns>
+        <field>User.PortalContacts__r$Community_Title__c</field>
+    </columns>
+    <description>myIAVA users who have a blank Company Name instead of having it transferred over correctly from Community Title Formula</description>
+    <filter>
+        <criteriaItems>
+            <column>User$CompanyName</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Profile</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>IAVA Plus Portal User</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User$CompanyName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>myIAVA users with blank CompanyName</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Portal_Users_with_Contacts__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

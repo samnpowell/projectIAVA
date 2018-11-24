@@ -1,0 +1,34 @@
+<p>Hi {!npe4__Relationship__c.First_Name_of_Primary_Contact__c},</p>
+
+<p>Thanks for being a loyal IAVA member.</p>
+ 
+<p><b>{!npe4__Relationship__c.npe4__RelatedContact__c}</b> has invited you to join the New Community of Veterans as a beta tester.</p>
+
+<p>You can access CoV by clicking the button below <a href="https://cov.force.com/iava/cov_dashboard"<b>(or here)</b></a> and using the same username and password you use to request rucksack rewards.</p>
+
+{!if(isblank(npe4__Relationship__c.Peer_Invite_Message__c),"", "Here is a message from "+npe4__Relationship__c.npe4__RelatedContact__c+":    <br />" + npe4__Relationship__c.Peer_Invite_Message__c)} 
+
+<p/>
+
+<center><a href="https://cov.force.com/iava/cov_dashboard"><img src="https://c.na8.content.force.com/servlet/servlet.ImageServer?id=015C00000020uu4&oid=00D80000000d0vO&lastMod=1380570318000"></a></center>
+</p>
+
+<p>Why join the New CoV? There are plenty of reasons. The New CoV makes it easier to:</p>
+
+<ul>
+<li>Request free giveaways from the Rucksack
+<li>Interact with IAVA staff
+<li>Plan and join IAVA events
+<li>Access private support groups
+<li>Meet other vets in your area
+<li>Invite your friends using our vouch feature
+<li>Publicize your thoughts, projects and interests
+</ul>
+
+<p>The New CoV is currently in Beta and you will be one of our first test members, so don’t be concerned if it’s still a little rough around the edges. Your feedback will be essential in helping the New CoV grow and improve. </p>
+
+<p>So come on in, {!npe4__Relationship__c.First_Name_of_Primary_Contact__c}. {!npe4__Relationship__c.npe4__RelatedContact__c} is waiting for you in the <a href="https://iava.secure.force.com/iavaplus/">New Community of Veterans</a>!</p>
+
+<p>See you around the community,</p>
+
+<p>The IAVA Team</p>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Used in the approval process for partnership ticket gives</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Membership Rejects Ticket Give Request</name>
+    <style>none</style>
+    <subject>Membership Rejects Ticket Give Request</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>StH 2011, travel reminder</name>
+    <style>none</style>
+    <subject>Storm the Hill 2011 travel information</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Are you getting excited to Storm the Hill?!
+
+For a great reminder of all the great things we did last year, check out http://stormthehill.org.
+
+By now you should have received your travel information, if you have not received it yet please let me know. Team IAVA is looking forward to having you on the ground with us for Storm the Hill 2011! It will be a long week filled with rewarding work that will let our members know that we&apos;ve got their back, and on Thursday night, March 31st, we are inviting our Washington, DC area members to join us for the Storm the Hill Membership Event. Be sure to tell your friends to register at http://therucksack.org.
+
+If there are any issues please let me know at membership@iava.org.
+
+Sincerely,
+
+Steve Zaorski
+
+Special Projects Coordinator
+
+Iraq and Afghanistan Veterans of America (IAVA)
+
+292 Madison Avenue, 10th Floor
+
+New York, NY 10017
+
+(212) 982-9699
+
+www.iava.org 
+ 
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,18 @@
+<apex:component >
+  <script type="text/javascript">
+    var j$ = jQuery.noConflict();
+  
+    j$(document).ready(function()    {
+      var promptPosition = j$('form.validated-form').is('[class*="validation-promptPosition-"]') 
+      		? j$('form.validated-form').attr("class").split("validation-promptPosition-")[1].split("-") 
+      		: 'topLeft';
+
+      var binded = j$('form.validated-form').is('[class*="validation-binded-"]') 
+      		? j$('form.validated-form').attr("class").split("validation-binded-")[1].split("-") 
+      		: false;
+
+      j$('form.validated-form').validationEngine({promptPosition : promptPosition, binded: binded});
+    });
+
+  </script>
+</apex:component>

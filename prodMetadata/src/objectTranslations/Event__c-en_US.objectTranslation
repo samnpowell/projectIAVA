@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DC Popularity Index</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DC Popularity Index</value>
+    </caseValues>
+    <fields>
+        <help><!-- Street address of location where event takes place --></help>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned Staffer --></label>
+        <name>Assigned_Staffer__c</name>
+        <relationshipLabel><!-- DC Popularity Index --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- City where event takes place --></help>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <help><!-- For other, fill in the Other Committee box below --></help>
+        <label><!-- Committee --></label>
+        <name>Committee__c</name>
+        <picklistValues>
+            <masterLabel>House Armed Services Committee</masterLabel>
+            <translation><!-- House Armed Services Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>House Veterans Affairs Committee</masterLabel>
+            <translation><!-- House Veterans Affairs Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senate Armed Services Committee</masterLabel>
+            <translation><!-- Senate Armed Services Committee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senate Veterans Affairs Committee</masterLabel>
+            <translation><!-- Senate Veterans Affairs Committee --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If this event takes place on one date, indicate that here.  If the event spans multiple days, indicate the start date here. --></help>
+        <label><!-- Date (Start Date) --></label>
+        <name>Date_and_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- If the event spans multiple days, indicate the end date here.  Otherwise, leave blank. --></help>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Expectation --></label>
+        <name>Event_Expectation__c</name>
+        <picklistValues>
+            <masterLabel>Network</masterLabel>
+            <translation><!-- Network --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Observe</masterLabel>
+            <translation><!-- Observe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speak before Audience</masterLabel>
+            <translation><!-- Speak before Audience --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Name of the event --></help>
+        <label><!-- Event Name --></label>
+        <name>Event_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- For press-related events, use the Press Hits tab instead --></help>
+        <label><!-- Event Type --></label>
+        <name>Event_Type__c</name>
+        <picklistValues>
+            <masterLabel>Ceremony</masterLabel>
+            <translation><!-- Ceremony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference</masterLabel>
+            <translation><!-- Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congressional Testimony</masterLabel>
+            <translation><!-- Congressional Testimony --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dinner</masterLabel>
+            <translation><!-- Dinner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FYI</masterLabel>
+            <translation><!-- FYI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting</masterLabel>
+            <translation><!-- Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presentation</masterLabel>
+            <translation><!-- Presentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roundtable</masterLabel>
+            <translation><!-- Roundtable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Summit</masterLabel>
+            <translation><!-- Summit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Department with primary responsibility for providing fulfillment --></help>
+        <label><!-- IAVA Department --></label>
+        <name>IAVA_Department__c</name>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development</masterLabel>
+            <translation><!-- Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership</masterLabel>
+            <translation><!-- Membership --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Operations</masterLabel>
+            <translation><!-- Operations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy</masterLabel>
+            <translation><!-- Policy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Parnerships</masterLabel>
+            <translation><!-- Strategic Parnerships --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Pick the contact who invited us.  If necessary, create the contact record first. --></help>
+        <label><!-- Invited By --></label>
+        <name>Invited_By__c</name>
+        <relationshipLabel><!-- DC Popularity Index --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- How high a priority is it for us to attend this event? --></help>
+        <label><!-- Level of Importance --></label>
+        <name>Level_of_Importance__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TBD</masterLabel>
+            <translation><!-- TBD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The materials needed to be brought to/presented at this event. --></help>
+        <label><!-- Materials --></label>
+        <name>Materials__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any additional notes regarding this event --></help>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fill in for other committees.  Leave blank if committee is SVAC or HVAC or for non-testimony events. --></help>
+        <label><!-- Other Committee --></label>
+        <name>Other_Committee__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the location where this event takes place. --></help>
+        <label><!-- Place --></label>
+        <name>Place__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+        <picklistValues>
+            <masterLabel>Congressional Staff</masterLabel>
+            <translation><!-- Congressional Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Generic Invitation</masterLabel>
+            <translation><!-- Generic Invitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other IAVA Department</masterLabel>
+            <translation><!-- Other IAVA Department --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paul</masterLabel>
+            <translation><!-- Paul --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- State where event takes place --></help>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subcommittee --></label>
+        <name>Subcommittee__c</name>
+        <picklistValues>
+            <masterLabel>Air and Land Forces</masterLabel>
+            <translation><!-- Air and Land Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Airland</masterLabel>
+            <translation><!-- Airland --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disability Assistance and Memorial Affairs</masterLabel>
+            <translation><!-- Disability Assistance and Memorial Affairs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economic Opportunity</masterLabel>
+            <translation><!-- Economic Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emerging Threats and Capabilities</masterLabel>
+            <translation><!-- Emerging Threats and Capabilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health</masterLabel>
+            <translation><!-- Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military Personnel</masterLabel>
+            <translation><!-- Military Personnel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oversight and Investigations</masterLabel>
+            <translation><!-- Oversight and Investigations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personnel</masterLabel>
+            <translation><!-- Personnel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Readiness</masterLabel>
+            <translation><!-- Readiness --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Readiness and Management Support</masterLabel>
+            <translation><!-- Readiness and Management Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seapower</masterLabel>
+            <translation><!-- Seapower --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seapower and Expeditionary Forces</masterLabel>
+            <translation><!-- Seapower and Expeditionary Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Forces</masterLabel>
+            <translation><!-- Strategic Forces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terrorism, Unconventional Threats and Capabilities</masterLabel>
+            <translation><!-- Terrorism, Unconventional Threats and Capabilities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicate the start time in the following format (HH:MM XX) where XX is AM or PM. --></help>
+        <label><!-- Time --></label>
+        <name>Time__c</name>
+    </fields>
+    <layouts>
+        <layout>DC Event Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Location --></label>
+            <section>Location</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

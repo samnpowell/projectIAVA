@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contact related to Focus Area</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contacts related to Focus Areas</value>
+    </caseValues>
+    <fields>
+        <help><!-- The Contact related to the Focus Area --></help>
+        <label><!-- Related Contact --></label>
+        <name>Related_Contact__c</name>
+        <relationshipLabel><!-- Focus Areas related to this Contact --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Focus Area related to the Contact --></help>
+        <label><!-- Related Focus Area --></label>
+        <name>Related_Focus_Area__c</name>
+        <relationshipLabel><!-- Contacts related to this Focus Area --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Key Ally</masterLabel>
+            <translation><!-- Key Ally --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Key Staffer</masterLabel>
+            <translation><!-- Key Staffer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opposed</masterLabel>
+            <translation><!-- Opposed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supportive</masterLabel>
+            <translation><!-- Supportive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Target</masterLabel>
+            <translation><!-- Target --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Contact related to Focus Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

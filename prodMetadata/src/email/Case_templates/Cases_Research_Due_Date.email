@@ -1,0 +1,10 @@
+A research request assigned to you is due on {!Case.Due_Date_Requested__c}.
+
+//
+
+Request Details:
+
+Submitted by: {!Case.CreatedBy}
+Subject: {!Case.Subject}
+
+Click here to be taken to this request: {!Case.Link}

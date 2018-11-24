@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- AIR Completed --></label>
+        <name>AIR_Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- AIR Overdue --></label>
+        <name>AIR_Overdue__c</name>
+    </fields>
+    <fields>
+        <label><!-- AIR Required --></label>
+        <name>AIR_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ally Sponsorships --></label>
+        <name>Ally_Sponsorships__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attendees --></label>
+        <name>Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Champion Sponsorships --></label>
+        <name>Champion_Sponsorships__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chapter --></label>
+        <name>Chapter__c</name>
+        <relationshipLabel><!-- Campaigns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Account Number --></label>
+        <name>CnP_PaaS__CnP_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Connect Campaign Link --></label>
+        <name>CnP_PaaS__CnP_Connect_Campaign_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Connect Campaign --></label>
+        <name>CnP_PaaS__CnP_Connect_Campaign__c</name>
+    </fields>
+    <fields>
+        <help><!-- Default Selected Item testing feroz --></help>
+        <label><!-- C&amp;P Connect Default Selected Item --></label>
+        <name>CnP_PaaS__CnP_Connect_Default_Selected_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Connect Form Name --></label>
+        <name>CnP_PaaS__CnP_Connect_Form_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Last Update --></label>
+        <name>CnP_PaaS__CnP_Last_Update__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Lift Basis --></label>
+        <name>CnP_PaaS__CnP_Lift_Basis__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Lift Campaign --></label>
+        <name>CnP_PaaS__CnP_Lift_Campaign__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Lift Landing Page --></label>
+        <name>CnP_PaaS__CnP_Lift_Landing_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Lift Life Span --></label>
+        <name>CnP_PaaS__CnP_Lift_Life_Span__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Lift Rate --></label>
+        <name>CnP_PaaS__CnP_Lift_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Patron Rank Max --></label>
+        <name>CnP_PaaS__CnP_Patron_Rank_Max__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Patron Rank Min --></label>
+        <name>CnP_PaaS__CnP_Patron_Rank_Min__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Payment Maximum Start Amount --></label>
+        <name>CnP_PaaS__CnP_Payment_Maximum_Start_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Payment Maximum --></label>
+        <name>CnP_PaaS__CnP_Payment_Maximum__c</name>
+    </fields>
+    <fields>
+        <label><!-- C&amp;P Payment Minimum --></label>
+        <name>CnP_PaaS__CnP_Payment_Minimum__c</name>
+    </fields>
+    <fields>
+        <label><!-- Collateral distributed --></label>
+        <name>Collateral_distributed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Group Type --></label>
+        <name>Contact_Group_Type__c</name>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy</masterLabel>
+            <translation><!-- Policy --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DB Campaign Tactic --></label>
+        <name>DB_Campaign_Tactic__c</name>
+        <picklistValues>
+            <masterLabel>Direct Mail</masterLabel>
+            <translation><!-- Direct Mail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment Seminars</masterLabel>
+            <translation><!-- Employment Seminars --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Website</masterLabel>
+            <translation><!-- Internal Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lunches</masterLabel>
+            <translation><!-- Lunches --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online Banners/Ads</masterLabel>
+            <translation><!-- Online Banners/Ads --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partners</masterLabel>
+            <translation><!-- Partners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print Advertisement</masterLabel>
+            <translation><!-- Print Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral Program</masterLabel>
+            <translation><!-- Referral Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Call Down</masterLabel>
+            <translation><!-- Sales Call Down --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Webinars</masterLabel>
+            <translation><!-- Webinars --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Only applies when the Campaign record is a Donate Page.  If this campaign doesn&apos;t represent a donation page, leave this field null. --></help>
+        <label><!-- Default Tracking Code --></label>
+        <name>Default_Tracking_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Gets added to the thank-you email for Donations in this campaign (only works when the campaign is assigned at the time of donation). --></help>
+        <label><!-- Donation Thank You Message --></label>
+        <name>Donation_TY_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Date --></label>
+        <name>Event_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Public event details for display on COV and external sites. For images use the &quot;Web Address&quot; tab rather than uploading an image here directly (the latter will not work).  If you need a place to host the image you can use the Amazon S3 server. --></help>
+        <label><!-- Public Details --></label>
+        <name>Event_Public_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Scale --></label>
+        <name>Event_Scale__c</name>
+        <picklistValues>
+            <masterLabel>Large</masterLabel>
+            <translation><!-- Large --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small</masterLabel>
+            <translation><!-- Small --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expected Size --></label>
+        <name>Expected_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- External POC --></label>
+        <name>External_POC__c</name>
+        <relationshipLabel><!-- Campaigns (External POC) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Friend Individual Tickets --></label>
+        <name>Friend_Individual_Tickets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fundraising Campaign Goal --></label>
+        <name>Fundraising_Campaign_Goal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Leads that have not been converted into contacts. --></help>
+        <label><!-- Open Leads --></label>
+        <name>GWCC__Unconverted_Leads__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hero Sponsorships --></label>
+        <name>Hero_Sponsorships__c</name>
+    </fields>
+    <fields>
+        <label><!-- IAVA/Partner/Member Event --></label>
+        <name>IAVA_Partner_Event__c</name>
+        <picklistValues>
+            <masterLabel>IAVA Event</masterLabel>
+            <translation><!-- IAVA Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Initiated</masterLabel>
+            <translation><!-- Member Initiated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-IAVA Event</masterLabel>
+            <translation><!-- Non-IAVA Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Event</masterLabel>
+            <translation><!-- Partner Event --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Indoor/Outdoor --></label>
+        <name>Indoor_Outdoor__c</name>
+        <picklistValues>
+            <masterLabel>Indoor</masterLabel>
+            <translation><!-- Indoor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outdoor</masterLabel>
+            <translation><!-- Outdoor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Link to the page on the website that accepts payment or the form for people to sign up to attend. --></help>
+        <label><!-- Link to Event/Donate Page --></label>
+        <name>Link_to_Event_Donate_Page__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this campaign was populated by a report, please put a link to the report here. --></help>
+        <label><!-- Link to Source Report --></label>
+        <name>Link_to_Source_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local POC --></label>
+        <name>Local_POC__c</name>
+        <relationshipLabel><!-- Campaigns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Location Address/Venue --></label>
+        <name>Location_Address_Venue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location City --></label>
+        <name>Location_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location State --></label>
+        <name>Location_State__c</name>
+        <picklistValues>
+            <masterLabel>AK</masterLabel>
+            <translation><!-- AK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AL</masterLabel>
+            <translation><!-- AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR</masterLabel>
+            <translation><!-- AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS (American Samoa)</masterLabel>
+            <translation><!-- AS (American Samoa) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ</masterLabel>
+            <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CT</masterLabel>
+            <translation><!-- CT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC</masterLabel>
+            <translation><!-- DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE</masterLabel>
+            <translation><!-- DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FL</masterLabel>
+            <translation><!-- FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FM (Federated States of Micronesia)</masterLabel>
+            <translation><!-- FM (Federated States of Micronesia) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA</masterLabel>
+            <translation><!-- GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GU (Guam)</masterLabel>
+            <translation><!-- GU (Guam) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HI</masterLabel>
+            <translation><!-- HI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA</masterLabel>
+            <translation><!-- IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID</masterLabel>
+            <translation><!-- ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN</masterLabel>
+            <translation><!-- IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KS</masterLabel>
+            <translation><!-- KS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY</masterLabel>
+            <translation><!-- KY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD</masterLabel>
+            <translation><!-- MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME</masterLabel>
+            <translation><!-- ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MH (Marshall Islands)</masterLabel>
+            <translation><!-- MH (Marshall Islands) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MI</masterLabel>
+            <translation><!-- MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MN</masterLabel>
+            <translation><!-- MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MO</masterLabel>
+            <translation><!-- MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP (Northern Mariana Islands)</masterLabel>
+            <translation><!-- MP (Northern Mariana Islands) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS</masterLabel>
+            <translation><!-- MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT</masterLabel>
+            <translation><!-- MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC</masterLabel>
+            <translation><!-- NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ND</masterLabel>
+            <translation><!-- ND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NE</masterLabel>
+            <translation><!-- NE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NJ</masterLabel>
+            <translation><!-- NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM</masterLabel>
+            <translation><!-- NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NV</masterLabel>
+            <translation><!-- NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OH</masterLabel>
+            <translation><!-- OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR (Puerto Rico)</masterLabel>
+            <translation><!-- PR (Puerto Rico) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PW (Palau)</masterLabel>
+            <translation><!-- PW (Palau) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RI</masterLabel>
+            <translation><!-- RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC</masterLabel>
+            <translation><!-- SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SD</masterLabel>
+            <translation><!-- SD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TN</masterLabel>
+            <translation><!-- TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX</masterLabel>
+            <translation><!-- TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UT</masterLabel>
+            <translation><!-- UT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VI (Virgin Islands)</masterLabel>
+            <translation><!-- VI (Virgin Islands) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VT</masterLabel>
+            <translation><!-- VT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WA</masterLabel>
+            <translation><!-- WA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WI</masterLabel>
+            <translation><!-- WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WV</masterLabel>
+            <translation><!-- WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WY</masterLabel>
+            <translation><!-- WY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Members Recruited from Campaign --></label>
+        <name>Members_Recruited_from_Campaign__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of campaign members with status &quot;Attended&quot; --></help>
+        <label><!-- Num. Attended --></label>
+        <name>Num_Attended__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of campaign members with status &quot;Confirmed&quot; --></help>
+        <label><!-- Num. Confirmed --></label>
+        <name>Num_Confirmed__c</name>
+    </fields>
+    <fields>
+        <label><!-- One-on-one conversations --></label>
+        <name>One_on_one_conversations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Openness --></label>
+        <name>Openness__c</name>
+        <picklistValues>
+            <masterLabel>Member-Only</masterLabel>
+            <translation><!-- Member-Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open Event</masterLabel>
+            <translation><!-- Open Event --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Phone numbers were collected at this event --></help>
+        <label><!-- Phone number entry --></label>
+        <name>Phone_number_entry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platinum Hero Sponsorships --></label>
+        <name>Platinum_Hero_Sponsorships__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential Leaders Identified --></label>
+        <name>Potential_Leaders_Identified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential RRRP Clients Identified --></label>
+        <name>Potential_RRRP_Clients_Identified__c</name>
+    </fields>
+    <fields>
+        <label><!-- Predictive --></label>
+        <name>Predictive__c</name>
+    </fields>
+    <fields>
+        <help><!-- There was an IAVA presentation or training at this event --></help>
+        <label><!-- Presentation / training --></label>
+        <name>Presentation_training__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Everyone&quot; means show the announcement to everyone. After the user dismisses the announcement they are added to the campaign.  &quot;Campaign Members&quot; means only show to those people, and when they dismiss change the campaign status accordingly. --></help>
+        <label><!-- Show Inside COV To --></label>
+        <name>Show_Inside_COV_To__c</name>
+        <picklistValues>
+            <masterLabel>Campaign Members</masterLabel>
+            <translation><!-- Campaign Members --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Everyone</masterLabel>
+            <translation><!-- Everyone --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Shows in COV 2.0 (only for types: Event, COV Announcement, Petition) --></help>
+        <label><!-- Show Inside COV --></label>
+        <name>Show_Inside_COV__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Type --></label>
+        <name>Sub_Type__c</name>
+        <picklistValues>
+            <masterLabel>Advocacy/Lobbying Event</masterLabel>
+            <translation><!-- Advocacy/Lobbying Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Art Event</masterLabel>
+            <translation><!-- Art Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ceremonial Event</masterLabel>
+            <translation><!-- Ceremonial Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concert</masterLabel>
+            <translation><!-- Concert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Demob</masterLabel>
+            <translation><!-- Demob --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donor VIP Event</masterLabel>
+            <translation><!-- Donor VIP Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fundraising Event</masterLabel>
+            <translation><!-- Fundraising Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Happy Hour</masterLabel>
+            <translation><!-- Happy Hour --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Members repping IAVA event</masterLabel>
+            <translation><!-- Members repping IAVA event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership Drive</masterLabel>
+            <translation><!-- Membership Drive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership Meeting</masterLabel>
+            <translation><!-- Membership Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Event</masterLabel>
+            <translation><!-- Other Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Press Conference</masterLabel>
+            <translation><!-- Press Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resource Fair</masterLabel>
+            <translation><!-- Resource Fair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sporting Event</masterLabel>
+            <translation><!-- Sporting Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VSO Event</masterLabel>
+            <translation><!-- VSO Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vets Day</masterLabel>
+            <translation><!-- Vets Day --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Supporter Individual Tickets --></label>
+        <name>Supporter_Individual_Tickets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tabling --></label>
+        <name>Tabling__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this field to allow this campaign to be used as a template when creating a new campaign. --></help>
+        <label><!-- Template --></label>
+        <name>Template__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Campaign Name --></label>
+        <name>Unique_Campaign_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valor Sponsorships --></label>
+        <name>Valor_Sponsorships__c</name>
+    </fields>
+    <fields>
+        <label><!-- WE Batch Status Indicator --></label>
+        <name>WE_FW8_NP__Batch_Status_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Error on Send --></label>
+        <name>WE_FW8_NP__Is_Error_Found__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Records Sent --></label>
+        <name>WE_FW8_NP__Number_of_Records_Processed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Records Count --></label>
+        <name>WE_FW8_NP__Total_Records_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- WE Batch Status --></label>
+        <name>WE_FW8_NP__Wealth_Engine_Batch_Status__c</name>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing Complete</masterLabel>
+            <translation><!-- Processing Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Batch In Progress</masterLabel>
+            <translation><!-- Salesforce Batch In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Campaign Engagement Level as Number --></label>
+        <name>percET__Campaign_Engagement_Level_Numeric__c</name>
+    </fields>
+    <fields>
+        <help><!-- Engagement level that should be earned by someone participating in this campaign. --></help>
+        <label><!-- Campaign Engagement Level --></label>
+        <name>percET__Campaign_Engagement_Level__c</name>
+        <picklistValues>
+            <masterLabel>1 - Community</masterLabel>
+            <translation><!-- 1 - Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Participating</masterLabel>
+            <translation><!-- 2 - Participating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - Endorsing</masterLabel>
+            <translation><!-- 3 - Endorsing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Contributing</masterLabel>
+            <translation><!-- 4 - Contributing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Promoting</masterLabel>
+            <translation><!-- 5 - Promoting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6 - Owning</masterLabel>
+            <translation><!-- 6 - Owning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7 - Leading</masterLabel>
+            <translation><!-- 7 - Leading --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- For internal use by StepUp.  Should be hidden from end users. --></help>
+        <label><!-- DEPRECATED Levels Below Top of Hierarchy --></label>
+        <name>percET__Levels_Below_Top_of_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many steps below top of hierarchy is this campaign?  For campaigns with no Parent, this will be 0.  Maintained automatically by StepUp. --></help>
+        <label><!-- Steps Below Hierarchy Top --></label>
+        <name>percET__Steps_Below_Hierarchy_Top__c</name>
+    </fields>
+    <fields>
+        <help><!-- For internal use by StepUp.  Should be hidden from end users. --></help>
+        <label><!-- DEPRECATED Top of Hierarchy Campaign ID --></label>
+        <name>percET__Top_Hierarchy_Campaign_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top of Hierarchy Campaign ID --></label>
+        <name>percET__Top_of_Hierarchy_Campaign_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many people moved up at least one engagement level due to participation in this campaign?  Calculated automatically by StepUp. --></help>
+        <label><!-- Total Engagement Jumpers --></label>
+        <name>percET__Total_Engagement_Jumpers__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of contacts that moved up at least engagement level due to participation in this campaign or one of its sub-campaigns. --></help>
+        <label><!-- Total Engagement Jumpers in Hierarchy --></label>
+        <name>percET__Total_Engagement_Jumpers_in_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count of how many contacts got their very first engagement level (above 0) because of participation in this campaign. --></help>
+        <label><!-- Total New Supporters --></label>
+        <name>percET__Total_New_Supporters__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of contacts that got their very first engagement level (above 0) due to participation in this campaign or one of its sub-campaigns. --></help>
+        <label><!-- Total New Supporters in Hierarchy --></label>
+        <name>percET__Total_New_Supporters_in_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <help><!-- An unduplicated count of contacts in this campaign and all sub-campaigns.  Note that the Salesforce &quot;Total Contacts in Hierarchy&quot; field is not unduplicated.  Provided by StepUp. --></help>
+        <label><!-- Total Unique Contacts In Hierarchy --></label>
+        <name>percET__Total_Unique_Contacts_In_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <help><!-- An unduplicated count of leads in this campaign and all sub-campaigns.  Note that the Salesforce &quot;Total Leads in Hierarchy&quot; field is not unduplicated.  Provided by StepUp. --></help>
+        <label><!-- Total Unique Leads in Hierarchy --></label>
+        <name>percET__Total_Unique_Leads_in_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <help><!-- Answers the quesiton: how many unique contacts responded to this campaign or one of its sub-campaigns?  Note that the Salesforce &quot;Total Responses in Hierarchy&quot; field may count more than one response by a single contact.  Provided by StepUp. --></help>
+        <label><!-- Total Unique Responses in Hierarchy --></label>
+        <name>percET__Total_Unique_Responses_in_Hierarchy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allocated Funds --></label>
+        <name>stayclassy__Allocated_Fund__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Gift --></label>
+        <name>stayclassy__Average_Gift__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign Path --></label>
+        <name>stayclassy__Campaign_Path__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy API Request Status --></label>
+        <name>stayclassy__Classy_API_Request_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy API Request --></label>
+        <name>stayclassy__Classy_API_Request__c</name>
+        <relationshipLabel><!-- Campaigns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Classy Campaign Hierarchy --></label>
+        <name>stayclassy__Classy_Campaign_Type__c</name>
+        <picklistValues>
+            <masterLabel>Campaign</masterLabel>
+            <translation><!-- Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fundraiser</masterLabel>
+            <translation><!-- Fundraiser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Team</masterLabel>
+            <translation><!-- Team --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Classy Designation ID --></label>
+        <name>stayclassy__Classy_Designation_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy External ID --></label>
+        <name>stayclassy__Classy_External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy Fundraising Team --></label>
+        <name>stayclassy__Classy_Fundraising_Team__c</name>
+        <relationshipLabel><!-- Campaigns (Classy Fundraising Team) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Classy Member ID --></label>
+        <name>stayclassy__Classy_Member_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- If true, and if the &quot;classy_mode_enabled&quot; option is true, this will check the &quot;Classy Mode&quot; selection by default on donation forms on Classy --></help>
+        <label><!-- Classy Mode Checked By Default --></label>
+        <name>stayclassy__Classy_Mode_Checked_By_Default__c</name>
+    </fields>
+    <fields>
+        <help><!-- If true, give the donor the option to cover the transaction fee on Classy Donation form --></help>
+        <label><!-- Classy Mode Enabled --></label>
+        <name>stayclassy__Classy_Mode_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy Organization ID --></label>
+        <name>stayclassy__Classy_Organization_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy Parent Campaign ID --></label>
+        <name>stayclassy__Classy_Parent_Campaign_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy Parent Campaign --></label>
+        <name>stayclassy__Classy_Parent_Campaign__c</name>
+        <relationshipLabel><!-- Campaigns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Classy Team ID --></label>
+        <name>stayclassy__Classy_Team_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fundraising Commitment --></label>
+        <name>stayclassy__Commitment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency Code --></label>
+        <name>stayclassy__Currency_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deferred Transaction Amount --></label>
+        <name>stayclassy__Deferred_Transaction_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Percentage to be added to fee_on_top transactions for the campaign to cover fees. If fixed_fot_percent is null falls back on the organization&apos;s fixed_fot_percent. --></help>
+        <label><!-- Effective Fixed FOT Percent --></label>
+        <name>stayclassy__Effective_Fixed_FOT_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy End Date --></label>
+        <name>stayclassy__End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Image URL --></label>
+        <name>stayclassy__Event_Image_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Percentage campaign elects to be added to fee_on_top transactions to cover fees. --></help>
+        <label><!-- Fixed FOT Percent --></label>
+        <name>stayclassy__Fixed_FOT_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fundraiser Alias --></label>
+        <name>stayclassy__Fundraiser_Alias__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fundraising Page Title --></label>
+        <name>stayclassy__Fundraising_Page_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fundraising Team Name --></label>
+        <name>stayclassy__Fundraising_Team_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Raw Currency Code --></label>
+        <name>stayclassy__Raw_Currency_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Raw Goal Amount --></label>
+        <name>stayclassy__Raw_Goal_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy Start Date --></label>
+        <name>stayclassy__Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Team Role --></label>
+        <name>stayclassy__Team_Role__c</name>
+        <picklistValues>
+            <masterLabel>co-captain</masterLabel>
+            <translation><!-- co-captain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>primary-captain</masterLabel>
+            <translation><!-- primary-captain --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Classy Team --></label>
+        <name>stayclassy__Team__c</name>
+        <relationshipLabel><!-- Campaigns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Timezone Identifier --></label>
+        <name>stayclassy__Timezone_Identifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>stayclassy__address1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 2 --></label>
+        <name>stayclassy__address2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign URL --></label>
+        <name>stayclassy__campaign_url__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>stayclassy__city__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>stayclassy__country__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of Goal Reached --></label>
+        <name>stayclassy__percent_goal_reached__c</name>
+    </fields>
+    <fields>
+        <label><!-- Classy Campaign ID --></label>
+        <name>stayclassy__sc_event_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>stayclassy__sf_contact_id__c</name>
+        <relationshipLabel><!-- Campaigns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Classy Designations --></label>
+        <name>stayclassy__sf_designation_id__c</name>
+        <relationshipLabel><!-- Campaigns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>stayclassy__state__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name of the Venue --></label>
+        <name>stayclassy__venue_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>stayclassy__zip__c</name>
+    </fields>
+    <layouts>
+        <layout>Campaign - Development Layout</layout>
+        <sections>
+            <label><!-- Campaign Basics --></label>
+            <section>Campaign Basics</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Donations / Revenue --></label>
+            <section>Donations / Revenue</section>
+        </sections>
+        <sections>
+            <label><!-- Engagment Information --></label>
+            <section>Engagment Information</section>
+        </sections>
+        <sections>
+            <label><!-- Membership Information --></label>
+            <section>Membership Information</section>
+        </sections>
+        <sections>
+            <label><!-- Participation / Attendance --></label>
+            <section>Participation / Attendance</section>
+        </sections>
+        <sections>
+            <label><!-- Revenue Projections --></label>
+            <section>Revenue Projections</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Campaign Layout - Main</layout>
+        <sections>
+            <label><!-- C&amp;P Connect Campaign Lift --></label>
+            <section>C&amp;P Connect Campaign Lift</section>
+        </sections>
+        <sections>
+            <label><!-- COV --></label>
+            <section>COV</section>
+        </sections>
+        <sections>
+            <label><!-- Campaign Basics --></label>
+            <section>Campaign Basics</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Donations / Revenue --></label>
+            <section>Donations / Revenue</section>
+        </sections>
+        <sections>
+            <label><!-- Engagement --></label>
+            <section>Engagement</section>
+        </sections>
+        <sections>
+            <label><!-- Gala Tracking --></label>
+            <section>Gala Tracking</section>
+        </sections>
+        <sections>
+            <label><!-- Membership Information --></label>
+            <section>Membership Information</section>
+        </sections>
+        <sections>
+            <label><!-- Participation / Attendance --></label>
+            <section>Participation / Attendance</section>
+        </sections>
+        <sections>
+            <label><!-- Revenue Projections --></label>
+            <section>Revenue Projections</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Predictive XPress</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Event Details --></label>
+            <section>Event Details</section>
+        </sections>
+        <sections>
+            <label><!-- Key Performance Indicators (KPI) --></label>
+            <section>Key Performance Indicators (KPI)</section>
+        </sections>
+        <sections>
+            <label><!-- Member  Counts --></label>
+            <section>Member  Counts</section>
+        </sections>
+        <sections>
+            <label><!-- Member Statistics --></label>
+            <section>Member Statistics</section>
+        </sections>
+        <sections>
+            <label><!-- Opt Outs &amp; Complaints --></label>
+            <section>Opt Outs &amp; Complaints</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Classy --></label>
+        <name>Classy</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- We have limited the sale of Friend Individual ($1250) to 35 tickets. Please contact heroesgala@iava.org with any questions. --></errorMessage>
+        <name>FriendIndividualTicketLimit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- We have limited the sale of Supporter Individual ($2500) to 70 tickets. Please contact heroesgala@iava.org with any questions. --></errorMessage>
+        <name>SupporterIndividualTicketLimit</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Expected Revenue (Fundraising Goal) can not be less than Commitment --></errorMessage>
+        <name>stayclassy__Goal_Must_Exceed_Commitment</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Donors --></label>
+        <name>Add_Donors</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Campaign_Member_Report --></label>
+        <name>Campaign_Member_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Campaign_Opportunities_Report --></label>
+        <name>Campaign_Opportunities_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Virtual_Terminal --></label>
+        <name>CnP_PaaS__Virtual_Terminal</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_AIR --></label>
+        <name>Create_AIR</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Combine_Campaigns --></label>
+        <name>GWCC__Combine_Campaigns</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SendExactTargetEmail --></label>
+        <name>SendExactTargetEmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewCampaignInfluenceReport --></label>
+        <name>ViewCampaignInfluenceReport</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_Attendee_Count --></label>
+        <name>View_Attendee_Count</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- View_Recruited_At_Count --></label>
+        <name>View_Recruited_At_Count</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Get_Wealth_Info --></label>
+        <name>WE_FW8_NP__Get_Wealth_Info</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_ExactTarget_Email --></label>
+        <name>et4ae5__Send_ExactTarget_Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewCampaignInfluenceReport --></label>
+        <name>et4ae5__ViewCampaignInfluenceReport</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Household_Mailing_List --></label>
+        <name>npo02__Household_Mailing_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- ViewCampaignInfluenceReport --></label>
+        <name>stayclassy__ViewCampaignInfluenceReport</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,11 @@
+Hi {!Contact.FirstName},
+
+Please complete this survey at: 
+ 
+ %SURVEY_URL%
+
+Please complete by Thursday, 1/13/09 by COB.
+
+Thanks,
+
+Ed

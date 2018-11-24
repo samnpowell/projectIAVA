@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Meta_Focus_Area__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Leg_agenda_2014__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Legislative_Agenda_Year__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Subchapter_Number__c</field>
+    </columns>
+    <columns>
+        <field>Policy_Rec__c.Rec_Number_Roman_Numeral__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Policy_Rec__c.Meta_Focus_Area__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Suicide and Mental Health</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Policy_Rec__c.Leg_agenda_2014__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>YES</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Suicide and Mental Health Recommendation</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Policy_Rec__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Policy_Rec__c.Leg_agenda_2014__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Policy_Rec__c.Retire_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

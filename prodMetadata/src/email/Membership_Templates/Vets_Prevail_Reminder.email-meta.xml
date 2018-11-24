@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Vets Prevail Reminder</name>
+    <style>none</style>
+    <subject>Vets Prevail Reminder</subject>
+    <textOnly>{!Contact.FirstName},
+
+Now that the holidays are behind us all, I&apos;d like to remind you about IAVA&apos;s partnership with Vets Prevail.
+
+We are looking to you, a member at IAVA, to help test this new innovative online program. It is quick, easy, and you could even earn $150 for your time and participation.
+
+If you&apos;ve already signed up we would encourage you to check your email, including SPAM folders, for important information from the Vets Prevail team.  And if you haven&apos;t heard from them in a while feel free to reply to this email, and we&apos;ll put you back in touch.
+
+As a reminder, once you register you only have one month to complete the program so don&apos;t delay. Visit - http://iava.org/vetsprevail.
+
+This is a one-of-a-kind program and opportunity and we don&apos;t want anyone to miss out.
+
+Happy New Year,
+
+Jason
+--
+Jason Hansman
+Senior Program Manager
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,73 @@
+<apex:page controller="dc_ctrl_homepage" action="{!feed}">
+<div class="hr page-divider">
+<hr/>
+<h2><img src="{!URLFOR($Resource.dc_css,'images/hr_header_rewards-rucksacknews.png')}" width="120" height="22" alt="IAVA featured REWARDS"/></h2>
+</div>
+
+<div id="view-rewards-rucksack-news" class="view view-posts">
+<div class="view-header">
+<p class="page-action"></p>
+<h1 class="title"><span>Our Latest</span></h1>
+</div>
+<div class="view-content">
+<apex:form id="frm">
+<apex:repeat value="{!feedlist}" var="feed">
+
+<div class="views-row-1 views-row-odd views-row-first"> 
+                                                <div class="node node-teaser node-type-posts"><div class="node-inner"> 
+ 
+                                                    <div class="meta"> 
+                                                        <p class="date"><strong><apex:outputtext value="{!feed.pubdate_1}"/></strong></p> 
+                                                    </div> 
+ 
+                                                    <div class="content"> 
+                                                        <!-- <p class="alignleft">
+                                                        <a href="{!feed.link_1}"><img src="resource/news1.jpg" width="98" height="78" alt="" /></a>
+                                                        </p>  -->
+                                                        <h2 class="title"><a href="{!feed.link_1}"><apex:outputtext value="{!feed.title_1}" /></a></h2> 
+                                                         <!-- <p><apex:outputtext value="{!feed.description_1}" /> 
+                                                            <a href="{!feed.link_1}" class="more-link">&nbsp;</a> 
+                                                        </p> -->
+                                                    </div> 
+ 
+                                                    <div class="clearfix"></div> 
+                                                </div></div> 
+                                                <!-- /node-inner, /node --> 
+                                            </div> 
+ 
+                                            <div class="views-row-2 views-row-even"> 
+                                                <div class="node node-teaser node-type-posts"><div class="node-inner"> 
+ 
+                                                    <div class="meta"> 
+                                                        <p class="date"><strong><apex:outputtext value="{!feed.pubdate_2}"/></strong></p> 
+                                                    </div> 
+ 
+                                                    <div class="content"> 
+                                                        <h2 class="title"><a href="{!feed.link_2}"><apex:outputtext value="{!feed.title_2}" /></a></h2> 
+                                                    </div> 
+ 
+                                                    <div class="clearfix"></div> 
+                                                </div></div> 
+                                                <!-- /node-inner, /node --> 
+                                            </div> 
+ 
+                                            <div class="views-row-3 views-row-odd views-row-last"> 
+                                                <div class="node node-teaser node-type-posts"><div class="node-inner"> 
+ 
+                                                    <div class="meta"> 
+                                                        <p class="date"><strong><apex:outputtext value="{!feed.pubdate_3}"/></strong></p> 
+                                                    </div> 
+ 
+                                                    <div class="content"> 
+                                                        <h2 class="title"><a href="{!feed.link_3}"><apex:outputtext value="{!feed.title_3}" /></a></h2> 
+                                                    </div> 
+ 
+                                                    <div class="clearfix"></div> 
+                                                </div></div> 
+                                                <!-- /node-inner, /node --> 
+                                            </div> 
+
+</apex:repeat></apex:form>             
+
+       </div></div> <!-- /view-content --><!-- /view-posts -->      
+</apex:page>

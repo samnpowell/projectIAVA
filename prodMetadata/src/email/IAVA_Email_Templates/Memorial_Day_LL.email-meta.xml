@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Memorial Day LL</name>
+    <style>none</style>
+    <subject>Memorial Day information</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+Thank you for volunteering your time to help with IAVA this Memorial Day.
+
+If you haven’t already, please contact your local cemetery to verify the times and dates are correct. Also, please fill out this form&lt;http://iava.org/memorial-day-ceremony-information&gt;; it should only take a couple of minutes. 
+
+If you have any questions at all please contact me as soon as possible.
+
+Thanks,
+Anthony
+
+--
+
+Anthony Pike
+
+Membership Coordinator
+
+Iraq and Afghanistan Veterans of America (IAVA)
+
+292 Madison Avenue, 10th Floor
+
+New York, NY 10017
+
+(212) 982-9699
+
+www.iava.org 
+ 
+Follow us on Twitter: @IAVA</textOnly>
+    <type>custom</type>
+</EmailTemplate>

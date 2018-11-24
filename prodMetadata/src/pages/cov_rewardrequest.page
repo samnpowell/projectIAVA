@@ -1,0 +1,687 @@
+<apex:page name="theRequestRewardPage" id="thePage" tabStyle="Give__c" controller="dc_ctrl_requestreward" docType="html-5.0">
+
+
+	<c:cov_include_js_jquery />
+	<apex:includeScript value="{!URLFOR($Resource.dc_css,'js/jquery.blockUI.js')}" />
+	<c:cov_include_js_validationengine />
+	<c:cov_include_css_validationengine />
+
+	<script type="text/javascript">
+		var savePending = false;
+		var saveError = false;
+		var refreshGuestsInProgress = false;
+	</script>
+
+
+	<style type="text/css">
+
+		.bootstrap #guests-grid input.form-control {
+			font-size: 11px;
+			padding-left: 2px;
+			padding-right: 2px;
+		}
+
+	</style>
+	
+       <!--  <p class="alignleft">
+        	<apex:image id="att" URL="{!Logo}" width="110" height="106" alt="{!give.name}" rendered="{!if(Logo != ' ',true,false)}" /> 
+        	<apex:image id="att_def" URL="{!URLFOR($Resource.dc_defaultlogo,Defaultlogo)}" width="110" height="106" alt="{!give.name}" rendered="{!if(Logo != ' ',false,true)}" /> 
+        	<span class="counter">
+        		<apex:outputtext value="{!give.Available__c}" />
+        	</span>
+        </p>
+        
+        <apex:outputpanel rendered="{!if(give.Type__c == 'Screened Give',true,false)}">
+            <div class="premium-reward">
+            	<a href="" class="open">
+            		<img src="{!URLFOR($Resource.dc_css,'images/rewards_premiumreward.png')}" width="101" height="36" alt="Premium Reward" />
+            	</a>
+                <div class="content">
+                    <div id="premium-reward-content">
+                        <p>
+                        	<span style="white-space: pre-wrap">
+                        		<apex:outputlabel value="{!$Label.dc_PremiumReward}" escape="false" />
+                        	</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </apex:outputpanel>
+    
+        <h4><apex:outputtext value="{!give.name}" /></h4>
+        <p class="description">
+        	<apex:outputtext value="{!give.Description__c}" />
+        </p>
+        <div class="stats">
+            <div class="col-left">
+                <p>
+                	<strong>Where:</strong><apex:outputtext value=" {!Where}" />
+                </p>
+                <p>
+                	<strong>
+                		When:
+                	</strong>
+                	<apex:outputtext value=" {!When}" />
+                </p>
+                <apex:outputpanel rendered="{!if(Quantity != ' ',true,false)}">
+                    <p>
+                    	<strong>
+                    		Qty:
+                    	</strong>
+                    	<apex:outputtext value=" {!Quantity}" />
+                    </p>
+                </apex:outputpanel>
+                <p>
+                	<strong>
+                		Request By:
+                	</strong>
+                	<apex:outputtext value=" {!Deadline}" />
+                </p>
+                <apex:outputpanel rendered="{!if(AgeLimit != ' ',true,false)}">
+                    <p>
+                    	<strong>
+                    		Restrictions:
+                    	</strong>
+                    	<apex:outputtext value=" {!AgeLimit}" />
+                    </p>
+                </apex:outputpanel>
+            </div>
+            <div class="col-right">
+                <p>
+                	<strong>
+                		Provided By:
+                	</strong> 
+                	<a href="{!$Page.dc_PartnerDetails}?id={!give.Partnership_Request__c}">
+                		<apex:outputtext value="{!give.Partnership_Request__r.Public_Partner_Name__c}" />
+                	</a>
+                </p>
+            </div>
+        </div>
+    
+        <div class="clearfix"></div>
+        <div class="hr">
+            <hr />
+        </div> -->
+
+	<div class="col-wrapper">
+	
+		<apex:outputPanel rendered="{!eligibleForReward}">
+
+			<apex:form id="frm1" styleClass="validated-form">
+					<!-- <div style="float: right">(<a	href="{!$Site.Prefix}/secur/logout.jsp">Log Out - {!$User.FirstName}</a>)</div>
+					<h4><img src="{!URLFOR($Resource.dc_css,'images/header_claimyourreward.png')}" width="166" height="14" alt="Claim Your Reward:" /></h4>
+					<p><big><strong><apex:Outputlabel value="{!contact.Name}" /></strong></big>
+					Please fill out the form below to request the reward:&nbsp;<apex:outputtext value="{!give.Name}" /></p> -->
+
+
+					<h3>Request the Reward:</h3>
+
+
+						<apex:outputPanel id="pnlTopErrors">
+							<apex:pageMessages />
+						</apex:outputPanel>
+
+						<p>&nbsp;</p>
+
+						<apex:outputPanel rendered="{!ISPICKVAL($User.UserType,'Guest')}">
+							<div class="well">
+							  
+							  <!-- <a href="{!portalLoginBaseUrl}/IAVAPlus_Login?startURL={!substitute(currentEncodedUrlWithoutBase, '%2Frucksack%2F', '%2Fiavaplus%2F')}" class="btn btn-primary btn-large" role="button">Log In for quicker request</a> -->
+							  <a href="cov_login?startURL={!currentEncodedUrlWithoutBase}" class="btn btn-primary btn-large" role="button">Log In for quicker request</a>
+							  <h5>or to check existing request status</h5>
+							  
+							</div>
+						</apex:outputPanel>
+
+						<apex:outputPanel rendered="{!OR(MultipleInstances, CollectQuantity)}">
+							<div class="well">
+
+								<!-- Select number of instances -->
+					
+								<apex:outputpanel rendered="{!MultipleInstances}">
+									<div class="form-group">
+										<label for="event">Confirm which event you want to attend:</label>
+										<apex:selectList id="event" value="{!selectedInstanceId}" styleClass="form-control validate[required]" size="1">
+											<apex:selectOption itemValue="" itemLabel="--select--" />
+											<apex:selectOptions value="{!InstanceOptions}" />
+										</apex:selectList>
+									</div>
+								</apex:outputpanel>
+								
+
+								<apex:outputpanel rendered="{!CollectQuantity}">
+									<div class="form-group">
+										<label for="ticket">Select Quantity</label>
+										<apex:selectList id="ticket" value="{!ticketValue}" styleClass="form-control validate[required]" size="1" onchange="{!if(OR(PromptForGuests,PromptForGuestAge21), 'refreshGuests2();', '')}">
+											<apex:selectOptions value="{!TicketOptions}" />
+										</apex:selectList>
+									</div>
+								</apex:outputpanel>
+
+							</div>
+						</apex:outputPanel>
+
+
+
+						<div class="well">
+
+							<apex:outputPanel rendered="{!OR(AND(NOT(isblank(trim(first_name))), NOT(isblank(trim(last_name)))), NOT(isblank(trim(contactEmail))))}">
+								<div class="form-group">
+									<apex:outputPanel rendered="{!AND(NOT(isblank(trim(first_name))), NOT(isblank(trim(last_name))))}">
+										<label>{!first_name} {!last_name}</label>
+									</apex:outputPanel>
+
+									<apex:outputPanel rendered="{!NOT(isblank(trim(contactEmail)))}">
+										<div id="email-static" >
+											<p class="form-control-static">{!contactEmail} &nbsp;<a href="javascript:void(0);" onclick="toggleHidden('#email-input-field-section'); makeVisible('primary-email-wrapper'); toggleHidden('#email-static');">[change]</a></p>
+										</div>
+									</apex:outputPanel>
+								</div>
+							</apex:outputPanel>
+
+		<!-- 					<apex:outputPanel rendered="{!AND(NOT(isblank(trim(contactEmail))), ConfirmEmailAddress)}">
+
+								<div class="form-group">
+									<div>
+										<label>Confirm Your Email Address</label>
+									</div>
+									<div>
+										<p class="form-control-static">{!contactEmail}</p>
+									</div>
+									<label class="radio-inline">
+										<input type="radio" name="emailConfirm" value="emailCorrect" /> Correct
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="emailConfirm" value="emailChange" onclick="toggleHidden('#email-input-field-section'); makeVisible('primary-email-wrapper');" /> Change
+									</label>
+								</div>
+
+							</apex:outputPanel> -->
+
+							<apex:outputPanel rendered="{!OR(isblank(trim(first_name)) == null, isblank(trim(last_name)), last_name == '(Unknown)', contains(last_name, '@'))}">
+
+									<div class="form-group">
+										<label for="email">First Name</label>
+										<apex:inputtext id="first_name" value="{!first_name}" styleclass="form-control validate[required]" />
+									</div>
+									<div class="form-group">
+										<label for="email">Last Name</label>
+										<apex:inputtext id="last_name" value="{!last_name}" styleclass="form-control validate[required]" />
+									</div>
+
+							</apex:outputPanel>
+
+
+
+							<apex:outputPanel >
+
+								<div id="email-input-field-section" style="display: {!if(isblank(trim(contactEmail)), 'block', 'none')};">
+									<div class="form-group">
+										<label for="email">Email Address</label>
+										<apex:input type="email" id="email" value="{!contactEmail}" styleclass="form-control validate[required, custom[email]]" html-name="email" html-autocomplete="email" />
+
+										<apex:outputPanel rendered="{!NOT(isblank(trim(contactEmail)))}">
+											<div id="primary-email-wrapper" style="visibility: {!if(isblank(trim(contactEmail)), 'hidden', 'visible')};">
+												<div class="checkbox">
+													<label>
+														<apex:inputCheckbox value="{!makeEmailPrimary}" styleclass="form-checkbox" selected="{!isblank(trim(contactEmail))}" /> Make this my primary email address on file with IAVA
+													</label>
+												</div>
+											</div>
+										</apex:outputPanel>
+									</div>
+								</div>
+
+							</apex:outputPanel>
+
+
+							<apex:outputPanel rendered="{!CollectMailingAddress}">
+								<label for="streetaddress1">Mailing address:</label>
+
+								<div class="form-group">
+									<apex:inputText id="streetaddress1" value="{!contactMailingAddressLine1}" styleclass="form-control validate[required]" onFocus="makeVisible('primary-address-wrapper');" html-placeholder="Street Address" html-name="address" html-autocomplete="address-line1" />
+									<apex:inputText id="streetaddress2" value="{!contactMailingAddressLine2}" styleclass="form-control" onFocus="makeVisible('primary-address-wrapper');" html-placeholder="Address Line 2" html-name="address2" html-autocomplete="address-line2" />
+								</div>
+								
+								<div class="form-inline form-group">
+									<div class="form-group">
+										<apex:inputtext value="{!contactMailingCity}" styleclass="form-control validate[required]" onFocus="makeVisible('primary-address-wrapper');" html-placeholder="City" html-name="city" html-autocomplete="address-level2" />
+									</div>
+									<div class="form-group">
+										<apex:selectList id="dist" value="{!contactMailingState}" size="1" styleClass="form-control validate[required]" onFocus="makeVisible('primary-address-wrapper');" html-name="state" html-autocomplete="address-level1">
+												<apex:selectOptions value="{!StateOptions}" />
+										</apex:selectList>
+									</div>
+									<div class="form-group">
+										<apex:inputtext value="{!contactMailingPostalCode}" styleclass="form-control validate[required]" onFocus="makeVisible('primary-address-wrapper');" html-placeholder="Zip" html-name="zip" html-autocomplete="postal-code" />
+									</div>
+								</div>
+								
+								<apex:outputPanel rendered="{!NOT(isblank(trim(contactMailingAddressLine1)))}">
+									<div class="checkbox" id="primary-address-wrapper" style="visibility: hidden;">
+										<label>
+											<apex:inputCheckbox value="{!primaryMailingAddress}" selected="{!isblank(trim(contactMailingAddressLine1))}" /> Make this my primary address on file with IAVA
+										</label>
+									</div>
+								</apex:outputPanel>
+
+							</apex:outputPanel>
+
+
+							
+							<apex:outputPanel rendered="{!CollectPhoneNumber}">
+								<div class="form-group">
+									<label for="phone">Phone Number</label>
+									<apex:input type="tel" id="phone" value="{!contactPhone}" styleclass="form-control validate[required]" onFocus="makeVisible('primary-phone-wrapper');" html-name="phone" html-autocomplete="tel" />
+								</div>
+								<apex:outputPanel rendered="{!NOT(isblank(trim(contactPhone)))}">
+									<div class="checkbox" id="primary-phone-wrapper" style="visibility: hidden;">
+										<label>
+											<apex:inputCheckbox value="{!makePhonePrimary}" selected="{!isblank(trim(contactPhone))}" html-placeholder="(###) ###-####" /> Make this my primary phone number on file with IAVA
+										</label>
+									</div>
+								</apex:outputPanel>
+							</apex:outputPanel>
+
+						</div>
+
+
+						<apex:outputPanel rendered="{!OR(CollectMemberAgeVerification, CollectMemberDOB, CollectMemberDLNum, CollectMemberShirtSize)}">
+
+							<div class="well">
+
+								<!-- Member 21 Check -->
+								<apex:outputpanel rendered="{!CollectMemberAgeVerification}">
+									<div class="form-group">
+										<div>
+											<label>Are you 21 years of age or older?</label>
+										</div>
+										<label class="radio-inline">
+											<input type="radio" name="age" id="age_y" value="y" class="validate[required]" /> Yes
+										</label>
+										<label class="radio-inline">
+											<input type="radio" name="age" id="age_n" value="n" /> No
+										</label>
+									</div>
+									<apex:inputHidden id="hMemberAge" value="{!age_y}" />
+								</apex:outputpanel>
+							
+								<apex:outputpanel rendered="{!CollectMemberDOB}">
+									<div class="form-group">
+										<label for="dob">Date of Birth</label>
+										<apex:inputText id="dob" value="{!contactBirthdate}" styleClass="form-control validate[required]" html-placeholder="MM/DD/YYYY" />
+									</div>
+								</apex:outputpanel>
+								
+								<apex:outputpanel rendered="{!CollectMemberDLNum}">
+									<div class="form-group">
+										<label for="dl">Driver's License Number</label>
+										<apex:inputText id="dl" value="{!dl_num}" styleClass="form-control validate[required]" />
+										<!-- <apex:inputText id="dl" value="{!request.Member_DL_Num__c}" styleClass="form-control" /> -->
+									</div>
+								</apex:outputpanel>
+								
+								<apex:outputpanel rendered="{!CollectMemberShirtSize}">
+									<div class="form-group">
+										<label for="shirtsize">Shirt Size</label>
+										<!-- <apex:selectList id="shirtsize" value="{!request.Member_Shirt_Size__c}" size="1" styleClass="form-control"> -->
+										<apex:selectList id="shirtsize" value="{!shirt_size}" size="1" styleClass="form-control validate[required]">
+											<apex:selectOptions value="{!ShirtSizeOptions}" />
+										</apex:selectList>
+									</div>
+								</apex:outputpanel>
+
+							</div>
+						</apex:outputPanel>
+
+		<!-- 				<apex:outputPanel rendered="{!ShowSpecialSectionDivider}">
+							<div class="hr" style="margin-bottom: 0.5em;"><hr /></div>
+						</apex:outputPanel> -->
+					
+
+						<apex:outputPanel rendered="{!OR(CollectSpecialResponse, collectSpecialResponse2, collectSpecialResponse3, collectSpecialResponse4, collectSpecialResponse5)}">
+
+							<div class="well">
+
+								<apex:outputpanel rendered="{!CollectSpecialResponse}">
+									<div class="form-group">
+										<label for="special1"><apex:Outputtext value="{!give.Special_Instructions__c}" /></label>
+										<!-- <apex:inputTextarea rows="2" value="{!request.Special_Response__c}" styleclass="form-control" /> -->
+										<apex:inputTextarea rows="2" value="{!special_response_1}" styleclass="form-control validate[required]" />
+									</div>
+								</apex:outputpanel>
+							
+							
+								<!-- NGKJ updated with conditional visibility -->
+					
+								<apex:outputpanel rendered="{!collectSpecialResponse2}">
+									<div class="form-group">
+										<label for="special1"><apex:Outputtext value="{!give.Special_Instructions_2__c}" /></label>
+										<!-- <apex:inputTextarea rows="2" value="{!request.Special_Response_2__c}" styleclass="form-control" /> -->
+										<apex:inputTextarea rows="2" value="{!special_response_2}" styleclass="form-control validate[required]" />
+									</div>
+								</apex:outputpanel>
+												
+								<apex:outputpanel rendered="{!collectSpecialResponse3}">
+									<div class="form-group">
+										<label for="special1"><apex:Outputtext value="{!give.Special_Instructions_3__c}" /></label>
+										<!-- <apex:inputTextarea rows="2" value="{!request.Special_Response_3__c}" styleclass="form-control" /> -->
+										<apex:inputTextarea rows="2" value="{!special_response_3}" styleclass="form-control validate[required]" />
+									</div>
+								</apex:outputpanel>
+								
+								<div class="clearfix"></div>
+								
+								<apex:outputpanel rendered="{!collectSpecialResponse4}">
+									<div class="form-group">
+										<label for="special1"><apex:Outputtext value="{!give.Special_Instructions_4__c}" /></label>
+										<!-- <apex:inputTextarea rows="2" value="{!request.Special_Response_4__c}" styleclass="form-control" /> -->
+										<apex:inputTextarea rows="2" value="{!special_response_4}" styleclass="form-control validate[required]" />
+									</div>
+								</apex:outputpanel>
+											
+								<apex:outputpanel rendered="{!collectSpecialResponse5}">
+									<div class="form-group">
+										<label for="special1"><apex:Outputtext value="{!give.Special_Instructions_5__c}" /></label>
+										<!-- <apex:inputTextarea rows="2" value="{!request.Special_Response_5__c}" styleclass="form-control" /> -->
+	 									<apex:inputTextarea rows="2" value="{!special_response_5}" styleclass="form-control validate[required]" />
+									</div>
+								</apex:outputpanel>
+						
+							</div>
+						</apex:outputPanel>
+
+
+						<apex:outputPanel id="overallGuestsPanel">
+
+							<apex:outputPanel rendered="{!OR(ShouldShowGuestsDivider, PromptForGuests, PromptForGuestAge21)}" >
+
+								<div class="well show-if-guests">
+
+
+									<apex:outputPanel id="pnlGuestsDivider">
+										<apex:outputpanel rendered="{!ShouldShowGuestsDivider}" >
+					          				<h4>Your Guests</h4>
+					          				<p>&nbsp;</p>
+										</apex:outputpanel>
+									</apex:outputPanel>
+
+
+									<!-- <apex:outputPanel rendered="{!PromptForGuestAge21}"> -->
+										<div class="form-group show-guest-age-confirm" id="tblGuestAgeConfirm">
+											<div>
+												<label>Are all of your guests age 21 or over?</label>
+											</div>
+											<label class="radio-inline">
+												<input type="radio" name="guest_age" id="guest_age_y" value="y" class="validate[required]" /> Yes
+											</label>
+											<label class="radio-inline">
+												<input type="radio" name="guest_age" id="guest_age_n" value="n" /> No
+											</label>
+										</div>
+										<apex:inputHidden id="hGuestAge" value="{!guest_age_y}" />
+									<!-- </apex:outputPanel> -->
+										
+
+									<apex:outputpanel id="pnlGuests" >
+
+									<script type="text/javascript">
+										var j$ = jQuery.noConflict();
+										j$(document).ready(function()    {
+											j$('.show-guest-age-confirm').css('display', '{!if(PromptForGuestAge21, 'block', 'none')}');
+											j$('.show-if-guests').css('display', '{!if(AND(OR(PromptForGuests, PromptForGuestAge21), selectedNumberOfGuests > 0), 'block', 'none')}');
+										});
+
+									</script>
+
+										<apex:outputPanel id="pnlGuests2" rendered="{!PromptForGuests}" > 
+
+											<div id="guests-grid">
+
+												<apex:dataTable value="{!guests}" var="guest" id="tblGuests" styleClass="table">						
+														<apex:column rendered="{!CollectGuestName}">
+													        <apex:facet name="header"><label>First Name</label></apex:facet>
+			<!-- 										        <div class="container-inline" style="width: 70px; height: 1.9em;">
+													        	<div class="text-wrapper" style="width: 70px; height: 1.9em;">
+			 -->														<apex:inputText value="{!guest.First_Name__c}" styleclass="form-control validate[required]" />
+																<!-- </div> -->
+															<!-- </div>								 -->
+														</apex:column>
+														<apex:column rendered="{!CollectGuestName}">
+													        <apex:facet name="header"><label>Last Name</label></apex:facet>
+			<!-- 										        <div class="container-inline" style="width: 70px; height: 1.9em;">
+													        	<div class="text-wrapper" style="width: 70px; height: 1.9em;">
+			 -->														<apex:inputText value="{!guest.Last_Name__c}" styleclass="form-control validate[required]" />
+																<!-- </div> -->
+															<!-- </div>								 -->
+														</apex:column>
+														<apex:column rendered="{!CollectGuestDOB}">
+													        <apex:facet name="header"><label>Birth Date</label></apex:facet>
+			<!-- 										        <div class="container-inline" style="width: 70px; height: 1.9em;">
+													        	<div class="text-wrapper" style="width: 70px; height: 1.9em;">
+			 -->														<apex:inputText value="{!guest.TMP_Birthdate__c}" styleclass="form-control textinput-smaller validate[required]" html-placeholder="MM/DD/YYYY" />
+																<!-- </div> -->
+															<!-- </div>								 -->
+														</apex:column>
+														<apex:column rendered="{!CollectGuestDLNum}">
+													        <apex:facet name="header"><label>Driver Lic #</label></apex:facet>
+													       <!--  <div class="container-inline" style="width: 70px; height: 1.9em;">
+													         	<div class="text-wrapper" style="width: 70px; height: 1.9em;">
+													        -->
+																	<apex:inputText value="{!guest.Drivers_License__c}" styleclass="form-control" />
+																<!-- </div> -->
+															<!-- </div>								 -->
+														</apex:column>
+														<apex:column rendered="{!CollectGuestShirtSize}">
+													        <apex:facet name="header"><label>ShirtSize</label></apex:facet>
+															<!-- <div class="select-wrapper select-width-133"> -->
+																<apex:selectList value="{!guest.Shirt_Size__c}" size="1" styleClass="form-control" >
+																	<apex:selectOptions value="{!ShirtSizeOptions}" />
+																</apex:selectList>
+															<!-- </div> -->
+														</apex:column>
+													</apex:dataTable>
+												</div>
+										</apex:outputPanel>
+
+									</apex:outputpanel>
+
+								</div>
+							</apex:outputPanel>
+
+							<script type="text/javascript">
+								var j$ = jQuery.noConflict();
+								if (!savePending) {
+									j$.unblockUI();
+								}
+								refreshGuestsInProgress = false;
+							</script>
+
+						</apex:outputPanel>
+
+
+
+						<div class="well">
+
+							<apex:outputpanel rendered="{!NOT(ISBLANK(TRIM(give.Disclaimer__c)))}">
+								<div class="form-group">
+									<p class="form-control-static"><apex:outputtext value="{!give.Disclaimer__c}" /></p>
+								</div>
+							</apex:outputPanel>
+
+							
+							<apex:outputpanel rendered="{!CollectTermsAndConditions}" id="terms-wrapper">
+								<div class="checkbox">
+								  <label>
+								    <apex:inputCheckbox value="{!terms_was_checked}" styleClass="validate[required]" />
+								    <apex:outputText value="{!give.Terms_and_Conditions__c}" />
+								  </label>
+								</div>
+							</apex:outputPanel>
+
+
+							<apex:outputPanel id="pnlBottomErrors">
+
+								<apex:pageMessages />
+
+								<script type="text/javascript">
+									saveError = {!saveError};
+								</script>
+								
+							</apex:outputPanel>
+
+							<!-- <p class="submit"> -->
+	<!-- 							<img style="border: 0;" src="{!URLFOR($Resource.dc_css,'images/form_submit-submitrequest.png')}"
+									onmouseover="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-submitrequest_ovr.png')}';"
+									onmouseout="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-submitrequest.png')}';"
+									onclick="javascript:this.src='{!URLFOR($Resource.dc_css,'images/form_submit-submitrequest_hit.png')}'; saveGiveRequest();"
+								 	class="form-submit" />
+	 -->					<apex:commandButton styleClass="btn btn-danger" onclick="saveGiveRequest();return false;" value="Submit Request" />
+							<!-- </p> -->
+
+						</div>
+
+						<apex:actionFunction name="js_refreshGuests" action="{!refreshGuests}" immediate="false" reRender="overallGuestsPanel" />
+						<apex:actionFunction name="saveRequest" action="{!submitrequest}" immediate="false" reRender="pnlTopErrors,pnlBottomErrors" oncomplete="saveComplete()" />
+						<apex:actionFunction name="redirectOnSave" action="{!redirectOnSave}" immediate="true" />
+								
+					
+			</apex:form>
+
+		</apex:outputPanel>
+
+
+		<apex:outputPanel rendered="{!NOT(eligibleForReward)}">
+
+
+			<div class="well">
+
+				<h3>Request Reward</h3>
+
+				<p>&nbsp;</p>
+
+				<!-- <h3 class="text-center"><a href="IAVAPlus_SignIn?startURL={!currentEncodedUrlWithoutBase}" class="btn btn-primary btn-large" role="button">Log In</a> to request the reward</h3> -->
+
+				<p>This reward is available to:<br/>
+					<ul>
+						<apex:repeat value="{!eligibleList}" var="cat">
+							<li>{!cat}</li>
+						</apex:repeat>
+					</ul>
+				</p>
+
+				<p>&nbsp;</p>
+
+				<apex:outputPanel rendered="{!ISPICKVAL($User.UserType,'Guest')}">
+
+					<p><a href="cov_login?startURL={!currentEncodedUrlWithoutBase}" class="btn btn-danger btn-large" role="button">Log In to Request Reward</a></p> 
+
+					<p>&nbsp;</p>
+
+					<p>Or <a href="http://iava.org/?startURL={!currentEncodedUrlWithBase}#join">Register</a> for an account.</p>
+
+
+				</apex:outputPanel>
+
+
+				<apex:outputPanel rendered="{!NOT(ISPICKVAL($User.UserType,'Guest'))}">
+					
+					<apex:outputPanel rendered="{!and(give.Available_To__c != null, contains(substitute(give.Available_To__c, 'Unconfirmed', ''), 'Confirmed'), contains(contact.Member_Categories__c, 'Unconfirmed'))}">
+						<p>Simply&nbsp;<apex:outputLink value="https://iava.org/veteran-paperwork?tfa_ContactID={!contact.Id}">confirm your service</apex:outputLink> to get access to this reward and all that IAVA has to offer.</p>
+						<br />
+						<br />
+					</apex:outputPanel>
+					<apex:outputPanel rendered="{!or(not(contains(substitute(give.Available_To__c, 'Unconfirmed', ''), 'Confirmed')), not(contains(contact.Member_Categories__c, 'Unconfirmed')))}">
+						<p>If you think you should be in an eligible category, please use the&nbsp;<apex:outputLink value="http://iava.org/#join?tfa_EMAIL={!contact.Email}">join form</apex:outputLink> to correct your record.</p>
+						<br />
+						<br />
+					</apex:outputPanel>
+
+				</apex:outputPanel>
+
+			</div>
+
+
+		</apex:outputPanel>
+				
+	</div> <!-- col-wrapper -->
+		
+	
+	<!-- /view -->
+	<script type="text/javascript"> 
+		
+		var j$ = jQuery.noConflict(); 
+		
+        // $(document).ready(function(){
+        //     $(".premium-reward a.open").colorbox({
+        //         width:"50%",
+        //         inline:true,
+        //         opacity: 0.7,
+        //         href: '#premium-reward-content'
+        //     });
+            
+        // });
+
+        function saveComplete() {
+        	if (!saveError) 
+        		redirectOnSave();
+        	else
+				j$.unblockUI();
+				
+			savePending = false;
+        }
+        
+        function refreshGuests2() {
+        	refreshGuestsInProgress = true;
+        	js_refreshGuests();
+        }
+        
+        function saveGiveRequest() {
+        	if (refreshGuestsInProgress) {
+        		alert('Unable to submit request because the guest list is being refreshed.  Please try again in a moment.');
+        		return;
+        	}
+
+        	if (!j$('.validated-form').validationEngine('validate')) {
+        		return;
+        	}
+        	// console.log('continuing');
+        	
+        	j$('input[id$=hMemberAge]').val(j$('#age_y').is(':checked'));
+        	j$('input[id$=hGuestAge]').val(j$('#guest_age_y').is(':checked'));
+
+        	// var hMemberAge = document.getElementById('theClaimRewardPage:templateSubpages:requestRewardInclude:thePage:frm1:hMemberAge');
+        	// if (hMemberAge != null) {
+        	// 	var rAgeY = document.getElementById('age_y');
+        	// 	hMemberAge.value = rAgeY.checked;
+        	// }
+        	
+        	// var hGuestAge = document.getElementById('theClaimRewardPage:templateSubpages:requestRewardInclude:thePage:frm1:hGuestAge');
+        	// if (hGuestAge != null) {
+	        // 	var rGuestAgeY = document.getElementById('guest_age_y');
+	        // 	hGuestAge.value = rGuestAgeY.checked;
+        	// }
+        	
+        	savePending = true;
+            j$.blockUI({ 
+	            message:  '<div class="processingMessage"><p>Processing, just a minute...</p></div>', 
+	            timeout:   15000 
+	        }); 
+                
+        	saveRequest();
+        }
+        
+        function test()
+        {
+
+        }
+                
+		function makeVisible(fieldId) {
+			document.getElementById(fieldId).style.visibility='visible';
+			document.getElementById(fieldId).style.display='block';
+		}
+	</script>
+
+	<!-- <c:cov_include_js_validationengine_init /> -->
+
+</apex:page>

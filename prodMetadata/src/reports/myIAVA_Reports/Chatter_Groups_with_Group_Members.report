@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CollaborationGroup$Name</field>
+    </columns>
+    <columns>
+        <field>CollaborationGroup.GroupMembers$Member</field>
+    </columns>
+    <columns>
+        <field>CollaborationGroup.GroupMembers$Id</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>CollaborationGroup$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Colorado IAVA</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Chatter Groups with Group Members</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Chatter_Groups_with_Group_Members__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CollaborationGroup$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,108 @@
+<apex:page title="Track a Call" standardController="Activity_Junction__c" extensions="ActivityJunctionController" action="{!init}">
+<style>
+    .textAreaBox { width:550px;height:130px;} 
+</style>    
+<apex:form >
+  <apex:sectionHeader title="Track a Call"/>
+      <apex:pageBlock title="Call Edit">
+        
+          <apex:pageBlockButtons >
+            <!--apex:actionRegion-->
+              <apex:commandButton value="Save" action="{!Save}"/>
+              <apex:commandButton value="Cancel" action="{!Cancel}"/>
+            <!--/apex:actionRegion-->
+          </apex:pageBlockButtons>
+        
+          <apex:pageBlockSection title="Call Information" id="taskinfo" columns="1">
+              <apex:inputField value="{!trackacall.Assigned_To__c}"/>
+              <apex:inputField value="{!trackacall.Date_of_Call__c}" id="actdate"/>
+              <apex:inputField value="{!trackacall.Contact__c}"/>
+              <apex:inputField value="{!trackacall.Name}"/>
+              <apex:inputField value="{!trackacall.Status__c}"/>
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="Description Information" columns="1">
+              <apex:inputField value="{!trackacall.Call_Notes__c}" styleClass="textAreaBox" />
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="Relates To" columns="1">
+           <apex:actionRegion >
+            <table width="80%" border="0" cellspacing="1" cellpadding="1">
+              <tr>
+                <th width="33%" scope="col">Focus Area</th>
+                <th width="33%" scope="col">Policy Rec.s</th>
+                <th width="33%" scope="col">Legislation</th>
+              </tr>
+              <tr>
+                <th width="33%" scope="col">
+                    <apex:selectList value="{!SelectedFocusAreas}" multiselect="true" size="{!focusAreaSize}" id="focusareas">
+                          <apex:selectOptions value="{!FocusAreas}"/>
+                      </apex:selectList>
+                </th>
+                <th width="33%" scope="col">
+                    <apex:selectList value="{!SelectedPolicyRecs}" multiselect="true" size="{!policyRecSize}" id="policyrecs" onclick="prchange()">
+                          <apex:selectOptions value="{!PolicyRecs}"/>
+                      </apex:selectList>
+                </th>
+                <th width="33%" scope="col">
+                    <apex:selectList value="{!SelectedLeg}" multiselect="true" size="{!legislationSize}">
+                          <apex:selectOptions value="{!Legislation}"/>
+                      </apex:selectList>
+                </th>
+              </tr>
+            </table>
+             
+              <table width="100%">
+                  <col style="width: 30em"/>
+                  <col style="width: 30em"/>
+                  <col style="width: 30em"/>
+                  <tr>
+                      <th>DC Events</th>
+                      <th>Stats</th>
+                      <th>&nbsp;</th>
+                  </tr>
+                  <tr>
+                      <td>
+                          <apex:selectList value="{!SelectedDCEvents}" multiselect="true" size="{!DCEventSize}" >
+                              <apex:selectOptions value="{!DCEvents}"/>
+                          </apex:selectList>
+                      </td>
+                      <td>
+                          <apex:selectList value="{!SelectedStats}" multiselect="true" size="{!statSize}" >
+                              <apex:selectOptions value="{!Stats}"/>
+                          </apex:selectList>
+                      </td>
+                      <td>
+                          &nbsp;
+                      </td>
+                  </tr>
+              </table>
+              
+             <apex:actionFunction name="prchange" action="{!refresh}" reRender="focusareas"/>
+             
+            </apex:actionRegion>
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Schedule follow up task">
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Schedule follow up task" for="schedfu">
+                     <apex:inputCheckbox title="Schedule follow up task" value="{!schedfutask}" id="schedfu"/>
+                 </apex:outputLabel>
+             </apex:pageBlockSectionItem>
+         </apex:pageBlockSection>
+       <apex:actionRegion >
+         <apex:pageBlockSection title="Task Information">
+             <apex:inputField value="{!followuptask.OwnerId}"/>
+             <apex:inputField value="{!followuptask.Status}"/>
+             <apex:inputField value="{!followuptask.Subject}"/>            
+             <apex:inputField value="{!followuptask.ActivityDate}"/>
+             <apex:inputField value="{!followuptask.Priority}"/>
+         </apex:pageBlockSection>
+       </apex:actionRegion>
+        <apex:pageBlockSection title="Description Information" columns="1">
+             <apex:inputField value="{!followuptask.Description}" styleClass="textAreaBox"/>
+         </apex:pageBlockSection>
+         <apex:pageBlockSection title="Reminder">
+             <apex:inputField value="{!followuptask.IsReminderSet}"/>
+             <apex:inputField value="{!followuptask.ReminderDateTime}"/>
+         </apex:pageBlockSection>
+     </apex:pageBlock>
+</apex:form>      
+</apex:page>

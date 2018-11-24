@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Give__c$Earliest_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Latest_End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Name</field>
+    </columns>
+    <columns>
+        <field>Give__c$Status__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Give__c$Number_of_Give_Instances__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Gives grouped by Num. Give Instances</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Gives_with_Give_Instances__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Give__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

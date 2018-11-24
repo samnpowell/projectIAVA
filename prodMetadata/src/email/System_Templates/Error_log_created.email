@@ -1,0 +1,9 @@
+A log was created with the word "Error" in it.  See details below.  
+
+For example, if the message below says "ERROR updating IAVA_Rewards_Settings__c", that may mean that there was an error updating Last Member ID (https://na8.salesforce.com/a0R80000001Xah4) and it is stuck on a previous Last Member ID.  That means that new members cannot be approved until the number is manually incremented.
+
+
+
+{!Log__c.Message__c}
+
+{!Log__c.Link}

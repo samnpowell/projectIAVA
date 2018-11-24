@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Partnership_Request__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Partnership_Request__c$Name</field>
+    </columns>
+    <columns>
+        <field>Partnership_Request__c$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Partnership_Request__c$Related_Contact__c</field>
+    </columns>
+    <columns>
+        <field>Partnership_Request__c$Priority__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Partnership_Request__c$Stage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Partnerships Created this year by Stage</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Partnerships_with_or_w_o_Gives_and_Give_Instances__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Partnership_Request__c$CreatedDate</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Partnership_Request__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

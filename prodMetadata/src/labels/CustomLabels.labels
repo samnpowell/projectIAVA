@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Google_Production_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Google_Production_Key</shortDescription>
+        <value>ABQIAAAA-mBmU1Pv5DeyFZnHrZGP8BQSQcz9x98zMnrW2Wy1UWo2b2rGoBR4tcx01qerhoBNYw2yclxbBiAuWg</value>
+    </labels>
+    <labels>
+        <fullName>Google_Sandbox_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Google Sandbox Key</shortDescription>
+        <value>ABQIAAAA0FXCFI0wNFIBXMQzHPyr5hSQjenr-1DNx21BmqujZ7j3XuP8lhQPlnRru-yJIXRkKuqPpXR0MPWEBw</value>
+    </labels>
+    <labels>
+        <fullName>IAVAPlus_above_firsttime_box</fullName>
+        <categories>iavaplus</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IAVAPlus above firsttime box</shortDescription>
+        <value>If you&apos;re an IAVA Member, enter the email you used to register with IAVA. If you&apos;re not yet a Member, enter the email you&apos;d like to use for IAVA Plus. You do not have to be a veteran to sign up for an account.</value>
+    </labels>
+    <labels>
+        <fullName>IAVAPlus_above_returning_box</fullName>
+        <categories>iavaplus</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IAVAPlus above returning box</shortDescription>
+        <value>&amp;nbsp;</value>
+    </labels>
+    <labels>
+        <fullName>IAVAPlus_below_firsttime_box</fullName>
+        <categories>iavaplus</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IAVAPlus below firsttime box</shortDescription>
+        <value>IAVA Plus is a new functionality that IAVA is using to bring our various online tools together. Please bear with us as we transition fully to the IAVA Plus login system.</value>
+    </labels>
+    <labels>
+        <fullName>IAVAPlus_below_returning_box</fullName>
+        <categories>iavaplus</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IAVAPlus below returning box</shortDescription>
+        <value>&amp;nbsp;</value>
+    </labels>
+    <labels>
+        <fullName>Partners_with_IAVA</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partners with IAVA</shortDescription>
+        <value>Find out how you can partner with IAVA to support our vets.</value>
+    </labels>
+    <labels>
+        <fullName>cov_RRRP_dashboard_link_text</fullName>
+        <categories>COV</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cov RRRP dashboard link text</shortDescription>
+        <value>Need one-on-one support? Click here to request a Veteran Transition Manager.</value>
+    </labels>
+    <labels>
+        <fullName>cov_disabled_opening_span_tag</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>opening span tag that can be pulled into selectOption label</shortDescription>
+        <value>&lt;span style=&quot;font-style: italic; color: #aaa;&quot;&gt;</value>
+    </labels>
+    <labels>
+        <fullName>cov_joinpage_already_member_link_text</fullName>
+        <categories>COV myIAVA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cov_joinpage_already_member_link_text</shortDescription>
+        <value>Already a Veteran Member of IAVA but don&apos;t have a myIAVA account?</value>
+    </labels>
+    <labels>
+        <fullName>cov_loginpage_join_button</fullName>
+        <categories>COV myIAVA</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>cov_loginpage_join_button</shortDescription>
+        <value>Join IAVA and create a &lt;br/&gt;myIAVA account</value>
+    </labels>
+    <labels>
+        <fullName>dc_BecomeAPartner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_BecomeAPartner</shortDescription>
+        <value>http://iava.org/partner-app</value>
+    </labels>
+    <labels>
+        <fullName>dc_ForgotMemberIDTemplate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_ForgotMemberIDTemplate</shortDescription>
+        <value>00X80000001a3j0</value>
+    </labels>
+    <labels>
+        <fullName>dc_HomepageVideo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_HomepageVideo</shortDescription>
+        <value>http://www.youtube.com/v/J17uajsO9sQ&amp;hl=en_US&amp;fs=1&amp;autoplay=1</value>
+    </labels>
+    <labels>
+        <fullName>dc_MemberId_sent_mesg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_MemberId_sent_mesg</shortDescription>
+        <value>Check your email for a member number reminder. (And remember to look in your spam folder too.) &lt;BR&gt;&lt;/BR&gt;
+
+If you still cannot find your membership information, please contact IAVA for assistance.</value>
+    </labels>
+    <labels>
+        <fullName>dc_MemberSignupURLStep1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_MemberSignupURLStep1</shortDescription>
+        <value>https://secure.iava.org/veteran-join?tfa_SourceTag=rucksack%20signup</value>
+    </labels>
+    <labels>
+        <fullName>dc_MemberSignupURLStep2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_MemberSignupURLStep2</shortDescription>
+        <value>https://secure.iava.org/veteran-paperwork</value>
+    </labels>
+    <labels>
+        <fullName>dc_OrgWideEmailAddress</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_OrgWideEmailAddress</shortDescription>
+        <value>rucksack@iava.org</value>
+    </labels>
+    <labels>
+        <fullName>dc_PremiumReward</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_PremiumReward</shortDescription>
+        <value>Premium Rewards are available in very limited quantities, so a lucky few winners are selected from the pool of members who have requested the reward.</value>
+    </labels>
+    <labels>
+        <fullName>dc_RewardDetail_Mail_Body</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_RewardDetail_Mail_Body</shortDescription>
+        <value>Hi, I thought you might be interested in this reward/event from the &quot;myIAVA&quot; website.</value>
+    </labels>
+    <labels>
+        <fullName>dc_RucksackHomeIntro</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_RucksackHomeIntro</shortDescription>
+        <value>Where IAVA Member Veterans get access to exclusive tickets, giveaways and more. Signing up is free and easy. Open to all confirmed veterans of Iraq (OIF/OND) and Afghanistan (OEF).</value>
+    </labels>
+    <labels>
+        <fullName>dc_URL_contains</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_URL_contains</shortDescription>
+        <value>/rucksack</value>
+    </labels>
+    <labels>
+        <fullName>dc_cancelled_confirmation_message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_cancelled_confirmation_message</shortDescription>
+        <value>Your request has been cancelled.</value>
+    </labels>
+    <labels>
+        <fullName>dc_guest_age_not_confirmed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_guest_age_not_confirmed</shortDescription>
+        <value>Guests must be 21 or older.</value>
+    </labels>
+    <labels>
+        <fullName>dc_guest_first_name_not_specified</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_guest_first_name_not_specified</shortDescription>
+        <value>Guest First Name not specified</value>
+    </labels>
+    <labels>
+        <fullName>dc_guest_last_name_not_specified</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_guest_last_name_not_specified</shortDescription>
+        <value>Guest Last Name not specified</value>
+    </labels>
+    <labels>
+        <fullName>dc_member_dlnum_not_specified</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_member_dlnum_not_specified</shortDescription>
+        <value>Member&apos;s Driver&apos;s License Number not specified.</value>
+    </labels>
+    <labels>
+        <fullName>dc_member_dob_not_specified</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_member_dob_not_specified</shortDescription>
+        <value>Member&apos;s DOB not specified</value>
+    </labels>
+    <labels>
+        <fullName>dc_member_shirt_size_not_specified</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_member_shirt_size_not_specified</shortDescription>
+        <value>Member&apos;s Shirt Size not specified.</value>
+    </labels>
+    <labels>
+        <fullName>dc_multiple_giverequest_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_multiple_giverequest_error</shortDescription>
+        <value>Sorry, you already have a request on file for this reward. To change your previous request, contact us as described in the FAQ</value>
+    </labels>
+    <labels>
+        <fullName>dc_no_contact_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_no_contact_error</shortDescription>
+        <value>No specified contact.</value>
+    </labels>
+    <labels>
+        <fullName>dc_no_give_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_no_give_error</shortDescription>
+        <value>No current give.</value>
+    </labels>
+    <labels>
+        <fullName>dc_no_instance_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_no_instance_error</shortDescription>
+        <value>Unable to load an instance for the give.</value>
+    </labels>
+    <labels>
+        <fullName>dc_noresult_mesg_display</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_noresult_mesg_display</shortDescription>
+        <value>We didn&apos;t find any results in your area, but we&apos;re adding new rewards all the time. If you want to request rewards in your area let us know at rucksack@iava.org.</value>
+    </labels>
+    <labels>
+        <fullName>dc_reconfirmed_confirmation_message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_reconfirmed_confirmation_message</shortDescription>
+        <value>Your request has been confirmed.</value>
+    </labels>
+    <labels>
+        <fullName>dc_thickbox_alreadymember</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_thickbox_alreadymember</shortDescription>
+        <value>You are already a registered member.</value>
+    </labels>
+    <labels>
+        <fullName>dc_thickbox_validation_err</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>dc_thickbox_validation_err</shortDescription>
+        <value>Sorry, that info doesn&apos;t match our records. Please make sure you are using the email address we have on file and your Member ID (not your IAVA Plus password).</value>
+    </labels>
+</CustomLabels>

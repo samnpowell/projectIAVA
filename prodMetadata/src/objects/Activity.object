@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ComposeGmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LogCall</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MailMerge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SendEmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewAll</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AIR_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AIR Completed</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AIR_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>AIR Required</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ask_Objective__c</fullName>
+        <externalId>false</externalId>
+        <label>Ask/Objective</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ask_for_Money__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Ask for $$?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Briefing_Report_Complete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Briefing Report Complete</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Briefing_Report_Link__c</fullName>
+        <externalId>false</externalId>
+        <label>Briefing Report Link</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Briefing_Report_Needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Briefing Report Needed</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__SMS_Account_SID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SMS Account SID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__SMS_Auth_Token__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SMS Auth Token</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__SMS_Error_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SMS Error Code</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__SMS_Error_Message__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SMS Error Message</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__SMS_Message_SID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SMS SID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__SMS_Sent_From__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SMS Sent From</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>CnP_PaaS__SMS_Sent_To__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>SMS Sent To</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>DB_Activity_Type__c</fullName>
+        <description>This is a field that is installed by and used with the Adoption Dashboard AppExchange package.  If your org already has a similar field, you can change the reports that are part of the Adoption Dashboard package to use your custom field and then delete this field.</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS( Subject , &quot;Email&quot;), &quot;Email&quot;, IF(CONTAINS( Subject , &quot;Cold Call&quot;), &quot;Cold Call&quot;, IF(CONTAINS( Subject , &quot;Call&quot;), &quot;Call&quot;, IF(CONTAINS( Subject , &quot;Meeting&quot;), &quot;Meeting&quot;, IF(CONTAINS( Subject , &quot;On Site Visit&quot;), &quot;Site Visit&quot;, IF(CONTAINS( Subject , &quot;Quote&quot;), &quot;Send Letter/Quote&quot;, &quot;Other&quot;))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DB Activity Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Note_for_ED__c</fullName>
+        <description>Note that will be sent upon save to Executive Director if &quot;Send Follow up to ED&quot; is checked</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Note that will be sent upon save to Executive Director if &quot;Send Follow up to ED&quot; is checked</inlineHelpText>
+        <label>Follow up Note for ED</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Sent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Follow-up Sent</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Goal_Ask__c</fullName>
+        <externalId>false</externalId>
+        <label>Goal / Ask</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Invite_to_next_event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Invite to next event</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Invite_to_next_event_notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Invite to next event notes</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MA_Clean_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Clean City (MapAnything)</label>
+        <length>254</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Clean_Country__c</fullName>
+        <externalId>false</externalId>
+        <label>Clean Country (MapAnything)</label>
+        <length>254</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Clean_County__c</fullName>
+        <externalId>false</externalId>
+        <label>Clean County (MapAnything)</label>
+        <length>254</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Clean_District__c</fullName>
+        <externalId>false</externalId>
+        <label>Clean District (MapAnything)</label>
+        <length>254</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Clean_Postal_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Clean Postal Code (MapAnything)</label>
+        <length>254</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Clean_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Clean State (MapAnything)</label>
+        <length>254</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Clean_Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Clean Street (MapAnything)</label>
+        <length>254</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Latitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Latitude (MapAnything)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Longitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Longitude (MapAnything)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MA_Quality__c</fullName>
+        <externalId>false</externalId>
+        <label>Quality (MapAnything)</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>MA_Similarity_Level__c</fullName>
+        <externalId>false</externalId>
+        <label>Similarity Level (MapAnything)</label>
+        <length>254</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Needs_from_EO__c</fullName>
+        <externalId>false</externalId>
+        <label>Needs from EO</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Really_TAC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, this Activity is really just a stand-in for the Track a Call record for purposes of reporting and apps like Cirrus.  So when the user views the Activity, redirect to the TAC instead.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this Activity is really just a stand-in for the Track a Call record for purposes of reporting and apps like Cirrus.  So when the user views the Activity, redirect to the TAC instead.</inlineHelpText>
+        <label>This is really a Track a Call</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Send_Follow_up_to_PR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Send Follow up to PR</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Success_Story_Link__c</fullName>
+        <description>Link to Success Story, which should be attached to Contact or Organization&apos;s record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to Success Story, which should be attached to Contact or Organization&apos;s record</inlineHelpText>
+        <label>Success Story Link</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>npsp__Engagement_Plan_Task__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engagement Plan Task</label>
+        <referenceTo>npsp__Engagement_Plan_Task__c</referenceTo>
+        <relationshipLabel>Tasks</relationshipLabel>
+        <relationshipName>Tasks</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>npsp__Engagement_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Engagement Plan</label>
+        <referenceTo>npsp__Engagement_Plan__c</referenceTo>
+        <relationshipLabel>Tasks</relationshipLabel>
+        <relationshipName>Tasks</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>sma__BaseObjectId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>MapAnything Base Object</label>
+        <referenceTo>sma__MABaseObject__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>BaseObjectIds</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>sma__CheckOutAccuracy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Check Out Accuracy (m)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__CheckOutDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Check Out Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>sma__CheckOutDistanceFromRecordMi__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Check Out Distance From Record (mi)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__CheckOutLatitude__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Check Out Latitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__CheckOutLongitude__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Check Out Longitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__CreatedLatitude__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Created Latitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__CreatedLocationAccuracy__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Created Location Accuracy (m)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__CreatedLocationVerified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Created Location Verified</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>sma__CreatedLongitude__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Created Longitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__DistanceFromRecordFt__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>sma__DistanceFromRecordMi__c * 5280</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Distance from Record (ft)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__DistanceFromRecordKm__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>sma__DistanceFromRecordMi__c  * 1.60934</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Distance from Record (km)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__DistanceFromRecordM__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>sma__DistanceFromRecordKm__c * 1000</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Distance from Record (m)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__DistanceFromRecordMi__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Distance from Record (mi)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__LayerId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Layer Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sma__TimeOnSiteMinutes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>(sma__CheckOutDate__c -  CreatedDate) * 1440</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time On Site (Minutes)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>AllActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>All Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyActivities</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysTasks</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>TASK.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessThan</operation>
+            <value>TOMORROW</value>
+        </filters>
+        <label>Today&apos;s Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>UpcomingEvents</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Upcoming Events</label>
+    </listViews>
+    <listViews>
+        <fullName>geopointe__Geopointe_Activities_Last_7_Days</fullName>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.DUE_DATE</columns>
+        <columns>TASK.STATUS</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>TASK.LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TASK.SUBJECT</field>
+            <operation>startsWith</operation>
+            <value>Geopointe:</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Geopointe Activities (Last 7 Days)</label>
+    </listViews>
+    <listViews>
+        <fullName>geopointe__Geopointe_Activities_all</fullName>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.DUE_DATE</columns>
+        <columns>TASK.STATUS</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>TASK.LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TASK.SUBJECT</field>
+            <operation>startsWith</operation>
+            <value>Geopointe:</value>
+        </filters>
+        <label>Geopointe Activities (all)</label>
+    </listViews>
+    <listViews>
+        <fullName>geopointe__Geopointe_Activities_today</fullName>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.DUE_DATE</columns>
+        <columns>TASK.STATUS</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>TASK.LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>TASK.SUBJECT</field>
+            <operation>startsWith</operation>
+            <value>Geopointe:</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Geopointe Activities (today)</label>
+    </listViews>
+    <searchLayouts>
+        <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHAT_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.DUE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

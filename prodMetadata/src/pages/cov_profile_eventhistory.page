@@ -1,0 +1,42 @@
+<apex:page controller="cov_events_controller">
+
+
+<apex:outputPanel >
+
+	<apex:pageMessages />
+
+    <div class="dashboard-list">
+        <div class="box-heading"><h5>Events You've Signed Up For</h5></div>
+		<apex:outputPanel id="eventAttendance" rendered="{!conId != null}">
+        
+	        <table class="table">  
+	             <thead>  
+	              <tr>  
+<!-- 	                <th>&nbsp;</th> -->
+	                <th>Date</th>  
+	                <th>Event</th>  
+	                <th>Location</th>  
+	              </tr>  
+	             </thead>  
+	             <tbody>  
+	                <apex:repeat id="EventsAttended" value="{!eventsAttended}" var="ev">
+	                    <tr>
+<!-- 	                        <td><a href="{!ev[0]}"><span class="glyphicon glyphicon-search"></span></a></td> -->
+	                        <td>{!ev[2]}</td>
+	                        <td>{!ev[1]}</td>
+	                        <td>{!ev[3]}</td>  
+	                    </tr>
+	                </apex:repeat>
+	            </tbody>  
+	        </table>
+		</apex:outputPanel>
+
+		<apex:outputPanel styleclass="conn-contact-msg" rendered="{!conId == null}">
+			No connected contact, attendance unavailable
+		</apex:outputPanel>		
+        
+    </div>
+</apex:outputPanel>
+
+
+</apex:page>

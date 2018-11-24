@@ -1,0 +1,109 @@
+<apex:page controller="dc_ctrl_RewardSearch" >
+
+      <div class="hr page-divider"> 
+          <hr/> 
+          <h2><img src="{!URLFOR($Resource.dc_css,'images/hr_header_rewards-searchresults.png')}" width="118" height="22" alt="SEARCH RESULTS"/></h2> 
+      </div>
+    
+	<div id="view-rewards-list" class="view view-page-full"> 
+    	<div class="view-content">
+    		<apex:form id="frm"> 
+    		<apex:outputtext value="{!noresults_msg}" rendered="{!if(noresults_msg != '',true,false)}"/>
+			<apex:repeat id="Reward" value="{!GiveList}" var="glist">
+        	<div class="views-row views-row-odd views-row-1">  
+            	<div class="node node-type-teaser"> 
+                	<div class="node-inner"> 
+                    	<div class="content"> 
+                        	<p class="alignleft">
+                            	<a href="javascript:RewardDetail('{!glist.giveId}')"><apex:image id="att" URL="{!glist.logo}" width="110" height="106" alt="{!glist.title}"  rendered="{!if(glist.logo != ' ',true,false)}"/>
+									<apex:image id="att_def" URL="{!URLFOR($Resource.dc_defaultlogo,glist.defaultlogo)}" width="110" height="106" alt="{!glist.title}"  rendered="{!if(glist.logo != ' ',false,true)}"/></a> 
+                                	<span class="counter"><apex:outputtext value="{!glist.available}"/></span> 
+                            </p> 
+                             	<apex:outputpanel rendered="{!if(glist.givetype == 'Screened Give',true,false)}">
+							    <div class="premium-reward"> 
+							    <a href="" class="open"><img src="{!URLFOR($Resource.dc_css,'images/rewards_premiumreward.png')}" width="101" height="36" alt="Premium Reward" /></a> 
+							    <div class="content"><div id="premium-reward-content"> 
+							    <p><span style="white-space:pre-wrap"><apex:outputlabel value="{!$Label.dc_PremiumReward}" escape="false"/></span></p>
+							    </div></div> 
+							    </div> 
+							 	</apex:outputpanel>
+                            
+                            <h4><a href="javascript:RewardDetail('{!glist.giveId}')"><apex:outputtext value="{!glist.title}"/></a></h4> 
+                            <p class="description"><apex:outputtext value="{!glist.description}"/></p> 
+                            <div class="stats"> 
+                                  <div class="col-left"> 
+                                      <p><strong>Where:</strong><apex:outputtext value=" {!glist.gwhere}"/></p> 
+                                      <p><strong>When:</strong><apex:outputtext value=" {!glist.gwhen}"/></p> 
+                                      <apex:outputpanel rendered="{!if(glist.quantity != ' ',true,false)}">
+                                      <p><strong>Qty:</strong><apex:outputtext value=" {!glist.quantity}"/></p> 
+                                      </apex:outputpanel>
+                                      <p><strong>Request By:</strong><apex:outputtext value=" {!glist.deadline}"/></p> 
+                                      <apex:outputpanel rendered="{!if(glist.agelimit != ' ',true,false)}">
+                                      <p><strong>Restrictions:</strong><apex:outputtext value=" {!glist.agelimit}"/></p>
+                                      </apex:outputpanel>
+                                  </div> 
+                                  <div class="col-right"> 
+                                      <p><strong>Provided By:</strong> <a href="{!$Page.dc_PartnerDetails}?id={!glist.partnerid}"><apex:outputtext value="{!glist.partner}"/></a></p> 
+                                  </div> 
+                              </div> 
+                              <div class="action-links"> 
+                                  	 
+                                  	<p class="more-link"><a href="javascript:RewardDetail('{!glist.giveId}')" class="rover more-details"></a></p> 
+                                  	 	<apex:outputpanel rendered="{!if(glist.available != 'Closed',true,false)}">
+								  		<apex:outputpanel rendered="{!if(glist.noofgiveinst != 'true' && glist.available != 'Waitlist',true,false)}">
+                                            <p class="request-now">
+                                            <!--
+                                                <a class="request-now" href="{!IAVAHost}/dc_ClaimReward?giveid={!glist.giveId}"></a>
+                                            -->
+                                            	<apex:outputPanel rendered="{!$Profile.Name == 'Rucksack Profile'}">
+                                            		<a class="request-now" href="{!IAVAHost}/dc_ClaimReward?giveid={!glist.giveId}"></a>
+                                            	</apex:outputPanel>
+                                            	<apex:outputPanel rendered="{!Not($Profile.Name == 'Rucksack Profile')}">
+                                            		<a class="request-now" href="{!$Page.dc_ClaimReward}?giveid={!glist.giveId}"></a>
+                                            	</apex:outputPanel>
+                                            </p>
+                                        </apex:outputpanel>
+        						  		<apex:outputpanel rendered="{!if(glist.noofgiveinst != 'true' && glist.available == 'Waitlist',true,false)}">
+                                  		    <p class="request-now">
+                                  		    <!--
+                                                <a class="join-waitlist" href="{!IAVAHost}/dc_ClaimReward?giveid={!glist.giveId}"></a>
+                                            -->
+                                            	<apex:outputPanel rendered="{!$Profile.Name == 'Rucksack Profile'}">
+                                            		<a class="join-waitlist" href="{!IAVAHost}/dc_ClaimReward?giveid={!glist.giveId}"></a>
+                                            	</apex:outputPanel>
+                                            	<apex:outputPanel rendered="{!Not($Profile.Name == 'Rucksack Profile')}">
+                                            		<a class="join-waitlist" href="{!$Page.dc_ClaimReward}?giveid={!glist.giveId}"></a>
+                                            	</apex:outputPanel>
+                                            </p>
+        						  		</apex:outputpanel>
+        						  		<apex:outputpanel rendered="{!if(glist.noofgiveinst == 'true',true,false)}">
+        	 					  			<p class="request-now"><a class="rover select-date" onclick="RewardDetail('{!glist.giveId}');"></a>
+     							  			</p>
+     							  		</apex:outputpanel>
+     							  </apex:outputpanel>                                  
+                              </div> 
+                              <div class="clearfix"></div> 
+                          </div> 
+                      </div> 
+                  </div> 
+            </div>
+            </apex:repeat> 
+            </apex:form>
+        </div>
+       <!--  <ul class="links"> 
+                <li class="first last"><a href="" class="next"></a></li> 
+                <li class="last"><a href="" class="prev"></a></li> 
+        </ul>  -->
+
+        </div> <!-- /view --> 
+<script type="text/javascript"> 
+function RewardDetail(id)
+{
+				var newURL = window.location.protocol + "//" + window.location.host;
+                var pageName = '{!$Page.dc_RewardDetails}' + "?giveid=" + id;
+                var finalURL = newURL + pageName;
+               	return window.location = finalURL;
+}
+
+</script>
+</apex:page>

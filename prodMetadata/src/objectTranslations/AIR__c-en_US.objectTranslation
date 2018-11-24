@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>AIR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>AIRs</value>
+    </caseValues>
+    <fields>
+        <label><!-- AAR Required --></label>
+        <name>AAR_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity ID --></label>
+        <name>Activity_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Link --></label>
+        <name>Activity_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attendee survey sent --></label>
+        <name>Attendee_survey_sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Campaign --></label>
+        <name>Campaign__c</name>
+        <relationshipLabel><!-- AIRs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Checked box indicates this event / activity impacted community. --></help>
+        <label><!-- Community --></label>
+        <name>Community__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed --></label>
+        <name>Completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact for Followup Note --></label>
+        <name>Contact_for_Followup_Note__c</name>
+        <relationshipLabel><!-- AIRs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cost --></label>
+        <name>Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- DC Event --></label>
+        <name>DC_Event__c</name>
+        <relationshipLabel><!-- AIRs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Draft text for CEO to send to External POC --></help>
+        <label><!-- Draft Language for E.D. --></label>
+        <name>Draft_Language_for_ED__c</name>
+    </fields>
+    <fields>
+        <label><!-- Education --></label>
+        <name>Education__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked box indicates this event / activity impacted employment. --></help>
+        <label><!-- Employment --></label>
+        <name>Employment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event --></label>
+        <name>Event__c</name>
+        <relationshipLabel><!-- AIRs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- External POC --></label>
+        <name>External_POC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow-up Note sent to Personal Contact --></label>
+        <name>Follow_up_Note_sent_to_Personal_Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Give --></label>
+        <name>Give__c</name>
+        <relationshipLabel><!-- AIRs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Health --></label>
+        <name>Health__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hot Wash Complete? --></label>
+        <name>Hot_Wash_Complete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Impact Overview --></label>
+        <name>Impact_Overview__c</name>
+    </fields>
+    <fields>
+        <label><!-- Link to Posted Success Story --></label>
+        <name>Link_to_Posted_Success_Story__c</name>
+    </fields>
+    <fields>
+        <label><!-- Local wrap-up email sent --></label>
+        <name>Local_wrap_up_email_sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location of Event --></label>
+        <name>Location_of_Event__c</name>
+    </fields>
+    <fields>
+        <label><!-- Money Raised --></label>
+        <name>Money_Raised__c</name>
+    </fields>
+    <fields>
+        <help><!-- Include notes for the IAVA staff person that is managing this relationship. --></help>
+        <label><!-- Note for Relationship Mgr --></label>
+        <name>Note_for_Relationship_Mgr__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Attended --></label>
+        <name>Num_Attended__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Confirmed --></label>
+        <name>Num_Confirmed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Num. Units --></label>
+        <name>Num_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- OK to Publish Success Story --></label>
+        <name>OK_to_Publish_Success_Story__c</name>
+    </fields>
+    <fields>
+        <help><!-- Photos should be attached to this record. --></help>
+        <label><!-- Photos posted --></label>
+        <name>Photos_posted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Focus Areas --></label>
+        <name>Related_Focus_Areas__c</name>
+        <picklistValues>
+            <masterLabel>Community</masterLabel>
+            <translation><!-- Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment</masterLabel>
+            <translation><!-- Employment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health</masterLabel>
+            <translation><!-- Health --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Amount of money raised at the event --></help>
+        <label><!-- Reported Amount of Money Raised --></label>
+        <name>Reported_Amount_of_Money_Raised__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of new leads generated by this event --></help>
+        <label><!-- Reported Number of New Contacts --></label>
+        <name>Reported_Number_of_New_Contacts__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this is checked, an email is sent to the Executive Office including the &quot;Draft Language for E.D.&quot; text --></help>
+        <label><!-- Send Follow-up to EO --></label>
+        <name>Send_Follow_up_to_EO__c</name>
+    </fields>
+    <fields>
+        <help><!-- This will override start date pulled from parent or be used in the absence of a parent record. --></help>
+        <label><!-- Start Date Override --></label>
+        <name>Start_Date_Override__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date of Event --></label>
+        <name>Start_Date_of_Event__c</name>
+    </fields>
+    <fields>
+        <label><!-- Success Story Posted? --></label>
+        <name>Success_Story_Posted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Success Story --></label>
+        <name>Success_Story__c</name>
+    </fields>
+    <fields>
+        <label><!-- Summary - Negative --></label>
+        <name>Summary_Negative__c</name>
+    </fields>
+    <fields>
+        <label><!-- Summary - Positive --></label>
+        <name>Summary_Positive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Track a Call --></label>
+        <name>Track_a_Call__c</name>
+        <relationshipLabel><!-- AIRs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Vets affected --></label>
+        <name>Vets_affected__c</name>
+    </fields>
+    <layouts>
+        <layout>AIR Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Followup --></label>
+            <section>Followup</section>
+        </sections>
+        <sections>
+            <label><!-- Impact Areas --></label>
+            <section>Impact Areas</section>
+        </sections>
+        <sections>
+            <label><!-- Summary Details --></label>
+            <section>Summary Details</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Confidential - Cs Only --></label>
+        <name>Confidential_Cs_Only</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Standard AIR --></label>
+        <name>Standard_AIR</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- These reports must have only one source. Please associate with either a Give or a Campaign only, but not both. --></errorMessage>
+        <name>Only_one_source_record</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_COMMO_request --></label>
+        <name>Create_COMMO_request</name>
+    </webLinks>
+</CustomObjectTranslation>

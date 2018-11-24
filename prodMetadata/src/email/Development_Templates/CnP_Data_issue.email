@@ -1,0 +1,14 @@
+Click and Pledge couldn't create a donation record for:
+
+{!CnP_PaaS__CnPData__c.CnP_PaaS__Contact__c}
+Amount: {!CnP_PaaS__CnPData__c.CnP_PaaS__Total_Charged__c}
+
+The message was:
+
+{!CnP_PaaS__CnPData__c.CnP_PaaS__Message__c}
+
+
+Order Number: {!CnP_PaaS__CnPData__c.CnP_PaaS__OrderNumber__c}
+CnP Data ID: {!CnP_PaaS__CnPData__c.CnP_PaaS__CnPDataID__c}
+
+See C&P Data record here: {!CnP_PaaS__CnPData__c.Link}

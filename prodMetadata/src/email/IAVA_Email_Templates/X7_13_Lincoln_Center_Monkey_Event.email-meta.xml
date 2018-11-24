@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>7/13 Lincoln Center Monkey Event</name>
+    <style>none</style>
+    <subject>From IAVA: Information for &quot;Monkey: Journey to the West&quot; with IAVA and Lincoln Center</subject>
+    <type>text</type>
+</EmailTemplate>

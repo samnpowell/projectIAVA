@@ -1,0 +1,53 @@
+<apex:page controller="cov_profile_controller">
+            <div id="profile-panel" class="well dashboard-panel">
+                <!-- <div id="profilepanel-photo" class="profilepanel"><chatter:userPhotoUpload id="profilePhotoUpload" /></div> -->
+                <div id="profilepanel-photo" class="profilepanel pull-right"><a href="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}"><img src="{!u.FullPhotoUrl}" /></a></div>
+                <div id="profilepanel-name" class="profilepanel">
+                    <h5>{!$User.FirstName} {!$User.LastName}</h5>
+                    <apex:outputPanel rendered="{!$User.CompanyName != null}">
+                        <div class="dashboard-description">{!$User.CompanyName}</div>
+                    </apex:outputPanel>
+                    <!-- <a href="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}">View/Edit profile</a> -->
+                    <span id="logout-link">
+                        <apex:outputLink value="{!$Site.Prefix}/secur/logout.jsp" styleClass="lighter">[&nbsp;Log out&nbsp;]</apex:outputLink>
+                    </span>
+                </div>
+                <div id="profilepanel-info" class="profilepanel">
+                    <ul class="icons-list">
+                        <li><span class="{!if(hasPhoto,'','needs-attn')}"><apex:outputLink value="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}"><span class="glyphicon {!if(hasPhoto,'glyphicon-ok-sign','glyphicon-exclamation-sign')}"></span>Profile Photo</apex:outputLink></span></li>
+                        <li><span class="{!if(hasAboutMe,'','needs-attn')}"><apex:outputLink id="aboutMeLink" value="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}&tab=cov_Profile_Info"><span class="glyphicon {!if(hasAboutMe,'glyphicon-ok-sign','glyphicon-exclamation-sign')}"></span>About Me</apex:outputLink></span></li>
+                    <apex:outputPanel rendered="{!theC != null}">
+                        <li><span class="{!if(hasServiceInfo,'','needs-attn')}"><apex:outputLink value="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}&tab=cov_Profile_Info"><span class="glyphicon {!if(hasServiceInfo,'glyphicon-ok-sign','glyphicon-exclamation-sign')}"></span>Service Info</apex:outputLink></span></li>
+                        <li><span class="{!if(or(hasDeployments,didNotDeploy),'','needs-attn')}"><apex:outputLink value="{!$Site.currentSiteUrl}_ui/core/userprofile/UserProfilePage?u={!$User.Id}&tab=cov_Deployment_Details"><span class="glyphicon {!if(hasDeployments,'glyphicon-ok-sign',if(didNotDeploy,'glyphicon-remove','glyphicon-exclamation-sign'))}"></span>Deployments</apex:outputLink></span></li>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!theC == null}">
+                        <li>&nbsp;</li>
+                        <li>No contact connected to this user</li>
+                    </apex:outputPanel>
+                    </ul>
+<!--                    <ul class="no-icons-list"> -->
+<!--                        <li>6 Followers</li> -->
+<!--                        <li>8 Following</li> -->
+<!--                    </ul> -->
+                </div>
+                <!-- chatter:followers entityid="{!conId}" id="followers" /  -->
+                <div id="profilepanel-messages" class="profilepanel">
+                    <ul class="icons-list">
+                        <li><span class="{!if(hasUnreadMessages, 'needs-attn', '')}">
+                            <a href="{!$Site.currentSiteUrl}_ui/core/chatter/ui/ChatterPage?deepLinkType=directMessage">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                <apex:outputPanel rendered="{!hasUnreadMessages}">
+                                    {!text(unreadMessageCount) + if(unreadMessageCount == 50, '+', '') + ' Unread Message' + if(unreadMessageCount > 1, 's', '')}
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!not(hasUnreadMessages)}">
+                                    Messages
+                                </apex:outputPanel>                                
+                            </a>
+                        </span></li>
+                    </ul>
+                </div>
+
+
+
+            </div>   
+</apex:page>

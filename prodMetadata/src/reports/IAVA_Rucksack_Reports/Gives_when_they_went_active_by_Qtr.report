@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Give__c$Name</field>
+    </columns>
+    <columns>
+        <field>Give__c$Number_of_Units__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Number_of_Confirmed_Units__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Give_Date_Display__c</field>
+    </columns>
+    <description>When Gives went active - by quarter</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Quarter</dateGranularity>
+        <field>Give__c$Earliest_Start_Date__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Gives - when they went active - by Qtr</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>IAVA_Gives__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Give__c$Active_Datestamp__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

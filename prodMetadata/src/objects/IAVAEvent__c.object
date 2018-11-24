@@ -1,0 +1,1882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Any_follow_up_required_by_staff__c</fullName>
+        <externalId>false</externalId>
+        <label>Any follow up required by staff?</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Associated_Cost__c</fullName>
+        <description>Cost associated with attending the event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Cost associated with attending the event</inlineHelpText>
+        <label>Associated Cost</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Average_Event_Rating__c</fullName>
+        <description>Average Event Rating</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Average Event Rating</inlineHelpText>
+        <label>Average Event Rating</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Blog_Post_Link__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to blog post</inlineHelpText>
+        <label>Blog Post Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Brief_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Brief Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Chatter_Group_Mirror_Group_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Chatter_Group_Mirror__r.Group_ID__c</formula>
+        <label>Chatter Group Mirror Group Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Chatter_Group_Mirror__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Chatter Group Mirror record for the group used to communicate with event attendees</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Chatter Group Mirror record for the group used to communicate with event attendees (gets automatically populated on save).</inlineHelpText>
+        <label>Chatter Group Mirror (auto populated)</label>
+        <referenceTo>Chatter_Group_Mirror__c</referenceTo>
+        <relationshipLabel>Related Events</relationshipLabel>
+        <relationshipName>Events</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Collect_Guest_Email__c</fullName>
+        <description>If selected, guest Email will be collected at time of request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, guest Email will be collected at time of request.</inlineHelpText>
+        <label>Collect Guest Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Optional</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Required</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Guest_Name__c</fullName>
+        <description>If selected, Guest First and Last Name will be collected at time of request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, Guest First and Last Name will be collected at time of request.</inlineHelpText>
+        <label>Collect Guest Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Optional</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Required</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Collect_Guest_Phone__c</fullName>
+        <description>If selected, guest Mobile Phone will be collected at time of request.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If selected, guest Mobile Phone will be collected at time of request.</inlineHelpText>
+        <label>Collect Guest Phone (mobile)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Optional</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Required</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Creator_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the contact who has submitted the event via an external tool, or to be used to populate the contact of the local host whether or not they are in COV</description>
+        <externalId>false</externalId>
+        <label>Host</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Events</relationshipLabel>
+        <relationshipName>Events_Hosted</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_Accepted_Host_TOS__c</fullName>
+        <description>Date/Time when event creator accepted IAVA Leader Code of Conduct</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date/Time when event creator accepted IAVA Leader Code of Conduct</inlineHelpText>
+        <label>Date Accepted Host TOS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Did_any_problems_arise__c</fullName>
+        <externalId>false</externalId>
+        <label>Did any problems arise?</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Do_not_show_in_public_event_marker_feed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, this event will not show up on the map of event markers</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, this event will not show up on the map of event markers</inlineHelpText>
+        <label>Do not show in public event marker feed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Dont_create_Chatter_Group__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If checked (default) do not automatically create a chatter group for event communication.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked (default) do not automatically create a chatter group for event communication.</inlineHelpText>
+        <label>Don&apos;t create Chatter Group</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Email_Text__c</fullName>
+        <description>captures the text of the invite email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>enter the text of the invite email</inlineHelpText>
+        <label>Email Text</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_Time__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Format: 9:30 PM (use local time for the event)</inlineHelpText>
+        <label>End Time (local)</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Day_of_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>DAY(Event_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Day of Month</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Day_of_Week__c</fullName>
+        <externalId>false</externalId>
+        <formula>MOD(Event_Date__c - DATE(1900,1,7),7) + 1</formula>
+        <inlineHelpText>1 is Sunday, 2 is Monday, 3 is Tuesday, 4 is Wednesday, 5 is Thursday, 6 is Friday, 7 is Saturday</inlineHelpText>
+        <label>Event Day of Week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Day_week__c</fullName>
+        <externalId>false</externalId>
+        <formula>MOD(Event_Date__c - DATE(1900,1,7),7) + 1</formula>
+        <label>Event Day - week</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>MONTH(Event_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Month</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Public_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Public Details</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_Relative_URL__c</fullName>
+        <description>Relative URL for main event page (used so code can pull from a single source and when URL algorithm changes, can just change it in this formula)</description>
+        <externalId>false</externalId>
+        <formula>&apos;cov_event?id=&apos; + Id</formula>
+        <inlineHelpText>Relative URL for main event page (used so code can pull from a single source and when URL algorithm changes, can just change it in this formula)</inlineHelpText>
+        <label>Event Relative URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Link_Internal_Use_Only__c</fullName>
+        <description>External RSVP link</description>
+        <externalId>false</externalId>
+        <inlineHelpText>External RSVP link</inlineHelpText>
+        <label>External Link (Internal Use Only)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Facebook_Promotion_Language__c</fullName>
+        <externalId>false</externalId>
+        <label>Facebook Promotion Language</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Team_POC__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>field team member that is working with external member</inlineHelpText>
+        <label>Field Team POC</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Events (Field Team POC)</relationshipLabel>
+        <relationshipName>Events</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Follow_up_Email_Text__c</fullName>
+        <description>captures the text of the follow up email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>enter the text of the follow up email</inlineHelpText>
+        <label>Follow up Email Text</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Joinable_By__c</fullName>
+        <externalId>false</externalId>
+        <label>Joinable By (not yet functional)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Everyone</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unconfirmed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Era</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Family</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Latitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Latitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_City__c</fullName>
+        <externalId>false</externalId>
+        <label>Location City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Location State</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Location Street Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Venue__c</fullName>
+        <externalId>false</externalId>
+        <label>Location Venue</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Required if you want event to be located in geographic/zip searches.</inlineHelpText>
+        <label>Location Zip Code (important)</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Longitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Longitude</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>15</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_number_of_guests__c</fullName>
+        <description>If more than 0, allow member to register guests.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If more than 0, allow member to register guests.</inlineHelpText>
+        <label>Max number of additional guests</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Num_Invited__c</fullName>
+        <externalId>false</externalId>
+        <label>Num. Invited</label>
+        <summaryFilterItems>
+            <field>IAVAEvent_Attendee__c.Inviter_History__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryForeignKey>IAVAEvent_Attendee__c.Event__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Num_Replies_Remaining__c</fullName>
+        <description>Number of available reply spots if there is a reply cap. If no cap this field will be blank.</description>
+        <externalId>false</externalId>
+        <formula>if(not(isnull(Reply_Cap__c)), Reply_Cap__c -  Num_Replies_Yes__c, value(&quot;&quot;))</formula>
+        <inlineHelpText>Number of available reply spots if there is a reply cap. If no cap this field will be blank.</inlineHelpText>
+        <label>Num. Replies Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Num_Replies_Total__c</fullName>
+        <description>Number of replies of all statuses</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of replies of all statuses</inlineHelpText>
+        <label>Num. Replies (Total)</label>
+        <summaryFilterItems>
+            <field>IAVAEvent_Attendee__c.Reply_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Invited</value>
+        </summaryFilterItems>
+        <summaryForeignKey>IAVAEvent_Attendee__c.Event__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Num_Replies_Yes__c</fullName>
+        <description>Number of Event Attendee replies with status &quot;Yes&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Event Attendee replies with status &quot;Yes&quot;</inlineHelpText>
+        <label>Num. Replies (Yes)</label>
+        <summaryFilterItems>
+            <field>IAVAEvent_Attendee__c.Reply_Status__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </summaryFilterItems>
+        <summaryForeignKey>IAVAEvent_Attendee__c.Event__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Attendees__c</fullName>
+        <description>number of attendees pulls from the event attendees object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>number of attendees pulls from the event attendees object</inlineHelpText>
+        <label>Number of Attendees</label>
+        <summaryFilterItems>
+            <field>IAVAEvent_Attendee__c.Attended__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </summaryFilterItems>
+        <summaryForeignKey>IAVAEvent_Attendee__c.Event__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Organizer_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Organizer Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Distributed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Origin__c</fullName>
+        <externalId>false</externalId>
+        <label>Origin</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>COV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>External source</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Post_Event_Short_Summary__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>limit 255 characters</inlineHelpText>
+        <label>Post-Event Short Summary</label>
+        <length>1500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PowerOfOne__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PowerOfOne</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Location_State__c = &quot;AL&quot;,3,
+IF(Location_State__c = &quot;AK&quot;,6,
+IF(Location_State__c = &quot;AZ&quot;,5,
+IF(Location_State__c = &quot;AR&quot;,4,
+IF(Location_State__c = &quot;CA&quot;,7,
+IF(Location_State__c = &quot;CO&quot;,6,
+IF(Location_State__c = &quot;CT&quot;,1,
+IF(Location_State__c = &quot;DC&quot;,2,
+IF(Location_State__c = &quot;DE&quot;,2,
+IF(Location_State__c = &quot;FL&quot;,3,
+IF(Location_State__c = &quot;GA&quot;,3,
+IF(Location_State__c = &quot;GU&quot;,6,
+IF(Location_State__c = &quot;HI&quot;,6,
+IF(Location_State__c = &quot;ID&quot;,6,
+IF(Location_State__c = &quot;IL&quot;,4,
+IF(Location_State__c = &quot;IN&quot;,1,
+IF(Location_State__c = &quot;IA&quot;,6,
+IF(Location_State__c = &quot;KS&quot;,6,
+IF(Location_State__c = &quot;KY&quot;,2,
+IF(Location_State__c = &quot;LA&quot;,4,
+IF(Location_State__c = &quot;ME&quot;,1,
+IF(Location_State__c = &quot;MD&quot;,2,
+IF(Location_State__c = &quot;MA&quot;,1,
+IF(Location_State__c = &quot;MI&quot;,1,
+IF(Location_State__c = &quot;MN&quot;,6,
+IF(Location_State__c = &quot;MS&quot;,4,
+IF(Location_State__c = &quot;MO&quot;,4,
+IF(Location_State__c = &quot;MT&quot;,6,
+IF(Location_State__c = &quot;NE&quot;,6,
+IF(Location_State__c = &quot;NV&quot;,6,
+IF(Location_State__c = &quot;NH&quot;,1,
+IF(Location_State__c = &quot;NJ&quot;,1,
+IF(Location_State__c = &quot;NM&quot;,5,
+IF(Location_State__c = &quot;NY&quot;,1, 
+IF(Location_State__c = &quot;NC&quot;,4,
+IF(Location_State__c = &quot;ND&quot;,6,
+IF(Location_State__c = &quot;OH&quot;,1,
+IF(Location_State__c = &quot;OK&quot;,5,
+IF(Location_State__c = &quot;OR&quot;,7,
+IF(Location_State__c = &quot;PA&quot;,1,
+IF(Location_State__c = &quot;RI&quot;,1,
+IF(Location_State__c = &quot;SC&quot;,3,
+IF(Location_State__c = &quot;SD&quot;,6,
+IF(Location_State__c = &quot;TN&quot;,4,
+IF(Location_State__c = &quot;TX&quot;,5,
+IF(Location_State__c = &quot;UT&quot;,6,
+IF(Location_State__c = &quot;VT&quot;,1,
+IF(Location_State__c = &quot;VA&quot;,2,
+IF(Location_State__c = &quot;WA&quot;,7,
+IF(Location_State__c = &quot;WV&quot;,2,
+IF(Location_State__c = &quot;WI&quot;,6,
+IF(Location_State__c = &quot;WY&quot;,6,
+NULL))))))))))))))))))))))))))))))))))))))))))))))))))))</formula>
+        <label>Region #</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reply_Cap__c</fullName>
+        <description>Maximum number of &quot;Yes&quot; responses before Event becomes closed to more replies. If blank then no cap.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum number of &quot;Yes&quot; responses before Event becomes closed to more replies. If blank then no cap.</inlineHelpText>
+        <label>Reply Cap</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Resend_Attendee_Survey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check to resend attendee survey</inlineHelpText>
+        <label>Resend Attendee Survey</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Social_Media_Published_Date_c__c</fullName>
+        <description>Date when social media was posted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date when social media was posted</inlineHelpText>
+        <label>Social_Media_Published_Date__c</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Social_Media_Status__c</fullName>
+        <description>Status of social media post</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of social media post</inlineHelpText>
+        <label>Social Media Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Do Not Post</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Posted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Post Published</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Post Requested</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Social_Promotion_Link_1__c</fullName>
+        <description>URL for Facebook promotion</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL for Facebook promotion</inlineHelpText>
+        <label>Facebook Promotion Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Social_Promotion_Link_2__c</fullName>
+        <description>URL for Twitter promotion</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL for Twitter promotion</inlineHelpText>
+        <label>Twitter Promotion Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Start_Time__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Format: 12:15 PM (use local time for the event)</inlineHelpText>
+        <label>Start Time (local)</label>
+        <length>8</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unpublished</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Published</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Flagged/Removed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status_of_Follow_up_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Status of Follow up Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Sent</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Suppress_Attendee_Notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, don&apos;t send attendee notification emails when an event&apos;s details change</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, don&apos;t send attendee notification emails when an event&apos;s details change</inlineHelpText>
+        <label>Suppress Event Changed Notifications</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Thumbnail_image_URL__c</fullName>
+        <description>When the user uploads a new photo to a published group, the URL of the thumbnail version is inserted here and takes precedence over any attached thumbnail images.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When the user uploads a new photo to a published group, the URL of the thumbnail version is inserted here and takes precedence over any attached thumbnail images. For an external site use a secure HTTPS link to prevent a secure site certificate error.</inlineHelpText>
+        <label>Thumbnail image URL (automatic) - HTTPS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Tier__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>1=IAVA mandated event (Press Conf/Testimony); 2=Creator is receptive to IAVA directives; 3=Creator is a reliable leader &amp; uses own devices; 4=Creator is using the VetTogether tool to promote their own event &amp; not interested in deeper engagement</inlineHelpText>
+        <label>Tier</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Topics__c</fullName>
+        <externalId>false</externalId>
+        <label>Topics</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Afghanistan</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Alternative Therapy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Clay Hunt SAV Act</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>COV</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Discrimination</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DOD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gala</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GI Bill</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Healthcare</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Homelessness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Iraq</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Iraqi Interpreters</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Local Events</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Love</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Member Survey</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mental Health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military COLA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military Recruitment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Military Sexual Trauma</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NGIB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NYC Veterans</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online Campaigns</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Op-Ed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Overextended Military</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partnerships</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Politics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PTSD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rally</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Red Tape Report</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RRRP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shutdown</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Starting a new venture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>STH2014</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Suicide</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Summer Storm</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>The Wait We Carry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TBI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA Backlog</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vets Day</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vets Prevail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VetsRising</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wait for Care &amp; Benefits</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Walter Reed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Women</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Twitter_Promotion_Language__c</fullName>
+        <externalId>false</externalId>
+        <label>Twitter Promotion Language</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Advocacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Awareness Action</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bar Gathering</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Career Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Concert</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cookout</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DPAA Burial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fundraiser</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Internal IAVA Training</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Movie Screening</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Outdoor Activity</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Run</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Seminar/Education</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Service Project</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Social</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sporting Event</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VetTogether</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VIPs_in_Attendance__c</fullName>
+        <externalId>false</externalId>
+        <label>VIPs in Attendance</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Visible_To__c</fullName>
+        <externalId>false</externalId>
+        <label>Visible To (not yet functional)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Everyone</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unconfirmed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other Era</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Family</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Were_pictures_taken__c</fullName>
+        <externalId>false</externalId>
+        <label>Were pictures taken?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>isIAVAEndorsed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>IAVA Endorsed Event</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>myIAVA_Event_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;https://my.iava.org/&quot;&amp;Event_Relative_URL__c</formula>
+        <label>myIAVA Event Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Event_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Start_Time__c</columns>
+        <columns>End_Time__c</columns>
+        <columns>Status__c</columns>
+        <columns>Chatter_Group_Mirror__c</columns>
+        <columns>Organizer_Type__c</columns>
+        <columns>Origin__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Location_Zip_Code__c</columns>
+        <columns>Latitude__c</columns>
+        <columns>Longitude__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_VetTogethers</fullName>
+        <columns>Creator_Contact__c</columns>
+        <columns>NAME</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Tier__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_State__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Num_Replies_Total__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1/1/2015</value>
+        </filters>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>12/31/2015</value>
+        </filters>
+        <label>All  VetTogethers</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_in_the_last_week</fullName>
+        <columns>Region__c</columns>
+        <columns>NAME</columns>
+        <columns>Creator_Contact__c</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_WEEK</value>
+        </filters>
+        <label>Created in the last week</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_this_week</fullName>
+        <columns>Region__c</columns>
+        <columns>NAME</columns>
+        <columns>Creator_Contact__c</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>Created this week</label>
+    </listViews>
+    <listViews>
+        <fullName>Events_owned_by_me</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Status__c</columns>
+        <columns>Type__c</columns>
+        <columns>Location_State__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>Events owned by me</label>
+    </listViews>
+    <listViews>
+        <fullName>Max_Movie</fullName>
+        <columns>NAME</columns>
+        <columns>Creator_Contact__c</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_State__c</columns>
+        <columns>Reply_Cap__c</columns>
+        <columns>Num_Replies_Yes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>Max</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Published</value>
+        </filters>
+        <label>Max Movie</label>
+    </listViews>
+    <listViews>
+        <fullName>Modified_today</fullName>
+        <columns>NAME</columns>
+        <columns>Creator_Contact__c</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Status__c</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Location_State__c</columns>
+        <columns>Location_Street_Address__c</columns>
+        <columns>Location_Venue__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Modified today</label>
+    </listViews>
+    <listViews>
+        <fullName>Published_Modified_today</fullName>
+        <columns>NAME</columns>
+        <columns>Location_Venue__c</columns>
+        <columns>Location_Street_Address__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_State__c</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Status__c</columns>
+        <columns>Creator_Contact__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Published</value>
+        </filters>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Published Modified today</label>
+    </listViews>
+    <listViews>
+        <fullName>Upcoming_Published_Events</fullName>
+        <columns>NAME</columns>
+        <columns>Region__c</columns>
+        <columns>Num_Replies_Total__c</columns>
+        <columns>Location_State__c</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Tier__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Type__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Start_Time__c</columns>
+        <columns>End_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Published</value>
+        </filters>
+        <label>Upcoming Published Events</label>
+    </listViews>
+    <listViews>
+        <fullName>Upcoming_Unpublished_Events</fullName>
+        <columns>Region__c</columns>
+        <columns>Event_Date__c</columns>
+        <columns>NAME</columns>
+        <columns>Location_State__c</columns>
+        <columns>Start_Time__c</columns>
+        <columns>End_Time__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_Zip_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Unpublished</value>
+        </filters>
+        <label>Upcoming Unpublished Events</label>
+    </listViews>
+    <listViews>
+        <fullName>VetTogethers_All_Staff</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Start_Time__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_State__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>Num_Replies_Yes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>equals</operation>
+            <value>TODAY,TOMORROW,NEXT_N_WEEKS:2</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Published</value>
+        </filters>
+        <label>VetTogethers All Staff View</label>
+    </listViews>
+    <listViews>
+        <fullName>VetTogethers_All_Staff_Past</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Start_Time__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_State__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_WEEK,THIS_WEEK</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Published</value>
+        </filters>
+        <label>VetTogethers All Staff View - PAST</label>
+    </listViews>
+    <listViews>
+        <fullName>VetTogethers_with_some_replies</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Creator_Contact__c</columns>
+        <columns>Num_Invited__c</columns>
+        <columns>Num_Replies_Total__c</columns>
+        <columns>Num_Replies_Yes__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Num_Replies_Yes__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>1</value>
+        </filters>
+        <label>VetTogethers with some replies</label>
+    </listViews>
+    <listViews>
+        <fullName>Vets_Day_Events</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Field_Team_POC__c</columns>
+        <columns>Creator_Contact__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_State__c</columns>
+        <columns>Num_Replies_Yes__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Month__c</field>
+            <operation>equals</operation>
+            <value>11</value>
+        </filters>
+        <label>Vets Day Events</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>Membership</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Vets_Day_National_Events_2015</fullName>
+        <columns>NAME</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Field_Team_POC__c</columns>
+        <columns>Creator_Contact__c</columns>
+        <columns>Location_City__c</columns>
+        <columns>Location_State__c</columns>
+        <columns>Num_Replies_Yes__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>11/4/2015</value>
+        </filters>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>lessThan</operation>
+            <value>11/23/2015</value>
+        </filters>
+        <label>Vets Day National Events 2015</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+            <group>Membership</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Vets_Week_2016_Endorsed_Events</fullName>
+        <booleanFilter>1 AND 2 AND 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Event_Date__c</columns>
+        <columns>Creator_Contact__c</columns>
+        <columns>Num_Replies_Yes__c</columns>
+        <columns>Field_Team_POC__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>greaterThan</operation>
+            <value>10/29/2016</value>
+        </filters>
+        <filters>
+            <field>Event_Date__c</field>
+            <operation>lessThan</operation>
+            <value>11/15/2016</value>
+        </filters>
+        <filters>
+            <field>Tier__c</field>
+            <operation>equals</operation>
+            <value>1,2</value>
+        </filters>
+        <label>Vets Week 2016 Endorsed Events</label>
+    </listViews>
+    <nameField>
+        <label>Event Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Events</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Event_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Organizer_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Chatter_Group_Mirror__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Origin__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.FIRST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Event_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Num_Replies_Yes__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Num_Invited__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Number_of_Attendees__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Chatter_Group_Mirror__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Reply_Cap__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>End_Time_validate</fullName>
+        <active>true</active>
+        <description>Validate that format of End Time is like: 12:15 PM</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(End_Time__c)),NOT(REGEX(End_Time__c, &quot;^ *(1[0-2]|[1-9]):[0-5][0-9] *(a|p|A|P)(m|M) *$&quot;)))</errorConditionFormula>
+        <errorDisplayField>End_Time__c</errorDisplayField>
+        <errorMessage>That is not a valid End Time.  The correct format should be: 12:15 PM</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Start_Time_validate</fullName>
+        <active>true</active>
+        <description>Validate that format of Start Time is like: 5:15 PM</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Start_Time__c)),NOT(REGEX(Start_Time__c, &quot;^ *(1[0-2]|[1-9]):[0-5][0-9] *(a|p|A|P)(m|M) *$&quot;)))</errorConditionFormula>
+        <errorDisplayField>Start_Time__c</errorDisplayField>
+        <errorMessage>That is not a valid Start Time.  The correct format should be: 12:15 PM</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Zip_code_validate</fullName>
+        <active>true</active>
+        <errorConditionFormula>and (
+  not(isblank(Location_Zip_Code__c)),
+
+ or(
+   len( Location_Zip_Code__c ) &lt;&gt; 5
+ , not( isnumber(Location_Zip_Code__c ))
+ )
+)</errorConditionFormula>
+        <errorDisplayField>Location_Zip_Code__c</errorDisplayField>
+        <errorMessage>Zip code should be a 5-digit number</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_AIR</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create AIR</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/a33/e?retURL=%2F{!IAVAEvent__c.Id}&amp;00NC0000006Elep={!urlencode(IAVAEvent__c.Name)}&amp;00NC0000006Elep_lkid={!IAVAEvent__c.Id}&amp;Name=Impact: {!urlencode(IAVAEvent__c.Name)}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Event_RSVP_Report</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Pre Event Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na8.salesforce.com/00OC00000069L1R?pv0={!IAVAEvent__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Event_Responses</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>false</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>550</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Event Responses</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://www.appextremes.com/apps/Conga/Composer.aspx 
+?sessionId={!API.Session_ID} 
+&amp;serverUrl={!API.Partner_Server_URL_80} 
+&amp;id={!IAVAEvent__c.Id}
+&amp;reportid=[GalaSponsor]00OC0000005KE6l 
+&amp;cetId=a3RC0000000Ccbl
+&amp;_LG4=1 
+&amp;_LG3=1 
+&amp;_DS7={!IF(User.Profile = &quot;System Administrator&quot;, &quot;0&quot;, &quot;3&quot;)}</url>
+        <width>700</width>
+    </webLinks>
+    <webLinks>
+        <fullName>Map_It</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Map It</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/sma__mapanything?recordId={!IAVAEvent__c.Id}&amp;baseObjectId=a2uC00000000ooJIAQ&amp;tooltipField=Name&amp;color=%2366FF00</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Post_Event_Report</fullName>
+        <availability>online</availability>
+        <description>Post event report include survey responses</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Post Event Report</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://na8.salesforce.com/00OC0000006QILm?pv0={!IAVAEvent__c.Id}</url>
+    </webLinks>
+</CustomObject>

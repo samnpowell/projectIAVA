@@ -1,0 +1,24 @@
+<apex:page controller="randWinnerTest" tabStyle="Give_Request__c">
+  <apex:pageMessages showDetail="true"/>
+  <apex:form id="winnerCriteria" title="Criteria to pick a winner">
+    <apex:pageBlock id="questionBlock" title="Let's pick a random winner">
+      <apex:pageBlockButtons >
+        <apex:commandButton action="{!getWinner}" value="Show me the winner(s)!"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection id="eventOrGive" collapsible="false" title="Did you use an Event or a Give to collect contact information?">
+        <apex:inputCheckbox id="event" label="Event" value="{!isEvent}"/>
+        <apex:inputCheckbox id="give" label="Give" value="{!isGive}"/>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection id="name" title="What is the Event or Give Name?" collapsible="false">
+        <apex:inputText id="nameField" label="Name" value="{!name}" required="true"/>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection id="numWins" title="How many winners do you need?" collapsible="false">
+        <apex:inputText id="numWinners" label="# of winners" value="{!numWins}" required="true"/>
+      </apex:pageBlockSection>
+      <apex:pageBlockSection id="view" title="Would you like to review the results on screen or would you like them to be saved in a CSV file?" collapsible="false">
+        <apex:inputCheckbox id="screen" label="on screen" value="{!onScreen}"/>
+        <apex:inputCheckbox id="csv" label="in CSV file" value="{!inCsv}"/>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

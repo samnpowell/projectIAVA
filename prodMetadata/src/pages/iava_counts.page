@@ -1,0 +1,8 @@
+<apex:page controller="iava_counts_controller" showHeader="false" sidebar="false" standardStylesheets="false" readonly="true">
+
+        {
+        v: {!veteran_count},
+        s: {!supporter_count}
+        }
+    
+</apex:page>

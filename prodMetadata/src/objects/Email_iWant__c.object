@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Email iWant</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Body_1st_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Body 1st Email</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Body_2nd_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Body 2nd Email</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Body_Conf_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Body Conf Email</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Body_Followup_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Body Followup Email</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the campaign for which the eWant is related.</inlineHelpText>
+        <label>Campaign/Event</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>eWants</relationshipLabel>
+        <relationshipName>eWants</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Content_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Content Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Blog</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAQ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Press Hit</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Content__c</fullName>
+        <externalId>false</externalId>
+        <label>Content</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Date_1st_Email__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date that the first email should go out.</inlineHelpText>
+        <label>Date 1st Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_2nd_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Date 2nd Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Confirmation__c</fullName>
+        <description>Date that the confirmation email should go out.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date that the confirmation email should go out.</inlineHelpText>
+        <label>Date Confirmation</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Follow_up__c</fullName>
+        <description>Date for the Follow Up Email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date for the Follow Up Email</inlineHelpText>
+        <label>Date Follow-up</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Radius__c</fullName>
+        <externalId>false</externalId>
+        <label>Radius</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SMS_Content__c</fullName>
+        <description>Content of the SMS (text message) Confirmation Message to be sent day of the event.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Content of the SMS (text message) Confirmation Message to be sent day of the event.</inlineHelpText>
+        <label>SMS Content</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Signup_Form_Desired_URL__c</fullName>
+        <defaultValue>&quot;http://iavaonline.org/&quot;</defaultValue>
+        <description>This is the desired &quot;short&quot; URL for the signup form. i.e. http://iavaonline.org/patsrun</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the desired &quot;short&quot; URL for the signup form. i.e. http://iavaonline.org/patsrun</inlineHelpText>
+        <label>Signup Form Desired URL</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signup_Form_Link__c</fullName>
+        <description>This is the URL for the link to the signup form as it should be included in the DIA emails.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the URL for the link to the signup form as it should be included in the DIA emails.</inlineHelpText>
+        <label>Signup Form Link</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Request Submitted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Additional Info Needed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reviewed with Changes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ready for Launch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Posted</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject_1st_Email__c</fullName>
+        <description>Subject Line of the 1st Email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject Line of the 1st Email</inlineHelpText>
+        <label>Subject 1st Email</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_2nd_Email__c</fullName>
+        <description>Subject Line of the 2nd Email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject Line of the 2nd Email</inlineHelpText>
+        <label>Subject 2nd Email</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_Conf_Email__c</fullName>
+        <description>Subject of the Confirmation Email</description>
+        <externalId>false</externalId>
+        <label>Subject Conf Email</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject_Followup_Email__c</fullName>
+        <description>Subject Line of the Follow-up Email</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Subject Line of the Follow-up Email</inlineHelpText>
+        <label>Subject Followup Email</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suggested_Tweet__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>No more than 140 characters</inlineHelpText>
+        <label>Suggested Tweet</label>
+        <length>140</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Desired_URL__c</fullName>
+        <defaultValue>&quot;http://iavaonline.org/&quot;</defaultValue>
+        <description>This is the desired &quot;short&quot; URL for the survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the desired &quot;short&quot; URL for the survey.</inlineHelpText>
+        <label>Survey Desired URL</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Link__c</fullName>
+        <defaultValue>&quot;http://iavaonline.org/SURVEY?tfa_email=Contact.Email&quot;</defaultValue>
+        <description>This is the full URL for the post-event survey.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the full URL for the post-event survey.</inlineHelpText>
+        <label>Survey Link</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Website__c</fullName>
+        <externalId>false</externalId>
+        <label>Website</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NewGIBill.org</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>iava.org</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>eWant</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>eW-{YYYY}{MM}{DD}-{000}</displayFormat>
+        <label>eWant Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>eWants</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Email_Content</fullName>
+        <active>true</active>
+        <description>Email Content Requiest</description>
+        <label>Email Content</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Hit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Additional Info Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ready for Launch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Submitted</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Reviewed with Changes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Website__c</picklist>
+            <values>
+                <fullName>NewGIBill%2Eorg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iava%2Eorg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Website_Content</fullName>
+        <active>true</active>
+        <description>This specifies a request for website content</description>
+        <label>Website Content</label>
+        <picklistValues>
+            <picklist>Content_Type__c</picklist>
+            <values>
+                <fullName>Blog</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAQ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Press Hit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Posted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Submitted</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Website__c</picklist>
+            <values>
+                <fullName>NewGIBill%2Eorg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iava%2Eorg</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Zip_Code</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT( ISNUMBER( Zip_Code__c )) || (LEN(Zip_Code__c) &lt;&gt; 5)</errorConditionFormula>
+        <errorDisplayField>Zip_Code__c</errorDisplayField>
+        <errorMessage>Not a valid Zip Code</errorMessage>
+    </validationRules>
+</CustomObject>

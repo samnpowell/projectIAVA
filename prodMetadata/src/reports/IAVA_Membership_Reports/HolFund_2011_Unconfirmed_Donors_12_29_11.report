@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Id</field>
+    </columns>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.OpportunityContactRoles$Name</field>
+    </columns>
+    <description>Donors from the Unconfirmed Veteran bracket, to be excluded from HolFund2011 Email 4.</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.OpportunityContactRoles$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>startsWith</operator>
+            <value>Holiday 2011</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Veteran_Member__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Paperwork_Confirmation__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Paperwork Accepted</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>HolFund 2011 Unconfirmed Donors 12/29/11</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>IAVA_Donors__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$Approved_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,29 @@
+<apex:component >
+
+<div id="block-block-joiniavarewards" class="block block-block block-blank">
+    <div class="block-inner">
+        <div class="content">
+            <h3><img src="{!URLFOR($Resource.dc_css,'images/header_getyourrewards.png')}" width="195" height="17" alt="Get Your Rewards" /></h3>
+            <div class="reasons">
+                <p>Use your free IAVA membership to collect rewards. Here's how:</p>
+                <ol>
+                    <li>
+                        <h4><a href="{!$Label.dc_MemberSignupURLStep1}" class="rover join-get-rewards"></a></h4>
+                        <p>Sign up and confirm your service.</p>
+                    </li>
+                    <li>
+                        <h4><a href="{!$Page.dc_RewardList}" class="rover join-claim-rewards"></a></h4>
+                        <p>Enter your zip code to get started.</p>
+                    </li>
+                </ol>
+            </div>
+
+        </div><!-- /content -->
+
+        <p>Not a member yet? <a href="{!$Label.dc_MemberSignupURLStep1}">Join now</a>, it's free!</p>
+
+        <div class="more-link"><a href="{!$Label.dc_MemberSignupURLStep1}" class="joiniava"></a></div>
+
+    </div>
+</div> <!-- /block-inner, /block -->
+</apex:component>

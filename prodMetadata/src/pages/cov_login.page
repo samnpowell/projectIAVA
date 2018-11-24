@@ -1,0 +1,426 @@
+<apex:page showHeader="false" sidebar="false" controller="cov_login_controller" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false" action="{!init}" docType="html-5.0">
+
+<html>  
+  <head>  
+    <title>Log In to IAVA</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+
+
+	<link rel="shortcut icon" href="{!URLFOR($Resource.IAVA_Favicon)}" type="image/x-icon" />
+
+  		<apex:define name="stylesheets">
+			<c:cov_stylesheets /> 
+		</apex:define>  
+    
+
+
+	<style type="text/css">
+		body {
+			background-color: #DCDCDC;
+		}
+
+		.container {
+			max-width: 800px;
+			padding-bottom: 100px;			
+		}
+
+		#login-well {
+			background-color: #fff;
+			padding: 40px 50px 50px;
+			box-shadow: 3px 3px 3px #999;
+			border-top: 2px solid #ddd;
+			border-left: 2px solid #ddd;
+		}
+
+		.vertical-center {
+			min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+			min-height: 100vh; /* These two lines are counted as one :-)       */
+
+			display: flex;
+			align-items: center;
+		}
+
+		.button-group .btn, .button-group .btn:hover, .button-group .btn:focus
+		, .btn-group .btn, .btn-group .btn:hover, .btn-group .btn:focus {
+			width: 100%;
+		}
+
+		.login-form .button-group .btn, .login-form .button-group .btn:hover, .login-form .button-group .btn:focus {
+			color: white;
+			background-color: #02352A;
+		}
+
+		.sso-login-form .button-group .btn, .sso-login-form .btn-group .btn {
+			color: #999;
+			background-color: #eee;
+		}
+
+		.sso-login-form .button-group .btn {
+			line-height: 30px
+		}
+
+		.sso-login-form .button-group .btn img,  #sso-fb-dropdown .button-group .btn img {
+			max-height: 30px;
+			margin-left: 6px;
+		}
+
+		.sso-login-form .button-group .btn:hover, .sso-login-form .button-group .btn:focus {
+			color: #999;
+			background-color: #ddd;
+		}
+
+		#sso-fb-dropdown .dropdown-menu {
+			background-color: #eee; 
+			margin-top: 0;
+		}
+
+		#sso-fb-login-modal ul {
+			line-height: 24px;
+		}
+
+		#sso-fb-dropdown .dropdown-menu .glyphicon {
+			color: #666;
+			margin-right: 12px;
+		}
+
+		.modal .color-section {
+			padding: 18px 12px;
+		}
+		
+		#join-button {
+			background-color: #999;
+			border-color: #999;
+		}
+
+		#join-button:hover {
+			background-color: #337ab7;
+			border-color: #337ab7;
+		}
+
+		.almost-hidden, .bootstrap a.almost-hidden, .bootstrap a:visited.almost-hidden {
+			color: #eee;
+		}
+
+		#register-link {
+			margin-bottom: 112px;
+		}
+
+		.messageText {
+			color: red;
+		}
+
+		td.messageCell {
+			padding-bottom: 12px;
+		}
+
+		.messageCell h4 {
+			float: left;
+			margin-right: 12px;
+		}
+
+		#login-box-left {
+			margin-bottom: 36px;
+		}
+
+
+
+	</style>
+
+
+  </head>  
+  <body class="bootstrap">  
+
+
+	<c:cov_include_css_bootstrap />
+	<c:cov_include_js_jquery /> 
+	<c:cov_include_js_bootstrap /> 
+
+
+
+
+	<div class="vertical-center">
+
+		<div class="container">
+			<div class="well" id="login-well">
+
+				<div class="row">
+					<div class="col-md-12">
+						<p><apex:image value="{!URLFOR($Resource.cov_files,'img/myIAVA-logo-beta-green.png')}" width="250" height="62" alt="myIAVA" styleClass="img-responsive" /></p>
+						<p>&nbsp;</p>
+					</div>
+				</div>
+
+
+				<div class="row">
+
+					<div class="col-md-5 col-xs-12" id="login-box-left">
+
+						<apex:outputPanel id="loginmessage" >
+                              <apex:outputtext value="{!loginMsg}" escape="false" style="color: #FF0000;" />
+                        </apex:outputPanel>
+						<apex:outputPanel id="pagemessage-panel" rendered="{!NOT(hidePageMessages)}" >                      
+                       		<apex:pageMessages />
+						</apex:outputPanel>
+
+						<apex:form styleClass="login-form">
+
+							<div class="form-group">
+								<apex:input type="email" id="Uname" value="{!username}" html-placeholder="Email Address" styleclass="form-control" />
+							</div>
+
+							<div class="form-group">
+								<apex:inputSecret id="Password" value="{!password}" html-placeholder="Password" styleclass="form-control" />
+							</div>
+
+							<div class="form-group button-group">
+								<apex:commandButton action="{!communityLogin}" styleClass="btn" value="Log In" />
+							</div>
+
+							<div class="form-group">
+								<!-- <apex:commandlink value="Forgot Password?" oncomplete="forgot();" /> -->
+								<a href="{!$Site.currentSiteUrl}secur/forgotpassword.jsp{!if(isblank(trim(encodedStartUrl)),'','?startURL=' + encodedStartUrl)}">Forgot Password?</a>
+							</div>
+
+						</apex:form>
+
+						<apex:outputPanel rendered="{!and(showFacebookLogin, not(isblank(fbAuthUrl)))}" >
+							<div>
+								<apex:form styleClass="sso-login-form">
+									<!-- <div class="form-group button-group">
+										<apex:outputLink value="{!fbAuthUrl}" styleClass="btn btn-default">
+											<img alt="" src="{!$Site.currentSiteUrl}icons/facebook-grey.png" class="pull-right" />
+											<span>Log In using Facebook</span>
+										</apex:outputLink>
+									</div> -->
+
+									<div class="button-group dropdown-group" id="sso-fb-dropdown">
+<!-- 										<apex:outputLink value="{!fbAuthUrl}" styleClass="btn btn-default dropdown-toggle" html-data-toggle="dropdown" html-aria-haspopup="true" html-aria-expanded="false">
+											<span>Log In using Facebook</span>
+											<img alt="" src="{!$Site.currentSiteUrl}icons/facebook-grey.png" />
+											<span class="caret"></span>
+										</apex:outputLink> -->
+
+										<button type="button" class="btn btn-default dropdown-toggle dropdown-hover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+											Log in using Facebook
+											<img alt="" src="{!$Site.currentSiteUrl}icons/facebook-grey.png" />
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="#" data-toggle="modal" data-target=".sso-fb-login-modal">
+													<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+													Set up Facebook login
+												</a>
+											</li>
+											<!-- <li>
+												<a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" title="Set up Facebook login" data-content="If you use a different email address for your Facebook and myIAVA accounts, please log in first to myIAVA, go to your Profile's Contact Info tab, and link your accounts. If you use the same email address for Facebook and your myIAVA account, you can click the button below to log in.">Set up Facebook login</a>
+											</li> -->
+											<li role="separator" class="divider"></li>
+											<li>
+												<apex:outputLink value="{!fbAuthUrl}" >
+													<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+													I'm already set up, log me in
+												</apex:outputLink>
+											</li>
+										</ul>
+									</div>
+									<script type="text/javascript">
+										var j$ = jQuery.noConflict();
+										j$('.dropdown-hover.dropdown-toggle').hover(
+											function() {
+												if (j$(this).attr('aria-expanded') == 'false') {
+													j$(this).click();
+												}
+											}, function() {
+												// no action
+											}
+										);
+
+									</script>
+
+
+									<div class="modal fade sso-fb-login-modal" id="sso-fb-login-modal" tabindex="-1" role="dialog" aria-labelledby="fb-login-label">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+													<h4 class="modal-title" id="fb-login-label">Set up Facebook Login</h4> 
+												</div> 
+												<div class="modal-body">
+
+													<p>You can now use Facebook to easily log into your myIAVA account. Here's how:</p>
+
+													<hr />
+
+													<div class="color-section bg-danger">
+														<p class="bg-danger">If you use a <strong>different email address</strong> for your Facebook and myIAVA accounts:</p>
+														<ul>
+															<li><strong>First, log into myIAVA</strong> using your existing myIAVA account.</li>
+															<li>Choose "Set Up Facebook Login" from the upper right account dropdown.</li>
+															<li>Link your accounts.</li>
+	<!-- 														<li>First log into myIAVA using your existing myIAVA account.</li>
+															<li>In the upper right account menu, choose "Set Up Facebook Login."</li>
+															<li>Click the "Use Facebook to Log Into myIAVA" link.</li> 
+															<li>Click "Okay" on the "Continue as [your name]" Facebook popup.</li>
+	 -->												</ul>
+													</div>
+
+													<hr />
+													
+													<div class="color-section bg-success">
+														<p class="bg-success">If you use the <strong>same email address</strong> for Facebook and your myIAVA account:</p>
+														<ul>
+															<li>Simply close this box and click on "I'm already set up, log me in".</li>
+															<!-- <li>Click "Okay" on the "Continue as [your name]" Facebook popup.</li> -->
+														</ul>
+													</div>
+
+													<hr />
+
+													<p class="italicer">Note: Linking your account does <em>not</em> let myIAVA post to Facebook. It simply lets you log into myIAVA using your Facebook account. <a href="https://www.facebook.com/help/www/145506622264765" target="_blank">More info...</a></p>
+												</div> 
+											</div>
+										</div>
+									</div>
+
+<!-- <div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+		<h4 class="modal-title" id="fb-login-label">Set up Facebook Login</h4> 
+	</div> 
+	<div class="modal-body">
+		<p>If you use a different email address for your Facebook and myIAVA accounts, please log in first to myIAVA, go to your Profile's Contact Info tab, and link your accounts.</p> 
+
+		<p>If you use the same email address for Facebook and your myIAVA account, you can click the button below to log in.</p>
+	</div> 
+</div> -->
+
+
+	<!-- 								Debug link: <a href="https://{!if(isSandbox,'test','login')}.salesforce.com/services/auth/sso/{!$Organization.Id}/Facebook?community={!urlencode($Site.currentSiteUrl)}{!if(isblank(trim(encodedStartUrl)),'', encodedStartUrl)}">https://{!if(isSandbox,'test','login')}.salesforce.com/services/auth/sso/{!$Organization.Id}/Facebook?community={!urlencode($Site.currentSiteUrl)}{!if(isblank(trim(encodedStartUrl)),'', encodedStartUrl)}</a>
+									<br/>
+									<br/>
+									use Auth SSO URL: <a href="{!fbAuthUrl}">{!fbAuthUrl}</a><br /> -->
+
+									<!-- <a href="javascript:document.location.reload(true);">Refresh without cache</a> -->
+								</apex:form>
+							</div>
+						</apex:outputPanel>
+
+
+					</div>
+
+
+					<div class="col-md-6 col-md-offset-1 col-xs-12">
+						<div class="form-group button-group">
+							<p id="register-link"><a href="http://iava.org/#join" id="join-button" role="button" class="btn btn-primary"><apex:outputtext value="{!$Label.cov_loginpage_join_button}" escape="false" /></a></p>
+						</div>
+
+						<p><a href="javascript:void(0);" id="email-checker-opener"><apex:outputtext value="{!$Label.cov_joinpage_already_member_link_text}" escape="false" /></a></p>
+
+						<div id="email-checker-box" style="{!if(isblank(trim(signupMsg)), 'display: none;','')}">
+
+							<apex:form styleClass="legacySignupForm" >
+
+
+<!--                                 <apex:outputpanel id="regmessage">
+                                    <apex:outputtext value="{!regMsg}" escape="false" style="color: #FF0000;" />
+                                </apex:outputpanel>
+ -->                                
+                                <apex:outputpanel id="signupmessage">
+                                    <apex:outputtext id="signupmessage-value" value="{!signupMsg}" style="color: #FF0000;" />
+<!--                                     <apex:outputtext id="pName" value="{!pName}" style="display: none;color: #C11B17;" />
+                                    <apex:outputtext id="oif_val" value="{!oif_val}" style="display: none;color: #C11B17;" />
+                                    <apex:outputtext id="ond_val" value="{!ond_val}" style="display: none;color: #C11B17;" />
+                                    <apex:outputtext id="oef_val" value="{!oef_val}" style="display: none;color: #C11B17;" /> -->
+                                </apex:outputpanel>
+
+								<div class="form-group">
+									<apex:input type="email" id="Emailtoreg" value="{!emailToReg}" html-placeholder="Email Address" styleclass="form-control" onkeydown="if(event.keyCode==13){this.blur();submitLegacyForm();submitSignup();}" />
+								</div>
+
+								<div class="form-group">
+									<div>
+										<label>I am a veteran of:</label>
+									</div>
+									<label class="checkbox-inline">
+									  <apex:inputCheckbox value="{!oef}" /> OEF
+									</label>
+									<label class="checkbox-inline">
+									  <apex:inputCheckbox value="{!oif}" /> OIF
+									</label>
+									<label class="checkbox-inline">
+									  <apex:inputCheckbox value="{!ond}" /> OND
+									</label>
+								</div>
+
+                                <div class="checkbox">
+	                                <label>
+	                                	<apex:inputCheckbox value="{!agreeToTerms}" />I agree to the <a href="http://iava.org/myIAVA-terms" target="_blank">myIAVA Terms</a>
+	                                </label>
+	                            </div>
+
+								<div class="form-group button-group">
+									<apex:commandButton action="{!legacySignup}" id="legacySignup-button" styleClass="btn" value="Continue" reRender="signupmessage,loginmessage" onclick="submitLegacyForm();" oncomplete="returnFromLegacySubmit();" />
+								</div>
+
+                                
+                                <!-- <apex:actionFunction name="sign" rerender="signupmessage" oncomplete="signup2();"/> -->
+                                <apex:actionFunction action="{!legacySignup}" name="submitSignup" rerender="signupmessage,loginmessage" oncomplete="returnFromLegacySubmit();" />
+							</apex:form>
+
+						</div>
+
+
+					</div>
+
+				</div>
+			</div>
+
+			<apex:outputPanel rendered="{!NOT(isblank(trim(instancePrefix)))}">
+				<div class="pull-right">
+					<a class="almost-hidden" href="https://{!instancePrefix}.salesforce.com/servlet/networks/session/create?{!if(isblank(trim(encodedStartUrl)),'','url=' + encodedStartUrl + '&')}site={!$Site.SiteId}&inst=M">STAFF</a>
+<!-- 					<apex:form style="display: inline;">
+						<span class="almost-hidden">&nbsp;&bull;&nbsp;</span>
+						<apex:commandLink styleClass="almost-hidden" action="https://{!if(isSandbox,'test','login')}.salesforce.com/services/auth/sso/{!$Organization.Id}/Facebook?startURL={!if(isblank(trim(encodedStartUrl)),'/apex/cov_dashboard', encodedStartUrl)}">
+							<span>&#402;</span>
+						</apex:commandLink>
+					</apex:form>
+ -->				</div>
+			</apex:outputPanel>
+
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+
+		var j$ = jQuery.noConflict();
+		j$(document).ready(function() {
+			setFieldFromUrl('input[id$=Uname]', 'u');
+			if (!j$('input[id$=Uname]').val()) {
+				j$('input[id$=Uname]').select();
+			} else {
+				j$('input[id$=Password]').select();
+			}
+			j$('#email-checker-opener').click(function() {
+				j$('#email-checker-box').toggle();
+			});
+		});	
+		var submitLegacyForm = function submitLegacyForm() {
+				j$('input[id$=legacySignup-button]').prop('disabled', true);
+				j$('span[id$=signupmessage-value]').empty();
+		};	
+		var returnFromLegacySubmit = function returnFromLegacySubmit() {
+				j$('input[id$=legacySignup-button]').prop('disabled', false);			
+		}
+
+
+	</script>
+
+	<c:cov_js_utils /> 
+
+</body>
+
+</html>
+
+</apex:page>

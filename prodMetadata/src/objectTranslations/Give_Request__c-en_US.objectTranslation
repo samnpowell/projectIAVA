@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Give Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Give Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Street Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant Email --></label>
+        <name>Applicant_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant Id --></label>
+        <name>Applicant_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant Last Name --></label>
+        <name>Applicant_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Applicant Name --></label>
+        <name>Applicant_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Should be a confirmed member veteran only. --></help>
+        <label><!-- Applicant --></label>
+        <name>Applicant__c</name>
+        <relationshipLabel><!-- Give Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Attended --></label>
+        <name>Attended__c</name>
+        <picklistValues>
+            <masterLabel>Don&apos;t Know</masterLabel>
+            <translation><!-- Don&apos;t Know --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Checks Tentative Number Remaining on Give Instance to see if quantity requested is available. --></help>
+        <label><!-- Availability --></label>
+        <name>Availability__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked if the applicant confirmed age 21+ (only relevant on 21+ gives) --></help>
+        <label><!-- Confirmed 21+ --></label>
+        <name>Confirmed_21__c</name>
+    </fields>
+    <fields>
+        <help><!-- A workflow sets this value in order to prevent more than one Give Request with confirmation stage for the same Give and Applicant. --></help>
+        <label><!-- Contact ID plus Give ID --></label>
+        <name>Contact_ID_plus_Give_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is used to indicate the date that the first email was sent to the user for a re-confirmation. --></help>
+        <label><!-- Date First Emailed --></label>
+        <name>Date_First_Emailed__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is used to indicate the date that the last email was sent to the user for a re-confirmation. --></help>
+        <label><!-- Date Last Emailed --></label>
+        <name>Date_Last_Emailed__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is set to &quot;TRUE&quot; when the Date Created of the give request is later than the app deadline or end date. It was created to help catch requests coming in late for closed gives. --></help>
+        <label><!-- Date Mismatch --></label>
+        <name>Date_Mismatch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date re-confirmed --></label>
+        <name>Date_of_Re_confirm__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Address --></label>
+        <name>Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- FOR_REPORT_Attended --></label>
+        <name>FOR_REPORT_Attended__c</name>
+    </fields>
+    <fields>
+        <label><!-- FOR_REPORT_Branch --></label>
+        <name>FOR_REPORT_Branch__c</name>
+    </fields>
+    <fields>
+        <label><!-- FOR_REPORT_DateTime --></label>
+        <name>FOR_REPORT_DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- FOR_REPORT_Rank --></label>
+        <name>FOR_REPORT_Rank__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geocode --></label>
+        <name>Geocode__c</name>
+        <relationshipLabel><!-- Give Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Give Descriptor --></label>
+        <name>Give_Descriptor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Give Fulfillment Instructions --></label>
+        <name>Give_Fulfillment_Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- These instructions will be sent as soon as the member is confirmed for the reward (immediately for some rewards, upon selection for others). Note this is now a Rich Text Field that can accept links and formatting. --></help>
+        <label><!-- Give Fulfillment Instructions rtf --></label>
+        <name>Give_Fulfillment_Instructions_rtf__c</name>
+    </fields>
+    <fields>
+        <label><!-- Give Instance Reconfirm Date --></label>
+        <name>Give_Instance_Reconfirm_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Give Instance Start Date --></label>
+        <name>Give_Instance_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Give Instance Start Time --></label>
+        <name>Give_Instance_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Give Instance --></label>
+        <name>Give_Instance__c</name>
+        <relationshipLabel><!-- Give Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Give Name --></label>
+        <name>Give_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will be used to indicate that the member has indicated that guest(s) are 21 and over. --></help>
+        <label><!-- Guest(s) 21 and Over --></label>
+        <name>Guest_s_21_and_Over__c</name>
+    </fields>
+    <fields>
+        <label><!-- Make Address Primary --></label>
+        <name>Make_Address_Primary__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked when user requests that their email address become the primary email on the account --></help>
+        <label><!-- Make Email Primary --></label>
+        <name>Make_Email_Primary__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked if user wanted Phone number on Give Request to be primary phone number on record. --></help>
+        <label><!-- Make Phone Primary --></label>
+        <name>Make_Phone_Primary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member DL Num --></label>
+        <name>Member_DL_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member DOB --></label>
+        <name>Member_DOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Shirt Size --></label>
+        <name>Member_Shirt_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- Notes --></help>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Conf Give Reqs --></label>
+        <name>Num_Confirmed_Give_Requests__c</name>
+    </fields>
+    <fields>
+        <help><!-- Model of device where the request originated --></help>
+        <label><!-- Platform Device Model --></label>
+        <name>Platform_Device_Model__c</name>
+    </fields>
+    <fields>
+        <help><!-- Device OS where the request originated. --></help>
+        <label><!-- Platform Device OS --></label>
+        <name>Platform_Device_OS__c</name>
+    </fields>
+    <fields>
+        <help><!-- E.g. mobile phone app version where the request originated. --></help>
+        <label><!-- Platform Version --></label>
+        <name>Platform_Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- On which Rucksack platform did this request originate? --></help>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+        <picklistValues>
+            <masterLabel>Website</masterLabel>
+            <translation><!-- Website --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iPhone app</masterLabel>
+            <translation><!-- iPhone app --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PowerOfOne --></label>
+        <name>PowerOfOne__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Phone --></label>
+        <name>Primary_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Count how many times re-confirm email has been sent) --></help>
+        <label><!-- Re-confirm Count --></label>
+        <name>Re_confirm_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Re-confirm Status --></label>
+        <name>Re_confirm_Status__c</name>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-confirm sent</masterLabel>
+            <translation><!-- Re-confirm sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Re-confirmed</masterLabel>
+            <translation><!-- Re-confirmed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The &quot;Reconfirm Info to Send&quot; field from the Give Instance. --></help>
+        <label><!-- Reconfirm Info from Instance --></label>
+        <name>Reconfirm_Info_from_Instance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Phone --></label>
+        <name>Secondary_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Response #2 --></label>
+        <name>Special_Response_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Response #3 --></label>
+        <name>Special_Response_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Response #4 --></label>
+        <name>Special_Response_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Response #5 --></label>
+        <name>Special_Response_5__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Give required special response it is stored here. --></help>
+        <label><!-- Special Response #1 (at request) --></label>
+        <name>Special_Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Final confirmation</masterLabel>
+            <translation><!-- Final confirmation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Give requested</masterLabel>
+            <translation><!-- Give requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ineligible</masterLabel>
+            <translation><!-- Ineligible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Info requested of member</masterLabel>
+            <translation><!-- Info requested of member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information sent</masterLabel>
+            <translation><!-- Information sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tentative confirmation</masterLabel>
+            <translation><!-- Tentative confirmation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wait-list</masterLabel>
+            <translation><!-- Wait-list --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+        <picklistValues>
+            <masterLabel>AA</masterLabel>
+            <translation><!-- AA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AE</masterLabel>
+            <translation><!-- AE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AK</masterLabel>
+            <translation><!-- AK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AL</masterLabel>
+            <translation><!-- AL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AP</masterLabel>
+            <translation><!-- AP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AR</masterLabel>
+            <translation><!-- AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AS</masterLabel>
+            <translation><!-- AS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AZ</masterLabel>
+            <translation><!-- AZ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CA</masterLabel>
+            <translation><!-- CA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CO</masterLabel>
+            <translation><!-- CO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CT</masterLabel>
+            <translation><!-- CT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DC</masterLabel>
+            <translation><!-- DC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DE</masterLabel>
+            <translation><!-- DE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FL</masterLabel>
+            <translation><!-- FL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FM</masterLabel>
+            <translation><!-- FM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GA</masterLabel>
+            <translation><!-- GA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GU</masterLabel>
+            <translation><!-- GU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HI</masterLabel>
+            <translation><!-- HI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IA</masterLabel>
+            <translation><!-- IA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ID</masterLabel>
+            <translation><!-- ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IL</masterLabel>
+            <translation><!-- IL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IN</masterLabel>
+            <translation><!-- IN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KS</masterLabel>
+            <translation><!-- KS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KY</masterLabel>
+            <translation><!-- KY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MA</masterLabel>
+            <translation><!-- MA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD</masterLabel>
+            <translation><!-- MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ME</masterLabel>
+            <translation><!-- ME --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MH</masterLabel>
+            <translation><!-- MH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MI</masterLabel>
+            <translation><!-- MI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MN</masterLabel>
+            <translation><!-- MN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MO</masterLabel>
+            <translation><!-- MO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MP</masterLabel>
+            <translation><!-- MP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MS</masterLabel>
+            <translation><!-- MS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MT</masterLabel>
+            <translation><!-- MT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NC</masterLabel>
+            <translation><!-- NC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ND</masterLabel>
+            <translation><!-- ND --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NE</masterLabel>
+            <translation><!-- NE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NH</masterLabel>
+            <translation><!-- NH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NJ</masterLabel>
+            <translation><!-- NJ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NM</masterLabel>
+            <translation><!-- NM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NV</masterLabel>
+            <translation><!-- NV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NY</masterLabel>
+            <translation><!-- NY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OH</masterLabel>
+            <translation><!-- OH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OR</masterLabel>
+            <translation><!-- OR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PR</masterLabel>
+            <translation><!-- PR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PW</masterLabel>
+            <translation><!-- PW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RI</masterLabel>
+            <translation><!-- RI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SC</masterLabel>
+            <translation><!-- SC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SD</masterLabel>
+            <translation><!-- SD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TN</masterLabel>
+            <translation><!-- TN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TX</masterLabel>
+            <translation><!-- TX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UT</masterLabel>
+            <translation><!-- UT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VI</masterLabel>
+            <translation><!-- VI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VT</masterLabel>
+            <translation><!-- VT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WA</masterLabel>
+            <translation><!-- WA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WI</masterLabel>
+            <translation><!-- WI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WV</masterLabel>
+            <translation><!-- WV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WY</masterLabel>
+            <translation><!-- WY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If Terms and Conditions were displayed on the give, this box is checked if the user checked the Terms box (required) when submitting the request. --></help>
+        <label><!-- Terms Was Checked --></label>
+        <name>Terms_Was_Checked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Units Requested --></label>
+        <name>Units_Requested__c</name>
+    </fields>
+    <fields>
+        <label><!-- Verify State --></label>
+        <name>Verify_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>Zip_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Give Request Layout</layout>
+        <sections>
+            <label><!-- Contact Info --></label>
+            <section>Contact Info</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Sorry, the available quantity left was exceeded with this request. --></errorMessage>
+        <name>Available_Quantity_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sorry, this reward is for age 21 and up only. --></errorMessage>
+        <name>Check_for_21_and_over</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sorry, guests must be age 21 and up only. --></errorMessage>
+        <name>Check_for_Guest_21_and_over</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sorry, your request was not accepted.  Please contact rucksack@iava.org if you have questions. --></errorMessage>
+        <name>Contact_Blocked_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please request a number of units/tickets. --></errorMessage>
+        <name>Require_units_requested_field</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select your State --></errorMessage>
+        <name>State_field_is_not_blank</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please check the Terms and Conditions box at the bottom to indicate that you agree. --></errorMessage>
+        <name>Terms_and_Conditions_not_checked</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Mass_Update --></label>
+        <name>Mass_Update</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_Update_Stages --></label>
+        <name>Mass_Update_Stages</name>
+    </webLinks>
+</CustomObjectTranslation>

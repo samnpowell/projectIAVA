@@ -1,0 +1,8 @@
+Hello, 
+
+A new AIR - {!AIR__c.Name}, was created but not completed. Please fill out the required AIR fields and mark this as completed. 
+
+Link to AIR: {!AIR__c.Link}
+
+
+Thanks!

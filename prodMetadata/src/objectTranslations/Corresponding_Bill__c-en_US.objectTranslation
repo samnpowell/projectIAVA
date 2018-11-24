@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Corresponding Bill</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Corresponding Bills</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bill1 Title --></label>
+        <name>Bill1_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bill2 Title --></label>
+        <name>Bill2_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legislation1 --></label>
+        <name>Legislation1__c</name>
+        <relationshipLabel><!-- Corresponding Bills 1 --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legislation2 --></label>
+        <name>Legislation2__c</name>
+        <relationshipLabel><!-- Corresponding Bills 2 --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

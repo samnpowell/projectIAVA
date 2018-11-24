@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Policy Recommendation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Policy Recommendations</value>
+    </caseValues>
+    <fields>
+        <help><!-- Checked if this is a currently active Policy Priority --></help>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- How monitoring --></label>
+        <name>How_monitoring__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passive</masterLabel>
+            <translation><!-- Passive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If 2014 is selected in the Legislative agenda field this will say YES. --></help>
+        <label><!-- Part of 2014 leg agenda --></label>
+        <name>Leg_agenda_2014__c</name>
+    </fields>
+    <fields>
+        <help><!-- Which years&apos; legislative agenda is this Priority a part of? --></help>
+        <label><!-- Legislative Agenda Year --></label>
+        <name>Legislative_Agenda_Year__c</name>
+        <picklistValues>
+            <masterLabel>2007</masterLabel>
+            <translation><!-- 2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2008</masterLabel>
+            <translation><!-- 2008 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2009</masterLabel>
+            <translation><!-- 2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010</masterLabel>
+            <translation><!-- 2010 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2011</masterLabel>
+            <translation><!-- 2011 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012</masterLabel>
+            <translation><!-- 2012 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2013</masterLabel>
+            <translation><!-- 2013 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2014</masterLabel>
+            <translation><!-- 2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015</masterLabel>
+            <translation><!-- 2015 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016</masterLabel>
+            <translation><!-- 2016 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential &apos;14</masterLabel>
+            <translation><!-- Potential &apos;14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential &apos;15</masterLabel>
+            <translation><!-- Potential &apos;15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential &apos;16</masterLabel>
+            <translation><!-- Potential &apos;16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential-&apos;13</masterLabel>
+            <translation><!-- Potential-&apos;13 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Meta Policy Issue --></label>
+        <name>Meta_Focus_Area__c</name>
+        <relationshipLabel><!-- Policy Recommendations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of related legislation records attached. --></help>
+        <label><!-- Num. Legislation --></label>
+        <name>Num_Legislation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overview --></label>
+        <name>Overview__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Roman Numeral that correlates with Policy Agenda --></help>
+        <label><!-- Rec Number (Roman Numeral) --></label>
+        <name>Rec_Number_Roman_Numeral__c</name>
+    </fields>
+    <fields>
+        <help><!-- goes up to 30 --></help>
+        <label><!-- Rec Number (Roman) (Deprecated) --></label>
+        <name>Rec_Number_Roman__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recommendation --></label>
+        <name>Recommendation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when policy priority was retired --></help>
+        <label><!-- Retire Date --></label>
+        <name>Retire_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retire Reason --></label>
+        <name>Retire_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Deprioritized</masterLabel>
+            <translation><!-- Deprioritized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive action</masterLabel>
+            <translation><!-- Executive action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legislation passed</masterLabel>
+            <translation><!-- Legislation passed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moved on</masterLabel>
+            <translation><!-- Moved on --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- When IAVA started engaging on this policy priority --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Interest</masterLabel>
+            <translation><!-- Interest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Legislation introduced</masterLabel>
+            <translation><!-- Legislation introduced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nothing</masterLabel>
+            <translation><!-- Nothing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation><!-- Retired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Formerly Policy Recommendation Priority by Focus Area --></help>
+        <label><!-- Subchapter Number --></label>
+        <name>Subchapter_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This Policy Recommendation relates to which level of govt or sector? --></help>
+        <label><!-- Targets --></label>
+        <name>Targets__c</name>
+        <picklistValues>
+            <masterLabel>Congress</masterLabel>
+            <translation><!-- Congress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive</masterLabel>
+            <translation><!-- Executive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Profits</masterLabel>
+            <translation><!-- Non-Profits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Philanthropy</masterLabel>
+            <translation><!-- Philanthropy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Sector</masterLabel>
+            <translation><!-- Private Sector --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State and Local</masterLabel>
+            <translation><!-- State and Local --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- 21st Century Solution --></label>
+        <name>X21st_Century_Solution__c</name>
+    </fields>
+    <layouts>
+        <layout>Policy Rec Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Overview --></label>
+            <section>Overview</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Track_a_Call --></label>
+        <name>Track_a_Call</name>
+    </webLinks>
+</CustomObjectTranslation>

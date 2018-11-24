@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Media Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Media Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted for Approval</masterLabel>
+            <translation><!-- Not Submitted for Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted for Approval</masterLabel>
+            <translation><!-- Submitted for Approval --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Completed Press Hit --></label>
+        <name>Completed_Press_Hit__c</name>
+        <relationshipLabel><!-- Media Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact Email --></label>
+        <name>Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Phone --></label>
+        <name>Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Contacted --></label>
+        <name>Date_Contacted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deadline --></label>
+        <name>Deadline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Format --></label>
+        <name>Format__c</name>
+        <picklistValues>
+            <masterLabel>Group Interview</masterLabel>
+            <translation><!-- Group Interview --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>One on One</masterLabel>
+            <translation><!-- One on One --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Written Statement</masterLabel>
+            <translation><!-- Written Statement --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Justification --></label>
+        <name>Justification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Live? --></label>
+        <name>Live__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medium --></label>
+        <name>Medium__c</name>
+        <picklistValues>
+            <masterLabel>Online Publication</masterLabel>
+            <translation><!-- Online Publication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print</masterLabel>
+            <translation><!-- Print --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radio</masterLabel>
+            <translation><!-- Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Press Outlet --></label>
+        <name>Press_Outlet__c</name>
+        <relationshipLabel><!-- Media Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Proposed Date and Time --></label>
+        <name>Proposed_Date_and_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Spokesperson --></label>
+        <name>Proposed_Spokesperson__c</name>
+        <relationshipLabel><!-- Media Requests (Proposed Spokesperson) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Recommended Action --></label>
+        <name>Recommended_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related to Program(s) --></label>
+        <name>Related_to_program__c</name>
+        <picklistValues>
+            <masterLabel>COV</masterLabel>
+            <translation><!-- COV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment Workshops</masterLabel>
+            <translation><!-- Employment Workshops --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Events</masterLabel>
+            <translation><!-- Events --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jobs Tool</masterLabel>
+            <translation><!-- Jobs Tool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local Leaders</masterLabel>
+            <translation><!-- Local Leaders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NGIB</masterLabel>
+            <translation><!-- NGIB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral Program</masterLabel>
+            <translation><!-- Referral Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Storm the Hill</masterLabel>
+            <translation><!-- Storm the Hill --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reporter / Producer --></label>
+        <name>Reporter_Producer__c</name>
+        <relationshipLabel><!-- Media Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Spokeperson Link --></label>
+        <name>Spokeperson_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Awaiting Publication</masterLabel>
+            <translation><!-- Awaiting Publication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending other staff input</masterLabel>
+            <translation><!-- Pending other staff input --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Topics --></label>
+        <name>Topics__c</name>
+        <picklistValues>
+            <masterLabel>Employment</masterLabel>
+            <translation><!-- Employment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gala</masterLabel>
+            <translation><!-- Gala --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IAVA Feature</masterLabel>
+            <translation><!-- IAVA Feature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LGBT Service members</masterLabel>
+            <translation><!-- LGBT Service members --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MST</masterLabel>
+            <translation><!-- MST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mental Health</masterLabel>
+            <translation><!-- Mental Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Military COLA</masterLabel>
+            <translation><!-- Military COLA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New GI Bill</masterLabel>
+            <translation><!-- New GI Bill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PTSD</masterLabel>
+            <translation><!-- PTSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RRRP</masterLabel>
+            <translation><!-- RRRP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red Tape Report</masterLabel>
+            <translation><!-- Red Tape Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STH2014</masterLabel>
+            <translation><!-- STH2014 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shutdown</masterLabel>
+            <translation><!-- Shutdown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suicide</masterLabel>
+            <translation><!-- Suicide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Summer Storm</masterLabel>
+            <translation><!-- Summer Storm --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA Backlog</masterLabel>
+            <translation><!-- VA Backlog --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vets Day</masterLabel>
+            <translation><!-- Vets Day --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Media Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_Press_Hit --></label>
+        <name>Create_Press_Hit</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,43 @@
+<apex:page controller="cov_feedback_controller" showHeader="false" sidebar="false" standardstylesheets="false">
+	<c:cov_include_js_jquery /> 
+	<c:cov_include_css_bootstrap /> 
+	<apex:includeScript value="{!URLFOR($Resource.JQuery_Raty, 'js/jquery.raty.js')}" />
+    <apex:styleSheet value="{!URLFOR($Resource.JQuery_Raty, 'css/application.css')}" /> 
+
+    <script>
+    // 	var j$ = jQuery.noConflict();
+
+    // 	j$(document).ready(function(){
+    // 		j$('#star').raty({
+    // 			path: "{!URLFOR($Resource.JQuery_Raty, 'img/')}",
+    // 			click: function(score, evt) {
+				//     j$('[id$="feedbackRating"]').val(score);
+				// } 
+    // 		});
+    // 	});
+    </script>
+
+	<body style="background-color:rgb(247, 247, 249);margin:0;">
+
+			<apex:form style="margin:0px;">
+			  <fieldset style="height:247px;margin:0;">
+		    	<!-- <label>Rate this page</label> -->
+		    	<apex:outputPanel rendered="{!NOT(submitted)}">
+			   		<!-- <div style="margin-bottom:10px;" id="star"></div> -->
+				    <label>Let us know your feedback. We want to hear it!</label>
+				    <apex:inputTextArea value="{!feedback.Message__c}" rows="5" style="width:95%"></apex:inputTextArea>
+				    <div style="margin-top:10px;">
+				    	<apex:commandLink styleClass="btn" action="{!Save}">Submit</apex:commandLink>
+				    </div>
+				</apex:outputPanel>
+				<apex:outputPanel rendered="{!submitted}">
+					<div class="alert alert-success">
+						<span style="font-size:14px;">Thank you for your feedback!</span>
+					</div>
+				</apex:outputPanel>
+			  </fieldset>
+			  <apex:inputHidden id="feedbackRating" value="{!feedback.Rating__c}" />
+			</apex:form>
+
+	</body>
+</apex:page>

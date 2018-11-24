@@ -1,0 +1,15 @@
+Hello,
+
+Here is the draft language for {!AIR__c.Contact_for_Followup_Note__c} from {!AIR__c.Name}:
+
+{!AIR__c.Draft_Language_for_ED__c}
+
+
+Other Event Details:
+Total Attendance: {!AIR__c.Num_Attended__c}
+Available Units:{!AIR__c.Num_Units__c}
+Positive Summary: {!AIR__c.Summary_Positive__c}
+Negative Summary: {!AIR__c.Summary_Negative__c}
+
+
+Here is a link to the Event Report : https://na8.salesforce.com/{!AIR__c.Id}

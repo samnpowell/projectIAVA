@@ -1,0 +1,162 @@
+<apex:page controller="cov_recentactivity_controller">
+    <apex:includeLightning />
+    <style>
+        #toggle_email_button_activity #status-notification{
+            font-size: 11px;
+            text-align: center;
+        }
+        #toggle_email_button_activity button{
+            width: 100%;
+            background-color: orange;
+            margin-bottom: 15px;
+            border: none;
+        }
+    </style>
+    <script>
+        $Lightning.use("c:EmailToggleButtonApp", function () {
+            $Lightning.createComponent("c:EmailToggleButton", {
+                class_when_on : 'custom-email-toggle-button',
+                class_when_off : 'custom-email-toggle-button'
+            }, 'toggle_email_button_activity', function (cmp) {                
+            });
+        });
+    </script>
+    <apex:outputPanel rendered="{!posts.size > 0}">
+    <!-- <apex:outputPanel rendered="{!OR(posts.size > 0, AND(NOT(isMobile), images!=null, images.size > 1) )}"> -->
+
+    <a name="recentactivity" />
+
+    <div class="dashboard-list" id="recent-activity">
+        <div class="box-heading">
+            <div class="box-heading-content">
+
+                <apex:form ><apex:commandLink action="{!refresh}" rerender="recent-activity-content"><span class="glyphicon glyphicon-refresh pull-right"></span></apex:commandLink></apex:form>
+                <h5>Recent Activity from <a href="{!$Site.currentSiteUrl}_ui/core/chatter/groups/GroupListPage?filter=all">Groups</a></h5>
+            </div>
+            <div class="relative pull-left"><div class="box-heading-edge"></div></div>
+        </div>
+
+        <div class="box-content">
+
+            <!-- <apex:pageMessages /> -->
+            <div id="toggle_email_button_activity"></div>
+            <apex:outputPanel >
+                <!-- <apex:include pageName="cov_image_gallery" /> -->
+
+
+                    <!-- <apex:includeScript value="{!URLFOR($Resource.bootstrap,'js/transition.js')}" /> -->
+                    <!-- <c:cov_js_utils /> -->
+<!--                <apex:outputPanel rendered="{!AND(NOT(isMobile), images!=null, images.size > 1, NOT($CurrentPage.Name == 'cov_dashboard_4'))}">
+
+                    <c:cov_include_js_jquery /> 
+                    <apex:includeScript value="{!URLFOR($Resource.cov_files,'js/jquery-ui.min.js')}" />
+                    <apex:styleSheet value="{!URLFOR($Resource.cov_files,'css/jquery-ui.min.css?G')}" />
+                    <apex:includeScript value="{!URLFOR($Resource.cov_files,'js/coverflow/jquery.coverflow.js')}" />
+                    <apex:includeScript value="{!URLFOR($Resource.cov_files,'js/coverflow/jquery.interpolate.js')}" />
+                    <apex:includeScript value="{!URLFOR($Resource.cov_files,'js/coverflow/jquery.mousewheel.js')}" />
+                    <apex:includeScript value="{!URLFOR($Resource.cov_files,'js/coverflow/jquery.touchSwipe.min.js')}" />
+                    <apex:includeScript value="{!URLFOR($Resource.cov_files,'js/coverflow/reflection.js')}" />
+
+                    <style type="text/css">
+                        #feed-images {
+                            height: 200px;
+                        }
+                    </style>
+                    <div id="feed-images" >
+                        <div class="coverflow">
+                            <apex:repeat value="{!images}" var="img">
+                                <img class="cover" src="{!img.image.downloadUrl}" height="150" />
+                            </apex:repeat>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        var j$ = jQuery.noConflict(); 
+                        j$(function() {
+                            // j$('.coverflow').coverflow({ 'index': 1, 'density': 2, innerOffset:  50, innerScale: .7});
+                            j$('.coverflow').coverflow({ 'index': 1, 'duration': 'slow', 'innerScale': .7 });
+                            if (j$.fn.reflect) {
+                                j$('.coverflow .cover').reflect();  // only possible in very specific situations
+                            }
+                        });
+                        j$(document).ready(function() {
+                            window.setTimeout(refr, 3000);
+                        });
+
+                        function refr() {
+                            j$('.coverflow').coverflow('refresh');
+                            j$('#feed-images').css('visibility', 'visible');
+                        }
+
+
+                    </script>
+                </apex:outputPanel> -->
+
+                
+                <apex:outputPanel id="recent-activity-content" >
+                    <table class="table">
+                        <tbody>
+
+                            <apex:repeat id="Posts" value="{!posts}" var="gp">
+
+                                <tr class="clickable-row lightshade" data-gid="{!gp.g.Id}">
+
+                                    <td>
+                                        <img src="{!gp.g.smallPhotoUrl}" class="list-thumbnail" />
+                                    </td>
+                                    <td colspan="2">
+                                            <span class="groupinfo displayName">
+                                                <!-- <span class="collaborationGroupMru"><img src="/s.gif" alt="Group" class="mruIcon" title="Group" /></span> -->                                              
+                                                <span class="dashboard-link-style">{!gp.g.Name}</span>
+                                                <apex:outputText rendered="{!gp.g.CollaborationType=='Private'}" value=" (Private)" styleclass="groups-recent-activity-private"/>
+                                            </span>
+                                    </td>
+                                </tr>
+
+                                
+
+                                        <!-- <table class="table cov-inner-table"> -->
+                                <apex:repeat value="{!gp.postList}" var="p">
+
+                                    <tr class="clickable-row" data-gid="{!gp.g.Id}">
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            <div class="text-center" style="display:inline-block;">
+                                                <apex:image value="{!p.smallPhotoUrl}" width="40" height="40" styleClass="user-photo" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="lighter"><apex:outputText value="{!p.creatorPublicNameNonBreaking + ': '}" escape="false"/></span><apex:outputText value="{!p.bodyShortened}" escape="false" />
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+
+                            </apex:repeat>
+
+
+                            <tr><td colspan="3"><a class="dashboard-more-link" href="{!$Site.currentSiteUrl}_ui/core/chatter/groups/GroupListPage?filter=all">More groups...</a></td></tr>
+
+                        </tbody>
+                    </table>
+                </apex:outputPanel>
+
+
+            </apex:outputPanel>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function() {
+            j$(".clickable-row").click(function() {
+                window.document.location = '{!$Site.currentSiteUrl}_ui/core/chatter/groups/GroupProfilePage?g=' + j$(this).data("gid");
+            });
+        });
+    </script>
+
+    </apex:outputPanel>
+
+</apex:page>

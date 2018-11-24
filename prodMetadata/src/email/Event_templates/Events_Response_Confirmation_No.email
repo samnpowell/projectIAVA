@@ -1,0 +1,20 @@
+Hi,
+
+We’re sorry to miss you at our upcoming {!IF(IAVAEvent_Attendee__c.Event_Type__c = "VetTogether", "VetTogether!","event!")}  We hope you can join us for the next one—be sure to visit the VetTogether page, http://iava.org/vettogether to see what else is available in your area. 
+
+Here’s the information again just in case your schedule clears up!
+
+{!IAVAEvent_Attendee__c.Event_Name__c} 
+{!IAVAEvent_Attendee__c.Event_Date__c} 
+{!IAVAEvent_Attendee__c.Event_Times__c} 
+
+{!IAVAEvent_Attendee__c.Event_Venue__c} 
+{!IAVAEvent_Attendee__c.Event_Street_Address__c} 
+{!IAVAEvent_Attendee__c.Event_CityStateZip__c}
+
+{!IAVAEvent_Attendee__c.Brief_Description__c} 
+
+More details available at: 
+https://cov.force.com/iava/cov_event?id={!IAVAEvent_Attendee__c.EventId__c}
+
+Thank you for supporting IAVA.

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>FAQ</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>FAQs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Answer --></label>
+        <name>Answer__c</name>
+    </fields>
+    <fields>
+        <help><!-- This determines the section the FAQ appears in. --></help>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Eligibility</masterLabel>
+            <translation><!-- Eligibility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>How Rewards Work</masterLabel>
+            <translation><!-- How Rewards Work --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modifying a Reward Request</masterLabel>
+            <translation><!-- Modifying a Reward Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Questions About IAVA Plus</masterLabel>
+            <translation><!-- Questions About IAVA Plus --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Question --></label>
+        <name>Question__c</name>
+    </fields>
+    <fields>
+        <help><!-- This number decides the order in which the FAQs on the site rank relative to one another. --></help>
+        <label><!-- Sort order --></label>
+        <name>Sort_order__c</name>
+    </fields>
+    <layouts>
+        <layout>FAQ Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

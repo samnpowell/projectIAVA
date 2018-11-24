@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Local email for Tom Tarantino&apos;s HVAC testimony</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Support IAVA on Capitol Hill</name>
+    <style>none</style>
+    <subject>Support IAVA on Capitol Hill</subject>
+    <textOnly>Dear {!Contact.FirstName},
+ 
+Join Senior Legislative Associate Tom Tarantino this Friday, June 15th, as he goes to Capitol Hill to continue the fight for the Veterans Opportunity to Work Act.
+ 
+What: Support Tom as he testifies before Congress on the H.R. 2433.
+Where: Meet at the IAVA DC Office 
+777 North Capitol NE, Suite 403 Washington, DC 20002
+
+When: Breakfast at 9 a.m. then walk over with the IAVA staff to the Capitol.
+ 
+Dress: Professional
+ 
+RSVP by logging on at &lt;http://iava.org/come-watch-iava-testify&gt;.
+ 
+Thanks,
+
+Nick
+
+Nick Colgin
+Membership Intern
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

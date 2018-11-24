@@ -1,0 +1,66 @@
+<apex:page id="step1" standardcontroller="Legislation__c" extensions="LegTargetingController" >
+
+ <apex:sectionHeader title="Legislation Targeting Wizard"
+                      subtitle="Select Legislative Contacts based on Member's Position on Bill {!Legislation__c.Name}"/>
+
+
+<apex:pageBlock rendered="{!Legislation__c.Id == null}" >
+
+This targeting wizard must be started from the Legislation record.
+
+</apex:pageBlock>
+
+<apex:form >
+
+
+<apex:pageBlock rendered="{!Legislation__c.Id != null}" >
+
+<apex:pageMessages ></apex:pageMessages>
+
+<apex:pageBlockSection columns="1">
+<!--Legislation lookup field-->
+	<apex:pageBlockSectionItem >
+            <apex:outputLabel value="Bill ID" for="the_bill"/>
+            <apex:outputLink value="/{!Legislation__c.Id}" id="the_bill">
+                <apex:outputText value="{!Legislation__c.Name}"/>
+            </apex:outputLink>
+    </apex:pageBlockSectionItem>
+	<apex:outputField value="{!Legislation__c.AKA__c}" rendered="{!Legislation__c.AKA__c != ''}" />
+	<apex:outputField value="{!Legislation__c.Bill_Title__c}" rendered="{!Legislation__c.AKA__c == ''}" />
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+<apex:pageBlock rendered="{!Legislation__c.Id != null}" >
+
+<apex:pageBlockButtons location="bottom">
+<!-- apex:commandButton value="Rerender" action="{!doIt}" rerender="messagesection"/ -->
+<apex:commandButton action="{!cancel}" value="Cancel"/>
+<apex:commandButton value="Next" action="{!doIt}" />
+</apex:pageBlockButtons>
+
+
+
+<apex:pageBlockSection columns="1">
+
+
+Target contacts in offices where the member's position on bill {!Legislation__c.Name} is...
+<c:MultiselectPicklist leftLabel="Position on the Bill"
+    leftOptions="{!allPositions}"
+    rightLabel="Positions to Target"
+    rightOptions="{!selectedPositions}"
+    size="6"
+    width="175px"/>
+
+<br />
+... and target these staff roles:
+<c:MultiselectPicklist leftLabel="Office Roles"
+    leftOptions="{!allRoles}"
+    rightLabel="Roles to Target"
+    rightOptions="{!selectedRoles}"
+    size="6"
+    width="175px"/>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

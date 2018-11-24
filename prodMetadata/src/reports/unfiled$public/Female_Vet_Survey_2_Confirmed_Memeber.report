@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Id</field>
+    </columns>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.R00N30000001MXePEAW__r$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.R00N30000001MXePEAW__r$Number_of_Unique_Clicks__c</field>
+    </columns>
+    <columns>
+        <field>Contact$kw__Gender__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Contact_Primary_Mailing_List__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contact.R00N30000001MXePEAW__r$Name</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Female Vet Survey #2 - Confirmed Memebers</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.R00N30000001MXePEAW__r$CreatedDate</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>3/23/2015 12:00 AM</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.R00N30000001MXePEAW__r$CreatedDate</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Female Vet Survey #2 - Confirmed Member</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_Individual_Email_Results__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact.R00N30000001MXePEAW__r$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

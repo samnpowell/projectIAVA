@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Give__c$Earliest_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$City_Formula__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$City__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Name</field>
+    </columns>
+    <columns>
+        <field>Give__c$Id</field>
+    </columns>
+    <columns>
+        <field>Give__c$Partnership_Request__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Number_of_Units__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Number_of_Confirmed_Units__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Number_Remaining__c</field>
+    </columns>
+    <columns>
+        <field>Give__c$Type__c</field>
+    </columns>
+    <description>All gives grouped by State Formula (if &quot;City, ST&quot; is filled out)</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Give__c$State_Formula__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Give__c$Status__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Gives by State</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Gives_with_Give_Instances__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Give__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

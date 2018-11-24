@@ -1,0 +1,19 @@
+Ahoy! A COV Error was logged.
+
+Error record: {!COV_Error__c.Link}
+
+When: {!COV_Error__c.Error_Date_Time__c}
+Type: {!COV_Error__c.Error_Type__c}
+URL: {!COV_Error__c.Original_URL__c}
+User: {!COV_Error__c.User__c}
+User ID: {!COV_Error__c.UserId__c}
+Stack Trace: {!COV_Error__c.Error_Stack_Trace__c}
+
+Developer Message:
+
+{!COV_Error__c.Developer_Message__c}
+
+
+Error Message:
+
+{!COV_Error__c.Full_Error_Message__c}

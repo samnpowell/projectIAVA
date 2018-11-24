@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>MHL Commercial Vets</name>
+    <style>none</style>
+    <subject>Your Miller High Life Commercial is on TV!</subject>
+    <type>text</type>
+</EmailTemplate>

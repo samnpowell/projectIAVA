@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Event Attendee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Event Attendees</value>
+    </caseValues>
+    <fields>
+        <help><!-- Additional feedback from Attendee --></help>
+        <label><!-- Additional Feedback --></label>
+        <name>Additional_Feedback__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attended --></label>
+        <name>Attended__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Attendee Name --></label>
+        <name>Attendee_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brief Description --></label>
+        <name>Brief_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Attendee&apos;s connection to community veterans --></help>
+        <label><!-- Connection to Community Veterans --></label>
+        <name>Connection_to_Community_Veterans__c</name>
+        <picklistValues>
+            <masterLabel>I don&apos;t know of any veterans near me</masterLabel>
+            <translation><!-- I don&apos;t know of any veterans near me --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I know a couple of veterans in my area</masterLabel>
+            <translation><!-- I know a couple of veterans in my area --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I know lots of fellow veterans and supporters in my area</masterLabel>
+            <translation><!-- I know lots of fellow veterans and supporters in my area --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ContactId_18 --></label>
+        <name>ContactId_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Existed Before Event --></label>
+        <name>Contact_Existed_Before_Event__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Event Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- 1= I did not meet anybody new; 5= I met great new people that I expect to see again. --></help>
+        <label><!-- Did you grow your own network? --></label>
+        <name>Did_you_grow_your_own_network__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Attendee&apos;s First Name --></label>
+        <name>Event_Attendee_s_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event CityStateZip --></label>
+        <name>Event_CityStateZip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Date --></label>
+        <name>Event_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event ID --></label>
+        <name>Event_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Attendee&apos;s Idea for future event --></help>
+        <label><!-- Event Ideas --></label>
+        <name>Event_Ideas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Name --></label>
+        <name>Event_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Prompted Portal Use --></label>
+        <name>Event_Prompted_Portal_Use__c</name>
+    </fields>
+    <fields>
+        <help><!-- Attendee&apos;s event rating; 1 is lowest and 5 is highest --></help>
+        <label><!-- Event Rating --></label>
+        <name>Event_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Status --></label>
+        <name>Event_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Street Address --></label>
+        <name>Event_Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Times --></label>
+        <name>Event_Times__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Type --></label>
+        <name>Event_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Venue --></label>
+        <name>Event_Venue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Year --></label>
+        <name>Event_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Year --></label>
+        <name>Event_Year_formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event --></label>
+        <name>Event__c</name>
+        <relationshipLabel><!-- Event Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Guest of --></label>
+        <name>Guest_of__c</name>
+    </fields>
+    <fields>
+        <help><!-- How attendee learned about the event --></help>
+        <label><!-- How did you hear about this Event? --></label>
+        <name>How_did_you_hear_about_this_Event__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family</masterLabel>
+            <translation><!-- Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend</masterLabel>
+            <translation><!-- Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Social Media</masterLabel>
+            <translation><!-- Social Media --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Attendee&apos;s interest in Hosting future event --></help>
+        <label><!-- Interest in Hosting --></label>
+        <name>Interest_in_Hosting__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Attendee is interested in future events --></help>
+        <label><!-- Interested in Future Events --></label>
+        <name>Interested_in_Future_Events__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- In case of multiple inviters for a single attendee, the history is tracked in this field (via workflow) and in some cases also via a relationship. --></help>
+        <label><!-- Inviter History --></label>
+        <name>Inviter_History__c</name>
+    </fields>
+    <fields>
+        <help><!-- The person who invited the attendee to the event (if multiple invitations this is the most recent inviter and multiple names are stored in the Inviter History field and with relationships). --></help>
+        <label><!-- Inviter (most recent) --></label>
+        <name>Inviter__c</name>
+        <relationshipLabel><!-- Event Invitations Sent --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Checked if attendee met someone new --></help>
+        <label><!-- Met Someone New --></label>
+        <name>Met_Someone_New__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- When checked this will send the event attendee a notification email about the change (or cancellation) of the event. It will then un-set itself so it can be used again for a future change. --></help>
+        <label><!-- Notify attendee of changed event --></label>
+        <name>Notify_attendee_of_changed_event__c</name>
+    </fields>
+    <fields>
+        <help><!-- Gets checked when a new invitation is created, and then workflow sends the notification and unchecks this field again for future use. --></help>
+        <label><!-- Notify attendee of invitation --></label>
+        <name>Notify_attendee_of_invitation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Attendee Id --></label>
+        <name>Parent_Attendee_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Attendee records for guests have the &quot;parent&quot; attendee record filled in here. --></help>
+        <label><!-- Parent Attendee (for guests) --></label>
+        <name>Parent_Attendee__c</name>
+        <relationshipLabel><!-- Guests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PowerOfOne --></label>
+        <name>PowerOfOne__c</name>
+    </fields>
+    <fields>
+        <help><!-- Quality of event interactions --></help>
+        <label><!-- Quality of Interactions --></label>
+        <name>Quality_of_Interactions__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, attendee received RRRP info --></help>
+        <label><!-- RRRP Info Received --></label>
+        <name>RRRP_Info_Received__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reason for not attending an event --></help>
+        <label><!-- Reason for Not Attending --></label>
+        <name>Reason_for_Not_Attending__c</name>
+        <picklistValues>
+            <masterLabel>I attended a different VetTogether.</masterLabel>
+            <translation><!-- I attended a different VetTogether. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I changed my mind after RSVPing.</masterLabel>
+            <translation><!-- I changed my mind after RSVPing. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I forgot.</masterLabel>
+            <translation><!-- I forgot. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>I had a conflict.</masterLabel>
+            <translation><!-- I had a conflict. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Attendee&apos;s reason for RSVPing --></help>
+        <label><!-- Reason for RSVP --></label>
+        <name>Reason_for_RSVP__c</name>
+        <picklistValues>
+            <masterLabel>Learn more about IAVA or other organizations</masterLabel>
+            <translation><!-- Learn more about IAVA or other organizations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meet other Veterans</masterLabel>
+            <translation><!-- Meet other Veterans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tag along with a friend</masterLabel>
+            <translation><!-- Tag along with a friend --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reply Status --></label>
+        <name>Reply_Status__c</name>
+        <picklistValues>
+            <masterLabel>Invited</masterLabel>
+            <translation><!-- Invited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Resend Attendee Survey --></label>
+        <name>Resend_Attendee_Survey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Searchable Name --></label>
+        <name>Searchable_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Attendance reported by event attendee --></help>
+        <label><!-- Self Reported Attended --></label>
+        <name>Self_Reported_Attended__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Suppress Attendee Notifications --></label>
+        <name>Suppress_Attendee_Notifications__c</name>
+    </fields>
+    <fields>
+        <help><!-- Relates to survey question: What you need from IAVA to Guide you? --></help>
+        <label><!-- What do you need from IAVA to Host? --></label>
+        <name>What_do_you_need_from_IAVA_to_Host__c</name>
+        <picklistValues>
+            <masterLabel>A call with IAVA staff</masterLabel>
+            <translation><!-- A call with IAVA staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A hosting partner</masterLabel>
+            <translation><!-- A hosting partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>An intro video to play about IAVA</masterLabel>
+            <translation><!-- An intro video to play about IAVA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call with a member who&apos;s hosted</masterLabel>
+            <translation><!-- Call with a member who&apos;s hosted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>How-to guides or tools</masterLabel>
+            <translation><!-- How-to guides or tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network of businesses to plug into</masterLabel>
+            <translation><!-- Network of businesses to plug into --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- change tracking for email --></label>
+        <name>change_tracking_for_email__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, attendee received myIAVA info --></help>
+        <label><!-- myIAVA Information Received --></label>
+        <name>myIAVA_Information_Received__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Event Attendee Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Event Attendee Survey Results --></label>
+            <section>Event Attendee Survey Results</section>
+        </sections>
+        <sections>
+            <label><!-- Event Info (from Event record) --></label>
+            <section>Event Info (from Event record)</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Sorry, your request was not accepted. Please contact membership@iava.org if you have questions. --></errorMessage>
+        <name>Contact_Blocked_check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Sorry, there are no more spots available at this event. --></errorMessage>
+        <name>Event_Reply_Cap_Check</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,28 @@
+<div style="max-width:563px; margin:0 auto;">
+<header><center><img src="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmBE&oid=00D4B0000008x9W&lastMod=1464037248000" alt="IAVA Logo" height="70" width="173"></center></header>
+<hr>
+<font face="Arial, Helvetica, sans-serif" size="3">
+</p>
+<p>Dear {!Give_Request__c.Applicant_Name__c},</p>
+<p>Thank you for joining us! We couldn’t do what we do without the support from people like you and to have you join our family means so much to us!</p>
+<p>We still need a little more information from you so you can enjoy the best member experience with IAVA. Please click on one of the choices below, if you are:
+<ul style="list-style-type:none">
+  <li><a href="https://www.iava.org/tell-us-more-about-you?tfa_ContactId={!URLENCODE(Give_Request__c.Applicant_Id__c)}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Name__c)),"&tfa_FIRSTNAME="&URLENCODE(Give_Request__c.Applicant_Name__c),"")}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Last_Name__c)),"&tfa_LASTNAME="&URLENCODE(Give_Request__c.Applicant_Last_Name__c),"")}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Email__c)),"&tfa_EMAIL="&URLENCODE(Give_Request__c.Applicant_Email__c),"")}&tfa_3783473255460=1&tfa_3783473255452=1">Pre-9/11 Veteran</a></li>
+  <li><a href="https://www.iava.org/tell-us-more-about-you?tfa_ContactId={!URLENCODE(Give_Request__c.Applicant_Id__c)}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Name__c)),"&tfa_FIRSTNAME="&URLENCODE(Give_Request__c.Applicant_Name__c),"")}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Last_Name__c)),"&tfa_LASTNAME="&URLENCODE(Give_Request__c.Applicant_Last_Name__c),"")}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Email__c)),"&tfa_EMAIL="&URLENCODE(Give_Request__c.Applicant_Email__c),"")}&tfa_3783473255460=1&tfa_3783473255454=1">Post-9/11 Veteran</a></li>
+  <li><a href="https://www.iava.org/tell-us-more-about-you?tfa_ContactId={!URLENCODE(Give_Request__c.Applicant_Id__c)}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Name__c)),"&tfa_FIRSTNAME="&URLENCODE(Give_Request__c.Applicant_Name__c),"")}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Last_Name__c)),"&tfa_LASTNAME="&URLENCODE(Give_Request__c.Applicant_Last_Name__c),"")}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Email__c)),"&tfa_EMAIL="&URLENCODE(Give_Request__c.Applicant_Email__c),"")}&tfa_3783473255462=1&tfa_3783473255421=tfa_3783473255422">Family Member of a Veteran</a></li>
+  <li><a href="https://www.iava.org/tell-us-more-about-you?tfa_ContactId={!URLENCODE(Give_Request__c.Applicant_Id__c)}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Name__c)),"&tfa_FIRSTNAME="&URLENCODE(Give_Request__c.Applicant_Name__c),"")}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Last_Name__c)),"&tfa_LASTNAME="&URLENCODE(Give_Request__c.Applicant_Last_Name__c),"")}{!IF(NOT(ISBLANK(Give_Request__c.Applicant_Email__c)),"&tfa_EMAIL="&URLENCODE(Give_Request__c.Applicant_Email__c),"")}&tfa_3783473255462=1">Supporter</a></li>
+</ul>
+</p>
+<p>Stay connected with us on social media! Check us out on <a href="https://www.facebook.com/IAVA.org/">Facebook</a>, <a href="https://twitter.com/iava">Twitter</a> and <a href="https://www.instagram.com/iava/">Instagram</a>.</p>
+<p>If you have any technical issues or join questions please contact us at <a href="mailto:myiava@iava.org">myiava@iava.org</a>.</p>
+<p>Thank you for your continued support of <a href="http://iava.org/">IAVA</a>!</p>
+<p>Sincerely,</p>
+Paul Rieckhoff</br>
+Iraq Veteran</br>
+Executive Director &amp; Founder</br>
+Iraq and  Afghanistan Veterans of America (IAVA)</br>
+</br>
+</font>
+<hr>
+<footer><center><a href="http://www.iava.org/join"><img src="https://c.cs51.content.force.com/servlet/servlet.ImageServer?id=0154B000000DmF1&oid=00D4B0000008x9W&lastMod=1464112887000" alt="Join IAVA" max-width=100%></a></center></footer>
+</div>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder Email for 3.28 Foundation Luncheon</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Foundation Luncheon Reminder</name>
+    <style>none</style>
+    <subject>Reminder: IAVA Roundtable Discussion on March 28</subject>
+    <textOnly>{!Contact.FirstName},
+
+On Thursday, March 28, IAVA will host a roundtable lunch for current and potential funders. The event will take place at IAVA&apos;s midtown headquarters, and we would be thrilled to have you join us.
+
+We are looking forward to a robust and informative discussion about the most urgent issues facing new veterans. IAVA will provide an overview of the veteran’s space and Catharine Grimes, Director of Corporate Philanthropy at Bristol-Myers Squibb Foundation, will lead a casual conversation about lessons learned from her experience in the field. Bristol-Myers Squibb, a longtime supporter, is currently funding a partnership between IAVA and Vets Prevail, an innovative online program which combines cutting edge behavioral science with groundbreaking software design to provide quality behavioral health care to veterans.
+
+We are excited to bring together various stakeholders who are interested in learning more about the veteran’s space. We are focused on using our knowledge and expertise to drive better conversations; share lessons learned and make a more meaningful impact.
+
+We hope you can join us for a productive and important conversation about how we can best respond to the challenges facing America&apos;s generation of veterans.
+
+Details are as follows:
+IAVA Roundtable Luncheon
+Thursday, March 28, 2013
+12 - 1pm
+292 Madison Avenue (between 40th &amp; 41st Streets)
+10th Floor
+New York, NY 10017
+
+Please RSVP to Kara Horowitz at kara@IAVA.org or 212-292-9699. We will also have a Conference Call Line set up for those who cannot attend in person.
+
+Looking forward to seeing you and having a great discussion.
+
+Best,
+
+Paul.
+
+--
+Paul Rieckhoff
+Chief Executive Officer and Founder
+Iraq and Afghanistan Veterans of America (IAVA)
+292 Madison Avenue
+New York, NY 10017
+212.982.9699
+
+Join IAVA in calling on President Obama to establish a Presidential Commission to end the VA disability benefits backlog. Sign the Petition at http://iava.org/storm-hill-2013-petition-2.</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,15 @@
+<apex:page standardController="Campaign" extensions="CampaignControllerExt" action="{!addDonors}">
+	<apex:pageMessage rendered="{!AND(Not(ISNULL(newMemberCount)), newMemberCount > 1)}" 
+		summary="{!newMemberCount} donors added to the Campaign" severity="Info" strength="3" >
+	</apex:pageMessage>
+	
+	<apex:pageMessage rendered="{!AND(Not(ISNULL(newMemberCount)), newMemberCount <= 1)}" 
+		summary="{!newMemberCount} donor added to the Campaign" severity="Info" strength="3" >
+	</apex:pageMessage>
+	
+	<p>&nbsp;</p>
+	
+	<apex:form >
+		<apex:commandButton value="Return to Campaign" action="{!back}" />
+	</apex:form>
+</apex:page>

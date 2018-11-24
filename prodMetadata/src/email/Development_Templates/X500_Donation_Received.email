@@ -1,0 +1,8 @@
+A new donation over $500 has been received:
+
+Donation Name: {!Opportunity.Name}
+Amount: {!Opportunity.Amount}
+Payment Method:{!NullValue(Opportunity.Payment_Method__c, "Payment Method: Not Specified")}
+Campaign: {!Opportunity.Campaign}
+
+Click here to view this donation: {!Opportunity.Link}

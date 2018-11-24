@@ -1,0 +1,11 @@
+<p>A solution to a research request has been drafted and needs your review & approval.</p> 
+
+//
+
+<p>Regarding: {!Case.Subject}
+<br>Currently assigned to: {!Case.Assigned_To__c}</p>
+ 
+<p>Drafted Solution:</p> 
+<p>{!Case.Draft__c}</p>
+
+<p>Click here to view the request and drafted solution: <a href="{!Case.Link}">{!Case.Link}</a></p>

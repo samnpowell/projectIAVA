@@ -1,0 +1,106 @@
+<apex:page controller="cov_gateway_controller" sidebar="false" showHeader="false" standardStylesheets="false">
+	
+  <apex:composition template="cov_template">
+  
+  
+    <apex:define name="layout"> 
+
+    	<div class="container" id="container-page">
+
+    	<div class="well">
+
+
+	<!-- 		<apex:outputPanel rendered="{!isInternalUser}">
+
+				<p>This is where an external user would need to accept the agreement to join COV.  Since you are an internal user, there is no agreement to accept.</p>
+
+				<p><apex:outputLink value="cov_dashboard">Proceed.</apex:outputLink></p>
+
+			</apex:outputPanel> -->
+
+
+			<!-- <apex:outputPanel rendered="{!not(isInternalUser)}"> -->
+
+				<apex:outputPanel rendered="{!hasAcceptedAgreement && alreadyHasPermissionSet}">
+
+					<p>
+						<apex:outputLink value="{!secureCOVURL + '/cov_dashboard'}">Continue to myIAVA.</apex:outputLink>
+
+					</p>
+
+				</apex:outputPanel>
+
+
+				<apex:outputPanel rendered="{!not(alreadyHasPermissionSet) && not(isAuthorized)}">
+
+					<apex:form styleClass="form">
+					  <fieldset>
+				    	<apex:outputPanel rendered="{!NOT(feedbackSubmitted)}">
+
+				    		<div>
+								<p>myIAVA is currently in closed beta. If you like you can <a onclick="document.getElementById('access-request-form').style.display='';return false;">request to become a beta tester</a>.</p>
+
+								<!-- <p>Use of COV is currently restricted.  Feel free to request access using the button below:</p> -->
+							</div>
+							<div id="access-request-form" style="display:none;">
+								<div>
+									<p>&nbsp;</p>
+									<label>Your Message</label>
+								</div>
+							  	<div class="form-group">
+								    <apex:inputTextArea style="width: 400px; height: 100px;" styleClass="form-control" value="{!feedbackMessage}" rows="5" />
+								</div>
+							  	<div class="form-group">
+							    	<apex:commandLink styleClass="btn btn-info" action="{!feedbackSave}">Request Access</apex:commandLink>
+							    </div>
+							</div>
+						</apex:outputPanel>
+						<apex:outputPanel rendered="{!feedbackSubmitted}">
+							<div class="form-group alert alert-success">
+								<span>Thanks, we'll let you know if a beta tester spot opens up for you.</span>
+							</div>
+						</apex:outputPanel>
+					  </fieldset>
+					</apex:form>
+				</apex:outputPanel>
+
+											 <!-- (if authorized OR in perm set)            AND  (haven't accepted        OR  not in perm set)) -->
+				<apex:outputPanel rendered="{!(isAuthorized || alreadyHasPermissionSet) && (not(hasAcceptedAgreement) || not(alreadyHasPermissionSet))}">
+
+					<h2>Join us in myIAVA</h2>
+
+					<p>&nbsp;</p>
+
+					<p>Welcome to myIAVA Beta. We're happy to have you on board as a beta tester.</p>
+
+					<p>
+						To get started click the "I Agree" button below, which signifies that you:
+					</p>
+						<ul>
+							<li>Want to join myIAVA and connect with others.</li>
+							<li>Have correctly represented your veteran status and personal information.</li>
+							<li>Agree to the <a href="http://iava.org/code-of-conduct" target="_blank">myIAVA Code of Conduct</a>.</li>
+							<li>Agree that your profile will be visible to all other myIAVA users.</li>
+							<!-- <li>Agree to the <a href="#">Terms of Service</a>.</li> -->
+						</ul>
+
+					<p>&nbsp;</p>
+
+					<apex:form >
+						<apex:commandButton action="{!accept}" value="I Agree, Let's Go" styleclass="btn btn-success" />
+					</apex:form>
+
+				</apex:outputPanel>
+
+			<!-- </apex:outputPanel> -->
+
+		</div>
+
+		</div>
+	
+	</apex:define>
+
+   </apex:composition>
+
+
+</apex:page>

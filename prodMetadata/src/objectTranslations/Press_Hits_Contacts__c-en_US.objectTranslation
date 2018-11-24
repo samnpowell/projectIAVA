@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Press Hits - Contacts</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Press Hits - Contacts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Article Title --></label>
+        <name>Article_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Press Hits - Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Press Hit Ad Value --></label>
+        <name>Press_Hit_Ad_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Press Hit Story Date --></label>
+        <name>Press_Hit_Story_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Press Hit --></label>
+        <name>Press_Hit__c</name>
+        <relationshipLabel><!-- Press Hits - Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Press Hit within last 365 --></label>
+        <name>Press_Hit_within_last_365__c</name>
+    </fields>
+    <fields>
+        <label><!-- Press Outlet --></label>
+        <name>Press_Outlet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Author</masterLabel>
+            <translation><!-- Author --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blogger</masterLabel>
+            <translation><!-- Blogger --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Editorial Staff</masterLabel>
+            <translation><!-- Editorial Staff --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interviewee</masterLabel>
+            <translation><!-- Interviewee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referenced</masterLabel>
+            <translation><!-- Referenced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporter</masterLabel>
+            <translation><!-- Reporter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spokesperson</masterLabel>
+            <translation><!-- Spokesperson --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Story Date --></label>
+        <name>Story_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier --></label>
+        <name>Tier__c</name>
+    </fields>
+    <layouts>
+        <layout>Press Hits - Contacts Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

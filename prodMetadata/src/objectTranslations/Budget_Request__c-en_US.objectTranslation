@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Budget Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Budget Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Actual Spend --></label>
+        <name>Actual_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved Budget --></label>
+        <name>Approved_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event --></label>
+        <name>Event__c</name>
+        <relationshipLabel><!-- Budget Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requested Budget --></label>
+        <name>Requested_Budget__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved for Requested Amount</masterLabel>
+            <translation><!-- Approved for Requested Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved with New Amount</masterLabel>
+            <translation><!-- Approved with New Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Budget Request Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You must enter an Approved Budget when approving a budget request. If you do not have access to the Approved Budget field, you cannot approve a budget request. --></errorMessage>
+        <name>OnlyCertainUsersCanApproveBudgetRequest</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Budget_Request --></label>
+        <name>New_Budget_Request</name>
+    </webLinks>
+</CustomObjectTranslation>

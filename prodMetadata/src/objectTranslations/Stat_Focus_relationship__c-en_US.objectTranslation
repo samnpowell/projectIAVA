@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stat - Focus Area relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stat - Focus Area relationships</value>
+    </caseValues>
+    <fields>
+        <help><!-- Which Focus Area does the Stat relate to? --></help>
+        <label><!-- Related Focus Area --></label>
+        <name>Related_Focus_Area__c</name>
+        <relationshipLabel><!-- Stats related to this Focus Area --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Which Stats are related to the Focus Area? --></help>
+        <label><!-- Related Stat --></label>
+        <name>Related_Stat__c</name>
+        <relationshipLabel><!-- Focus Areas related to this Stat --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Stat related to Focus Area Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

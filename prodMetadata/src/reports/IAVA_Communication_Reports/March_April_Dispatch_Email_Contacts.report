@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Contact_ID_18_digits__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Id</field>
+    </columns>
+    <columns>
+        <field>Contact$FirstName</field>
+    </columns>
+    <columns>
+        <field>Contact.R00N30000001MXePEAW__r$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contact.R00N30000001MXePEAW__r$Subject_Line__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>March Monthly Dispatch,IAVA&apos;s Monthly Dispatch - April</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.R00N30000001MXePEAW__r$Opened__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>March &amp; April Dispatch Email Contacts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Contacts_with_Individual_Email_Results__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact.R00N30000001MXePEAW__r$CreatedDate</dateColumn>
+        <endDate>2015-04-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-03-01</startDate>
+    </timeFrameFilter>
+</Report>

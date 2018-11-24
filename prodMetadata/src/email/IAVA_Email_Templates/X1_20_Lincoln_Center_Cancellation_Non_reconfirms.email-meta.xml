@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>1/20 Lincoln Center - Cancellation/Non-reconfirms</name>
+    <style>none</style>
+    <subject>From IAVA: Tickets no longer reserved for 1/20 Budapest Festival Orchestra</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,23 @@
+<p>Dear {!Contact.FirstName},</p>
+
+<p>Thank you for becoming a member of IAVA. We are thrilled to welcome you to the family! Here are three things you’ll want to do right away:</p>
+ 
+<p>1. Join <A href="https://my.iava.org">myIAVA</a>. It’s an online community that offers our member veterans exclusive access to private groups, events, and free giveaways. It’s also a place where you can organize your own events and benefit from a support network of veterans across the country.
+
+<p>2. Check out our brand new <a href="http://vettogethers.org/">VetTogether</a> Events page, to find out what cool things are going on your neighborhood!
+ 
+<p>3. <a href="https://secure.iava.org/nominate-your-peers?tfa_82={!Contact.Contact_ID_18_digits__c}&amp;tfa_1={!Contact.FirstName}&amp;tfa_2={!Contact.LastName}&amp;tfa_3={!Contact.Email}">Invite your friends</a>
+ to join. We want to reach every OIF/OEF/OND vet in the country and invite them to become part of our growing community. We need your help finding them. Invite the men and women you served with or any other veterans you know to join IAVA.</p>
+ 
+<p>In addition, our members have built a thriving online community on our other social networks. There’s always something fun happening on our <A href="https://www.facebook.com/IAVA.org">Facebook</a> page. Follow us on <a href="https://twitter.com/iava">Twitter</a> and you’ll get tons of updates in your timeline on things happening at IAVA and in the veterans community. Shutterbugs will want to hook up with us on <a href="http://instagram.com/iava">Instagram</a>. 
+
+<p>Now that you’re part of IAVA, you’re part of so much more. You’re part of the movement that’s currently fighting to end the VA disability benefits backlog. You’re part of the organization that secured advanced funding for VA healthcare and helped push the Vow to Hire Heroes Act through a divided Congress. You’re part of part of the group that championed the New GI Bill. Most importantly, you’re part of a community that is committed to improving the lives of veterans and their families – a community that works together and gets results.</p>
+ 
+<p>It’s an exciting time to be a member of IAVA. Be sure to check your email regularly for exciting updates and opportunities to get more involved!</p>
+ 
+ 
+<p>Best,</p>
+
+ 
+<p>Anthony Pike, Acting Membership Director <br/>
+OIF Veteran, USMC</p>

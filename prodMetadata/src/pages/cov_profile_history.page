@@ -1,0 +1,33 @@
+<apex:page id="cov_profile_history" sidebar="false" showHeader="false" standardStylesheets="false" >
+
+<apex:composition template="cov_template_noheader">
+
+<apex:define name="layout">
+
+    <div class="returnLink-wrapper clearfix">
+        <div class="returnLink pull-right">
+            <apex:outputLink value="{!$Page.cov_dashboard}" target="_parent">Back to Home >></apex:outputLink>
+        </div>
+    </div>
+    
+    <apex:pageMessages />
+    
+    <div class="container profile-frame" id="container-overall">
+    
+<!--            <apex:define name="Event History">
+                <apex:include pageName="cov_profile_eventhistory" rendered="false" />
+            </apex:define> -->
+
+            <apex:define name="Reward History">
+                <apex:include pageName="cov_profile_rewardhistory" />
+            </apex:define> 
+
+    
+    
+    </div>
+
+</apex:define>
+
+</apex:composition>
+
+</apex:page>

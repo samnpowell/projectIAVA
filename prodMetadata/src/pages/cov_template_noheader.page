@@ -1,0 +1,47 @@
+<apex:page id="cov_template_noheader" sidebar="false" showHeader="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+<html style="o" prefix="og: http://ogp.me/ns#">  
+  <head>  
+    <title><apex:insert name="page-title" /></title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    <c:cov_meta_tags />
+    <apex:insert name="meta-tags" />
+
+
+        <apex:define name="stylesheets">
+            <c:cov_stylesheets /> 
+        </apex:define>  
+
+    
+        <c:cov_include_js_jquery /> 
+        <c:cov_include_js_bootstrap /> 
+        
+    
+  </head>  
+  <body class="bootstrap">  
+
+  
+  
+    <div class="container-fluid" id="container-overall">
+
+        <apex:pageMessages id="messages" escape="false"/> 
+  
+        <apex:insert name="layout" />
+  
+     
+
+  </div> <!-- .container-fluid -->
+
+    <apex:define name="footer">
+      <c:cov_footer /> 
+    </apex:define>  
+
+
+
+  <c:cov_js_utils /> 
+
+
+  </body>  
+  
+  
+</html>  
+</apex:page>

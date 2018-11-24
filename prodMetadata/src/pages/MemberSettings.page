@@ -1,0 +1,11 @@
+<apex:page controller="MemberSettingsController" >
+	<apex:form >
+		<apex:pageMessages />
+		<apex:pageBlock title="Member Settings" mode="edit" rendered="{!Not(isBlank(settings))}" >
+			<apex:pageBlockSection columns="2" >
+				<apex:outputField value="{!settings.Last_Member_ID__c}" />
+				<apex:commandButton value="Increment Member ID" action="{!incrementMemberId}" />
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifies IAVA staff when a member whose rucksack status is Notify requests a give</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>RuckSack - notify staff of new request for notify contact</name>
+    <style>none</style>
+    <subject>Rucksack - give request by {!Give_Request__c.Applicant__c} - {!Give_Request__c.Email_Address__c}</subject>
+    <type>text</type>
+</EmailTemplate>

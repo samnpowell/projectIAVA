@@ -1,0 +1,13 @@
+A new testimony record has been created by {!DC_Event__c.CreatedBy}:
+
+{!DC_Event__c.Name}
+Start Date: {!DC_Event__c.Date_and_Time__c}
+Time: {!DC_Event__c.Time__c}
+
+Type: {!DC_Event__c.Type__c}
+Committee: {!DC_Event__c.Committee__c}
+Subcommittee: {!DC_Event__c.Subcommittee__c}
+
+
+View the record here: 
+{!DC_Event__c.Link}

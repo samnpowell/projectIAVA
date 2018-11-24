@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stat Measurement</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stat Measurements</value>
+    </caseValues>
+    <fields>
+        <help><!-- Amount Type (inherited from Stat record) --></help>
+        <label><!-- Amount Type --></label>
+        <name>Amount_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The actual measurement amount, e.g. for 25% enter &quot;25&quot;. Make sure to use whole numbers as well, as in 2,400,000 rather than &quot;2.4 million&quot; --></help>
+        <label><!-- Measurement Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount from Comparison Measurement 1 --></help>
+        <label><!-- Comparison 1 Amount --></label>
+        <name>Comparison_1_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Difference between Amount and Comparison 1 Amount --></help>
+        <label><!-- Change since Comparison 1 --></label>
+        <name>Comparison_1_Change__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Date from Comparison Measurement 1 --></help>
+        <label><!-- Comparison 1 Date --></label>
+        <name>Comparison_1_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount from Comparison Measurement 2 --></help>
+        <label><!-- Comparison 2 Amount --></label>
+        <name>Comparison_2_Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Difference between Amount and Comparison 2 Amount --></help>
+        <label><!-- Change since Comparison 2 --></label>
+        <name>Comparison_2_Change__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Date from Comparison Measurement 2 --></help>
+        <label><!-- Comparison 2 Date --></label>
+        <name>Comparison_2_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stat Measurement to compare to current amount. --></help>
+        <label><!-- Comparison Measurement 1 --></label>
+        <name>Comparison_Measurement_1__c</name>
+        <relationshipLabel><!-- Comparison Measurements --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Stat Measurement to compare to current amount. --></help>
+        <label><!-- Comparison Measurement 2 --></label>
+        <name>Comparison_Measurement_2__c</name>
+        <relationshipLabel><!-- Comparison Measurements 2 --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Last date covered by this measurement.  E.g. if it covers June 2011, enter &quot;6/30/2011&quot;. --></help>
+        <label><!-- Measurement End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Link to source of specific stat measurement --></help>
+        <label><!-- Stat Measurement Link --></label>
+        <name>Link__c</name>
+    </fields>
+    <fields>
+        <help><!-- On what date was this measurement taken or reported? --></help>
+        <label><!-- Measurement Date --></label>
+        <name>Measurement_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- E.g. analysis of the current measurement. --></help>
+        <label><!-- Other Measurement Notes --></label>
+        <name>Other_Measurement_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Links --></label>
+        <name>Related_Links__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, the system will trigger a notification to the designated team about this measurement as soon as the record is saved.  The checkbox then gets cleared so it can be used again. --></help>
+        <label><!-- Send notification when I click Save --></label>
+        <name>Send_notification_when_saved__c</name>
+    </fields>
+    <fields>
+        <help><!-- First date covered by this measurement.  E.g. if it covers June 2011, enter &quot;6/1/2011&quot;. --></help>
+        <label><!-- Measurement Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This stat measurement is considered good until this date. --></help>
+        <label><!-- Stat Good Until --></label>
+        <name>Stat_Good_Until__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is a measurement of which Stat? --></help>
+        <label><!-- Stat --></label>
+        <name>Stat__c</name>
+        <relationshipLabel><!-- Stat Measurements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amount Type (deprec) --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Number</masterLabel>
+            <translation><!-- Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percent</masterLabel>
+            <translation><!-- Percent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate</masterLabel>
+            <translation><!-- Rate --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Stat Measurement Layout</layout>
+        <sections>
+            <label><!-- Comparison Measurements --></label>
+            <section>Comparison Measurements</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

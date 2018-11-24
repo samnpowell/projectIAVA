@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Cases - RR Draft Approval</name>
+    <style>none</style>
+    <subject>Research Request solution awaiting approval: {!Case.Subject}</subject>
+    <textOnly>A solution to a research request has been drafted and needs your review &amp; approval. 
+
+//
+
+Regarding: {!Case.Subject}
+Resolved by: {!Case.Assigned_To__c}
+ 
+Drafted Resolution: 
+{!Case.Solution_Description}
+
+Click here to view the request and solution: {!Case.Link}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>STH Panel Confirmation</name>
+    <style>none</style>
+    <subject>IAVA&apos;s Membership Panel</subject>
+    <textOnly>Dear {!Contact.FirstName},
+
+We look forward to seeing you this Sunday night for IAVA&apos;s Membership Panel featuring Col. David Sutherland and Mrs. Holly Petraeus. Please fill out this short form to confirm your seat and to tell us if you will be bringing a guest.
+
+Where: The Westin Washington, DC City Center
+1400 M St., NW
+Washington, DC 20005
+
+When: Sunday, March 25th from 5-7 pm
+
+I look forward to seeing you there.
+
+Best,
+Jason
+
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America (IAVA)</textOnly>
+    <type>custom</type>
+</EmailTemplate>

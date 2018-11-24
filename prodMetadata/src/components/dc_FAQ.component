@@ -1,0 +1,43 @@
+<apex:component controller="dc_ctrl_FAQ">
+<div class="view view-page-full one-node">
+    <div class="view-header">
+    <h1 class="title"><span>Frequently Asked Questions</span></h1>
+    </div>
+    <div class="view-content">
+    <div class="views-row-1 views-row-odd"> 
+    <div class="node node-type-page">
+    <div class="node-inner">
+    <div class="content">   
+    <apex:form >
+	<apex:repeat id="custfaq" value="{!CUSTFAQ}" var="faq">
+	<h3><apex:outputtext value="{!faq.cat}" rendered="{!if(faq.changetitle == 'true',true,false)}" /></h3>
+    <div class="view view-aboutus view-id-aboutus view-display-id-page_1 view-dom-id-1">
+    <div class="view-content">
+    <div class="views-row-1 views-row-odd views-row-first">
+                            <h4 class="title"><apex:outputtext value="{!faq.que}" /></h4>
+                            <p></p><p class="description"><span style="white-space:pre-wrap"><apex:outputtext value="{!faq.ans}" escape="false"/></span></p> 
+                           <!--  <div class="stats"> 
+                                  <div class="col-left">
+                                      <p></p> 
+                                      <p></p> 
+                                  </div> 
+                                  <div class="col-right"> 
+                                      <p></p> 
+                                  </div> 
+                             </div>  -->
+                              <div class="clearfix"></div>    
+                        
+	</div> 
+	</div> 	
+	</div> 
+	<apex:outputpanel rendered="{!if(faq.changeline == 'true',true,false)}">
+	<div class="hr"><hr/></div>
+	</apex:outputpanel>
+</apex:repeat></apex:form> 
+</div> </div></div></div>
+<div class="clearfix"></div> 
+ </div>
+
+       </div> <!-- /view --> 
+
+</apex:component>

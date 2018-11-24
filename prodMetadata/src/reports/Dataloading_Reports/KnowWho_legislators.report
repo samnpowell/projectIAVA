@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact.kw__KnowWhoId__c</field>
+    </columns>
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>Contact.Bioguide_ID__c</field>
+    </columns>
+    <columns>
+        <field>BIRTHDATE</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__Chamber__c</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__District__c</field>
+    </columns>
+    <columns>
+        <field>Contact.kw__StateOfCoverage__c</field>
+    </columns>
+    <columns>
+        <field>Contact.DIA_ID__c</field>
+    </columns>
+    <columns>
+        <field>CONTACT_ID</field>
+    </columns>
+    <columns>
+        <field>CONTACT_OWNER</field>
+    </columns>
+    <filter>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <column>Contact.kw__KW_Category__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Fed Legislator</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.kw__Chamber__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>US House</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.kw__Chamber__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>US Senate</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>KnowWho legislators</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

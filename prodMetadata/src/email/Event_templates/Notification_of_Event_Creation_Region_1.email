@@ -1,0 +1,14 @@
+Hi,
+
+The following event has been created in your region by {!IAVAEvent__c.Creator_Contact__c}.
+
+It's taking place at {!IAVAEvent__c.Location_City__c}, {!IAVAEvent__c.Location_State__c} on
+{!IAVAEvent__c.Event_Date__c}.
+
+Description: {!IAVAEvent__c.Brief_Description__c}
+
+More details available at:
+
+https://na8.salesforce.com/{!IAVAEvent__c.Id}
+
+https://my.iava.org/iava/cov_event?id={!IAVAEvent__c.Id} (only works if the event was created from myIAVA)

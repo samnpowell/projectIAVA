@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Small version of Closed Lost image</description>
+    <internalUseOnly>true</internalUseOnly>
+    <keywords>closed, lost, small, donation, stage</keywords>
+    <name>Layout img - closed lost small</name>
+    <public>false</public>
+</Document>

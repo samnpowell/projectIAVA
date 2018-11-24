@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notifies staff when a new testimony record created.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Policy_New Testimony record</name>
+    <style>none</style>
+    <subject>New testimony record: {!DC_Event__c.Name} - {!DC_Event__c.Date_and_Time__c}</subject>
+    <type>text</type>
+</EmailTemplate>

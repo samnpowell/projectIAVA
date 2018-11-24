@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Track a Call to Policy Rec</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Track a Call to Policy Recs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Policy Recommendation --></label>
+        <name>Policy_Recommendation__c</name>
+        <relationshipLabel><!-- Tracked Calls related to this Policy Rec --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Track a Call --></label>
+        <name>Track_a_Call__c</name>
+        <relationshipLabel><!-- Policy Recommendations related to this Tracked Call --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Track a Call to Policy Rec Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

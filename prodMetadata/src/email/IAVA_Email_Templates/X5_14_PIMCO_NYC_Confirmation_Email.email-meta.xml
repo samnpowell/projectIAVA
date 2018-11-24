@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>5/14 PIMCO NYC - Confirmation Email</name>
+    <style>none</style>
+    <subject>From IAVA: Information for PIMCO Veteran Employment Workshop, Tuesday, May 14</subject>
+    <type>text</type>
+</EmailTemplate>

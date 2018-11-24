@@ -1,0 +1,128 @@
+<apex:page showHeader="false" sidebar="false" controller="cov_monitor_controller">
+
+<apex:composition template="cov_template">
+<apex:define name="layout">
+
+
+	<div class="bootstrap" >
+		<div class="container" >
+			<apex:pageMessages />
+			<div class="tabbable">
+				<ul class="nav nav-tabs">
+					<li class="active">
+				   	<a href="#overview" data-toggle="tab">Overview</a>
+					</li>
+					<li><a href="#recentChatter" data-toggle="tab">All Recent Chatter</a></li>
+					<li><a href="#ignoredChatter" data-toggle="tab">Ignored Chatter</a></li>
+					<li><a href="#popularChatter" data-toggle="tab">Popular Chatter</a></li>
+					<li><a href="#myCustomerChatter" data-toggle="tab">My Customer Chatter</a></li>
+				</ul>
+				<div class="tab-content">
+	    			<div class="tab-pane active" id="overview">
+						<div class="row-fluid" >
+
+							<div class="span3" >
+								<div class="well" style="text-align:center;">
+									<h4>Chatter Posts Today</h4>
+									<h2>{!chatterPostsToday}</h2>
+								</div>
+							</div>
+							<div class="span3" >
+								<div class="well" style="text-align:center;">
+									<h4>Comments Today</h4>
+									<h2>{!chatterCommentsToday}</h2>
+								</div>
+							</div>
+							<div class="span3" >
+								<div class="well" style="text-align:center;">
+									<h4>Questions Today</h4>
+									<h2>{!questionsToday}</h2>
+								</div>
+							</div>
+							<div class="span3" >
+								<div class="well" style="text-align:center;">
+									<h4>Answers Today</h4>
+									<h2>{!answersToday}</h2>
+								</div>
+							</div>
+						</div>
+						<div class="row-fluid" >
+							<div class="well span6" >
+								<h2>New Groups</h2>
+								<apex:repeat value="{!recentGroups}" var="g">
+									<p><apex:image value="{!URLFOR(g.smallPhotoUrl)}" style="width:45px;" />&nbsp;<a href="{!$Site.CurrentSiteUrl}{!g.id}" >{!g.name}</a></p>
+								</apex:repeat>
+							</div>
+							<div class="well span6" >
+								<h2>New Users</h2>
+								<apex:repeat value="{!recentMembers}" var="rm">
+									<p><apex:image value="{!URLFOR(rm.smallPhotoUrl)}" style="width:45px;" />&nbsp;<a href="{!$Site.CurrentSiteUrl}{!rm.id}" >{!rm.name}</a> ({!rm.companyName})</p>
+								</apex:repeat>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="recentChatter">
+						<apex:repeat value="{!recentChatter}" var="recc">
+							<apex:outputPanel rendered="{!recc.networkscope = networkid}" ><p>
+								{!recc.CreatedBy.Name} -&nbsp;
+								<apex:outputText value="{0,date,MMM dd, yyyy}">
+						      	<apex:param value="{!recc.createdDate}" />
+						   	</apex:outputText> -&nbsp;
+								{!recc.commentCount} Comments
+								<apex:outputPanel rendered="{!BEGINS(recc.parentid, '0F9')}" > - <a href="{!$Site.CurrentSiteUrl}{!recc.parentId}" >{!groupNameMap[recc.parentId]}</a></apex:outputPanel>
+								<br/>
+								<a href="{!$Site.CurrentSiteUrl}{!recc.id}" >{!recc.body}</a>
+							</p></apex:outputPanel>
+						</apex:repeat>
+					</div>
+					<div class="tab-pane" id="ignoredChatter">
+						<apex:repeat value="{!ignoredChatter}" var="igc">
+							<apex:outputPanel rendered="{!igc.networkscope = networkid}" ><p>
+								{!igc.CreatedBy.Name} -&nbsp;
+								<apex:outputText value="{0,date,MMM dd, yyyy}">
+						      	<apex:param value="{!igc.createdDate}" />
+						   	</apex:outputText> -&nbsp;
+								{!igc.commentCount} Comments
+								<apex:outputPanel rendered="{!BEGINS(igc.parentid, '0F9')}" > - <a href="{!$Site.CurrentSiteUrl}{!igc.parentId}" >{!groupNameMap[igc.parentId]}</a></apex:outputPanel>
+								<br/>
+								<a href="{!$Site.CurrentSiteUrl}{!igc.id}" >{!igc.body}</a>
+							</p></apex:outputPanel>
+						</apex:repeat>
+					</div>
+					<div class="tab-pane" id="popularChatter">
+						<apex:repeat value="{!popularChatter}" var="popc">
+							<apex:outputPanel rendered="{!popc.networkscope = networkid}" ><p>
+								{!popc.CreatedBy.Name} -&nbsp;
+								<apex:outputText value="{0,date,MMM dd, yyyy}">
+						      	<apex:param value="{!popc.createdDate}" />
+						   	</apex:outputText> -&nbsp;
+								{!popc.commentCount} Comments
+								<apex:outputPanel rendered="{!BEGINS(popc.parentid, '0F9')}" > - <a href="{!$Site.CurrentSiteUrl}{!popc.parentId}" >{!groupNameMap[popc.parentId]}</a></apex:outputPanel>
+								<br/>
+								<a href="{!$Site.CurrentSiteUrl}{!popc.id}" >{!popc.body}</a>
+							</p></apex:outputPanel>
+						</apex:repeat>
+					</div>
+					<div class="tab-pane" id="myCustomerChatter">
+						<apex:repeat value="{!myCustomerChatter}" var="mycc">
+							<apex:outputPanel rendered="{!mycc.networkscope = networkid}" ><p>
+								{!mycc.CreatedBy.Name} -&nbsp;
+								<apex:outputText value="{0,date,MMM dd, yyyy}">
+						      	<apex:param value="{!mycc.createdDate}" />
+						   	</apex:outputText> -&nbsp;
+								{!mycc.commentCount} Comments
+								<apex:outputPanel rendered="{!BEGINS(mycc.parentid, '0F9')}" > - <a href="{!$Site.CurrentSiteUrl}{!mycc.parentId}" >{!groupNameMap[mycc.parentId]}</a></apex:outputPanel>
+								<br/>
+								<a href="{!$Site.CurrentSiteUrl}{!mycc.id}" >{!mycc.body}</a>
+							</p></apex:outputPanel>
+						</apex:repeat>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</apex:define>	
+</apex:composition>
+</apex:page>

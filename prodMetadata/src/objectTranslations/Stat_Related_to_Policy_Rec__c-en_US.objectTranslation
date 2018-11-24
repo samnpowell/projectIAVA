@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stat Related to Policy Rec</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stats Related to Policy Recs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Policy Recommendation --></label>
+        <name>Policy_Recommendation__c</name>
+        <relationshipLabel><!-- Stats Related to Policy Recs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Stat --></label>
+        <name>Stat__c</name>
+        <relationshipLabel><!-- Stats Related to Policy Recs --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

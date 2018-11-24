@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Programs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Average Customer Service Rating --></label>
+        <name>Average_Customer_Service_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Effectiveness Rating --></label>
+        <name>Average_Effectiveness_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Overall Rating --></label>
+        <name>Average_Overall_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Quality Rating --></label>
+        <name>Average_Quality_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average Timeliness Rating --></label>
+        <name>Average_Timeliness_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Average of Master Ratings --></label>
+        <name>Average_of_Master_Ratings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Best in Class --></label>
+        <name>Best_in_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Rated Referrals --></label>
+        <name>Count_of_Rated_Referrals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count of Total Referrals --></label>
+        <name>Count_of_Total_Referrals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created More than 30 Referrals --></label>
+        <name>Created_More_Than_30_Referrals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Emailed Description --></label>
+        <name>Emailed_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Intake Instructions --></label>
+        <name>External_Intake_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Five Star Service Provider --></label>
+        <name>Five_Star_Service_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Focus Area --></label>
+        <name>Focus_Area__c</name>
+        <relationshipLabel><!-- Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Funder(s) --></label>
+        <name>Funder_s__c</name>
+        <picklistValues>
+            <masterLabel>Robin Hood</masterLabel>
+            <translation><!-- Robin Hood --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- HEEC --></label>
+        <name>HEEC__c</name>
+        <picklistValues>
+            <masterLabel>Community</masterLabel>
+            <translation><!-- Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employment</masterLabel>
+            <translation><!-- Employment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health</masterLabel>
+            <translation><!-- Health --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Internal Intake Instructions --></label>
+        <name>Internal_Intake_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Referral Date --></label>
+        <name>Last_Referral_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOU Terms --></label>
+        <name>MOU_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- MOU --></label>
+        <name>MOU__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Benefits Received Referrals --></label>
+        <name>Number_of_Referrals_Created__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Id --></label>
+        <name>Organization_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the organization that manages and runs the program. --></help>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
+        <relationshipLabel><!-- Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Primary POC --></label>
+        <name>Primary_POC__c</name>
+        <relationshipLabel><!-- Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program City --></label>
+        <name>Program_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program State --></label>
+        <name>Program_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Street Address --></label>
+        <name>Program_Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Zip --></label>
+        <name>Program_Zip__c</name>
+    </fields>
+    <fields>
+        <label><!-- Public Description --></label>
+        <name>Public_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Visit Complete (Y/N) --></label>
+        <name>Site_Visit_Complete_Y_N__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sum of Customer Service Rating --></label>
+        <name>Sum_of_Customer_Service_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum of Effectiveness Rating --></label>
+        <name>Sum_of_Effectiveness__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum of Master Ratings --></label>
+        <name>Sum_of_Master_Ratings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum of Quality Rating --></label>
+        <name>Sum_of_Quality_Rating__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sum of Timeliness Rating --></label>
+        <name>Sum_of_Timeliness_Rating__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check this box if you are going to merge the program with a duplicate program so, clients don&apos;t get confusing referral survey emails. --></help>
+        <label><!-- Suppress Emails for Program Merge --></label>
+        <name>Suppress_Emails_for_Program_Merge__c</name>
+    </fields>
+    <layouts>
+        <layout>Program Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Detail --></label>
+            <section>Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Ratings --></label>
+            <section>Ratings</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

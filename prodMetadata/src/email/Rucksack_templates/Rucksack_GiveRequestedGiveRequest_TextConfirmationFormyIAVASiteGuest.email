@@ -1,0 +1,12 @@
+Dear {!Give_Request__c.Applicant_Name__c},
+
+We've received your request for the following IAVA {!Give_Request__c.Give_Descriptor__c}:
+
+{!Give_Request__c.Give_Name__c}
+{!Give_Request__c.Give_Instance_Start_Date__c} {!Give_Request__c.Give_Instance_Start_Time__c}
+
+This is a premium reward so availability is highly limited. We'll be in touch before the reward date to let you know whether you're one of the lucky ones to receive the reward.
+
+{!IF(Give_Request__c.Units_Requested__c > 0, "Number of tickets/units: ", "")}{!IF(Give_Request__c.Units_Requested__c > 0, Give_Request__c.Units_Requested__c, "")}
+
+Thank you for supporting IAVA.

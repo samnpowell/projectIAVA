@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>40.0</apiVersion>
+    <available>true</available>
+    <description>donation c3 thank you email with IAVA logo and conditionally rendered address block</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>c3DonationThankYou_LogoConditionalAddress</name>
+    <style>none</style>
+    <subject>Thank you for supporting IAVA!</subject>
+    <type>visualforce</type>
+</EmailTemplate>

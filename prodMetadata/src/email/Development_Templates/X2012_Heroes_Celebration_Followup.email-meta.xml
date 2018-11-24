@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email to go out early the morning after the 2012 Heroes Celebration to attendees</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>2012 Heroes Celebration Followup</name>
+    <style>none</style>
+    <subject>Will you answer Aaron&apos;s challenge from last night?</subject>
+    <type>text</type>
+</EmailTemplate>

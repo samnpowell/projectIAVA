@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Additional_Feedback__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Is there any additional feedback you wish to give?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional feedback from Attendee</inlineHelpText>
+        <label>Additional Feedback</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Attended__c</fullName>
+        <externalId>false</externalId>
+        <label>Attended</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Attendee_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>if ( and(
+       OR(isblank( Contact__r.FirstName ), Contact__r.FirstName == &apos;Unknown&apos;, Contact__r.FirstName == &apos;(Unknown)&apos;)
+       , OR(Contact__r.LastName == &apos;Unknown&apos;, Contact__r.LastName == &apos;(Unknown)&apos;)
+       , not(isblank(Contact__r.Email))
+      )
+      , Contact__r.Email
+      , Contact__r.LastName + if (isblank(Contact__r.FirstName), &apos;&apos;, &apos;, &apos; + Contact__r.FirstName)
+    )</formula>
+        <label>Attendee Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brief_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Brief_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Brief Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Connection_to_Community_Veterans__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Attendee&apos;s connection to community veterans</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attendee&apos;s connection to community veterans</inlineHelpText>
+        <label>Connection to Community Veterans</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>I don&apos;t know of any veterans near me</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I know a couple of veterans in my area</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I know lots of fellow veterans and supporters in my area</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ContactId_18__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Contact__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ContactId_18</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Existed_Before_Event__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(DATEVALUE(Contact__r.CreatedDate) &lt; DATEVALUE(CreatedDate), true, false)</formula>
+        <label>Contact Existed Before Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Event Attendees</relationshipLabel>
+        <relationshipName>Event_Attendees</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Did_you_grow_your_own_network__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: 1=I did not meet anybody new and 5=I met great new people that I expect to see again.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>1= I did not meet anybody new; 5= I met great new people that I expect to see again.</inlineHelpText>
+        <label>Did you grow your own network?</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Attendee_s_First_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event Attendee&apos;s First Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_CityStateZip__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Location_City__c 
+  + if(or(isblank(Event__r.Location_City__c), isblank(Event__r.Location_State__c)), &quot;&quot;, &quot;, &quot;) 
+  + Event__r.Location_State__c
+  + &quot; &quot; + Event__r.Location_Zip_Code__c</formula>
+        <label>Event CityStateZip</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Event_Date__c</formula>
+        <label>Event Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Event ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Ideas__c</fullName>
+        <description>Attendee&apos;s Idea for future event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attendee&apos;s Idea for future event</inlineHelpText>
+        <label>Event Ideas</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Event_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Name</formula>
+        <label>Event Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Prompted_Portal_Use__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(DATEVALUE(Contact__r.Accepted_TOS_Date__c) &gt;= DATEVALUE(CreatedDate), Contact__r.Portal_User__r.Date_of_first_COV_login__c &gt;= DATEVALUE(CreatedDate)),true,false)</formula>
+        <label>Event Prompted Portal Use</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Rating__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Attendee&apos;s event rating; 1 is lowest and 5 is highest</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attendee&apos;s event rating; 1 is lowest and 5 is highest</inlineHelpText>
+        <label>Event Rating</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Status__c</fullName>
+        <description>Status from the Event record</description>
+        <externalId>false</externalId>
+        <formula>text(Event__r.Status__c)</formula>
+        <label>Event Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Location_Street_Address__c</formula>
+        <label>Event Street Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Times__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(not(isblank( Event__r.Start_Time__c )), 
+  Event__r.Start_Time__c + if(not(isblank( Event__r.End_Time__c )), &quot; - &quot; + Event__r.End_Time__c, &quot;&quot;)
+  , &quot;&quot;)</formula>
+        <label>Event Times</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Event__r.Type__c)</formula>
+        <label>Event Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Venue__c</fullName>
+        <externalId>false</externalId>
+        <formula>Event__r.Location_Venue__c</formula>
+        <label>Event Venue</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Year__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Year_formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>YEAR(Event__r.Event_Date__c)</formula>
+        <label>Event Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event__c</fullName>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>IAVAEvent__c</referenceTo>
+        <relationshipLabel>Event Attendees</relationshipLabel>
+        <relationshipName>Event_Attendees</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Guest_of__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(isblank(Parent_Attendee__c), null, HYPERLINK(Parent_Attendee__r.Contact__c, Parent_Attendee__r.Contact__r.FirstName &amp; &apos; &apos; &amp;  Parent_Attendee__r.Contact__r.LastName, &apos;_self&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Guest of</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>How_did_you_hear_about_this_Event__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: How attendee learned about the event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How attendee learned about the event</inlineHelpText>
+        <label>How did you hear about this Event?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Family</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Friend</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Social Media</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Interest_in_Hosting__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Attendee&apos;s interest in Hosting future event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attendee&apos;s interest in Hosting future event</inlineHelpText>
+        <label>Interest in Hosting</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Interested_in_Future_Events__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Attendee is interested in future events</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attendee is interested in future events</inlineHelpText>
+        <label>Interested in Future Events</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Inviter_History__c</fullName>
+        <description>In case of multiple inviters for a single attendee, the history is tracked in this field (via workflow) and in some cases also via a relationship.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>In case of multiple inviters for a single attendee, the history is tracked in this field (via workflow) and in some cases also via a relationship.</inlineHelpText>
+        <label>Inviter History</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Inviter__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The person who invited the attendee to the event (if multiple invitations this is the most recent inviter and multiple names are stored in the Inviter History field and with relationships).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The person who invited the attendee to the event (if multiple invitations this is the most recent inviter and multiple names are stored in the Inviter History field and with relationships).</inlineHelpText>
+        <label>Inviter (most recent)</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Event Invitations Sent</relationshipLabel>
+        <relationshipName>Event_Attendees_Invited</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Met_Someone_New__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Checked if attendee met someone new</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if attendee met someone new</inlineHelpText>
+        <label>Met Someone New</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Notify_attendee_of_changed_event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked this will send the event attendee a notification email about the change (or cancellation) of the event. It will then un-set itself so it can be used again for a future change.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked this will send the event attendee a notification email about the change (or cancellation) of the event. It will then un-set itself so it can be used again for a future change.</inlineHelpText>
+        <label>Notify attendee of changed event</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notify_attendee_of_invitation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Gets checked when a new invitation is created, and then workflow sends the notification and unchecks this field again for future use.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Gets checked when a new invitation is created, and then workflow sends the notification and unchecks this field again for future use.</inlineHelpText>
+        <label>Notify attendee of invitation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Attendee_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_Attendee__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Attendee Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Attendee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Attendee records for guests have the &quot;parent&quot; attendee record filled in here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attendee records for guests have the &quot;parent&quot; attendee record filled in here.</inlineHelpText>
+        <label>Parent Attendee (for guests)</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Event__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Event__c</valueField>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>IAVAEvent_Attendee__c</referenceTo>
+        <relationshipLabel>Guests</relationshipLabel>
+        <relationshipName>GuestAttendees</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PowerOfOne__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PowerOfOne</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quality_of_Interactions__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Quality of event interactions</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quality of event interactions</inlineHelpText>
+        <label>Quality of Interactions</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>RRRP_Info_Received__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: If checked, attendee received RRRP info</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, attendee received RRRP info</inlineHelpText>
+        <label>RRRP Info Received</label>
+        <length>6</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Not_Attending__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Reason for not attending</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reason for not attending an event</inlineHelpText>
+        <label>Reason for Not Attending</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>I attended a different VetTogether.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I changed my mind after RSVPing.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I forgot.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>I had a conflict.</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reason_for_RSVP__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Attendee&apos;s reason for RSVPing</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attendee&apos;s reason for RSVPing</inlineHelpText>
+        <label>Reason for RSVP</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Learn more about IAVA or other organizations</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meet other Veterans</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tag along with a friend</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reply_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Reply Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maybe</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Invited</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Resend_Attendee_Survey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Resend Attendee Survey</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Searchable_Name__c</fullName>
+        <description>Just used for the Typehead component to be able to search the name</description>
+        <externalId>false</externalId>
+        <label>Searchable Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Self_Reported_Attended__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: Attendance reported by event attendee</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Attendance reported by event attendee</inlineHelpText>
+        <label>Self Reported Attended</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Suppress_Attendee_Notifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Suppress Attendee Notifications</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>What_do_you_need_from_IAVA_to_Host__c</fullName>
+        <description>Relates to survey question: What you need from IAVA to Guide you?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Relates to survey question: What you need from IAVA to Guide you?</inlineHelpText>
+        <label>What do you need from IAVA to Host?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A call with IAVA staff</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>A hosting partner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>An intro video to play about IAVA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Call with a member who&apos;s hosted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>How-to guides or tools</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Network of businesses to plug into</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>change_tracking_for_email__c</fullName>
+        <externalId>false</externalId>
+        <label>change tracking for email</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>myIAVA_Information_Received__c</fullName>
+        <description>Field for the Event Attendee Post Event survey: If checked, attendee received myIAVA info</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, attendee received myIAVA info</inlineHelpText>
+        <label>myIAVA Information Received</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Event Attendee</label>
+    <nameField>
+        <displayFormat>Atnd-{000000}</displayFormat>
+        <label>Event Attendee Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event Attendees</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Event__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Reply_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Event_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Event_Status__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Contact_Blocked_check</fullName>
+        <active>true</active>
+        <description>Checks whether the contact&apos;s Rucksack Status is blocked</description>
+        <errorConditionFormula>ISPICKVAL(Contact__r.Rucksack_Status__c, &quot;Blocked&quot;)</errorConditionFormula>
+        <errorMessage>Sorry, your request was not accepted. Please contact membership@iava.org if you have questions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Event_Reply_Cap_Check</fullName>
+        <active>true</active>
+        <description>If the event has a &quot;Reply Cap&quot;, and the amount of Yes replies matches the cap, do not allow more Replies.</description>
+        <errorConditionFormula>AND(
+ ispickval(Reply_Status__c, &apos;Yes&apos;),
+ Event__r.Reply_Cap__c &gt; 0,
+ not(ISPICKVAL(PRIORVALUE(Reply_Status__c), &apos;Yes&apos;)),
+ Event__r.Num_Replies_Remaining__c &lt; 1
+)</errorConditionFormula>
+        <errorDisplayField>Attended__c</errorDisplayField>
+        <errorMessage>Sorry, there are no more spots available at this event.</errorMessage>
+    </validationRules>
+</CustomObject>

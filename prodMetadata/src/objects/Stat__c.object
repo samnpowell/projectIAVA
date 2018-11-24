@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Statistics relevant to our work</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Description__c</fullName>
+        <description>Description to help explain what the amount refers to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Description to help explain what the amount refers to.</inlineHelpText>
+        <label>Amount Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount_Type__c</fullName>
+        <description>What type of measurement will you make for this stat?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What type of measurement will you make for this stat?</inlineHelpText>
+        <label>Amount Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Number</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Percent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Times the Rate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Brief_Description__c</fullName>
+        <description>Brief description of what this Stat covers</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Brief description of what this Stat covers</inlineHelpText>
+        <label>Brief Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Since_Measured__c</fullName>
+        <externalId>false</externalId>
+        <formula>if(isblank(  Measurement_Amount_Date__c ),0,Today() -   Measurement_Amount_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Since Last Measurement</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Frequency__c</fullName>
+        <description>How often does this stat come out?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How often does this stat come out?</inlineHelpText>
+        <label>Frequency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Weekly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yearly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Irregular</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>General_Stat_link__c</fullName>
+        <description>Link to more information about the stat in general, not to the individual measurement.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to more information about the stat in general, not to the individual measurement.</inlineHelpText>
+        <label>General Stat link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Measurement_Expiration_Date__c</fullName>
+        <description>Latest date pulled from all Stat Measurements</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Latest date pulled from all Stat Measurements</inlineHelpText>
+        <label>Latest Measurement Expiration Date</label>
+        <summarizedField>Stat_Measurement__c.Stat_Good_Until__c</summarizedField>
+        <summaryForeignKey>Stat_Measurement__c.Stat__c</summaryForeignKey>
+        <summaryOperation>max</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Measurement_Amount_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date corresponding with the Measurement Amount.</inlineHelpText>
+        <label>Most Recent Measurement Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Measurement_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Measurement Count</label>
+        <summaryForeignKey>Stat_Measurement__c.Stat__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Measurement_Sum__c</fullName>
+        <externalId>false</externalId>
+        <label>Measurement Sum</label>
+        <summarizedField>Stat_Measurement__c.Amount__c</summarizedField>
+        <summaryForeignKey>Stat_Measurement__c.Stat__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Most_Recent_Amount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is set by a trigger which takes the most recent Stat Measurement record based on date.</inlineHelpText>
+        <label>Most Recent Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Most_Recent_Amount_text__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Most_Recent_Amount__c)</formula>
+        <label>Most Recent Amount (text)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Num_Measurements__c</fullName>
+        <description>How many times has this stat been measured</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How many times has this stat been measured</inlineHelpText>
+        <label>Number of Measurements</label>
+        <summaryForeignKey>Stat_Measurement__c.Stat__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Num_Policy_Issue_records__c</fullName>
+        <description>Number of Policy Issue records connected to this Stat</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Policy Issue records connected to this Stat</inlineHelpText>
+        <label>Num Policy Issue records</label>
+        <summaryForeignKey>Stat_Focus_relationship__c.Related_Stat__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Number_to_Know__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates that this Stat should be included in list of &quot;Numbers to Know&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates that this Stat should be included in list of &quot;Numbers to Know&quot;.</inlineHelpText>
+        <label>Number to Know</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Other_Citation_Info__c</fullName>
+        <description>General info related to the Stat in general, not the individual measurement.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>General info related to the Stat in general, not the individual measurement.</inlineHelpText>
+        <label>Other Citation Info</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Private__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This stat is not for publication</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This stat is not for publication</inlineHelpText>
+        <label>Private</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Related_Links__c</fullName>
+        <externalId>false</externalId>
+        <label>Related Links</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Stat_Name_and_Value__c</fullName>
+        <description>Used to allow decimal point to show in dashboard.</description>
+        <externalId>false</externalId>
+        <formula>Name + &quot; (&quot; +  text(Measurement_Amount_Date__c)  + &quot;):  &quot; +  text(Most_Recent_Amount__c) +  if( ispickval(Amount_Type__c, &quot;Percent&quot;),&quot;%&quot;,&quot;&quot;)</formula>
+        <inlineHelpText>Used to allow decimal point to show in dashboard.</inlineHelpText>
+        <label>Stat Name and Value</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stat_Name_and_amount_type__c</fullName>
+        <description>Combines Stat Name and Amount Type for dashboard report.</description>
+        <externalId>false</externalId>
+        <formula>Name &amp; &quot; (&quot; &amp;  lower(text(Amount_Type__c)) &amp; &quot;)&quot;</formula>
+        <inlineHelpText>Combines Stat Name and Amount Type for dashboard report.</inlineHelpText>
+        <label>Stat Name (and amount type)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Stat</label>
+    <listViews>
+        <fullName>Active</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Most_Recent_Amount__c</columns>
+        <columns>Amount_Type__c</columns>
+        <columns>Measurement_Amount_Date__c</columns>
+        <columns>Days_Since_Measured__c</columns>
+        <columns>Number_to_Know__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Active</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Active__c</columns>
+        <columns>NAME</columns>
+        <columns>Most_Recent_Amount__c</columns>
+        <columns>Amount_Type__c</columns>
+        <columns>Measurement_Amount_Date__c</columns>
+        <columns>Days_Since_Measured__c</columns>
+        <columns>Number_to_Know__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_Date</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Created Date</label>
+    </listViews>
+    <listViews>
+        <fullName>Instagram_Stats</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>Instagram</value>
+        </filters>
+        <label>Instagram Stats</label>
+    </listViews>
+    <listViews>
+        <fullName>Numbers_to_Know</fullName>
+        <columns>Number_to_Know__c</columns>
+        <columns>Active__c</columns>
+        <columns>NAME</columns>
+        <columns>Most_Recent_Amount__c</columns>
+        <columns>Amount_Type__c</columns>
+        <columns>Measurement_Amount_Date__c</columns>
+        <columns>Days_Since_Measured__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Number_to_Know__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Numbers to Know</label>
+    </listViews>
+    <listViews>
+        <fullName>Stats_not_on_a_Policy_Issue</fullName>
+        <columns>NAME</columns>
+        <columns>Brief_Description__c</columns>
+        <columns>Most_Recent_Amount__c</columns>
+        <columns>Amount_Type__c</columns>
+        <columns>Measurement_Amount_Date__c</columns>
+        <columns>Days_Since_Measured__c</columns>
+        <columns>Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Num_Policy_Issue_records__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Stats not on a Policy Issue</label>
+    </listViews>
+    <listViews>
+        <fullName>Twitter_Stats</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>Twitter</value>
+        </filters>
+        <label>Twitter Stats</label>
+    </listViews>
+    <listViews>
+        <fullName>employment_stats2</fullName>
+        <columns>Stat_Name_and_amount_type__c</columns>
+        <columns>Most_Recent_Amount__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>unemployment</value>
+        </filters>
+        <label>employment stats</label>
+    </listViews>
+    <nameField>
+        <label>Stat Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Stats</pluralLabel>
+    <recordTypes>
+        <fullName>Private</fullName>
+        <active>true</active>
+        <description>Only viewable by research department</description>
+        <label>Private</label>
+        <picklistValues>
+            <picklist>Amount_Type__c</picklist>
+            <values>
+                <fullName>Number</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Percent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Times the Rate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>Irregular</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yearly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Most_Recent_Amount__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Amount_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Measurement_Amount_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Days_Since_Measured__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Brief_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Brief_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Track_a_Call</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Track a Call</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/TrackACall?stid={!Stat__c.Id}</url>
+    </webLinks>
+</CustomObject>

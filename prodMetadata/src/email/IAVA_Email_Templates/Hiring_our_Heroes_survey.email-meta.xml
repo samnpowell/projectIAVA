@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Survey to final confirmed members for Hiring our Heroes job fair.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Hiring our Heroes survey</name>
+    <style>none</style>
+    <subject>Hiring our Heroes job fair survey</subject>
+    <textOnly>Dear {!Contact.FirstName}, 
+
+Thank you for your interest in Hiring our Heroes job fair. Even if you decided not to attend, we’d like to get your feedback. 
+
+Please complete our brief survey and you’ll be entered into a drawing for 3 copies of the HBO acclaimed mini-series &quot;The Pacific.&quot; Please click on &lt;http://iava.org/hiring-our-heroes-job-fair-survey&gt; to fill out the survey.
+
+Your member number will be required in the survey, it is {!Contact.Membership_ID__c}.
+
+Thank you for your helping us make our events even better.
+
+Sincerely, 
+
+Jason Hansman 
+Online Community Manager
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

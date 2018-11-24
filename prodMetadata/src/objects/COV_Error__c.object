@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Errors logged by users inside of COV Community</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Brief_Error_Message__c</fullName>
+        <description>The first 255 characters of the full error message (so it can be included in cross-object formulas)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The first 255 characters of the full error message</inlineHelpText>
+        <label>Brief Error Message</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Developer_Message__c</fullName>
+        <description>For a developer to use to pass info about the error without worrying about the scope of the exception.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For a developer to use to pass info about the error without worrying about the scope of the exception.</inlineHelpText>
+        <label>Developer Message</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Error_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Date/Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Error_Stack_Trace__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Stack Trace</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Error_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Full_Error_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Error Message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Original_URL__c</fullName>
+        <description>URL of the page the user was trying to visit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL of the page the user was trying to visit.</inlineHelpText>
+        <label>Original URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Referrer__c</fullName>
+        <externalId>false</externalId>
+        <label>Referrer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Reviewed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Addressed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>(Old)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_Agent__c</fullName>
+        <externalId>false</externalId>
+        <label>User Agent (browser)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Message__c</fullName>
+        <description>User&apos;s description of what user was doing when got error</description>
+        <externalId>false</externalId>
+        <inlineHelpText>User&apos;s description of what user was doing when got error</inlineHelpText>
+        <label>User Message</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The user who got the error</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The user who got the error</inlineHelpText>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>COV Errors</relationshipLabel>
+        <relationshipName>COV_Errors</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>COV Error</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Status__c</columns>
+        <columns>Brief_Error_Message__c</columns>
+        <columns>Developer_Message__c</columns>
+        <columns>User_Message__c</columns>
+        <columns>Error_Date_Time__c</columns>
+        <columns>Error_Stack_Trace__c</columns>
+        <columns>Error_Type__c</columns>
+        <columns>Original_URL__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Community_Manager_All_Errors</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Status__c</columns>
+        <columns>Brief_Error_Message__c</columns>
+        <columns>Original_URL__c</columns>
+        <columns>User_Message__c</columns>
+        <columns>Developer_Message__c</columns>
+        <columns>Error_Date_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Community Manager - All Errors</label>
+    </listViews>
+    <listViews>
+        <fullName>Community_Manager_Error_Log_Review</fullName>
+        <columns>User__c</columns>
+        <columns>NAME</columns>
+        <columns>Brief_Error_Message__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Brief_Error_Message__c</field>
+            <operation>equals</operation>
+            <value>Attempt to de-reference a null object</value>
+        </filters>
+        <label>Community Manager - Error Log Review</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Status__c</columns>
+        <columns>Brief_Error_Message__c</columns>
+        <columns>Original_URL__c</columns>
+        <columns>User_Message__c</columns>
+        <columns>User_Agent__c</columns>
+        <columns>Developer_Message__c</columns>
+        <columns>Error_Date_Time__c</columns>
+        <columns>Error_Stack_Trace__c</columns>
+        <columns>Error_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Created Today</label>
+    </listViews>
+    <listViews>
+        <fullName>Last_7_Days</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Status__c</columns>
+        <columns>Brief_Error_Message__c</columns>
+        <columns>Original_URL__c</columns>
+        <columns>User_Message__c</columns>
+        <columns>Developer_Message__c</columns>
+        <columns>Error_Date_Time__c</columns>
+        <columns>Error_Stack_Trace__c</columns>
+        <columns>Error_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <label>Last 7 Days</label>
+    </listViews>
+    <listViews>
+        <fullName>Last_7_Days_Not_Addressed</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Status__c</columns>
+        <columns>Brief_Error_Message__c</columns>
+        <columns>Original_URL__c</columns>
+        <columns>User_Message__c</columns>
+        <columns>Developer_Message__c</columns>
+        <columns>Error_Date_Time__c</columns>
+        <columns>Error_Stack_Trace__c</columns>
+        <columns>Error_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:7</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Addressed,(Old)</value>
+        </filters>
+        <label>Last 7 Days - Not Addressed</label>
+    </listViews>
+    <listViews>
+        <fullName>Not_Addressed</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Status__c</columns>
+        <columns>Brief_Error_Message__c</columns>
+        <columns>Original_URL__c</columns>
+        <columns>User_Message__c</columns>
+        <columns>Developer_Message__c</columns>
+        <columns>Error_Date_Time__c</columns>
+        <columns>Error_Stack_Trace__c</columns>
+        <columns>Error_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Addressed,(Old)</value>
+        </filters>
+        <label>Not Addressed</label>
+    </listViews>
+    <nameField>
+        <displayFormat>COV-Err-{000000}</displayFormat>
+        <label>COV Error ID</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>COV Errors</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

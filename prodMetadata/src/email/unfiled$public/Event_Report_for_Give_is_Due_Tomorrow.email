@@ -1,0 +1,8 @@
+Hello {!Give__c.Internal_POC__c},
+
+And Event Report for the Give: {!Give__c.Name} is due tomorrow.
+
+To kick off the Event Report, click on the button on the top of this record: https://na8.salesforce.com/{!Give__c.Id}
+
+Thanks!
+The Robots

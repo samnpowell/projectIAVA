@@ -1,0 +1,63 @@
+<apex:page controller="dc_ctrl_RewardSearch" showHeader="false" sidebar="false">
+                   
+<div id="secondary">
+<div class="top"></div>
+<div id="secondary-inner">
+	<h2 class="title">
+    <img src="{!URLFOR($Resource.dc_css,'images/header_inthissection.jpg')}" width="276" height="53" alt="In This Section"></img>
+    </h2>
+ 	 				
+	<ul class="links">
+    	<apex:outputpanel rendered="{!if((dc_homepage == true),true,false)}">
+        	<li class="leaf first menu-mlid-320">
+        	<a href="{!$Page.dc_homepage}" title="IAVA Rewards" style="color: #F4B10A;">IAVA Rewards</a>
+        	</li>
+       	</apex:outputpanel>
+        <apex:outputpanel rendered="{!if((dc_homepage != true),true,false)}">
+        	<li class="leaf first menu-mlid-320">
+        	<a href="{!$Page.dc_homepage}" title="IAVA Rewards">IAVA Rewards</a>
+        	</li>
+        </apex:outputpanel>
+        <li class="leaf menu-mlid-345">
+        	<apex:form >
+        	<apex:outputpanel rendered="{!if(dc_rewardsearch == true || dc_rewarddetail == true,true,false)}">
+        		<apex:commandLink action="{!searchval}" value="Find Rewards" style="color: #F4B10A;" />
+        	</apex:outputpanel>
+        	<apex:outputpanel rendered="{!if(dc_rewardsearch != true && dc_rewarddetail != true,true,false)}">
+        		<apex:commandLink action="{!searchval}" value="Find Rewards" />
+        	</apex:outputpanel>
+        	</apex:form>
+        	<apex:outputpanel rendered="{!if(dc_claimreward == true,true,false)}">
+         	<ul class="links">
+        		<li class="leaf first menu-mlid-252">
+        			<apex:outputlabel value="Request Reward" style="color: #F4B10A;" />
+        		</li>
+        	</ul> 
+        	</apex:outputpanel>
+        </li>
+        <apex:outputpanel rendered="{!if(dc_faq != true, true, false)}">
+        	<li class="leaf menu-mlid-344">
+        	<a href="{!$Page.dc_FAQ}" title="FAQs">FAQs</a>
+        	</li>
+        </apex:outputpanel>
+        <apex:outputpanel rendered="{!if((dc_faq == true), true, false)}">
+        	<li class="leaf menu-mlid-344">
+        	<a href="{!$Page.dc_FAQ}" title="FAQs" style="color: #F4B10A;">FAQs</a>
+        	</li>
+        </apex:outputpanel>
+        <apex:outputpanel rendered="{!if(dc_partner != true, true, false)}">
+        	<li class="leaf menu-mlid-567">
+        	<a href="{!$Page.dc_Partners}" title="Partners">Partners</a>
+        	</li>
+    	</apex:outputpanel>
+    	<apex:outputpanel rendered="{!if((dc_partner == true), true, false)}">
+        	<li class="leaf menu-mlid-567">
+        	<a href="{!$Page.dc_Partners}" title="Partners" style="color: #F4B10A;" >Partners</a>
+        	</li>
+    	</apex:outputpanel>
+	</ul>
+               </div>
+               <div class="btm"></div>
+                
+    		</div>	<!-- /#secondary -->
+</apex:page>

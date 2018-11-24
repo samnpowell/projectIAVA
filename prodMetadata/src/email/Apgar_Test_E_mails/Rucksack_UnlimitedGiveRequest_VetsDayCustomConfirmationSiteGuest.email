@@ -1,0 +1,5 @@
+<p>Dear {!Give_Request__c.Applicant_Name__c}, </p>
+<p>Thanks for signing up to join our Veterans Day Virtual March. Stay tuned for easy instructions on how to join: we'll send you a link to join the march on Saturday, November 11. </p>
+<p>Please click <a href="http://twitter.com/intent/tweet?text=I%20march%20for%20%23VeteransDay%20%40IAVA">here</a> to share who you march for.</p>
+<p>Thank you for joining our effort to connect and empower veterans to unite all Americans.</p>
+<p>IAVA</p>

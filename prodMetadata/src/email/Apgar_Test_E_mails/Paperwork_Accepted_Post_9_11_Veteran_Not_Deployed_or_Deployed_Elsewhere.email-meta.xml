@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email automatically sent to non-combat post 9/11 veterans when their service confirmation paperwork is approved</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>IAVA_2016</letterhead>
+    <name>Paperwork_Accepted__Post 9/11 Veteran_ Not Deployed or Deployed Elsewhere</name>
+    <style>freeForm</style>
+    <subject>Your paperwork was approved!</subject>
+    <type>html</type>
+</EmailTemplate>

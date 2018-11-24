@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to capture wait times for benefits, claims wait times for tracking purposes.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Benefit_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Benefit Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>VA Claim</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New GI Bill</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cause_of_Death__c</fullName>
+        <externalId>false</externalId>
+        <label>Cause of Death</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Died of injuries sustained in combat</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Suicide</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Claim_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Claim Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Waiting for a first evaluation appointment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waiting for additional evaluation appointments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waiting for ratings approval from VA, after you&apos;ve been evaluated</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Appealing a claims decision</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Wait Times</relationshipLabel>
+        <relationshipName>Wait_Times</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Currently_Pending__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is the claim currently pending or the benefit not yet received as of update date?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is the claim currently pending or the benefit not yet received as of update date?</inlineHelpText>
+        <label>Currently Pending</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_Benefit_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Benefit Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Submitted__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Submitted</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Update__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <description>Date this Wait Time log was last updated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date this Wait Time log was last updated</inlineHelpText>
+        <label>Date of Update</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Died_during_which_stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Died during which stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Waiting for a first evaluation appointment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waiting for additional evaluation appointments</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Waiting for ratings approval from VA, after you&apos;ve been evaluated</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Appealing a claims decision</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Died_while_seeking_benefits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Died while seeking benefits</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>How_Financially_Stressful__c</fullName>
+        <description>How financially stressful has this wait time been on a scale from 1 - 10?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How financially stressful has this wait time been on a scale from 1 - 10?</inlineHelpText>
+        <label>How Financially Stressful</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>How_Many_Health_Issues__c</fullName>
+        <description>How many health issues were submitted with this claim?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How many health issues were submitted with this claim?</inlineHelpText>
+        <label>How Many Health Issues</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>How_Stressful__c</fullName>
+        <description>How emotionally or psychologically stressful has this wait time been on a scale from 1 - 10?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How emotionally or psychologically stressful has this wait time been on a scale from 1 - 10?</inlineHelpText>
+        <label>How Stressful</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Cause_of_Death__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Cause of Death</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Health_Issues__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Health Issues</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>State_Benefits_Sought__c</fullName>
+        <externalId>false</externalId>
+        <label>State Benefits Sought</label>
+        <length>2</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_by_Survivor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is not a wait time of this contact. This contact is a survivor of the vet who had this wait time.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is not a wait time of this contact. This contact is a survivor of the vet who had this wait time.</inlineHelpText>
+        <label>Submitted by Survivor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_Health_Issues__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Health Issues</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mental health</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vision problems</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hearing loss</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Scarring or burns</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PTSD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TBI</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Loss of limb</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Wait_Time_in_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Wait Time in Days</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Years_of_Service_at_As_Of_time__c</fullName>
+        <description>Because this information is subject to change, it is captured here as the years of military service at the time the wait time was submitted</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Because this information is subject to change, it is captured here as the years of military service at the time the wait time was submitted</inlineHelpText>
+        <label>Years of Service at As-Of time</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Wait Time</label>
+    <nameField>
+        <displayFormat>WT-{00000}</displayFormat>
+        <label>Wait Time Log</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Wait Times</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

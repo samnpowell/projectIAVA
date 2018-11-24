@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template for member donor recruitment drive</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Member Donor Recruitment Drive</name>
+    <style>none</style>
+    <subject>Want a roundtrip ticket from Southwest Airlines?</subject>
+    <type>text</type>
+</EmailTemplate>

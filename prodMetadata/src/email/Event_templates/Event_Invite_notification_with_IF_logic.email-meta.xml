@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Alert to attendee when invited to an event</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Event Invite notification with IF logic</name>
+    <style>none</style>
+    <subject>{!IAVAEvent_Attendee__c.Inviter__c} invited you to: {!IAVAEvent_Attendee__c.Event_Name__c} ({!IAVAEvent_Attendee__c.Event_Date__c})</subject>
+    <type>text</type>
+</EmailTemplate>

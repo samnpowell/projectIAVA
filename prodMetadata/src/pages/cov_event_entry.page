@@ -1,0 +1,630 @@
+<apex:page standardController="IAVAEvent__c" extensions="cov_event_entry_controller" sidebar="false" showheader="false">
+
+
+<apex:composition template="cov_template">
+
+        <apex:define name="page-title">
+            Host an Event - myIAVA
+        </apex:define>
+
+    <apex:define name="meta-tags">
+        <meta property="og:title" content="myIAVA - Host an Event" />
+        <meta property="og:url" content="{!$Site.currentSiteUrl}" />
+        <meta property="og:description" content="VetTogethers" />
+        <meta property="og:type" content="non-profit" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </apex:define>
+
+
+    <apex:define name="layout">
+
+        <apex:outputPanel rendered="{!modalParamPresent}" layout="none">
+            <!--
+                workaround css to hide header since dynamic template binding seems
+                to break the standard controller for some unknown reason
+                seems related to these old issues:
+                https://developer.salesforce.com/forums/?id=906F000000099sEIAQ
+                https://developer.salesforce.com/forums/?id=906F00000008pcDIAQ
+             -->            
+            <style type="text/css">
+                #navbar-guests, #navbar-overall { display: none; }
+                body { background-color: white; }
+                #container-overall { margin-top: 0; padding-top: 0; }
+            </style>
+        </apex:outputPanel>
+
+        <c:cov_include_js_jquery /> 
+
+        <c:cov_include_js_datepicker /> 
+        <c:cov_include_css_datepicker />
+
+        <!--<c:cov_include_js_timepicker /> -->
+        <!--<c:cov_include_css_timepicker /> -->
+
+        <c:cov_include_js_validationengine /> 
+        <c:cov_include_css_validationengine />
+
+                    <apex:form >
+                        <apex:inputField rendered="false" value="{!IAVAEvent__c.OwnerId}" />
+                        <apex:inputField rendered="false" value="{!IAVAEvent__c.Date_Accepted_Host_TOS__c}" />
+                        <apex:inputField rendered="false" value="{!IAVAEvent__c.Chatter_Group_Mirror__c}" />
+                        <apex:inputField rendered="false" value="{!IAVAEvent__c.Creator_Contact__c}" />
+                        <apex:inputField rendered="false" value="{!IAVAEvent__c.Dont_create_Chatter_Group__c}" />
+                        <apex:inputField rendered="false" value="{!IAVAEvent__c.Status__c}" />
+                        <apex:inputField rendered="false" value="{!IAVAEvent__c.Associated_Cost__c}" />
+                        <apex:inputField rendered="false" value="{!IAVAEvent__c.Cost_Description__c}" />
+                    </apex:form>
+
+        <div class="popup-container">
+
+          <div class="detail-pg">   
+
+
+          <apex:outputPanel rendered="{!AND(ISPICKVAL($User.UserType, 'Guest'), NOT(allowNonAuthEventCreation))}">
+
+              <p>Please log in to create an event.</p>
+
+          </apex:outputPanel>
+
+          <apex:outputPanel rendered="{!OR(NOT(ISPICKVAL($User.UserType, 'Guest')), allowNonAuthEventCreation)}">
+
+              <!-- <apex:pageMessages id="messages" /> -->
+
+              <apex:outputPanel rendered="{!AND(NOT(ISNULL(IAVAEvent__c.Id)), NOT(isEventOwner))}" >
+                    <apex:outputPanel rendered="{!ISPICKVAL($User.UserType, 'Guest')}">
+                        <p>Event owners can log in to edit an event.</p>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!NOT(ISPICKVAL($User.UserType, 'Guest'))}">
+                        <p>You must be the event owner to edit an event.</p>
+                    </apex:outputPanel>
+              </apex:outputPanel>
+
+              <apex:outputPanel rendered="{!OR(IAVAEvent__c.Id == null, isEventOwner)}" id="event-entry-panel">
+            
+                  <apex:outputPanel rendered="{!AND(IAVAEvent__c.Status__c == 'Unpublished', NOT(ISPICKVAL($User.UserType, 'Guest')))}" >
+                    <apex:form >
+                        <apex:commandButton value="Publish" action="{!savePublish}" styleclass="btn btn-success btn-large pull-right" />
+                    </apex:form>
+                    <p class="bg-warning">This event is unpublished and invisible to other users.<br /><br/></p>
+                  </apex:outputPanel>
+
+                
+                  <h2>Host An Event</h2>
+
+                    <apex:outputPanel rendered="{!IAVAEvent__c.Status__c != 'Flagged/Removed'}" >          
+                        <apex:form html-role="form" styleClass="form-horizontal validated-form validation-promptPosition-topRight" enctype="multipart/form-data" target="_top">
+
+                            <apex:outputPanel rendered="{!AND(not(isnull(IAVAEvent__c.Id)), NOT(ISPICKVAL($User.UserType, 'Guest')))}">
+                                <div class="form-group">
+                                    <div class="col-xs-4">
+                                        &nbsp;
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <apex:outputPanel rendered="{!IAVAEvent__c.Status__c != 'Flagged/Removed'}" >
+                                            <apex:commandButton value="Save Changes" action="{!save}" styleclass="btn {!if(IAVAEvent__c.Status__c == 'Published', 'btn-success', 'btn-primary')} btn-large" />
+                                            <apex:outputPanel rendered="{!IAVAEvent__c.Status__c != 'Published'}" >
+                                                &nbsp;
+                                                <apex:commandButton value="Save and Publish" action="{!savePublish}" styleclass="btn btn-success btn-large" />
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <div class="form-group">
+                                <label for="type" class="col-xs-4 control-label">Type of Event</label>
+                                <div class="col-xs-8">
+                                    <apex:inputField styleclass="form-control validate[required]" id="type" value="{!IAVAEvent__c.Type__c}" />
+                                </div>
+                            </div>
+
+                            <apex:outputPanel rendered="{!not(ispickval($User.UserType, 'Guest'))}" >
+                                <div class="form-group">
+                                    <label for="hostname" class="col-xs-4 control-label">Host</label>
+                                    <div class="col-xs-8">
+                                        <p class="form-control-static"><apex:outputText id="hostname" value="{!$User.FirstName} {!$User.LastName}" /></p>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel rendered="{!ispickval($User.UserType, 'Guest')}" >
+                                <div class="form-group">
+                                    <label for="hostname" class="col-xs-4 control-label">Your Info</label>
+                                    <div class="col-xs-5">
+                                        <apex:inputText styleclass="form-control validate[required]" id="nonauth-firstname" value="{!nonAuthFirstName}" html-placeholder="First Name" />
+                                        <apex:inputText styleclass="form-control validate[required]" id="nonauth-lastname" value="{!nonAuthLastName}"  html-placeholder="Last Name" />
+                                        <apex:inputText styleclass="form-control validate[required,custom[email]" id="nonauth-email" value="{!nonAuthEmail}"  html-placeholder="Email" />
+                                        <apex:inputText styleclass="form-control validate[required]" id="nonauth-phone" value="{!nonAuthPhone}"  html-placeholder="Mobile Phone" />
+                                        <apex:inputText styleclass="form-control validate[required]" id="nonauth-zip" value="{!nonAuthZip}"  html-placeholder="Zip or Postal Code" />
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="heading">
+                                            Or <a href="cov_login?startURL={!URLENCODE(nullvalue($Site.Prefix, '') + '/cov_event_entry')}" target="_top">Log In</a> to use your saved info
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-8 col-xs-offset-4">
+                                        <hr />
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+
+                            <div class="form-group">
+                                <label for="eventname" class="col-xs-4 control-label">Name of Event</label>
+                                <div class="col-xs-8">
+                                    <apex:inputField styleclass="form-control validate[required]" id="eventname" value="{!IAVAEvent__c.Name}" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="eventdate" class="col-xs-4 control-label">Date of Event</label>
+                                <div class="col-xs-8">
+                                    <apex:inputField styleclass="form-control validate[required] datepicker" id="eventdate" value="{!IAVAEvent__c.Event_Date__c}" showDatePicker="false" 
+                                        html-placeholder="MM/DD/YYYY" html-data-provide="datepicker" html-data-date-autoclose="true" html-data-date-today-highlight="true" html-data-date-start-date="0d" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="starttime" class="col-xs-4 control-label">Start Time</label>
+                                <div class="col-xs-8">
+                                    <apex:inputField styleclass="form-control time-entry" id="starttime" value="{!IAVAEvent__c.Start_Time__c}" 
+                                        html-placeholder="0:00 PM" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="endtime" class="col-xs-4 control-label">End Time</label>
+                                <div class="col-xs-8">
+                                    <apex:inputField styleclass="form-control time-entry" id="endtime" value="{!IAVAEvent__c.End_Time__c}" 
+                                        html-placeholder="0:00 PM" />
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="venue" class="col-xs-4 control-label">Venue (optional)</label>
+                                <div class="col-xs-8">
+                                    <apex:inputField styleclass="form-control" id="venue" value="{!IAVAEvent__c.Location_Venue__c}" html-placeholder="Venue" />
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="street" class="col-xs-4 control-label">Street Address</label>
+                                <div class="col-xs-8">
+                                    <apex:inputField styleclass="form-control" id="street" value="{!IAVAEvent__c.Location_Street_Address__c}" html-placeholder="Location Street Address" html-name="address" html-autocomplete="street-address" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Address" class="col-xs-4 control-label">City / State / Zip</label>
+                                <div class="col-xs-8">
+                                    <div class="pull-left" style="width: 45%">
+                                        <apex:inputField styleclass="form-control validate[required]" id="city" value="{!IAVAEvent__c.Location_City__c}" html-placeholder="City" html-name="city" html-autocomplete="address-level2" />
+                                    </div>
+                                    <div class="pull-left" style="width: 25%">
+                                        <apex:selectList value="{!IAVAEvent__c.Location_State__c}" size="1" styleClass="form-select form-control validate[required]" style="height: 34px;" html-name="state" html-autocomplete="address-level1" >
+                                            <apex:selectOptions value="{!stateOptions}" />
+                                        </apex:selectList>
+                                    </div>
+                                    <div class="pull-left" style="width: 30%">
+                                        <apex:inputField styleclass="form-control validate[required]" id="zip" value="{!IAVAEvent__c.Location_Zip_Code__c}" html-name="zip" html-placeholder="Zip" html-autocomplete="postal-code" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <apex:outputPanel id="existingImagePanel">
+                                <apex:outputPanel rendered="{!existingImageId != null}">
+                                    <div class="form-group">
+                                        <label for="image-upload" class="col-xs-4 control-label">Current image</label>
+                                        <div class="col-xs-8">
+                                                <apex:image value="{!$Site.currentSiteUrl}servlet/servlet.FileDownload?file={!existingImageIdCopy}" styleClass="detail-img-thumb" />
+                                            &nbsp; &nbsp;<apex:commandLink value="" action="{!deletePic}"><span class="glyphicon glyphicon-trash"></span>
+                                            </apex:commandLink>
+                                            <apex:outputText value="{!existingImageMsg}" />
+                                        </div>
+                                    </div>
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="imageUploadMessage" rendered="{!ISNULL(IAVAEvent__c.Id)}">
+                                <div class="form-group">
+                                    <label class="col-xs-4 control-label">Image</label>
+                                    <div class="col-xs-8">
+                                        <p class="italicer">Please save the event first, and then edit the event to upload an image.</p>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel id="imageUploadPanel" rendered="{!NOT(ISNULL(IAVAEvent__c.Id))}">
+                                <div class="form-group">
+                                    <label for="image-upload" class="col-xs-4 control-label">Upload new image</label>
+                                    <div class="col-xs-8">
+                                        <!-- <apex:inputFile styleclass="form-control" id="image-upload" value="{!imageFile.body}" filename="{!imageFile.Name}" accept="jpg,gif,png" contentType="{!uploadImageContentType}" title="Upload a jpg, png, or gif" /> -->
+                                        <!-- <apex:outputPanel rendered="{!NOT(ISBLANK(eventId))}" layout="none"> -->
+                                            <input class="form-control" type="file" id="fileinput" accept="image/*" title="Upload an image" />
+                                            <apex:inputHidden id="newImageFull" value="{!newImageFull}" />
+                                            <apex:inputHidden id="newImageThumb" value="{!newImageThumb}" />
+                                            <apex:inputHidden id="newImageName" value="{!newImageName}" />
+                                            <apex:inputHidden id="newImageType" value="{!newImageType}" />
+                                        <!-- </apex:outputPanel> -->
+                                        <span id="file-message" class="italicer">
+                                            <!-- <apex:outputText rendered="{!ISBLANK(eventId)}">
+                                                Save event first before uploading image.
+                                            </apex:outputText> -->
+                                        </span>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <apex:outputPanel rendered="{!not(isnull(IAVAEvent__c.Id))}">
+                                <div class="form-group">
+                                    <label for="hostname" class="col-xs-4 control-label">Current attendee count</label>
+                                    <div class="col-xs-8">
+                                        <p class="form-control-static">
+                                            <apex:outputText id="numattendees" value="{!IAVAEvent__c.Num_Replies_Yes__c}" />
+                                        </p>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+
+                            <div class="form-group">
+                                <label for="street" class="col-xs-4 control-label">Cap attendees at</label>
+                                <div class="col-xs-8">
+                                    <apex:inputField styleclass="form-control" id="replycap" value="{!IAVAEvent__c.Reply_Cap__c}" html-placeholder="Max num. attendees (leave blank for no cap)" />
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="street" class="col-xs-4 control-label">Cost</label>
+                                <div class="col-xs-8">
+                                    <div class="checkbox">
+                                        <label>
+                                            <apex:inputCheckbox id="costCheckbox" value="{!costCheckbox}" onchange="toggleCostField();" />
+                                                There is a cost associated with attending the event
+                                        </label>
+                                    </div>
+                                    <div id="costamount-div" style="{!if(not(costCheckbox), 'display: none;', '')}">
+                                        <apex:inputField styleclass="form-control" id="costamount" value="{!IAVAEvent__c.Associated_Cost__c}" html-placeholder="Dollar Amount (number only)" />
+                                        <apex:inputField styleclass="form-control" id="costdescription" value="{!IAVAEvent__c.Cost_Description__c}" html-placeholder="Optional Description of Cost (text)" html-maxlength="255" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script type="text/javascript">
+                                var j$ = jQuery.noConflict();
+                                j$(document).ready(function() {
+                                    toggleCostField();
+                                });
+
+                                function toggleCostField() {
+                                    j$('#costamount-div').toggle(j$('input[id$=costCheckbox]').is(':checked'));
+                                }
+
+                            </script>
+
+
+                            <div class="form-group">
+                                <div class="col-xs-11 col-sm-offset-1">
+                                    <label for="description" class="control-label">Brief Description:</label>
+                                </div>
+                                <div class="col-xs-11 col-sm-offset-1">
+                                    <apex:inputField styleclass="form-control" id="description" value="{!IAVAEvent__c.Brief_Description__c}" />
+                                    <div class="pull-right" id="counter"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-xs-11 col-sm-offset-1">
+                                    <label for="details" class="control-label">Full Details:</label>
+                                </div>
+                                <apex:outputPanel rendered="{!ISPICKVAL($User.UserType, 'Guest')}">
+                                    <style type="text/css">
+                                        a#cke_19 {
+                                            display: none; /* hides non-functioning image button if nonauthenticated user */
+                                        }
+                                    </style>
+                                </apex:outputPanel>
+                                <div class="col-xs-11 col-sm-offset-1">
+                                        <apex:inputField styleclass="form-control" id="details" value="{!IAVAEvent__c.Event_Public_Details__c}" />
+                                </div>
+                            </div>
+
+
+                        <apex:outputPanel rendered="{!ispickval($User.UserType, 'Guest')}" layout="none">
+                            <div class="form-group">
+                                <div class="col-xs-11 col-sm-offset-1">
+
+                                    <hr />
+
+                                    <label class="control-label">Veteran of:</label>
+
+                                    <div class="form-inline">
+                                        <div class="checkbox">
+                                            <label>
+                                                <apex:inputCheckbox value="{!nonAuthOEF}" styleClass="chk-vet" /> OEF&nbsp;
+                                                <!-- <apex:inputCheckbox value="{!nonAuthVeteranStatus}" /> I am a post-9/11 veteran -->
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <apex:inputCheckbox value="{!nonAuthOIF}" styleClass="chk-vet" /> OIF&nbsp;
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <apex:inputCheckbox value="{!nonAuthOND}" styleClass="chk-vet" /> OND&nbsp;
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <apex:inputCheckbox value="{!nonAuthPost911}" styleClass="chk-vet" /> Post-9/11
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-inline">
+                                        <div class="checkbox">
+                                            <label>
+                                                <apex:inputCheckbox value="{!nonAuthOtherEra}" styleClass="chk-vet" /> Pre-9/11&nbsp;
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <apex:inputCheckbox value="{!nonAuthFamily}" /> Family member
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-inline">
+                                        <div class="checkbox">
+                                            <label>
+                                                <apex:inputCheckbox value="{!nonAuthNotVeteran}" styleClass="chk-nonvet" /> I'm not a veteran
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </apex:outputPanel>
+
+                        <apex:outputPanel rendered="{!or(ispickval($User.UserType, 'Guest'), not(hostTOSAccepted))}" layout="none">
+
+                            <div class="form-group">
+                                <div class="col-xs-11 col-sm-offset-1">
+
+                                    <hr />
+
+                                <apex:outputPanel rendered="{!not(hostTOSAccepted)}" layout="none">
+                                    <div class="checkbox">
+                                        <label>
+                                            <apex:inputCheckbox value="{!hostTOSAccepted}" styleClass="validate[required]" />I agree to the <a href="http://iava.org/IAVA-leader-code-of-conduct" target="_blank">IAVA Leader Code of Conduct <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+                                        </label>
+                                    </div>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!ispickval($User.UserType, 'Guest')}" layout="none">
+                                    <div class="checkbox">
+                                        <label>
+                                            <apex:inputCheckbox value="{!nonAuthAgreeToTerms}" styleClass="validate[required]" />I agree to the <a href="http://iava.org/myIAVA-terms" target="_blank">myIAVA Terms <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a>
+                                        </label>
+                                    </div>
+                                    <br />
+                                    <apex:commandButton value="Continue..." action="{!nonAuthSave}" styleclass="btn btn-primary btn-large" />
+                                </apex:outputPanel>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+
+                        <apex:outputPanel rendered="{!not(ispickval($User.UserType, 'Guest'))}" layout="none">
+                            <div class="text-center">
+                                <apex:outputPanel rendered="{!AND(IAVAEvent__c.Status__c != 'Published', IAVAEvent__c.Status__c != 'Flagged/Removed')}" >
+                                    <apex:commandButton value="Save as Draft" action="{!save}" styleclass="btn btn-primary btn-large" />
+                                    &nbsp;
+                                    <apex:commandButton value="Save and Publish" action="{!savePublish}" styleclass="btn btn-success btn-large" />
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!IAVAEvent__c.Status__c == 'Published'}" >
+                                    <apex:commandButton value="Save Changes" action="{!save}" styleclass="btn btn-success btn-large" />
+                                    <br /><br />
+            <!--                    <apex:commandButton value="Save and Unpublish" action="{!save}" styleclass="btn btn-default btn-xs" />
+                                    &nbsp;
+             -->
+                                </apex:outputPanel>
+
+                            </div>
+                        </apex:outputPanel>
+
+                    </apex:form>
+
+
+                    <apex:form >
+                        <apex:outputPanel rendered="{!IAVAEvent__c.Status__c == 'Published'}" id="cancel-panel">
+                            <div class="text-center">
+                                    <apex:commandButton value="Cancel Event" action="{!saveCancel}" styleclass="btn btn-default btn-xs" onclick="if(!confirm('Are you sure you want to Cancel? (All attendees will be notified of event cancellation.)')){return false};" reRender="cancel-panel" />
+                            </div>
+                        </apex:outputPanel>
+                    </apex:form>
+
+
+                </apex:outputPanel>
+
+
+    <!--            <apex:outputPanel id="timepanel">
+                    {!Now()}
+                </apex:outputPanel> -->
+
+                <apex:outputPanel rendered="{!OR(IAVAEvent__c.Status__c == 'Flagged/Removed', IAVAEvent__c.Status__c == 'Canceled')}" id="canceled-event-panel" >  
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="eventname" class="col-xs-4 control-label">Name of Event</label>
+                                <div class="col-xs-8">
+                                    <apex:outputText styleclass="form-control-static" id="eventname" value="{!IAVAEvent__c.Name}" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="hostname" class="col-xs-4 control-label">Host</label>
+                                <div class="col-xs-8">
+                                    <p class="form-control-static"><apex:outputText id="hostname" value="{!$User.FirstName} {!$User.LastName}" /></p>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="status" class="col-xs-4 control-label">Status</label>
+                                <div class="col-xs-8">
+                                    This event has been removed.
+                                </div>
+                            </div>
+                        </div>
+                </apex:outputPanel>
+
+
+            </apex:outputPanel>
+
+            <br /><br />
+    <!--         <div class="pull-right">
+                <br />
+                <button type="button" class="close smaller-close" onclick="window.parent.closeModal();" aria-hidden="true">Close without saving</button>
+            </div> -->
+
+            </apex:outputPanel>
+          
+         </div>
+        </div>
+    
+    <apex:form >
+        <apex:actionFunction name="refreshImagePanel" reRender="existingImagePanel" />
+    </apex:form>
+
+    <c:cov_include_js_validationengine_init />
+    <c:cov_include_js_loadimage />
+
+
+    <script type="text/javascript">
+
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function() {
+            j$('input[id$=starttime]').timepicker({ 'timeFormat': 'h:i A', 'minTime': '12:00pm' });
+            j$('input[id$=endtime]').timepicker({ 'timeFormat': 'h:i A', 'minTime': '12:00pm', 'showDuration': 'true', 'durationTime': function() {return j$('input[id$=starttime]').val();} });
+            j$('input[id$=starttime]').on('changeTime', function() {
+                var starttime = j$(this).val();
+                var endtime = j$('input[id$=endtime]').val();
+                if (endtime == null || endtime == '' || endtime == '0:00 PM') {
+                    j$('input[id$=endtime]').val(starttime);
+                }
+            });
+            countCharsRemaining('textarea[id$=description]', '#counter', 255, 100);
+        });
+
+
+        // resize large images on upload
+        (function() {
+            var j$ = jQuery.noConflict();
+            var origFile;
+            var fileName;
+            var img;
+
+
+            function onLoad() {
+                var fileinput = document.querySelector("#fileinput");
+                fileinput.addEventListener('change', onFileChange, false);
+            }
+
+
+            function onFileChange(event) {
+                try {
+                    origFile = this.files[0];
+                    fileName = origFile.name;
+                } catch(e) { alert(e); }
+                var loadingImage = loadImage(
+                    origFile,
+                    function (returnImg) {
+                        img = returnImg;
+                        image1 = img.toDataURL().match(/data:(.+);base64,(.+)/); 
+
+                        if (image1 == null || image1.length < 3) {
+                                j$("#file-message").html('Sorry, there was an error uploading the image.');
+                                j$("#file-message").addClass('color-error');
+
+                        } else {
+                                j$("#file-message").html('<span class="glyphicon glyphicon-ok-circle"></span> &nbsp;Image processed, save to upload.');
+                                j$("#file-message").addClass('color-success');
+
+                                j$("input[id$=newImageFull]").val(image1[2]);
+                                j$("input[id$=newImageName]").val(fileName);
+                                j$("input[id$=newImageType]").val(image1[1]);
+
+                                var loadingImageThumb = loadImage(
+                                origFile,
+                                function (returnImg) {
+                                    image2 = returnImg.toDataURL().match(/data:(.+);base64,(.+)/); 
+
+                                    if (image2 != null && image2.length > 2) {
+                                        j$("input[id$=newImageThumb]").val(image2[2]);
+                                    }
+                                },
+                                {maxWidth: 300, maxHeight: 300, canvas: true, orientation: true} // Options
+                            );
+
+
+
+                                // {$RemoteAction.cov_event_entry_controller.uploadImage}('{!eventId}', '{!$Site.currentSiteUrl}', 'image-full-' + fileName, image1[1], image1[2], onSaveResult);
+                        }
+                    },
+                    {maxWidth: 800, maxHeight: 500, canvas: true, orientation: true}
+                );
+                j$("#file-message").html('Attempting to process image...');
+
+            }
+
+
+       //      function onSaveResult(result, event) {
+       //       j$("#file-message").removeClass('lighter color-success color-error');
+       //          if (event.status) {
+          //           j$("#file-message").html('<span class="glyphicon glyphicon-ok-circle"></span> &nbsp;Image saved.');
+       //           j$("#file-message").addClass('color-success');
+       //           refreshImagePanel();
+
+                //  var loadingImageThumb = loadImage(
+                //         origFile,
+                //         function (returnImg) {
+                //             image2 = returnImg.toDataURL().match(/data:(.+);base64,(.+)/); 
+
+                //          if (image2 != null && image2.length > 2) {
+                //                  {$RemoteAction.cov_event_entry_controller.uploadImage}('{!eventId}', '{!$Site.currentSiteUrl}', 'image-thumb-' + fileName, image2[1], image2[2], onSaveResultThumb);
+
+                //          }
+                //         },
+                //         {maxWidth: 100, maxHeight: 100, canvas: true, orientation: true} // Options
+                //     );
+          //       } else {
+          //           j$("#file-message").html('Sorry, there was an issue uploading the image.');
+       //           j$("#file-message").addClass('color-error');
+          //       }
+       //      }
+
+
+       //      function onSaveResultThumb(result, event) {
+                // // if (event.status) {
+                // //   console.log('Thumbnail saved.');
+                // // }
+       //      }
+
+            addEventListener("load", onLoad, true);
+
+        }());
+
+
+    </script>
+    
+    
+    
+    </apex:define>
+
+</apex:composition>
+
+
+</apex:page>

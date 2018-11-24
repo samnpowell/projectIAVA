@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>10/25 Lincoln Center</name>
+    <style>none</style>
+    <subject>From IAVA: Ticket Pick-up Details for Takács Quartet on Thursday, October 25</subject>
+    <type>text</type>
+</EmailTemplate>

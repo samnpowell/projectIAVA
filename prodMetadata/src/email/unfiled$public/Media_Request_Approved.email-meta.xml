@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Upon Approved Request, this email is sent to requestor</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Media Request Approved</name>
+    <style>none</style>
+    <subject>Media Request Approved</subject>
+    <type>text</type>
+</EmailTemplate>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object to establish many-to-many relationship between Policy Recommendations and DC Events (testimonies).</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>DC_Event__c</fullName>
+        <description>Select the DC Event that covered the Policy Recommendation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the DC Event that covered the Policy Recommendation</inlineHelpText>
+        <label>Related DC Event</label>
+        <referenceTo>DC_Event__c</referenceTo>
+        <relationshipLabel>Policy Recommendations related to this DC Event</relationshipLabel>
+        <relationshipName>PolRecs_related_to_DC_Event</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Policy_Rec__c</fullName>
+        <description>Select a Policy Recommendation that was covered by the DC Event</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select a Policy Recommendation that was covered by the DC Event</inlineHelpText>
+        <label>Related Policy Recommendation</label>
+        <referenceTo>Policy_Rec__c</referenceTo>
+        <relationshipLabel>DC Events related to this Policy Recommendation</relationshipLabel>
+        <relationshipName>DC_Events_related_to_PolRec</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>P-Rec related to DC Event</label>
+    <nameField>
+        <displayFormat>PR-DC-{000000}</displayFormat>
+        <label>PRec-DCEvent ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>P-Recs related to DC Events</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Give_Request__c.Units_Requested__c:SUM / Give_Instance__c.Number_of_Units__c:SUM</calculatedFormula>
+        <datatype>percent</datatype>
+        <description>percent filled</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>% Requested</masterLabel>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>Give_Instance__c.Number_of_Units__c:SUM - Give_Instance__c.Number_of_Confirmed_Units__c:SUM</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Shows total units offered - number confirmed.</description>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Give_Instance__c$Give_Name__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Left to Confirm</masterLabel>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Give_Instance__c.Give_Requests__r$Units_Requested__c</column>
+        </chartSummaries>
+        <chartSummaries>
+            <aggregate>Sum</aggregate>
+            <axisBinding>y</axisBinding>
+            <column>Give_Instance__c$Number_of_Units__c</column>
+        </chartSummaries>
+        <chartType>VerticalColumn</chartType>
+        <enableHoverLabels>true</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>Give_Instance__c$Give_Name__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>true</showValues>
+        <size>Huge</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <title>Units Requested v. Units Offered</title>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <colorRanges>
+        <columnName>FORMULA1</columnName>
+        <highBreakpoint>100.0</highBreakpoint>
+        <highColor>#54C254</highColor>
+        <lowBreakpoint>80.0</lowBreakpoint>
+        <lowColor>#C25454</lowColor>
+        <midColor>#C2C254</midColor>
+    </colorRanges>
+    <columns>
+        <field>Give_Instance__c$End_Date__c</field>
+    </columns>
+    <columns>
+        <field>Give_Instance__c$Name</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Give_Instance__c$Number_of_Units__c</field>
+    </columns>
+    <columns>
+        <field>Give_Instance__c$Number_of_Confirmed_Units__c</field>
+    </columns>
+    <columns>
+        <field>Give_Instance__c$Number_of_Tentative_Confirmed_Units__c</field>
+    </columns>
+    <columns>
+        <field>Give_Instance__c$Number_of_Waitlist_Units__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Give_Instance__c.Give_Requests__r$Units_Requested__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Give_Instance__c$Number_of_Confirmed_Requests__c</field>
+    </columns>
+    <description>Shows status of all gives within 30 days.</description>
+    <filter>
+        <criteriaItems>
+            <column>Give_Instance__c$Status__c</column>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Open,Waitlist</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Give_Instance__c$Application_Deadline__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Give_Instance__c$Give_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Rucksack 30-Day Outlook</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Give_Instances_with_Give_Requests__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Give_Instance__c$Application_Deadline__c</dateColumn>
+        <interval>INTERVAL_NEXT30</interval>
+    </timeFrameFilter>
+</Report>

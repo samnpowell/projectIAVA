@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Give Request Guest</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Give_Request_Guests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Applicant --></label>
+        <name>Applicant__c</name>
+        <relationshipLabel><!-- Give_Request_Guests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Birthdate --></label>
+        <name>Birthdate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores the Guest’s Drivers License Number. --></help>
+        <label><!-- Drivers License # --></label>
+        <name>Drivers_License__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Give Id --></label>
+        <name>Give_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Give Request --></label>
+        <name>Give_Request__c</name>
+        <relationshipLabel><!-- Give_Request_Guests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores the Guest’s Name. --></help>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shirt Size --></label>
+        <name>Shirt_Size__c</name>
+        <picklistValues>
+            <masterLabel>Adult – Extra Large (XL)</masterLabel>
+            <translation><!-- Adult – Extra Large (XL) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adult – Large (L)</masterLabel>
+            <translation><!-- Adult – Large (L) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adult – Medium (M)</masterLabel>
+            <translation><!-- Adult – Medium (M) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adult – Small (S)</masterLabel>
+            <translation><!-- Adult – Small (S) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- TMP Birthdate --></label>
+        <name>TMP_Birthdate__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

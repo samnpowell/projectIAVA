@@ -1,0 +1,38 @@
+<apex:component controller="dc_ctrl_homepage">
+ 
+
+<div class="view one-node"> 
+    <div class="view-header"> 
+    </div> 
+<div class="view-content"> 
+<apex:form id="frm">
+    <div id="view-partners-list"> 
+    <div class="views-row-1 views-row-odd"> 
+    <div class="node node-type-page">
+    <div class="node-inner"> 
+    <div class="content"> 
+    <p>If you would like to partner with IAVA to better the lives of Iraq and Afghanistan veterans and their families, <a href="{!$Label.dc_BecomeAPartner}">we'd love to hear from you</a>.</p> 
+    <div class="sub-content"> 
+        <div class="hr"><hr/></div> 
+        <h3>IAVA Partner Sponsors</h3> 
+        <apex:repeat value="{!Partners}" var="PartnerDetails">
+        <div class="col-wrapper">  
+        <div class="partner-sponsor"> 
+            <p class="alignleft"><a href="{!$Page.dc_PartnerDetails}?id={!PartnerDetails.partnershipRec.Id}&logoURL={!PartnerDetails.logoURL}"><apex:image id="att" URL="{!PartnerDetails.logoURL}"  alt=""  rendered="{!if(PartnerDetails.logoURL != ' ',true,false)}"/></a>
+                                <a href="{!$Page.dc_PartnerDetails}?id={!PartnerDetails.partnershipRec.Id}&logoURL="><apex:image id="att1" URL="{!URLFOR($Resource.dc_defaultlogo,Partnerdefaultlogo)}"  alt=""  rendered="{!if(PartnerDetails.logoURL == ' ',true,false)}"/></a></p> 
+            <p class="desc"> 
+                <apex:outputtext value="{!PartnerDetails.PartnerDesc}" escape="false"/>
+                <a href="{!$Page.dc_PartnerDetails}?id={!PartnerDetails.partnershipRec.Id}" class="more-link">&nbsp;</a>                      
+            </p> 
+        </div> <!-- partner sponsor --> 
+        </div> <!-- col wrapper -->
+        </apex:repeat>
+    </div> <!-- sub-content -->
+    </div> <!-- content  -->
+    <div class="clearfix"></div> 
+    </div></div> <!-- /node-inner, /node --> 
+    </div> <!-- viewrow-1 -->
+    </div> <!-- view partner list -->
+</apex:form>
+</div> <!-- /view-content --><!-- /view-posts --> 
+</apex:component>

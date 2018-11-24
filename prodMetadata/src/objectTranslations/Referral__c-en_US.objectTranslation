@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Referral</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Referrals</value>
+    </caseValues>
+    <fields>
+        <label><!-- Benefit Received --></label>
+        <name>Benefit_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Can We Contact You About Your Responses? --></label>
+        <name>Can_We_Contact_You_About_Your_Responses__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client to be interviewed by Program Manager --></help>
+        <label><!-- Case Manager Customer Service --></label>
+        <name>Case_Manager_Customer_Service__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client to be independently interviewed by Program Manager --></help>
+        <label><!-- Case Manager Quality --></label>
+        <name>Case_Manager_Quality__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client to be interviewed by Program Manager --></help>
+        <label><!-- Case Manager Timeliness --></label>
+        <name>Case_Manager_Timeliness__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client to be interviewed by Program Manager --></help>
+        <label><!-- Case Manager Effectiveness --></label>
+        <name>Case_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Client Notes on Case Manager: --></label>
+        <name>Client_Notes_on_Case_Manager__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Notes on Program: --></label>
+        <name>Client_Notes_on_Program__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Customer Service --></label>
+        <name>Customer_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Referral --></label>
+        <name>Date_of_Referral__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effectiveness --></label>
+        <name>Effectiveness__c</name>
+    </fields>
+    <fields>
+        <help><!-- This will be automatically pulled to match the Focus Area for the Program, and should be updated after saving the field if it needs to be different from the Program&apos;s Focus Area. --></help>
+        <label><!-- Focus Area for Referral --></label>
+        <name>Focus_Area_for_Referral__c</name>
+        <relationshipLabel><!-- Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Focus Area of Program --></label>
+        <name>Focus_Area_of_Program__c</name>
+    </fields>
+    <fields>
+        <help><!-- Case Manager&apos;s Rating on program for this referral --></help>
+        <label><!-- Master Rating --></label>
+        <name>Master_Rating__c</name>
+    </fields>
+    <fields>
+        <help><!-- Case Manager&apos;s Note to Client --></help>
+        <label><!-- Note to Client --></label>
+        <name>Note_to_Client__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overall Rating --></label>
+        <name>Overall_Rating__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program Description: --></label>
+        <name>Program_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>Program__c</name>
+        <relationshipLabel><!-- Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quality --></label>
+        <name>Quality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected by Client</masterLabel>
+            <translation><!-- Rejected by Client --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Timeliness --></label>
+        <name>Timeliness__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Person</masterLabel>
+            <translation><!-- In Person --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Referral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Referral Survey --></label>
+            <section>Referral Survey</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

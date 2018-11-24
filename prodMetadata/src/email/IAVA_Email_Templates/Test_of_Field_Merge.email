@@ -1,0 +1,9 @@
+Good Morning {!Contact.FirstName},
+
+Here is your unique link.
+
+http://iava.org/michael-reese-health-trust-application?tfa_DoyouhaveaMember=tfa_Yes8&tfa_MemberNumber={!Contact.Membership_ID__c}
+
+Thanks,
+
+Jason

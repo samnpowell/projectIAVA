@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Chicago Focus Group</name>
+    <style>none</style>
+    <subject>IAVA and Vets Prevail Focus Group</subject>
+    <textOnly>{!Contact.FirstName},
+
+In the coming months, IAVA will be working with Vets Prevail to launch a new program that will address veterans mental health concerns. As a critical component of our program design, we are asking member veterans to participate in a focus group to help provide feedback on how we can best assist veterans in the area of mental health. Click here to join us: http://rucksack.iava.org/dc_RewardDetails?giveid=a0QC0000006JcP0MAK
+
+What: IAVA and Vets Prevail Focus Group
+Where: 641 W. Lake, Suite 304, Chicago, IL. 60661
+When:  Friday, August 10th, 2012, beginning at 11:30 a.m.
+
+IAVA member veterans will have the opportunity to network with other member veterans, and to play an instrumental role in assuring fellow veterans receive quality mental health assistance through IAVA and Vets Prevail.
+
+Make sure to sign up and reserve your spot today. Click here to join us: http://rucksack.iava.org/dc_RewardDetails?giveid=a0QC0000006JcP0MAK. We hope you will join us for this unique and exclusive opportunity!
+
+Sincerely,
+
+Jason Hansman
+Membership Director
+Iraq and Afghanistan Veterans of America</textOnly>
+    <type>custom</type>
+</EmailTemplate>

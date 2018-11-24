@@ -1,0 +1,30 @@
+Dear {!Account.Name},
+
+Thank you for your {!Opportunity.Amount} donation to Iraq and Afghanistan Veterans of America Action Fund (IAVA Action). Your commitment and encouragement are vital for us to continue our mission to improve the lives of Iraq and Afghanistan veterans and their families.
+
+With the war in Iraq over and the conflict in Afghanistan drawing down, IAVA recognizes that the needs of returning veterans will only grow more urgent.
+
+Over two million Americans have served in Iraq or Afghanistan to date, and hundreds of thousands have been deployed multiple times. Your contribution allows IAVA Action to continue addressing critical issues facing new veterans and their families, including a staggering rate of unemployment, mental health injuries, a stretched and outdated VA system and inadequate healthcare for female veterans.
+
+As the nation’s first and largest nonpartisan organization for this generation of veterans, IAVA Action provides our 150,000 member veterans with valuable transitional resources related to mental health, employment, education, and access to Community of Veterans, IAVA Action’s exclusive online social network. On Community of Veterans, thousands of returning veterans share their struggles and triumphs as they readjust to civilian life.
+
+I encourage you to learn more about our mission and impact—please visit http://www.IAVAaction.org to receive the latest news and find ways you can get involved. And to continue supporting by making a one-time or recurring online donation, please visit https://secure.IAVAaction.org/donate-iava-action.
+
+On behalf of every member veteran of IAVA Action, thank you for having our backs.
+
+Sincerely,
+
+Paul Rieckhoff
+Founder and Chief Executive Officer
+Iraq and Afghanistan Veterans of America (IAVA Action)
+www.iavaaction.org
+
+IAVA Action Fund is a 501(c)4 nonprofit organization. Your contribution is not tax-deductible as a charitable contribution for Federal income tax purposes.
+
+Donation Summary:
+
+Donation Amount: {!Opportunity.Amount}{!if(Opportunity.From_CnP_Recurring_Series__c = "True",", recurring","")}
+
+Donation Date: {!Opportunity.CloseDate}
+
+Donation Made By: {!Account.Name}

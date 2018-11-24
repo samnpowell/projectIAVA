@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>10/30 Concert Cancellation</name>
+    <style>none</style>
+    <subject>From iAVA: &quot;Cosmic Pulses&quot; has been *Canceled*</subject>
+    <type>text</type>
+</EmailTemplate>

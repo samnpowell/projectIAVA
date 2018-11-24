@@ -1,0 +1,17 @@
+Added by: {!CaseComment.CreatedBy}
+
+Comment:
+{!CaseComment.CommentBody}
+
+-------------------------------------------------------------
+
+Subject: {!Case.Subject}
+Case #: {!Case.CaseNumber}
+Status: {!Case.Status}
+Assignee:  {!Case.Assigned_To__c} {!Case.Assignee_Name__c}
+Created by: {!Case.CreatedBy}
+
+Link: {!Case.Link}
+
+Original Description: 
+{!Case.Description} {!Case.00NC00000057RUi}
