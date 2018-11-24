@@ -1,0 +1,14 @@
+<!--
+ - Created by tarren.anderson on 8/23/17.
+ -->
+
+
+<design:component >
+    <design:attribute name="text_when_on" label="Button text when Enabled" />
+    <design:attribute name="text_when_off" label="Button text when disabled" />
+    <design:attribute name="default_button_classes" label="CSS class applied to button" description="This CSS class is applied to the button at all times"/>
+    <!--
+    <design:attribute name="class_when_on" label="CSS class only when enabled" description="Use this to make the enabled state unique - red background for example" />
+    <design:attribute name="class_when_off" label="CSS class only when disabled" description="Use this to make the enabled state unique - green background for example" />
+    -->
+</design:component>

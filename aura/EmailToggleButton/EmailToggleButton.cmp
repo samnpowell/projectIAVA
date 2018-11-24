@@ -1,0 +1,32 @@
+<!--
+ - Created by tarren.anderson on 8/23/17.
+ -->
+
+<aura:component description="EmailToggleButton" implements="forceCommunity:availableForAllPageTypes" controller="EmailToggleController">
+
+    <aura:attribute type="String" name="default_button_classes" default="slds-button--brand"/>
+    <aura:attribute type="String" name="button_classes" />
+    <aura:attribute type="String" name="text_when_on" default="Disable Emails"/>
+    <aura:attribute type="String" name="text_when_off" default="Enable Emails"/>
+    <aura:attribute type="String" name="class_when_on" default="default-on"/>
+    <aura:attribute type="String" name="class_when_off" default="default-off"/>
+    <aura:attribute type="String" name="titleMessage" />
+    <aura:attribute type="Boolean" name="showStatus" default="false" />
+    <aura:attribute type="Boolean" name="emailIsDisabled" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+    <button onclick="{!c.toggleEmailJS}" class="{! 'slds-button uiButton ' + v.button_classes + ' ' + v.default_button_classes}">
+        <aura:if isTrue="{!v.emailIsDisabled}">
+            {!v.text_when_off}
+            <aura:set attribute="else">
+                {!v.text_when_on}
+            </aura:set>
+        </aura:if>
+    </button>
+    <aura:if isTrue="{!v.showStatus}">
+        <div id="status-notification">
+        	{!v.titleMessage}
+    	</div>
+    </aura:if>
+</aura:component>
