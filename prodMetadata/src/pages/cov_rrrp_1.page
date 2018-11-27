@@ -22,38 +22,26 @@
           <h2>We're here to help</h2>
 
           <p>Rapid Response Referral Program (RRRP) is IAVA’s case management and referral services program, connecting our Member Veterans and their families with veteran-specific resources.</p>
-<!-- comment lines 26-38 out to hide the new case button 
+<!-- comment lines 26-33 out to hide the new case button -->
           <apex:outputPanel rendered="{!existingCases.size > 0}">
           	<apex:form >
 		        <p>&nbsp;</p>
-
-				// <div class="text-center">
-					// <apex:commandButton value="Open a New Case" action="{!createNewRRRPcase}" styleclass="btn btn-primary btn-large" />
-				// </div>
                 <div class="text-center">
                     	<apex:commandButton value="Open a New Case" action="{!intakeFormCreateNewRRRPCase}" styleclass="btn btn-primary btn-large"/>
                 </div>
             </apex:form>
-
           </apex:outputPanel>
- --> <!-- comment lines 40-55 out to hide the new case button
+<!-- --> 
+<!-- comment lines 36-43 out to hide the new case button -->
           <apex:outputPanel rendered="{!existingCases.size == 0 && c != null}">
-
 	        <p>&nbsp;</p>
-
-              // <div class="text-center">
-              	// <apex:form >
-              		// <apex:commandButton value="Yes, please contact me" action="{!createNewRRRPcase}" styleclass="btn btn-primary btn-large" />
-              	// </apex:form>
-              // </div>
               <div class="text-center">
                   <apex:form >
                     <apex:commandButton value="Yes, please contact me" action="{!intakeFormCreateNewRRRPCase}" styleclass="btn btn-primary btn-large"/>
                   </apex:form>
                 </div>
-
           </apex:outputPanel>
- -->
+<!-- -->
           <p>&nbsp;</p>
 
 
@@ -147,36 +135,25 @@
 		          	</ul>
 		        </div>
 			</apex:form>
-<!-- comment lines 152-163 out to hide the new case button 
+<!-- comment lines 138-144 out to hide the new case button -->
 			<apex:form >
 		        <p>&nbsp;</p>
-
-                // <div class="text-center">
-                	// <apex:commandButton value="Open a New Case" action="{!createNewRRRPcase}" styleclass="btn btn-primary btn-large" />
-                // </div>
                 <div class="text-center">
                     	<apex:commandButton value="Open a New Case" action="{!intakeFormCreateNewRRRPCase}" styleclass="btn btn-primary btn-large"/>
                 </div>
             </apex:form>
- -->
+<!-- -->
           </apex:outputPanel>
-<!-- comment lines 165-181 out to hide the new case button 
+<!-- comment lines 148-155 out to hide the new case button -->
           <apex:outputPanel rendered="{!existingCases.size == 0 && c != null}">
-
 	        <p>&nbsp;</p>
-
-			// <div class="text-center">
-				// <apex:form >
-					// <apex:commandButton value="Yes, please contact me" action="{!createNewRRRPcase}" styleclass="btn btn-primary btn-large" />
-				// </apex:form>
-			// </div>
               <div class="text-center">
                     <apex:form >
                     	<apex:commandButton value="Yes, please contact me" action="{!intakeFormCreateNewRRRPCase}" styleclass="btn btn-primary btn-large"/>
                     </apex:form>
                 </div>
           </apex:outputPanel>
- -->
+<!-- -->
           <apex:outputPanel styleclass="conn-contact-msg text-center" rendered="{!c == null}">
 	            No connected contact, can't open a case.
           </apex:outputPanel>

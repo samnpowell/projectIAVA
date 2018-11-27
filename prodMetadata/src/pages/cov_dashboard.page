@@ -74,13 +74,13 @@
                     <apex:define name="Vouchees_Dash">
                         <apex:include pageName="cov_vouchees_dash"/>
                     </apex:define>  
-<!-- comment lines 78-82 out to hide the rrrp component 
+<!-- comment lines 78-82 out to hide the rrrp component -->
                     <div id="resources-div">
                         <apex:define name="Resources_Dash">
                             <apex:include pageName="cov_resources_dash" />
                         </apex:define> 
                     </div>
- -->
+<!-- -->
                     <apex:define name="Rewards_Dash">
                         <apex:include pageName="cov_rewards_dashboard" />
                     </apex:define> 
